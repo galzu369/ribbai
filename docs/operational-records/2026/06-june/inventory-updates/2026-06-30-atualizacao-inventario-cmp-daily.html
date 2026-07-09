@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 20px;
+        color: #333;
+        background-color: #f8f9fa;
+      }
+      
+      .header {
+        text-align: center;
+        margin-bottom: 30px;
+        padding: 20px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+      
+      .header h1 {
+        margin: 0;
+        color: #2c3e50;
+        font-size: 28px;
+      }
+      
+      .header p {
+        margin: 10px 0 0 0;
+        color: #7f8c8d;
+        font-size: 16px;
+      }
+      
+      .summary-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+        margin-bottom: 30px;
+      }
+      
+      .summary-card {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        text-align: center;
+      }
+      
+      .summary-card h3 {
+        margin: 0 0 10px 0;
+        font-size: 14px;
+        color: #7f8c8d;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      
+      .summary-card .value {
+        font-size: 24px;
+        font-weight: bold;
+        color: #2c3e50;
+      }
+      
+      .summary-card .financial-value {
+        color: #27ae60;
+      }
+      
+      .panel {
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        margin-bottom: 30px;
+        overflow: hidden;
+      }
+      
+      .panel h2 {
+        background: #3498db;
+        color: white;
+        margin: 0;
+        padding: 15px 20px;
+        font-size: 18px;
+      }
+      
+      .financial-panel h2 {
+        background: #27ae60;
+      }
+      
+      .panel-content {
+        padding: 20px;
+      }
+      
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 13px;
+      }
+      
+      th, td {
+        text-align: left;
+        padding: 8px 6px;
+        border-bottom: 1px solid #ecf0f1;
+      }
+      
+      th {
+        background-color: #34495e;
+        color: white;
+        font-weight: 600;
+        position: sticky;
+        top: 0;
+      }
+      
+      .financial-header {
+        background-color: #27ae60 !important;
+      }
+      
+      .financial-cell {
+        font-weight: 600;
+        color: #27ae60;
+      }
+      
+      tbody tr:nth-child(even) {
+        background-color: #f8f9fa;
+      }
+      
+      tbody tr:hover {
+        background-color: #e8f4f8;
+      }
+      
+      .badge {
+        display: inline-block;
+        padding: 4px 8px;
+        border-radius: 12px;
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      
+      .badge-green { background: #d4edda; color: #155724; }
+      .badge-red { background: #f8d7da; color: #721c24; }
+      .badge-blue { background: #cce7ff; color: #004085; }
+      .badge-purple { background: #e2d4ff; color: #5a2d91; }
+      .badge-orange { background: #fff3cd; color: #856404; }
+      
+      .category-row {
+        font-weight: 600;
+        background-color: #ecf0f1;
+      }
+      
+      ul {
+        padding-left: 20px;
+      }
+      
+      li {
+        margin-bottom: 8px;
+      }
+      
+      @media print {
+        body { background: white; }
+        .panel { box-shadow: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Atualização de Inventário com Análise Financeira CMP</h1>
+      <p>Relatório Diário - 30/06/2026</p>
+    </div>
+
+    <div class="summary-grid">
+      <div class="summary-card">
+        <h3>Movimentos</h3>
+        <div class="value">33</div>
+      </div>
+      <div class="summary-card">
+        <h3>Categorias</h3>
+        <div class="value">9</div>
+      </div>
+      <div class="summary-card">
+        <h3>Novos Itens</h3>
+        <div class="value">0</div>
+      </div>
+      <div class="summary-card">
+        <h3>Stock Baixo</h3>
+        <div class="value">3</div>
+      </div>
+      <div class="summary-card">
+        <h3>Stock Zero</h3>
+        <div class="value">2</div>
+      </div>
+      <div class="summary-card">
+        <h3>Valor Total Stock</h3>
+        <div class="value financial-value">1049,33 €</div>
+      </div>
+    </div>
+
+    <div class="panel financial-panel">
+      <h2>Movimentos de Inventário com Informação Financeira CMP</h2>
+      <div class="panel-content">
+        <table>
+          <thead>
+            <tr>
+              <th>Categoria</th>
+              <th>Item</th>
+              <th>Tipo</th>
+              <th>Stock Anterior</th>
+              <th>Movimento</th>
+              <th>Stock Final</th>
+              <th class="financial-header">CMP</th>
+              <th class="financial-header">Último Preço</th>
+              <th class="financial-header">Valor Stock</th>
+              <th class="financial-header">Valor Movimento</th>
+              <th>Estado</th>
+              <th class="financial-header">Impacto Financeiro</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+      <tr>
+        <td>Molhos</td>
+        <td>
+          <strong>Ketchup</strong>
+          <span>SAUCE-KETCHUP</span>
+        </td>
+        <td><span class="badge badge-green">IN</span></td>
+        <td>1.5 caixa</td>
+        <td>+2 caixa</td>
+        <td>3.5 caixa</td>
+        <td class="financial-cell">13,55 €</td>
+        <td class="financial-cell">9,75 €</td>
+        <td class="financial-cell"><strong>47,42 €</strong></td>
+        <td>19,50 €</td>
+        <td><span class="badge badge-green">Saudavel</span></td>
+        <td><span class="badge badge-orange">Variação Preço</span></td>
+      </tr>
+    
+      <tr>
+        <td>Molhos</td>
+        <td>
+          <strong>Maionese</strong>
+          <span>SAUCE-MAYONNAISE</span>
+        </td>
+        <td><span class="badge badge-green">IN</span></td>
+        <td>3 caixa</td>
+        <td>+2 caixa</td>
+        <td>5 caixa</td>
+        <td class="financial-cell">14,21 €</td>
+        <td class="financial-cell">8,83 €</td>
+        <td class="financial-cell"><strong>71,06 €</strong></td>
+        <td>17,66 €</td>
+        <td><span class="badge badge-green">Saudavel</span></td>
+        <td><span class="badge badge-orange">Variação Preço</span></td>
+      </tr>
+    
+      <tr>
+        <td>Consumiveis</td>
+        <td>
+          <strong>Guardanapos</strong>
+          <span>CONS-SERVICE-NAPKINS</span>
+        </td>
+        <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+        <td>3 caixa</td>
+        <td>-1 caixa</td>
+        <td>2 caixa</td>
+        <td class="financial-cell">0,00 €</td>
+        <td class="financial-cell">0,00 €</td>
+        <td class="financial-cell"><strong>0,00 €</strong></td>
+        <td>0,00 €</td>
+        <td><span class="badge badge-green">Saudavel</span></td>
+        <td><span class="badge badge-blue">Normal</span></td>
+      </tr>
+    
+      <tr>
+        <td>Consumiveis de Servico</td>
+        <td>
+          <strong>Guardanapos Pequenos</strong>
+          <span>CONS-SERVICE-SMALL-NAPKINS</span>
+        </td>
+        <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+        <td>0.5 caixa</td>
+        <td>-0.5 caixa</td>
+        <td>0 caixa</td>
+        <td class="financial-cell">0,00 €</td>
+        <td class="financial-cell">0,00 €</td>
+        <td class="financial-cell"><strong>0,00 €</strong></td>
+        <td>0,00 €</td>
+        <td><span class="badge badge-red">Critico</span></td>
+        <td><span class="badge badge-blue">Normal</span></td>
+      </tr>
+    
+      <tr>
+        <td>Consumiveis de Servico</td>
+        <td>
+          <strong>Palhinhas</strong>
+          <span>CONS-SERVICE-STRAWS</span>
+        </td>
+        <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+        <td>42 saco</td>
+        <td>-7 saco</td>
+        <td>35 saco</td>
+        <td class="financial-cell">1,75 €</td>
+        <td class="financial-cell">1,75 €</td>
+        <td class="financial-cell"><strong>73,50 €</strong></td>
+        <td>12,25 €</td>
+        <td><span class="badge badge-green">Saudavel</span></td>
+        <td><span class="badge badge-blue">Normal</span></td>
+      </tr>
+    
+      <tr>
+        <td>Consumiveis Operacionais</td>
+        <td>
+          <strong>Rolo Azul</strong>
+          <span>CONS-OPS-BLUE-ROLL</span>
+        </td>
+        <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+        <td>2 unidade</td>
+        <td>-0.5 unidade</td>
+        <td>1.5 unidade</td>
+        <td class="financial-cell">0,00 €</td>
+        <td class="financial-cell">0,00 €</td>
+        <td class="financial-cell"><strong>0,00 €</strong></td>
+        <td>0,00 €</td>
+        <td><span class="badge badge-green">Saudavel</span></td>
+        <td><span class="badge badge-blue">Normal</span></td>
+      </tr>
+    
+      <tr>
+        <td>Consumiveis Operacionais</td>
+        <td>
+          <strong>Rolos de Cozinha</strong>
+          <span>CONS-OPS-KITCHEN-ROLLS</span>
+        </td>
+        <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+        <td>6.5 pack</td>
+        <td>-2.5 pack</td>
+        <td>4 pack</td>
+        <td class="financial-cell">0,00 €</td>
+        <td class="financial-cell">0,00 €</td>
+        <td class="financial-cell"><strong>0,00 €</strong></td>
+        <td>0,00 €</td>
+        <td><span class="badge badge-green">Saudavel</span></td>
+        <td><span class="badge badge-blue">Normal</span></td>
+      </tr>
+    
+      <tr>
+        <td>Consumiveis Operacionais</td>
+        <td>
+          <strong>Rolos Impressora</strong>
+          <span>CONS-OPS-PRINTER-ROLLS</span>
+        </td>
+        <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+        <td>25 saco</td>
+        <td>-21 saco</td>
+        <td>4 saco</td>
+        <td class="financial-cell">7,93 €</td>
+        <td class="financial-cell">7,93 €</td>
+        <td class="financial-cell"><strong>198,25 €</strong></td>
+        <td>166,53 €</td>
+        <td><span class="badge badge-red">Critico</span></td>
+        <td><span class="badge badge-blue">Normal</span></td>
+      </tr>
+    
+      <tr>
+        <td>Consumiveis Operacionais</td>
+        <td>
+          <strong>Sacos do Lixo Vidro</strong>
+          <span>CONS-OPS-GLASS-TRASH-BAGS</span>
+        </td>
+        <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+        <td>3 pack</td>
+        <td>-1 pack</td>
+        <td>2 pack</td>
+        <td class="financial-cell">14,10 €</td>
+        <td class="financial-cell">14,10 €</td>
+        <td class="financial-cell"><strong>42,30 €</strong></td>
+        <td>14,10 €</td>
+        <td><span class="badge badge-green">Saudavel</span></td>
+        <td><span class="badge badge-blue">Normal</span></td>
+      </tr>
+    
+      <tr>
+        <td>Consumiveis WC</td>
+        <td>
+          <strong>Papel de Maos WC</strong>
+          <span>CONS-WC-HAND-PAPER</span>
+        </td>
+        <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+        <td>6.5 caixa</td>
+        <td>-1.5 caixa</td>
+        <td>5 caixa</td>
+        <td class="financial-cell">14,00 €</td>
+        <td class="financial-cell">14,00 €</td>
+        <td class="financial-cell"><strong>91,00 €</strong></td>
+        <td>21,00 €</td>
+        <td><span class="badge badge-green">Saudavel</span></td>
+        <td><span class="badge badge-blue">Normal</span></td>
+      </tr>
+    
+      <tr>
+        <td>Consumiveis WC</td>
+        <td>
+          <strong>Papel Higienico</strong>
+          <span>CONS-WC-TOILET-PAPER</span>
+        </td>
+        <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+        <td>23 pack</td>
+        <td>-4 pack</td>
+        <td>19 pack</td>
+        <td class="financial-cell">14,68 €</td>
+        <td class="financial-cell">15,00 €</td>
+        <td class="financial-cell"><strong>337,64 €</strong></td>
+        <td>60,00 €</td>
+        <td><span class="badge badge-green">Saudavel</span></td>
+        <td><span class="badge badge-purple">Alto Valor</span></td>
+      </tr>
+    
+      <tr>
+        <td>Copos Take Away</td>
+        <td>
+          <strong>Copos Medios Cafe Take Away</strong>
+          <span>CONS-TAKEAWAY-MEDIUM-COFFEE-CUPS</span>
+        </td>
+        <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+        <td>8 saco</td>
+        <td>-3 saco</td>
+        <td>5 saco</td>
+        <td class="financial-cell">1,85 €</td>
+        <td class="financial-cell">0,00 €</td>
+        <td class="financial-cell"><strong>14,80 €</strong></td>
+        <td>5,55 €</td>
+        <td><span class="badge badge-green">Saudavel</span></td>
+        <td><span class="badge badge-orange">Variação Preço</span></td>
+      </tr>
+    
+      <tr>
+        <td>Copos Take Away</td>
+        <td>
+          <strong>Copos Medios Take Away + Tampas</strong>
+          <span>CONS-TAKEAWAY-MEDIUM-CUPS-LIDS</span>
+        </td>
+        <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+        <td>0.3 caixa</td>
+        <td>-0.1 caixa</td>
+        <td>0.2 caixa</td>
+        <td class="financial-cell">0,00 €</td>
+        <td class="financial-cell">0,00 €</td>
+        <td class="financial-cell"><strong>0,00 €</strong></td>
+        <td>0,00 €</td>
+        <td><span class="badge badge-red">Critico</span></td>
+        <td><span class="badge badge-blue">Normal</span></td>
+      </tr>
+    
+      <tr>
+        <td>Copos Take Away</td>
+        <td>
+          <strong>Copos Pequenos Cafe Take Away</strong>
+          <span>CONS-TAKEAWAY-SMALL-COFFEE-CUPS</span>
+        </td>
+        <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+        <td>1 caixa</td>
+        <td>-0.2 caixa</td>
+        <td>0.8 caixa</td>
+        <td class="financial-cell">0,00 €</td>
+        <td class="financial-cell">0,00 €</td>
+        <td class="financial-cell"><strong>0,00 €</strong></td>
+        <td>0,00 €</td>
+        <td><span class="badge badge-green">Saudavel</span></td>
+        <td><span class="badge badge-blue">Normal</span></td>
+      </tr>
+    
+      <tr>
+        <td>Embalagens Take Away</td>
+        <td>
+          <strong>Box de Sopas + Tampas</strong>
+          <span>CONS-TAKEAWAY-SOUP-BOX-LID</span>
+        </td>
+        <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+        <td>2 caixa</td>
+        <td>-0.5 caixa</td>
+        <td>1.5 caixa</td>
+        <td class="financial-cell">0,00 €</td>
+        <td class="financial-cell">0,00 €</td>
+        <td class="financial-cell"><strong>0,00 €</strong></td>
+        <td>0,00 €</td>
+        <td><span class="badge badge-green">Saudavel</span></td>
+        <td><span class="badge badge-blue">Normal</span></td>
+      </tr>
+    
+      <tr>
+        <td>Embalagens Take Away</td>
+        <td>
+          <strong>Box grande 1980ml</strong>
+          <span>CONS-TAKEAWAY-BURGER-BOX</span>
+        </td>
+        <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+        <td>3 caixa</td>
+        <td>-1 caixa</td>
+        <td>2 caixa</td>
+        <td class="financial-cell">0,00 €</td>
+        <td class="financial-cell">0,00 €</td>
+        <td class="financial-cell"><strong>0,00 €</strong></td>
+        <td>0,00 €</td>
+        <td><span class="badge badge-green">Saudavel</span></td>
+        <td><span class="badge badge-blue">Normal</span></td>
+      </tr>
+    
+      <tr>
+        <td>Embalagens Take Away</td>
+        <td>
+          <strong>Box POKE + Tampas</strong>
+          <span>CONS-TAKEAWAY-ROUND-BOX-LID</span>
+        </td>
+        <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+        <td>4.5 caixa</td>
+        <td>-0.5 caixa</td>
+        <td>4 caixa</td>
+        <td class="financial-cell">0,00 €</td>
+        <td class="financial-cell">0,00 €</td>
+        <td class="financial-cell"><strong>0,00 €</strong></td>
+        <td>0,00 €</td>
+        <td><span class="badge badge-green">Saudavel</span></td>
+        <td><span class="badge badge-blue">Normal</span></td>
+      </tr>
+    
+      <tr>
+        <td>Molhos</td>
+        <td>
+          <strong>Ketchup</strong>
+          <span>SAUCE-KETCHUP</span>
+        </td>
+        <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+        <td>3.5 caixa</td>
+        <td>-0.5 caixa</td>
+        <td>3 caixa</td>
+        <td class="financial-cell">13,55 €</td>
+        <td class="financial-cell">9,75 €</td>
+        <td class="financial-cell"><strong>47,42 €</strong></td>
+        <td>9,31 €</td>
+        <td><span class="badge badge-green">Saudavel</span></td>
+        <td><span class="badge badge-orange">Variação Preço</span></td>
+      </tr>
+    
+      <tr>
+        <td>Molhos</td>
+        <td>
+          <strong>Maionese</strong>
+          <span>SAUCE-MAYONNAISE</span>
+        </td>
+        <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+        <td>5 caixa</td>
+        <td>-2 caixa</td>
+        <td>3 caixa</td>
+        <td class="financial-cell">14,21 €</td>
+        <td class="financial-cell">8,83 €</td>
+        <td class="financial-cell"><strong>71,06 €</strong></td>
+        <td>35,60 €</td>
+        <td><span class="badge badge-green">Saudavel</span></td>
+        <td><span class="badge badge-orange">Variação Preço</span></td>
+      </tr>
+    
+      <tr>
+        <td>Produtos de Limpeza</td>
+        <td>
+          <strong>Alcool</strong>
+          <span>CLEAN-ALCOHOL</span>
+        </td>
+        <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+        <td>25 unidade</td>
+        <td>-4 unidade</td>
+        <td>21 unidade</td>
+        <td class="financial-cell">0,00 €</td>
+        <td class="financial-cell">0,00 €</td>
+        <td class="financial-cell"><strong>0,00 €</strong></td>
+        <td>0,00 €</td>
+        <td><span class="badge badge-green">Saudavel</span></td>
+        <td><span class="badge badge-blue">Normal</span></td>
+      </tr>
+    
+      <tr>
+        <td>Produtos de Limpeza</td>
+        <td>
+          <strong>Cheiro Urinol</strong>
+          <span>CLEAN-URINAL-SCENT</span>
+        </td>
+        <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+        <td>15 unidade</td>
+        <td>-3 unidade</td>
+        <td>12 unidade</td>
+        <td class="financial-cell">0,00 €</td>
+        <td class="financial-cell">0,00 €</td>
+        <td class="financial-cell"><strong>0,00 €</strong></td>
+        <td>0,00 €</td>
+        <td><span class="badge badge-green">Saudavel</span></td>
+        <td><span class="badge badge-blue">Normal</span></td>
+      </tr>
+    
+      <tr>
+        <td>Produtos de Limpeza</td>
+        <td>
+          <strong>D-50</strong>
+          <span>CLEAN-D-50</span>
+        </td>
+        <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+        <td>3 unidade</td>
+        <td>-1 unidade</td>
+        <td>2 unidade</td>
+        <td class="financial-cell">0,00 €</td>
+        <td class="financial-cell">0,00 €</td>
+        <td class="financial-cell"><strong>0,00 €</strong></td>
+        <td>0,00 €</td>
+        <td><span class="badge badge-green">Saudavel</span></td>
+        <td><span class="badge badge-blue">Normal</span></td>
+      </tr>
+    
+      <tr>
+        <td>Produtos de Limpeza</td>
+        <td>
+          <strong>Dish Lemon</strong>
+          <span>CLEAN-DISH-LEMON</span>
+        </td>
+        <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+        <td>5 unidade</td>
+        <td>-3 unidade</td>
+        <td>2 unidade</td>
+        <td class="financial-cell">0,00 €</td>
+        <td class="financial-cell">0,00 €</td>
+        <td class="financial-cell"><strong>0,00 €</strong></td>
+        <td>0,00 €</td>
+        <td><span class="badge badge-green">Saudavel</span></td>
+        <td><span class="badge badge-blue">Normal</span></td>
+      </tr>
+    
+      <tr>
+        <td>Produtos de Limpeza</td>
+        <td>
+          <strong>Espuma Antibacteriana</strong>
+          <span>CLEAN-ANTIBACTERIAL-FOAM</span>
+        </td>
+        <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+        <td>3 unidade</td>
+        <td>-3 unidade</td>
+        <td>0 unidade</td>
+        <td class="financial-cell">6,97 €</td>
+        <td class="financial-cell">0,00 €</td>
+        <td class="financial-cell"><strong>20,91 €</strong></td>
+        <td>20,91 €</td>
+        <td><span class="badge badge-red">Critico</span></td>
+        <td><span class="badge badge-orange">Variação Preço</span></td>
+      </tr>
+    
+      <tr>
+        <td>Produtos de Limpeza</td>
+        <td>
+          <strong>Lava-Tudo</strong>
+          <span>CLEAN-LAVA-TUDO</span>
+        </td>
+        <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+        <td>8 unit</td>
+        <td>-4 unit</td>
+        <td>4 unit</td>
+        <td class="financial-cell">8,40 €</td>
+        <td class="financial-cell">9,00 €</td>
+        <td class="financial-cell"><strong>67,20 €</strong></td>
+        <td>36,00 €</td>
+        <td><span class="badge badge-green">Saudavel</span></td>
+        <td><span class="badge badge-blue">Normal</span></td>
+      </tr>
+    
+      <tr>
+        <td>Produtos de Limpeza</td>
+        <td>
+          <strong>Lava-Louças</strong>
+          <span>CLEAN-LAVA-LOUCAS</span>
+        </td>
+        <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+        <td>3 unidade</td>
+        <td>-2 unidade</td>
+        <td>1 unidade</td>
+        <td class="financial-cell">0,00 €</td>
+        <td class="financial-cell">0,00 €</td>
+        <td class="financial-cell"><strong>0,00 €</strong></td>
+        <td>0,00 €</td>
+        <td><span class="badge badge-red">Critico</span></td>
+        <td><span class="badge badge-blue">Normal</span></td>
+      </tr>
+    
+      <tr>
+        <td>Produtos de Limpeza</td>
+        <td>
+          <strong>Luvas M</strong>
+          <span>CLEAN-GLOVES-M</span>
+        </td>
+        <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+        <td>2 caixa</td>
+        <td>-1 caixa</td>
+        <td>1 caixa</td>
+        <td class="financial-cell">0,00 €</td>
+        <td class="financial-cell">0,00 €</td>
+        <td class="financial-cell"><strong>0,00 €</strong></td>
+        <td>0,00 €</td>
+        <td><span class="badge badge-green">Saudavel</span></td>
+        <td><span class="badge badge-blue">Normal</span></td>
+      </tr>
+    
+      <tr>
+        <td>Produtos de Limpeza</td>
+        <td>
+          <strong>Mascaras</strong>
+          <span>CLEAN-MASKS</span>
+        </td>
+        <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+        <td>3 caixa</td>
+        <td>+1 caixa</td>
+        <td>4 caixa</td>
+        <td class="financial-cell">2,50 €</td>
+        <td class="financial-cell">2,50 €</td>
+        <td class="financial-cell"><strong>7,50 €</strong></td>
+        <td>2,50 €</td>
+        <td><span class="badge badge-green">Saudavel</span></td>
+        <td><span class="badge badge-blue">Normal</span></td>
+      </tr>
+    
+      <tr>
+        <td>Produtos de Limpeza</td>
+        <td>
+          <strong>Spray Laranja WC IBT</strong>
+          <span>CLEAN-WC-ORANGE-SPRAY-IBT</span>
+        </td>
+        <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+        <td>1.9 unidade</td>
+        <td>+0.1 unidade</td>
+        <td>2 unidade</td>
+        <td class="financial-cell">0,00 €</td>
+        <td class="financial-cell">0,00 €</td>
+        <td class="financial-cell"><strong>0,00 €</strong></td>
+        <td>0,00 €</td>
+        <td><span class="badge badge-green">Saudavel</span></td>
+        <td><span class="badge badge-blue">Normal</span></td>
+      </tr>
+    
+      <tr>
+        <td>Produtos de Limpeza</td>
+        <td>
+          <strong>Thomil</strong>
+          <span>CLEAN-THOMIL</span>
+        </td>
+        <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+        <td>5 unidade</td>
+        <td>-1 unidade</td>
+        <td>4 unidade</td>
+        <td class="financial-cell">6,31 €</td>
+        <td class="financial-cell">6,31 €</td>
+        <td class="financial-cell"><strong>31,55 €</strong></td>
+        <td>6,31 €</td>
+        <td><span class="badge badge-green">Saudavel</span></td>
+        <td><span class="badge badge-blue">Normal</span></td>
+      </tr>
+    
+      <tr>
+        <td>Produtos de Limpeza</td>
+        <td>
+          <strong>Tocas</strong>
+          <span>CLEAN-HAIRNETS</span>
+        </td>
+        <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+        <td>4 saco</td>
+        <td>-1 saco</td>
+        <td>3 saco</td>
+        <td class="financial-cell">4,80 €</td>
+        <td class="financial-cell">4,80 €</td>
+        <td class="financial-cell"><strong>19,20 €</strong></td>
+        <td>4,80 €</td>
+        <td><span class="badge badge-green">Saudavel</span></td>
+        <td><span class="badge badge-blue">Normal</span></td>
+      </tr>
+    
+      <tr>
+        <td>Talheres Take Away</td>
+        <td>
+          <strong>Colheres Take Away</strong>
+          <span>CONS-TAKEAWAY-SPOONS</span>
+        </td>
+        <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+        <td>4 saco</td>
+        <td>-1 saco</td>
+        <td>3 saco</td>
+        <td class="financial-cell">6,75 €</td>
+        <td class="financial-cell">6,75 €</td>
+        <td class="financial-cell"><strong>27,00 €</strong></td>
+        <td>6,75 €</td>
+        <td><span class="badge badge-green">Saudavel</span></td>
+        <td><span class="badge badge-blue">Normal</span></td>
+      </tr>
+    
+      <tr>
+        <td>Talheres Take Away</td>
+        <td>
+          <strong>Pauzinhos</strong>
+          <span>CONS-TAKEAWAY-CHOPSTICKS</span>
+        </td>
+        <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+        <td>10 saco</td>
+        <td>-4 saco</td>
+        <td>6 saco</td>
+        <td class="financial-cell">0,00 €</td>
+        <td class="financial-cell">0,00 €</td>
+        <td class="financial-cell"><strong>0,00 €</strong></td>
+        <td>0,00 €</td>
+        <td><span class="badge badge-green">Saudavel</span></td>
+        <td><span class="badge badge-blue">Normal</span></td>
+      </tr>
+    
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>Resumo por Categoria</h2>
+      <div class="panel-content">
+        <table>
+          <thead>
+            <tr>
+              <th>Categoria</th>
+              <th>Movimentos</th>
+              <th>Entradas</th>
+              <th>Saídas</th>
+              <th class="financial-header">Valor Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td><strong>Molhos</strong></td>
+                <td>4</td>
+                <td>4</td>
+                <td>0</td>
+                <td class="financial-cell">37,16 €</td>
+              </tr>
+            
+              <tr>
+                <td><strong>Consumiveis</strong></td>
+                <td>1</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="financial-cell">0,00 €</td>
+              </tr>
+            
+              <tr>
+                <td><strong>Consumiveis de Servico</strong></td>
+                <td>2</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="financial-cell">0,00 €</td>
+              </tr>
+            
+              <tr>
+                <td><strong>Consumiveis Operacionais</strong></td>
+                <td>4</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="financial-cell">0,00 €</td>
+              </tr>
+            
+              <tr>
+                <td><strong>Consumiveis WC</strong></td>
+                <td>2</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="financial-cell">0,00 €</td>
+              </tr>
+            
+              <tr>
+                <td><strong>Copos Take Away</strong></td>
+                <td>3</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="financial-cell">0,00 €</td>
+              </tr>
+            
+              <tr>
+                <td><strong>Embalagens Take Away</strong></td>
+                <td>3</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="financial-cell">0,00 €</td>
+              </tr>
+            
+              <tr>
+                <td><strong>Produtos de Limpeza</strong></td>
+                <td>12</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="financial-cell">0,00 €</td>
+              </tr>
+            
+              <tr>
+                <td><strong>Talheres Take Away</strong></td>
+                <td>2</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="financial-cell">0,00 €</td>
+              </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>Notas Técnicas - Sistema CMP</h2>
+      <div class="panel-content">
+        <ul>
+          <li><strong>CMP (Custo Médio Ponderado):</strong> Calculado automaticamente para todas as entradas de stock, proporcionando valorização precisa do inventário.</li>
+          <li><strong>Valor do Stock:</strong> Calculado como Stock Atual × CMP, refletindo o valor real do inventário em cada momento.</li>
+          <li><strong>Impacto Financeiro:</strong> Items marcados como "Alto Valor" (>€200) ou "Variação Preço" (>15% diferença entre CMP e último preço).</li>
+          <li><strong>Rastreabilidade:</strong> Todos os movimentos mantêm histórico completo para auditoria e análise de tendências.</li>
+          <li><strong>Compatibilidade:</strong> Sistema totalmente integrado com relatórios existentes e contagens semanais.</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

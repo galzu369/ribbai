@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Relatório Diário Operacional - 03-07-2026</title>
+    <style>
+      @page { size: A4; margin: 16mm 14mm 18mm; }
+      :root { --ink:#172033; --muted:#657085; --line:#d9dee8; --soft:#f6f7fa; --warm:#fff7ed; --brand:#f97316; --brand-dark:#9a3412; --green:#15803d; --blue:#1d4ed8; --violet:#6d28d9; --red:#dc2626; --orange:#ea580c; --gold:#d97706; }
+      * { box-sizing:border-box; }
+      body { margin:0; background:#fff; color:var(--ink); font-family:Inter,ui-sans-serif,system-ui,sans-serif; font-size:10pt; line-height:1.5; }
+      h1,h2,h3,p { margin-top:0; }
+      h1 { font-size:34pt; line-height:1.02; letter-spacing:-0.04em; margin-bottom:10pt; }
+      h2 { border-bottom:1px solid var(--line); font-size:15pt; margin:22pt 0 10pt; padding-bottom:5pt; }
+      h3 { color:var(--brand-dark); font-size:11pt; margin:13pt 0 5pt; }
+      ul { margin:4pt 0 10pt 15pt; padding:0; }
+      table { border-collapse:collapse; margin:8pt 0 14pt; width:100%; }
+      th,td { border:1px solid var(--line); padding:6pt 7pt; text-align:left; vertical-align:top; }
+      th { background:var(--soft); font-size:8pt; letter-spacing:0.06em; text-transform:uppercase; }
+      .cover { background:radial-gradient(circle at top right,rgba(249,115,22,0.18),transparent 35%),linear-gradient(135deg,#fff7ed 0%,#fff 42%,#f8fafc 100%); border:1px solid #fed7aa; border-radius:22px; margin-bottom:16pt; min-height:248mm; padding:24mm 18mm; }
+      .eyebrow { color:var(--brand); font-size:8.5pt; font-weight:800; letter-spacing:0.18em; margin-bottom:14pt; text-transform:uppercase; }
+      .subtitle { color:var(--muted); font-size:14pt; line-height:1.45; max-width:150mm; }
+      .meta-panel { background:rgba(255,255,255,0.82); border:1px solid #fed7aa; border-radius:16px; margin-top:28pt; padding:14pt; }
+      .meta-grid { display:grid; gap:10pt; grid-template-columns:repeat(3,1fr); }
+      .meta-item { border-left:3px solid var(--brand); padding-left:8pt; }
+      .meta-label { color:var(--muted); display:block; font-size:7.5pt; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; }
+      .meta-value { display:block; font-size:10.5pt; font-weight:700; margin-top:2pt; }
+      .page-break { break-before:page; }
+      .kpi-grid { display:grid; gap:8pt; grid-template-columns:repeat(3,1fr); margin:12pt 0 16pt; }
+      .kpi { background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:10pt; }
+      .kpi-label { color:var(--muted); display:block; font-size:7.5pt; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; }
+      .kpi-value { display:block; font-size:22pt; font-weight:800; margin-top:3pt; }
+      .kpi-note { color:var(--muted); display:block; font-size:8pt; margin-top:2pt; }
+      .excellent { color:var(--green); }
+      .good { color:var(--blue); }
+      .average { color:var(--brand); }
+      .highlight { color:var(--gold); }
+      .callout { background:var(--warm); border-left:4px solid var(--brand); border-radius:12px; margin:10pt 0 14pt; padding:11pt 13pt; }
+      .callout-success { background:#f0fdf4; border-left-color:var(--green); }
+      .callout-warning { background:#fef3c7; border-left-color:var(--brand); }
+      .callout-info { background:#eff6ff; border-left-color:var(--blue); }
+      .callout-gold { background:#fffbeb; border-left-color:var(--gold); }
+      .panel-grid { display:grid; gap:9pt; grid-template-columns:repeat(2,1fr); }
+      .panel { border:1px solid var(--line); border-radius:12px; break-inside:avoid; padding:10pt; }
+      .badge { border-radius:999px; display:inline-block; font-size:7.5pt; font-weight:800; margin-bottom:5pt; padding:3pt 7pt; text-transform:uppercase; }
+      .badge-green { background:#dcfce7; color:var(--green); }
+      .badge-blue { background:#dbeafe; color:var(--blue); }
+      .badge-violet { background:#ede9fe; color:var(--violet); }
+      .badge-orange { background:#fed7aa; color:var(--brand-dark); }
+      .badge-gold { background:#fef3c7; color:var(--gold); }
+      .footer-note { border-top:1px solid var(--line); color:var(--muted); font-size:8.5pt; margin-top:18pt; padding-top:7pt; }
+      .sector-table { font-size:9pt; }
+      .sector-table td { padding:4pt 6pt; }
+    </style>
+  </head>
+  <body>
+    <section class="cover">
+      <div class="eyebrow">RIBBAI OPS · Relatório Diário Operacional</div>
+      <h1>Registo Diário Operacional</h1>
+      <p class="subtitle">Apresentação diária à gestão sobre a operação Front of House do restaurante RIBBAI.</p>
+      <div class="meta-panel">
+        <div class="meta-grid">
+          <div class="meta-item"><span class="meta-label">Data</span><span class="meta-value">03-07-2026</span></div>
+          <div class="meta-item"><span class="meta-label">Dia</span><span class="meta-value">Sexta-feira</span></div>
+          <div class="meta-item"><span class="meta-label">Autor</span><span class="meta-value">Filipe Catalão</span></div>
+          <div class="meta-item"><span class="meta-label">Restaurante</span><span class="meta-value">RIBBAI</span></div>
+          <div class="meta-item"><span class="meta-label">Tipo</span><span class="meta-value">Relatório Diário Operacional</span></div>
+          <div class="meta-item"><span class="meta-label">Estado</span><span class="meta-value">Registado</span></div>
+        </div>
+      </div>
+      <div class="kpi-grid">
+        <div class="kpi"><span class="kpi-label">Organização Operacional</span><span class="kpi-value excellent">10/10</span><span class="kpi-note">Setores exemplares</span></div>
+        <div class="kpi"><span class="kpi-label">Serviço ao Cliente</span><span class="kpi-value excellent">10/10</span><span class="kpi-note">Excelente</span></div>
+        <div class="kpi"><span class="kpi-label">Trabalho de Equipa</span><span class="kpi-value excellent">10/10</span><span class="kpi-note">Coordenação perfeita</span></div>
+      </div>
+      <div class="kpi-grid">
+        <div class="kpi"><span class="kpi-label">Fecho Operacional</span><span class="kpi-value excellent">10/10</span><span class="kpi-note">Sem tarefas pendentes</span></div>
+        <div class="kpi"><span class="kpi-label">Jam Session</span><span class="kpi-value highlight">730</span><span class="kpi-note">Tickets registados</span></div>
+        <div class="kpi"><span class="kpi-label">Horas Extra</span><span class="kpi-value highlight">9h30</span><span class="kpi-note">Prolongamento Jam</span></div>
+      </div>
+      <div class="callout callout-success"><strong>Destaque do dia:</strong> consolidação definitiva do modelo operacional por setores com resultados exemplares. Jam Session com 730 tickets - um dos dias mais fortes da época.</div>
+    </section>
+
+    <section class="page-break">
+      <h2>Síntese Executiva</h2>
+      <p>Sexta-feira com consolidação do modelo operacional por setores, demonstrando eficácia máxima. Movimento gradual culminando em excelente serviço de jantar com Jam Session e grupos numerosos. Aproximadamente 730 tickets registados - um dos dias mais fortes da época.</p>
+      <h2>Distribuição por Setores</h2>
+      <table class="sector-table">
+        <thead><tr><th>Função</th><th>Colaborador</th><th>Responsabilidade</th></tr></thead>
+        <tbody>
+          <tr><td>🚪 Porta</td><td><strong>Filipe</strong></td><td>Gestão entrada e coordenação geral</td></tr>
+          <tr><td>🍽️ Mesas 50's</td><td><strong>Lil</strong></td><td>Zona esplanada 50-59</td></tr>
+          <tr><td>🍽️ Mesas 60's</td><td><strong>Bruno</strong></td><td>Zona esplanada 60-69</td></tr>
+          <tr><td>🍽️ Mesas 70's</td><td><strong>Carolina</strong></td><td>Zona esplanada 70-79</td></tr>
+          <tr><td>🏛️ Sala Interior</td><td><strong>Matilde</strong></td><td>Totalidade do espaço interior</td></tr>
+          <tr><td>🏃 Runner/Cobertura</td><td><strong>Lee</strong></td><td>Apoio transversal e pausas</td></tr>
+          <tr><td>🏃 Runner/Cobertura</td><td><strong>Diogo</strong></td><td>Apoio transversal e pausas</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="page-break">
+      <h2>Equipa Em Serviço</h2>
+      <div class="panel-grid">
+        <div class="panel"><span class="badge badge-green">Carolina</span><ul><li>Abertura com Lil.</li><li>Responsável Mesas 70's.</li><li>Coordenação exemplar.</li></ul></div>
+        <div class="panel"><span class="badge badge-green">Lil</span><ul><li>Abertura com Carolina.</li><li>Responsável Mesas 50's.</li><li>Padrão elevado de serviço.</li></ul></div>
+        <div class="panel"><span class="badge badge-blue">Bruno</span><ul><li>Entrada 12h30.</li><li>Responsável Mesas 60's.</li><li>Fecho + 3h10m extra.</li></ul></div>
+        <div class="panel"><span class="badge badge-blue">Matilde</span><ul><li>Entrada 12h30.</li><li>Gestão Sala Interior.</li><li>Fecho + 3h10m extra.</li></ul></div>
+        <div class="panel"><span class="badge badge-gold">Filipe</span><ul><li>Entrada 12h30.</li><li>Responsável Porta.</li><li>Liderança fecho + 3h10m.</li></ul></div>
+        <div class="panel"><span class="badge badge-violet">Lee & Diogo</span><ul><li>Runners/Cobertura exclusiva.</li><li>Apoio transversal exemplar.</li><li>Facilitar operação fluída.</li></ul></div>
+      </div>
+      <h2>Benefícios do Modelo por Setores</h2>
+      <ul>
+        <li>✅ <strong>Redução significativa das interferências</strong> entre colaboradores</li>
+        <li>✅ <strong>Melhor comunicação</strong> e coordenação</li>
+        <li>✅ <strong>Maior rapidez na resposta</strong> aos clientes</li>
+        <li>✅ <strong>Melhor gestão das pausas</strong></li>
+        <li>✅ <strong>Menor desgaste individual</strong></li>
+        <li>✅ <strong>Serviço mais organizado e consistente</strong></li>
+      </ul>
+    </section>
+
+    <section class="page-break">
+      <h2>Movimento do Dia</h2>
+      <p>Temperaturas elevadas continuaram a atrair grande fluxo de clientes, mas com crescimento gradual:</p>
+      <ul>
+        <li><strong>14h00</strong> - Esplanada atingiu lotação praticamente completa</li>
+        <li><strong>15h00</strong> - Lotação esgotada interior e exterior</li>
+        <li><strong>14h30-16h30</strong> - Período de maior pressão</li>
+        <li>Ocupação consistente <strong>acima de 80%</strong> durante toda a tarde</li>
+      </ul>
+      <div class="callout callout-info"><strong>Movimento controlado:</strong> crescimento gradual permitiu melhor gestão da pressão comparativamente ao dia anterior.</div>
+      <h2>Serviço de Jantar & Jam Session</h2>
+      <div class="callout callout-gold"><strong>Evento especial:</strong> Jam Session das 19h00 às 23h00 com forte afluência e ambiente muito positivo.</div>
+      <p><strong>Grupos numerosos atendidos:</strong></p>
+      <ul>
+        <li>Mesa 50/51: <strong>8 pessoas</strong></li>
+        <li>Mesas 52-55: <strong>Grupo de 10 pessoas</strong></li>
+        <li>Mesas 56/57: <strong>Grupo de 10 pessoas</strong></li>
+        <li>Dois aniversários</li>
+        <li>Grupo numeroso de amigas</li>
+      </ul>
+      <p>Sala interior com mesas de menor dimensão mas <strong>valor médio de consumo elevado</strong>.</p>
+    </section>
+
+    <section class="page-break">
+      <h2>Fecho Operacional</h2>
+      <div class="callout callout-success"><strong>Avaliação: EXCELENTE</strong> - Apesar do prolongamento até às 23h00, todas as tarefas foram concluídas integralmente.</div>
+      <p><strong>Responsáveis pelo fecho:</strong></p>
+      <ul>
+        <li><strong>Filipe</strong> - Coordenação e liderança</li>
+        <li><strong>Bruno</strong> - Execução exemplar</li>
+        <li><strong>Matilde</strong> - Execução exemplar</li>
+      </ul>
+      <p><strong>Resultado:</strong> Restaurante completamente preparado para sábado, <strong>sem qualquer tarefa pendente</strong> para a equipa da abertura.</p>
+      <h2>Horas Extra</h2>
+      <table>
+        <thead><tr><th>Colaborador</th><th>Registo</th><th>Motivo</th></tr></thead>
+        <tbody>
+          <tr><td>Filipe</td><td>3h10 de horas extra</td><td>Pausa reduzida, prolongamento e fecho após Jam Session</td></tr>
+          <tr><td>Bruno</td><td>3h10 de horas extra</td><td>Pausa reduzida, prolongamento e fecho após Jam Session</td></tr>
+          <tr><td>Matilde</td><td>3h10 de horas extra</td><td>Pausa reduzida, prolongamento e fecho após Jam Session</td></tr>
+        </tbody>
+      </table>
+      <div class="callout"><strong>Total da equipa:</strong> 9h30 de horas extra devido ao prolongamento da Jam Session.</div>
+    </section>
+
+    <section class="page-break">
+      <h2>Pontos Positivos</h2>
+      <ul>
+        <li>🏆 <strong>Aplicação exemplar</strong> do modelo de organização por setores</li>
+        <li>🤝 <strong>Excelente coordenação</strong> entre todos os elementos da equipa</li>
+        <li>⚡ <strong>Forte capacidade de resposta</strong> durante períodos de maior pressão</li>
+        <li>👥 <strong>Excelente gestão</strong> das mesas de grupos numerosos</li>
+        <li>🔄 <strong>Serviço fluído e consistente</strong> durante todo o dia</li>
+        <li>✨ <strong>Fecho completo e organizado</strong> sem tarefas pendentes</li>
+        <li>💰 <strong>Muito boa rentabilidade</strong> do serviço de jantar</li>
+      </ul>
+      <h2>Conclusão</h2>
+      <p>Dia 3 de julho constitui forte demonstração da eficácia do modelo operacional por setores. Distribuição proporcionou serviço organizado, eficiente e equilibrado, permitindo resposta com elevada qualidade a forte procura durante almoço e jantar.</p>
+      <p>Destaque para excelente desempenho durante Jam Session com gestão fluída de grupos numerosos, traduzindo-se em operação de elevada qualidade e faturação muito positiva.</p>
+      <p>Fecho exemplar deixou restaurante totalmente preparado para sábado, encerrando mais um dia com elevados padrões de organização e profissionalismo.</p>
+    </section>
+
+    <section class="page-break">
+      <h2>Classificação Para O Sistema RIBBAI OPS</h2>
+      <table>
+        <thead><tr><th>Categoria</th><th>Registo</th></tr></thead>
+        <tbody>
+          <tr><td>Operational Notes</td><td>Consolidação modelo setores; abertura condicionada mas reorganizada; movimento gradual, lotação 15h00, pressão 14h30-16h30; ocupação 80%+ tarde; Jam Session 19h00-23h00; 730 tickets; 9h30 horas extra.</td></tr>
+          <tr><td>Service Improvement</td><td>Consolidar modelo setores como padrão permanente - eficácia máxima demonstrada com qualidade e eficiência.</td></tr>
+          <tr><td>Event Input</td><td>Jam Session 19h00-23h00: grupos numerosos (8+10+10 pessoas, aniversários), ambiente positivo, excelente rentabilidade, gestão fluída.</td></tr>
+          <tr><td>Team Feedback Input</td><td>Carolina/Lil: abertura eficiente; Bruno: gestão Mesas 60's; Matilde: Sala Interior + fecho exemplar; Filipe: coordenação Porta + liderança fecho; Lee/Diogo: apoio transversal exemplar; maturidade operacional elevada.</td></tr>
+          <tr><td>Overtime Input</td><td>9h30: Filipe 3h10, Bruno 3h10, Matilde 3h10 - prolongamento Jam Session.</td></tr>
+          <tr><td>Management Notes</td><td>Consolidar setores como padrão permanente; valorizar gestão grupos numerosos; reconhecer fecho exemplar; monitorizar sustentabilidade horas extra eventos; destacar maturidade operacional.</td></tr>
+          <tr><td>Financial Context</td><td>730 tickets - dia mais forte da época; muito boa rentabilidade jantar; forte faturação Jam Session + grupos numerosos.</td></tr>
+        </tbody>
+      </table>
+      <p class="footer-note">Documento gerado para apresentação diária à gestão. Fonte operacional: Registo Diário Operacional de 03-07-2026. Autor: Filipe Catalão.</p>
+    </section>
+  </body>
+</html>

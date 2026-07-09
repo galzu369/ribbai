@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Relatório Diário Operacional - 10-06-2026</title>
+    <style>
+      @page {
+        size: A4;
+        margin: 16mm 14mm 18mm;
+      }
+
+      :root {
+        --ink: #172033;
+        --muted: #657085;
+        --line: #d9dee8;
+        --soft: #f6f7fa;
+        --warm: #fff7ed;
+        --brand: #f97316;
+        --brand-dark: #9a3412;
+        --green: #15803d;
+        --amber: #a16207;
+        --blue: #1d4ed8;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: #ffffff;
+        color: var(--ink);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 10pt;
+        line-height: 1.5;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        font-size: 34pt;
+        line-height: 1.02;
+        letter-spacing: -0.04em;
+        margin-bottom: 10pt;
+      }
+
+      h2 {
+        border-bottom: 1px solid var(--line);
+        font-size: 15pt;
+        letter-spacing: -0.02em;
+        margin: 22pt 0 10pt;
+        padding-bottom: 5pt;
+      }
+
+      h3 {
+        color: var(--brand-dark);
+        font-size: 11pt;
+        margin: 13pt 0 5pt;
+      }
+
+      ul {
+        margin: 4pt 0 10pt 15pt;
+        padding: 0;
+      }
+
+      li {
+        margin: 2pt 0;
+      }
+
+      table {
+        border-collapse: collapse;
+        margin: 8pt 0 14pt;
+        width: 100%;
+      }
+
+      th,
+      td {
+        border: 1px solid var(--line);
+        padding: 6pt 7pt;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        background: var(--soft);
+        color: var(--ink);
+        font-size: 8pt;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .cover {
+        background:
+          radial-gradient(circle at top right, rgba(249, 115, 22, 0.18), transparent 35%),
+          linear-gradient(135deg, #fff7ed 0%, #ffffff 42%, #f8fafc 100%);
+        border: 1px solid #fed7aa;
+        border-radius: 22px;
+        margin-bottom: 16pt;
+        min-height: 248mm;
+        padding: 24mm 18mm;
+      }
+
+      .eyebrow {
+        color: var(--brand);
+        font-size: 8.5pt;
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        margin-bottom: 14pt;
+        text-transform: uppercase;
+      }
+
+      .subtitle {
+        color: var(--muted);
+        font-size: 14pt;
+        line-height: 1.45;
+        max-width: 150mm;
+      }
+
+      .meta-panel {
+        background: rgba(255, 255, 255, 0.82);
+        border: 1px solid #fed7aa;
+        border-radius: 16px;
+        margin-top: 28pt;
+        padding: 14pt;
+      }
+
+      .meta-grid {
+        display: grid;
+        gap: 10pt;
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .meta-item {
+        border-left: 3px solid var(--brand);
+        padding-left: 8pt;
+      }
+
+      .meta-label {
+        color: var(--muted);
+        display: block;
+        font-size: 7.5pt;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .meta-value {
+        display: block;
+        font-size: 10.5pt;
+        font-weight: 700;
+        margin-top: 2pt;
+      }
+
+      .page-break {
+        break-before: page;
+      }
+
+      .kpi-grid {
+        display: grid;
+        gap: 8pt;
+        grid-template-columns: repeat(3, 1fr);
+        margin: 12pt 0 16pt;
+      }
+
+      .kpi {
+        background: var(--soft);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 10pt;
+      }
+
+      .kpi-label {
+        color: var(--muted);
+        display: block;
+        font-size: 7.5pt;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .kpi-value {
+        display: block;
+        font-size: 22pt;
+        font-weight: 800;
+        letter-spacing: -0.04em;
+        margin-top: 3pt;
+      }
+
+      .kpi-note {
+        color: var(--muted);
+        display: block;
+        font-size: 8pt;
+        margin-top: 2pt;
+      }
+
+      .good {
+        color: var(--green);
+      }
+
+      .callout {
+        background: var(--warm);
+        border-left: 4px solid var(--brand);
+        border-radius: 12px;
+        margin: 10pt 0 14pt;
+        padding: 11pt 13pt;
+      }
+
+      .panel-grid {
+        display: grid;
+        gap: 9pt;
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .panel {
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        break-inside: avoid;
+        padding: 10pt;
+      }
+
+      .badge {
+        border-radius: 999px;
+        display: inline-block;
+        font-size: 7.5pt;
+        font-weight: 800;
+        letter-spacing: 0.05em;
+        margin-bottom: 5pt;
+        padding: 3pt 7pt;
+        text-transform: uppercase;
+      }
+
+      .badge-green {
+        background: #dcfce7;
+        color: var(--green);
+      }
+
+      .badge-amber {
+        background: #fef3c7;
+        color: var(--amber);
+      }
+
+      .badge-blue {
+        background: #dbeafe;
+        color: var(--blue);
+      }
+
+      .section-intro {
+        color: var(--muted);
+        font-size: 9.5pt;
+        margin-bottom: 10pt;
+      }
+
+      .footer-note {
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 8.5pt;
+        margin-top: 18pt;
+        padding-top: 7pt;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="cover">
+      <div class="eyebrow">RIBBAI OPS · Relatório Diário Operacional</div>
+      <h1>Registo Diário Operacional</h1>
+      <p class="subtitle">
+        Apresentação diária à gestão sobre a operação Front of House do restaurante RIBBAI.
+      </p>
+
+      <div class="meta-panel">
+        <div class="meta-grid">
+          <div class="meta-item">
+            <span class="meta-label">Data</span>
+            <span class="meta-value">10-06-2026</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Dia</span>
+            <span class="meta-value">Quarta-feira</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Contexto</span>
+            <span class="meta-value">Feriado nacional</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Autor</span>
+            <span class="meta-value">Filipe Catalão</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Âmbito</span>
+            <span class="meta-value">Front of House</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Estado</span>
+            <span class="meta-value">Registado</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="kpi-grid">
+        <div class="kpi">
+          <span class="kpi-label">Sucesso Operacional</span>
+          <span class="kpi-value good">9/10</span>
+          <span class="kpi-note">Feriado exigente</span>
+        </div>
+        <div class="kpi">
+          <span class="kpi-label">Qualidade Serviço</span>
+          <span class="kpi-value good">8,5/10</span>
+          <span class="kpi-note">Serviço consistente</span>
+        </div>
+        <div class="kpi">
+          <span class="kpi-label">Adaptação</span>
+          <span class="kpi-value good">10/10</span>
+          <span class="kpi-note">Ausência no bar</span>
+        </div>
+      </div>
+
+      <div class="kpi-grid">
+        <div class="kpi">
+          <span class="kpi-label">Organização</span>
+          <span class="kpi-value good">8,5/10</span>
+          <span class="kpi-note">Setores definidos</span>
+        </div>
+        <div class="kpi">
+          <span class="kpi-label">Comunicação</span>
+          <span class="kpi-value good">9/10</span>
+          <span class="kpi-note">Eficaz entre setores</span>
+        </div>
+        <div class="kpi">
+          <span class="kpi-label">Horas Extra</span>
+          <span class="kpi-value good">5h52m</span>
+          <span class="kpi-note">Equipa completa</span>
+        </div>
+      </div>
+
+      <div class="callout">
+        <strong>Conclusão do dia:</strong> feriado nacional de forte afluência, serviço fluído sem
+        incidentes relevantes e excelente adaptação à ausência da Mar no bar.
+      </div>
+    </section>
+
+    <section class="page-break">
+      <h2>Síntese Executiva</h2>
+      <p>
+        O dia 10 de Junho caracterizou-se por uma afluência muito elevada de clientes, impulsionada
+        pelo feriado nacional. O fluxo foi constante desde a manhã, aumentando progressivamente ao
+        longo do almoço e mantendo-se elevado durante grande parte do dia.
+      </p>
+      <p>
+        Apesar da intensidade operacional, o serviço decorreu de forma fluída, sem incidentes
+        relevantes e com aplicação bem-sucedida do modelo de setores. A ausência da Mar no bar foi
+        compensada com destaque para Carolina e Matilde.
+      </p>
+
+      <h2>Equipa Em Serviço</h2>
+      <div class="panel-grid">
+        <div class="panel">
+          <span class="badge badge-green">Bruno</span>
+          <ul>
+            <li>Abertura e coordenação operacional.</li>
+            <li>Responsável pela zona 50.</li>
+            <li>Liderança durante dia de elevada intensidade.</li>
+            <li>Total de 2h00m extra.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <span class="badge badge-green">Carolina</span>
+          <ul>
+            <li>Porta e apoio à cafetaria/bar.</li>
+            <li>Compensação da ausência da Mar.</li>
+            <li>Disponibilidade e versatilidade exemplares.</li>
+            <li>Total de 1h07m extra.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <span class="badge badge-green">Matilde</span>
+          <ul>
+            <li>Entrada às 10h00.</li>
+            <li>Sala interior e apoio permanente à cafetaria.</li>
+            <li>Papel fundamental na compensação da ausência da Mar.</li>
+            <li>Total de 30 minutos extra.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <span class="badge badge-green">Pablo</span>
+          <ul>
+            <li>Entrada às 12h00.</li>
+            <li>Responsável pela zona 60.</li>
+            <li>Serviço consistente e organizado.</li>
+            <li>Total de 40 minutos extra.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <span class="badge badge-green">Lil</span>
+          <ul>
+            <li>Entrada às 12h00.</li>
+            <li>Responsável pela zona 70.</li>
+            <li>Boa gestão durante períodos de maior intensidade.</li>
+            <li>Total de 1h05m extra.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <span class="badge badge-green">Marta</span>
+          <ul>
+            <li>Entrada às 12h00.</li>
+            <li>Sala interior e funções de runner.</li>
+            <li>Disponibilidade e espírito de equipa.</li>
+            <li>Total de 30 minutos extra.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-break">
+      <h2>Organização Operacional</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Setor / Função</th>
+            <th>Responsável</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Porta</td>
+            <td>Carolina</td>
+          </tr>
+          <tr>
+            <td>Mesas 50</td>
+            <td>Bruno</td>
+          </tr>
+          <tr>
+            <td>Mesas 60</td>
+            <td>Pablo</td>
+          </tr>
+          <tr>
+            <td>Mesas 70</td>
+            <td>Lil</td>
+          </tr>
+          <tr>
+            <td>Sala Interior e Runners</td>
+            <td>Matilde, Marta</td>
+          </tr>
+          <tr>
+            <td>Coordenação Geral</td>
+            <td>Bruno</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Desempenho Operacional</h2>
+      <p>
+        Apesar da intensidade operacional, o serviço decorreu de forma fluída, sem incidentes
+        relevantes, sem falhas operacionais significativas e com comunicação eficaz entre setores.
+      </p>
+
+      <h2>Gestão Da Ausência No Bar</h2>
+      <p>
+        A ausência da Mar obrigou a uma reorganização operacional. Carolina e Matilde assumiram
+        responsabilidades adicionais no apoio à cafetaria e operações do bar, minimizando o impacto
+        da ausência e mantendo a qualidade do serviço.
+      </p>
+
+      <h2>Modelo De Setores</h2>
+      <p>
+        O modelo de posições fixas continua a demonstrar resultados positivos, com boa
+        responsabilização individual, melhor organização da sala, maior previsibilidade operacional e
+        redução significativa de sobreposição de funções.
+      </p>
+      <div class="callout">
+        <strong>Estado:</strong> modelo consolidado com resultados positivos em contexto de elevada
+        pressão.
+      </div>
+    </section>
+
+    <section class="page-break">
+      <h2>Pontos Positivos</h2>
+      <ul>
+        <li>Excelente resposta da equipa a um dia de elevada afluência.</li>
+        <li>Coordenação eficaz da operação.</li>
+        <li>Boa adaptação à ausência de um elemento da equipa de bar.</li>
+        <li>Elevada qualidade de serviço.</li>
+        <li>Aplicação consistente do modelo de setores.</li>
+        <li>Excelente comunicação operacional.</li>
+        <li>Espírito de equipa exemplar.</li>
+        <li>Ausência de incidentes relevantes.</li>
+      </ul>
+
+      <h2>Áreas De Melhoria</h2>
+      <ul>
+        <li>Continuar a reforçar a polivalência operacional em funções de apoio ao bar.</li>
+        <li>Manter o foco na comunicação entre setores durante períodos de maior pressão.</li>
+        <li>Continuar a consolidar os hábitos associados ao modelo de posições fixas.</li>
+      </ul>
+
+      <h2>Horas Extra E Compromisso</h2>
+      <p class="section-intro">
+        Tratando-se de feriado nacional, todas as horas extraordinárias deverão ser consideradas de
+        acordo com o regime aplicável.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Colaborador</th>
+            <th>Registo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Bruno</td>
+            <td>2h00m extra</td>
+          </tr>
+          <tr>
+            <td>Carolina</td>
+            <td>1h07m extra</td>
+          </tr>
+          <tr>
+            <td>Lil</td>
+            <td>1h05m extra</td>
+          </tr>
+          <tr>
+            <td>Pablo</td>
+            <td>40 minutos extra</td>
+          </tr>
+          <tr>
+            <td>Matilde</td>
+            <td>30 minutos extra</td>
+          </tr>
+          <tr>
+            <td>Marta</td>
+            <td>30 minutos extra</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="callout">
+        <strong>Total da equipa:</strong> 5h52m de horas extra.
+      </div>
+
+      <h2>Fecho</h2>
+      <p>
+        O serviço terminou com sucesso. Todas as áreas ficaram organizadas e preparadas para o dia
+        seguinte, sem ocorrências relevantes.
+      </p>
+    </section>
+
+    <section class="page-break">
+      <h2>Notas Para A Gestão</h2>
+      <p>
+        O desempenho da equipa neste feriado nacional merece reconhecimento. A elevada afluência,
+        combinada com a ausência de um elemento do bar, constituiu um teste importante à capacidade
+        de adaptação da operação, respondido com maturidade e colaboração.
+      </p>
+
+      <h2>Classificação Para O Sistema RIBBAI OPS</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Categoria</th>
+            <th>Registo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Operational Notes</td>
+            <td>Feriado nacional com afluência elevada, serviço fluído e ausência da Mar compensada.</td>
+          </tr>
+          <tr>
+            <td>Service Improvement Candidate</td>
+            <td>Reforçar polivalência operacional em apoio ao bar.</td>
+          </tr>
+          <tr>
+            <td>Overtime Input</td>
+            <td>Total de 5h52m de horas extra em contexto de feriado nacional.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Candidatos Para O Relatório Semanal</h2>
+      <p class="section-intro">
+        Estes pontos não constituem um plano de ação diário. Devem ser utilizados como matéria-prima
+        para o relatório semanal.
+      </p>
+      <ul>
+        <li>Impacto do feriado nacional na carga operacional e horas extra.</li>
+        <li>Resposta da equipa à ausência da Mar no bar.</li>
+        <li>Consolidação do modelo de setores sob elevada pressão.</li>
+        <li>Total de 5h52m de horas extra no contexto da semana.</li>
+        <li>Destacar desempenho de Bruno, Carolina e Matilde.</li>
+      </ul>
+
+      <p class="footer-note">
+        Documento gerado para apresentação diária à gestão. Fonte operacional: Registo Diário
+        Operacional de 10-06-2026.
+      </p>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Relatório Diário Operacional - 06-07-2026</title>
+    <style>
+      @page { size: A4; margin: 16mm 14mm 18mm; }
+      :root { --ink:#172033; --muted:#657085; --line:#d9dee8; --soft:#f6f7fa; --warm:#fff7ed; --brand:#f97316; --brand-dark:#9a3412; --green:#15803d; --blue:#1d4ed8; --violet:#6d28d9; --red:#dc2626; --orange:#ea580c; --gold:#d97706; --emerald:#059669; --sky:#0ea5e9; }
+      * { box-sizing:border-box; }
+      body { margin:0; background:#fff; color:var(--ink); font-family:Inter,ui-sans-serif,system-ui,sans-serif; font-size:10pt; line-height:1.5; }
+      h1,h2,h3,p { margin-top:0; }
+      h1 { font-size:34pt; line-height:1.02; letter-spacing:-0.04em; margin-bottom:10pt; }
+      h2 { border-bottom:1px solid var(--line); font-size:15pt; margin:22pt 0 10pt; padding-bottom:5pt; }
+      h3 { color:var(--brand-dark); font-size:11pt; margin:13pt 0 5pt; }
+      ul { margin:4pt 0 10pt 15pt; padding:0; }
+      table { border-collapse:collapse; margin:8pt 0 14pt; width:100%; }
+      th,td { border:1px solid var(--line); padding:6pt 7pt; text-align:left; vertical-align:top; }
+      th { background:var(--soft); font-size:8pt; letter-spacing:0.06em; text-transform:uppercase; }
+      .cover { background:radial-gradient(circle at top right,rgba(14,165,233,0.15),transparent 35%),linear-gradient(135deg,#f0f9ff 0%,#fff 42%,#f8fafc 100%); border:1px solid #7dd3fc; border-radius:22px; margin-bottom:16pt; min-height:248mm; padding:24mm 18mm; }
+      .eyebrow { color:var(--sky); font-size:8.5pt; font-weight:800; letter-spacing:0.18em; margin-bottom:14pt; text-transform:uppercase; }
+      .subtitle { color:var(--muted); font-size:14pt; line-height:1.45; max-width:150mm; }
+      .meta-panel { background:rgba(255,255,255,0.85); border:1px solid #7dd3fc; border-radius:16px; margin-top:28pt; padding:14pt; }
+      .meta-grid { display:grid; gap:10pt; grid-template-columns:repeat(3,1fr); }
+      .meta-item { border-left:3px solid var(--sky); padding-left:8pt; }
+      .meta-label { color:var(--muted); display:block; font-size:7.5pt; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; }
+      .meta-value { display:block; font-size:10.5pt; font-weight:700; margin-top:2pt; }
+      .page-break { break-before:page; }
+      .kpi-grid { display:grid; gap:8pt; grid-template-columns:repeat(3,1fr); margin:12pt 0 16pt; }
+      .kpi { background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:10pt; }
+      .kpi-label { color:var(--muted); display:block; font-size:7.5pt; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; }
+      .kpi-value { display:block; font-size:22pt; font-weight:800; margin-top:3pt; }
+      .kpi-note { color:var(--muted); display:block; font-size:8pt; margin-top:2pt; }
+      .perfect { color:var(--emerald); }
+      .excellent { color:var(--green); }
+      .good { color:var(--blue); }
+      .moderate { color:var(--sky); }
+      .callout { background:var(--warm); border-left:4px solid var(--brand); border-radius:12px; margin:10pt 0 14pt; padding:11pt 13pt; }
+      .callout-success { background:#f0fdf4; border-left-color:var(--emerald); }
+      .callout-excellent { background:#f0f9ff; border-left-color:var(--sky); }
+      .callout-info { background:#eff6ff; border-left-color:var(--blue); }
+      .callout-warning { background:#fef2f2; border-left-color:var(--red); }
+      .panel-grid { display:grid; gap:9pt; grid-template-columns:repeat(3,1fr); }
+      .panel { border:1px solid var(--line); border-radius:12px; break-inside:avoid; padding:10pt; }
+      .badge { border-radius:999px; display:inline-block; font-size:7.5pt; font-weight:800; margin-bottom:5pt; padding:3pt 7pt; text-transform:uppercase; }
+      .badge-emerald { background:#d1fae5; color:var(--emerald); }
+      .badge-green { background:#dcfce7; color:var(--green); }
+      .badge-blue { background:#dbeafe; color:var(--blue); }
+      .badge-sky { background:#e0f2fe; color:var(--sky); }
+      .badge-violet { background:#ede9fe; color:var(--violet); }
+      .badge-orange { background:#fee2e2; color:var(--red); }
+      .footer-note { border-top:1px solid var(--line); color:var(--muted); font-size:8.5pt; margin-top:18pt; padding-top:7pt; }
+      .sector-table { font-size:9pt; }
+      .sector-table td { padding:4pt 6pt; }
+      .improvement-box { background:#fff7ed; border:1px solid #fb923c; border-radius:8px; padding:10pt; margin:8pt 0; }
+    </style>
+  </head>
+  <body>
+    <section class="cover">
+      <div class="eyebrow">RIBBAI OPS · Relatório Diário Operacional</div>
+      <h1>Registo Diário Operacional</h1>
+      <p class="subtitle">Apresentação diária à gestão sobre a operação Front of House do restaurante RIBBAI.</p>
+      <div class="meta-panel">
+        <div class="meta-grid">
+          <div class="meta-item"><span class="meta-label">Data</span><span class="meta-value">06-07-2026</span></div>
+          <div class="meta-item"><span class="meta-label">Dia</span><span class="meta-value">Segunda-feira</span></div>
+          <div class="meta-item"><span class="meta-label">Autor</span><span class="meta-value">Filipe Catalão</span></div>
+          <div class="meta-item"><span class="meta-label">Restaurante</span><span class="meta-value">RIBBAI</span></div>
+          <div class="meta-item"><span class="meta-label">Tipo</span><span class="meta-value">Relatório Diário Operacional</span></div>
+          <div class="meta-item"><span class="meta-label">Estado</span><span class="meta-value">Registado</span></div>
+        </div>
+      </div>
+      <div class="kpi-grid">
+        <div class="kpi"><span class="kpi-label">Operação Global</span><span class="kpi-value excellent">Muito Boa</span><span class="kpi-note">Dia equilibrado</span></div>
+        <div class="kpi"><span class="kpi-label">Volume Operacional</span><span class="kpi-value moderate">500</span><span class="kpi-note">Tickets processados</span></div>
+        <div class="kpi"><span class="kpi-label">Gestão da Pressão</span><span class="kpi-value excellent">Muito Boa</span><span class="kpi-note">Pressão concentrada no almoço</span></div>
+      </div>
+      <div class="kpi-grid">
+        <div class="kpi"><span class="kpi-label">Pico Almoço</span><span class="kpi-value moderate">~3h</span><span class="kpi-note">12h30-15h30</span></div>
+        <div class="kpi"><span class="kpi-label">Pico Jantar</span><span class="kpi-value good">Baixo</span><span class="kpi-note">Sem segundo pico</span></div>
+        <div class="kpi"><span class="kpi-label">Incidentes</span><span class="kpi-value good">1</span><span class="kpi-note">Saída sem pagamento (47€)</span></div>
+      </div>
+      <div class="callout callout-info">
+        <strong>Segunda-feira equilibrada:</strong> pressão praticamente concentrada no período de almoço, ~500 tickets processados e um incidente financeiro pontual (saída de cliente sem liquidação da conta, 47€), com medidas corretivas definidas.
+      </div>
+    </section>
+
+    <section class="page-break">
+      <h2>Síntese Executiva</h2>
+      <p>Dia de movimento moderado, com pressão operacional concentrada no período de almoço. Manhã tranquila, pico entre 12h30 e 15h30 com lotação praticamente completa, e segunda metade do dia bastante mais calma, sem segundo pico significativo ao jantar.</p>
+      <p>Serviço equilibrado, sem incidentes operacionais relevantes, boa resposta da equipa e um único incidente financeiro de saída de cliente sem pagamento, alvo de análise e medidas corretivas.</p>
+
+      <h2>Organização Operacional</h2>
+      <table class="sector-table">
+        <thead><tr><th>Função</th><th>Colaborador</th><th>Notas</th></tr></thead>
+        <tbody>
+          <tr><td>Abertura Restaurante</td><td><strong>Pablo</strong></td><td>Preparação da Sala e do Quiosque dos Gelados.</td></tr>
+          <tr><td>Sala - Manhã/Almoço</td><td><strong>Carolina</strong></td><td>Gestão da Sala durante o período de maior procura.</td></tr>
+          <tr><td>Quiosque dos Gelados</td><td><strong>Lee</strong></td><td>Serviço até 14h30; apoio Sala após essa hora.</td></tr>
+          <tr><td>Reforço Almoço</td><td><strong>Filipe</strong></td><td>Entrada às 12h00; apoio à equipa e ao serviço.</td></tr>
+          <tr><td>Apoio Operacional</td><td><strong>Diogo</strong></td><td>Evolução contínua nas funções de apoio.</td></tr>
+          <tr><td>Fecho</td><td><strong>Filipe, Lil, Diogo</strong></td><td>Encerramento organizado e completo.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="page-break">
+      <h2>Equipa Em Serviço</h2>
+      <div class="panel-grid">
+        <div class="panel">
+          <span class="badge badge-green">Pablo</span>
+          <ul>
+            <li>Abertura do restaurante.</li>
+            <li>Preparação do Quiosque dos Gelados.</li>
+            <li>Garantiu início de dia organizado.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <span class="badge badge-green">Carolina</span>
+          <ul>
+            <li>Entrada às 10h00.</li>
+            <li>Gestão da Sala no almoço.</li>
+            <li>Boa articulação com restante equipa.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <span class="badge badge-blue">Lee</span>
+          <ul>
+            <li>Quiosque dos Gelados até 14h30.</li>
+            <li>Apoio à Sala no pico de almoço.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <span class="badge badge-sky">Filipe</span>
+          <ul>
+            <li>Reforço às 12h00.</li>
+            <li>Suporte no almoço.</li>
+            <li>Participação no fecho.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <span class="badge badge-sky">Diogo</span>
+          <ul>
+            <li>Entrada às 12h00.</li>
+            <li>Evolução consistente como apoio operacional.</li>
+            <li>Participação no fecho.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <span class="badge badge-emerald">Lil</span>
+          <ul>
+            <li>Participação no fecho operacional.</li>
+            <li>Contribuição para encerramento organizado.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-break">
+      <h2>Movimento Operacional</h2>
+      <ul>
+        <li><strong>Manhã</strong> - operação tranquila com aumento gradual da afluência.</li>
+        <li><strong>12h30</strong> - esplanada e sala interior atingem lotação praticamente máxima.</li>
+        <li><strong>12h30-15h30</strong> - principal período de pressão do dia, gerido de forma organizada.</li>
+        <li><strong>Após 15h30</strong> - diminuição progressiva do movimento.</li>
+        <li><strong>17h30 em diante</strong> - ocupação reduzida (15%-20%), serviço tranquilo até ao fecho.</li>
+        <li><strong>Jantar</strong> - sem segundo pico significativo, operação calma.</li>
+      </ul>
+
+      <div class="callout callout-info">
+        <strong>Indicador chave:</strong> cerca de 500 tickets de pedidos processados, concentrados sobretudo no período de almoço.
+      </div>
+
+      <h2>Desempenho da Equipa</h2>
+      <ul>
+        <li>✅ Resposta competente ao único período de maior exigência (almoço).</li>
+        <li>✅ Apoio da Lee na Sala após Quiosque foi decisivo para aliviar a pressão.</li>
+        <li>✅ Diogo em contínua evolução nas funções de apoio operacional.</li>
+        <li>✅ Serviço fluído, organizado e sem erros operacionais relevantes.</li>
+      </ul>
+
+      <h2>Serviço de Jantar</h2>
+      <p>Período de jantar bastante mais tranquilo do que nos dias anteriores, sem momentos de pressão relevante, permitindo preparar o fecho com calma e organização.</p>
+    </section>
+
+    <section class="page-break">
+      <h2>Fecho Operacional</h2>
+      <div class="callout callout-success">
+        <strong>Avaliação do fecho: Muito Boa.</strong> Todas as tarefas concluídas, restaurante preparado para o dia seguinte.
+      </div>
+      <p><strong>Responsáveis:</strong> Filipe, Lil e Diogo.</p>
+
+      <h2>Incidentes Operacionais</h2>
+      <p>Não foram registados incidentes operacionais relevantes ao nível do serviço ao cliente ou da execução técnica das tarefas.</p>
+      <p>Regista-se, no entanto, um incidente financeiro específico, descrito em detalhe na secção de Problemas Identificados.</p>
+
+      <h2>Pontos Positivos</h2>
+      <ul>
+        <li>Boa gestão do único período de elevada pressão do dia.</li>
+        <li>Excelente articulação entre o Quiosque dos Gelados e a Sala.</li>
+        <li>Evolução contínua do Diogo nas funções de apoio operacional.</li>
+        <li>Serviço fluído e sem erros relevantes.</li>
+        <li>Fecho organizado e completo.</li>
+      </ul>
+
+      <h2>Avaliação Geral</h2>
+      <table>
+        <thead><tr><th>Área</th><th>Avaliação</th></tr></thead>
+        <tbody>
+          <tr><td>Operação Global</td><td><strong>Muito Boa</strong></td></tr>
+          <tr><td>Organização Operacional</td><td><strong>Muito Boa</strong></td></tr>
+          <tr><td>Serviço ao Cliente</td><td><strong>Muito Bom</strong></td></tr>
+          <tr><td>Trabalho de Equipa</td><td><strong>Muito Bom</strong></td></tr>
+          <tr><td>Gestão da Pressão</td><td><strong>Muito Boa</strong></td></tr>
+          <tr><td>Fecho Operacional</td><td><strong>Muito Bom</strong></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="page-break">
+      <h2>Indicadores Operacionais</h2>
+      <p>O volume de operação registado ao longo do dia traduziu-se na impressão de aproximadamente <strong>500 tickets de pedidos</strong> através do sistema POS.</p>
+      <p>Embora significativamente inferior aos dias de maior afluência do fim de semana, este valor confirma que, mesmo numa segunda-feira, a operação manteve um nível de atividade consistente durante o período de almoço.</p>
+
+      <h2>Problemas Identificados</h2>
+      <h3>Saída de Cliente sem Liquidação da Conta</h3>
+      <p>Durante o serviço foi identificada uma mesa que abandonou o restaurante sem proceder ao pagamento da respetiva conta, no valor de <strong>47,00 €</strong>.</p>
+      <p>Esta situação refletiu-se diretamente no fecho de caixa do dia e representa um incidente que, infelizmente, não ocorre pela primeira vez.</p>
+      <p>Embora estes episódios sejam pontuais, importa reforçar os procedimentos internos de controlo para minimizar a probabilidade de repetição.</p>
+
+      <h3>Medidas Corretivas</h3>
+      <ul>
+        <li>Reforçar junto de toda a equipa a necessidade de acompanhamento permanente das mesas sob responsabilidade de cada colaborador.</li>
+        <li>Aumentar o nível de atenção durante as fases finais das refeições e momentos de pagamento.</li>
+        <li>Enviar comunicação via grupo de WhatsApp da equipa da Sala, alertando para a necessidade de confirmar o pagamento de todas as mesas antes da sua saída.</li>
+      </ul>
+
+      <div class="callout callout-warning">
+        <strong>Objetivo:</strong> reduzir ao mínimo a ocorrência deste tipo de incidentes, preservando simultaneamente a qualidade do serviço e o acompanhamento normal dos clientes.
+      </div>
+    </section>
+
+    <section class="page-break">
+      <h2>Classificação Para O Sistema RIBBAI OPS</h2>
+      <table>
+        <thead><tr><th>Categoria</th><th>Registo</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Operational Notes</td>
+            <td>Segunda-feira de movimento moderado, pressão concentrada no almoço (12h30-15h30), ausência de segundo pico ao jantar, ocupação reduzida (15%-20%) a partir das 17h30, cerca de 500 tickets de pedidos processados, boa articulação entre Quiosque dos Gelados e Sala, evolução consistente de Diogo.</td>
+          </tr>
+          <tr>
+            <td>Incident Input</td>
+            <td>Saída de cliente sem liquidação de conta (47€); incidente financeiro pontual com impacto direto no fecho de caixa.</td>
+          </tr>
+          <tr>
+            <td>Incident Mitigation Actions</td>
+            <td>Reforço do acompanhamento das mesas; aumento da atenção nas fases finais das refeições e momentos de pagamento; comunicação interna via WhatsApp à equipa da Sala.</td>
+          </tr>
+          <tr>
+            <td>Team Feedback Input</td>
+            <td>Pablo: abertura e preparação do Quiosque; Carolina: gestão da Sala no almoço; Lee: articulação Quiosque/Sala; Filipe: reforço ao almoço e fecho; Diogo: evolução contínua; Lil: participação no fecho.</td>
+          </tr>
+          <tr>
+            <td>Overtime Input</td>
+            <td>Não se registaram horas extra relevantes neste dia.</td>
+          </tr>
+          <tr>
+            <td>Management Notes</td>
+            <td>Monitorizar ocorrência deste tipo de incidentes; reforçar procedimentos de controlo nas fases finais do serviço; utilizar os 500 tickets como referência para comparação com restantes dias da semana.</td>
+          </tr>
+          <tr>
+            <td>Financial Context</td>
+            <td>~500 tickets de pedidos com faturação concentrada no almoço; registo de 47€ em falta por saída sem pagamento; segunda-feira com volume inferior ao fim de semana mas com operação consistente no principal período de procura.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="footer-note">Documento gerado para apresentação diária à gestão. Fonte operacional: Registo Diário Operacional de 06-07-2026. Autor: Filipe Catalão.</p>
+    </section>
+  </body>
+</html>
+

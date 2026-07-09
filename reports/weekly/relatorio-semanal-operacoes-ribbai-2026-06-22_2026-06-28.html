@@ -1,0 +1,1051 @@
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Relatório Semanal de Operações RIBBAI | 22-06-2026 a 28-06-2026</title>
+    <style>
+      @page {
+        size: A4;
+        margin: 14mm 13mm 16mm;
+      }
+
+      :root {
+        --navy: #0e1f35;
+        --navy-2: #173452;
+        --beige: #efe6d6;
+        --beige-2: #faf6ef;
+        --white: #ffffff;
+        --gray: #eef1f4;
+        --gray-2: #d7dde5;
+        --text: #172033;
+        --muted: #657085;
+        --green: #16803c;
+        --yellow: #b7791f;
+        --orange: #c05621;
+        --red: #b91c1c;
+        --blue: #1d4ed8;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--gray);
+        color: var(--text);
+        font-family: Inter, "Segoe UI", Arial, sans-serif;
+        font-size: 11px;
+        line-height: 1.48;
+      }
+
+      main {
+        max-width: 210mm;
+        margin: 0 auto;
+        background: var(--white);
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      h1 {
+        max-width: 145mm;
+        color: var(--white);
+        font-size: 38px;
+        letter-spacing: -0.03em;
+        line-height: 1.02;
+      }
+
+      h2 {
+        margin-bottom: 12px;
+        color: var(--navy);
+        font-size: 20px;
+        letter-spacing: -0.02em;
+      }
+
+      h3 {
+        margin-bottom: 7px;
+        color: var(--navy);
+        font-size: 13px;
+      }
+
+      ul {
+        margin: 8px 0 0;
+        padding-left: 17px;
+      }
+
+      li {
+        margin: 4px 0;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+        font-size: 9.8px;
+      }
+
+      th,
+      td {
+        border-bottom: 1px solid var(--gray-2);
+        padding: 8px 7px;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        background: var(--beige-2);
+        color: var(--navy);
+        font-size: 8px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .cover {
+        height: 226mm;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 14mm 18mm 12mm;
+        background:
+          radial-gradient(circle at 84% 18%, rgba(239, 230, 214, 0.22), transparent 30%),
+          linear-gradient(135deg, var(--navy), #071421 72%);
+        page-break-after: always;
+        page-break-inside: avoid;
+      }
+
+      .logo {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--white);
+        font-weight: 800;
+        letter-spacing: 0.18em;
+      }
+
+      .logo-mark {
+        width: 38px;
+        height: 38px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(255, 255, 255, 0.45);
+        border-radius: 999px;
+        background: rgba(239, 230, 214, 0.12);
+        color: var(--beige);
+        font-size: 14px;
+        letter-spacing: 0;
+      }
+
+      .cover-subtitle {
+        max-width: 120mm;
+        margin-top: 16px;
+        color: rgba(255, 255, 255, 0.78);
+        font-size: 14px;
+      }
+
+      .cover-meta {
+        width: 152mm;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 18px;
+        padding: 12px;
+        background: rgba(255, 255, 255, 0.08);
+        color: var(--white);
+        page-break-inside: avoid;
+      }
+
+      .meta-row {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 12px;
+        padding: 8px 10px;
+      }
+
+      .meta-row span {
+        color: rgba(255, 255, 255, 0.64);
+      }
+
+      .kpi-row {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        margin-top: 12px;
+      }
+
+      .kpi-card {
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 14px;
+        padding: 10px 10px 9px;
+        background: rgba(255, 255, 255, 0.08);
+        color: var(--white);
+      }
+
+      .kpi-label {
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 8px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .kpi-value {
+        margin-top: 6px;
+        font-size: 18px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+      }
+
+      .kpi-note {
+        margin-top: 3px;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 9px;
+      }
+
+      .pill {
+        margin-top: 10px;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 999px;
+        padding: 8px 12px;
+        background: rgba(239, 230, 214, 0.12);
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 10px;
+      }
+
+      .pill-dot {
+        width: 9px;
+        height: 9px;
+        border-radius: 999px;
+        background: rgba(239, 230, 214, 0.9);
+      }
+
+      .page {
+        padding: 12mm 13mm;
+        page-break-after: always;
+      }
+
+      .page:last-child {
+        page-break-after: auto;
+      }
+
+      .section {
+        margin-bottom: 16px;
+        page-break-inside: avoid;
+      }
+
+      .lead {
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .grid {
+        display: grid;
+        gap: 12px;
+      }
+
+      .grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .card {
+        border: 1px solid var(--gray-2);
+        border-radius: 16px;
+        padding: 14px;
+        background: var(--white);
+      }
+
+      .soft {
+        background: var(--beige-2);
+      }
+
+      .kpi span {
+        display: block;
+        color: var(--muted);
+        font-size: 8px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .kpi strong {
+        display: block;
+        margin-top: 6px;
+        color: var(--navy);
+        font-size: 21px;
+      }
+
+      .badge {
+        display: inline-block;
+        border-radius: 999px;
+        padding: 4px 8px;
+        font-size: 9px;
+        font-weight: 800;
+      }
+
+      .excellent {
+        background: #dcfce7;
+        color: var(--green);
+      }
+
+      .good {
+        background: #fef3c7;
+        color: var(--yellow);
+      }
+
+      .attention {
+        background: #ffedd5;
+        color: var(--orange);
+      }
+
+      .risk {
+        background: #fee2e2;
+        color: var(--red);
+      }
+
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        border-radius: 999px;
+        padding: 3px 8px;
+        font-size: 9px;
+        font-weight: 900;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        margin-left: 8px;
+        white-space: nowrap;
+      }
+
+      .tag-excellent {
+        background: #dcfce7;
+        color: var(--green);
+        border: 1px solid rgba(22, 128, 60, 0.22);
+      }
+
+      .tag-good {
+        background: #fef3c7;
+        color: var(--yellow);
+        border: 1px solid rgba(183, 121, 31, 0.22);
+      }
+
+      .tag-attention {
+        background: #ffedd5;
+        color: var(--orange);
+        border: 1px solid rgba(192, 86, 33, 0.22);
+      }
+
+      .level {
+        display: inline-flex;
+        align-items: center;
+        border-radius: 999px;
+        padding: 3px 8px;
+        font-size: 9px;
+        font-weight: 900;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      .level-low {
+        background: #e0f2fe;
+        color: #075985;
+        border: 1px solid rgba(7, 89, 133, 0.18);
+      }
+
+      .level-medium {
+        background: #fef3c7;
+        color: var(--yellow);
+        border: 1px solid rgba(183, 121, 31, 0.22);
+      }
+
+      .level-high {
+        background: #ffedd5;
+        color: var(--orange);
+        border: 1px solid rgba(192, 86, 33, 0.22);
+      }
+
+      .level-max {
+        background: #fee2e2;
+        color: var(--red);
+        border: 1px solid rgba(185, 28, 28, 0.22);
+      }
+
+      .timeline {
+        display: grid;
+        gap: 10px;
+      }
+
+      .day {
+        border: 1px solid var(--gray-2);
+        border-radius: 14px;
+        padding: 10px 12px;
+        background: var(--white);
+      }
+
+      .day strong {
+        display: inline-block;
+        min-width: 58px;
+        color: var(--navy);
+      }
+
+      .day p {
+        margin-top: 6px;
+        color: var(--muted);
+      }
+
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border-radius: 999px;
+        padding: 5px 10px;
+        background: var(--beige-2);
+        border: 1px solid var(--gray-2);
+        font-weight: 800;
+        font-size: 9px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--navy);
+      }
+
+      .dot-blue,
+      .dot-green,
+      .dot-orange,
+      .dot-red {
+        width: 10px;
+        height: 10px;
+        border-radius: 999px;
+      }
+
+      .dot-blue {
+        background: var(--blue);
+      }
+
+      .dot-green {
+        background: var(--green);
+      }
+
+      .dot-orange {
+        background: var(--orange);
+      }
+
+      .dot-red {
+        background: var(--red);
+      }
+
+      .callout {
+        border: 1px solid rgba(14, 31, 53, 0.15);
+        border-left: 4px solid var(--navy);
+        background: var(--beige-2);
+        border-radius: 16px;
+        padding: 12px 14px;
+        color: var(--navy);
+      }
+
+      .callout strong {
+        font-weight: 900;
+      }
+
+      .muted {
+        color: var(--muted);
+      }
+
+      .small {
+        font-size: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="cover">
+        <header>
+          <div class="logo">
+            <span class="logo-mark">RB</span>
+            <span>RIBBAI OPS</span>
+          </div>
+        </header>
+        <div>
+          <h1>Relatório Semanal de Operações</h1>
+          <p class="cover-subtitle">
+            Síntese operacional da semana de 22 a 28 de Junho de 2026, marcada por transição de dias de baixa afluência
+            para um fim de semana de elevada pressão, com Jam Session (26-06), Festa Aperol (27-06) e teste de resiliência
+            por ausência inesperada (28-06).
+          </p>
+        </div>
+        <div class="cover-meta">
+          <div class="meta-row">
+            <strong>Período</strong>
+            <span>22-06-2026 a 28-06-2026</span>
+          </div>
+          <div class="meta-row">
+            <strong>Restaurante</strong>
+            <span>RIBBAI</span>
+          </div>
+          <div class="meta-row">
+            <strong>Chefia de Sala</strong>
+            <span>Filipe Catalão</span>
+          </div>
+          <div class="meta-row">
+            <strong>Relatórios Diários</strong>
+            <span>7 registos (22–28) analisados e cruzados</span>
+          </div>
+          <div class="meta-row">
+            <strong>Fontes cruzadas</strong>
+            <span>
+              Diários (22–28), Inventory Updates (22–26), inventário semanal (23), CMP daily (26), Monthly Overtime Report
+              (Week 4), executive monthly (junho).
+            </span>
+          </div>
+          <div class="meta-row">
+            <strong>Destaques</strong>
+            <span>
+              Integração do Diogo (1.º/2.º dia); estreia da Sofia (25-06); Jam Session; Festa Aperol; reposição de
+              consumíveis; risco recorrente nas bandejas; correções POS pendentes.
+            </span>
+          </div>
+        </div>
+        <div class="kpi-row">
+          <div class="kpi-card">
+            <div class="kpi-label">Nível Geral da Operação</div>
+            <div class="kpi-value">9/10</div>
+            <div class="kpi-note">Semana sólida, com fim de semana muito forte.</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Modelo por Setores</div>
+            <div class="kpi-value">9,5/10</div>
+            <div class="kpi-note">Disciplina e coordenação em alta pressão.</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Resiliência Operacional</div>
+            <div class="kpi-value">9,5/10</div>
+            <div class="kpi-note">Adaptação a ausência inesperada e pressão contínua.</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Horas Extra Semanais</div>
+            <div class="kpi-value">26h20</div>
+            <div class="kpi-note">1 580 minutos · 5 colaboradores.</div>
+          </div>
+        </div>
+        <div class="pill">
+          <span class="pill-dot"></span>
+          Semana com forte crescimento de pressão: estabilidade → eventos → lotação máxima prolongada.
+        </div>
+      </section>
+
+      <section class="page">
+        <div class="section">
+          <h2>1. Resumo Executivo</h2>
+          <p class="lead">
+            A semana 22–28 de Junho apresentou dois blocos distintos: dias iniciais de menor afluência (22, 24 e 25),
+            usados para manutenção, organização e reposição; e um fim de semana (26–28) de elevado movimento e elevada
+            pressão, reforçado por dois eventos (Jam Session e Festa Aperol) e por um cenário de adaptação operacional
+            (28) com ausência inesperada na sala e baixa simultânea na cozinha.
+          </p>
+          <ul>
+            <li><strong>Nível geral da operação:</strong> elevado e consistente, com capacidade comprovada em dias de pressão.</li>
+            <li><strong>Evolução da equipa:</strong> evolução clara dos elementos em integração (Diogo) e maturidade no modelo por setores.</li>
+            <li><strong>Movimento:</strong> fraco a meio da semana (chuva e baixa afluência), muito forte no fim de semana com lotação máxima prolongada.</li>
+            <li><strong>Faturação (qualitativa):</strong> 27 e 28 registados como dias “dos mais fortes do mês” nas fontes diárias.</li>
+            <li><strong>Principais acontecimentos:</strong> Jam Session (26), Festa Aperol (27), teste de resiliência e adaptação (28).</li>
+            <li><strong>Conclusão geral:</strong> semana operacionalmente sólida e madura; principais riscos mantêm-se em equipamento (bandejas) e sistemas (POS/impressões).</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2>2. Resumo Diário</h2>
+          <p class="lead">Tabela síntese com movimento, ocorrências e avaliação operacional por dia (22–28/06).</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Data</th>
+                <th>Nível de Movimento</th>
+                <th>Ocorrências relevantes (evidência)</th>
+                <th>Avaliação operacional</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>22-06 (Seg)</strong></td>
+                <td><span class="level level-low">Baixo</span></td>
+                <td>
+                  1.º dia do Diogo; erros de pedidos corrigidos sem impacto relevante; identificação de necessidade urgente de bandejas.
+                </td>
+                <td>Operação tranquila e organizada; foco em manutenção/limpeza (vidros).</td>
+              </tr>
+              <tr>
+                <td><strong>23-06 (Ter)</strong></td>
+                <td><span class="level level-medium">Médio/Alto</span></td>
+                <td>
+                  Inventário semanal executado; pico de almoço 12h30–16h15 com esplanada praticamente lotada; derrame de bebidas associado a bandejas.
+                </td>
+                <td>Operação fluída e controlada; boa gestão de incidente; evolução marcada do Diogo.</td>
+              </tr>
+              <tr>
+                <td><strong>24-06 (Qua)</strong></td>
+                <td><span class="level level-low">Muito baixo</span></td>
+                <td>Receção e arrumação de encomenda de consumíveis; limpeza de vidros; sem incidentes.</td>
+                <td>Dia de preparação e manutenção; padrões elevados com baixo volume.</td>
+              </tr>
+              <tr>
+                <td><strong>25-06 (Qui)</strong></td>
+                <td><span class="level level-low">Muito baixo</span></td>
+                <td>Uma das quintas-feiras mais fracas do mês; estreia da Sofia; gorjetas expressivas; sem incidentes.</td>
+                <td>Serviço de elevada qualidade e personalizado; dia estável.</td>
+              </tr>
+              <tr>
+                <td><strong>26-06 (Sex)</strong></td>
+                <td><span class="level level-high">Alto</span></td>
+                <td>Modelo por setores aplicado; Jam Session 19h–22h30 com prolongamento do movimento; fecho exigente para preparar sábado.</td>
+                <td>Serviço sólido e bem coordenado; fecho muito exigente com overtime elevado.</td>
+              </tr>
+              <tr>
+                <td><strong>27-06 (Sáb)</strong></td>
+                <td><span class="level level-max">Muito alto</span></td>
+                <td>Esplanada em lotação máxima 12h30–18h30; Festa Aperol 18h30 no terraço; sem incidentes relevantes.</td>
+                <td>Exemplar: maturidade no modelo por setores, coordenação eficaz e forte desempenho comercial.</td>
+              </tr>
+              <tr>
+                <td><strong>28-06 (Dom)</strong></td>
+                <td><span class="level level-max">Muito alto</span></td>
+                <td>Ausência inesperada na sala e baixa na cozinha; lotação quase esgotada 12h30–16h00 e rotação até ~19h00.</td>
+                <td>Resposta exemplar e resiliente; operação fluída e organizada em contexto adverso.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="page">
+        <div class="section">
+          <h2>3. Desempenho Operacional</h2>
+          <div class="grid grid-2">
+            <div class="card">
+              <div class="chip"><span class="dot-green"></span>Modelo por setores</div>
+              <p class="muted" style="margin-top: 8px;">
+                O modelo 50/60/70 + sala interior + quiosque + runner + coordenação mostrou eficácia crescente, sobretudo
+                nos dias de maior pressão (26–28). Observou-se maior disciplina na permanência em setores e comunicação
+                mais eficaz entre funções, com runner a cobrir pausas e apoiar sectores quando necessário.
+              </p>
+              <ul>
+                <li><strong>26-06:</strong> aplicação por setores com coordenação e supervisão ativa; Jam Session prolongou movimento noturno.</li>
+                <li><strong>27-06:</strong> lotação máxima prolongada, com setores claros e gestão de porta dedicada.</li>
+                <li><strong>28-06:</strong> setores mantidos mesmo com ausência inesperada, reforçando robustez do modelo.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <div class="chip"><span class="dot-blue"></span>Coordenação e capacidade de resposta</div>
+              <p class="muted" style="margin-top: 8px;">
+                A coordenação manteve-se estável em dias calmos (22, 24 e 25) e escalou bem em dias de pressão. O caso
+                28-06 destaca-se como teste de resiliência: início com abertura a solo e pressão elevada, sem falhas
+                relevantes reportadas.
+              </p>
+              <ul>
+                <li><strong>Gestão de pausas:</strong> runner e coordenação asseguraram cobertura em picos (26–28).</li>
+                <li><strong>Qualidade sob pressão:</strong> ausência de incidentes relevantes em 24–28 (exceto incidente menor em 23 e erros de aprendizagem em 22).</li>
+                <li><strong>Eficiência:</strong> capacidade de manter fluidez em períodos longos de ocupação elevada (27 e 28).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>4. Avaliação da Equipa (apenas acontecimentos relevantes)</h2>
+          <div class="grid grid-2">
+            <div class="card soft">
+              <h3>Diogo <span class="tag tag-good">Evolução</span></h3>
+              <ul>
+                <li><strong>Evolução:</strong> do 1.º dia (22) para o 2.º dia (23) com redução substancial de erros e maior leitura do serviço.</li>
+                <li><strong>Integração:</strong> comunicação positiva com clientes e colegas; postura responsável na gestão de incidente (23).</li>
+                <li><strong>Necessidades:</strong> manter limitação gradual de autonomia em registo de pedidos em picos, conforme recomendação do dia 22.</li>
+              </ul>
+            </div>
+            <div class="card soft">
+              <h3>Lee <span class="tag tag-good">Runner</span></h3>
+              <ul>
+                <li><strong>Papel:</strong> runner consistente, com boa leitura de serviço (26 e 28).</li>
+                <li><strong>Impacto:</strong> cobertura de pausas e apoio transversal como estabilizador operacional (28).</li>
+                <li><strong>Próximo passo:</strong> consolidar autonomia em rotinas de suporte e comunicação intra-equipa em dias de pressão.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Sofia <span class="tag tag-good">Integração</span></h3>
+              <ul>
+                <li><strong>Integração:</strong> estreia positiva (25) com boa aprendizagem/proatividade; quiosque em dia de forte exigência (27 e 28).</li>
+                <li><strong>Necessidades:</strong> reforçar consolidação de procedimentos fora do contexto “calmo” do 1.º dia.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Matilde <span class="tag tag-excellent">Destaque</span></h3>
+              <ul>
+                <li><strong>Interior:</strong> destaque na gestão integral da sala interior em dia de elevada pressão (28).</li>
+                <li><strong>Fechos:</strong> responsabilidade recorrente no fecho com overtime (24–28).</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Lil <span class="tag tag-excellent">Destaque</span></h3>
+              <ul>
+                <li><strong>Gestão sob pressão:</strong> papel relevante em dias de elevada pressão (27–28), mantendo estabilidade operacional no modelo por setores.</li>
+                <li><strong>Resiliência:</strong> assegurou a abertura do dia 28 em contexto de ausência inesperada, estabilizando o serviço até à equipa completa.</li>
+                <li><strong>Fecho:</strong> participação em fecho e organização final em dias chave (ex.: 27), com contributo visível para preparação do dia seguinte.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Pablo <span class="tag tag-good">Proatividade</span></h3>
+              <ul>
+                <li><strong>Proatividade:</strong> abertura e preparação autónomas (23 e 24) e contributo para estabilidade da operação.</li>
+                <li><strong>Operação:</strong> cobertura operacional permitiu execução de tarefas estruturais (inventário semanal em 23).</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Bruno <span class="tag tag-excellent">Destaque</span></h3>
+              <ul>
+                <li><strong>Operação:</strong> papel relevante em dias chave (24–27), incluindo abertura, apoio transversal e execução de tarefas estruturais (limpeza e organização).</li>
+                <li><strong>Alta pressão:</strong> contribuição direta para a estabilidade do serviço em dia de lotação máxima (27).</li>
+                <li><strong>Risco observado:</strong> a ausência inesperada no dia 28 evidenciou dependência operacional em dias de pressão, reforçando necessidade de redundância.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Carolina <span class="tag tag-excellent">Destaque</span></h3>
+              <ul>
+                <li><strong>Setores e consistência:</strong> estabilidade em contexto de elevada rotação (26–28), com responsabilidade clara no setor 70.</li>
+                <li><strong>Fechos:</strong> presença recorrente no fecho e preparação, com maior volume de overtime semanal (Week 4).</li>
+                <li><strong>Fiabilidade:</strong> desempenho consistente em dias calmos e em dias de elevada pressão.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="page">
+        <div class="section">
+          <h2>5. Formação e Integração (Lee, Diogo)</h2>
+          <div class="grid grid-2">
+            <div class="card">
+              <div class="chip"><span class="dot-blue"></span>Lee</div>
+              <p class="muted" style="margin-top: 8px;">
+                Na semana em análise, a Lee teve registos qualitativos consistentes como runner (26 e 28), com boa leitura do
+                serviço, disponibilidade para apoiar colegas e contribuição para estabilidade operacional em picos.
+              </p>
+              <ul>
+                <li><strong>Evolução:</strong> consolidação do papel de runner e cobertura de pausas.</li>
+                <li><strong>Integração:</strong> reforço do “ritmo de equipa” em picos prolongados.</li>
+                <li><strong>Próximos passos:</strong> reforçar comunicação de prioridades e antecipação de necessidades entre setores.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <div class="chip"><span class="dot-green"></span>Diogo</div>
+              <p class="muted" style="margin-top: 8px;">
+                Diogo inicia integração na sala com evidência de evolução rápida entre 22 e 23, mantendo atitude positiva e
+                melhoria de performance operacional; em 26 já é descrito com evolução significativa e redução clara de erros.
+              </p>
+              <ul>
+                <li><strong>Autonomia:</strong> progressiva e suportada, com recomendação de prudência em registo de pedidos em picos (22).</li>
+                <li><strong>Comunicação:</strong> descrita como positiva com clientes e colegas.</li>
+                <li><strong>Próximos passos:</strong> consolidação de pedidos/contas em períodos controlados e reforço de rotinas de serviço.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>6. Movimento Comercial</h2>
+          <div class="grid grid-2">
+            <div class="card">
+              <h3>Dias mais fortes / mais fracos</h3>
+              <ul>
+                <li><strong>Mais fortes:</strong> 27-06 e 28-06 (descritos como dos mais fortes do mês em faturação, qualitativamente).</li>
+                <li><strong>Mais fracos:</strong> 25-06 (chuva; uma das quintas-feiras mais fracas do mês) e 24-06 (volume reduzido).</li>
+              </ul>
+              <h3 style="margin-top: 12px;">Horários críticos</h3>
+              <ul>
+                <li><strong>23-06:</strong> 12h30–16h15 (pico de almoço prolongado).</li>
+                <li><strong>27-06:</strong> 12h30–18h30 (lotação máxima prolongada) + 18h30 (Festa Aperol).</li>
+                <li><strong>28-06:</strong> 12h30–16h00 (pico) + rotação intensa até ~19h00.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Eventos</h3>
+              <ul>
+                <li><strong>Jam Session (26-06):</strong> 19h–22h30, com prolongamento do movimento e consumo constante durante atuação.</li>
+                <li><strong>Festa Aperol (27-06):</strong> início ~18h30 no terraço, prolongando fluxo até período dos jantares.</li>
+              </ul>
+              <div class="callout" style="margin-top: 12px;">
+                <strong>Campeonato de Surf:</strong> não consta nos registos diários do período 22–28. O evento é referido
+                nos diários 20–21 (fora do período desta semana).
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="page">
+        <div class="section">
+          <h2>7. Horas Extra</h2>
+          <p class="lead">
+            Análise baseada no Monthly Overtime Report de junho (Week 4: 22/06–28/06) e cruzamento com causas descritas nos
+            diários.
+          </p>
+          <div class="grid grid-2" style="margin-top: 10px;">
+            <div class="card kpi">
+              <span>Total semanal</span><strong>26h20</strong>
+              <p>1 580 minutos registados. Principais picos associados a fecho/preparação e eventos.</p>
+            </div>
+            <div class="card kpi">
+              <span>Concentração</span><strong>26–28</strong>
+              <p>Overtime concentra-se no fim de semana, com fecho exigente (26) e fechos prolongados (27–28).</p>
+            </div>
+          </div>
+
+          <h3 style="margin-top: 12px;">Tabela por colaborador (Week 4)</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Colaborador</th>
+                <th>Horas Extra</th>
+                <th>Motivo predominante (fontes)</th>
+                <th>Observações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Carolina</strong></td>
+                <td>7,83 h</td>
+                <td>Fechos e preparação (24–28), com pico em 26 (fecho exigente e preparação para sábado).</td>
+                <td>Presença consistente nos fechos e estabilidade em setores de elevada rotação.</td>
+              </tr>
+              <tr>
+                <td><strong>Matilde</strong></td>
+                <td>7,83 h</td>
+                <td>Fechos e preparação (24–28), com destaque 26 (preparação para sábado) e 28 (fecho após pressão contínua).</td>
+                <td>Gestão integral da sala interior em 28 reforça impacto operacional além do overtime.</td>
+              </tr>
+              <tr>
+                <td><strong>Filipe Catalão</strong></td>
+                <td>7,08 h</td>
+                <td>Coordenação + fecho (22–23) e sobretudo 26–28 (fecho/preparação/eventos).</td>
+                <td>Maior volume de overtime semanal no fecho exigente de 26 (3h30).</td>
+              </tr>
+              <tr>
+                <td><strong>Lil</strong></td>
+                <td>2,58 h</td>
+                <td>Fecho/apoio operacional (22, 23 e 27).</td>
+                <td>Em 27 regista 1h20 por fecho; em 22–23 pequenas extensões de turno.</td>
+              </tr>
+              <tr>
+                <td><strong>Bruno</strong></td>
+                <td>1,00 h</td>
+                <td>Pausa reduzida + prolongamento do turno (27).</td>
+                <td>Sem overtime no resto do período 22–28 de acordo com Week 4 do relatório mensal.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="callout">
+            <strong>Recomendações:</strong> monitorizar overtime por causa (pressão/eventos/fecho/preparação) e reduzir overtime evitável
+            através de (i) reforço de planeamento de fecho em dias de eventos, (ii) checklists de preparação para sábado e (iii) cobertura
+            de pausas com runner definido.
+          </div>
+        </div>
+      </section>
+
+      <section class="page">
+        <div class="section">
+          <h2>8. Gestão de Inventário</h2>
+          <p class="lead">
+            Síntese baseada em Inventory Updates 22–24, inventário semanal (23), métricas/alertas e CMP daily (26).
+          </p>
+
+          <div class="grid grid-2">
+            <div class="card">
+              <div class="chip"><span class="dot-green"></span>Entradas e reforço de stock</div>
+              <ul>
+                <li><strong>22-06:</strong> entrada registada (2 artigos; 13 unidades) — Cheiro Urinol (+12) e Box POKE + Tampas (+1).</li>
+                <li><strong>23-06:</strong> entrada registada (11 artigos; 19 unidades) com novos itens de limpeza e consumíveis.</li>
+                <li><strong>24-06:</strong> entrega de consumíveis (18 artigos; 105 unidades) com custo total de <strong>680,62 €</strong>.</li>
+              </ul>
+              <p class="muted small" style="margin-top: 8px;">
+                Nota: as entradas de 22 e 23 constam com valor 0,00 € nas fontes, limitando análise financeira completa dessas
+                duas entregas.
+              </p>
+            </div>
+            <div class="card">
+              <div class="chip"><span class="dot-blue"></span>Estado do inventário e riscos</div>
+              <ul>
+                <li><strong>Inventário semanal (23-06):</strong> 36 itens contados; valor total 166,03; variância total -97,47.</li>
+                <li><strong>Alertas (22-06):</strong> sem alertas de stock baixo ou rutura.</li>
+                <li><strong>Alertas (23-06):</strong> 11 artigos em estado crítico (limiar atingido) — exemplos: palhinhas, rolos impressora, rolos TNT, sacos vidro, box 750ml.</li>
+                <li><strong>Alertas (24-06):</strong> mantém-se 1 crítico (Lixívia forte).</li>
+                <li><strong>CMP daily (26-06):</strong> Stock Baixo 1; Stock Zero 0; Valor Total Stock 1218,39 €.</li>
+              </ul>
+              <div class="callout" style="margin-top: 10px;">
+                <strong>Ruturas:</strong> não foram registadas ruturas nas fontes analisadas (Stock Zero = 0 no CMP daily de 26-06; 22-06 sem alertas de rutura).
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>9. Custos Operacionais (CMP / compras)</h2>
+          <div class="grid grid-2">
+            <div class="card">
+              <h3>Dados disponíveis</h3>
+              <ul>
+                <li><strong>Compra 24-06:</strong> 680,62 € (105 unidades; 18 artigos).</li>
+                <li><strong>Acumulado junho (até 24-06):</strong> 845,04 € (movimentos IN: 54; quantidade comprada: 280,5).</li>
+                <li><strong>Valor total de stock (CMP daily 26-06):</strong> 1218,39 €.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Limitações / transparência</h3>
+              <p class="muted">
+                As entradas de stock de 22-06 e 23-06 surgem com valor total 0,00 € nas fontes (fornecedor “a definir”),
+                pelo que a análise de custos semanais completa fica parcialmente limitada. O relatório semanal apresentará
+                custos apenas onde existem valores explícitos (ex.: 24-06 e métricas acumuladas).
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="page">
+        <div class="section">
+          <h2>10. Problemas Identificados</h2>
+          <div class="grid grid-2">
+            <div class="card">
+              <div class="chip"><span class="dot-orange"></span>Infraestruturas</div>
+              <ul>
+                <li><strong>Bandejas de serviço:</strong> empenadas, instáveis e com risco aumentado de acidentes (identificado em 22 e reforçado em 23, 26, 27 e 28).</li>
+              </ul>
+            </div>
+            <div class="card">
+              <div class="chip"><span class="dot-red"></span>Sistemas</div>
+              <ul>
+                <li><strong>POS:</strong> correções pendentes (26): apontamentos no “Lombo de Salmão”, impressões duplicadas bar interior, legibilidade tickets cafés, configuração da “Picanha”.</li>
+                <li><strong>Double printings:</strong> ocorrências aleatórias sobretudo em cafés e tickets pouco claros (27 e 28).</li>
+              </ul>
+            </div>
+          </div>
+          <div class="card" style="margin-top: 12px;">
+            <div class="chip"><span class="dot-blue"></span>Operação</div>
+            <ul>
+              <li><strong>Aprendizagem (22):</strong> erros de pedidos associados à fase inicial de integração (Lee/Diogo); recomendação de limitar registo autónomo em picos.</li>
+              <li><strong>Pressão prolongada:</strong> necessidade de protocolos de fecho e preparação em dias com eventos e lotação máxima (26–28).</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>11. Ações Corretivas Implementadas</h2>
+          <ul>
+            <li><strong>Lavagem de pufes:</strong> concluída com sucesso (23-06), necessidade identificada há semanas.</li>
+            <li><strong>Inventário semanal:</strong> contagem semanal de consumíveis realizada (23-06) e registos atualizados.</li>
+            <li><strong>Reforço de stock:</strong> entradas de stock registadas (22, 23 e 24), com reposição estruturada de consumíveis.</li>
+            <li><strong>Manutenção/limpeza:</strong> limpeza integral de vidros e preparação do espaço em dias de baixa afluência (22–24).</li>
+            <li><strong>Gestão de incidentes:</strong> erro de derrame (23) e erros de pedidos (22) corrigidos sem impacto relevante e sem reclamações formais.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="page">
+        <div class="section">
+          <h2>12. Prioridades para a Semana Seguinte</h2>
+          <div class="grid grid-2">
+            <div class="card">
+              <h3>Prioridade Alta</h3>
+              <ul>
+                <li><strong>Substituição de bandejas</strong> — impacto: segurança e eficiência; urgência: alta; benefício: redução de incidentes e maior confiança da equipa.</li>
+                <li><strong>Correções POS / impressões</strong> — impacto: qualidade e velocidade; urgência: alta; benefício: menos erros e melhor execução de cafetaria.</li>
+                <li><strong>Plano de contingência para ausências</strong> — impacto: resiliência; urgência: alta; benefício: estabilidade em dias de elevada afluência.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Prioridade Média</h3>
+              <ul>
+                <li><strong>Menu (pendências)</strong> — impacto: comercial e operação; urgência: média; benefício: maior consistência (sangrias, espumantes, menu brunch).</li>
+                <li><strong>Inventário: críticos e reorder points</strong> — impacto: risco de rutura; urgência: média; benefício: reduzir “críticos” recorrentes (take-away, rolos impressora).</li>
+                <li><strong>Treino progressivo (Diogo)</strong> — impacto: autonomia; urgência: média; benefício: reduzir necessidade de supervisão em picos.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="card" style="margin-top: 12px;">
+            <h3>Prioridade Baixa</h3>
+            <ul>
+              <li><strong>Checklist de manutenção preventiva</strong> para dias de baixa afluência — impacto: consistência; urgência: baixa; benefício: espaço sempre preparado.</li>
+              <li><strong>Rotinas de briefing pós-evento</strong> — impacto: melhoria contínua; urgência: baixa; benefício: institucionalizar aprendizagem (Jam/Aperol).</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>13. Indicadores da Semana (dashboard executivo)</h2>
+          <div class="grid grid-3">
+            <div class="card kpi">
+              <span>Dias de elevada pressão</span><strong>3</strong>
+              <p>26, 27 e 28 com movimento alto a muito alto (eventos e lotação prolongada).</p>
+            </div>
+            <div class="card kpi">
+              <span>Dias tranquilos</span><strong>3</strong>
+              <p>22, 24 e 25 com baixa afluência e foco em manutenção/organização.</p>
+            </div>
+            <div class="card kpi">
+              <span>Eventos realizados</span><strong>2</strong>
+              <p>Jam Session (26) e Festa Aperol (27).</p>
+            </div>
+            <div class="card kpi">
+              <span>Entradas de stock</span><strong>3</strong>
+              <p>Entradas registadas em 22, 23 e 24 (reforço consumíveis).</p>
+            </div>
+            <div class="card kpi">
+              <span>Horas extra totais</span><strong>26h20</strong>
+              <p>1 580 minutos em Week 4 (5 colaboradores).</p>
+            </div>
+            <div class="card kpi">
+              <span>Incidentes registados</span><strong>2</strong>
+              <p>Erros de pedidos (22) e derrame de bebidas (23), ambos resolvidos sem reclamações formais.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>14. Conclusão Executiva</h2>
+          <p class="lead">
+            A semana correu de forma globalmente muito positiva. A equipa evoluiu de forma visível, tanto na integração de
+            novos elementos como na maturidade do modelo operacional por setores. O modelo continua a melhorar e a provar
+            robustez em cenários de elevada pressão, incluindo eventos e ausências inesperadas.
+          </p>
+          <ul>
+            <li><strong>Como correu a semana?</strong> Operação sólida, com fim de semana muito forte e dias calmos bem aproveitados.</li>
+            <li><strong>A equipa evoluiu?</strong> Sim — evidência clara de evolução do Diogo e consolidação do papel de runner (Lee).</li>
+            <li><strong>O modelo operacional continua a melhorar?</strong> Sim — melhor disciplina em setores e boa coordenação em lotação máxima.</li>
+            <li><strong>Existem riscos relevantes?</strong> Sim — bandejas (segurança), POS/impressões (qualidade/eficiência), e pressão em fechos/eventos (overtime).</li>
+            <li><strong>Objetivos para a próxima semana:</strong> resolver bandejas e POS, reduzir overtime evitável e reforçar contingências para ausências.</li>
+          </ul>
+          <div class="callout" style="margin-top: 12px;">
+            <strong>Mensagem à Administração:</strong> a operação demonstra maturidade e capacidade de absorver pressão prolongada sem degradação
+            relevante da experiência do cliente. A prioridade imediata é remover riscos evitáveis (equipamento e sistemas) para proteger segurança,
+            eficiência e consistência em dias de grande afluência.
+          </div>
+          <p class="muted small" style="margin-top: 10px;">
+            Documento preparado para Gestão e Administração. Período: 22–28/06/2026. Fontes: relatórios diários, inventory updates, CMP daily,
+            inventário semanal, monthly overtime report (Week 4), relatórios executivos mensais.
+          </p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
+

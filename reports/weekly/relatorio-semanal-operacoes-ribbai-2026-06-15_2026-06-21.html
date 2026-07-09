@@ -1,0 +1,881 @@
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Relatório Semanal de Operações RIBBAI | 15-06-2026 a 21-06-2026</title>
+    <style>
+      @page {
+        size: A4;
+        margin: 14mm 13mm 16mm;
+      }
+
+      :root {
+        --navy: #0e1f35;
+        --navy-2: #173452;
+        --beige: #efe6d6;
+        --beige-2: #faf6ef;
+        --white: #ffffff;
+        --gray: #eef1f4;
+        --gray-2: #d7dde5;
+        --text: #172033;
+        --muted: #657085;
+        --green: #16803c;
+        --yellow: #b7791f;
+        --orange: #c05621;
+        --red: #b91c1c;
+        --blue: #1d4ed8;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--gray);
+        color: var(--text);
+        font-family:
+          Inter, "Segoe UI", Arial, sans-serif;
+        font-size: 11px;
+        line-height: 1.48;
+      }
+
+      main {
+        max-width: 210mm;
+        margin: 0 auto;
+        background: var(--white);
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      h1 {
+        max-width: 145mm;
+        color: var(--white);
+        font-size: 38px;
+        letter-spacing: -0.03em;
+        line-height: 1.02;
+      }
+
+      h2 {
+        margin-bottom: 12px;
+        color: var(--navy);
+        font-size: 20px;
+        letter-spacing: -0.02em;
+      }
+
+      h3 {
+        margin-bottom: 7px;
+        color: var(--navy);
+        font-size: 13px;
+      }
+
+      ul {
+        margin: 8px 0 0;
+        padding-left: 17px;
+      }
+
+      li {
+        margin: 4px 0;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+        font-size: 9.8px;
+      }
+
+      th,
+      td {
+        border-bottom: 1px solid var(--gray-2);
+        padding: 8px 7px;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        background: var(--beige-2);
+        color: var(--navy);
+        font-size: 8px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .cover {
+        height: 226mm;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 14mm 18mm 12mm;
+        background:
+          radial-gradient(circle at 84% 18%, rgba(239, 230, 214, 0.22), transparent 30%),
+          linear-gradient(135deg, var(--navy), #071421 72%);
+        page-break-after: always;
+        page-break-inside: avoid;
+      }
+
+      .logo {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--white);
+        font-weight: 800;
+        letter-spacing: 0.18em;
+      }
+
+      .logo-mark {
+        width: 38px;
+        height: 38px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(255, 255, 255, 0.45);
+        border-radius: 999px;
+        background: rgba(239, 230, 214, 0.12);
+        color: var(--beige);
+        font-size: 14px;
+        letter-spacing: 0;
+      }
+
+      .cover-subtitle {
+        max-width: 112mm;
+        margin-top: 16px;
+        color: rgba(255, 255, 255, 0.78);
+        font-size: 14px;
+      }
+
+      .cover-meta {
+        width: 146mm;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 18px;
+        padding: 12px;
+        background: rgba(255, 255, 255, 0.08);
+        color: var(--white);
+        page-break-inside: avoid;
+      }
+
+      .meta-row {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 12px;
+        padding: 8px 10px;
+      }
+
+      .meta-row span {
+        color: rgba(255, 255, 255, 0.64);
+      }
+
+      .page {
+        padding: 12mm 13mm;
+        page-break-after: always;
+      }
+
+      .page:last-child {
+        page-break-after: auto;
+      }
+
+      .section {
+        margin-bottom: 16px;
+        page-break-inside: avoid;
+      }
+
+      .lead {
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .grid {
+        display: grid;
+        gap: 12px;
+      }
+
+      .grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        border-radius: 999px;
+        padding: 4px 9px;
+        background: rgba(239, 230, 214, 0.16);
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 9px;
+      }
+
+      .pill-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 999px;
+        background: #4ade80;
+      }
+
+      .kpi-row {
+        display: flex;
+        gap: 10px;
+        margin-top: 18px;
+      }
+
+      .kpi-card {
+        flex: 1;
+        border-radius: 14px;
+        padding: 9px 11px;
+        background: rgba(239, 230, 214, 0.13);
+        color: rgba(255, 255, 255, 0.88);
+      }
+
+      .kpi-label {
+        font-size: 9px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .kpi-value {
+        margin-top: 3px;
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      .kpi-note {
+        margin-top: 2px;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 9px;
+      }
+
+      .card {
+        border: 1px solid var(--gray-2);
+        border-radius: 16px;
+        padding: 14px;
+        background: var(--white);
+      }
+
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        margin-bottom: 6px;
+        border-radius: 999px;
+        padding: 3px 8px;
+        background: var(--gray);
+        color: var(--navy-2);
+        font-size: 9px;
+        font-weight: 500;
+      }
+
+      .dot-green {
+        width: 7px;
+        height: 7px;
+        border-radius: 999px;
+        background: var(--green);
+      }
+
+      .dot-blue {
+        width: 7px;
+        height: 7px;
+        border-radius: 999px;
+        background: var(--blue);
+      }
+
+      .dot-yellow {
+        width: 7px;
+        height: 7px;
+        border-radius: 999px;
+        background: var(--yellow);
+      }
+
+      .pill-kpi {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        border-radius: 999px;
+        padding: 2px 7px;
+        background: #dcfce7;
+        color: #166534;
+        font-size: 9px;
+        font-weight: 600;
+      }
+
+      .badge {
+        display: inline-block;
+        border-radius: 999px;
+        padding: 4px 8px;
+        font-size: 9px;
+        font-weight: 800;
+      }
+
+      .excellent {
+        background: #dcfce7;
+        color: var(--green);
+      }
+
+      .good {
+        background: #fef3c7;
+        color: var(--yellow);
+      }
+
+      .attention {
+        background: #ffedd5;
+        color: var(--orange);
+      }
+
+      .critical {
+        background: #fee2e2;
+        color: var(--red);
+      }
+
+      .timeline {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 8px;
+      }
+
+      .day {
+        min-height: 96px;
+        border: 1px solid var(--gray-2);
+        border-radius: 14px;
+        padding: 10px;
+        background: var(--white);
+      }
+
+      .day strong {
+        display: block;
+        margin-bottom: 5px;
+        color: var(--navy);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="cover">
+        <header>
+          <div class="logo">
+            <span class="logo-mark">RB</span>
+            <span>RIBBAI OPS</span>
+          </div>
+        </header>
+        <div>
+          <h1>Relatório Semanal de Operações</h1>
+          <p class="cover-subtitle">
+            Síntese operacional da semana de 15 a 21 de Junho de 2026, com foco na implementação do novo menu,
+            consolidação do modelo por setores e gestão de picos de afluência relacionados com o Sumol Local Legends.
+          </p>
+        </div>
+        <div class="cover-meta">
+          <div class="meta-row">
+            <strong>Período</strong>
+            <span>15-06-2026 a 21-06-2026</span>
+          </div>
+          <div class="meta-row">
+            <strong>Restaurante</strong>
+            <span>RIBBAI</span>
+          </div>
+          <div class="meta-row">
+            <strong>Chefia de Sala</strong>
+            <span>Filipe Catalão</span>
+          </div>
+          <div class="meta-row">
+            <strong>Relatórios Diários</strong>
+            <span>15 a 21 de Junho registados em detalhe</span>
+          </div>
+          <div class="meta-row">
+            <strong>Destaques</strong>
+            <span>
+              Novo menu;&nbsp; modelo por setores validado;&nbsp; consolidação da autonomia da equipa;&nbsp;
+              eventos Sumol Local Legends e Harley-Davidson.
+            </span>
+          </div>
+        </div>
+        <div class="kpi-row">
+          <div class="kpi-card">
+            <div class="kpi-label">Sucesso Operacional</div>
+            <div class="kpi-value">9/10</div>
+            <div class="kpi-note">Semana forte sob pressão constante.</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Adaptação e Aprendizagem</div>
+            <div class="kpi-value">9,5/10</div>
+            <div class="kpi-note">Novo menu estabilizado em 2 dias.</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Trabalho de Equipa</div>
+            <div class="kpi-value">9,5/10</div>
+            <div class="kpi-note">Autonomia crescente e boa coordenação.</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Horas Extra Semanais</div>
+            <div class="kpi-value">28h25</div>
+            <div class="kpi-note">1 705 minutos · 7 colaboradores.</div>
+          </div>
+        </div>
+        <div class="pill">
+          <span class="pill-dot"></span>
+          Semana de consolidação estrutural e testes ao limite do modelo operacional da sala.
+        </div>
+      </section>
+
+      <section class="page">
+        <div class="section">
+          <h2>1. Síntese Semanal</h2>
+          <p class="lead">
+            Semana marcada por três eixos principais: (1) implementação e estabilização do novo menu; (2) consolidação
+            do modelo operacional por setores com runner dedicado; (3) gestão de picos de afluência relacionados com o
+            Campeonato Sumol Local Legends e com o Encontro Europeu Harley-Davidson.
+          </p>
+          <ul>
+            <li>
+              <strong>15-06 (segunda-feira)</strong> — dia calmo, dedicado a manutenção, organização e preparação;
+              primeiro fecho totalmente autónomo do Filipe, com overtime moderado (Filipe e Lil).
+            </li>
+            <li>
+              <strong>16-06 (terça-feira)</strong> — um dos maiores testes operacionais recentes: chegada quase
+              simultânea de ~70 clientes; resposta eficaz com reorganização imediata da sala e definição de protocolos
+              para grandes grupos.
+            </li>
+            <li>
+              <strong>17-06 (quarta-feira)</strong> — dia estável com foco em melhorias tecnológicas (sistema de
+              pedidos, ecrã e impressora adicionais) e um incidente de RH sem impacto relevante na experiência do
+              cliente.
+            </li>
+            <li>
+              <strong>18-06 (quinta-feira)</strong> — operação sem chefia de sala formal; equipa funciona de forma
+              autónoma, com incidente técnico nos vidros laterais resolvido por Carolina e Lil; 4h30 de horas extra
+              concentradas no fecho.
+            </li>
+            <li>
+              <strong>19-06 (sexta-feira)</strong> — integração operacional da Lee e Jam Session com impacto muito
+              positivo na experiência dos clientes; fecho prolongado de Carolina e Bruno (+2h30 cada).
+            </li>
+            <li>
+              <strong>20-06 (sábado)</strong> — primeiro dia completo do novo menu, forte impacto do Sumol Local
+              Legends e presença Harley-Davidson; dia mais exigente da semana, com erros pontuais mas serviço
+              globalmente sólido; 8h00 de horas extra (Lil, Carolina e Bruno).
+            </li>
+            <li>
+              <strong>21-06 (domingo)</strong> — melhor demonstração prática do modelo por setores até à data; pico
+              extremo de almoço absorvido com excelência e segundo dia de novo menu já bastante estabilizado.
+            </li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2>2. Temas Centrais da Semana</h2>
+          <div class="grid grid-2">
+            <div class="card">
+              <div class="chip">
+                <span class="dot-blue"></span>
+                Novo Menu e POS
+              </div>
+              <p>
+                O novo menu foi o principal foco estrutural da semana. O primeiro dia completo (20-06) expôs falhas de
+                preparação: ausência de briefing formal, inconsistências no POS, dúvidas em acompanhamentos e
+                comunicação pouco alinhada entre cozinha e sala.
+              </p>
+              <p>
+                No segundo dia (21-06) registou-se evolução muito positiva: pratos uniformizados no sistema, cozinha já
+                segura na confeção, remoção de artigos antigos do POS e redução substancial das dúvidas operacionais.
+              </p>
+              <p>
+                Permanecem pendentes questões comerciais associadas ao menu Pequeno-Almoço / Brunch e à coexistência de
+                artigos com preços distintos, bem como algumas tarefas de imagem (lavagem de pufes e almofadas da
+                esplanada).
+              </p>
+            </div>
+            <div class="card">
+              <div class="chip">
+                <span class="dot-green"></span>
+                Modelo Operacional por Setores
+              </div>
+              <p>
+                O modelo de posições fixas, com setores 50/60/70, sala interior autónoma, runner principal e
+                coordenação centralizada, foi aplicado de forma sistemática sobretudo a partir de 20 e 21 de Junho.
+              </p>
+              <p>
+                O dia 21-06 é, até ao momento, o melhor exemplo prático da eficácia deste modelo: pico de almoço com
+                interior e esplanada esgotados, fila constante de 5–6 mesas e rotação adicional de 33 mesas geridas sem
+                perda significativa de qualidade de serviço.
+              </p>
+              <p>
+                Recomenda-se a adoção deste modelo como referência para fins de semana, feriados e períodos de elevada
+                procura.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="page">
+        <div class="section">
+          <h2>3. Resumo Operacional da Semana</h2>
+          <div class="timeline">
+            <div class="day">
+              <strong>15-06</strong><span class="badge good">Gestão &amp; Manutenção</span>
+              <p>Dia calmo, focado em manutenção, organização e preparação; primeiro fecho integral autónomo do Filipe com overtime moderado.</p>
+            </div>
+            <div class="day">
+              <strong>16-06</strong><span class="badge attention">Crise Almoço</span>
+              <p>Chegada quase simultânea de ~70 clientes; um dos maiores testes operacionais recentes, com resposta eficaz e definição de protocolos para grandes grupos.</p>
+            </div>
+            <div class="day">
+              <strong>17-06</strong><span class="badge excellent">Tecnologia &amp; Estabilidade</span>
+              <p>Dia estável com foco em melhorias tecnológicas no sistema de pedidos, instalação de ecrã e impressora adicionais e operação controlada.</p>
+            </div>
+            <div class="day">
+              <strong>18-06</strong><span class="badge attention">Autonomia &amp; Incidente Técnico</span>
+              <p>Operação sem chefia de sala formal, equipa a “reinar no caos” com boa autonomia; incidente nos vidros laterais resolvido com fecho prolongado de Carolina e Lil.</p>
+            </div>
+            <div class="day">
+              <strong>19-06</strong><span class="badge good">Integração &amp; Jam</span>
+              <p>Integração operacional da Lee e Jam Session com forte impacto positivo na experiência dos clientes; fecho prolongado de Carolina e Bruno.</p>
+            </div>
+            <div class="day">
+              <strong>20-06</strong><span class="badge attention">Novo Menu &amp; Eventos</span>
+              <p>Primeiro dia completo do novo menu, forte impacto do Sumol Local Legends e presença Harley-Davidson; dia mais exigente da semana, com 8h00 de horas extra.</p>
+            </div>
+            <div class="day">
+              <strong>21-06</strong><span class="badge excellent">Modelo Referência</span>
+              <p>Aplicação exemplar do modelo por setores, pico de almoço extremo absorvido com sucesso e segundo dia do novo menu já bastante estabilizado.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-3 section">
+          <div class="card kpi">
+            <span>Dia mais exigente</span><strong>20-06</strong>
+            <p>Novo menu, Sumol Local Legends e presença Harley-Davidson com pressão operacional máxima e necessidade de fecho prolongado.</p>
+          </div>
+          <div class="card kpi">
+            <span>Dia mais equilibrado</span><strong>15-06</strong>
+            <p>Segunda-feira de menor pressão, aproveitada para manutenção, limpeza, organização e fecho autónomo de Filipe.</p>
+          </div>
+          <div class="card kpi">
+            <span>Maior sucesso operacional</span><strong>21-06</strong>
+            <p>Melhor demonstração prática do modelo por setores, com rotação de 33 mesas adicionais e estabilidade de serviço sob pressão extrema.</p>
+          </div>
+        </div>
+
+        <div class="grid grid-2 section">
+          <div class="card">
+            <h3>Fluxo, sala e rotação</h3>
+            <p>
+              A semana combinou dias de preparação e manutenção (15-06) com testes de grande pressão (16-06, 20-06 e 21-06),
+              marcados por picos de afluência, esplanada frequentemente cheia e rotação intensa de mesas — em especial no
+              fim de semana com Sumol Local Legends e Harley-Davidson.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Qualidade de serviço</h3>
+            <p>
+              As avaliações diárias mantiveram-se em patamares elevados, mesmo nos dias de maior exigência. As fragilidades
+              detectadas estiveram sobretudo ligadas à introdução do novo menu e a erros pontuais de registo, com rápida
+              correção e sem degradação estrutural da experiência do cliente.
+            </p>
+          </div>
+        </div>
+
+        <div class="callout section">
+          <strong>Fatores externos relevantes:</strong> Campeonato Sumol Local Legends (fluxo excecional desde a manhã),
+          Encontro Europeu Harley-Davidson, Jam Session de 19-06, introdução do novo menu e necessidade de reajuste
+          operacional em tempo real.
+        </div>
+      </section>
+
+      <section class="page">
+        <div class="section">
+          <h2>4. Desempenho da Equipa</h2>
+          <div class="grid grid-2">
+            <div class="card">
+              <div class="chip">
+                <span class="dot-green"></span>
+                Destaques Individuais
+              </div>
+              <ul>
+                <li>
+                  <strong>Matilde</strong> — referência na sala interior, com autonomia e controlo exemplares durante
+                  os períodos mais exigentes, em especial no fim de semana.
+                </li>
+                <li>
+                  <strong>Bruno</strong> — consistência operacional, liderança informal e papel central como runner
+                  principal em vários dias críticos (16-06, 19-06, 20-06).
+                </li>
+                <li>
+                  <strong>Carolina</strong> — desempenho muito sólido em setores exigentes, apoio ao bar, responsabilidade
+                  no fecho e resolução de incidentes (vidros laterais, apoio a eventos).
+                </li>
+                <li>
+                  <strong>Lil</strong> — peça-chave como runner, garantindo ligação eficaz entre setores e apoio
+                  fundamental à sala interior em dias de maior pressão.
+                </li>
+                <li>
+                  <strong>Pablo</strong> — controlo consistente dos seus setores, contribuindo decisivamente para a
+                  fluidez do serviço em dias de elevada afluência.
+                </li>
+              </ul>
+            </div>
+            <div class="card">
+              <div class="chip">
+                <span class="dot-blue"></span>
+                Integração da Lee
+              </div>
+              <p>
+                A semana marcou a fase inicial de integração da Lee. Após um erro operacional relevante a 20-06
+                (registo incorrecto de 4 Tostas de Salmão), foram ajustadas as suas funções para foco em suporte
+                operacional (runner, preparação de mesas, limpeza e reposição) sem registo de pedidos ou fecho de
+                contas.
+              </p>
+              <p>
+                Esta redefinição de responsabilidades permitiu reduzir o risco de novos incidentes, mantendo a sua
+                contribuição positiva para a operação. Observou-se evolução clara a 21-06, com boa prestação em funções
+                de apoio.
+              </p>
+              <p>
+                Recomenda-se continuidade deste percurso progressivo, com reforço de formação e integração gradual em
+                tarefas de maior responsabilidade quando existir segurança operacional para tal.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3>Avaliação geral da equipa</h3>
+          <p>
+            A equipa demonstrou elevada maturidade operacional ao longo da semana, com especial destaque para a forma
+            como absorveu a introdução do novo menu e os picos de afluência associados ao Sumol Local Legends e à
+            presença Harley-Davidson. O modelo por setores mostrou-se robusto, com Matilde a segurar a sala interior,
+            Bruno e Carolina a liderarem setores críticos e Lil e Pablo a garantirem ligação e estabilidade entre zonas.
+          </p>
+        </div>
+
+        <div class="section">
+          <h3>Avaliação individual da adaptação</h3>
+          <table>
+            <thead>
+              <tr><th>Colaborador</th><th>Avaliação</th><th>Evidência observada</th><th>Necessidade</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Bruno</strong></td>
+                <td><span class="badge excellent">Muito forte</span></td>
+                <td>Coordenou equipa como runner principal em dias críticos (16, 19 e 20-06), garantindo organização e estabilidade.</td>
+                <td>Consolidar papel de coordenação em contexto de modelo por setores e novo menu.</td>
+              </tr>
+              <tr>
+                <td><strong>Carolina</strong></td>
+                <td><span class="badge excellent">Muito forte</span></td>
+                <td>Gestão de setores exigentes, apoio ao bar, resolução de incidentes (vidros laterais) e participação em fechos prolongados.</td>
+                <td>Manter equilíbrio entre múltiplas funções sem sacrificar disciplina de setores.</td>
+              </tr>
+              <tr>
+                <td><strong>Matilde</strong></td>
+                <td><span class="badge excellent">Muito forte</span></td>
+                <td>Autonomia total na sala interior nos dias de maior pressão, assegurando organização e controlo operacional.</td>
+                <td>Continuar a ser referência de método na sala interior e partilhar boas práticas com a equipa.</td>
+              </tr>
+              <tr>
+                <td><strong>Lil</strong></td>
+                <td><span class="badge good">Muito positivo</span></td>
+                <td>Runner fundamental em vários dias, apoio constante à sala interior e participação ativa em fechos exigentes.</td>
+                <td>Manter consistência no papel de runner e reforçar comunicação entre setores em momentos de pico.</td>
+              </tr>
+              <tr>
+                <td><strong>Pablo</strong></td>
+                <td><span class="badge excellent">Muito forte</span></td>
+                <td>Controlo sólido do setor das 60’s e participação no fecho em dias de elevada rotação.</td>
+                <td>Continuar a ser referência de estabilidade e organização nos seus setores.</td>
+              </tr>
+              <tr>
+                <td><strong>Lee</strong></td>
+                <td><span class="badge good">Em evolução</span></td>
+                <td>Após erro de registo a 20-06, desempenhou funções de apoio operacional com boa atitude e evolução positiva a 21-06.</td>
+                <td>Prosseguir formação progressiva e reforçar integração comunicacional com a equipa.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h2>5. Incidentes e Riscos Observados</h2>
+          <div class="grid grid-2">
+            <div class="card">
+              <div class="chip">
+                <span class="dot-yellow"></span>
+                Incidentes Operacionais
+              </div>
+              <ul>
+                <li>
+                  <strong>Erro de pedido (Lee, 20-06)</strong> — registo incorreto de 4 Tostas de Salmão, com necessidade
+                  de refazer pratos e aumento do tempo de espera; medida corretiva imediata aplicada (Lee deixa de
+                  registar pedidos após a pausa).
+                </li>
+                <li>
+                  <strong>Vidros laterais (18-06)</strong> — problema técnico no fecho, resolvido com prolongamento de
+                  turno de Carolina e Lil; sem impacto final na segurança do espaço.
+                </li>
+                <li>
+                  <strong>Novos bifes (20-06)</strong> — reclamações de clientes pela ausência de molho nos novos pratos;
+                  tema classificado como feedback comercial/culinário para gestão e cozinha, não como falha da equipa de
+                  sala.
+                </li>
+              </ul>
+            </div>
+            <div class="card">
+              <div class="chip">
+                <span class="dot-blue"></span>
+                Riscos de Médio Prazo
+              </div>
+              <ul>
+                <li>
+                  Necessidade de formalizar briefing estruturado sempre que existam alterações relevantes de menu ou de
+                  modelo operacional.
+                </li>
+                <li>
+                  Risco de fadiga associado a períodos consecutivos de elevada afluência e a fechos prolongados
+                  (sobretudo 18, 19 e 20 de Junho).
+                </li>
+                <li>
+                  Exigência crescente sobre elementos chave (Bruno, Carolina, Matilde, Lil) em contextos de pico;
+                  importante monitorizar carga e garantir rotação equilibrada de responsabilidades.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="page">
+        <div class="section">
+          <h2>6. Horas Extra e Compromisso da Equipa</h2>
+          <p class="lead">
+            No total da semana, foram registados 1 705 minutos de horas extra, equivalentes a 28h25, distribuídos por
+            vários elementos em dias de maior pressão e fecho prolongado.
+          </p>
+          <div class="grid grid-2">
+            <div class="card">
+              <h3>5.1. Resumo por Colaborador</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Colaborador</th>
+                    <th>Minutos</th>
+                    <th>Equivalente</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Bruno</td>
+                    <td>450</td>
+                    <td>7h30</td>
+                  </tr>
+                  <tr>
+                    <td>Carolina</td>
+                    <td>450</td>
+                    <td>7h30</td>
+                  </tr>
+                  <tr>
+                    <td>Lil</td>
+                    <td>445</td>
+                    <td>7h25</td>
+                  </tr>
+                  <tr>
+                    <td>Filipe Catalão</td>
+                    <td>195</td>
+                    <td>3h15</td>
+                  </tr>
+                  <tr>
+                    <td>Matilde</td>
+                    <td>60</td>
+                    <td>1h00</td>
+                  </tr>
+                  <tr>
+                    <td>Marta</td>
+                    <td>60</td>
+                    <td>1h00</td>
+                  </tr>
+                  <tr>
+                    <td>Pablo</td>
+                    <td>45</td>
+                    <td>0h45</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Total</strong></td>
+                    <td><strong>1 705</strong></td>
+                    <td><strong>28h25</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="card">
+              <h3>5.2. Leitura de Contexto</h3>
+              <ul>
+                <li>
+                  A maioria das horas extra concentra-se em três dias chave: 18-06 (incidente técnico de fecho),
+                  19-06 (Jam Session) e 20-06 (novo menu + eventos).
+                </li>
+                <li>
+                  O esforço adicional foi essencial para garantir fechos completos, segurança do espaço e qualidade de
+                  serviço sob pressão.
+                </li>
+                <li>
+                  Recomenda-se monitorização contínua destes volumes em semanas com calendário semelhante
+                  (eventos/desportivos + JAM + implementações estruturais).
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>7. Recomendações Operacionais</h2>
+          <div class="grid grid-2">
+            <div class="card">
+              <h3>6.1. Modelo de Sala</h3>
+              <ul>
+                <li>
+                  Adoptar o modelo por setores (50/60/70 + sala interior autónoma + runner principal + coordenação
+                  centralizada) como padrão para fins de semana, feriados e dias de elevada procura.
+                </li>
+                <li>
+                  Formalizar este modelo em documento de referência interno, com mapas de setores e funções
+                  claramente definidos.
+                </li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>6.2. Novo Menu e POS</h3>
+              <ul>
+                <li>
+                  Manter a rotina de revisão rápida de alinhamento cozinha-sala antes de cada serviço nos próximos dias,
+                  garantindo que o novo menu se mantém estável.
+                </li>
+                <li>
+                  Resolver em conjunto com a gestão a questão do brunch e dos artigos com preços distintos, evitando
+                  ambiguidades junto do cliente.
+                </li>
+                <li>
+                  Agendar a lavagem profunda dos pufes e almofadas da esplanada, alinhando imagem do espaço com o nível
+                  de serviço prestado.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
+

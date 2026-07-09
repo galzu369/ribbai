@@ -1,0 +1,1249 @@
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Relatório Semanal de Operações RIBBAI | 08-06-2026 a 14-06-2026</title>
+    <style>
+      @page {
+        size: A4;
+        margin: 14mm 13mm 16mm;
+      }
+
+      :root {
+        --navy: #0e1f35;
+        --navy-2: #173452;
+        --beige: #efe6d6;
+        --beige-2: #faf6ef;
+        --white: #ffffff;
+        --gray: #eef1f4;
+        --gray-2: #d7dde5;
+        --text: #172033;
+        --muted: #657085;
+        --green: #16803c;
+        --yellow: #b7791f;
+        --orange: #c05621;
+        --red: #b91c1c;
+        --blue: #1d4ed8;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--gray);
+        color: var(--text);
+        font-family:
+          Inter, "Segoe UI", Arial, sans-serif;
+        font-size: 11px;
+        line-height: 1.48;
+      }
+
+      main {
+        max-width: 210mm;
+        margin: 0 auto;
+        background: var(--white);
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      h1 {
+        max-width: 145mm;
+        color: var(--white);
+        font-size: 38px;
+        letter-spacing: -0.03em;
+        line-height: 1.02;
+      }
+
+      h2 {
+        margin-bottom: 12px;
+        color: var(--navy);
+        font-size: 20px;
+        letter-spacing: -0.02em;
+      }
+
+      h3 {
+        margin-bottom: 7px;
+        color: var(--navy);
+        font-size: 13px;
+      }
+
+      ul {
+        margin: 8px 0 0;
+        padding-left: 17px;
+      }
+
+      li {
+        margin: 4px 0;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+        font-size: 9.8px;
+      }
+
+      th,
+      td {
+        border-bottom: 1px solid var(--gray-2);
+        padding: 8px 7px;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        background: var(--beige-2);
+        color: var(--navy);
+        font-size: 8px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .cover {
+        height: 226mm;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 14mm 18mm 12mm;
+        background:
+          radial-gradient(circle at 84% 18%, rgba(239, 230, 214, 0.22), transparent 30%),
+          linear-gradient(135deg, var(--navy), #071421 72%);
+        page-break-after: always;
+        page-break-inside: avoid;
+      }
+
+      .logo {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--white);
+        font-weight: 800;
+        letter-spacing: 0.18em;
+      }
+
+      .logo-mark {
+        width: 38px;
+        height: 38px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(255, 255, 255, 0.45);
+        border-radius: 999px;
+        background: rgba(239, 230, 214, 0.12);
+        color: var(--beige);
+        font-size: 14px;
+        letter-spacing: 0;
+      }
+
+      .cover-subtitle {
+        max-width: 112mm;
+        margin-top: 16px;
+        color: rgba(255, 255, 255, 0.78);
+        font-size: 14px;
+      }
+
+      .cover-meta {
+        width: 146mm;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 18px;
+        padding: 12px;
+        background: rgba(255, 255, 255, 0.08);
+        color: var(--white);
+        page-break-inside: avoid;
+      }
+
+      .meta-row {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 12px;
+        padding: 8px 10px;
+      }
+
+      .meta-row span {
+        color: rgba(255, 255, 255, 0.64);
+      }
+
+      .page {
+        padding: 12mm 13mm;
+        page-break-after: always;
+      }
+
+      .page:last-child {
+        page-break-after: auto;
+      }
+
+      .section {
+        margin-bottom: 16px;
+        page-break-inside: avoid;
+      }
+
+      .lead {
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .grid {
+        display: grid;
+        gap: 12px;
+      }
+
+      .grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .grid-4 {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .card {
+        border: 1px solid var(--gray-2);
+        border-radius: 16px;
+        padding: 14px;
+        background: var(--white);
+      }
+
+      .soft {
+        background: var(--beige-2);
+      }
+
+      .kpi span {
+        display: block;
+        color: var(--muted);
+        font-size: 8px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .kpi strong {
+        display: block;
+        margin-top: 6px;
+        color: var(--navy);
+        font-size: 21px;
+      }
+
+      .badge {
+        display: inline-block;
+        border-radius: 999px;
+        padding: 4px 8px;
+        font-size: 9px;
+        font-weight: 800;
+      }
+
+      .excellent {
+        background: #dcfce7;
+        color: var(--green);
+      }
+
+      .good {
+        background: #fef3c7;
+        color: var(--yellow);
+      }
+
+      .attention {
+        background: #ffedd5;
+        color: var(--orange);
+      }
+
+      .critical {
+        background: #fee2e2;
+        color: var(--red);
+      }
+
+      .timeline {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 8px;
+      }
+
+      .day {
+        min-height: 96px;
+        border: 1px solid var(--gray-2);
+        border-radius: 14px;
+        padding: 10px;
+        background: var(--white);
+      }
+
+      .day strong {
+        display: block;
+        margin-bottom: 5px;
+        color: var(--navy);
+      }
+
+      .bar-row {
+        display: grid;
+        align-items: center;
+        grid-template-columns: 92px 1fr 42px;
+        gap: 8px;
+        margin: 8px 0;
+      }
+
+      .bar-label {
+        color: var(--muted);
+      }
+
+      .track {
+        height: 10px;
+        overflow: hidden;
+        border-radius: 999px;
+        background: var(--gray);
+      }
+
+      .fill {
+        height: 100%;
+        border-radius: inherit;
+        background: var(--navy);
+      }
+
+      .fill.blue {
+        background: var(--blue);
+      }
+
+      .fill.green {
+        background: var(--green);
+      }
+
+      .pie-wrap {
+        display: grid;
+        align-items: center;
+        grid-template-columns: 92px 1fr;
+        gap: 16px;
+      }
+
+      .pie {
+        width: 86px;
+        height: 86px;
+        border-radius: 50%;
+        background: conic-gradient(
+          #0e1f35 0 26.1%,
+          #1d4ed8 26.1% 46%,
+          #16803c 46% 65.2%,
+          #b7791f 65.2% 79.3%,
+          #c05621 79.3% 90%,
+          #64748b 90% 97.8%,
+          #94a3b8 97.8% 100%
+        );
+      }
+
+      .legend {
+        display: grid;
+        gap: 5px;
+      }
+
+      .legend span::before {
+        content: "";
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        margin-right: 6px;
+        border-radius: 99px;
+        background: var(--navy);
+      }
+
+      .legend span:nth-child(2)::before {
+        background: var(--blue);
+      }
+
+      .legend span:nth-child(3)::before {
+        background: var(--green);
+      }
+
+      .legend span:nth-child(4)::before {
+        background: var(--yellow);
+      }
+
+      .legend span:nth-child(5)::before {
+        background: var(--orange);
+      }
+
+      .legend span:nth-child(6)::before {
+        background: #64748b;
+      }
+
+      .legend span:nth-child(7)::before {
+        background: #94a3b8;
+      }
+
+      .callout {
+        border-left: 4px solid var(--navy);
+        padding: 10px 12px;
+        background: var(--beige-2);
+      }
+
+      .risk-high {
+        border-left-color: var(--red);
+      }
+
+      .risk-medium {
+        border-left-color: var(--yellow);
+      }
+
+      .risk-low {
+        border-left-color: var(--green);
+      }
+
+      .priority-section {
+        border: 2px solid #fecaca;
+        border-radius: 20px;
+        padding: 16px;
+        background: linear-gradient(180deg, #fff7f7, var(--white));
+      }
+
+      .priority-card {
+        border: 1px solid #fecaca;
+        border-left: 6px solid var(--red);
+        border-radius: 18px;
+        padding: 16px;
+        background: var(--white);
+        page-break-inside: avoid;
+      }
+
+      .priority-label {
+        display: inline-block;
+        margin-bottom: 8px;
+        border-radius: 999px;
+        padding: 5px 10px;
+        background: #fee2e2;
+        color: var(--red);
+        font-size: 9px;
+        font-weight: 900;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .priority-meta {
+        margin-top: 10px;
+        border-radius: 12px;
+        padding: 10px;
+        background: var(--beige-2);
+      }
+
+      .footer {
+        color: var(--muted);
+        font-size: 8.5px;
+      }
+
+      @media print {
+        body {
+          background: var(--white);
+        }
+
+        main {
+          max-width: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="cover">
+        <div>
+          <div class="logo"><span class="logo-mark">R</span><span>RIBBAI OPS</span></div>
+          <div style="margin-top: 20mm">
+            <h1>Relatório Semanal de Operações</h1>
+            <p class="cover-subtitle">
+              Análise executiva integrada de operação Front of House, equipa, inventário, incidentes, horas extra e implementação do modelo de setores.
+            </p>
+          </div>
+        </div>
+        <div class="cover-meta">
+          <div class="meta-row"><span>Semana analisada</span><strong>08-06-2026 a 14-06-2026</strong></div>
+          <div class="meta-row"><span>Data de emissão</span><strong>15-06-2026</strong></div>
+          <div class="meta-row"><span>Autor</span><strong>Filipe Catalão</strong></div>
+          <div class="meta-row"><span>Destinatários</span><strong>Luís · Paulo · Francisco</strong></div>
+        </div>
+      </section>
+
+      <section class="page">
+        <div class="section">
+          <h2>2. Resumo Executivo</h2>
+          <div class="grid grid-4">
+            <article class="card kpi soft"><span>Avaliação geral</span><strong>🟢 Excelente</strong></article>
+            <article class="card kpi"><span>Dias analisados</span><strong>7</strong></article>
+            <article class="card kpi"><span>Dias críticos de pressão</span><strong>3</strong></article>
+            <article class="card kpi"><span>Horas extra semanais</span><strong>25h05</strong></article>
+          </div>
+        </div>
+
+        <div class="section">
+          <p class="lead">
+            A semana combinou dias de equilíbrio operacional (08, 09, 11 e 14) com testes de alta pressão e eventos especiais (feriado de 10-06, Jam Session de 12-06 e operação de referência em 13-06). A equipa manteve padrões elevados de qualidade de serviço, consolidou o modelo de setores e demonstrou grande capacidade de adaptação à ausência continuada da Mar no bar e a falhas técnicas pontuais.
+          </p>
+        </div>
+
+        <div class="grid grid-2 section">
+          <div class="card">
+            <h3>Principais sucessos</h3>
+            <ul>
+              <li>Consolidação do modelo de setores com dois dias consecutivos (13 e 14) de funcionamento natural e intuitivo.</li>
+              <li>Sucesso da Jam Session e do evento no rooftop, com elevada satisfação dos clientes.</li>
+              <li>Capacidade de resposta a feriado nacional e dias de forte calor sem perda de qualidade de serviço.</li>
+              <li>Realização do inventário semanal e atualização de stock sem ruturas relevantes.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Principais desafios</h3>
+            <ul>
+              <li>Pressão elevada e prolongada nos dias 10, 12 e 13.</li>
+              <li>Fragilidades na execução do modelo de setores em 12-06 (atropelamentos, duplicação de esforços).</li>
+              <li>Reincidência de incidentes de mesa sem pagamento (12 e 13 de Junho).</li>
+              <li>Gestão de ausência continuada da Mar no bar e necessidade de reforçar polivalência nesse setor.</li>
+              <li>Resistência do Lil a tarefas transversais de sala em 14-06, incluindo limpeza de casa de banho no fecho.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3>Avaliação geral da equipa</h3>
+          <p>
+            A equipa demonstrou elevada maturidade operacional, com destaque para a liderança operacional de Bruno, a consistência de Carolina e Matilde, a estabilidade de Pablo nos seus setores e a evolução contínua de Marta. Os últimos dois dias da semana confirmam que o modelo de setores está a ser assimilado e que a equipa é capaz de o aplicar de forma autónoma, organizada e eficiente, embora tenha sido registada em 14-06 resistência do Lil a tarefas transversais de sala.
+          </p>
+        </div>
+
+        <div class="footer">
+          Fontes cruzadas: Daily Operational Reports (08-06 a 14-06), Inventory Reports e Atualização de Inventário (10-06),
+          Team Performance Records, Operational Incidents, Operations Journal implícito e registos de horas extra diárias.
+        </div>
+      </section>
+
+      <section class="page">
+        <div class="section">
+          <h2>3. Resumo Operacional da Semana</h2>
+          <div class="timeline">
+            <div class="day">
+              <strong>08-06</strong><span class="badge excellent">Equilibrado</span>
+              <p>Dia estável após vários dias intensos; fluxo constante, serviço de excelência e consolidação do modelo de posições fixas.</p>
+            </div>
+            <div class="day">
+              <strong>09-06</strong><span class="badge good">Gestão &amp; Inventário</span>
+              <p>Dia calmo com inventário semanal completo e jantar com aumento inesperado de movimento, bem gerido por Filipe e Lil.</p>
+            </div>
+            <div class="day">
+              <strong>10-06</strong><span class="badge attention">Feriado</span>
+              <p>Feriado nacional com afluência muito elevada; modelo de setores suportou bem a pressão apesar da ausência no bar.</p>
+            </div>
+            <div class="day">
+              <strong>11-06</strong><span class="badge good">Transição</span>
+              <p>Movimento equilibrado; equipa adapta-se à ausência continuada da Mar e aplica espontaneamente princípios do modelo.</p>
+            </div>
+            <div class="day">
+              <strong>12-06</strong><span class="badge attention">Jam Session</span>
+              <p>Dia mais quente do ano com Jam Session; grande sucesso comercial e de experiência, mas com fragilidades internas no modelo.</p>
+            </div>
+            <div class="day">
+              <strong>13-06</strong><span class="badge excellent">Modelo Referência</span>
+              <p>Distribuição operacional concebida por Bruno serve como referência: coordenação forte, setores claros e comunicação exemplar.</p>
+            </div>
+            <div class="day">
+              <strong>14-06</strong><span class="badge excellent">Consolidação</span>
+              <p>Domingo de sol com movimento constante; aplicação natural do modelo, resolução rápida de falha dos PDA’s e serviço muito elevado, com pequeno problema de equipa registado com o Lil.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-3 section">
+          <div class="card kpi">
+            <span>Dia mais exigente</span><strong>12-06</strong>
+            <p>Jam Session, feriado prolongado, calor extremo e forte afluência com fragilidades internas no modelo.</p>
+          </div>
+          <div class="card kpi">
+            <span>Dia mais equilibrado</span><strong>14-06</strong>
+            <p>Domingo de movimento constante mas equilibrado, com aplicação madura do modelo de setores.</p>
+          </div>
+          <div class="card kpi">
+            <span>Maior sucesso operacional</span><strong>13-06</strong>
+            <p>Desempenho coletivo exemplar e distribuição operacional de Bruno como referência para operações futuras.</p>
+          </div>
+        </div>
+
+        <div class="grid grid-2 section">
+          <div class="card">
+            <h3>Fluxo, sala e rotação</h3>
+            <p>
+              A semana iniciou-se com dias de equilíbrio e gestão (08 e 09), passou por um feriado de alta pressão (10), um ciclo
+              de Jam Session e calor extremo (12) e culminou em dois dias de referência operacional (13 e 14). A rotação de mesas
+              foi particularmente forte nos dias 12 e 13, com esplanada frequentemente próxima da lotação máxima e operação
+              estável tanto ao almoço como ao jantar.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Qualidade de serviço</h3>
+            <p>
+              As avaliações diárias oscilaram entre 9/10 e 10/10 em sucesso operacional, experiência do cliente e aplicação do
+              modelo, com 13 e 14 de Junho a atingirem 10/10 em praticamente todos os indicadores. Mesmo nos dias de maior pressão,
+              as fragilidades foram sobretudo internas (coordenação e disciplina de setores) e não visíveis para o cliente.
+            </p>
+          </div>
+        </div>
+
+        <div class="callout section">
+          <strong>Fatores externos relevantes:</strong> feriado nacional (10-06), feriado prolongado, dia mais quente do ano (12-06),
+          Jam Session RIBBAI, evento no rooftop, domingos de sol e ausência continuada de um elemento da equipa de bar.
+        </div>
+      </section>
+
+      <section class="page">
+        <div class="section">
+          <h2>4. Implementação do Modelo de Setores</h2>
+          <div class="grid grid-4">
+            <article class="card kpi">
+              <span>Estado inicial</span><strong>Consolidação</strong>
+              <p>Modelo de posições fixas já em aplicação à entrada da semana, com sinais positivos em 08-06 e 09-06.</p>
+            </article>
+            <article class="card kpi">
+              <span>Evolução</span><strong>Muito positiva</strong>
+              <p>Fragilidades claras em 12-06, corrigidas com sucesso e seguidas de dois dias de referência (13 e 14).</p>
+            </article>
+            <article class="card kpi">
+              <span>Adesão da equipa</span><strong>Boa</strong>
+              <p>Princípios aplicados mesmo sem instruções formais em 11-06; funcionamento natural em 13 e 14.</p>
+            </article>
+            <article class="card kpi">
+              <span>Estado atual</span><strong>Consolidação avançada</strong>
+              <p>Modelo estabilizado, com necessidade de manter disciplina e coordenação centralizada.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="grid grid-2 section">
+          <div class="card">
+            <h3>Benefícios alcançados</h3>
+            <ul>
+              <li>Maior responsabilização individual por zona (50, 60, 70, sala interior e cafetaria).</li>
+              <li>Melhor comunicação entre setores nos dias 13 e 14, sem atropelamentos ou duplicação de tarefas.</li>
+              <li>Estabilidade operacional mesmo com eventos especiais e ausência no bar.</li>
+              <li>Capacidade de operar com coordenação centralizada (Bruno) e responsáveis de setor autónomos.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Dificuldades encontradas</h3>
+            <ul>
+              <li>Atropelamentos entre setores e falhas de comunicação em 12-06.</li>
+              <li>Necessidade de reforçar disciplina de limites de setor em contextos de pressão elevada.</li>
+              <li>Risco de intervenção fora da zona sem comunicação prévia, sobretudo em dias com eventos.</li>
+              <li>Dependência elevada de alguns elementos-chave para estabilizar o modelo (Bruno, Carolina, Matilde).</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3>Avaliação individual da adaptação</h3>
+          <table>
+            <thead>
+              <tr><th>Colaborador</th><th>Avaliação</th><th>Evidência observada</th><th>Necessidade</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Bruno</strong></td>
+                <td><span class="badge excellent">Muito forte</span></td>
+                <td>Passou de executor para coordenador em 13-06, estabilizando o modelo e apoiando todos os setores.</td>
+                <td>Consolidar papel de coordenação centralizada e manter exemplo de disciplina por setor.</td>
+              </tr>
+              <tr>
+                <td><strong>Lil</strong></td>
+                <td><span class="badge good">Em evolução</span></td>
+                <td>Boa gestão das zonas 60/70 sob pressão, com contributos relevantes em jantares intensos; em 14-06 registou-se resistência a tarefas transversais de sala.</td>
+                <td>Reforçar consistência na disciplina por setor e cumprimento equitativo de levantamento de mesas e limpeza de casas de banho.</td>
+              </tr>
+              <tr>
+                <td><strong>Pablo</strong></td>
+                <td><span class="badge excellent">Muito forte</span></td>
+                <td>Controlo sólido das zonas 60/70, com elevada organização e participação em fechos.</td>
+                <td>Continuar a ser referência de execução e comunicação entre setores.</td>
+              </tr>
+              <tr>
+                <td><strong>Carolina</strong></td>
+                <td><span class="badge excellent">Muito forte</span></td>
+                <td>Porta, cafetaria e apoio à sala em feriados e Jam Session; consolidação da sala interior em 14-06.</td>
+                <td>Manter equilíbrio entre múltiplas funções sem sacrificar disciplina de setores.</td>
+              </tr>
+              <tr>
+                <td><strong>Matilde</strong></td>
+                <td><span class="badge excellent">Muito forte</span></td>
+                <td>Elemento estruturante na cafetaria e sala interior, mesmo com limitações físicas.</td>
+                <td>Continuar a reforçar autonomia e partilha de conhecimento sobre procedimentos.</td>
+              </tr>
+              <tr>
+                <td><strong>Marta</strong></td>
+                <td><span class="badge good">Evolução clara</span></td>
+                <td>Runner chave em 12-06 e 13-06, com grande esforço extra e boa resposta sob pressão.</td>
+                <td>Manter foco em precisão (pagamentos, coordenação com setores) em contexto de eventos.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="grid grid-3 section">
+          <div class="card">
+            <h3>Melhor adaptação</h3>
+            <p>Bruno, Matilde e Carolina demonstraram a aplicação mais consistente dos princípios do modelo e forte capacidade de liderança funcional.</p>
+          </div>
+          <div class="card">
+            <h3>Maior evolução</h3>
+            <p>Lil apresentou evolução visível em contextos de maior pressão, sobretudo em jantares intensos e Jam Session, mas necessita reforço no cumprimento de tarefas transversais de sala.</p>
+          </div>
+          <div class="card">
+            <h3>Acompanhamento</h3>
+            <p>Lil e Marta devem continuar a receber feedback específico sobre disciplina de setores, gestão de picos e, no caso do Lil, execução equitativa de tarefas transversais de sala.</p>
+          </div>
+        </div>
+
+        <div class="callout section">
+          <strong>Conclusão:</strong> o modelo de setores entrou numa fase de consolidação avançada. O fim de semana (13 e 14) oferece um blueprint
+          operacional claro que deve ser usado como referência para futuras escalas em dias de elevada afluência.
+        </div>
+      </section>
+
+      <section class="page">
+        <div class="section">
+          <h2>5. Desempenho da Equipa</h2>
+          <div class="grid grid-3">
+            <article class="card">
+              <h3>Bruno</h3>
+              <p><strong>Pontos fortes:</strong> abertura, coordenação e estabilidade operacional.</p>
+              <p><strong>Contributos:</strong> desenho da configuração de 13-06, resolução técnica dos PDA’s em 14-06 e apoio a múltiplas áreas.</p>
+              <p><strong>Evolução:</strong> transição clara para papel de coordenador central em vez de executor isolado.</p>
+              <p><strong>Oportunidades:</strong> consolidar este papel em mais dias e continuar a reforçar o controlo de pagamentos.</p>
+              <p><strong>Potencial:</strong> liderança intermédia de referência.</p>
+            </article>
+            <article class="card">
+              <h3>Lil</h3>
+              <p><strong>Pontos fortes:</strong> disponibilidade, resposta forte em jantares e domingos, boa gestão de setores.</p>
+              <p><strong>Contributos:</strong> resposta ao aumento inesperado do jantar de 09-06 e estabilidade em 10, 12 e 14.</p>
+              <p><strong>Evolução:</strong> melhoria clara na disciplina do setor e na comunicação sob pressão.</p>
+              <p><strong>Oportunidades:</strong> reforçar cumprimento equitativo de levantamento de mesas e limpeza de casas de banho no fecho; acompanhar evolução após chamada de atenção de 14-06.</p>
+              <p><strong>Alerta:</strong> em 14-06 demonstrou grande resistência a limpeza de casa de banho após pedido pessoal; padrão recorrente de evitação de tarefas transversais.</p>
+              <p><strong>Potencial:</strong> elemento sólido em setores exteriores, desde que consolide responsabilidades partilhadas da sala.</p>
+            </article>
+            <article class="card">
+              <h3>Pablo</h3>
+              <p><strong>Pontos fortes:</strong> controlo de zonas 60/70, organização e comunicação.</p>
+              <p><strong>Contributos:</strong> apoio ao inventário semanal de consumíveis, preparação de operação em dias mais calmos, fechos e estabilidade em dias de grande rotação.</p>
+              <p><strong>Evolução:</strong> manteve padrão elevado e previsível em toda a semana.</p>
+              <p><strong>Oportunidades:</strong> continuar a partilhar boas práticas de sectorização e fecho.</p>
+              <p><strong>Potencial:</strong> referência de execução diária.</p>
+            </article>
+            <article class="card">
+              <h3>Carolina</h3>
+              <p><strong>Pontos fortes:</strong> porta, cafetaria, sala interior e fechos em dias críticos.</p>
+              <p><strong>Contributos:</strong> apoio ao inventário semanal de consumíveis, compensação da ausência da Mar, reposição e organização de consumíveis, liderança na Jam Session.</p>
+              <p><strong>Evolução:</strong> consolidou-se como peça-chave entre porta, sala e bar.</p>
+              <p><strong>Oportunidades:</strong> gerir o esforço extra de forma sustentável e delegar quando o modelo estiver maduro.</p>
+              <p><strong>Potencial:</strong> gestão de porta e bar/sala em contexto de eventos.</p>
+            </article>
+            <article class="card">
+              <h3>Matilde</h3>
+              <p><strong>Pontos fortes:</strong> cafetaria, sala interior, consistência e organização.</p>
+              <p><strong>Contributos:</strong> compensação da ausência no bar, controlo da sala interior e apoio nos dias mais exigentes.</p>
+              <p><strong>Evolução:</strong> mantém-se como um dos pilares da operação interior.</p>
+              <p><strong>Oportunidades:</strong> continuar a documentar procedimentos e apoiar formação de colegas.</p>
+              <p><strong>Potencial:</strong> estabilidade operacional e futura referência de treino.</p>
+            </article>
+            <article class="card">
+              <h3>Marta</h3>
+              <p><strong>Pontos fortes:</strong> atitude, capacidade de esforço e resposta à pressão.</p>
+              <p><strong>Contributos:</strong> runner chave em 12-06 e 13-06, participação em fechos prolongados e apoio à zona 60.</p>
+              <p><strong>Evolução:</strong> crescimento consistente em responsabilidade e maturidade operacional.</p>
+              <p><strong>Oportunidades:</strong> reforçar controlo de pagamentos e coordenação comunicacional com setores.</p>
+              <p><strong>Potencial:</strong> crescimento relevante em funções de maior responsabilidade operacional.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="page">
+        <div class="section">
+          <h2>6. Incidentes e Ocorrências</h2>
+          <table>
+            <thead>
+              <tr><th>Ocorrência</th><th>Causa provável</th><th>Impacto operacional</th><th>Medidas corretivas</th><th>Estado</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Mesa sem pagamento</strong><br />12-06 · ~33 €</td>
+                <td>Pressão elevada e Jam Session em simultâneo, com múltiplas mesas e elevada rotação.</td>
+                <td>Perda financeira pontual e necessidade de reforçar controlo de pagamentos em picos.</td>
+                <td>Reforço de procedimentos de validação e encerramento de contas em serviço de elevada pressão.</td>
+                <td><span class="badge good">Resolvido</span></td>
+              </tr>
+              <tr>
+                <td><strong>Mesa sem pagamento</strong><br />13-06 · ~10 € (2 copos de vinho)</td>
+                <td>Rotação elevada de mesas e forte intensidade operacional ao almoço e jantar.</td>
+                <td>Impacto financeiro reduzido; reforça padrão de risco já identificado no dia anterior.</td>
+                <td>Reforçar validação final de contas e coordenação entre runner, setor e caixa.</td>
+                <td><span class="badge good">Resolvido</span></td>
+              </tr>
+              <tr>
+                <td><strong>Resistência a tarefas transversais de sala</strong><br />14-06 · Lil</td>
+                <td>Padrão recorrente de evitação de levantamento de mesas e limpeza de casas de banho no fecho.</td>
+                <td>Impacto baixo no serviço ao cliente; impacto moderado na equipa e no fecho.</td>
+                <td>Chamada de atenção pessoal, comunicação à gerência e reforço de expectativas de tarefas partilhadas.</td>
+                <td><span class="badge attention">Em acompanhamento</span></td>
+              </tr>
+              <tr>
+                <td><strong>Falha técnica dos PDA's</strong><br />14-06</td>
+                <td>Perda temporária de ligação à rede dos equipamentos.</td>
+                <td>Impacto mínimo; resolvido rapidamente por Bruno sem efeitos relevantes para clientes.</td>
+                <td>Reset elétrico geral e monitorização futura da estabilidade da rede.</td>
+                <td><span class="badge good">Resolvido</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h2>7. Inventário e Consumíveis</h2>
+          <div class="grid grid-4">
+            <article class="card kpi"><span>Artigos monitorizados</span><strong>32</strong></article>
+            <article class="card kpi"><span>Artigos saudáveis</span><strong>28</strong></article>
+            <article class="card kpi"><span>Artigos em atenção</span><strong>3</strong></article>
+            <article class="card kpi"><span>Artigos críticos</span><strong>1</strong></article>
+          </div>
+          <div class="callout section" style="margin-top: 12px">
+            <strong>Estado atual:</strong> Inventário e consumíveis encontram-se operacionais, sem ruturas de stock registadas. Existem apenas
+            artigos em atenção e um artigo crítico (álcool), já identificados para acompanhamento.
+          </div>
+          <table>
+            <thead>
+              <tr><th>Categoria</th><th>Artigo</th><th>Estado</th><th>Observação</th><th>Recomendação</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Consumíveis WC</td>
+                <td>Papel de mãos, papel higiénico</td>
+                <td><span class="badge good">Operacional</span></td>
+                <td>Papel de Mãos WC com 2 caixas (atenção, mas dentro de níveis operacionais); papel higiénico com 16 packs.</td>
+                <td>Manter monitorização semanal e repor antes de atingir limiar crítico.</td>
+              </tr>
+              <tr>
+                <td>Molhos</td>
+                <td>Maionese e restantes molhos</td>
+                <td><span class="badge good">Operacional</span></td>
+                <td>Entrada de stock em 14-06: 2 caixas de maionese, 2 caixas de ketchup e 1 caixa de mostarda, resolvendo o problema dos molhos.</td>
+                <td>Manter registo consistente de movimentos e acompanhar consumo semanal para reposição preventiva.</td>
+              </tr>
+              <tr>
+                <td>Galheteiros</td>
+                <td>Azeite</td>
+                <td><span class="badge attention">Atenção</span></td>
+                <td>1 garrafa de azeite em stock, abaixo da margem confortáveL.</td>
+                <td>Repor azeite na próxima encomenda e ajustar ponto crítico.</td>
+              </tr>
+              <tr>
+                <td>Produtos de limpeza</td>
+                <td>Álcool</td>
+                <td><span class="badge critical">Crítico</span></td>
+                <td>Stock de 4 unidades, abaixo da quantidade crítica definida (10 unidades).</td>
+                <td>Tratar como prioridade de reposição nas próximas encomendas.</td>
+              </tr>
+              <tr>
+                <td>Serviço e Take Away</td>
+                <td>Guardanapos, talheres, caixas, copos</td>
+                <td><span class="badge good">Saudável</span></td>
+                <td>Níveis estáveis e alinhados com o perfil de consumo semanal.</td>
+                <td>Manter contagens semanais consistentes para melhorar previsões.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="page">
+        <div class="section">
+          <h2>8. Horas Extra</h2>
+          <p class="lead">
+            Com base nos registos diários validados e no relatório mensal de horas extra de junho em `reports/overtime`, o total semanal de horas extra no período 08–14 é de <strong>25h05</strong>.
+          </p>
+        </div>
+
+        <div class="grid grid-4 section">
+          <article class="card kpi"><span>Total semanal</span><strong>25h05</strong></article>
+          <article class="card kpi"><span>Média diária</span><strong>3h35</strong></article>
+          <article class="card kpi"><span>Média por colaborador</span><strong>3h35</strong></article>
+          <article class="card kpi"><span>Pico diário</span><strong>12-06 · 8h40</strong></article>
+        </div>
+
+        <div class="section">
+          <h3>Tabela de Horas Extra</h3>
+          <table>
+            <thead>
+              <tr><th>Colaborador</th><th>Horas Extra</th><th>Percentagem do Total</th><th>Observações</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Carolina</strong></td>
+                <td>6h36</td>
+                <td>26,3%</td>
+                <td>Feriado, Jam Session, apoio à cafetaria/bar, porta e fechos prolongados, incluindo 14-06.</td>
+              </tr>
+              <tr>
+                <td><strong>Filipe Catalão</strong></td>
+                <td>4h40</td>
+                <td>18,6%</td>
+                <td>Inventário, jantares intensos, Jam Session e apoio transversal em picos.</td>
+              </tr>
+              <tr>
+                <td><strong>Marta</strong></td>
+                <td>4h30</td>
+                <td>17,9%</td>
+                <td>Runner em 12-06 e 13-06, com fechos exigentes e esforço continuado.</td>
+              </tr>
+              <tr>
+                <td><strong>Lil</strong></td>
+                <td>4h01</td>
+                <td>16,0%</td>
+                <td>Gestão de zonas 60/70 em jantares intensos e domingos, com entrada antecipada, saídas tardias e fecho em 14-06.</td>
+              </tr>
+              <tr>
+                <td><strong>Bruno</strong></td>
+                <td>2h30</td>
+                <td>10,0%</td>
+                <td>Aberturas, coordenação, apoio a setores e fechos com pausas reduzidas.</td>
+              </tr>
+              <tr>
+                <td><strong>Pablo</strong></td>
+                <td>2h18</td>
+                <td>9,2%</td>
+                <td>Zonas 60/70, participação em fechos (incluindo 14-06) e apoio em dias de elevada rotação.</td>
+              </tr>
+              <tr>
+                <td><strong>Matilde</strong></td>
+                <td>0h30</td>
+                <td>2,0%</td>
+                <td>Pausa reduzida em feriado, compensando ausência no bar.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="grid grid-2 section">
+          <div class="card">
+            <h3>Horas Extra por Colaborador</h3>
+            <div class="bar-row">
+              <span class="bar-label">Carolina</span>
+              <div class="track"><div class="fill" style="width: 100%"></div></div><strong>6h36</strong>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">Filipe</span>
+              <div class="track"><div class="fill blue" style="width: 71%"></div></div><strong>4h40</strong>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">Marta</span>
+              <div class="track"><div class="fill green" style="width: 68%"></div></div><strong>4h30</strong>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">Lil</span>
+              <div class="track"><div class="fill green" style="width: 61%"></div></div><strong>4h01</strong>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">Bruno</span>
+              <div class="track"><div class="fill" style="width: 38%"></div></div><strong>2h30</strong>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">Pablo</span>
+              <div class="track"><div class="fill" style="width: 35%"></div></div><strong>2h18</strong>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">Matilde</span>
+              <div class="track"><div class="fill" style="width: 8%"></div></div><strong>0h30</strong>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Distribuição Percentual</h3>
+            <div class="pie-wrap">
+              <div class="pie"></div>
+              <div class="legend">
+                <span>Carolina 26,3%</span>
+                <span>Filipe 18,6%</span>
+                <span>Marta 17,9%</span>
+                <span>Lil 16,0%</span>
+                <span>Bruno 10,0%</span>
+                <span>Pablo 9,2%</span>
+                <span>Matilde 2,0%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section card">
+          <h3>Horas Extra por Dia</h3>
+          <div class="bar-row">
+            <span class="bar-label">08-06</span>
+            <div class="track"><div class="fill" style="width: 0%"></div></div><strong>0h00</strong>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">09-06</span>
+            <div class="track"><div class="fill" style="width: 27%"></div></div><strong>2h20</strong>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">10-06</span>
+            <div class="track"><div class="fill" style="width: 68%"></div></div><strong>5h52</strong>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">11-06</span>
+            <div class="track"><div class="fill" style="width: 29%"></div></div><strong>2h30</strong>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">12-06</span>
+            <div class="track"><div class="fill" style="width: 100%"></div></div><strong>8h40</strong>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">13-06</span>
+            <div class="track"><div class="fill" style="width: 43%"></div></div><strong>3h43</strong>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">14-06</span>
+            <div class="track"><div class="fill" style="width: 23%"></div></div><strong>2h00</strong>
+          </div>
+        </div>
+
+        <div class="grid grid-2 section">
+          <div class="card">
+            <h3>Análise</h3>
+            <p>
+              As horas extra concentram-se em três momentos chave: o jantar intenso de 09-06, o feriado de 10-06 e, sobretudo, a Jam
+              Session de 12-06, complementados pelo pico de rotação de 13-06. O esforço extra está fortemente associado a períodos de
+              elevada procura e a eventos especiais, não a falhas de planeamento sistemáticas.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Conclusão</h3>
+            <p>
+              As horas extra foram maioritariamente justificadas, mas o volume registado em 12-06 e 13-06 indica a necessidade de
+              reforço planeado para eventos e dias de calor extremo. O modelo de setores ajuda a controlar dispersão e aumenta a
+              eficiência, mas a consolidação plena (como observado em 13 e 14) será decisiva para reduzir overtime evitável em
+              próximas semanas.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="page">
+        <div class="section">
+          <h2>9. Melhorias Implementadas</h2>
+          <table>
+            <thead>
+              <tr><th>Melhoria</th><th>Problema identificado</th><th>Solução implementada</th><th>Resultado observado</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Modelo de Setores</td>
+                <td>Atropelamentos e duplicação de esforços em dias de pressão (12-06).</td>
+                <td>Revisão em equipa e reforço do papel de coordenação central (Bruno).</td>
+                <td>Dois dias consecutivos (13 e 14) de aplicação exemplar e natural do modelo.</td>
+              </tr>
+              <tr>
+                <td>Comunicação Operacional</td>
+                <td>Falhas de comunicação entre setores em contexto de Jam Session.</td>
+                <td>Clarificação de responsabilidades e reforço de comunicação prévia fora do setor.</td>
+                <td>Melhoria clara nos dias seguintes, sem conflitos de responsabilidade relevantes.</td>
+              </tr>
+              <tr>
+                <td>Organização da Sala</td>
+                <td>Elevada pressão em feriados e sextas com eventos.</td>
+                <td>Setores claros, runner dedicado e coordenação central.</td>
+                <td>Fluidez operacional e elevada rotação de mesas em 13 e 14.</td>
+              </tr>
+              <tr>
+                <td>Procedimentos de Inventário</td>
+                <td>Necessidade de rigor nos níveis reais de stock.</td>
+                <td>Inventário semanal completo em 10-06 e atualização de movimentos.</td>
+                <td>Estado geral operacional e identificação precoce de artigos em atenção/crítico.</td>
+              </tr>
+              <tr>
+                <td>Procedimentos de Fecho</td>
+                <td>Fechos exigentes após Jam Session e dias de alta pressão.</td>
+                <td>Fechos assegurados por equipas experientes (Carolina, Filipe, Marta, Pablo, Lil).</td>
+                <td>Restaurante preparado em todos os dias para a operação seguinte.</td>
+              </tr>
+              <tr>
+                <td>Gestão de Fluxo</td>
+                <td>Domingos e feriados com distribuição irregular de procura.</td>
+                <td>Host/porta dedicado e runner transversal, com apoio de gestão.</td>
+                <td>Melhor controlo da esplanada e experiência consistente ao cliente.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h2>10. Áreas de Atenção</h2>
+          <div class="grid grid-2">
+            <div class="card callout risk-high">
+              <strong>🔴 Alta · Mesas sem pagamento</strong>
+              <p>Reincidência de mesas sem pagamento em 12 e 13-06. Risco financeiro e de controlo operacional em contextos de alta pressão.</p>
+            </div>
+            <div class="card callout risk-high">
+              <strong>🔴 Alta · Planeamento de reforço em eventos</strong>
+              <p>Jam Session e eventos no rooftop geram picos de procura e horas extra significativas.</p>
+            </div>
+            <div class="card callout risk-medium">
+              <strong>🟡 Média · Disciplina de setores em dias críticos</strong>
+              <p>Necessário manter disciplina do modelo de setores em dias com eventos, evitando regressões como as de 12-06.</p>
+            </div>
+            <div class="card callout risk-medium">
+              <strong>🟡 Média · Ausência continuada no bar</strong>
+              <p>A ausência da Mar exige polivalência continuada de Matilde e Carolina; risco de desgaste se não houver reforço.</p>
+            </div>
+            <div class="card callout risk-medium">
+              <strong>🟡 Média · Produtos de limpeza críticos</strong>
+              <p>Álcool em estado crítico (4 unidades) exige atenção e reposição atempada.</p>
+            </div>
+            <div class="card callout risk-low">
+              <strong>🟢 Baixa · Infraestrutura técnica (PDA's)</strong>
+              <p>Falha pontual resolvida rapidamente; importante manter monitorização para evitar recorrência.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="page">
+        <div class="section">
+          <div class="priority-section">
+            <h2>11. Assuntos Prioritários para Resolução</h2>
+            <p class="lead">
+              Problemas estruturais ou operacionais que exigem intervenção da gestão ou administração. Sempre que existam problemas
+              classificados como críticos, esta secção deve surgir automaticamente antes das recomendações finais nos relatórios.
+            </p>
+            <div style="margin-top: 10px">
+              <span class="badge critical">🔴 Crítico</span>
+              <span class="badge attention">🟠 Elevado</span>
+              <span class="badge good">🟡 Moderado</span>
+            </div>
+            <div class="grid grid-2" style="margin-top: 14px">
+              <article class="priority-card">
+                <span class="priority-label">🔴 Crítico · Prioridade máxima</span>
+                <h3>Assunto Prioritário #1 · Lavatório da Casa de Banho do Fraldário</h3>
+                <p>O lavatório da casa de banho do fraldário apresenta instabilidade estrutural e encontra-se a ceder.</p>
+                <div class="priority-meta">
+                  <strong>Riscos</strong>
+                  <ul>
+                    <li>Segurança dos clientes.</li>
+                    <li>Possíveis danos materiais.</li>
+                    <li>Deterioração adicional do equipamento.</li>
+                    <li>Impacto na imagem do restaurante.</li>
+                  </ul>
+                </div>
+                <p style="margin-top: 10px"><strong>Recomendação:</strong> intervenção técnica urgente.</p>
+              </article>
+              <article class="card">
+                <h3>Assunto resolvido · Máquina de Lavar Copos do Bar Interior</h3>
+                <p>
+                  A situação da máquina de lavar copos do bar interior encontra-se resolvida e deixa de ser classificada como assunto
+                  prioritário crítico neste relatório.
+                </p>
+                <div class="priority-meta">
+                  <strong>Estado atual</strong>
+                  <p>Operacionalidade restabelecida. Manter apenas monitorização preventiva em períodos de elevada utilização.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="page">
+        <div class="section">
+          <h2>12. Recomendações para a Próxima Semana</h2>
+          <div class="grid grid-2">
+            <article class="card">
+              <h3>Consolidação do Modelo de Setores</h3>
+              <p>
+                Replicar a configuração de 13 e 14-06 (coordenação centralizada, setores claros, runner dedicado) como modelo de
+                referência, com briefing pré-serviço e debriefing curto no final.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Comunicação entre Equipa</h3>
+              <p>
+                Manter a regra de comunicação prévia quando se intervém fora do setor, especialmente em dias com eventos e Jam
+                Sessions.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Liderança Intermédia</h3>
+              <p>
+                Dar a Bruno objetivos claros de coordenação em dias críticos e envolver Carolina e Matilde como referências em
+                cafetaria/sala interior.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Gestão da Pressão Operacional</h3>
+              <p>
+                Planear reforço para feriados, dias de calor extremo e eventos especiais (Jam Session, rooftop), antecipando host,
+                runner e apoio de bar/cafetaria.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Tarefas Transversais de Sala</h3>
+              <p>
+                Reforçar expectativa de execução equitativa de levantamento de mesas e limpeza de casas de banho no fecho por todos
+                os elementos de sala. Acompanhar evolução do Lil após chamada de atenção e comunicação à gerência registada em 14-06.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Qualidade de Serviço</h3>
+              <p>
+                Utilizar dias equilibrados (como 08, 09 e 14) para reforçar standards, treino em controlo de pagamentos e simulações
+                de picos.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Eficiência Operacional</h3>
+              <p>
+                Monitorizar horas extra por causa (pressão, fecho, eventos, falhas estruturais) e reduzir overtime evitável através
+                de planeamento e consolidação do modelo.
+              </p>
+            </article>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>13. Conclusão Executiva</h2>
+          <p class="lead">
+            A operação apresentou uma evolução claramente positiva ao longo da semana, com especial destaque para a consolidação do
+            modelo de setores e para a capacidade de resposta em dias de forte pressão (feriado, Jam Session e sábado com evento no
+            rooftop). A equipa demonstrou maturidade, resiliência e compromisso com a qualidade de serviço, alcançando dois dias
+            consecutivos (13 e 14) que se aproximam do modelo operacional ideal definido para o RIBBAI.
+          </p>
+          <br />
+          <p class="lead">
+            Atualmente, os principais desafios deixam de estar centrados em consumíveis ou organização básica de serviço e passam a
+            concentrar-se em necessidades estruturais e logísticas ainda pendentes, no reforço de bar e na antecipação de carga em
+            dias especiais. A prioridade da próxima semana deve ser consolidar o modelo de
+            setores, estabilizar a liderança intermédia e avançar na resolução dos assuntos prioritários críticos.
+          </p>
+        </div>
+
+        <div class="grid grid-4 section">
+          <article class="card kpi soft"><span>Operação</span><strong>Evoluiu</strong></article>
+          <article class="card kpi soft"><span>Equipa</span><strong>Evoluiu</strong></article>
+          <article class="card kpi soft"><span>Setores</span><strong>Consolidação</strong></article>
+          <article class="card kpi soft"><span>Prioridade</span><strong>Resolver críticos</strong></article>
+        </div>
+
+        <div class="footer">
+          Relatório preparado para Luís, Paulo e Francisco. Autor: Filipe Catalão. Documento compatível com impressão A4 e envio por
+          email.
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
+

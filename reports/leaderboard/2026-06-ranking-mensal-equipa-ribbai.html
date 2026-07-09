@@ -1,0 +1,2322 @@
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="utf-8" />
+    <title>Ranking semanal RIBBAI OPS</title>
+    <style>
+      @page {
+        size: A4;
+        margin: 16mm 14mm 18mm;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: #ffffff;
+        color: #172033;
+        font-family: Arial, sans-serif;
+        font-size: 10px;
+        line-height: 1.5;
+      }
+
+      .cover {
+        min-height: 260mm;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        page-break-after: always;
+      }
+
+      .brand {
+        color: #f97316;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+      }
+
+      h1 {
+        margin: 18mm 0 8mm;
+        max-width: 150mm;
+        font-size: 38px;
+        line-height: 1.05;
+      }
+
+      h2 {
+        margin: 0 0 12px;
+        font-size: 18px;
+        page-break-after: avoid;
+      }
+
+      h3 {
+        margin: 0 0 4px;
+        font-size: 12px;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      .subtitle {
+        max-width: 132mm;
+        color: #5d667a;
+        font-size: 13px;
+      }
+
+      .meta-card,
+      .section,
+      .daily-card {
+        border: 1px solid #d9dde7;
+        border-radius: 16px;
+        background: #ffffff;
+      }
+
+      .meta-card {
+        width: 96mm;
+        padding: 18px;
+      }
+
+      .meta-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 8px 0;
+        border-bottom: 1px solid #edf0f5;
+      }
+
+      .meta-row:last-child {
+        border-bottom: 0;
+      }
+
+      .muted,
+      .meta-row span,
+      .kpi-card span,
+      .category-card span,
+      .rank-label {
+        color: #5d667a;
+      }
+
+      .section {
+        margin-bottom: 18px;
+        padding: 18px;
+        page-break-inside: avoid;
+      }
+
+      .section.page {
+        page-break-before: always;
+      }
+
+      .kpi-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
+      }
+
+      .kpi-card,
+      .category-card,
+      .highlight-card,
+      .podium-card {
+        border: 1px solid #d9dde7;
+        border-radius: 14px;
+        background: #f6f7fa;
+        padding: 12px;
+      }
+
+      .kpi-card strong {
+        display: block;
+        margin-top: 6px;
+        font-size: 20px;
+      }
+
+      .podium {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+      }
+
+      .podium-card {
+        min-height: 120px;
+        background: #172033;
+        color: #ffffff;
+      }
+
+      .podium-card p,
+      .podium-card .rank-label {
+        color: #d9dde7;
+      }
+
+      .podium-card strong {
+        display: block;
+        margin: 8px 0 4px;
+        color: #f97316;
+        font-size: 22px;
+      }
+
+      .avatar {
+        width: 34px;
+        height: 34px;
+        margin: 12px 0;
+        border-radius: 999px;
+        background: #f97316;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        padding: 8px 7px;
+        border-bottom: 1px solid #e7eaf1;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        background: #f6f7fa;
+        color: #5d667a;
+        font-size: 8.5px;
+        font-weight: 700;
+      }
+
+      .rank {
+        color: #f97316;
+        font-weight: 700;
+      }
+
+      .score-bar {
+        width: 100%;
+        height: 8px;
+        overflow: hidden;
+        border-radius: 999px;
+        background: #e7eaf1;
+      }
+
+      .score-bar span {
+        display: block;
+        height: 100%;
+        border-radius: inherit;
+        background: #f97316;
+      }
+
+      .category-grid,
+      .highlight-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .category-card strong {
+        display: block;
+        margin: 5px 0;
+        font-size: 15px;
+      }
+
+      .highlight-card {
+        page-break-inside: avoid;
+      }
+
+      .points {
+        margin-bottom: 8px;
+        color: #9a3412;
+        font-weight: 700;
+      }
+
+      ul {
+        margin: 8px 0 0;
+        padding-left: 16px;
+      }
+
+      li {
+        margin-bottom: 5px;
+      }
+
+      .notes-list {
+        columns: 2;
+        column-gap: 22px;
+      }
+
+      .daily-card {
+        margin-bottom: 14px;
+        padding: 14px;
+        page-break-inside: avoid;
+      }
+
+      .footer-note {
+        color: #5d667a;
+        font-size: 8.5px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="cover">
+        <div>
+          <div class="brand">RIBBAI OPS</div>
+          <h1>Ranking mensal da equipa</h1>
+          <p class="subtitle">
+            Relatório de performance, adaptação ao modelo de setores e resumo operacional da semana.
+          </p>
+        </div>
+        <div class="meta-card">
+          <div class="meta-row"><span>Restaurante</span><strong>RIBBAI</strong></div>
+          <div class="meta-row"><span>Período</span><strong>2026-06-03 a 2026-06-28</strong></div>
+          <div class="meta-row"><span>Relatórios</span><strong>26</strong></div>
+          <div class="meta-row"><span>Primeiro lugar</span><strong>Carolina</strong></div>
+          <div class="meta-row"><span>Gerado em</span><strong>29/06/2026, 10:26</strong></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Resumo executivo</h2>
+        
+    <div class="kpi-grid">
+      <article class="kpi-card">
+        <span>Relatórios analisados</span>
+        <strong>26</strong>
+      </article>
+      <article class="kpi-card">
+        <span>Dias de alta pressão</span>
+        <strong>17</strong>
+      </article>
+      <article class="kpi-card">
+        <span>Dias sem ocorrências relevantes</span>
+        <strong>4</strong>
+      </article>
+      <article class="kpi-card">
+        <span>Pontos distribuídos</span>
+        <strong>2967</strong>
+      </article>
+      <article class="kpi-card">
+        <span>Horas extra registadas</span>
+        <strong>86h42</strong>
+      </article>
+    </div>
+  
+      </section>
+
+      <section class="section">
+        <h2>Pódio da semana</h2>
+        
+    <div class="podium">
+      
+            <article class="podium-card podium-1">
+              <span class="rank-label">1.º lugar</span>
+              <div class="avatar">C</div>
+              <h3>Carolina</h3>
+              <strong>535 pts</strong>
+              <p>26,8 pts/dia · 20 dias avaliados</p>
+            </article>
+          
+            <article class="podium-card podium-2">
+              <span class="rank-label">2.º lugar</span>
+              <div class="avatar">P</div>
+              <h3>Pablo</h3>
+              <strong>523 pts</strong>
+              <p>27,5 pts/dia · 19 dias avaliados</p>
+            </article>
+          
+            <article class="podium-card podium-3">
+              <span class="rank-label">3.º lugar</span>
+              <div class="avatar">M</div>
+              <h3>Matilde</h3>
+              <strong>511 pts</strong>
+              <p>25,6 pts/dia · 20 dias avaliados</p>
+            </article>
+          
+    </div>
+  
+      </section>
+
+      <section class="section">
+        <h2>Ranking geral</h2>
+        
+    <table>
+      <thead>
+        <tr>
+          <th>Lugar</th>
+          <th>Colaborador</th>
+          <th>Pontos</th>
+          <th>Média/dia</th>
+          <th>Dias</th>
+          <th>Horas extra</th>
+          <th>Progresso</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+              <tr>
+                <td class="rank">1.º</td>
+                <td><strong>Carolina</strong></td>
+                <td>535</td>
+                <td>26,8</td>
+                <td>20</td>
+                <td>28h</td>
+                <td>
+    <div class="score-bar" aria-label="535 pontos">
+      <span style="width: 100%"></span>
+    </div>
+  </td>
+              </tr>
+            
+              <tr>
+                <td class="rank">2.º</td>
+                <td><strong>Pablo</strong></td>
+                <td>523</td>
+                <td>27,5</td>
+                <td>19</td>
+                <td>3h18</td>
+                <td>
+    <div class="score-bar" aria-label="523 pontos">
+      <span style="width: 98%"></span>
+    </div>
+  </td>
+              </tr>
+            
+              <tr>
+                <td class="rank">3.º</td>
+                <td><strong>Matilde</strong></td>
+                <td>511</td>
+                <td>25,6</td>
+                <td>20</td>
+                <td>15h34</td>
+                <td>
+    <div class="score-bar" aria-label="511 pontos">
+      <span style="width: 96%"></span>
+    </div>
+  </td>
+              </tr>
+            
+              <tr>
+                <td class="rank">4.º</td>
+                <td><strong>Bruno</strong></td>
+                <td>482</td>
+                <td>25,4</td>
+                <td>19</td>
+                <td>16h54</td>
+                <td>
+    <div class="score-bar" aria-label="482 pontos">
+      <span style="width: 90%"></span>
+    </div>
+  </td>
+              </tr>
+            
+              <tr>
+                <td class="rank">5.º</td>
+                <td><strong>Lil</strong></td>
+                <td>427</td>
+                <td>21,4</td>
+                <td>20</td>
+                <td>15h46</td>
+                <td>
+    <div class="score-bar" aria-label="427 pontos">
+      <span style="width: 80%"></span>
+    </div>
+  </td>
+              </tr>
+            
+              <tr>
+                <td class="rank">6.º</td>
+                <td><strong>Marta</strong></td>
+                <td>286</td>
+                <td>23,8</td>
+                <td>12</td>
+                <td>7h10</td>
+                <td>
+    <div class="score-bar" aria-label="286 pontos">
+      <span style="width: 53%"></span>
+    </div>
+  </td>
+              </tr>
+            
+              <tr>
+                <td class="rank">7.º</td>
+                <td><strong>Lee</strong></td>
+                <td>133</td>
+                <td>19</td>
+                <td>7</td>
+                <td>0min</td>
+                <td>
+    <div class="score-bar" aria-label="133 pontos">
+      <span style="width: 25%"></span>
+    </div>
+  </td>
+              </tr>
+            
+              <tr>
+                <td class="rank">8.º</td>
+                <td><strong>Diogo</strong></td>
+                <td>50</td>
+                <td>10</td>
+                <td>5</td>
+                <td>0min</td>
+                <td>
+    <div class="score-bar" aria-label="50 pontos">
+      <span style="width: 9%"></span>
+    </div>
+  </td>
+              </tr>
+            
+              <tr>
+                <td class="rank">9.º</td>
+                <td><strong>Sofia</strong></td>
+                <td>20</td>
+                <td>6,7</td>
+                <td>3</td>
+                <td>0min</td>
+                <td>
+    <div class="score-bar" aria-label="20 pontos">
+      <span style="width: 4%"></span>
+    </div>
+  </td>
+              </tr>
+            
+      </tbody>
+    </table>
+  
+      </section>
+
+      <section class="section page">
+        <h2>Forma de avaliação</h2>
+        <p class="muted">
+          A pontuação combina desempenho operacional, qualidade, adaptação ao novo modelo e compromisso.
+          Folgas ou dias não escalados não retiram pontos; por isso o relatório mostra também média por dia avaliado.
+        </p>
+        <br />
+        
+    <div class="category-grid">
+      
+            <article class="category-card">
+              <span>Execução operacional</span>
+              <strong>Até 20 pts/dia</strong>
+              <p>Responsabilidade assumida, desempenho no setor, abertura, coordenação local e capacidade de resposta.</p>
+            </article>
+          
+            <article class="category-card">
+              <span>Qualidade e consistência</span>
+              <strong>Até 12 pts/dia</strong>
+              <p>Serviço sem falhas relevantes, boa comunicação, recuperação de inconsistências e experiência do cliente.</p>
+            </article>
+          
+            <article class="category-card">
+              <span>Adaptação ao modelo de setores</span>
+              <strong>Até 16 pts/dia</strong>
+              <p>Foco no setor atribuído, disciplina operacional e comunicação antes de intervir noutra zona.</p>
+            </article>
+          
+            <article class="category-card">
+              <span>Compromisso e colaboração</span>
+              <strong>Até 12 pts/dia</strong>
+              <p>Horas extra, apoio a colegas, fecho, stock, manutenção e disponibilidade em dias críticos.</p>
+            </article>
+          
+    </div>
+  
+      </section>
+
+      <section class="section">
+        <h2>Resumo semanal operacional</h2>
+        
+    <ul class="notes-list">
+      <li>Forte afluência no almoço e tarde.</li><li>Serviço globalmente positivo e profissional.</li><li>Nova organização por áreas introduzida.</li><li>Boa adesão da equipa ao novo modelo.</li><li>Necessidade de acompanhar indicadores de comunicação, velocidade e responsabilização.</li><li>Feriado nacional com fluxo de clientes superior ao habitual.</li><li>Pressão elevada na cafetaria e operação de sala.</li><li>Período crítico entre cerca das 11h30 e 18h30.</li>
+    </ul>
+  
+      </section>
+
+      <section class="section page">
+        <h2>Destaques individuais</h2>
+        
+    <div class="highlight-grid">
+      
+            <article class="highlight-card">
+              <h3>Carolina</h3>
+              <p class="points">535 pts · 26,8 pts/dia</p>
+              <ul>
+                <li>2026-06-03: Destaque individual no relatório.</li><li>2026-06-03: Função crítica no serviço.</li><li>2026-06-03: Dia sem ocorrências relevantes para a experiência do cliente.</li>
+              </ul>
+            </article>
+          
+            <article class="highlight-card">
+              <h3>Pablo</h3>
+              <p class="points">523 pts · 27,5 pts/dia</p>
+              <ul>
+                <li>2026-06-03: Destaque individual no relatório.</li><li>2026-06-03: Desempenho forte registado no relatório.</li><li>2026-06-03: Função crítica no serviço.</li>
+              </ul>
+            </article>
+          
+            <article class="highlight-card">
+              <h3>Matilde</h3>
+              <p class="points">511 pts · 25,6 pts/dia</p>
+              <ul>
+                <li>2026-06-03: Destaque individual no relatório.</li><li>2026-06-03: Dia sem ocorrências relevantes para a experiência do cliente.</li><li>2026-06-03: Apoio ou colaboração registada.</li>
+              </ul>
+            </article>
+          
+            <article class="highlight-card">
+              <h3>Bruno</h3>
+              <p class="points">482 pts · 25,4 pts/dia</p>
+              <ul>
+                <li>2026-06-04: Responsabilidade: Mesas da zona 50 e gestão da porta</li><li>2026-06-04: Destaque individual no relatório.</li><li>2026-06-04: Função crítica no serviço.</li>
+              </ul>
+            </article>
+          
+            <article class="highlight-card">
+              <h3>Lil</h3>
+              <p class="points">427 pts · 21,4 pts/dia</p>
+              <ul>
+                <li>2026-06-05: Responsabilidade: Mesas da zona 70</li><li>2026-06-05: Destaque individual no relatório.</li><li>2026-06-05: Função crítica no serviço.</li>
+              </ul>
+            </article>
+          
+            <article class="highlight-card">
+              <h3>Marta</h3>
+              <p class="points">286 pts · 23,8 pts/dia</p>
+              <ul>
+                <li>2026-06-03: Responsabilidade operacional assumida.</li><li>2026-06-03: Destaque individual no relatório.</li><li>2026-06-03: Desempenho forte registado no relatório.</li>
+              </ul>
+            </article>
+          
+            <article class="highlight-card">
+              <h3>Lee</h3>
+              <p class="points">133 pts · 19 pts/dia</p>
+              <ul>
+                <li>2026-06-19: Responsabilidade: Setor das 70&#039;s</li><li>2026-06-19: Destaque individual no relatório.</li><li>2026-06-19: Boa adaptação ao modelo de setores.</li>
+              </ul>
+            </article>
+          
+            <article class="highlight-card">
+              <h3>Diogo</h3>
+              <p class="points">50 pts · 10 pts/dia</p>
+              <ul>
+                <li>2026-06-22: Desempenho forte registado no relatório.</li><li>2026-06-22: Contributo para comunicação, controlo ou consistência.</li><li>2026-06-22: Trabalho adicional de manutenção ou apresentação.</li>
+              </ul>
+            </article>
+          
+            <article class="highlight-card">
+              <h3>Sofia</h3>
+              <p class="points">20 pts · 6,7 pts/dia</p>
+              <ul>
+                <li>2026-06-25: Desempenho forte registado no relatório.</li><li>2026-06-27: Responsabilidade operacional assumida.</li><li>2026-06-28: Responsabilidade operacional assumida.</li>
+              </ul>
+            </article>
+          
+    </div>
+  
+      </section>
+
+      <section class="section page">
+        <h2>Detalhe diário</h2>
+        
+        <section class="daily-card">
+          <div>
+            <h3>03/06/2026 · quarta-feira</h3>
+            <p>Dia de pressão elevada · sem ocorrências relevantes</p>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Colaborador</th>
+                <th>Total</th>
+                <th>Execução</th>
+                <th>Qualidade</th>
+                <th>Modelo</th>
+                <th>Compromisso</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                    <tr>
+                      <td><strong>Pablo</strong></td>
+                      <td>33</td>
+                      <td>19</td>
+                      <td>8</td>
+                      <td>0</td>
+                      <td>6</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Marta</strong></td>
+                      <td>32</td>
+                      <td>18</td>
+                      <td>3</td>
+                      <td>4</td>
+                      <td>7</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Carolina</strong></td>
+                      <td>22</td>
+                      <td>10</td>
+                      <td>3</td>
+                      <td>0</td>
+                      <td>9</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Matilde</strong></td>
+                      <td>12</td>
+                      <td>5</td>
+                      <td>3</td>
+                      <td>0</td>
+                      <td>4</td>
+                    </tr>
+                  
+            </tbody>
+          </table>
+        </section>
+      
+        <section class="daily-card">
+          <div>
+            <h3>04/06/2026 · quinta-feira</h3>
+            <p>Dia de pressão elevada · com pontos de atenção</p>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Colaborador</th>
+                <th>Total</th>
+                <th>Execução</th>
+                <th>Qualidade</th>
+                <th>Modelo</th>
+                <th>Compromisso</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                    <tr>
+                      <td><strong>Pablo</strong></td>
+                      <td>41</td>
+                      <td>20</td>
+                      <td>5</td>
+                      <td>10</td>
+                      <td>6</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Matilde</strong></td>
+                      <td>26</td>
+                      <td>17</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>9</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Carolina</strong></td>
+                      <td>24</td>
+                      <td>17</td>
+                      <td>0</td>
+                      <td>3</td>
+                      <td>4</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Marta</strong></td>
+                      <td>24</td>
+                      <td>17</td>
+                      <td>0</td>
+                      <td>1</td>
+                      <td>6</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Bruno</strong></td>
+                      <td>22</td>
+                      <td>17</td>
+                      <td>0</td>
+                      <td>1</td>
+                      <td>4</td>
+                    </tr>
+                  
+            </tbody>
+          </table>
+        </section>
+      
+        <section class="daily-card">
+          <div>
+            <h3>05/06/2026 · sexta-feira</h3>
+            <p>Dia de pressão elevada · sem ocorrências relevantes</p>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Colaborador</th>
+                <th>Total</th>
+                <th>Execução</th>
+                <th>Qualidade</th>
+                <th>Modelo</th>
+                <th>Compromisso</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                    <tr>
+                      <td><strong>Pablo</strong></td>
+                      <td>48</td>
+                      <td>20</td>
+                      <td>8</td>
+                      <td>9</td>
+                      <td>11</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Bruno</strong></td>
+                      <td>43</td>
+                      <td>17</td>
+                      <td>8</td>
+                      <td>9</td>
+                      <td>9</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Matilde</strong></td>
+                      <td>38</td>
+                      <td>17</td>
+                      <td>3</td>
+                      <td>9</td>
+                      <td>9</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Lil</strong></td>
+                      <td>33</td>
+                      <td>17</td>
+                      <td>3</td>
+                      <td>9</td>
+                      <td>4</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Carolina</strong></td>
+                      <td>32</td>
+                      <td>17</td>
+                      <td>3</td>
+                      <td>0</td>
+                      <td>12</td>
+                    </tr>
+                  
+            </tbody>
+          </table>
+        </section>
+      
+        <section class="daily-card">
+          <div>
+            <h3>06/06/2026 · sábado</h3>
+            <p>Dia de pressão elevada · sem ocorrências relevantes</p>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Colaborador</th>
+                <th>Total</th>
+                <th>Execução</th>
+                <th>Qualidade</th>
+                <th>Modelo</th>
+                <th>Compromisso</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                    <tr>
+                      <td><strong>Carolina</strong></td>
+                      <td>50</td>
+                      <td>20</td>
+                      <td>8</td>
+                      <td>10</td>
+                      <td>12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Matilde</strong></td>
+                      <td>45</td>
+                      <td>20</td>
+                      <td>8</td>
+                      <td>10</td>
+                      <td>7</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Pablo</strong></td>
+                      <td>44</td>
+                      <td>20</td>
+                      <td>8</td>
+                      <td>10</td>
+                      <td>6</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Bruno</strong></td>
+                      <td>33</td>
+                      <td>20</td>
+                      <td>8</td>
+                      <td>-3</td>
+                      <td>8</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Lil</strong></td>
+                      <td>29</td>
+                      <td>17</td>
+                      <td>3</td>
+                      <td>-3</td>
+                      <td>12</td>
+                    </tr>
+                  
+            </tbody>
+          </table>
+        </section>
+      
+        <section class="daily-card">
+          <div>
+            <h3>07/06/2026 · domingo</h3>
+            <p>Dia de pressão elevada · sem ocorrências relevantes</p>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Colaborador</th>
+                <th>Total</th>
+                <th>Execução</th>
+                <th>Qualidade</th>
+                <th>Modelo</th>
+                <th>Compromisso</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                    <tr>
+                      <td><strong>Carolina</strong></td>
+                      <td>50</td>
+                      <td>20</td>
+                      <td>7</td>
+                      <td>11</td>
+                      <td>12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Matilde</strong></td>
+                      <td>45</td>
+                      <td>20</td>
+                      <td>8</td>
+                      <td>11</td>
+                      <td>6</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Marta</strong></td>
+                      <td>43</td>
+                      <td>20</td>
+                      <td>7</td>
+                      <td>11</td>
+                      <td>5</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Lil</strong></td>
+                      <td>24</td>
+                      <td>17</td>
+                      <td>3</td>
+                      <td>-4</td>
+                      <td>8</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Bruno</strong></td>
+                      <td>23</td>
+                      <td>17</td>
+                      <td>3</td>
+                      <td>-4</td>
+                      <td>7</td>
+                    </tr>
+                  
+            </tbody>
+          </table>
+        </section>
+      
+        <section class="daily-card">
+          <div>
+            <h3>08/06/2026 · segunda-feira</h3>
+            <p>Dia de pressão elevada · com pontos de atenção</p>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Colaborador</th>
+                <th>Total</th>
+                <th>Execução</th>
+                <th>Qualidade</th>
+                <th>Modelo</th>
+                <th>Compromisso</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                    <tr>
+                      <td><strong>Bruno</strong></td>
+                      <td>20</td>
+                      <td>10</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Marta</strong></td>
+                      <td>18</td>
+                      <td>5</td>
+                      <td>5</td>
+                      <td>0</td>
+                      <td>8</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Lil</strong></td>
+                      <td>14</td>
+                      <td>5</td>
+                      <td>0</td>
+                      <td>4</td>
+                      <td>5</td>
+                    </tr>
+                  
+            </tbody>
+          </table>
+        </section>
+      
+        <section class="daily-card">
+          <div>
+            <h3>09/06/2026 · terça-feira</h3>
+            <p>Dia de pressão elevada · com pontos de atenção</p>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Colaborador</th>
+                <th>Total</th>
+                <th>Execução</th>
+                <th>Qualidade</th>
+                <th>Modelo</th>
+                <th>Compromisso</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                    <tr>
+                      <td><strong>Pablo</strong></td>
+                      <td>33</td>
+                      <td>16</td>
+                      <td>5</td>
+                      <td>0</td>
+                      <td>12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Marta</strong></td>
+                      <td>27</td>
+                      <td>18</td>
+                      <td>5</td>
+                      <td>0</td>
+                      <td>4</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Lil</strong></td>
+                      <td>26</td>
+                      <td>18</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>8</td>
+                    </tr>
+                  
+            </tbody>
+          </table>
+        </section>
+      
+        <section class="daily-card">
+          <div>
+            <h3>10/06/2026 · quarta-feira</h3>
+            <p>Dia de pressão elevada · com pontos de atenção</p>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Colaborador</th>
+                <th>Total</th>
+                <th>Execução</th>
+                <th>Qualidade</th>
+                <th>Modelo</th>
+                <th>Compromisso</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                    <tr>
+                      <td><strong>Bruno</strong></td>
+                      <td>37</td>
+                      <td>20</td>
+                      <td>5</td>
+                      <td>1</td>
+                      <td>11</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Carolina</strong></td>
+                      <td>33</td>
+                      <td>20</td>
+                      <td>0</td>
+                      <td>1</td>
+                      <td>12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Pablo</strong></td>
+                      <td>28</td>
+                      <td>20</td>
+                      <td>5</td>
+                      <td>1</td>
+                      <td>2</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Matilde</strong></td>
+                      <td>27</td>
+                      <td>20</td>
+                      <td>0</td>
+                      <td>1</td>
+                      <td>6</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Lil</strong></td>
+                      <td>23</td>
+                      <td>20</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>3</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Marta</strong></td>
+                      <td>23</td>
+                      <td>17</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>6</td>
+                    </tr>
+                  
+            </tbody>
+          </table>
+        </section>
+      
+        <section class="daily-card">
+          <div>
+            <h3>11/06/2026 · quinta-feira</h3>
+            <p>Dia de pressão elevada · com pontos de atenção</p>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Colaborador</th>
+                <th>Total</th>
+                <th>Execução</th>
+                <th>Qualidade</th>
+                <th>Modelo</th>
+                <th>Compromisso</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                    <tr>
+                      <td><strong>Carolina</strong></td>
+                      <td>37</td>
+                      <td>20</td>
+                      <td>5</td>
+                      <td>0</td>
+                      <td>12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Matilde</strong></td>
+                      <td>34</td>
+                      <td>16</td>
+                      <td>5</td>
+                      <td>9</td>
+                      <td>4</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Marta</strong></td>
+                      <td>22</td>
+                      <td>10</td>
+                      <td>5</td>
+                      <td>0</td>
+                      <td>7</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Bruno</strong></td>
+                      <td>15</td>
+                      <td>10</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>5</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Pablo</strong></td>
+                      <td>9</td>
+                      <td>5</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>4</td>
+                    </tr>
+                  
+            </tbody>
+          </table>
+        </section>
+      
+        <section class="daily-card">
+          <div>
+            <h3>12/06/2026 · sexta-feira</h3>
+            <p>Dia de pressão elevada · com pontos de atenção</p>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Colaborador</th>
+                <th>Total</th>
+                <th>Execução</th>
+                <th>Qualidade</th>
+                <th>Modelo</th>
+                <th>Compromisso</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                    <tr>
+                      <td><strong>Marta</strong></td>
+                      <td>28</td>
+                      <td>20</td>
+                      <td>0</td>
+                      <td>-4</td>
+                      <td>12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Matilde</strong></td>
+                      <td>28</td>
+                      <td>20</td>
+                      <td>5</td>
+                      <td>-3</td>
+                      <td>6</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Bruno</strong></td>
+                      <td>27</td>
+                      <td>20</td>
+                      <td>0</td>
+                      <td>-3</td>
+                      <td>10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Carolina</strong></td>
+                      <td>21</td>
+                      <td>12</td>
+                      <td>0</td>
+                      <td>-3</td>
+                      <td>12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Lil</strong></td>
+                      <td>20</td>
+                      <td>20</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                    </tr>
+                  
+            </tbody>
+          </table>
+        </section>
+      
+        <section class="daily-card">
+          <div>
+            <h3>13/06/2026 · sábado</h3>
+            <p>Dia de pressão elevada · com pontos de atenção</p>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Colaborador</th>
+                <th>Total</th>
+                <th>Execução</th>
+                <th>Qualidade</th>
+                <th>Modelo</th>
+                <th>Compromisso</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                    <tr>
+                      <td><strong>Bruno</strong></td>
+                      <td>49</td>
+                      <td>20</td>
+                      <td>5</td>
+                      <td>14</td>
+                      <td>10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Lil</strong></td>
+                      <td>34</td>
+                      <td>20</td>
+                      <td>5</td>
+                      <td>1</td>
+                      <td>8</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Pablo</strong></td>
+                      <td>34</td>
+                      <td>20</td>
+                      <td>5</td>
+                      <td>1</td>
+                      <td>8</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Matilde</strong></td>
+                      <td>32</td>
+                      <td>20</td>
+                      <td>5</td>
+                      <td>1</td>
+                      <td>6</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Carolina</strong></td>
+                      <td>26</td>
+                      <td>12</td>
+                      <td>5</td>
+                      <td>1</td>
+                      <td>8</td>
+                    </tr>
+                  
+            </tbody>
+          </table>
+        </section>
+      
+        <section class="daily-card">
+          <div>
+            <h3>14/06/2026 · domingo</h3>
+            <p>Dia operacional estável · com pontos de atenção</p>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Colaborador</th>
+                <th>Total</th>
+                <th>Execução</th>
+                <th>Qualidade</th>
+                <th>Modelo</th>
+                <th>Compromisso</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                    <tr>
+                      <td><strong>Bruno</strong></td>
+                      <td>33</td>
+                      <td>20</td>
+                      <td>5</td>
+                      <td>1</td>
+                      <td>7</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Carolina</strong></td>
+                      <td>32</td>
+                      <td>20</td>
+                      <td>5</td>
+                      <td>1</td>
+                      <td>6</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Pablo</strong></td>
+                      <td>29</td>
+                      <td>17</td>
+                      <td>5</td>
+                      <td>1</td>
+                      <td>6</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Lil</strong></td>
+                      <td>24</td>
+                      <td>17</td>
+                      <td>5</td>
+                      <td>-5</td>
+                      <td>7</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Matilde</strong></td>
+                      <td>20</td>
+                      <td>10</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>10</td>
+                    </tr>
+                  
+            </tbody>
+          </table>
+        </section>
+      
+        <section class="daily-card">
+          <div>
+            <h3>15/06/2026 · segunda-feira</h3>
+            <p>Dia operacional estável · com pontos de atenção</p>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Colaborador</th>
+                <th>Total</th>
+                <th>Execução</th>
+                <th>Qualidade</th>
+                <th>Modelo</th>
+                <th>Compromisso</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                    <tr>
+                      <td><strong>Marta</strong></td>
+                      <td>31</td>
+                      <td>18</td>
+                      <td>5</td>
+                      <td>0</td>
+                      <td>8</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Pablo</strong></td>
+                      <td>29</td>
+                      <td>19</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Lil</strong></td>
+                      <td>16</td>
+                      <td>5</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>11</td>
+                    </tr>
+                  
+            </tbody>
+          </table>
+        </section>
+      
+        <section class="daily-card">
+          <div>
+            <h3>16/06/2026 · terça-feira</h3>
+            <p>Dia operacional estável · com pontos de atenção</p>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Colaborador</th>
+                <th>Total</th>
+                <th>Execução</th>
+                <th>Qualidade</th>
+                <th>Modelo</th>
+                <th>Compromisso</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                    <tr>
+                      <td><strong>Pablo</strong></td>
+                      <td>28</td>
+                      <td>11</td>
+                      <td>5</td>
+                      <td>0</td>
+                      <td>12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Bruno</strong></td>
+                      <td>19</td>
+                      <td>7</td>
+                      <td>0</td>
+                      <td>4</td>
+                      <td>8</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Lil</strong></td>
+                      <td>18</td>
+                      <td>6</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Marta</strong></td>
+                      <td>15</td>
+                      <td>5</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>10</td>
+                    </tr>
+                  
+            </tbody>
+          </table>
+        </section>
+      
+        <section class="daily-card">
+          <div>
+            <h3>17/06/2026 · quarta-feira</h3>
+            <p>Dia operacional estável · com pontos de atenção</p>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Colaborador</th>
+                <th>Total</th>
+                <th>Execução</th>
+                <th>Qualidade</th>
+                <th>Modelo</th>
+                <th>Compromisso</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                    <tr>
+                      <td><strong>Bruno</strong></td>
+                      <td>22</td>
+                      <td>10</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Marta</strong></td>
+                      <td>17</td>
+                      <td>5</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Carolina</strong></td>
+                      <td>16</td>
+                      <td>10</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>6</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Pablo</strong></td>
+                      <td>16</td>
+                      <td>10</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>6</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Matilde</strong></td>
+                      <td>9</td>
+                      <td>5</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>4</td>
+                    </tr>
+                  
+            </tbody>
+          </table>
+        </section>
+      
+        <section class="daily-card">
+          <div>
+            <h3>18/06/2026 · quinta-feira</h3>
+            <p>Dia operacional estável · com pontos de atenção</p>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Colaborador</th>
+                <th>Total</th>
+                <th>Execução</th>
+                <th>Qualidade</th>
+                <th>Modelo</th>
+                <th>Compromisso</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                    <tr>
+                      <td><strong>Carolina</strong></td>
+                      <td>33</td>
+                      <td>18</td>
+                      <td>5</td>
+                      <td>0</td>
+                      <td>10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Matilde</strong></td>
+                      <td>21</td>
+                      <td>10</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>11</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Lil</strong></td>
+                      <td>17</td>
+                      <td>5</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Pablo</strong></td>
+                      <td>17</td>
+                      <td>10</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>7</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Marta</strong></td>
+                      <td>9</td>
+                      <td>5</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>4</td>
+                    </tr>
+                  
+            </tbody>
+          </table>
+        </section>
+      
+        <section class="daily-card">
+          <div>
+            <h3>19/06/2026 · sexta-feira</h3>
+            <p>Dia operacional estável · com pontos de atenção</p>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Colaborador</th>
+                <th>Total</th>
+                <th>Execução</th>
+                <th>Qualidade</th>
+                <th>Modelo</th>
+                <th>Compromisso</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                    <tr>
+                      <td><strong>Bruno</strong></td>
+                      <td>37</td>
+                      <td>20</td>
+                      <td>5</td>
+                      <td>0</td>
+                      <td>12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Carolina</strong></td>
+                      <td>30</td>
+                      <td>18</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Matilde</strong></td>
+                      <td>27</td>
+                      <td>17</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Lee</strong></td>
+                      <td>23</td>
+                      <td>12</td>
+                      <td>0</td>
+                      <td>11</td>
+                      <td>0</td>
+                    </tr>
+                  
+            </tbody>
+          </table>
+        </section>
+      
+        <section class="daily-card">
+          <div>
+            <h3>20/06/2026 · sábado</h3>
+            <p>Dia de pressão elevada · com pontos de atenção</p>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Colaborador</th>
+                <th>Total</th>
+                <th>Execução</th>
+                <th>Qualidade</th>
+                <th>Modelo</th>
+                <th>Compromisso</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                    <tr>
+                      <td><strong>Bruno</strong></td>
+                      <td>27</td>
+                      <td>17</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Matilde</strong></td>
+                      <td>26</td>
+                      <td>20</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>6</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Carolina</strong></td>
+                      <td>24</td>
+                      <td>12</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Lil</strong></td>
+                      <td>22</td>
+                      <td>12</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Lee</strong></td>
+                      <td>16</td>
+                      <td>12</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>4</td>
+                    </tr>
+                  
+            </tbody>
+          </table>
+        </section>
+      
+        <section class="daily-card">
+          <div>
+            <h3>21/06/2026 · domingo</h3>
+            <p>Dia de pressão elevada · com pontos de atenção</p>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Colaborador</th>
+                <th>Total</th>
+                <th>Execução</th>
+                <th>Qualidade</th>
+                <th>Modelo</th>
+                <th>Compromisso</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                    <tr>
+                      <td><strong>Carolina</strong></td>
+                      <td>30</td>
+                      <td>13</td>
+                      <td>5</td>
+                      <td>1</td>
+                      <td>11</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Lil</strong></td>
+                      <td>29</td>
+                      <td>18</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>11</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Lee</strong></td>
+                      <td>28</td>
+                      <td>12</td>
+                      <td>0</td>
+                      <td>4</td>
+                      <td>12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Matilde</strong></td>
+                      <td>26</td>
+                      <td>12</td>
+                      <td>5</td>
+                      <td>1</td>
+                      <td>8</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Pablo</strong></td>
+                      <td>26</td>
+                      <td>13</td>
+                      <td>5</td>
+                      <td>1</td>
+                      <td>7</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Bruno</strong></td>
+                      <td>20</td>
+                      <td>7</td>
+                      <td>5</td>
+                      <td>1</td>
+                      <td>7</td>
+                    </tr>
+                  
+            </tbody>
+          </table>
+        </section>
+      
+        <section class="daily-card">
+          <div>
+            <h3>22/06/2026 · segunda-feira</h3>
+            <p>Dia de pressão elevada · com pontos de atenção</p>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Colaborador</th>
+                <th>Total</th>
+                <th>Execução</th>
+                <th>Qualidade</th>
+                <th>Modelo</th>
+                <th>Compromisso</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                    <tr>
+                      <td><strong>Pablo</strong></td>
+                      <td>28</td>
+                      <td>11</td>
+                      <td>5</td>
+                      <td>0</td>
+                      <td>12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Lil</strong></td>
+                      <td>23</td>
+                      <td>7</td>
+                      <td>5</td>
+                      <td>0</td>
+                      <td>11</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Diogo</strong></td>
+                      <td>15</td>
+                      <td>6</td>
+                      <td>5</td>
+                      <td>0</td>
+                      <td>4</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Lee</strong></td>
+                      <td>15</td>
+                      <td>5</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>10</td>
+                    </tr>
+                  
+            </tbody>
+          </table>
+        </section>
+      
+        <section class="daily-card">
+          <div>
+            <h3>23/06/2026 · terça-feira</h3>
+            <p>Dia operacional estável · com pontos de atenção</p>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Colaborador</th>
+                <th>Total</th>
+                <th>Execução</th>
+                <th>Qualidade</th>
+                <th>Modelo</th>
+                <th>Compromisso</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                    <tr>
+                      <td><strong>Pablo</strong></td>
+                      <td>28</td>
+                      <td>11</td>
+                      <td>5</td>
+                      <td>0</td>
+                      <td>12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Lil</strong></td>
+                      <td>11</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>11</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Diogo</strong></td>
+                      <td>8</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>4</td>
+                      <td>4</td>
+                    </tr>
+                  
+            </tbody>
+          </table>
+        </section>
+      
+        <section class="daily-card">
+          <div>
+            <h3>24/06/2026 · quarta-feira</h3>
+            <p>Dia operacional estável · com pontos de atenção</p>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Colaborador</th>
+                <th>Total</th>
+                <th>Execução</th>
+                <th>Qualidade</th>
+                <th>Modelo</th>
+                <th>Compromisso</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                    <tr>
+                      <td><strong>Pablo</strong></td>
+                      <td>28</td>
+                      <td>11</td>
+                      <td>5</td>
+                      <td>0</td>
+                      <td>12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Bruno</strong></td>
+                      <td>23</td>
+                      <td>6</td>
+                      <td>5</td>
+                      <td>0</td>
+                      <td>12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Matilde</strong></td>
+                      <td>22</td>
+                      <td>11</td>
+                      <td>5</td>
+                      <td>0</td>
+                      <td>6</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Carolina</strong></td>
+                      <td>17</td>
+                      <td>5</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Diogo</strong></td>
+                      <td>8</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>4</td>
+                      <td>4</td>
+                    </tr>
+                  
+            </tbody>
+          </table>
+        </section>
+      
+        <section class="daily-card">
+          <div>
+            <h3>25/06/2026 · quinta-feira</h3>
+            <p>Dia operacional estável · com pontos de atenção</p>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Colaborador</th>
+                <th>Total</th>
+                <th>Execução</th>
+                <th>Qualidade</th>
+                <th>Modelo</th>
+                <th>Compromisso</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                    <tr>
+                      <td><strong>Carolina</strong></td>
+                      <td>22</td>
+                      <td>6</td>
+                      <td>5</td>
+                      <td>0</td>
+                      <td>11</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Lil</strong></td>
+                      <td>20</td>
+                      <td>5</td>
+                      <td>5</td>
+                      <td>0</td>
+                      <td>10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Matilde</strong></td>
+                      <td>16</td>
+                      <td>0</td>
+                      <td>5</td>
+                      <td>0</td>
+                      <td>11</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Bruno</strong></td>
+                      <td>15</td>
+                      <td>5</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Diogo</strong></td>
+                      <td>8</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>4</td>
+                      <td>4</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Sofia</strong></td>
+                      <td>6</td>
+                      <td>6</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                    </tr>
+                  
+            </tbody>
+          </table>
+        </section>
+      
+        <section class="daily-card">
+          <div>
+            <h3>26/06/2026 · sexta-feira</h3>
+            <p>Dia de pressão elevada · com pontos de atenção</p>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Colaborador</th>
+                <th>Total</th>
+                <th>Execução</th>
+                <th>Qualidade</th>
+                <th>Modelo</th>
+                <th>Compromisso</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                    <tr>
+                      <td><strong>Lee</strong></td>
+                      <td>22</td>
+                      <td>18</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>4</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Matilde</strong></td>
+                      <td>22</td>
+                      <td>12</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Bruno</strong></td>
+                      <td>20</td>
+                      <td>5</td>
+                      <td>5</td>
+                      <td>0</td>
+                      <td>10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Lil</strong></td>
+                      <td>20</td>
+                      <td>5</td>
+                      <td>5</td>
+                      <td>0</td>
+                      <td>10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Carolina</strong></td>
+                      <td>12</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Diogo</strong></td>
+                      <td>11</td>
+                      <td>7</td>
+                      <td>0</td>
+                      <td>4</td>
+                      <td>0</td>
+                    </tr>
+                  
+            </tbody>
+          </table>
+        </section>
+      
+        <section class="daily-card">
+          <div>
+            <h3>27/06/2026 · sábado</h3>
+            <p>Dia de pressão elevada · com pontos de atenção</p>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Colaborador</th>
+                <th>Total</th>
+                <th>Execução</th>
+                <th>Qualidade</th>
+                <th>Modelo</th>
+                <th>Compromisso</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                    <tr>
+                      <td><strong>Carolina</strong></td>
+                      <td>35</td>
+                      <td>18</td>
+                      <td>5</td>
+                      <td>0</td>
+                      <td>12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Matilde</strong></td>
+                      <td>29</td>
+                      <td>12</td>
+                      <td>5</td>
+                      <td>0</td>
+                      <td>12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Bruno</strong></td>
+                      <td>24</td>
+                      <td>12</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Lil</strong></td>
+                      <td>15</td>
+                      <td>7</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>8</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Pablo</strong></td>
+                      <td>12</td>
+                      <td>12</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Lee</strong></td>
+                      <td>9</td>
+                      <td>5</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>4</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Sofia</strong></td>
+                      <td>7</td>
+                      <td>7</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                    </tr>
+                  
+            </tbody>
+          </table>
+        </section>
+      
+        <section class="daily-card">
+          <div>
+            <h3>28/06/2026 · domingo</h3>
+            <p>Dia de pressão elevada · com pontos de atenção</p>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Colaborador</th>
+                <th>Total</th>
+                <th>Execução</th>
+                <th>Qualidade</th>
+                <th>Modelo</th>
+                <th>Compromisso</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                    <tr>
+                      <td><strong>Carolina</strong></td>
+                      <td>35</td>
+                      <td>18</td>
+                      <td>5</td>
+                      <td>0</td>
+                      <td>12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Lil</strong></td>
+                      <td>34</td>
+                      <td>18</td>
+                      <td>5</td>
+                      <td>0</td>
+                      <td>11</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Matilde</strong></td>
+                      <td>25</td>
+                      <td>12</td>
+                      <td>5</td>
+                      <td>0</td>
+                      <td>8</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Lee</strong></td>
+                      <td>20</td>
+                      <td>12</td>
+                      <td>0</td>
+                      <td>4</td>
+                      <td>4</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Pablo</strong></td>
+                      <td>12</td>
+                      <td>12</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Sofia</strong></td>
+                      <td>7</td>
+                      <td>7</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                    </tr>
+                  
+            </tbody>
+          </table>
+        </section>
+      
+      </section>
+
+      <p class="footer-note">
+        Documento gerado automaticamente a partir dos relatórios operacionais diários. Deve ser usado como apoio à conversa de equipa e pode ser ajustado pela gestão quando existir contexto operacional adicional.
+      </p>
+    </main>
+  </body>
+</html>

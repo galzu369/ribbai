@@ -1,0 +1,451 @@
+{
+  "generatedAt": "2026-07-07T12:23:21.049Z",
+  "families": [
+  "Consumiveis Operacionais",
+  "Consumiveis WC",
+  "Galheteiros",
+  "Molhos",
+  "Produtos de Limpeza",
+  "Take Away"
+  ],
+  "items": [
+    {
+      "canonicalSku": "CLEAN-SPONGE-REGULAR",
+      "aliases": [],
+      "name": "Esfregão",
+      "unit": "pack",
+      "family": "Consumiveis Operacionais"
+    },
+    {
+      "canonicalSku": "CLEAN-SPONGE-INOX",
+      "aliases": [],
+      "name": "Esfregão INOX",
+      "unit": "pack",
+      "family": "Consumiveis Operacionais"
+    },
+    {
+      "canonicalSku": "CONS-SERVICE-NAPKINS",
+      "aliases": [
+        "CONS-SERVICE-NAPKINS-LARGE"
+      ],
+      "name": "Guardanapos",
+      "unit": "caixa",
+      "family": "Consumiveis Operacionais"
+    },
+    {
+      "canonicalSku": "CONS-SERVICE-NAPKINS-SMALL",
+      "aliases": [
+        "CONS-SERVICE-SMALL-NAPKINS"
+      ],
+      "name": "Guardanapos Pequenos",
+      "unit": "caixa",
+      "family": "Consumiveis Operacionais"
+    },
+    {
+      "canonicalSku": "CONS-SERVICE-STRAWS",
+      "aliases": [],
+      "name": "Palhinhas",
+      "unit": "saco",
+      "family": "Consumiveis Operacionais"
+    },
+    {
+      "canonicalSku": "CONS-SERVICE-TOOTHPICKS",
+      "aliases": [],
+      "name": "Palitos",
+      "unit": "caixa",
+      "family": "Consumiveis Operacionais"
+    },
+    {
+      "canonicalSku": "CLEAN-MICROFIBER-YELLOW",
+      "aliases": [],
+      "name": "Panos Microfibra Amarelos",
+      "unit": "saco",
+      "family": "Consumiveis Operacionais"
+    },
+    {
+      "canonicalSku": "CLEAN-MICROFIBER-BLUE",
+      "aliases": [],
+      "name": "Panos Microfibra Azuis",
+      "unit": "saco",
+      "family": "Consumiveis Operacionais"
+    },
+    {
+      "canonicalSku": "CLEAN-MICROFIBER-GREY",
+      "aliases": [],
+      "name": "Panos Microfibra Cinzentos",
+      "unit": "saco",
+      "family": "Consumiveis Operacionais"
+    },
+    {
+      "canonicalSku": "CONS-OPS-FOOD-FILM",
+      "aliases": [],
+      "name": "Pelicula Alimentar",
+      "unit": "caixa",
+      "family": "Consumiveis Operacionais"
+    },
+    {
+      "canonicalSku": "CONS-OPS-BLUE-ROLL",
+      "aliases": [],
+      "name": "Rolo Azul",
+      "unit": "unidade",
+      "family": "Consumiveis Operacionais"
+    },
+    {
+      "canonicalSku": "CONS-OPS-KITCHEN-ROLLS",
+      "aliases": [],
+      "name": "Rolo de Cozinha",
+      "unit": "pack",
+      "family": "Consumiveis Operacionais"
+    },
+    {
+      "canonicalSku": "CONS-OPS-LABEL-ROLLS",
+      "aliases": [],
+      "name": "Rolos de Etiquetas",
+      "unit": "pack",
+      "family": "Consumiveis Operacionais"
+    },
+    {
+      "canonicalSku": "CONS-OPS-PRINTER-ROLLS",
+      "aliases": [],
+      "name": "Rolos Impressora",
+      "unit": "caixa",
+      "family": "Consumiveis Operacionais"
+    },
+    {
+      "canonicalSku": "CONS-OPS-TNT-ROLLS",
+      "aliases": [],
+      "name": "Rolos TNT",
+      "unit": "pack",
+      "family": "Consumiveis Operacionais"
+    },
+    {
+      "canonicalSku": "CONS-OPS-TPA-ROLLS",
+      "aliases": [],
+      "name": "Rolos TPA",
+      "unit": "caixa",
+      "family": "Consumiveis Operacionais"
+    },
+    {
+      "canonicalSku": "CONS-OPS-TRASH-BAGS-120L",
+      "aliases": [],
+      "name": "Sacos do Lixo 120L",
+      "unit": "caixa",
+      "family": "Consumiveis Operacionais"
+    },
+    {
+      "canonicalSku": "CONS-OPS-GLASS-TRASH-BAGS",
+      "aliases": [],
+      "name": "Sacos do Lixo Vidro",
+      "unit": "pack",
+      "family": "Consumiveis Operacionais"
+    },
+    {
+      "canonicalSku": "CONS-WC-HAND-PAPER",
+      "aliases": [],
+      "name": "Papel de Maos WC",
+      "unit": "caixa",
+      "family": "Consumiveis WC"
+    },
+    {
+      "canonicalSku": "CONS-WC-TOILET-PAPER",
+      "aliases": [],
+      "name": "Papel Higienico",
+      "unit": "pack",
+      "family": "Consumiveis WC"
+    },
+    {
+      "canonicalSku": "CONS-TAKEAWAY-MEDIUM-COFFEE-CUPS",
+      "aliases": [],
+      "name": "Copos Medios Cafe Take Away",
+      "unit": "saco",
+      "caseUnit": "caixa",
+      "packsPerCase": 20,
+      "family": "Take Away"
+    },
+    {
+      "canonicalSku": "CONS-TAKEAWAY-MEDIUM-CUPS-LIDS",
+      "aliases": [
+        "CONS-TAKEAWAY-CUPS-MEDIUM"
+      ],
+      "name": "Copos Medios Take Away + Tampas",
+      "unit": "saco",
+      "caseUnit": "caixa",
+      "packsPerCase": 20,
+      "family": "Take Away"
+    },
+    {
+      "canonicalSku": "CONS-TAKEAWAY-SAUCE-CUPS",
+      "aliases": [],
+      "name": "Copos para Molhos Take Away",
+      "unit": "caixa",
+      "family": "Take Away"
+    },
+    {
+      "canonicalSku": "CONS-DESSERT-MOUSSE-CUPS",
+      "aliases": [],
+      "name": "Copos para Mousse",
+      "unit": "unidade",
+      "family": "Take Away"
+    },
+    {
+      "canonicalSku": "CONS-TAKEAWAY-SMALL-COFFEE-CUPS",
+      "aliases": [],
+      "name": "Copos Pequenos Cafe Take Away",
+      "unit": "caixa",
+      "family": "Take Away"
+    },
+    {
+      "canonicalSku": "CONS-TAKEAWAY-SOUP-BOX-LID",
+      "aliases": [],
+      "name": "Box de Sopas + Tampas",
+      "unit": "saco",
+      "caseUnit": "caixa",
+      "packsPerCase": 15,
+      "family": "Take Away"
+    },
+    {
+      "canonicalSku": "CONS-TAKEAWAY-BURGER-BOX",
+      "aliases": [],
+      "name": "Box grande 1980ml",
+      "unit": "saco",
+      "caseUnit": "caixa",
+      "packsPerCase": 4,
+      "family": "Take Away"
+    },
+    {
+      "canonicalSku": "CONS-TAKEAWAY-TOAST-BOX",
+      "aliases": [],
+      "name": "Box Media 1350",
+      "unit": "saco",
+      "caseUnit": "caixa",
+      "packsPerCase": 4,
+      "family": "Take Away"
+    },
+    {
+      "canonicalSku": "CONS-TAKEAWAY-BOX-750ML",
+      "aliases": [],
+      "name": "Box Pequena 750ml",
+      "unit": "saco",
+      "caseUnit": "caixa",
+      "packsPerCase": 12,
+      "family": "Take Away"
+    },
+    {
+      "canonicalSku": "CONS-TAKEAWAY-ROUND-BOX-LID",
+      "aliases": [],
+      "name": "Box POKE + Tampas",
+      "unit": "saco",
+      "caseUnit": "caixa",
+      "packsPerCase": 6,
+      "family": "Take Away"
+    },
+    {
+      "canonicalSku": "CONS-TAKEAWAY-CUPS-SMALL",
+      "aliases": [],
+      "name": "Copos Pequenos Take Away + Tampas",
+      "unit": "saco",
+      "family": "Take Away",
+      "aliasOf": "CONS-TAKEAWAY-MEDIUM-COFFEE-CUPS",
+      "status": "deprecated",
+      "note": "usado por erro; corresponde a copos médios cafe take away"
+    },
+    {
+      "canonicalSku": "CONS-GALHETEIRO-OLIVE-OIL",
+      "aliases": [],
+      "name": "Garrafa de Azeite",
+      "unit": "unidade",
+      "family": "Galheteiros"
+    },
+    {
+      "canonicalSku": "CONS-GALHETEIRO-VINEGAR",
+      "aliases": [],
+      "name": "Garrafa de Vinagre",
+      "unit": "unidade",
+      "family": "Galheteiros"
+    },
+    {
+      "canonicalSku": "SAUCE-KETCHUP",
+      "aliases": [],
+      "name": "Ketchup",
+      "unit": "caixa",
+      "family": "Molhos"
+    },
+    {
+      "canonicalSku": "SAUCE-MAYONNAISE",
+      "aliases": [],
+      "name": "Maionese",
+      "unit": "caixa",
+      "family": "Molhos"
+    },
+    {
+      "canonicalSku": "SAUCE-MUSTARD",
+      "aliases": [],
+      "name": "Mostarda",
+      "unit": "caixa",
+      "family": "Molhos"
+    },
+    {
+      "canonicalSku": "CLEAN-SPLIT-LV-RINSE",
+      "aliases": [
+        "CLEAN-SPLIT-LV"
+      ],
+      "name": "Abrilhantador/Secante SPLIT LV",
+      "unit": "unidade",
+      "family": "Produtos de Limpeza"
+    },
+    {
+      "canonicalSku": "CLEAN-ALCOHOL",
+      "aliases": [],
+      "name": "Alcool",
+      "unit": "unidade",
+      "family": "Produtos de Limpeza"
+    },
+    {
+      "canonicalSku": "CLEAN-URINAL-SCENT",
+      "aliases": [],
+      "name": "Cheiro Urinol",
+      "unit": "unidade",
+      "family": "Produtos de Limpeza"
+    },
+    {
+      "canonicalSku": "CLEAN-D-50",
+      "aliases": [
+        "CLEAN-D50"
+      ],
+      "name": "D-50",
+      "unit": "unidade",
+      "family": "Produtos de Limpeza"
+    },
+    {
+      "canonicalSku": "CLEAN-DISH-LEMON",
+      "aliases": [],
+      "name": "Dish Lemon",
+      "unit": "unidade",
+      "family": "Produtos de Limpeza"
+    },
+    {
+      "canonicalSku": "CLEAN-ANTIBACTERIAL-FOAM",
+      "aliases": [],
+      "name": "Espuma Antibacteriana",
+      "unit": "unidade",
+      "family": "Produtos de Limpeza"
+    },
+    {
+      "canonicalSku": "CLEAN-GLASS-GLOW",
+      "aliases": [],
+      "name": "Glow Limpa Vidros",
+      "unit": "unidade",
+      "family": "Produtos de Limpeza"
+    },
+    {
+      "canonicalSku": "CLEAN-HYGIENIZER-FAST",
+      "aliases": [],
+      "name": "Higienizante Acao Rapida",
+      "unit": "unidade",
+      "family": "Produtos de Limpeza"
+    },
+    {
+      "canonicalSku": "CLEAN-DISH-UNIVERSAL",
+      "aliases": [
+        "CLEAN-LAVA-LOUCAS"
+      ],
+      "name": "Lava-Louça Universal",
+      "unit": "unidade",
+      "family": "Produtos de Limpeza"
+    },
+    {
+      "canonicalSku": "CLEAN-LAVA-TUDO",
+      "aliases": [],
+      "name": "Lava-Tudo",
+      "unit": "unidade",
+      "family": "Produtos de Limpeza"
+    },
+    {
+      "canonicalSku": "CLEAN-LIXIVIA-FORTE",
+      "aliases": [],
+      "name": "Lixivia forte",
+      "unit": "unidade",
+      "family": "Produtos de Limpeza"
+    },
+    {
+      "canonicalSku": "CLEAN-GLOVES-L",
+      "aliases": [],
+      "name": "Luvas L",
+      "unit": "caixa",
+      "family": "Produtos de Limpeza"
+    },
+    {
+      "canonicalSku": "CLEAN-GLOVES-M",
+      "aliases": [],
+      "name": "Luvas M",
+      "unit": "caixa",
+      "family": "Produtos de Limpeza"
+    },
+    {
+      "canonicalSku": "CLEAN-GLOVES-S",
+      "aliases": [],
+      "name": "Luvas S",
+      "unit": "caixa",
+      "family": "Produtos de Limpeza"
+    },
+    {
+      "canonicalSku": "CLEAN-MASKS",
+      "aliases": [],
+      "name": "Mascaras",
+      "unit": "caixa",
+      "family": "Produtos de Limpeza"
+    },
+    {
+      "canonicalSku": "CLEAN-SPLIT-LV",
+      "aliases": [],
+      "name": "Split LV",
+      "unit": "unidade",
+      "family": "Produtos de Limpeza",
+      "aliasOf": "CLEAN-SPLIT-LV-RINSE",
+      "status": "deprecated",
+      "note": "SKU antigo; fundido com CLEAN-SPLIT-LV-RINSE (Abrilhantador/Secante SPLIT LV)"
+    },
+    {
+      "canonicalSku": "CLEAN-WC-ORANGE-SPRAY-IBT",
+      "aliases": [],
+      "name": "Spray Laranja WC IBT",
+      "unit": "unidade",
+      "family": "Produtos de Limpeza"
+    },
+    {
+      "canonicalSku": "CLEAN-THOMIL",
+      "aliases": [],
+      "name": "Thomil",
+      "unit": "unidade",
+      "family": "Produtos de Limpeza"
+    },
+    {
+      "canonicalSku": "CLEAN-HAIRNETS",
+      "aliases": [],
+      "name": "Tocas",
+      "unit": "saco",
+      "family": "Produtos de Limpeza"
+    },
+    {
+      "canonicalSku": "CONS-TAKEAWAY-SPOONS",
+      "aliases": [],
+      "name": "Colheres Take Away",
+      "unit": "saco",
+      "family": "Take Away"
+    },
+    {
+      "canonicalSku": "CONS-TAKEAWAY-FORKS-KNIVES",
+      "aliases": [],
+      "name": "Garfos e Facas Take Away",
+      "unit": "saco",
+      "family": "Take Away"
+    },
+    {
+      "canonicalSku": "CONS-TAKEAWAY-CHOPSTICKS",
+      "aliases": [],
+      "name": "Pauzinhos",
+      "unit": "saco",
+      "family": "Take Away"
+    }
+  ]
+}

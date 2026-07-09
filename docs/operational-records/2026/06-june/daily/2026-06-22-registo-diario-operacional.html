@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Relatório Diário Operacional - 22-06-2026</title>
+    <style>
+      @page { size: A4; margin: 16mm 14mm 18mm; }
+      :root { --ink:#172033; --muted:#657085; --line:#d9dee8; --soft:#f6f7fa; --warm:#fff7ed; --brand:#f97316; --brand-dark:#9a3412; --green:#15803d; --blue:#1d4ed8; --violet:#6d28d9; }
+      * { box-sizing:border-box; }
+      body { margin:0; background:#fff; color:var(--ink); font-family:Inter,ui-sans-serif,system-ui,sans-serif; font-size:10pt; line-height:1.5; }
+      h1,h2,h3,p { margin-top:0; }
+      h1 { font-size:34pt; line-height:1.02; letter-spacing:-0.04em; margin-bottom:10pt; }
+      h2 { border-bottom:1px solid var(--line); font-size:15pt; margin:22pt 0 10pt; padding-bottom:5pt; }
+      h3 { color:var(--brand-dark); font-size:11pt; margin:13pt 0 5pt; }
+      ul { margin:4pt 0 10pt 15pt; padding:0; }
+      table { border-collapse:collapse; margin:8pt 0 14pt; width:100%; }
+      th,td { border:1px solid var(--line); padding:6pt 7pt; text-align:left; vertical-align:top; }
+      th { background:var(--soft); font-size:8pt; letter-spacing:0.06em; text-transform:uppercase; }
+      .cover { background:radial-gradient(circle at top right,rgba(249,115,22,0.18),transparent 35%),linear-gradient(135deg,#fff7ed 0%,#fff 42%,#f8fafc 100%); border:1px solid #fed7aa; border-radius:22px; margin-bottom:16pt; min-height:248mm; padding:24mm 18mm; }
+      .eyebrow { color:var(--brand); font-size:8.5pt; font-weight:800; letter-spacing:0.18em; margin-bottom:14pt; text-transform:uppercase; }
+      .subtitle { color:var(--muted); font-size:14pt; line-height:1.45; max-width:150mm; }
+      .meta-panel { background:rgba(255,255,255,0.82); border:1px solid #fed7aa; border-radius:16px; margin-top:28pt; padding:14pt; }
+      .meta-grid { display:grid; gap:10pt; grid-template-columns:repeat(3,1fr); }
+      .meta-item { border-left:3px solid var(--brand); padding-left:8pt; }
+      .meta-label { color:var(--muted); display:block; font-size:7.5pt; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; }
+      .meta-value { display:block; font-size:10.5pt; font-weight:700; margin-top:2pt; }
+      .page-break { break-before:page; }
+      .kpi-grid { display:grid; gap:8pt; grid-template-columns:repeat(3,1fr); margin:12pt 0 16pt; }
+      .kpi { background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:10pt; }
+      .kpi-label { color:var(--muted); display:block; font-size:7.5pt; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; }
+      .kpi-value { display:block; font-size:22pt; font-weight:800; margin-top:3pt; }
+      .kpi-note { color:var(--muted); display:block; font-size:8pt; margin-top:2pt; }
+      .good { color:var(--green); }
+      .callout { background:var(--warm); border-left:4px solid var(--brand); border-radius:12px; margin:10pt 0 14pt; padding:11pt 13pt; }
+      .callout-success { background:#f0fdf4; border-left-color:var(--green); }
+      .panel-grid { display:grid; gap:9pt; grid-template-columns:repeat(2,1fr); }
+      .panel { border:1px solid var(--line); border-radius:12px; break-inside:avoid; padding:10pt; }
+      .badge { border-radius:999px; display:inline-block; font-size:7.5pt; font-weight:800; margin-bottom:5pt; padding:3pt 7pt; text-transform:uppercase; }
+      .badge-green { background:#dcfce7; color:var(--green); }
+      .badge-blue { background:#dbeafe; color:var(--blue); }
+      .badge-violet { background:#ede9fe; color:var(--violet); }
+      .footer-note { border-top:1px solid var(--line); color:var(--muted); font-size:8.5pt; margin-top:18pt; padding-top:7pt; }
+    </style>
+  </head>
+  <body>
+    <section class="cover">
+      <div class="eyebrow">RIBBAI OPS · Relatório Diário Operacional</div>
+      <h1>Registo Diário Operacional</h1>
+      <p class="subtitle">Apresentação diária à gestão sobre a operação Front of House do restaurante RIBBAI.</p>
+      <div class="meta-panel">
+        <div class="meta-grid">
+          <div class="meta-item"><span class="meta-label">Data</span><span class="meta-value">22-06-2026</span></div>
+          <div class="meta-item"><span class="meta-label">Dia</span><span class="meta-value">Segunda-feira</span></div>
+          <div class="meta-item"><span class="meta-label">Autor</span><span class="meta-value">Filipe Catalão</span></div>
+          <div class="meta-item"><span class="meta-label">Restaurante</span><span class="meta-value">RIBBAI</span></div>
+          <div class="meta-item"><span class="meta-label">Tipo</span><span class="meta-value">Relatório Diário Operacional</span></div>
+          <div class="meta-item"><span class="meta-label">Estado</span><span class="meta-value">Registado</span></div>
+        </div>
+      </div>
+      <div class="kpi-grid">
+        <div class="kpi"><span class="kpi-label">Volume Trabalho</span><span class="kpi-value good">5/10</span><span class="kpi-note">Dia de baixo movimento</span></div>
+        <div class="kpi"><span class="kpi-label">Integração Novos</span><span class="kpi-value good">8,5/10</span><span class="kpi-note">Primeiro dia do Diogo</span></div>
+        <div class="kpi"><span class="kpi-label">Manutenção</span><span class="kpi-value good">10/10</span><span class="kpi-note">Vidros + pufes preparados</span></div>
+      </div>
+      <div class="kpi-grid">
+        <div class="kpi"><span class="kpi-label">Qualidade Serviço</span><span class="kpi-value good">9/10</span><span class="kpi-note">Erros corrigidos sem impacto</span></div>
+        <div class="kpi"><span class="kpi-label">Coordenação</span><span class="kpi-value good">9/10</span><span class="kpi-note">Operação estável</span></div>
+        <div class="kpi"><span class="kpi-label">Horas Extra</span><span class="kpi-value good">1h00</span><span class="kpi-note">2 colaboradores</span></div>
+      </div>
+      <div class="callout callout-success"><strong>Conclusão do dia:</strong> dia de menor movimento do mês, bem aproveitado para integração do Diogo e tarefas de manutenção estruturais, com operação tranquila e organizada.</div>
+    </section>
+
+    <section class="page-break">
+      <h2>Síntese Executiva</h2>
+      <p>Segunda-feira de volume reduzido, aproveitada para manutenção, limpeza e preparação da operação. Primeiro dia de integração do Diogo com avaliação muito positiva e alguns erros naturais de aprendizagem corrigidos sem impacto relevante no cliente.</p>
+      <h2>Equipa Em Serviço</h2>
+      <div class="panel-grid">
+        <div class="panel"><span class="badge badge-green">Pablo</span><ul><li>Abertura com Lee.</li><li>Controlo da manhã.</li><li>Reposição e limpeza da sala interior.</li></ul></div>
+        <div class="panel"><span class="badge badge-violet">Lee</span><ul><li>Abertura e apoio ao serviço.</li><li>Trabalho conjunto com Diogo.</li><li>Alguns erros de pedidos em aprendizagem.</li></ul></div>
+        <div class="panel"><span class="badge badge-blue">Filipe Catalão</span><ul><li>Briefing e integração do Diogo.</li><li>Correção de erros de pedidos.</li><li>Limpeza integral de vidros.</li><li>Fecho.</li><li>30 min de horas extra.</li></ul></div>
+        <div class="panel"><span class="badge badge-green">Diogo</span><ul><li>Primeiro dia na sala.</li><li>Boa atitude e comunicação.</li><li>Apoio em mesas e manutenção.</li><li>Saída 1h antes do previsto.</li></ul></div>
+        <div class="panel"><span class="badge badge-green">Lil</span><ul><li>Entrada às 12h00.</li><li>Controlo da esplanada.</li><li>Remoção das capas dos pufes.</li><li>Fecho.</li><li>30 min de horas extra.</li></ul></div>
+      </div>
+    </section>
+
+    <section class="page-break">
+      <h2>Integração de Novo Colaborador</h2>
+      <p>Briefing inicial com Diogo sobre organização da operação, estrutura da equipa, modelo de funcionamento, fluxos de trabalho e procedimentos de serviço. Primeiras impressões muito positivas em atitude, comunicação e espírito colaborativo.</p>
+      <h2>Serviço de Almoço</h2>
+      <ul>
+        <li>Movimento consistente mas sem grandes picos de pressão.</li>
+        <li>Esplanada sem lotação máxima.</li>
+        <li>Sala interior limitada sobretudo a clientes de café e coworking.</li>
+      </ul>
+      <h2>Incidentes Operacionais</h2>
+      <div class="callout"><strong>Erros de pedidos:</strong> troca de prato (Bife/Hambúrguer), troca de bebida (Sangria) e registo de artigos indisponíveis (Mojitos, Tosta de Guacamole). Todos corrigidos rapidamente por Filipe junto de clientes e cozinha, sem reclamações relevantes.</div>
+    </section>
+
+    <section class="page-break">
+      <h2>Movimento da Tarde</h2>
+      <p>A partir das 16h00 registou-se forte quebra de afluência, provavelmente o dia de menor movimento do mês. Período utilizado para tarefas de manutenção, limpeza e preparação.</p>
+      <h2>Tarefas Operacionais Realizadas</h2>
+      <ul>
+        <li><strong>Diogo:</strong> varreu e lavou a zona traseira junto ao lounge.</li>
+        <li><strong>Pablo:</strong> varreu a sala interior e repôs consumíveis.</li>
+        <li><strong>Lil:</strong> removeu as capas dos pufes para lavagem.</li>
+        <li><strong>Filipe:</strong> limpeza integral dos vidros da frente e do Topo Norte da esplanada (interior e exterior).</li>
+      </ul>
+      <h2>Logística e Infraestruturas</h2>
+      <p>Receção de mercadoria para o futuro mobiliário do terraço, temporariamente armazenada no WC adaptado até à montagem.</p>
+      <h2>Necessidades Identificadas</h2>
+      <div class="callout"><strong>Bandejas de serviço:</strong> desgaste acentuado (empenadas e instáveis), com aumento de risco operacional. Recomendada aquisição de 6 bandejas standard e 1–2 de grande dimensão.</div>
+    </section>
+
+    <section class="page-break">
+      <h2>Fecho Operacional</h2>
+      <p>Fecho por Filipe e Lil, sem incidentes. Restaurante preparado para o serviço do dia seguinte.</p>
+      <h2>Horas Extra</h2>
+      <table>
+        <thead><tr><th>Colaborador</th><th>Registo</th></tr></thead>
+        <tbody>
+          <tr><td>Filipe Catalão</td><td>30 minutos de horas extra</td></tr>
+          <tr><td>Lil</td><td>30 minutos de horas extra</td></tr>
+          <tr><td>Diogo</td><td>-1h00 relativamente ao horário previsto</td></tr>
+        </tbody>
+      </table>
+      <div class="callout"><strong>Total da equipa:</strong> 1h00 de horas extra (ajustes incluídos).</div>
+      <h2>Notas Para Gestão</h2>
+      <p>Prioridade média para renovação de bandejas, acompanhamento dos novos colaboradores e continuação da lavagem de pufes.</p>
+      <h2>Avaliação Global</h2>
+      <table>
+        <thead><tr><th>Indicador</th><th>Avaliação</th></tr></thead>
+        <tbody>
+          <tr><td>Volume de Trabalho</td><td>5/10</td></tr>
+          <tr><td>Qualidade de Serviço</td><td>9/10</td></tr>
+          <tr><td>Organização</td><td>9/10</td></tr>
+          <tr><td>Integração de Novos Colaboradores</td><td>8,5/10</td></tr>
+          <tr><td>Eficiência Operacional</td><td>9/10</td></tr>
+          <tr><td>Manutenção e Preparação</td><td>10/10</td></tr>
+          <tr><td>Coordenação da Equipa</td><td>9/10</td></tr>
+        </tbody>
+      </table>
+      <h2>Classificação Para O Sistema RIBBAI OPS</h2>
+      <table>
+        <thead><tr><th>Categoria</th><th>Registo</th></tr></thead>
+        <tbody>
+          <tr><td>Operational Notes</td><td>Dia de baixo movimento aproveitado para manutenção, integração de Diogo e preparação de pufes para lavagem.</td></tr>
+          <tr><td>Service Improvement Candidate</td><td>Renovação de bandejas de serviço.</td></tr>
+          <tr><td>Team Feedback Input</td><td>Integração positiva de Diogo; Lee e Diogo em fase de aprendizagem no registo de pedidos.</td></tr>
+          <tr><td>Overtime Input</td><td>1h00: Filipe e Lil (30m cada), com ajuste horário de Diogo (-1h00).</td></tr>
+        </tbody>
+      </table>
+      <p class="footer-note">Documento gerado para apresentação diária à gestão. Fonte operacional: Registo Diário Operacional de 22-06-2026. Autor: Filipe Catalão.</p>
+    </section>
+  </body>
+</html>
+

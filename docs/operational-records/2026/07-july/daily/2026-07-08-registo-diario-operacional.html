@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Relatório Diário Operacional - 08-07-2026</title>
+    <style>
+      @page { size: A4; margin: 16mm 14mm 18mm; }
+      :root { --ink:#172033; --muted:#657085; --line:#d9dee8; --soft:#f6f7fa; --warm:#fff7ed; --brand:#f97316; --brand-dark:#9a3412; --green:#15803d; --blue:#1d4ed8; --violet:#6d28d9; --red:#dc2626; --orange:#ea580c; --gold:#d97706; --emerald:#059669; }
+      * { box-sizing:border-box; }
+      body { margin:0; background:#fff; color:var(--ink); font-family:Inter,ui-sans-serif,system-ui,sans-serif; font-size:10pt; line-height:1.5; }
+      h1,h2,h3,p { margin-top:0; }
+      h1 { font-size:34pt; line-height:1.02; letter-spacing:-0.04em; margin-bottom:10pt; }
+      h2 { border-bottom:1px solid var(--line); font-size:15pt; margin:22pt 0 10pt; padding-bottom:5pt; }
+      h3 { color:var(--brand-dark); font-size:11pt; margin:13pt 0 5pt; }
+      ul { margin:4pt 0 10pt 15pt; padding:0; }
+      table { border-collapse:collapse; margin:8pt 0 14pt; width:100%; }
+      th,td { border:1px solid var(--line); padding:6pt 7pt; text-align:left; vertical-align:top; }
+      th { background:var(--soft); font-size:8pt; letter-spacing:0.06em; text-transform:uppercase; }
+      .cover { background:radial-gradient(circle at top right,rgba(5,150,105,0.15),transparent 35%),linear-gradient(135deg,#f0fdf4 0%,#fff 42%,#f8fafc 100%); border:1px solid #86efac; border-radius:22px; margin-bottom:16pt; min-height:248mm; padding:24mm 18mm; }
+      .eyebrow { color:var(--emerald); font-size:8.5pt; font-weight:800; letter-spacing:0.18em; margin-bottom:14pt; text-transform:uppercase; }
+      .subtitle { color:var(--muted); font-size:14pt; line-height:1.45; max-width:150mm; }
+      .meta-panel { background:rgba(255,255,255,0.85); border:1px solid #86efac; border-radius:16px; margin-top:28pt; padding:14pt; }
+      .meta-grid { display:grid; gap:10pt; grid-template-columns:repeat(3,1fr); }
+      .meta-item { border-left:3px solid var(--emerald); padding-left:8pt; }
+      .meta-label { color:var(--muted); display:block; font-size:7.5pt; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; }
+      .meta-value { display:block; font-size:10.5pt; font-weight:700; margin-top:2pt; }
+      .page-break { break-before:page; }
+      .kpi-grid { display:grid; gap:8pt; grid-template-columns:repeat(3,1fr); margin:12pt 0 16pt; }
+      .kpi { background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:10pt; }
+      .kpi-label { color:var(--muted); display:block; font-size:7.5pt; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; }
+      .kpi-value { display:block; font-size:22pt; font-weight:800; margin-top:3pt; }
+      .kpi-note { color:var(--muted); display:block; font-size:8pt; margin-top:2pt; }
+      .perfect { color:var(--emerald); }
+      .excellent { color:var(--green); }
+      .good { color:var(--blue); }
+      .calm { color:var(--violet); }
+      .callout { background:var(--warm); border-left:4px solid var(--brand); border-radius:12px; margin:10pt 0 14pt; padding:11pt 13pt; }
+      .callout-success { background:#f0fdf4; border-left-color:var(--emerald); }
+      .callout-info { background:#eff6ff; border-left-color:var(--blue); }
+      .panel-grid { display:grid; gap:9pt; grid-template-columns:repeat(2,1fr); }
+      .panel { border:1px solid var(--line); border-radius:12px; break-inside:avoid; padding:10pt; }
+      .badge { border-radius:999px; display:inline-block; font-size:7.5pt; font-weight:800; margin-bottom:5pt; padding:3pt 7pt; text-transform:uppercase; }
+      .badge-emerald { background:#d1fae5; color:var(--emerald); }
+      .badge-blue { background:#dbeafe; color:var(--blue); }
+      .badge-violet { background:#ede9fe; color:var(--violet); }
+      .badge-soft { background:#e5e7eb; color:var(--ink); }
+      .footer-note { border-top:1px solid var(--line); color:var(--muted); font-size:8.5pt; margin-top:18pt; padding-top:7pt; }
+    </style>
+  </head>
+  <body>
+    <section class="cover">
+      <div class="eyebrow">RIBBAI OPS · Relatório Diário Operacional</div>
+      <h1>Registo Diário Operacional</h1>
+      <p class="subtitle">Apresentação diária à gestão sobre a operação Front of House do restaurante RIBBAI.</p>
+      <div class="meta-panel">
+        <div class="meta-grid">
+          <div class="meta-item"><span class="meta-label">Data</span><span class="meta-value">08-07-2026</span></div>
+          <div class="meta-item"><span class="meta-label">Dia</span><span class="meta-value">Quarta-feira</span></div>
+          <div class="meta-item"><span class="meta-label">Autor</span><span class="meta-value">Filipe Catalão</span></div>
+          <div class="meta-item"><span class="meta-label">Restaurante</span><span class="meta-value">RIBBAI</span></div>
+          <div class="meta-item"><span class="meta-label">Tipo</span><span class="meta-value">Relatório Diário Operacional</span></div>
+          <div class="meta-item"><span class="meta-label">Estado</span><span class="meta-value">Registado</span></div>
+        </div>
+      </div>
+      <div class="kpi-grid">
+        <div class="kpi">
+          <span class="kpi-label">Operação Global</span>
+          <span class="kpi-value excellent">8/10</span>
+          <span class="kpi-note">Dia muito estável e controlado</span>
+        </div>
+        <div class="kpi">
+          <span class="kpi-label">Gestão da Pressão</span>
+          <span class="kpi-value good">7/10</span>
+          <span class="kpi-note">Pressão moderada apenas ao almoço</span>
+        </div>
+        <div class="kpi">
+          <span class="kpi-label">Horas Extra</span>
+          <span class="kpi-value perfect">0h00</span>
+          <span class="kpi-note">Fecho dentro do horário planeado</span>
+        </div>
+      </div>
+      <div class="kpi-grid">
+        <div class="kpi">
+          <span class="kpi-label">Rodadas Almoço</span>
+          <span class="kpi-value good">1.5x</span>
+          <span class="kpi-note">Esplanada sem lotação máxima</span>
+        </div>
+        <div class="kpi">
+          <span class="kpi-label">Ocupação Tarde</span>
+          <span class="kpi-value calm">10%</span>
+          <span class="kpi-note">Grande parte da tarde</span>
+        </div>
+        <div class="kpi">
+          <span class="kpi-label">Jantar</span>
+          <span class="kpi-value excellent">2x</span>
+          <span class="kpi-note">Duas boas rotações de mesas</span>
+        </div>
+      </div>
+      <div class="callout callout-info">
+        <strong>Dia tranquilo e equilibrado:</strong> 8 de julho registou operação controlada, com almoço de intensidade moderada, tarde muito calma e jantar com boa procura, permitindo serviço consistente sem necessidade de horas extra.
+      </div>
+    </section>
+
+    <section class="page-break">
+      <h2>Síntese Executiva</h2>
+      <p>O dia 8 de julho caracterizou-se por uma operação tranquila, com níveis de ocupação moderados na maior parte do dia. Após uma manhã de fraca afluência, registou-se um pico relativo ao almoço, seguido de uma tarde com ocupação muito reduzida e uma boa recuperação de movimento ao jantar.</p>
+      <p>O serviço decorreu de forma organizada, fluída e sem incidentes relevantes, permitindo à equipa manter um ritmo de trabalho confortável e concluir o fecho de forma exemplar, dentro do horário previsto.</p>
+
+      <h2>Equipa Em Serviço</h2>
+      <div class="panel-grid">
+        <div class="panel">
+          <span class="badge badge-emerald">Pablo</span>
+          <ul>
+            <li>Abertura com Sofia e Diogo.</li>
+            <li>Preparação da sala e arranque da operação.</li>
+            <li>Acompanhamento da esplanada nos períodos de maior movimento.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <span class="badge badge-emerald">Sofia</span>
+          <ul>
+            <li>Abertura do dia.</li>
+            <li>Responsável pelo Quiosque dos Gelados.</li>
+            <li>Integração suave do quiosque com o serviço de esplanada.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <span class="badge badge-emerald">Diogo</span>
+          <ul>
+            <li>Abertura com foco em apoio sala/esplanada.</li>
+            <li>Funções de apoio operacional durante o almoço e jantar.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <span class="badge badge-blue">Bruno</span>
+          <ul>
+            <li>Entrada às 12h00 como reforço.</li>
+            <li>Apoio à esplanada no pico moderado de almoço.</li>
+            <li>Participação no fecho operacional.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <span class="badge badge-blue">Lil</span>
+          <ul>
+            <li>Reforço às 12h00.</li>
+            <li>Gestão tranquila das pausas de almoço.</li>
+            <li>Responsável por parte significativa das rotinas de fecho.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <span class="badge badge-violet">Lee</span>
+          <ul>
+            <li>Entrada às 12h00 como apoio operacional.</li>
+            <li>Cobertura flexível entre sala e esplanada.</li>
+            <li>Contribuição para serviço fluído sem necessidade de setores rígidos.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <span class="badge badge-soft">Matilde</span>
+          <ul>
+            <li>Integração na equipa de fecho.</li>
+            <li>Foco em limpeza, arrumação e preparação da sala.</li>
+            <li>Garantia de que nada ficou pendente para o dia seguinte.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-break">
+      <h2>Movimento do Dia</h2>
+      <p><strong>Timeline da operação:</strong></p>
+      <ul>
+        <li><strong>Manhã</strong> – Movimento fraco, permitindo arranque muito tranquilo da operação.</li>
+        <li><strong>12h30</strong> – Aumento gradual da procura, com cerca de uma rodada e meia de almoços.</li>
+        <li><strong>Período de almoço</strong> – Pressão moderada, esplanada sem atingir lotação máxima.</li>
+        <li><strong>Após 15h00</strong> – Quebra acentuada de movimento, com ocupação aproximada de 10% da capacidade.</li>
+        <li><strong>19h00</strong> – Recuperação da procura para o jantar, com duas boas rotações de mesas.</li>
+      </ul>
+      <div class="callout callout-success">
+        <strong>Equilíbrio operacional:</strong> A combinação de manhã calma, almoço moderado e jantar composto permitiu um dia de operação equilibrada, sem fases de pressão extrema.
+      </div>
+
+      <h2>Fecho Operacional e Horas Extra</h2>
+      <p><strong>Responsáveis pelo fecho:</strong> Bruno, Lil e Matilde.</p>
+      <p>O fecho decorreu de forma exemplar, com conclusão integral das rotinas de limpeza, arrumação, reposição e verificação final da sala e esplanada. O restaurante ficou totalmente preparado para a abertura do dia seguinte, sem tarefas em atraso.</p>
+      <p><strong>Horas Extra:</strong> Não se registaram horas extraordinárias relevantes neste dia. Toda a operação, incluindo o fecho, foi realizada dentro do horário normal previsto.</p>
+    </section>
+
+    <section class="page-break">
+      <h2>Pontos Positivos e Conclusão</h2>
+      <ul>
+        <li>✔ Boa gestão das pausas de almoço, sem impacto no serviço.</li>
+        <li>✔ Serviço fluído e consistente durante todo o dia.</li>
+        <li>✔ Excelente organização da equipa em contexto de pressão moderada.</li>
+        <li>✔ Boa recuperação do movimento no período de jantar.</li>
+        <li>✔ Fecho completo, exemplar e dentro do horário planeado.</li>
+        <li>✔ Restaurante totalmente preparado para a operação do dia seguinte.</li>
+      </ul>
+      <p>O dia 8 de julho constitui um dos dias mais tranquilos da primeira quinzena, permitindo à equipa trabalhar num contexto operacional confortável e controlado.</p>
+      <p>Apesar de um almoço de intensidade moderada e de um jantar com boa afluência, não se atingiram níveis elevados de pressão, o que possibilitou um serviço consistente, de elevada qualidade e sem registo de incidentes. Este dia reforça a capacidade da equipa para adaptar o modelo operacional a diferentes níveis de movimento, mantendo sempre padrões elevados de serviço.</p>
+    </section>
+
+    <section class="page-break">
+      <h2>Classificação Para O Sistema RIBBAI OPS</h2>
+      <table>
+        <thead>
+          <tr><th>Categoria</th><th>Registo</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Operational Notes</td>
+            <td>Dia 8 de julho com operação tranquila e níveis de ocupação moderados; almoço com cerca de 1.5 rotações de esplanada; tarde com ~10% de ocupação; jantar com duas boas rotações de mesas; fecho exemplar sem incidentes e sem horas extra.</td>
+          </tr>
+          <tr>
+            <td>Service Improvement</td>
+            <td>Dia calmo permitiu consolidar rotinas e recuperar após dias de maior pressão; oportunidade para usar dias de menor intensidade para micro melhorias operacionais e formação contínua.</td>
+          </tr>
+          <tr>
+            <td>Team Feedback Input</td>
+            <td>Abertura assegurada por Pablo, Sofia e Diogo de forma tranquila; Sofia com boa integração do Quiosque dos Gelados; reforço de Bruno, Lil e Lee às 12h00 garantiu gestão confortável do almoço; equipa de fecho (Bruno, Lil e Matilde) assegurou encerramento completo e organizado.</td>
+          </tr>
+          <tr>
+            <td>Overtime Input</td>
+            <td>0h00 de horas extra: dia sem necessidade de prolongar turnos, com operação totalmente cumprida dentro do horário planeado.</td>
+          </tr>
+          <tr>
+            <td>Management Notes</td>
+            <td>Confirmar que a dotação de equipa foi adequada ao nível de movimento; registar o dia como referência de operação equilibrada, com bom serviço ao cliente e sem desgaste excessivo; manter flexibilidade operacional em dias de pressão moderada, evitando sobre-estruturar setores quando não é necessário.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="footer-note">Documento gerado para apresentação diária à gestão. Fonte operacional: Registo Diário Operacional de 08-07-2026. Autor: Filipe Catalão.</p>
+    </section>
+  </body>
+</html>
+

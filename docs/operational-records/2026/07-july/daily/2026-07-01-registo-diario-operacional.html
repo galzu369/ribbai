@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Relatório Diário Operacional - 01-07-2026</title>
+    <style>
+      @page { size: A4; margin: 16mm 14mm 18mm; }
+      :root { --ink:#172033; --muted:#657085; --line:#d9dee8; --soft:#f6f7fa; --warm:#fff7ed; --brand:#f97316; --brand-dark:#9a3412; --green:#15803d; --blue:#1d4ed8; --violet:#6d28d9; --red:#dc2626; }
+      * { box-sizing:border-box; }
+      body { margin:0; background:#fff; color:var(--ink); font-family:Inter,ui-sans-serif,system-ui,sans-serif; font-size:10pt; line-height:1.5; }
+      h1,h2,h3,p { margin-top:0; }
+      h1 { font-size:34pt; line-height:1.02; letter-spacing:-0.04em; margin-bottom:10pt; }
+      h2 { border-bottom:1px solid var(--line); font-size:15pt; margin:22pt 0 10pt; padding-bottom:5pt; }
+      h3 { color:var(--brand-dark); font-size:11pt; margin:13pt 0 5pt; }
+      ul { margin:4pt 0 10pt 15pt; padding:0; }
+      table { border-collapse:collapse; margin:8pt 0 14pt; width:100%; }
+      th,td { border:1px solid var(--line); padding:6pt 7pt; text-align:left; vertical-align:top; }
+      th { background:var(--soft); font-size:8pt; letter-spacing:0.06em; text-transform:uppercase; }
+      .cover { background:radial-gradient(circle at top right,rgba(249,115,22,0.18),transparent 35%),linear-gradient(135deg,#fff7ed 0%,#fff 42%,#f8fafc 100%); border:1px solid #fed7aa; border-radius:22px; margin-bottom:16pt; min-height:248mm; padding:24mm 18mm; }
+      .eyebrow { color:var(--brand); font-size:8.5pt; font-weight:800; letter-spacing:0.18em; margin-bottom:14pt; text-transform:uppercase; }
+      .subtitle { color:var(--muted); font-size:14pt; line-height:1.45; max-width:150mm; }
+      .meta-panel { background:rgba(255,255,255,0.82); border:1px solid #fed7aa; border-radius:16px; margin-top:28pt; padding:14pt; }
+      .meta-grid { display:grid; gap:10pt; grid-template-columns:repeat(3,1fr); }
+      .meta-item { border-left:3px solid var(--brand); padding-left:8pt; }
+      .meta-label { color:var(--muted); display:block; font-size:7.5pt; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; }
+      .meta-value { display:block; font-size:10.5pt; font-weight:700; margin-top:2pt; }
+      .page-break { break-before:page; }
+      .kpi-grid { display:grid; gap:8pt; grid-template-columns:repeat(3,1fr); margin:12pt 0 16pt; }
+      .kpi { background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:10pt; }
+      .kpi-label { color:var(--muted); display:block; font-size:7.5pt; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; }
+      .kpi-value { display:block; font-size:22pt; font-weight:800; margin-top:3pt; }
+      .kpi-note { color:var(--muted); display:block; font-size:8pt; margin-top:2pt; }
+      .good { color:var(--green); }
+      .average { color:var(--brand); }
+      .poor { color:var(--red); }
+      .callout { background:var(--warm); border-left:4px solid var(--brand); border-radius:12px; margin:10pt 0 14pt; padding:11pt 13pt; }
+      .callout-success { background:#f0fdf4; border-left-color:var(--green); }
+      .callout-warning { background:#fef3c7; border-left-color:var(--brand); }
+      .panel-grid { display:grid; gap:9pt; grid-template-columns:repeat(2,1fr); }
+      .panel { border:1px solid var(--line); border-radius:12px; break-inside:avoid; padding:10pt; }
+      .badge { border-radius:999px; display:inline-block; font-size:7.5pt; font-weight:800; margin-bottom:5pt; padding:3pt 7pt; text-transform:uppercase; }
+      .badge-green { background:#dcfce7; color:var(--green); }
+      .badge-blue { background:#dbeafe; color:var(--blue); }
+      .badge-violet { background:#ede9fe; color:var(--violet); }
+      .badge-orange { background:#fed7aa; color:var(--brand-dark); }
+      .footer-note { border-top:1px solid var(--line); color:var(--muted); font-size:8.5pt; margin-top:18pt; padding-top:7pt; }
+    </style>
+  </head>
+  <body>
+    <section class="cover">
+      <div class="eyebrow">RIBBAI OPS · Relatório Diário Operacional</div>
+      <h1>Registo Diário Operacional</h1>
+      <p class="subtitle">Apresentação diária à gestão sobre a operação Front of House do restaurante RIBBAI.</p>
+      <div class="meta-panel">
+        <div class="meta-grid">
+          <div class="meta-item"><span class="meta-label">Data</span><span class="meta-value">01-07-2026</span></div>
+          <div class="meta-item"><span class="meta-label">Dia</span><span class="meta-value">Quarta-feira</span></div>
+          <div class="meta-item"><span class="meta-label">Autor</span><span class="meta-value">Filipe Catalão</span></div>
+          <div class="meta-item"><span class="meta-label">Restaurante</span><span class="meta-value">RIBBAI</span></div>
+          <div class="meta-item"><span class="meta-label">Tipo</span><span class="meta-value">Relatório Diário Operacional</span></div>
+          <div class="meta-item"><span class="meta-label">Estado</span><span class="meta-value">Registado</span></div>
+        </div>
+      </div>
+      <div class="kpi-grid">
+        <div class="kpi"><span class="kpi-label">Pressão Operacional</span><span class="kpi-value average">8/10</span><span class="kpi-note">Época alta confirmada</span></div>
+        <div class="kpi"><span class="kpi-label">Almoço</span><span class="kpi-value average">8/10</span><span class="kpi-note">Esplanada lotada</span></div>
+        <div class="kpi"><span class="kpi-label">Organização</span><span class="kpi-value average">6/10</span><span class="kpi-note">Sem setores</span></div>
+      </div>
+      <div class="kpi-grid">
+        <div class="kpi"><span class="kpi-label">Jantar</span><span class="kpi-value average">7/10</span><span class="kpi-note">Movimento intenso</span></div>
+        <div class="kpi"><span class="kpi-label">Fecho Operacional</span><span class="kpi-value poor">3/10</span><span class="kpi-note">Recursos insuficientes</span></div>
+        <div class="kpi"><span class="kpi-label">Horas Extra</span><span class="kpi-value average">3h20</span><span class="kpi-note">Fecho prolongado</span></div>
+      </div>
+      <div class="callout callout-warning"><strong>Destaque do dia:</strong> confirmação da entrada na época alta com elevada pressão operacional (12h30-16h00). Fecho comprometido por recursos humanos insuficientes.</div>
+    </section>
+
+    <section class="page-break">
+      <h2>Síntese Executiva</h2>
+      <p>Primeiro dia de julho marcado por aumento significativo da pressão operacional, confirmando entrada na época alta. Manhã tranquila seguida de forte afluência durante almoço e jantar, com esplanada completamente lotada por várias horas consecutivas. Fecho operacional comprometido por recursos insuficientes.</p>
+      <h2>Equipa Em Serviço</h2>
+      <div class="panel-grid">
+        <div class="panel"><span class="badge badge-green">Pablo</span><ul><li>Abertura com Lee.</li><li>Preparação tranquila e organizada.</li><li>Operação dinâmica sem setores.</li></ul></div>
+        <div class="panel"><span class="badge badge-green">Lee</span><ul><li>Abertura com Pablo.</li><li>Preparação inicial da operação.</li><li>Trabalho flexível sem setores.</li></ul></div>
+        <div class="panel"><span class="badge badge-blue">Sofia</span><ul><li>Entrada 11h, reforço até 20h.</li><li>Período de maior pressão.</li><li>Adaptação ao modelo dinâmico.</li></ul></div>
+        <div class="panel"><span class="badge badge-orange">Bruno</span><ul><li>Entrada 12h30.</li><li>Período crítico de afluência.</li><li>Fecho + 1h40m extra.</li></ul></div>
+        <div class="panel"><span class="badge badge-orange">Matilde</span><ul><li>Entrada 12h30.</li><li>Lotação contínua da esplanada.</li><li>Fecho + 1h40m extra.</li></ul></div>
+      </div>
+    </section>
+
+    <section class="page-break">
+      <h2>Organização Operacional</h2>
+      <p>Abertura assegurada por Pablo e Lee com manhã tranquila. Sofia reforçou às 11h00, Bruno e Matilde às 12h30. <strong>Não foi implementado o modelo de distribuição por setores</strong>, funcionando a equipa de forma dinâmica, o que reduziu a eficiência operacional.</p>
+      <h2>Movimento do Dia</h2>
+      <ul>
+        <li>Manhã tranquila com movimento reduzido.</li>
+        <li>A partir das <strong>12h30</strong> procura aumentou rapidamente.</li>
+        <li>Entre <strong>12h30 e 16h00</strong> esplanada manteve-se continuamente cheia.</li>
+        <li>Jantar com movimento intenso e dificuldades devido a equipa reduzida.</li>
+        <li>Confirmação do movimento de verão instalado.</li>
+      </ul>
+      <h2>Problemas Identificados</h2>
+      <div class="callout callout-warning"><strong>Recursos Humanos:</strong> apenas dois colaboradores no fecho impossibilitou conclusão adequada das tarefas de encerramento. Recomenda-se mínimo de 3 colaboradores.</div>
+      <div class="callout"><strong>Equipamento:</strong> bandejas de serviço empenadas reduzem segurança no transporte e afectam eficiência do serviço.</div>
+    </section>
+
+    <section class="page-break">
+      <h2>Fecho Operacional</h2>
+      <p>Principal ponto negativo do dia. Com apenas Bruno e Matilde no fecho, várias tarefas ficaram incompletas:</p>
+      <ul>
+        <li>Sala por varrer</li>
+        <li>Algumas mesas por limpar</li>
+        <li>Casas de banho com limpeza incompleta</li>
+        <li>Produtos de limpeza por arrumar</li>
+      </ul>
+      <div class="callout callout-warning"><strong>Avaliação:</strong> Negativa. Demonstra dificuldade em assegurar encerramento de qualidade com apenas dois colaboradores.</div>
+      <h2>Recomendação à Gestão</h2>
+      <p>Sempre que operacionalmente possível, garantir presença mínima de <strong>3 colaboradores no turno de fecho</strong> para assegurar encerramento consistente e manter padrões de qualidade.</p>
+    </section>
+
+    <section class="page-break">
+      <h2>Horas Extra</h2>
+      <table>
+        <thead><tr><th>Colaborador</th><th>Registo</th><th>Motivo</th></tr></thead>
+        <tbody>
+          <tr><td>Bruno</td><td>1h40 de horas extra</td><td>Fecho operacional prolongado</td></tr>
+          <tr><td>Matilde</td><td>1h40 de horas extra</td><td>Fecho operacional prolongado</td></tr>
+        </tbody>
+      </table>
+      <div class="callout"><strong>Total da equipa:</strong> 3h20 de horas extra concentradas no fecho devido a recursos insuficientes.</div>
+      <h2>Conclusão</h2>
+      <p>Primeiro dia de julho confirmou entrada na época alta com elevados níveis de procura. Apesar da equipa reduzida e ausência de setores, operação decorreu satisfatoriamente. Principal ponto de melhoria mantém-se o reforço da equipa no turno de fecho, prioritário para o período de maior intensidade do verão.</p>
+    </section>
+
+    <section class="page-break">
+      <h2>Classificação Para O Sistema RIBBAI OPS</h2>
+      <table>
+        <thead><tr><th>Categoria</th><th>Registo</th></tr></thead>
+        <tbody>
+          <tr><td>Operational Notes</td><td>Primeiro dia de julho com entrada na época alta; manhã tranquila, forte afluência 12h30-16h00; esplanada continuamente lotada; operação sem setores; fecho comprometido com dois colaboradores; 3h20 horas extra.</td></tr>
+          <tr><td>Service Improvement</td><td>Reimplementar organização por setores durante época alta para melhorar eficiência operacional e reduzir deslocações desnecessárias.</td></tr>
+          <tr><td>Team Feedback Input</td><td>Pablo e Lee: abertura tranquila; Sofia: reforço no período crítico; Bruno e Matilde: fecho prolongado com recursos reduzidos; equipa demonstrou competência apesar da ausência de setores.</td></tr>
+          <tr><td>Overtime Input</td><td>3h20: Bruno 1h40, Matilde 1h40 - fecho operacional prolongado.</td></tr>
+          <tr><td>Management Notes</td><td>Reforçar equipa no fecho (mínimo 3 colaboradores); considerar reimplementação de setores na época alta; priorizar aquisição de bandejas de serviço; monitorizar evolução da pressão operacional.</td></tr>
+          <tr><td>Inventory Context</td><td>Bandejas de serviço empenadas requerem substituição prioritária - comprometem segurança e eficiência.</td></tr>
+        </tbody>
+      </table>
+      <p class="footer-note">Documento gerado para apresentação diária à gestão. Fonte operacional: Registo Diário Operacional de 01-07-2026. Autor: Filipe Catalão.</p>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,475 @@
+{
+  "year": 2026,
+  "month": 6,
+  "generatedAt": "2026-07-08T19:04:11.492Z",
+  "items": [
+    {
+      "category": "Consumiveis",
+      "name": "Guardanapos",
+      "sku": "CONS-SERVICE-NAPKINS",
+      "unit": "caixa",
+      "closingQuantity": 2,
+      "originalUnit": "caixa",
+      "originalClosingQuantity": 2
+    },
+    {
+      "category": "Consumiveis de Servico",
+      "name": "Guardanapos Pequenos",
+      "sku": "CONS-SERVICE-SMALL-NAPKINS",
+      "unit": "caixa",
+      "closingQuantity": 0,
+      "originalUnit": "caixa",
+      "originalClosingQuantity": 0
+    },
+    {
+      "category": "Consumiveis de Servico",
+      "name": "Palhinhas",
+      "sku": "CONS-SERVICE-STRAWS",
+      "unit": "saco",
+      "closingQuantity": 35,
+      "originalUnit": "saco",
+      "originalClosingQuantity": 35
+    },
+    {
+      "category": "Consumiveis de Servico",
+      "name": "Palitos",
+      "sku": "CONS-SERVICE-TOOTHPICKS",
+      "unit": "caixa",
+      "closingQuantity": 1,
+      "originalUnit": "caixa",
+      "originalClosingQuantity": 1
+    },
+    {
+      "category": "Consumiveis Operacionais",
+      "name": "Rolos TPA",
+      "sku": "CONS-OPS-TPA-ROLLS",
+      "unit": "caixa",
+      "closingQuantity": 1.5,
+      "originalUnit": "caixa",
+      "originalClosingQuantity": 1.5
+    },
+    {
+      "category": "Consumiveis Operacionais",
+      "name": "Rolos Impressora",
+      "sku": "CONS-OPS-PRINTER-ROLLS",
+      "unit": "caixa",
+      "closingQuantity": 4,
+      "originalUnit": "caixa",
+      "originalClosingQuantity": 4
+    },
+    {
+      "category": "Consumiveis Operacionais",
+      "name": "Rolos de Cozinha",
+      "sku": "CONS-OPS-KITCHEN-ROLLS",
+      "unit": "pack",
+      "closingQuantity": 4,
+      "originalUnit": "pack",
+      "originalClosingQuantity": 4
+    },
+    {
+      "category": "Consumiveis Operacionais",
+      "name": "Sacos do Lixo 120L",
+      "sku": "CONS-OPS-TRASH-BAGS-120L",
+      "unit": "caixa",
+      "closingQuantity": 2,
+      "originalUnit": "caixa",
+      "originalClosingQuantity": 2
+    },
+    {
+      "category": "Consumiveis Operacionais",
+      "name": "Sacos do Lixo Vidro",
+      "sku": "CONS-OPS-GLASS-TRASH-BAGS",
+      "unit": "pack",
+      "closingQuantity": 2,
+      "originalUnit": "pack",
+      "originalClosingQuantity": 2
+    },
+    {
+      "category": "Consumiveis Operacionais",
+      "name": "Rolo Azul",
+      "sku": "CONS-OPS-BLUE-ROLL",
+      "unit": "unidade",
+      "closingQuantity": 1.5,
+      "originalUnit": "unidade",
+      "originalClosingQuantity": 1.5
+    },
+    {
+      "category": "Consumiveis Operacionais",
+      "name": "Panos Microfibra Amarelos",
+      "sku": "CLEAN-MICROFIBER-YELLOW",
+      "unit": "saco",
+      "closingQuantity": 3,
+      "originalUnit": "saco",
+      "originalClosingQuantity": 3
+    },
+    {
+      "category": "Consumiveis Operacionais",
+      "name": "Panos Microfibra Azuis",
+      "sku": "CLEAN-MICROFIBER-BLUE",
+      "unit": "saco",
+      "closingQuantity": 3,
+      "originalUnit": "saco",
+      "originalClosingQuantity": 3
+    },
+    {
+      "category": "Consumiveis Operacionais",
+      "name": "Panos Microfibra Cinzentos",
+      "sku": "CLEAN-MICROFIBER-GREY",
+      "unit": "saco",
+      "closingQuantity": 3,
+      "originalUnit": "saco",
+      "originalClosingQuantity": 3
+    },
+    {
+      "category": "Consumiveis Operacionais",
+      "name": "Pelicula Alimentar",
+      "sku": "CONS-OPS-FOOD-FILM",
+      "unit": "caixa",
+      "closingQuantity": 4,
+      "originalUnit": "caixa",
+      "originalClosingQuantity": 4
+    },
+    {
+      "category": "Consumiveis Operacionais",
+      "name": "Rolos TNT",
+      "sku": "CONS-OPS-TNT-ROLLS",
+      "unit": "pack",
+      "closingQuantity": 2,
+      "originalUnit": "pack",
+      "originalClosingQuantity": 2
+    },
+    {
+      "category": "Consumiveis WC",
+      "name": "Papel Higienico",
+      "sku": "CONS-WC-TOILET-PAPER",
+      "unit": "pack",
+      "closingQuantity": 19,
+      "originalUnit": "pack",
+      "originalClosingQuantity": 19
+    },
+    {
+      "category": "Consumiveis WC",
+      "name": "Papel de Maos WC",
+      "sku": "CONS-WC-HAND-PAPER",
+      "unit": "caixa",
+      "closingQuantity": 5,
+      "originalUnit": "caixa",
+      "originalClosingQuantity": 5
+    },
+    {
+      "category": "Copos Take Away",
+      "name": "Copos Pequenos Cafe Take Away",
+      "sku": "CONS-TAKEAWAY-SMALL-COFFEE-CUPS",
+      "unit": "caixa",
+      "closingQuantity": 0.8,
+      "originalUnit": "caixa",
+      "originalClosingQuantity": 0.8
+    },
+    {
+      "category": "Copos Take Away",
+      "name": "Copos Medios Take Away + Tampas",
+      "sku": "CONS-TAKEAWAY-MEDIUM-CUPS-LIDS",
+      "unit": "saco",
+      "closingQuantity": 4,
+      "originalUnit": "caixa",
+      "originalClosingQuantity": 0.2
+    },
+    {
+      "category": "Copos Take Away",
+      "name": "Copos para Molhos Take Away",
+      "sku": "CONS-TAKEAWAY-SAUCE-CUPS",
+      "unit": "caixa",
+      "closingQuantity": 0.5,
+      "originalUnit": "caixa",
+      "originalClosingQuantity": 0.5
+    },
+    {
+      "category": "Copos Take Away",
+      "name": "Copos para Mousse",
+      "sku": "CONS-DESSERT-MOUSSE-CUPS",
+      "unit": "unidade",
+      "closingQuantity": 100,
+      "originalUnit": "unidade",
+      "originalClosingQuantity": 100
+    },
+    {
+      "category": "Copos Take Away",
+      "name": "Copos Medios Cafe Take Away",
+      "sku": "CONS-TAKEAWAY-MEDIUM-COFFEE-CUPS",
+      "unit": "saco",
+      "closingQuantity": 4,
+      "originalUnit": "caixa",
+      "originalClosingQuantity": 0.2
+    },
+    {
+      "category": "Embalagens Take Away",
+      "name": "Box de Sopas + Tampas",
+      "sku": "CONS-TAKEAWAY-SOUP-BOX-LID",
+      "unit": "saco",
+      "closingQuantity": 22.5,
+      "originalUnit": "caixa",
+      "originalClosingQuantity": 1.5
+    },
+    {
+      "category": "Embalagens Take Away",
+      "name": "Box POKE + Tampas",
+      "sku": "CONS-TAKEAWAY-ROUND-BOX-LID",
+      "unit": "saco",
+      "closingQuantity": 24,
+      "originalUnit": "caixa",
+      "originalClosingQuantity": 4
+    },
+    {
+      "category": "Embalagens Take Away",
+      "name": "Box grande 1980ml",
+      "sku": "CONS-TAKEAWAY-BURGER-BOX",
+      "unit": "saco",
+      "closingQuantity": 8,
+      "originalUnit": "caixa",
+      "originalClosingQuantity": 2
+    },
+    {
+      "category": "Embalagens Take Away",
+      "name": "Box Media 1350",
+      "sku": "CONS-TAKEAWAY-TOAST-BOX",
+      "unit": "saco",
+      "closingQuantity": 8,
+      "originalUnit": "caixa",
+      "originalClosingQuantity": 2
+    },
+    {
+      "category": "Embalagens Take Away",
+      "name": "Box Pequena 750ml",
+      "sku": "CONS-TAKEAWAY-BOX-750ML",
+      "unit": "saco",
+      "closingQuantity": 12,
+      "originalUnit": "caixa",
+      "originalClosingQuantity": 1
+    },
+    {
+      "category": "Galheteiros",
+      "name": "Garrafa de Azeite",
+      "sku": "CONS-GALHETEIRO-OLIVE-OIL",
+      "unit": "unidade",
+      "closingQuantity": 9,
+      "originalUnit": "unidade",
+      "originalClosingQuantity": 9
+    },
+    {
+      "category": "Galheteiros",
+      "name": "Garrafa de Vinagre",
+      "sku": "CONS-GALHETEIRO-VINEGAR",
+      "unit": "unidade",
+      "closingQuantity": 9,
+      "originalUnit": "unidade",
+      "originalClosingQuantity": 9
+    },
+    {
+      "category": "Molhos",
+      "name": "Ketchup",
+      "sku": "SAUCE-KETCHUP",
+      "unit": "caixa",
+      "closingQuantity": 3,
+      "originalUnit": "caixa",
+      "originalClosingQuantity": 3
+    },
+    {
+      "category": "Molhos",
+      "name": "Mostarda",
+      "sku": "SAUCE-MUSTARD",
+      "unit": "caixa",
+      "closingQuantity": 1.5,
+      "originalUnit": "caixa",
+      "originalClosingQuantity": 1.5
+    },
+    {
+      "category": "Molhos",
+      "name": "Maionese",
+      "sku": "SAUCE-MAYONNAISE",
+      "unit": "caixa",
+      "closingQuantity": 3,
+      "originalUnit": "caixa",
+      "originalClosingQuantity": 3
+    },
+    {
+      "category": "Produtos de Limpeza",
+      "name": "Espuma Antibacteriana",
+      "sku": "CLEAN-ANTIBACTERIAL-FOAM",
+      "unit": "unidade",
+      "closingQuantity": 0,
+      "originalUnit": "unidade",
+      "originalClosingQuantity": 0
+    },
+    {
+      "category": "Produtos de Limpeza",
+      "name": "Spray Laranja WC IBT",
+      "sku": "CLEAN-WC-ORANGE-SPRAY-IBT",
+      "unit": "unidade",
+      "closingQuantity": 2,
+      "originalUnit": "unidade",
+      "originalClosingQuantity": 2
+    },
+    {
+      "category": "Produtos de Limpeza",
+      "name": "Alcool",
+      "sku": "CLEAN-ALCOHOL",
+      "unit": "unidade",
+      "closingQuantity": 21,
+      "originalUnit": "unidade",
+      "originalClosingQuantity": 21
+    },
+    {
+      "category": "Produtos de Limpeza",
+      "name": "Thomil",
+      "sku": "CLEAN-THOMIL",
+      "unit": "unidade",
+      "closingQuantity": 4,
+      "originalUnit": "unidade",
+      "originalClosingQuantity": 4
+    },
+    {
+      "category": "Produtos de Limpeza",
+      "name": "Dish Lemon",
+      "sku": "CLEAN-DISH-LEMON",
+      "unit": "unidade",
+      "closingQuantity": 2,
+      "originalUnit": "unidade",
+      "originalClosingQuantity": 2
+    },
+    {
+      "category": "Produtos de Limpeza",
+      "name": "Abrilhantador/Secante SPLIT LV",
+      "sku": "CLEAN-SPLIT-LV-RINSE",
+      "unit": "unidade",
+      "closingQuantity": 3,
+      "originalUnit": "unidade",
+      "originalClosingQuantity": 3
+    },
+    {
+      "category": "Produtos de Limpeza",
+      "name": "Cheiro Urinol",
+      "sku": "CLEAN-URINAL-SCENT",
+      "unit": "unidade",
+      "closingQuantity": 12,
+      "originalUnit": "unidade",
+      "originalClosingQuantity": 12
+    },
+    {
+      "category": "Produtos de Limpeza",
+      "name": "D-50",
+      "sku": "CLEAN-D-50",
+      "unit": "unidade",
+      "closingQuantity": 2,
+      "originalUnit": "unidade",
+      "originalClosingQuantity": 2
+    },
+    {
+      "category": "Produtos de Limpeza",
+      "name": "Lava-Louça Universal",
+      "sku": "CLEAN-LAVA-LOUCAS",
+      "unit": "unidade",
+      "closingQuantity": 1,
+      "originalUnit": "unidade",
+      "originalClosingQuantity": 1
+    },
+    {
+      "category": "Produtos de Limpeza",
+      "name": "Luvas L",
+      "sku": "CLEAN-GLOVES-L",
+      "unit": "caixa",
+      "closingQuantity": 1,
+      "originalUnit": "caixa",
+      "originalClosingQuantity": 1
+    },
+    {
+      "category": "Produtos de Limpeza",
+      "name": "Luvas M",
+      "sku": "CLEAN-GLOVES-M",
+      "unit": "caixa",
+      "closingQuantity": 1,
+      "originalUnit": "caixa",
+      "originalClosingQuantity": 1
+    },
+    {
+      "category": "Produtos de Limpeza",
+      "name": "Luvas S",
+      "sku": "CLEAN-GLOVES-S",
+      "unit": "caixa",
+      "closingQuantity": 1,
+      "originalUnit": "caixa",
+      "originalClosingQuantity": 1
+    },
+    {
+      "category": "Produtos de Limpeza",
+      "name": "Mascaras",
+      "sku": "CLEAN-MASKS",
+      "unit": "caixa",
+      "closingQuantity": 4,
+      "originalUnit": "caixa",
+      "originalClosingQuantity": 4
+    },
+    {
+      "category": "Produtos de Limpeza",
+      "name": "Tocas",
+      "sku": "CLEAN-HAIRNETS",
+      "unit": "saco",
+      "closingQuantity": 3,
+      "originalUnit": "saco",
+      "originalClosingQuantity": 3
+    },
+    {
+      "category": "Produtos de Limpeza",
+      "name": "Glow Limpa Vidros",
+      "sku": "CLEAN-GLASS-GLOW",
+      "unit": "unidade",
+      "closingQuantity": 2,
+      "originalUnit": "unidade",
+      "originalClosingQuantity": 2
+    },
+    {
+      "category": "Produtos de Limpeza",
+      "name": "Higienizante Acao Rapida",
+      "sku": "CLEAN-HYGIENIZER-FAST",
+      "unit": "unidade",
+      "closingQuantity": 2,
+      "originalUnit": "unidade",
+      "originalClosingQuantity": 2
+    },
+    {
+      "category": "Produtos de Limpeza",
+      "name": "Lixivia forte",
+      "sku": "CLEAN-LIXIVIA-FORTE",
+      "unit": "unidade",
+      "closingQuantity": 1,
+      "originalUnit": "unidade",
+      "originalClosingQuantity": 1
+    },
+    {
+      "category": "Talheres Take Away",
+      "name": "Garfos e Facas Take Away",
+      "sku": "CONS-TAKEAWAY-FORKS-KNIVES",
+      "unit": "saco",
+      "closingQuantity": 5,
+      "originalUnit": "saco",
+      "originalClosingQuantity": 5
+    },
+    {
+      "category": "Talheres Take Away",
+      "name": "Colheres Take Away",
+      "sku": "CONS-TAKEAWAY-SPOONS",
+      "unit": "saco",
+      "closingQuantity": 3,
+      "originalUnit": "saco",
+      "originalClosingQuantity": 3
+    },
+    {
+      "category": "Talheres Take Away",
+      "name": "Pauzinhos",
+      "sku": "CONS-TAKEAWAY-CHOPSTICKS",
+      "unit": "saco",
+      "closingQuantity": 6,
+      "originalUnit": "saco",
+      "originalClosingQuantity": 6
+    }
+  ]
+}

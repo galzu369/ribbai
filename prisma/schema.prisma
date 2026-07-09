@@ -1,0 +1,940 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Inventory-related enums
+
+enum InventoryTransactionType {
+  IN
+  OUT
+  WASTAGE
+  ADJUSTMENT
+}
+
+enum WeeklyInventoryStatus {
+  DRAFT
+  SUBMITTED
+  CANCELLED
+}
+
+enum InventoryItemStatus {
+  ACTIVE
+  INACTIVE
+}
+
+enum OperationalNoteType {
+  INVENTORY_ALERT
+  CONSUMPTION_TREND
+  PURCHASING_METRICS
+  WEEKLY_COUNT
+  MANAGEMENT_NOTE
+  WEEKLY_CANDIDATE
+  EXECUTIVE_SUMMARY
+  OPERATIONAL_NOTE
+  INVENTORY_CONTEXT
+}
+
+model User {
+  id               String         @id @default(cuid())
+  email            String         @unique
+  emailVerified    DateTime?
+  name             String?
+  image            String?
+  hashedPassword   String?
+  roleId           String?
+  employeeId       String?        @unique
+  lastLoginAt      DateTime?
+  isActive         Boolean        @default(true)
+  isSuspended      Boolean        @default(false)
+  suspendedAt      DateTime?
+  suspendedReason  String?
+  createdBy        String?
+  updatedBy        String?
+  deletedAt        DateTime?
+  createdAt        DateTime       @default(now())
+  updatedAt        DateTime       @updatedAt
+  accounts         Account[]
+  auditLogs        AuditLog[]
+  createdDocuments Document[]     @relation("DocumentCreator")
+  createdIncidents Incident[]     @relation("IncidentCreator")
+  notifications    Notification[]
+  createdReports   Report[]       @relation("ReportCreator")
+  sessions         Session[]
+  employee         Employee?      @relation(fields: [employeeId], references: [id])
+  role             Role?          @relation(fields: [roleId], references: [id])
+
+  @@index([email])
+  @@index([roleId])
+  @@index([employeeId])
+  @@index([isActive])
+  @@map("users")
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@index([userId])
+  @@map("accounts")
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("sessions")
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+  @@map("verification_tokens")
+}
+
+model Role {
+  id          String    @id @default(cuid())
+  name        String    @unique
+  code        String    @unique
+  description String?
+  permissions Json
+  isSystem    Boolean   @default(false)
+  isActive    Boolean   @default(true)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  deletedAt   DateTime?
+  users       User[]
+
+  @@index([code])
+  @@index([isActive])
+  @@map("roles")
+}
+
+model Employee {
+  id                 String              @id @default(cuid())
+  employeeCode       String              @unique
+  firstName          String
+  lastName           String
+  email              String              @unique
+  phone              String?
+  dateOfBirth        DateTime?
+  nationality        String?
+  position           String
+  department         String
+  employmentType     String
+  startDate          DateTime
+  endDate            DateTime?
+  status             String              @default("ACTIVE")
+  hourlyRate         Decimal?            @db.Decimal(10, 2)
+  monthlySalary      Decimal?            @db.Decimal(10, 2)
+  currency           String              @default("EUR")
+  emergencyContact   Json?
+  contractUrl        String?
+  idDocumentUrl      String?
+  createdBy          String?
+  updatedBy          String?
+  deletedAt          DateTime?
+  createdAt          DateTime            @default(now())
+  updatedAt          DateTime            @updatedAt
+  attendanceRecords  Attendance[]
+  incidents          Incident[]          @relation("IncidentEmployee")
+  kpiSnapshots       KPISnapshot[]
+  performanceMetrics PerformanceMetric[]
+  shifts             Shift[]
+  teamFeedback       TeamFeedback[]
+  workforceEntries   WorkforceScheduleEntry[]
+  user               User?
+
+  @@index([employeeCode])
+  @@index([email])
+  @@index([status])
+  @@index([department])
+  @@index([position])
+  @@map("employees")
+}
+
+model Shift {
+  id            String      @id @default(cuid())
+  employeeId    String
+  shiftDate     DateTime    @db.Date
+  startTime     DateTime
+  endTime       DateTime
+  breakDuration Int         @default(0)
+  shiftType     String
+  status        String      @default("SCHEDULED")
+  notes         String?
+  createdBy     String?
+  updatedBy     String?
+  deletedAt     DateTime?
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+  attendance    Attendance?
+  employee      Employee    @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+
+  @@index([employeeId])
+  @@index([shiftDate])
+  @@index([status])
+  @@index([shiftType])
+  @@map("shifts")
+}
+
+model Attendance {
+  id               String    @id @default(cuid())
+  shiftId          String    @unique
+  employeeId       String
+  clockInTime      DateTime?
+  clockOutTime     DateTime?
+  clockInLocation  Json?
+  clockOutLocation Json?
+  actualHours      Decimal?  @db.Decimal(5, 2)
+  overtimeHours    Decimal?  @db.Decimal(5, 2)
+  status           String    @default("SCHEDULED")
+  isVerified       Boolean   @default(false)
+  verifiedBy       String?
+  verifiedAt       DateTime?
+  notes            String?
+  createdBy        String?
+  updatedBy        String?
+  deletedAt        DateTime?
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+  employee         Employee  @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+  shift            Shift     @relation(fields: [shiftId], references: [id], onDelete: Cascade)
+
+  @@index([employeeId])
+  @@index([status])
+  @@index([clockInTime])
+  @@map("attendance_records")
+}
+
+// Workforce planning enums and models
+
+enum WorkforceScheduleStatus {
+  IMPORTED
+  IN_REVIEW
+  VALIDATED
+  REJECTED
+}
+
+enum WorkforceDayType {
+  WORK
+  OFF
+  HOLIDAY
+  SICK_LEAVE
+  OTHER
+}
+
+model WorkforceSchedule {
+  id                 String                   @id @default(cuid())
+  year               Int
+  weekNumber         Int
+  weekStartDate      DateTime                 @db.Date
+  weekEndDate        DateTime                 @db.Date
+  status             WorkforceScheduleStatus  @default(IMPORTED)
+  location           String?
+  department         String?
+  sourceDocumentId   String
+  processedDocumentId String?
+  importedByUserId   String?
+  importedAt         DateTime                 @default(now())
+  createdAt          DateTime                 @default(now())
+  updatedAt          DateTime                 @updatedAt
+  entries            WorkforceScheduleEntry[]
+
+  sourceDocument     Document                 @relation("WorkforceScheduleSourceDocument", fields: [sourceDocumentId], references: [id])
+  processedDocument  Document?                @relation("WorkforceScheduleProcessedDocument", fields: [processedDocumentId], references: [id])
+
+  @@index([year])
+  @@index([weekNumber])
+  @@index([year, weekNumber])
+  @@map("workforce_schedules")
+}
+
+model WorkforceScheduleEntry {
+  id                   String                @id @default(cuid())
+  workforceScheduleId  String
+  employeeId           String?
+  employeeName         String
+  date                 DateTime              @db.Date
+  weekday              Int
+  plannedStart         DateTime?
+  plannedEnd           DateTime?
+  breakStart           DateTime?
+  breakEnd             DateTime?
+  plannedHours         Decimal?              @db.Decimal(5, 2)
+  shiftLabel           String?
+  dayType              WorkforceDayType      @default(WORK)
+  sourceRow            Int?
+  sourceColumn         Int?
+  ocrConfidence        Decimal?              @db.Decimal(4, 3)
+  notes                String?
+  createdAt            DateTime              @default(now())
+  updatedAt            DateTime              @updatedAt
+
+  schedule             WorkforceSchedule     @relation(fields: [workforceScheduleId], references: [id], onDelete: Cascade)
+  employee             Employee?             @relation(fields: [employeeId], references: [id])
+
+  @@index([workforceScheduleId])
+  @@index([employeeId])
+  @@index([date])
+  @@map("workforce_schedule_entries")
+}
+
+model Supplier {
+  id             String                 @id @default(cuid())
+  code           String                 @unique
+  name           String
+  contactPerson  String?
+  email          String?
+  phone          String?
+  address        Json?
+  taxId          String?
+  paymentTerms   String?
+  status         String                 @default("ACTIVE")
+  rating         Int?
+  createdBy      String?
+  updatedBy      String?
+  deletedAt      DateTime?
+  createdAt      DateTime               @default(now())
+  updatedAt      DateTime               @updatedAt
+  inventoryItems InventoryItem[]
+  transactions   InventoryTransaction[]
+
+  @@index([code])
+  @@index([name])
+  @@index([status])
+  @@map("suppliers")
+}
+
+model InventoryItem {
+  id                String                 @id @default(cuid())
+  sku               String                 @unique
+  name              String
+  description       String?
+  category          String
+  subCategory       String?
+  supplierId        String?
+  unit              String
+  packageSize       Decimal?               @db.Decimal(10, 3)
+  costPrice         Decimal                @db.Decimal(10, 2)
+  currency          String                 @default("EUR")
+  currentStock      Decimal                @db.Decimal(10, 3)
+  minimumStock      Decimal                @db.Decimal(10, 3)
+  maximumStock      Decimal?               @db.Decimal(10, 3)
+  reorderPoint      Decimal                @db.Decimal(10, 3)
+  storageLocation   String?
+  storageConditions String?
+  status            InventoryItemStatus    @default(ACTIVE)
+  createdBy         String?
+  updatedBy         String?
+  deletedAt         DateTime?
+  createdAt         DateTime               @default(now())
+  updatedAt         DateTime               @updatedAt
+  averageCost       Decimal                @default(0) @db.Decimal(10, 2)
+  lastInventoryDate DateTime?
+  lastPurchaseCost  Decimal                @default(0) @db.Decimal(10, 2)
+  lastPurchaseDate  DateTime?
+  stockValue        Decimal                @default(0) @db.Decimal(12, 2)
+  supplier          Supplier?              @relation(fields: [supplierId], references: [id])
+  transactions      InventoryTransaction[]
+  weeklyInventories WeeklyInventoryItem[]
+
+  @@index([sku])
+  @@index([category])
+  @@index([status])
+  @@index([supplierId])
+  @@map("inventory_items")
+}
+
+model InventoryTransaction {
+  id              String        @id @default(cuid())
+  itemId          String
+  type            InventoryTransactionType
+  quantity        Decimal       @db.Decimal(10, 3)
+  unit            String
+  unitCost        Decimal?      @db.Decimal(10, 2)
+  totalCost       Decimal?      @db.Decimal(10, 2)
+  referenceType   String?
+  referenceId     String?
+  supplierId      String?
+  balanceAfter    Decimal       @db.Decimal(10, 3)
+  reason          String?
+  notes           String?
+  createdBy       String?
+  transactionDate DateTime      @default(now())
+  createdAt       DateTime      @default(now())
+  item            InventoryItem @relation(fields: [itemId], references: [id])
+  supplier        Supplier?     @relation(fields: [supplierId], references: [id])
+
+  @@index([itemId])
+  @@index([type])
+  @@index([transactionDate])
+  @@index([supplierId])
+  @@map("inventory_transactions")
+}
+
+model WeeklyInventory {
+  id            String                @id @default(cuid())
+  weekNumber    Int
+  year          Int
+  weekStartDate DateTime              @db.Date
+  weekEndDate   DateTime              @db.Date
+  status        WeeklyInventoryStatus @default(DRAFT)
+  totalItems    Int?
+  totalValue    Decimal?              @db.Decimal(12, 2)
+  variance      Decimal?              @db.Decimal(12, 2)
+  submittedBy   String?
+  submittedAt   DateTime?
+  approvedBy    String?
+  approvedAt    DateTime?
+  notes         String?
+  createdBy     String?
+  updatedBy     String?
+  deletedAt     DateTime?
+  createdAt     DateTime              @default(now())
+  updatedAt     DateTime              @updatedAt
+  items         WeeklyInventoryItem[]
+
+  @@unique([weekNumber, year])
+  @@index([status])
+  @@index([weekStartDate])
+  @@map("weekly_inventories")
+}
+
+model WeeklyInventoryItem {
+  id                 String          @id @default(cuid())
+  weeklyInventoryId  String
+  itemId             String
+  systemQuantity     Decimal         @db.Decimal(10, 3)
+  actualQuantity     Decimal         @db.Decimal(10, 3)
+  variance           Decimal         @db.Decimal(10, 3)
+  variancePercentage Decimal?        @db.Decimal(5, 2)
+  unitCost           Decimal         @db.Decimal(10, 2)
+  totalValue         Decimal         @db.Decimal(12, 2)
+  varianceValue      Decimal         @db.Decimal(12, 2)
+  countedBy          String?
+  countedAt          DateTime?
+  notes              String?
+  createdAt          DateTime        @default(now())
+  updatedAt          DateTime        @updatedAt
+  item               InventoryItem   @relation(fields: [itemId], references: [id])
+  weeklyInventory    WeeklyInventory @relation(fields: [weeklyInventoryId], references: [id], onDelete: Cascade)
+
+  @@unique([weeklyInventoryId, itemId])
+  @@index([itemId])
+  @@map("weekly_inventory_items")
+}
+
+model Report {
+  id             String    @id @default(cuid())
+  reportType     String
+  title          String
+  code           String?   @unique
+  periodType     String
+  periodStart    DateTime  @db.Date
+  periodEnd      DateTime  @db.Date
+  summary        Json?
+  sections       Json
+  metrics        Json?
+  charts         Json?
+  status         String    @default("DRAFT")
+  generatedBy    String?
+  generatedAt    DateTime?
+  generationTime Int?
+  pdfUrl         String?
+  pdfGeneratedAt DateTime?
+  isPublic       Boolean   @default(false)
+  isArchived     Boolean   @default(false)
+  createdBy      String?
+  updatedBy      String?
+  deletedAt      DateTime?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+  creator        User?     @relation("ReportCreator", fields: [createdBy], references: [id])
+
+  @@index([reportType])
+  @@index([status])
+  @@index([periodStart])
+  @@index([periodEnd])
+  @@map("reports")
+}
+
+model ChecklistTemplate {
+  id          String      @id @default(cuid())
+  name        String
+  description String?
+  category    String
+  frequency   String
+  tasks       Json
+  isActive    Boolean     @default(true)
+  daysOfWeek  Int[]
+  startTime   String?
+  createdBy   String?
+  updatedBy   String?
+  deletedAt   DateTime?
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  checklists  Checklist[]
+
+  @@index([category])
+  @@index([isActive])
+  @@map("checklist_templates")
+}
+
+model Checklist {
+  id             String            @id @default(cuid())
+  templateId     String
+  scheduledDate  DateTime          @db.Date
+  scheduledTime  String?
+  tasks          Json
+  completedTasks Int               @default(0)
+  totalTasks     Int
+  completionRate Decimal?          @db.Decimal(5, 2)
+  assignedTo     String?
+  completedBy    String?
+  completedAt    DateTime?
+  status         String            @default("PENDING")
+  notes          String?
+  createdBy      String?
+  updatedBy      String?
+  deletedAt      DateTime?
+  createdAt      DateTime          @default(now())
+  updatedAt      DateTime          @updatedAt
+  template       ChecklistTemplate @relation(fields: [templateId], references: [id])
+
+  @@index([templateId])
+  @@index([scheduledDate])
+  @@index([status])
+  @@index([assignedTo])
+  @@map("checklists")
+}
+
+model Incident {
+  id                 String    @id @default(cuid())
+  incidentNumber     String    @unique
+  title              String
+  type               String
+  severity           String
+  category           String?
+  description        String
+  location           String?
+  reportedById       String
+  affectedEmployeeId String?
+  occurredAt         DateTime
+  reportedAt         DateTime  @default(now())
+  rootCause          String?
+  correctiveActions  Json?
+  preventiveActions  Json?
+  status             String    @default("OPEN")
+  resolvedBy         String?
+  resolvedAt         DateTime?
+  resolutionNotes    String?
+  attachments        Json?
+  financialImpact    Decimal?  @db.Decimal(10, 2)
+  downtimeMinutes    Int?
+  updatedBy          String?
+  deletedAt          DateTime?
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+  affectedEmployee   Employee? @relation("IncidentEmployee", fields: [affectedEmployeeId], references: [id])
+  reportedBy         User      @relation("IncidentCreator", fields: [reportedById], references: [id])
+
+  @@index([incidentNumber])
+  @@index([type])
+  @@index([severity])
+  @@index([status])
+  @@index([occurredAt])
+  @@map("incidents")
+}
+
+model Document {
+  id                String    @id @default(cuid())
+  documentNumber    String?   @unique
+  title             String
+  description       String?
+  category          String
+  subCategory       String?
+  tags              String[]
+  fileUrl           String
+  fileName          String
+  fileSize          Int
+  mimeType          String
+  version           String    @default("1.0")
+  previousVersionId String?
+  isLatestVersion   Boolean   @default(true)
+  isPublic          Boolean   @default(false)
+  allowedRoles      String[]
+  status            String    @default("ACTIVE")
+  effectiveDate     DateTime? @db.Date
+  expiryDate        DateTime? @db.Date
+  ownerId           String
+  requiresApproval  Boolean   @default(false)
+  approvedBy        String?
+  approvedAt        DateTime?
+  downloadCount     Int       @default(0)
+  lastAccessedAt    DateTime?
+  updatedBy         String?
+  deletedAt         DateTime?
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+  owner             User      @relation("DocumentCreator", fields: [ownerId], references: [id])
+
+  workforceSchedulesSource    WorkforceSchedule[] @relation("WorkforceScheduleSourceDocument")
+  workforceSchedulesProcessed WorkforceSchedule[] @relation("WorkforceScheduleProcessedDocument")
+
+  @@index([category])
+  @@index([status])
+  @@index([ownerId])
+  @@index([tags])
+  @@map("documents")
+}
+
+model Notification {
+  id            String    @id @default(cuid())
+  userId        String
+  type          String
+  category      String
+  title         String
+  message       String
+  actionUrl     String?
+  actionLabel   String?
+  referenceType String?
+  referenceId   String?
+  isRead        Boolean   @default(false)
+  readAt        DateTime?
+  channels      String[]
+  emailSent     Boolean   @default(false)
+  emailSentAt   DateTime?
+  priority      String    @default("NORMAL")
+  expiresAt     DateTime?
+  createdAt     DateTime  @default(now())
+  user          User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([isRead])
+  @@index([category])
+  @@index([createdAt])
+  @@map("notifications")
+}
+
+model AuditLog {
+  id           String   @id @default(cuid())
+  userId       String?
+  action       String
+  entity       String
+  entityId     String
+  changes      Json?
+  metadata     Json?
+  ipAddress    String?
+  userAgent    String?
+  status       String
+  errorMessage String?
+  timestamp    DateTime @default(now())
+  user         User?    @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@index([entity])
+  @@index([entityId])
+  @@index([action])
+  @@index([timestamp])
+  @@map("audit_logs")
+}
+
+model PerformanceMetric {
+  id          String   @id @default(cuid())
+  employeeId  String
+  metricType  String
+  periodType  String
+  periodStart DateTime @db.Date
+  periodEnd   DateTime @db.Date
+  value       Decimal  @db.Decimal(10, 2)
+  target      Decimal? @db.Decimal(10, 2)
+  unit        String?
+  rating      String?
+  notes       String?
+  createdBy   String?
+  updatedBy   String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  employee    Employee @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+
+  @@index([employeeId])
+  @@index([metricType])
+  @@index([periodStart])
+  @@map("performance_metrics")
+}
+
+model AIForecast {
+  id           String   @id @default(cuid())
+  forecastType String
+  targetDate   DateTime @db.Date
+  horizon      Int
+  predictions  Json
+  confidence   Decimal  @db.Decimal(5, 2)
+  modelVersion String
+  features     Json?
+  actualValue  Decimal? @db.Decimal(10, 2)
+  accuracy     Decimal? @db.Decimal(5, 2)
+  status       String   @default("PENDING")
+  generatedAt  DateTime @default(now())
+
+  @@index([forecastType])
+  @@index([targetDate])
+  @@index([status])
+  @@map("ai_forecasts")
+}
+
+model AIInsight {
+  id              String    @id @default(cuid())
+  insightType     String
+  category        String
+  title           String
+  description     String
+  relevantData    Json
+  severity        String
+  recommendations Json?
+  status          String    @default("NEW")
+  acknowledgedBy  String?
+  acknowledgedAt  DateTime?
+  validFrom       DateTime  @default(now())
+  validUntil      DateTime?
+  createdAt       DateTime  @default(now())
+
+  @@index([insightType])
+  @@index([category])
+  @@index([severity])
+  @@index([status])
+  @@map("ai_insights")
+}
+
+model Setting {
+  id          String   @id @default(cuid())
+  key         String   @unique
+  category    String
+  value       Json
+  dataType    String
+  label       String
+  description String?
+  isPublic    Boolean  @default(false)
+  isSystem    Boolean  @default(false)
+  validation  Json?
+  updatedBy   String?
+  updatedAt   DateTime @updatedAt
+  createdAt   DateTime @default(now())
+
+  @@index([category])
+  @@index([key])
+  @@map("settings")
+}
+
+model OperationalNote {
+  id         String   @id @default(cuid())
+  reportDate DateTime @db.Date
+  noteType   OperationalNoteType
+  content    String
+  author     String
+  priority   String
+  tags       String[]
+  metadata   Json?
+  createdBy  String?
+  updatedBy  String?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@index([reportDate])
+  @@index([noteType])
+  @@index([author])
+  @@index([priority])
+  @@map("operational_notes")
+}
+
+model ServiceImprovement {
+  id                String    @id @default(cuid())
+  reportDate        DateTime  @db.Date
+  type              String
+  problem           String
+  solution          String
+  status            String
+  expectedImpact    String?
+  observationPeriod String?
+  actualImpact      String?
+  implementedDate   DateTime?
+  completedDate     DateTime?
+  assignedTo        String?
+  category          String?
+  createdBy         String?
+  updatedBy         String?
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+
+  @@index([reportDate])
+  @@index([type])
+  @@index([status])
+  @@index([category])
+  @@map("service_improvements")
+}
+
+model KPISnapshot {
+  id            String    @id @default(cuid())
+  date          DateTime  @db.Date
+  kpiCategory   String
+  kpiName       String
+  value         Decimal   @db.Decimal(12, 4)
+  targetValue   Decimal?  @db.Decimal(12, 4)
+  previousValue Decimal?  @db.Decimal(12, 4)
+  unit          String?
+  trend         String?
+  status        String?
+  metadata      Json?
+  employeeId    String?
+  calculatedBy  String?
+  createdAt     DateTime  @default(now())
+  employee      Employee? @relation(fields: [employeeId], references: [id])
+
+  @@unique([date, kpiCategory, kpiName, employeeId])
+  @@index([date])
+  @@index([kpiCategory])
+  @@index([kpiName])
+  @@index([employeeId])
+  @@map("kpi_snapshots")
+}
+
+model TeamFeedback {
+  id           String    @id @default(cuid())
+  reportDate   DateTime  @db.Date
+  employeeId   String
+  feedbackType String
+  content      String
+  sentiment    String
+  category     String?
+  priority     String?
+  actionTaken  String?
+  followUpDate DateTime?
+  providedBy   String
+  context      String?
+  createdBy    String?
+  updatedBy    String?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  employee     Employee  @relation(fields: [employeeId], references: [id])
+
+  @@index([reportDate])
+  @@index([employeeId])
+  @@index([feedbackType])
+  @@index([sentiment])
+  @@index([providedBy])
+  @@map("team_feedback")
+}
+
+model AlertRule {
+  id                     String         @id @default(cuid())
+  name                   String
+  description            String
+  category               String
+  metricName             String
+  operator               String
+  thresholdValue         Decimal        @db.Decimal(12, 4)
+  severity               String
+  timeWindow             Int?
+  consecutiveOccurrences Int?
+  isActive               Boolean        @default(true)
+  notifyEmails           String[]
+  notifyRoles            String[]
+  cooldownMinutes        Int            @default(60)
+  createdBy              String?
+  updatedBy              String?
+  lastTriggered          DateTime?
+  triggeredCount         Int            @default(0)
+  createdAt              DateTime       @default(now())
+  updatedAt              DateTime       @updatedAt
+  alertHistory           AlertHistory[]
+
+  @@index([category])
+  @@index([metricName])
+  @@index([isActive])
+  @@map("alert_rules")
+}
+
+model AlertHistory {
+  id             String     @id @default(cuid())
+  ruleId         String?
+  type           String
+  severity       String
+  title          String
+  description    String
+  triggeredValue Decimal?   @db.Decimal(12, 4)
+  thresholdValue Decimal?   @db.Decimal(12, 4)
+  relatedEntity  String?
+  actionRequired String?
+  status         String     @default("ACTIVE")
+  acknowledgedAt DateTime?
+  acknowledgedBy String?
+  resolvedAt     DateTime?
+  resolvedBy     String?
+  resolution     String?
+  metadata       Json?
+  triggeredAt    DateTime   @default(now())
+  rule           AlertRule? @relation(fields: [ruleId], references: [id])
+
+  @@index([triggeredAt])
+  @@index([type])
+  @@index([severity])
+  @@index([status])
+  @@index([ruleId])
+  @@map("alert_history")
+}
+
+model HealthScoreHistory {
+  id                 String   @id @default(cuid())
+  date               DateTime @unique @db.Date
+  overallScore       Decimal  @db.Decimal(5, 2)
+  operationalScore   Decimal  @db.Decimal(5, 2)
+  teamScore          Decimal  @db.Decimal(5, 2)
+  financialScore     Decimal  @db.Decimal(5, 2)
+  qualityScore       Decimal  @db.Decimal(5, 2)
+  maintenanceScore   Decimal  @db.Decimal(5, 2)
+  communicationScore Decimal  @db.Decimal(5, 2)
+  factors            Json
+  recommendations    String[]
+  calculationVersion String
+  dataPointsUsed     Int
+  calculatedBy       String?
+  createdAt          DateTime @default(now())
+
+  @@index([date])
+  @@index([overallScore])
+  @@map("health_score_history")
+}
+
+model SystemMetadata {
+  id          String   @id @default(cuid())
+  key         String   @unique
+  value       Json
+  description String?
+  updatedAt   DateTime @updatedAt
+
+  @@map("system_metadata")
+}

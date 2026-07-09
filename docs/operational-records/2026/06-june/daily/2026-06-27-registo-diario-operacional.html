@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Relatório Diário Operacional - 27-06-2026</title>
+    <style>
+      @page { size: A4; margin: 16mm 14mm 18mm; }
+      :root { --ink:#172033; --muted:#657085; --line:#d9dee8; --soft:#f6f7fa; --warm:#fff7ed; --brand:#f97316; --brand-dark:#9a3412; --green:#15803d; --blue:#1d4ed8; --violet:#6d28d9; }
+      * { box-sizing:border-box; }
+      body { margin:0; background:#fff; color:var(--ink); font-family:Inter,ui-sans-serif,system-ui,sans-serif; font-size:10pt; line-height:1.5; }
+      h1,h2,h3,p { margin-top:0; }
+      h1 { font-size:34pt; line-height:1.02; letter-spacing:-0.04em; margin-bottom:10pt; }
+      h2 { border-bottom:1px solid var(--line); font-size:15pt; margin:22pt 0 10pt; padding-bottom:5pt; }
+      h3 { color:var(--brand-dark); font-size:11pt; margin:13pt 0 5pt; }
+      ul { margin:4pt 0 10pt 15pt; padding:0; }
+      table { border-collapse:collapse; margin:8pt 0 14pt; width:100%; }
+      th,td { border:1px solid var(--line); padding:6pt 7pt; text-align:left; vertical-align:top; }
+      th { background:var(--soft); font-size:8pt; letter-spacing:0.06em; text-transform:uppercase; }
+      .cover { background:radial-gradient(circle at top right,rgba(249,115,22,0.18),transparent 35%),linear-gradient(135deg,#fff7ed 0%,#fff 42%,#f8fafc 100%); border:1px solid #fed7aa; border-radius:22px; margin-bottom:16pt; min-height:248mm; padding:24mm 18mm; }
+      .eyebrow { color:var(--brand); font-size:8.5pt; font-weight:800; letter-spacing:0.18em; margin-bottom:14pt; text-transform:uppercase; }
+      .subtitle { color:var(--muted); font-size:14pt; line-height:1.45; max-width:150mm; }
+      .meta-panel { background:rgba(255,255,255,0.82); border:1px solid #fed7aa; border-radius:16px; margin-top:28pt; padding:14pt; }
+      .meta-grid { display:grid; gap:10pt; grid-template-columns:repeat(3,1fr); }
+      .meta-item { border-left:3px solid var(--brand); padding-left:8pt; }
+      .meta-label { color:var(--muted); display:block; font-size:7.5pt; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; }
+      .meta-value { display:block; font-size:10.5pt; font-weight:700; margin-top:2pt; }
+      .page-break { break-before:page; }
+      .kpi-grid { display:grid; gap:8pt; grid-template-columns:repeat(3,1fr); margin:12pt 0 16pt; }
+      .kpi { background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:10pt; }
+      .kpi-label { color:var(--muted); display:block; font-size:7.5pt; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; }
+      .kpi-value { display:block; font-size:22pt; font-weight:800; margin-top:3pt; }
+      .kpi-note { color:var(--muted); display:block; font-size:8pt; margin-top:2pt; }
+      .good { color:var(--green); }
+      .callout { background:var(--warm); border-left:4px solid var(--brand); border-radius:12px; margin:10pt 0 14pt; padding:11pt 13pt; }
+      .callout-success { background:#f0fdf4; border-left-color:var(--green); }
+      .panel-grid { display:grid; gap:9pt; grid-template-columns:repeat(2,1fr); }
+      .panel { border:1px solid var(--line); border-radius:12px; break-inside:avoid; padding:10pt; }
+      .badge { border-radius:999px; display:inline-block; font-size:7.5pt; font-weight:800; margin-bottom:5pt; padding:3pt 7pt; text-transform:uppercase; }
+      .badge-green { background:#dcfce7; color:var(--green); }
+      .badge-blue { background:#dbeafe; color:var(--blue); }
+      .badge-violet { background:#ede9fe; color:var(--violet); }
+      .footer-note { border-top:1px solid var(--line); color:var(--muted); font-size:8.5pt; margin-top:18pt; padding-top:7pt; }
+    </style>
+  </head>
+  <body>
+    <section class="cover">
+      <div class="eyebrow">RIBBAI OPS · Relatório Diário Operacional</div>
+      <h1>Registo Diário Operacional</h1>
+      <p class="subtitle">Apresentação diária à gestão sobre a operação Front of House do restaurante RIBBAI.</p>
+      <div class="meta-panel">
+        <div class="meta-grid">
+          <div class="meta-item"><span class="meta-label">Data</span><span class="meta-value">27-06-2026</span></div>
+          <div class="meta-item"><span class="meta-label">Dia</span><span class="meta-value">Sábado</span></div>
+          <div class="meta-item"><span class="meta-label">Autor</span><span class="meta-value">Filipe Catalão</span></div>
+          <div class="meta-item"><span class="meta-label">Restaurante</span><span class="meta-value">RIBBAI</span></div>
+          <div class="meta-item"><span class="meta-label">Tipo</span><span class="meta-value">Relatório Diário Operacional</span></div>
+          <div class="meta-item"><span class="meta-label">Estado</span><span class="meta-value">Registado</span></div>
+        </div>
+      </div>
+      <div class="kpi-grid">
+        <div class="kpi"><span class="kpi-label">Volume Trabalho</span><span class="kpi-value good">9/10</span><span class="kpi-note">Lotação máxima prolongada</span></div>
+        <div class="kpi"><span class="kpi-label">Modelo Setores</span><span class="kpi-value good">9/10</span><span class="kpi-note">Disciplina e coordenação</span></div>
+        <div class="kpi"><span class="kpi-label">Festa Aperol</span><span class="kpi-value good">10/10</span><span class="kpi-note">Terraço cheio</span></div>
+      </div>
+      <div class="kpi-grid">
+        <div class="kpi"><span class="kpi-label">Qualidade Serviço</span><span class="kpi-value good">9/10</span><span class="kpi-note">Serviço fluído</span></div>
+        <div class="kpi"><span class="kpi-label">Experiência Cliente</span><span class="kpi-value good">9/10</span><span class="kpi-note">Ambiente muito positivo</span></div>
+        <div class="kpi"><span class="kpi-label">Horas Extra</span><span class="kpi-value good">5h30</span><span class="kpi-note">Fecho + pausas/prolongamentos</span></div>
+      </div>
+      <div class="callout callout-success"><strong>Conclusão do dia:</strong> sábado de elevada intensidade, com esplanada em lotação máxima durante várias horas, Festa Aperol de sucesso e modelo por setores claramente consolidado.</div>
+    </section>
+
+    <section class="page-break">
+      <h2>Síntese Executiva</h2>
+      <p>Sábado com elevado volume de clientes desde a manhã até ao final da tarde, mantendo afluência consistente e várias horas de lotação máxima da esplanada. A Festa Aperol ao final da tarde prolongou o movimento até ao período dos jantares, contribuindo para um dos melhores dias de faturação do mês.</p>
+      <h2>Equipa Em Serviço</h2>
+      <div class="panel-grid">
+        <div class="panel"><span class="badge badge-blue">Bruno</span><ul><li>Abertura com Filipe Catalão.</li><li>Pausa antecipada às 11h.</li><li>Setor 50.</li></ul></div>
+        <div class="panel"><span class="badge badge-violet">Filipe Catalão</span><ul><li>Abertura com Bruno.</li><li>Coordenação geral e pausas.</li><li>Supervisão em pico de serviço.</li></ul></div>
+        <div class="panel"><span class="badge badge-green">Lil</span><ul><li>Entrada antecipada às 12h.</li><li>Porta e gestão de entradas.</li><li>Fecho e preparação.</li></ul></div>
+        <div class="panel"><span class="badge badge-green">Carolina</span><ul><li>Entrada às 12h30.</li><li>Setor 70.</li><li>Fecho e organização final.</li></ul></div>
+        <div class="panel"><span class="badge badge-green">Matilde</span><ul><li>Sala interior.</li><li>Apoio à dinâmica geral.</li><li>Fecho da sala.</li></ul></div>
+        <div class="panel"><span class="badge badge-green">Lee</span><ul><li>Chegada às 11h.</li><li>Runner de apoio.</li><li>Boa leitura de serviço.</li></ul></div>
+        <div class="panel"><span class="badge badge-green">Sofia</span><ul><li>Chegada às 11h.</li><li>Quiosque dos gelados.</li><li>Integração em contexto exigente.</li></ul></div>
+        <div class="panel"><span class="badge badge-green">Pablo</span><ul><li>Chegada às 11h.</li><li>Setor 60.</li><li>Estabilidade em pico de movimento.</li></ul></div>
+      </div>
+    </section>
+
+    <section class="page-break">
+      <h2>Organização Operacional</h2>
+      <p>Modelo por setores aplicado durante o período de maior movimento:</p>
+      <ul>
+        <li><strong>Lil:</strong> porta e gestão da entrada de clientes</li>
+        <li><strong>Bruno:</strong> mesas da zona 50</li>
+        <li><strong>Pablo:</strong> mesas da zona 60</li>
+        <li><strong>Carolina:</strong> mesas da zona 70</li>
+        <li><strong>Matilde:</strong> sala interior</li>
+        <li><strong>Sofia:</strong> quiosque dos gelados</li>
+        <li><strong>Lee:</strong> runner de apoio operacional</li>
+        <li><strong>Filipe Catalão:</strong> coordenação geral, gestão de pausas e apoio</li>
+      </ul>
+      <h2>Movimento do Dia</h2>
+      <p>A partir das 12h30 a esplanada atingiu lotação máxima, mantendo-se totalmente preenchida até cerca das 18h30. O ritmo de serviço foi muito elevado, mas manteve-se organizado e fluído, sem ruturas na capacidade de resposta.</p>
+      <h2>Festa Aperol</h2>
+      <ul>
+        <li>Início pelas 18h30 no terraço</li>
+        <li>Elevada animação e forte adesão dos clientes</li>
+        <li>Prolongamento do movimento até ao período dos jantares</li>
+        <li>Consumo consistente de bebidas e complementos</li>
+      </ul>
+    </section>
+
+    <section class="page-break">
+      <h2>Avaliação da Operação</h2>
+      <p>A equipa demonstrou elevada maturidade na aplicação do modelo por setores, com boa disciplina nas áreas atribuídas, comunicação eficaz e coordenação sólida durante várias horas de elevada pressão.</p>
+      <h2>Fecho e Preparação</h2>
+      <p>Fecho assegurado principalmente por Carolina, Matilde e Lil, com limpeza, reposição e organização completas, deixando a operação preparada para o dia seguinte.</p>
+    </section>
+
+    <section class="page-break">
+      <h2>Horas Extra</h2>
+      <table>
+        <thead><tr><th>Colaborador</th><th>Registo</th></tr></thead>
+        <tbody>
+          <tr><td>Bruno</td><td>1h00 de horas extra</td></tr>
+          <tr><td>Filipe Catalão</td><td>30 minutos de horas extra</td></tr>
+          <tr><td>Carolina</td><td>1h20 de horas extra</td></tr>
+          <tr><td>Matilde</td><td>1h20 de horas extra</td></tr>
+          <tr><td>Lil</td><td>1h20 de horas extra</td></tr>
+        </tbody>
+      </table>
+      <div class="callout"><strong>Total da equipa:</strong> 5h30 de horas extra.</div>
+      <h2>Problemas Identificados</h2>
+      <h3>Equipamento de Serviço</h3>
+      <ul>
+        <li>Bandejas de serviço empenadas pelo desgaste</li>
+        <li>Aumento do risco no transporte de bebidas</li>
+      </ul>
+      <h3>Sistema de Pedidos</h3>
+      <ul>
+        <li>Double printings aleatórios, sobretudo em cafés</li>
+        <li>Tickets pouco claros e separados dos pedidos de cafetaria</li>
+      </ul>
+    </section>
+
+    <section class="page-break">
+      <h2>Avaliação Global</h2>
+      <table>
+        <thead><tr><th>Indicador</th><th>Avaliação</th></tr></thead>
+        <tbody>
+          <tr><td>Volume de Trabalho</td><td>9/10</td></tr>
+          <tr><td>Qualidade de Serviço</td><td>9/10</td></tr>
+          <tr><td>Organização</td><td>9/10</td></tr>
+          <tr><td>Coordenação da Equipa</td><td>9/10</td></tr>
+          <tr><td>Experiência do Cliente</td><td>9/10</td></tr>
+          <tr><td>Gestão de Eventos (Festa Aperol)</td><td>10/10</td></tr>
+          <tr><td>Eficiência Operacional</td><td>9/10</td></tr>
+        </tbody>
+      </table>
+      <h2>Classificação Para O Sistema RIBBAI OPS</h2>
+      <table>
+        <thead><tr><th>Categoria</th><th>Registo</th></tr></thead>
+        <tbody>
+          <tr><td>Operational Notes</td><td>Sábado forte com lotação máxima prolongada; Festa Aperol; modelo por setores consolidado.</td></tr>
+          <tr><td>Team Feedback Input</td><td>Coordenação eficaz de Bruno e Filipe Catalão; Lil na porta; Carolina e Matilde no fecho; Lee, Sofia e Pablo em bom nível.</td></tr>
+          <tr><td>Overtime Input</td><td>5h30: Bruno 1h00, Filipe Catalão 0h30, Carolina 1h20, Matilde 1h20, Lil 1h20.</td></tr>
+          <tr><td>Management Notes</td><td>Substituir bandejas; corrigir sistema de pedidos; manter iniciativas tipo Festa Aperol.</td></tr>
+        </tbody>
+      </table>
+      <p class="footer-note">Documento gerado para apresentação diária à gestão. Fonte operacional: Registo Diário Operacional de 27-06-2026. Autor: Bruno.</p>
+    </section>
+  </body>
+</html>
+

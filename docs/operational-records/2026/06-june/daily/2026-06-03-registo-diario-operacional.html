@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Relatório Diário Operacional - 03-06-2026</title>
+    <style>
+      @page {
+        size: A4;
+        margin: 16mm 14mm 18mm;
+      }
+
+      :root {
+        --ink: #172033;
+        --muted: #657085;
+        --line: #d9dee8;
+        --soft: #f6f7fa;
+        --warm: #fff7ed;
+        --brand: #f97316;
+        --brand-dark: #9a3412;
+        --gold: #b7791f;
+        --green: #15803d;
+        --amber: #a16207;
+        --red: #b91c1c;
+        --blue: #1d4ed8;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: #ffffff;
+        color: var(--ink);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 10pt;
+        line-height: 1.5;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        font-size: 34pt;
+        line-height: 1.02;
+        letter-spacing: -0.04em;
+        margin-bottom: 10pt;
+      }
+
+      h2 {
+        border-bottom: 1px solid var(--line);
+        font-size: 15pt;
+        letter-spacing: -0.02em;
+        margin: 22pt 0 10pt;
+        padding-bottom: 5pt;
+      }
+
+      h3 {
+        color: var(--brand-dark);
+        font-size: 11pt;
+        margin: 13pt 0 5pt;
+      }
+
+      ul {
+        margin: 4pt 0 10pt 15pt;
+        padding: 0;
+      }
+
+      li {
+        margin: 2pt 0;
+      }
+
+      table {
+        border-collapse: collapse;
+        margin: 8pt 0 14pt;
+        width: 100%;
+      }
+
+      th,
+      td {
+        border: 1px solid var(--line);
+        padding: 6pt 7pt;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        background: var(--soft);
+        color: var(--ink);
+        font-size: 8pt;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .cover {
+        background:
+          radial-gradient(circle at top right, rgba(249, 115, 22, 0.18), transparent 35%),
+          linear-gradient(135deg, #fff7ed 0%, #ffffff 42%, #f8fafc 100%);
+        border: 1px solid #fed7aa;
+        border-radius: 22px;
+        margin-bottom: 16pt;
+        min-height: 248mm;
+        padding: 24mm 18mm;
+      }
+
+      .eyebrow {
+        color: var(--brand);
+        font-size: 8.5pt;
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        margin-bottom: 14pt;
+        text-transform: uppercase;
+      }
+
+      .subtitle {
+        color: var(--muted);
+        font-size: 14pt;
+        line-height: 1.45;
+        max-width: 150mm;
+      }
+
+      .meta-panel {
+        background: rgba(255, 255, 255, 0.82);
+        border: 1px solid #fed7aa;
+        border-radius: 16px;
+        margin-top: 28pt;
+        padding: 14pt;
+      }
+
+      .meta-grid {
+        display: grid;
+        gap: 10pt;
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .meta-item {
+        border-left: 3px solid var(--brand);
+        padding-left: 8pt;
+      }
+
+      .meta-label {
+        color: var(--muted);
+        display: block;
+        font-size: 7.5pt;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .meta-value {
+        display: block;
+        font-size: 10.5pt;
+        font-weight: 700;
+        margin-top: 2pt;
+      }
+
+      .page-break {
+        break-before: page;
+      }
+
+      .kpi-grid {
+        display: grid;
+        gap: 8pt;
+        grid-template-columns: repeat(4, 1fr);
+        margin: 12pt 0 16pt;
+      }
+
+      .kpi {
+        background: var(--soft);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 10pt;
+      }
+
+      .kpi-label {
+        color: var(--muted);
+        display: block;
+        font-size: 7.5pt;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .kpi-value {
+        display: block;
+        font-size: 22pt;
+        font-weight: 800;
+        letter-spacing: -0.04em;
+        margin-top: 3pt;
+      }
+
+      .kpi-note {
+        color: var(--muted);
+        display: block;
+        font-size: 8pt;
+        margin-top: 2pt;
+      }
+
+      .good {
+        color: var(--green);
+      }
+
+      .watch {
+        color: var(--amber);
+      }
+
+      .callout {
+        background: var(--warm);
+        border-left: 4px solid var(--brand);
+        border-radius: 12px;
+        margin: 10pt 0 14pt;
+        padding: 11pt 13pt;
+      }
+
+      .panel-grid {
+        display: grid;
+        gap: 9pt;
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .panel {
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        break-inside: avoid;
+        padding: 10pt;
+      }
+
+      .badge {
+        border-radius: 999px;
+        display: inline-block;
+        font-size: 7.5pt;
+        font-weight: 800;
+        letter-spacing: 0.05em;
+        margin-bottom: 5pt;
+        padding: 3pt 7pt;
+        text-transform: uppercase;
+      }
+
+      .badge-green {
+        background: #dcfce7;
+        color: var(--green);
+      }
+
+      .badge-amber {
+        background: #fef3c7;
+        color: var(--amber);
+      }
+
+      .badge-blue {
+        background: #dbeafe;
+        color: var(--blue);
+      }
+
+      .badge-red {
+        background: #fee2e2;
+        color: var(--red);
+      }
+
+      .section-intro {
+        color: var(--muted);
+        font-size: 9.5pt;
+        margin-bottom: 10pt;
+      }
+
+      .footer-note {
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 8.5pt;
+        margin-top: 18pt;
+        padding-top: 7pt;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="cover">
+      <div class="eyebrow">RIBBAI OPS · Relatório Diário Operacional</div>
+      <h1>Registo Diário Operacional</h1>
+      <p class="subtitle">
+        Apresentação diária à gestão sobre a operação Front of House do restaurante RIBBAI.
+      </p>
+
+      <div class="meta-panel">
+        <div class="meta-grid">
+          <div class="meta-item">
+            <span class="meta-label">Data</span>
+            <span class="meta-value">03-06-2026</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Dia</span>
+            <span class="meta-value">Quarta-feira</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Autor</span>
+            <span class="meta-value">Filipe Catalão</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Restaurante</span>
+            <span class="meta-value">RIBBAI</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Âmbito</span>
+            <span class="meta-value">Front of House</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Estado</span>
+            <span class="meta-value">Registado</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="kpi-grid">
+        <div class="kpi">
+          <span class="kpi-label">Sucesso Operacional</span>
+          <span class="kpi-value good">9/10</span>
+          <span class="kpi-note">Dia muito positivo</span>
+        </div>
+        <div class="kpi">
+          <span class="kpi-label">Colaboração</span>
+          <span class="kpi-value good">9/10</span>
+          <span class="kpi-note">Equipa alinhada</span>
+        </div>
+        <div class="kpi">
+          <span class="kpi-label">Qualidade Serviço</span>
+          <span class="kpi-value good">9/10</span>
+          <span class="kpi-note">Sem reclamações relevantes</span>
+        </div>
+        <div class="kpi">
+          <span class="kpi-label">Comunicação</span>
+          <span class="kpi-value watch">7/10</span>
+          <span class="kpi-note">Ponto a melhorar</span>
+        </div>
+      </div>
+
+      <div class="callout">
+        <strong>Conclusão do dia:</strong> serviço de elevada qualidade, excelente resposta da
+        equipa e forte adesão ao novo modelo de organização por áreas. A falha de comunicação
+        registada foi resolvida e transformada em aprendizagem operacional.
+      </div>
+    </section>
+
+    <section class="page-break">
+      <h2>Síntese Executiva</h2>
+      <p>
+        O dia decorreu de forma operacionalmente muito positiva, com forte afluência durante o
+        almoço e ao longo da tarde. A equipa manteve elevados padrões de serviço, demonstrou
+        capacidade de adaptação e aderiu de forma positiva à nova metodologia de organização da sala
+        por áreas definidas.
+      </p>
+      <p>
+        Não foram registadas reclamações relevantes por parte dos clientes. Foi identificado um
+        incidente operacional de baixa gravidade relacionado com uma falha de comunicação no
+        acompanhamento de um grupo de clientes, originando uma discrepância de caixa associada a uma
+        Sangria RIBBAI no valor de 22 euros.
+      </p>
+
+      <h2>Equipa Em Serviço</h2>
+      <div class="panel-grid">
+        <div class="panel">
+          <span class="badge badge-green">Pablo</span>
+          <ul>
+            <li>Realizou a abertura do restaurante.</li>
+            <li>Serviço irrepreensível durante toda a manhã.</li>
+            <li>Autonomia e consistência até à entrada da Carolina.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <span class="badge badge-green">Carolina</span>
+          <ul>
+            <li>Entrada por volta das 11h00.</li>
+            <li>Assegurou a pausa de almoço do Pablo.</li>
+            <li>Permaneceu até ao fecho.</li>
+            <li>Aproximadamente 1h45m de trabalho extra.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <span class="badge badge-blue">Filipe Catalão</span>
+          <ul>
+            <li>Entrada ao serviço às 13h00.</li>
+            <li>Coordenação da sala em período de elevada afluência.</li>
+            <li>Gestão dos momentos de maior pressão operacional.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <span class="badge badge-green">Matilde</span>
+          <ul>
+            <li>Entrada ao serviço às 13h00.</li>
+            <li>Apoio durante o período de maior movimento.</li>
+            <li>Disponibilidade para apoiar cafetaria e bar.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <span class="badge badge-green">Marta</span>
+          <ul>
+            <li>Realizou o turno de fecho.</li>
+            <li>Aproximadamente 30 minutos de trabalho extra.</li>
+            <li>Atitude positiva, dedicação e evolução consistente.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <span class="badge badge-green">Equipa</span>
+          <ul>
+            <li>Boa adaptação a novas metodologias.</li>
+            <li>Excelente espírito de colaboração.</li>
+            <li>Resposta positiva em períodos de pressão.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>Desempenho Operacional</h2>
+      <p>
+        O restaurante registou forte afluência durante o almoço e ao longo da tarde. A equipa
+        manteve elevados padrões de serviço durante todo o período operacional, com profissionalismo,
+        colaboração e capacidade de resposta.
+      </p>
+      <div class="callout">
+        <strong>Resultado:</strong> serviço de elevada qualidade, sem reclamações relevantes por
+        parte dos clientes.
+      </div>
+    </section>
+
+    <section class="page-break">
+      <h2>Melhoria Operacional Implementada</h2>
+      <p class="section-intro">
+        Foi iniciado um teste com divisão da equipa por áreas específicas de serviço.
+      </p>
+
+      <div class="panel-grid">
+        <div class="panel">
+          <span class="badge badge-blue">Objetivos</span>
+          <ul>
+            <li>Melhorar a organização da equipa.</li>
+            <li>Aumentar a responsabilidade individual.</li>
+            <li>Melhorar a comunicação.</li>
+            <li>Reduzir deslocações desnecessárias.</li>
+            <li>Melhorar a consistência do serviço ao cliente.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <span class="badge badge-amber">Estado</span>
+          <p>Em fase de implementação e observação.</p>
+          <p>
+            Recomendação: manter o modelo em teste durante pelo menos duas semanas antes de uma
+            avaliação formal.
+          </p>
+        </div>
+      </div>
+
+      <h3>Feedback da equipa</h3>
+      <p>
+        Foi realizada uma conversa individual com todos os elementos presentes. O feedback recebido
+        foi muito positivo, existindo consenso sobre a importância de assumir responsabilidade pela
+        sua área, acompanhar as mesas da sua zona e reduzir dispersões durante períodos de maior
+        pressão.
+      </p>
+
+      <h3>Benefícios esperados</h3>
+      <ul>
+        <li>Serviço mais fluido.</li>
+        <li>Melhor comunicação interna.</li>
+        <li>Redução de erros operacionais.</li>
+        <li>Maior responsabilização individual.</li>
+        <li>Melhor experiência para o cliente.</li>
+      </ul>
+
+      <h2>Incidente Operacional</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Categoria</th>
+            <th>Produto</th>
+            <th>Valor</th>
+            <th>Gravidade</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Falha de Comunicação</td>
+            <td>Sangria RIBBAI</td>
+            <td>22 euros</td>
+            <td>Baixa</td>
+            <td>Resolvido</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        Foi registada uma falha de comunicação entre Filipe, Marta, Carolina e um grupo de clientes
+        que acabou por se distribuir por várias mesas durante o serviço. Esta situação originou uma
+        duplicação no registo e posterior fecho de uma Sangria RIBBAI.
+      </p>
+
+      <div class="callout">
+        <strong>Medida corretiva:</strong> reforçar a responsabilidade por áreas definidas, garantir
+        uma identificação clara do responsável por cada grupo de clientes e integrar este ponto no
+        novo modelo organizacional em teste.
+      </div>
+    </section>
+
+    <section class="page-break">
+      <h2>Destaques Da Equipa</h2>
+      <div class="panel-grid">
+        <div class="panel">
+          <span class="badge badge-green">Pablo</span>
+          <p>Excelente desempenho durante a abertura, com elevado nível de autonomia e serviço consistente.</p>
+        </div>
+        <div class="panel">
+          <span class="badge badge-green">Carolina</span>
+          <p>Grande capacidade de adaptação às necessidades da operação e forte contributo no almoço e fecho.</p>
+        </div>
+        <div class="panel">
+          <span class="badge badge-green">Matilde</span>
+          <p>Apoio constante à equipa e disponibilidade para reforçar cafetaria e bar sempre que necessário.</p>
+        </div>
+        <div class="panel">
+          <span class="badge badge-green">Marta</span>
+          <p>Excelente atitude profissional, compromisso com a equipa e evolução consistente com potencial de crescimento.</p>
+        </div>
+      </div>
+
+      <h2>Inventário</h2>
+      <p>
+        Foi concluído e registado o inventário de consumíveis relativo ao dia 03-06-2026.
+        O detalhe encontra-se no registo próprio de inventário de consumíveis.
+      </p>
+      <p>
+        Foi identificada uma rutura crítica de Papel de Mãos WC. Os restantes consumíveis
+        inventariados apresentam stock suficiente para assegurar o normal funcionamento da operação.
+      </p>
+      <div class="callout">
+        <strong>Estado:</strong> registado, com necessidade de reposição urgente de Papel de Mãos WC.
+        Este ponto deve alimentar o relatório semanal como exceção crítica de inventário.
+      </div>
+
+      <h2>Notas Para A Gestão</h2>
+      <p>
+        A implementação da divisão por áreas demonstra potencial para melhorar significativamente a
+        organização da sala. A equipa mostrou abertura e motivação para testar este novo modelo de
+        trabalho.
+      </p>
+      <h3>Indicadores a acompanhar</h3>
+      <ul>
+        <li>Velocidade de serviço.</li>
+        <li>Qualidade da comunicação interna.</li>
+        <li>Redução de erros operacionais.</li>
+        <li>Responsabilização individual por áreas.</li>
+      </ul>
+
+      <h2>Candidatos Para O Relatório Semanal</h2>
+      <p class="section-intro">
+        Estes pontos não constituem um plano de ação diário. Devem ser utilizados como matéria-prima
+        para o relatório semanal.
+      </p>
+      <ul>
+        <li>Avaliar os primeiros resultados do modelo de divisão por áreas.</li>
+        <li>Acompanhar se a falha de comunicação com grupos distribuídos por várias mesas se repete.</li>
+        <li>Verificar o impacto do novo modelo na comunicação interna.</li>
+        <li>Rever horas extra de Carolina e Marta no contexto da semana.</li>
+        <li>Acompanhar falhas de stock identificadas nos consumíveis.</li>
+        <li>Destacar desempenho positivo de Pablo, Marta, Matilde e Carolina.</li>
+      </ul>
+
+      <p class="footer-note">
+        Documento gerado para apresentação diária à gestão. Fonte operacional: Registo Diário
+        Operacional de 03-06-2026.
+      </p>
+    </section>
+  </body>
+</html>

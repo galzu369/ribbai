@@ -1,0 +1,3038 @@
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Relatório Executivo Mensal RIBBAI | Junho 2026</title>
+    <style>
+      @page {
+        size: A4;
+        margin: 14mm 13mm 16mm;
+      }
+
+      :root {
+        --navy: #0e1f35;
+        --navy-2: #173452;
+        --beige: #efe6d6;
+        --beige-2: #faf6ef;
+        --white: #ffffff;
+        --gray: #eef1f4;
+        --gray-2: #d7dde5;
+        --text: #172033;
+        --muted: #657085;
+        --green: #16803c;
+        --yellow: #b7791f;
+        --orange: #c05621;
+        --red: #b91c1c;
+        --blue: #1d4ed8;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--gray);
+        color: var(--text);
+        font-family: Inter, "Segoe UI", Arial, sans-serif;
+        font-size: 11px;
+        line-height: 1.48;
+      }
+
+      main {
+        max-width: 210mm;
+        margin: 0 auto;
+        background: var(--white);
+      }
+
+      h1, h2, h3, p {
+        margin: 0;
+      }
+
+      h1 {
+        max-width: 145mm;
+        color: var(--white);
+        font-size: 42px;
+        letter-spacing: -0.03em;
+        line-height: 1.02;
+      }
+
+      h2 {
+        margin-bottom: 12px;
+        color: var(--navy);
+        font-size: 20px;
+        letter-spacing: -0.02em;
+      }
+
+      h3 {
+        margin-bottom: 7px;
+        color: var(--navy);
+        font-size: 13px;
+      }
+
+      ul {
+        margin: 8px 0 0;
+        padding-left: 17px;
+      }
+
+      li {
+        margin: 4px 0;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+        font-size: 9.8px;
+      }
+
+      th, td {
+        border-bottom: 1px solid var(--gray-2);
+        padding: 8px 7px;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        background: var(--beige-2);
+        color: var(--navy);
+        font-size: 8px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .cover {
+        min-height: 280mm;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 14mm 18mm 12mm;
+        background:
+          radial-gradient(circle at 84% 18%, rgba(239, 230, 214, 0.22), transparent 30%),
+          linear-gradient(135deg, var(--navy), #071421 72%);
+        page-break-after: always;
+        page-break-inside: avoid;
+      }
+
+      .logo {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--white);
+        font-weight: 800;
+        letter-spacing: 0.18em;
+      }
+
+      .logo-mark {
+        width: 38px;
+        height: 38px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(255, 255, 255, 0.45);
+        border-radius: 999px;
+        background: rgba(239, 230, 214, 0.12);
+        color: var(--beige);
+        font-size: 14px;
+        letter-spacing: 0;
+      }
+
+      .cover-subtitle {
+        max-width: 140mm;
+        margin-top: 16px;
+        color: rgba(255, 255, 255, 0.78);
+        font-size: 14px;
+        line-height: 1.5;
+      }
+
+      .cover-meta {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 18px;
+        padding: 12px;
+        background: rgba(255, 255, 255, 0.08);
+        color: var(--white);
+        page-break-inside: avoid;
+      }
+
+      .meta-row {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 12px;
+        padding: 8px 10px;
+      }
+
+      .meta-row span {
+        color: rgba(255, 255, 255, 0.64);
+        font-size: 10px;
+      }
+
+      .kpi-row {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        margin-top: 12px;
+      }
+
+      .kpi-card {
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 14px;
+        padding: 10px 10px 9px;
+        background: rgba(255, 255, 255, 0.08);
+        color: var(--white);
+      }
+
+      .kpi-label {
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 8px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .kpi-value {
+        margin-top: 6px;
+        font-size: 18px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+      }
+
+      .kpi-note {
+        margin-top: 3px;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 9px;
+      }
+
+      .pill {
+        margin-top: 10px;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 999px;
+        padding: 8px 12px;
+        background: rgba(239, 230, 214, 0.12);
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 10px;
+      }
+
+      .pill-dot {
+        width: 9px;
+        height: 9px;
+        border-radius: 999px;
+        background: rgba(239, 230, 214, 0.9);
+      }
+
+      .page {
+        padding: 12mm 13mm;
+        page-break-after: always;
+      }
+
+      .page:last-child {
+        page-break-after: auto;
+      }
+
+      .section {
+        margin-bottom: 16px;
+        page-break-inside: avoid;
+      }
+
+      .lead {
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.5;
+      }
+
+      .grid {
+        display: grid;
+        gap: 12px;
+      }
+
+      .grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .grid-4 {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .card {
+        border: 1px solid var(--gray-2);
+        border-radius: 16px;
+        padding: 14px;
+        background: var(--white);
+      }
+
+      .soft {
+        background: var(--beige-2);
+      }
+
+      .kpi span {
+        display: block;
+        color: var(--muted);
+        font-size: 8px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .kpi strong {
+        display: block;
+        margin-top: 6px;
+        color: var(--navy);
+        font-size: 21px;
+      }
+
+      .kpi p {
+        margin-top: 4px;
+        color: var(--muted);
+        font-size: 9px;
+      }
+
+      .badge {
+        display: inline-block;
+        border-radius: 999px;
+        padding: 4px 8px;
+        font-size: 9px;
+        font-weight: 800;
+      }
+
+      .excellent {
+        background: #dcfce7;
+        color: var(--green);
+      }
+
+      .good {
+        background: #fef3c7;
+        color: var(--yellow);
+      }
+
+      .attention {
+        background: #ffedd5;
+        color: var(--orange);
+      }
+
+      .risk {
+        background: #fee2e2;
+        color: var(--red);
+      }
+
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        border-radius: 999px;
+        padding: 3px 8px;
+        font-size: 9px;
+        font-weight: 900;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        margin-left: 8px;
+        white-space: nowrap;
+      }
+
+      .tag-excellent {
+        background: #dcfce7;
+        color: var(--green);
+        border: 1px solid rgba(22, 128, 60, 0.22);
+      }
+
+      .tag-good {
+        background: #fef3c7;
+        color: var(--yellow);
+        border: 1px solid rgba(183, 121, 31, 0.22);
+      }
+
+      .tag-attention {
+        background: #ffedd5;
+        color: var(--orange);
+        border: 1px solid rgba(192, 86, 33, 0.22);
+      }
+
+      .tag-risk {
+        background: #fee2e2;
+        color: var(--red);
+        border: 1px solid rgba(185, 28, 28, 0.22);
+      }
+
+      .level {
+        display: inline-flex;
+        align-items: center;
+        border-radius: 999px;
+        padding: 3px 8px;
+        font-size: 9px;
+        font-weight: 900;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      .level-low {
+        background: #e0f2fe;
+        color: #075985;
+        border: 1px solid rgba(7, 89, 133, 0.18);
+      }
+
+      .level-medium {
+        background: #fef3c7;
+        color: var(--yellow);
+        border: 1px solid rgba(183, 121, 31, 0.22);
+      }
+
+      .level-high {
+        background: #ffedd5;
+        color: var(--orange);
+        border: 1px solid rgba(192, 86, 33, 0.22);
+      }
+
+      .level-max {
+        background: #fee2e2;
+        color: var(--red);
+        border: 1px solid rgba(185, 28, 28, 0.22);
+      }
+
+      .timeline {
+        display: grid;
+        gap: 10px;
+      }
+
+      .week-card {
+        border: 1px solid var(--gray-2);
+        border-radius: 14px;
+        padding: 12px 14px;
+        background: var(--white);
+      }
+
+      .week-card h4 {
+        margin: 0 0 8px;
+        color: var(--navy);
+        font-size: 12px;
+      }
+
+      .week-card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 10px;
+      }
+
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border-radius: 999px;
+        padding: 5px 10px;
+        background: var(--beige-2);
+        border: 1px solid var(--gray-2);
+        font-weight: 800;
+        font-size: 9px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--navy);
+      }
+
+      .dot-blue, .dot-green, .dot-orange, .dot-red, .dot-navy {
+        width: 10px;
+        height: 10px;
+        border-radius: 999px;
+      }
+
+      .dot-blue {
+        background: var(--blue);
+      }
+
+      .dot-green {
+        background: var(--green);
+      }
+
+      .dot-orange {
+        background: var(--orange);
+      }
+
+      .dot-red {
+        background: var(--red);
+      }
+
+      .dot-navy {
+        background: var(--navy);
+      }
+
+      .callout {
+        border: 1px solid rgba(14, 31, 53, 0.15);
+        border-left: 4px solid var(--navy);
+        background: var(--beige-2);
+        border-radius: 16px;
+        padding: 12px 14px;
+        color: var(--navy);
+      }
+
+      .callout strong {
+        font-weight: 900;
+      }
+
+      .callout-green {
+        border-left-color: var(--green);
+        background: #f0fdf4;
+      }
+
+      .callout-orange {
+        border-left-color: var(--orange);
+        background: #fff7ed;
+      }
+
+      .callout-red {
+        border-left-color: var(--red);
+        background: #fef2f2;
+      }
+
+      .muted {
+        color: var(--muted);
+      }
+
+      .small {
+        font-size: 10px;
+      }
+
+      .text-green {
+        color: var(--green);
+      }
+
+      .text-red {
+        color: var(--red);
+      }
+
+      .text-orange {
+        color: var(--orange);
+      }
+
+      .progress-bar {
+        height: 8px;
+        background: var(--gray-2);
+        border-radius: 999px;
+        overflow: hidden;
+        margin-top: 8px;
+      }
+
+      .progress-fill {
+        height: 100%;
+        border-radius: 999px;
+      }
+
+      .progress-green {
+        background: var(--green);
+      }
+
+      .progress-yellow {
+        background: var(--yellow);
+      }
+
+      .progress-orange {
+        background: var(--orange);
+      }
+
+      .toc {
+        columns: 2;
+        column-gap: 24px;
+      }
+
+      .toc-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 6px 0;
+        border-bottom: 1px dotted var(--gray-2);
+        font-size: 10px;
+      }
+
+      .toc-item span:last-child {
+        color: var(--muted);
+      }
+
+      .insight-box {
+        background: var(--beige-2);
+        border: 1px solid var(--gray-2);
+        border-radius: 12px;
+        padding: 10px 12px;
+        margin-top: 12px;
+      }
+
+      .insight-box h4 {
+        margin: 0 0 6px;
+        color: var(--navy);
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .insight-box p {
+        margin: 0;
+        color: var(--text);
+        font-size: 10px;
+      }
+
+      .decision-box {
+        background: #fef3c7;
+        border: 1px solid rgba(183, 121, 31, 0.3);
+        border-radius: 12px;
+        padding: 10px 12px;
+        margin-top: 12px;
+      }
+
+      .decision-box h4 {
+        margin: 0 0 6px;
+        color: var(--yellow);
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .decision-box p {
+        margin: 0;
+        color: var(--text);
+        font-size: 10px;
+      }
+
+      .heatmap {
+        display: grid;
+        grid-template-columns: auto repeat(5, 1fr);
+        gap: 2px;
+        font-size: 8px;
+      }
+
+      .heatmap-cell {
+        padding: 6px 4px;
+        text-align: center;
+        border-radius: 4px;
+      }
+
+      .heatmap-header {
+        background: var(--beige-2);
+        font-weight: 700;
+        color: var(--navy);
+      }
+
+      .heatmap-label {
+        background: var(--beige-2);
+        font-weight: 600;
+        color: var(--navy);
+        text-align: left;
+        padding-left: 8px;
+      }
+
+      .heat-green {
+        background: #dcfce7;
+        color: var(--green);
+      }
+
+      .heat-yellow {
+        background: #fef3c7;
+        color: var(--yellow);
+      }
+
+      .heat-orange {
+        background: #ffedd5;
+        color: var(--orange);
+      }
+
+      .heat-red {
+        background: #fee2e2;
+        color: var(--red);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <!-- ==================== CAPA EXECUTIVA ==================== -->
+      <section class="cover">
+        <header>
+          <div class="logo">
+            <span class="logo-mark">RB</span>
+            <span>RIBBAI OPS</span>
+          </div>
+        </header>
+        <div>
+          <h1>Relatório Executivo Mensal</h1>
+          <p class="cover-subtitle">
+            Análise consolidada das operações de Junho de 2026. Um mês de evolução significativa marcado pela implementação 
+            do modelo de setores, integração de novos colaboradores, consolidação do sistema CMP e preparação estrutural 
+            para o período de verão.
+          </p>
+        </div>
+        <div class="cover-meta">
+          <div class="meta-row">
+            <strong>Período</strong>
+            <span>01-06-2026 a 30-06-2026</span>
+          </div>
+          <div class="meta-row">
+            <strong>Restaurante</strong>
+            <span>RIBBAI</span>
+          </div>
+          <div class="meta-row">
+            <strong>Chefia de Sala</strong>
+            <span>Filipe Catalão</span>
+          </div>
+          <div class="meta-row">
+            <strong>Relatórios Analisados</strong>
+            <span>28 registos diários cruzados</span>
+          </div>
+          <div class="meta-row">
+            <strong>Fontes de Dados</strong>
+            <span>Daily Reports, Inventory Updates, CMP, Overtime, Alerts, Weekly Summaries</span>
+          </div>
+          <div class="meta-row">
+            <strong>Destaques do Mês</strong>
+            <span>Modelo de setores consolidado; Feriado 10/06; Eventos (Jam Session, Aperol); Fecho mensal com inventário completo</span>
+          </div>
+        </div>
+        <div class="kpi-row">
+          <div class="kpi-card">
+            <div class="kpi-label">Avaliação Global</div>
+            <div class="kpi-value">9/10</div>
+            <div class="kpi-note">Mês de elevada maturidade operacional</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Stock Health Final</div>
+            <div class="kpi-value">98%</div>
+            <div class="kpi-note">52 saudáveis · 1 crítico</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Valor Stock Final</div>
+            <div class="kpi-value">1.218€</div>
+            <div class="kpi-note">Consumíveis monitorizados</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Compras Junho</div>
+            <div class="kpi-value">845€</div>
+            <div class="kpi-note">54 movimentos IN · 280 unidades</div>
+          </div>
+        </div>
+        <div class="kpi-row">
+          <div class="kpi-card">
+            <div class="kpi-label">CMP Ketchup</div>
+            <div class="kpi-value">-27%</div>
+            <div class="kpi-note">18,61€ → 13,55€ (economia)</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">CMP Maionese</div>
+            <div class="kpi-value">-20%</div>
+            <div class="kpi-note">17,80€ → 14,21€ (economia)</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Modelo de Setores</div>
+            <div class="kpi-value">9,5/10</div>
+            <div class="kpi-note">Consolidado em alta pressão</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Incidentes Críticos</div>
+            <div class="kpi-value">0</div>
+            <div class="kpi-note">Sem impacto relevante no cliente</div>
+          </div>
+        </div>
+        <div class="pill">
+          <span class="pill-dot"></span>
+          Junho 2026: Consolidação operacional e preparação para o verão
+        </div>
+      </section>
+
+      <!-- ==================== ÍNDICE ==================== -->
+      <section class="page">
+        <div class="section">
+          <h2>Índice</h2>
+          <div class="toc">
+            <div class="toc-item"><span>1. Executive Summary</span><span>3</span></div>
+            <div class="toc-item"><span>2. Executive Dashboard</span><span>4</span></div>
+            <div class="toc-item"><span>3. Estado Geral da Operação</span><span>5</span></div>
+            <div class="toc-item"><span>4. Timeline do Mês</span><span>6</span></div>
+            <div class="toc-item"><span>5. Performance Operacional</span><span>8</span></div>
+            <div class="toc-item"><span>6. Evolução dos KPIs</span><span>9</span></div>
+            <div class="toc-item"><span>7. Análise por Setor</span><span>10</span></div>
+            <div class="toc-item"><span>8. Evolução da Equipa</span><span>11</span></div>
+            <div class="toc-item"><span>9. Formação e Desenvolvimento</span><span>12</span></div>
+            <div class="toc-item"><span>10. Eventos Relevantes</span><span>13</span></div>
+            <div class="toc-item"><span>11. Horas Extra</span><span>14</span></div>
+            <div class="toc-item"><span>12. Inventário</span><span>15</span></div>
+            <div class="toc-item"><span>13. Compras e Fornecedores</span><span>16</span></div>
+            <div class="toc-item"><span>14. Sistema CMP</span><span>17</span></div>
+            <div class="toc-item"><span>15. Incidentes</span><span>18</span></div>
+            <div class="toc-item"><span>16. Problemas Resolvidos</span><span>19</span></div>
+            <div class="toc-item"><span>17. Problemas Pendentes</span><span>19</span></div>
+            <div class="toc-item"><span>18. Melhorias Implementadas</span><span>20</span></div>
+            <div class="toc-item"><span>19. Tendências Identificadas</span><span>21</span></div>
+            <div class="toc-item"><span>20. Business Intelligence</span><span>22</span></div>
+            <div class="toc-item"><span>21. Oportunidades</span><span>20</span></div>
+            <div class="toc-item"><span>22. Riscos Operacionais</span><span>21</span></div>
+            <div class="toc-item"><span>24. Recomendações Estratégicas</span><span>22</span></div>
+            <div class="toc-item"><span>25. Roadmap Julho 2026</span><span>23</span></div>
+            <div class="toc-item"><span>26. Conclusão Executiva</span><span>24</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== EXECUTIVE SUMMARY ==================== -->
+      <section class="page">
+        <div class="section">
+          <h2>1. Executive Summary</h2>
+          <p class="lead">
+            Junho de 2026 foi um mês de consolidação e evolução para o RIBBAI. A operação demonstrou maturidade crescente, 
+            capacidade de adaptação a picos de pressão e resiliência perante ausências inesperadas. O modelo de organização 
+            por setores, introduzido no início do mês, provou ser eficaz e foi progressivamente consolidado.
+          </p>
+        </div>
+
+        <div class="grid grid-2" style="margin-top: 16px;">
+          <div class="card">
+            <h3>Como correu o mês?</h3>
+            <ul>
+              <li><strong>Operação globalmente positiva</strong> com avaliações diárias consistentemente acima de 8/10</li>
+              <li><strong>Modelo de setores implementado e consolidado</strong> com disciplina crescente</li>
+              <li><strong>Zero incidentes críticos</strong> com impacto significativo no cliente</li>
+              <li><strong>Fecho mensal estruturado</strong> com inventário completo e reorganização logística</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Principais marcos do mês</h3>
+            <ul>
+              <li><strong>03/06:</strong> Implementação do modelo de divisão por áreas</li>
+              <li><strong>10/06:</strong> Feriado nacional — teste de resiliência (5h52m overtime)</li>
+              <li><strong>17/06:</strong> Melhorias tecnológicas (sistema de pedidos + equipamentos)</li>
+              <li><strong>26-27/06:</strong> Eventos (Jam Session + Festa Aperol)</li>
+              <li><strong>30/06:</strong> Fecho mensal com reorganização logística completa</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="grid grid-2" style="margin-top: 12px;">
+          <div class="card soft">
+            <h3>Onde evoluímos? <span class="tag tag-excellent">Positivo</span></h3>
+            <ul>
+              <li>Disciplina no modelo de setores (50/60/70 + interior + runner)</li>
+              <li>Capacidade de adaptação a ausências e picos</li>
+              <li>Integração de novos colaboradores (Diogo, Sofia)</li>
+              <li>Controlo de inventário com sistema CMP automatizado</li>
+              <li>Redução de CMP em molhos (-20% a -27%)</li>
+              <li>Stock health de 61% → 98% saudável</li>
+            </ul>
+          </div>
+          <div class="card soft">
+            <h3>Onde temos oportunidade? <span class="tag tag-attention">Atenção</span></h3>
+            <ul>
+              <li>Bandejas de serviço — risco de segurança recorrente</li>
+              <li>Correções POS pendentes (impressões duplicadas, tickets)</li>
+              <li>Overtime em dias de eventos e fechos exigentes</li>
+              <li>Consumo elevado de rolos de cozinha (3x média histórica)</li>
+              <li>Redundância operacional para ausências inesperadas</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="callout" style="margin-top: 16px;">
+          <strong>Mensagem à Administração:</strong> A operação de junho demonstrou maturidade e robustez. O modelo de setores 
+          está consolidado e pronto para escalar. As prioridades imediatas são: (1) resolver riscos de equipamento (bandejas), 
+          (2) corrigir issues de POS, e (3) preparar contingências para o aumento de movimento esperado em julho.
+        </div>
+
+        <div class="insight-box">
+          <h4>Executive Insight</h4>
+          <p>
+            Junho foi o mês de transição do RIBBAI para um nível superior de organização operacional. A equipa internalizou 
+            o modelo de setores e demonstrou capacidade de manter qualidade sob pressão prolongada. O investimento em 
+            sistemas (CMP, relatórios automatizados) começa a produzir resultados mensuráveis.
+          </p>
+        </div>
+      </section>
+
+      <!-- ==================== EXECUTIVE DASHBOARD ==================== -->
+      <section class="page">
+        <div class="section">
+          <h2>2. Executive Dashboard — Junho 2026</h2>
+          <p class="lead">Visão consolidada dos principais indicadores do mês.</p>
+        </div>
+
+        <div class="grid grid-4" style="margin-top: 12px;">
+          <div class="card kpi">
+            <span>Dias Operacionais</span>
+            <strong>30</strong>
+            <p>100% com registo</p>
+          </div>
+          <div class="card kpi">
+            <span>Avaliação Média</span>
+            <strong>9/10</strong>
+            <p>Consistência elevada</p>
+          </div>
+          <div class="card kpi">
+            <span>Incidentes Baixa Gravidade</span>
+            <strong>3</strong>
+            <p>Todos resolvidos</p>
+          </div>
+          <div class="card kpi">
+            <span>Incidentes Críticos</span>
+            <strong>0</strong>
+            <p>Sem impacto cliente</p>
+          </div>
+        </div>
+
+        <div class="grid grid-4" style="margin-top: 12px;">
+          <div class="card kpi">
+            <span>Compras Totais</span>
+            <strong>845€</strong>
+            <p>54 movimentos IN</p>
+          </div>
+          <div class="card kpi">
+            <span>Valor Stock Final</span>
+            <strong>1.218€</strong>
+            <p>Consumíveis monitorizados</p>
+          </div>
+          <div class="card kpi">
+            <span>Stock Saudável</span>
+            <strong>98%</strong>
+            <p>52 de 53 artigos</p>
+          </div>
+          <div class="card kpi">
+            <span>Ruturas</span>
+            <strong>0</strong>
+            <p>No fecho do mês</p>
+          </div>
+        </div>
+
+        <div class="grid grid-3" style="margin-top: 12px;">
+          <div class="card kpi">
+            <span>Variação CMP Ketchup</span>
+            <strong class="text-green">-27%</strong>
+            <p>18,61€ → 13,55€</p>
+          </div>
+          <div class="card kpi">
+            <span>Variação CMP Maionese</span>
+            <strong class="text-green">-20%</strong>
+            <p>17,80€ → 14,21€</p>
+          </div>
+          <div class="card kpi">
+            <span>Economia CMP Estimada</span>
+            <strong class="text-green">~8,65€</strong>
+            <p>Por caixa de molhos</p>
+          </div>
+        </div>
+
+        <div class="section" style="margin-top: 20px;">
+          <h3>Saúde do Inventário — Evolução Mensal</h3>
+          <div class="grid grid-2" style="margin-top: 10px;">
+            <div class="card">
+              <h4 style="margin: 0 0 8px; font-size: 11px;">Semana 16/06</h4>
+              <table>
+                <tr><td>Saudável</td><td><strong>21</strong> artigos</td><td><span class="badge excellent">62%</span></td></tr>
+                <tr><td>Atenção</td><td><strong>9</strong> artigos</td><td><span class="badge good">26%</span></td></tr>
+                <tr><td>Crítico</td><td><strong>2</strong> artigos</td><td><span class="badge attention">6%</span></td></tr>
+                <tr><td>Rutura</td><td><strong>2</strong> artigos</td><td><span class="badge risk">6%</span></td></tr>
+              </table>
+            </div>
+            <div class="card">
+              <h4 style="margin: 0 0 8px; font-size: 11px;">Fecho 30/06</h4>
+              <table>
+                <tr><td>Saudável</td><td><strong>52</strong> artigos</td><td><span class="badge excellent">98%</span></td></tr>
+                <tr><td>Atenção</td><td><strong>0</strong> artigos</td><td><span class="badge good">0%</span></td></tr>
+                <tr><td>Crítico</td><td><strong>1</strong> artigo</td><td><span class="badge attention">2%</span></td></tr>
+                <tr><td>Rutura</td><td><strong>0</strong> artigos</td><td><span class="badge excellent">0%</span></td></tr>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="insight-box">
+          <h4>Executive Insight</h4>
+          <p>
+            O dashboard de junho revela uma operação em maturação: indicadores de inventário melhoraram significativamente 
+            (de 62% para 98% saudável), o sistema CMP produziu economias reais, e a operação manteve consistência elevada 
+            sem incidentes críticos. O restaurante está preparado para o aumento de movimento esperado em julho.
+          </p>
+        </div>
+      </section>
+
+      <!-- ==================== ESTADO GERAL DA OPERAÇÃO ==================== -->
+      <section class="page">
+        <div class="section">
+          <h2>3. Estado Geral da Operação</h2>
+          <p class="lead">
+            Avaliação integrada das dimensões operacionais ao longo de junho, cruzando dados de relatórios diários, 
+            inventário, alertas e indicadores de equipa.
+          </p>
+        </div>
+
+        <div class="section" style="margin-top: 16px;">
+          <h3>Heatmap Operacional — Junho 2026</h3>
+          <p class="muted small" style="margin-bottom: 10px;">
+            Avaliação por área e semana (Verde = Excelente | Amarelo = Bom | Laranja = Atenção | Vermelho = Risco)
+          </p>
+          <div class="heatmap">
+            <div class="heatmap-cell heatmap-header"></div>
+            <div class="heatmap-cell heatmap-header">Sem 1<br>(1-7)</div>
+            <div class="heatmap-cell heatmap-header">Sem 2<br>(8-14)</div>
+            <div class="heatmap-cell heatmap-header">Sem 3<br>(15-21)</div>
+            <div class="heatmap-cell heatmap-header">Sem 4<br>(22-28)</div>
+            <div class="heatmap-cell heatmap-header">Sem 5<br>(29-30)</div>
+            
+            <div class="heatmap-cell heatmap-label">Qualidade Serviço</div>
+            <div class="heatmap-cell heat-green">9/10</div>
+            <div class="heatmap-cell heat-green">9/10</div>
+            <div class="heatmap-cell heat-green">9/10</div>
+            <div class="heatmap-cell heat-green">9/10</div>
+            <div class="heatmap-cell heat-green">9/10</div>
+            
+            <div class="heatmap-cell heatmap-label">Modelo Setores</div>
+            <div class="heatmap-cell heat-yellow">Início</div>
+            <div class="heatmap-cell heat-green">8/10</div>
+            <div class="heatmap-cell heat-green">9/10</div>
+            <div class="heatmap-cell heat-green">9,5/10</div>
+            <div class="heatmap-cell heat-green">9,5/10</div>
+            
+            <div class="heatmap-cell heatmap-label">Stock Health</div>
+            <div class="heatmap-cell heat-yellow">N/D</div>
+            <div class="heatmap-cell heat-orange">62%</div>
+            <div class="heatmap-cell heat-yellow">75%</div>
+            <div class="heatmap-cell heat-green">98%</div>
+            <div class="heatmap-cell heat-green">98%</div>
+            
+            <div class="heatmap-cell heatmap-label">Incidentes</div>
+            <div class="heatmap-cell heat-yellow">1 baixo</div>
+            <div class="heatmap-cell heat-green">0</div>
+            <div class="heatmap-cell heat-yellow">1 RH</div>
+            <div class="heatmap-cell heat-yellow">2 baixos</div>
+            <div class="heatmap-cell heat-green">0</div>
+            
+            <div class="heatmap-cell heatmap-label">Pressão Operacional</div>
+            <div class="heatmap-cell heat-yellow">Média</div>
+            <div class="heatmap-cell heat-orange">Alta</div>
+            <div class="heatmap-cell heat-yellow">Média</div>
+            <div class="heatmap-cell heat-red">Muito Alta</div>
+            <div class="heatmap-cell heat-yellow">Média</div>
+          </div>
+        </div>
+
+        <div class="grid grid-2" style="margin-top: 20px;">
+          <div class="card">
+            <div class="chip"><span class="dot-green"></span>Pontos Fortes</div>
+            <ul style="margin-top: 10px;">
+              <li>Qualidade de serviço consistente (9/10 todas as semanas)</li>
+              <li>Modelo de setores consolidado progressivamente</li>
+              <li>Capacidade de resposta a picos de pressão (feriado, eventos)</li>
+              <li>Evolução significativa do stock health (62% → 98%)</li>
+              <li>Zero incidentes com impacto no cliente</li>
+              <li>Fecho mensal estruturado e completo</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="chip"><span class="dot-orange"></span>Áreas de Atenção</div>
+            <ul style="margin-top: 10px;">
+              <li>Semana 4 com pressão muito alta (eventos + lotação prolongada)</li>
+              <li>Dependência de elementos-chave em dias críticos</li>
+              <li>Consumo anormal de rolos de cozinha (3x média)</li>
+              <li>Bandejas de serviço — risco recorrente identificado</li>
+              <li>Overtime concentrado em fechos e eventos</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="insight-box">
+          <h4>Executive Insight</h4>
+          <p>
+            O estado geral da operação em junho foi positivo, com evolução clara ao longo do mês. A semana 4 representou 
+            o maior teste (eventos + lotação máxima), e a equipa respondeu com maturidade. O principal indicador de 
+            risco é a dependência de elementos específicos em dias de alta pressão.
+          </p>
+        </div>
+
+        <div class="decision-box">
+          <h4>Decision Required</h4>
+          <p>
+            Aprovar plano de contingência para ausências em dias de eventos/alta pressão, incluindo definição de 
+            on-call ou reforço preventivo de equipa para fins de semana de julho.
+          </p>
+        </div>
+      </section>
+
+      <!-- ==================== TIMELINE DO MÊS ==================== -->
+      <section class="page">
+        <div class="section">
+          <h2>4. Timeline do Mês — Semana a Semana</h2>
+          <p class="lead">
+            Narrativa cronológica dos principais acontecimentos de junho, permitindo uma leitura sequencial 
+            da evolução operacional.
+          </p>
+        </div>
+
+        <div class="timeline" style="margin-top: 16px;">
+          <div class="week-card">
+            <h4>Semana 1 (1-7 Junho) <span class="tag tag-good">Implementação</span></h4>
+            <div class="grid grid-3" style="margin-top: 8px;">
+              <div>
+                <strong style="font-size: 10px; color: var(--navy);">Movimento</strong>
+                <p>Afluência média-alta. Forte movimento no almoço do dia 03.</p>
+              </div>
+              <div>
+                <strong style="font-size: 10px; color: var(--navy);">Marco Principal</strong>
+                <p><strong>03/06:</strong> Implementação do modelo de divisão por áreas. Feedback positivo da equipa.</p>
+              </div>
+              <div>
+                <strong style="font-size: 10px; color: var(--navy);">Incidentes</strong>
+                <p>1 falha de comunicação (22€) — resolvida e integrada como aprendizagem.</p>
+              </div>
+            </div>
+            <div style="margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--gray-2);">
+              <strong style="font-size: 9px; color: var(--muted);">OVERTIME:</strong>
+              <span style="font-size: 9px;"> Carolina +1h45, Marta +30min (03/06)</span>
+            </div>
+          </div>
+
+          <div class="week-card">
+            <h4>Semana 2 (8-14 Junho) <span class="tag tag-attention">Alta Pressão</span></h4>
+            <div class="grid grid-3" style="margin-top: 8px;">
+              <div>
+                <strong style="font-size: 10px; color: var(--navy);">Movimento</strong>
+                <p>Pico significativo no feriado nacional (10/06). Fluxo constante desde a manhã.</p>
+              </div>
+              <div>
+                <strong style="font-size: 10px; color: var(--navy);">Marco Principal</strong>
+                <p><strong>10/06:</strong> Feriado nacional — teste de resiliência. Ausência no bar compensada pela equipa.</p>
+              </div>
+              <div>
+                <strong style="font-size: 10px; color: var(--navy);">Inventário</strong>
+                <p><strong>10/06:</strong> Inventário de consumíveis registado. Contagem semanal concluída.</p>
+              </div>
+            </div>
+            <div style="margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--gray-2);">
+              <strong style="font-size: 9px; color: var(--muted);">OVERTIME 10/06:</strong>
+              <span style="font-size: 9px;"> Bruno +2h00, Carolina +1h07, Lil +1h05, Pablo +40min, Matilde +30min, Marta +30min = <strong>5h52m total</strong></span>
+            </div>
+          </div>
+
+          <div class="week-card">
+            <h4>Semana 3 (15-21 Junho) <span class="tag tag-excellent">Consolidação</span></h4>
+            <div class="grid grid-3" style="margin-top: 8px;">
+              <div>
+                <strong style="font-size: 10px; color: var(--navy);">Movimento</strong>
+                <p>Operação estável sem grandes picos. Dias aproveitados para manutenção.</p>
+              </div>
+              <div>
+                <strong style="font-size: 10px; color: var(--navy);">Marco Principal</strong>
+                <p><strong>17/06:</strong> Visita técnica — melhorias no sistema de pedidos, ecrã e impressora adicionais.</p>
+              </div>
+              <div>
+                <strong style="font-size: 10px; color: var(--navy);">Incidentes</strong>
+                <p><strong>17/06:</strong> Dispensa de colaborador (outro departamento). Adaptação sem impacto no serviço.</p>
+              </div>
+            </div>
+            <div style="margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--gray-2);">
+              <strong style="font-size: 9px; color: var(--muted);">INVENTÁRIO 16/06:</strong>
+              <span style="font-size: 9px;"> 32 artigos contados · 2 ruturas (Rolos Cozinha, Álcool) · 2 críticos · 9 atenção</span>
+            </div>
+          </div>
+
+          <div class="week-card">
+            <h4>Semana 4 (22-28 Junho) <span class="tag tag-risk">Máxima Pressão</span></h4>
+            <div class="grid grid-3" style="margin-top: 8px;">
+              <div>
+                <strong style="font-size: 10px; color: var(--navy);">Movimento</strong>
+                <p>Transição de dias calmos (22-25) para fim de semana de lotação máxima prolongada (26-28).</p>
+              </div>
+              <div>
+                <strong style="font-size: 10px; color: var(--navy);">Eventos</strong>
+                <p><strong>26/06:</strong> Jam Session (19h-22h30)<br><strong>27/06:</strong> Festa Aperol (terraço)</p>
+              </div>
+              <div>
+                <strong style="font-size: 10px; color: var(--navy);">Compras</strong>
+                <p><strong>24/06:</strong> Entrega consumíveis (18 artigos, 105 unidades, 680,62€)</p>
+              </div>
+            </div>
+            <div style="margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--gray-2);">
+              <strong style="font-size: 9px; color: var(--muted);">OVERTIME SEMANA 4:</strong>
+              <span style="font-size: 9px;"> Carolina 7h50, Matilde 7h50, Filipe 7h08, Lil 2h35, Bruno 1h00 = <strong>26h20m total</strong></span>
+            </div>
+          </div>
+
+          <div class="week-card">
+            <h4>Semana 5 (29-30 Junho) <span class="tag tag-excellent">Fecho Mensal</span></h4>
+            <div class="grid grid-3" style="margin-top: 8px;">
+              <div>
+                <strong style="font-size: 10px; color: var(--navy);">Movimento</strong>
+                <p>Baixa pressão (chuva dia 30). Pico único de almoço. Tarde consistente (~70% esplanada).</p>
+              </div>
+              <div>
+                <strong style="font-size: 10px; color: var(--navy);">Marco Principal</strong>
+                <p><strong>30/06:</strong> Fecho mensal — reorganização logística completa, contagem integral inventário Sala/Bar.</p>
+              </div>
+              <div>
+                <strong style="font-size: 10px; color: var(--navy);">Entradas</strong>
+                <p><strong>30/06:</strong> Entrada molhos (Ketchup +2cx, Maionese +2cx). CMP recalculado com economia.</p>
+              </div>
+            </div>
+            <div style="margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--gray-2);">
+              <strong style="font-size: 9px; color: var(--muted);">OVERTIME 30/06:</strong>
+              <span style="font-size: 9px;"> Filipe +1h45, Bruno +1h45, Lil +1h15 = <strong>4h45m total</strong> (logística + inventário + fecho)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="insight-box">
+          <h4>Executive Insight</h4>
+          <p>
+            A timeline de junho revela um padrão claro: semanas de implementação/consolidação intercaladas com picos de 
+            pressão (feriado, eventos). A equipa demonstrou capacidade de aproveitar dias calmos para tarefas estruturais 
+            e responder com qualidade em dias de alta pressão. O overtime concentra-se previsivelmente em eventos e fechos.
+          </p>
+        </div>
+      </section>
+
+      <!-- ==================== PERFORMANCE OPERACIONAL ==================== -->
+      <section class="page">
+        <div class="section">
+          <h2>5. Performance Operacional</h2>
+          <p class="lead">
+            Análise da execução operacional ao longo do mês, com foco no modelo de setores e capacidade de resposta.
+          </p>
+        </div>
+
+        <div class="grid grid-2" style="margin-top: 16px;">
+          <div class="card">
+            <div class="chip"><span class="dot-green"></span>Modelo de Setores (50/60/70)</div>
+            <p class="muted" style="margin-top: 10px;">
+              O modelo de divisão por áreas, introduzido a 03/06, foi progressivamente consolidado ao longo do mês.
+              A disciplina aumentou semana após semana, com aplicação bem-sucedida mesmo em dias de pressão máxima.
+            </p>
+            <ul>
+              <li><strong>Semana 1:</strong> Implementação e adaptação inicial</li>
+              <li><strong>Semana 2:</strong> Teste em feriado — modelo mantido sob pressão</li>
+              <li><strong>Semana 3:</strong> Consolidação com limitações pontuais (apoio cafetaria)</li>
+              <li><strong>Semana 4:</strong> Maturidade demonstrada em lotação máxima</li>
+            </ul>
+            <div class="progress-bar">
+              <div class="progress-fill progress-green" style="width: 95%;"></div>
+            </div>
+            <p class="small muted" style="margin-top: 4px;">Consolidação: 95%</p>
+          </div>
+          <div class="card">
+            <div class="chip"><span class="dot-blue"></span>Coordenação e Comunicação</div>
+            <p class="muted" style="margin-top: 10px;">
+              A comunicação entre setores melhorou progressivamente. O incidente inicial (03/06) serviu como 
+              catalisador para reforçar protocolos de responsabilidade por áreas.
+            </p>
+            <ul>
+              <li><strong>03/06:</strong> Falha de comunicação identificada e corrigida</li>
+              <li><strong>10/06:</strong> Coordenação eficaz perante ausência no bar</li>
+              <li><strong>17/06:</strong> Melhorias tecnológicas reforçaram comunicação</li>
+              <li><strong>26-28/06:</strong> Coordenação exemplar em eventos e pressão</li>
+            </ul>
+            <div class="progress-bar">
+              <div class="progress-fill progress-green" style="width: 90%;"></div>
+            </div>
+            <p class="small muted" style="margin-top: 4px;">Eficácia: 90%</p>
+          </div>
+        </div>
+
+        <div class="section" style="margin-top: 20px;">
+          <h3>Avaliações Diárias — Resumo</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Indicador</th>
+                <th>Média Junho</th>
+                <th>Mínimo</th>
+                <th>Máximo</th>
+                <th>Tendência</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Sucesso Operacional</td>
+                <td><strong>9/10</strong></td>
+                <td>8/10</td>
+                <td>9,5/10</td>
+                <td><span class="badge excellent">Estável Alto</span></td>
+              </tr>
+              <tr>
+                <td>Qualidade de Serviço</td>
+                <td><strong>9/10</strong></td>
+                <td>8,5/10</td>
+                <td>10/10</td>
+                <td><span class="badge excellent">Crescente</span></td>
+              </tr>
+              <tr>
+                <td>Organização</td>
+                <td><strong>9/10</strong></td>
+                <td>8/10</td>
+                <td>10/10</td>
+                <td><span class="badge excellent">Crescente</span></td>
+              </tr>
+              <tr>
+                <td>Comunicação</td>
+                <td><strong>8,5/10</strong></td>
+                <td>7/10</td>
+                <td>9/10</td>
+                <td><span class="badge good">Melhorando</span></td>
+              </tr>
+              <tr>
+                <td>Capacidade de Adaptação</td>
+                <td><strong>9,5/10</strong></td>
+                <td>9/10</td>
+                <td>10/10</td>
+                <td><span class="badge excellent">Excelente</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="insight-box">
+          <h4>Executive Insight</h4>
+          <p>
+            A performance operacional de junho foi consistentemente elevada. O indicador mais forte é a capacidade de 
+            adaptação (9,5/10), demonstrada em situações de ausência inesperada e picos de pressão. A comunicação, 
+            embora em melhoria, permanece a área com maior margem de evolução.
+          </p>
+        </div>
+
+        <div class="callout callout-green" style="margin-top: 12px;">
+          <strong>Business Impact:</strong> A consolidação do modelo de setores reduz sobreposição de funções, 
+          aumenta responsabilização individual e melhora a experiência do cliente. Equipas organizadas por áreas 
+          respondem mais rapidamente e cometem menos erros operacionais.
+        </div>
+      </section>
+
+      <!-- ==================== EVOLUÇÃO DOS KPIs ==================== -->
+      <section class="page">
+        <div class="section">
+          <h2>6. Evolução dos KPIs — Junho 2026</h2>
+          <p class="lead">
+            Progressão dos indicadores-chave ao longo do mês, organizados pelos três pilares do RIBBAI: 
+            Financeiros, Operacionais e Equipa.
+          </p>
+        </div>
+
+        <div class="grid grid-3" style="margin-top: 16px;">
+          <div class="card soft">
+            <h3>KPIs Financeiros</h3>
+            <table>
+              <tr>
+                <td>Stock Valuation</td>
+                <td><strong>1.218€</strong></td>
+                <td><span class="badge excellent">OK</span></td>
+              </tr>
+              <tr>
+                <td>Compras Mês</td>
+                <td><strong>845€</strong></td>
+                <td><span class="badge good">Normal</span></td>
+              </tr>
+              <tr>
+                <td>CMP Ketchup</td>
+                <td><strong>-27%</strong></td>
+                <td><span class="badge excellent">Economia</span></td>
+              </tr>
+              <tr>
+                <td>CMP Maionese</td>
+                <td><strong>-20%</strong></td>
+                <td><span class="badge excellent">Economia</span></td>
+              </tr>
+            </table>
+            <div class="progress-bar" style="margin-top: 12px;">
+              <div class="progress-fill progress-green" style="width: 90%;"></div>
+            </div>
+            <p class="small muted">Health Score Financeiro: 90%</p>
+          </div>
+
+          <div class="card soft">
+            <h3>KPIs Operacionais</h3>
+            <table>
+              <tr>
+                <td>Qualidade Serviço</td>
+                <td><strong>9/10</strong></td>
+                <td><span class="badge excellent">Excelente</span></td>
+              </tr>
+              <tr>
+                <td>Incidentes</td>
+                <td><strong>3 baixos</strong></td>
+                <td><span class="badge good">Controlado</span></td>
+              </tr>
+              <tr>
+                <td>Stock Health</td>
+                <td><strong>98%</strong></td>
+                <td><span class="badge excellent">Excelente</span></td>
+              </tr>
+              <tr>
+                <td>Ruturas</td>
+                <td><strong>0</strong></td>
+                <td><span class="badge excellent">Zero</span></td>
+              </tr>
+            </table>
+            <div class="progress-bar" style="margin-top: 12px;">
+              <div class="progress-fill progress-green" style="width: 95%;"></div>
+            </div>
+            <p class="small muted">Health Score Operacional: 95%</p>
+          </div>
+
+          <div class="card soft">
+            <h3>KPIs Equipa</h3>
+            <table>
+              <tr>
+                <td>Modelo Setores</td>
+                <td><strong>9,5/10</strong></td>
+                <td><span class="badge excellent">Consolidado</span></td>
+              </tr>
+              <tr>
+                <td>Adaptação</td>
+                <td><strong>9,5/10</strong></td>
+                <td><span class="badge excellent">Excelente</span></td>
+              </tr>
+              <tr>
+                <td>Integração Novos</td>
+                <td><strong>2</strong></td>
+                <td><span class="badge good">Em curso</span></td>
+              </tr>
+              <tr>
+                <td>Overtime Total</td>
+                <td><strong>~40h</strong></td>
+                <td><span class="badge attention">Monitorizar</span></td>
+              </tr>
+            </table>
+            <div class="progress-bar" style="margin-top: 12px;">
+              <div class="progress-fill progress-yellow" style="width: 85%;"></div>
+            </div>
+            <p class="small muted">Health Score Equipa: 85%</p>
+          </div>
+        </div>
+
+        <div class="section" style="margin-top: 20px;">
+          <h3>Evolução Semana a Semana</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>KPI</th>
+                <th>Sem 1</th>
+                <th>Sem 2</th>
+                <th>Sem 3</th>
+                <th>Sem 4</th>
+                <th>Sem 5</th>
+                <th>Tendência</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Avaliação Operacional</td>
+                <td>9/10</td>
+                <td>9/10</td>
+                <td>9/10</td>
+                <td>9/10</td>
+                <td>9/10</td>
+                <td><span class="text-green">→ Estável</span></td>
+              </tr>
+              <tr>
+                <td>Modelo Setores</td>
+                <td>7/10</td>
+                <td>8/10</td>
+                <td>9/10</td>
+                <td>9,5/10</td>
+                <td>9,5/10</td>
+                <td><span class="text-green">↑ Crescente</span></td>
+              </tr>
+              <tr>
+                <td>Stock Health</td>
+                <td>N/D</td>
+                <td>62%</td>
+                <td>75%</td>
+                <td>98%</td>
+                <td>98%</td>
+                <td><span class="text-green">↑ Forte</span></td>
+              </tr>
+              <tr>
+                <td>Incidentes</td>
+                <td>1</td>
+                <td>0</td>
+                <td>1</td>
+                <td>2</td>
+                <td>0</td>
+                <td><span class="text-green">→ Controlado</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="insight-box">
+          <h4>Executive Insight</h4>
+          <p>
+            Os KPIs de junho mostram evolução consistente em todas as dimensões. O destaque vai para o Stock Health 
+            (+36 pontos percentuais) e a consolidação do modelo de setores (+2,5 pontos). O overtime, embora controlado, 
+            merece monitorização contínua, especialmente em semanas com eventos.
+          </p>
+        </div>
+      </section>
+
+      <!-- ==================== EVOLUÇÃO DA EQUIPA ==================== -->
+      <section class="page">
+        <div class="section">
+          <h2>8. Evolução da Equipa</h2>
+          <p class="lead">
+            Análise do desempenho e evolução dos colaboradores ao longo de junho, baseada nos registos diários 
+            e feedback operacional.
+          </p>
+        </div>
+
+        <div class="grid grid-2" style="margin-top: 16px;">
+          <div class="card">
+            <h3>Bruno <span class="tag tag-excellent">Liderança</span></h3>
+            <ul>
+              <li><strong>Coordenação:</strong> Liderou operação em dias críticos (10/06, 24-27/06)</li>
+              <li><strong>Adaptação:</strong> Capacidade de resposta a ausências e pressão</li>
+              <li><strong>Compromisso:</strong> Prolongou turnos para garantir qualidade (2h00 extra no feriado)</li>
+            </ul>
+            <p class="small muted" style="margin-top: 8px;">Recomendação: Manter como coordenador em dias de eventos</p>
+          </div>
+          <div class="card">
+            <h3>Carolina <span class="tag tag-excellent">Consistência</span></h3>
+            <ul>
+              <li><strong>Versatilidade:</strong> Porta + apoio bar/cafetaria quando necessário</li>
+              <li><strong>Fiabilidade:</strong> Presença consistente em fechos e preparação</li>
+              <li><strong>Overtime:</strong> Maior volume semanal na Week 4 (7h50)</li>
+            </ul>
+            <p class="small muted" style="margin-top: 8px;">Recomendação: Elemento-chave para estabilidade operacional</p>
+          </div>
+          <div class="card">
+            <h3>Matilde <span class="tag tag-excellent">Destaque</span></h3>
+            <ul>
+              <li><strong>Interior:</strong> Gestão integral da sala interior em dias de pressão</li>
+              <li><strong>Cafetaria:</strong> Apoio fundamental na compensação de ausências no bar</li>
+              <li><strong>Fechos:</strong> Responsabilidade recorrente com overtime (7h50 Week 4)</li>
+            </ul>
+            <p class="small muted" style="margin-top: 8px;">Recomendação: Formalizar como responsável da sala interior</p>
+          </div>
+          <div class="card">
+            <h3>Pablo <span class="tag tag-good">Proatividade</span></h3>
+            <ul>
+              <li><strong>Abertura:</strong> Autonomia consistente em aberturas</li>
+              <li><strong>Serviço:</strong> Organização exemplar na zona 60</li>
+              <li><strong>Preparação:</strong> Preocupação visível com preparação para dias seguintes</li>
+            </ul>
+            <p class="small muted" style="margin-top: 8px;">Recomendação: Reforçar papel em aberturas e preparação antecipada</p>
+          </div>
+          <div class="card">
+            <h3>Lil <span class="tag tag-good">Resiliência</span></h3>
+            <ul>
+              <li><strong>Runner:</strong> Boa leitura de serviço e cobertura de pausas</li>
+              <li><strong>Pressão:</strong> Assegurou abertura em contexto de ausência (28/06)</li>
+              <li><strong>Setores:</strong> Boa gestão da zona 70 sob pressão</li>
+            </ul>
+            <p class="small muted" style="margin-top: 8px;">Recomendação: Consolidar como runner de referência</p>
+          </div>
+          <div class="card">
+            <h3>Marta <span class="tag tag-good">Evolução</span></h3>
+            <ul>
+              <li><strong>Compromisso:</strong> Forte sentido de equipa e vontade de aprender</li>
+              <li><strong>Fechos:</strong> Participação ativa em tarefas de encerramento</li>
+              <li><strong>Potencial:</strong> Evolução consistente ao longo do mês</li>
+            </ul>
+            <p class="small muted" style="margin-top: 8px;">Recomendação: Aumentar responsabilidade progressivamente</p>
+          </div>
+        </div>
+
+        <div class="grid grid-2" style="margin-top: 12px;">
+          <div class="card soft">
+            <h3>Diogo <span class="tag tag-good">Integração</span></h3>
+            <ul>
+              <li><strong>Evolução:</strong> Redução clara de erros entre 1.º e 2.º dia</li>
+              <li><strong>Atitude:</strong> Positiva, com boa comunicação com clientes e colegas</li>
+              <li><strong>Próximos passos:</strong> Limitar autonomia em pedidos em picos; consolidar rotinas</li>
+            </ul>
+          </div>
+          <div class="card soft">
+            <h3>Sofia <span class="tag tag-good">Integração</span></h3>
+            <ul>
+              <li><strong>Estreia:</strong> Positiva (25/06) com boa aprendizagem</li>
+              <li><strong>Quiosque:</strong> Assumiu função em dias de forte exigência (27-28/06)</li>
+              <li><strong>Próximos passos:</strong> Consolidar procedimentos fora do contexto "calmo"</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="insight-box">
+          <h4>Executive Insight</h4>
+          <p>
+            A equipa demonstrou maturidade e capacidade de evolução ao longo de junho. Os elementos experientes (Bruno, 
+            Carolina, Matilde) foram pilares em dias críticos, enquanto os novos elementos (Diogo, Sofia) mostraram 
+            progressão positiva na integração. O principal risco identificado é a dependência de elementos específicos 
+            em dias de alta pressão.
+          </p>
+        </div>
+      </section>
+
+      <!-- ==================== EVENTOS RELEVANTES ==================== -->
+      <section class="page">
+        <div class="section">
+          <h2>10. Eventos Relevantes</h2>
+          <p class="lead">
+            Eventos operacionais e comerciais que marcaram o mês de junho, com análise de impacto na operação.
+          </p>
+        </div>
+
+        <div class="timeline" style="margin-top: 16px;">
+          <div class="week-card">
+            <h4><span class="badge attention">Feriado</span> 10 de Junho — Dia de Portugal</h4>
+            <div class="grid grid-3" style="margin-top: 8px;">
+              <div>
+                <strong style="font-size: 10px;">Contexto</strong>
+                <p>Feriado nacional com afluência muito elevada desde a manhã.</p>
+              </div>
+              <div>
+                <strong style="font-size: 10px;">Impacto Operacional</strong>
+                <p>Fluxo constante, ausência no bar compensada por Carolina e Matilde.</p>
+              </div>
+              <div>
+                <strong style="font-size: 10px;">Resultado</strong>
+                <p>Serviço consistente. Overtime: 5h52m. Modelo de setores validado sob pressão.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="week-card">
+            <h4><span class="badge good">Evento</span> 26 de Junho — Jam Session</h4>
+            <div class="grid grid-3" style="margin-top: 8px;">
+              <div>
+                <strong style="font-size: 10px;">Horário</strong>
+                <p>19h00 às 22h30 com prolongamento do movimento.</p>
+              </div>
+              <div>
+                <strong style="font-size: 10px;">Impacto Operacional</strong>
+                <p>Consumo constante durante atuação. Fecho exigente para preparar sábado.</p>
+              </div>
+              <div>
+                <strong style="font-size: 10px;">Resultado</strong>
+                <p>Serviço sólido e bem coordenado. Overtime concentrado no fecho.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="week-card">
+            <h4><span class="badge excellent">Evento</span> 27 de Junho — Festa Aperol</h4>
+            <div class="grid grid-3" style="margin-top: 8px;">
+              <div>
+                <strong style="font-size: 10px;">Horário</strong>
+                <p>Início ~18h30 no terraço, prolongando fluxo até período de jantares.</p>
+              </div>
+              <div>
+                <strong style="font-size: 10px;">Impacto Operacional</strong>
+                <p>Esplanada em lotação máxima 12h30–18h30. Dia descrito como "dos mais fortes do mês".</p>
+              </div>
+              <div>
+                <strong style="font-size: 10px;">Resultado</strong>
+                <p>Exemplar: maturidade no modelo de setores, coordenação eficaz.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="week-card">
+            <h4><span class="badge good">Manutenção</span> 17 de Junho — Visita Técnica</h4>
+            <div class="grid grid-3" style="margin-top: 8px;">
+              <div>
+                <strong style="font-size: 10px;">Intervenção</strong>
+                <p>Melhorias no sistema de gestão de pedidos, ecrã adicional, impressora na esplanada.</p>
+              </div>
+              <div>
+                <strong style="font-size: 10px;">Impacto Operacional</strong>
+                <p>Reforço das ferramentas disponíveis para a equipa de sala.</p>
+              </div>
+              <div>
+                <strong style="font-size: 10px;">Resultado</strong>
+                <p>Operação mais eficiente e fluida nos dias seguintes.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="week-card">
+            <h4><span class="badge excellent">Estrutural</span> 30 de Junho — Fecho Mensal</h4>
+            <div class="grid grid-3" style="margin-top: 8px;">
+              <div>
+                <strong style="font-size: 10px;">Atividades</strong>
+                <p>Reorganização logística completa, contagem integral inventário Sala/Bar.</p>
+              </div>
+              <div>
+                <strong style="font-size: 10px;">Impacto Operacional</strong>
+                <p>Dia de baixa pressão aproveitado para trabalho estruturante.</p>
+              </div>
+              <div>
+                <strong style="font-size: 10px;">Resultado</strong>
+                <p>Restaurante preparado para o aumento de movimento de julho.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="insight-box">
+          <h4>Executive Insight</h4>
+          <p>
+            Os eventos de junho foram bem geridos pela equipa. O feriado nacional e os eventos comerciais (Jam Session, 
+            Festa Aperol) testaram a capacidade da operação e validaram o modelo de setores sob pressão. A estratégia 
+            de aproveitar dias calmos para trabalho estruturante (fecho mensal) mostrou-se eficaz.
+          </p>
+        </div>
+      </section>
+
+      <!-- ==================== HORAS EXTRA ==================== -->
+      <section class="page">
+        <div class="section">
+          <h2>11. Horas Extra</h2>
+          <p class="lead">
+            Análise detalhada do overtime ao longo de junho, com identificação de padrões e causas predominantes.
+          </p>
+        </div>
+
+        <div class="grid grid-3" style="margin-top: 16px;">
+          <div class="card kpi">
+            <span>Total Estimado Junho</span>
+            <strong>~40h</strong>
+            <p>Distribuído por 5 semanas</p>
+          </div>
+          <div class="card kpi">
+            <span>Pico Semanal</span>
+            <strong>26h20</strong>
+            <p>Semana 4 (22-28/06)</p>
+          </div>
+          <div class="card kpi">
+            <span>Causa Predominante</span>
+            <strong>Fecho</strong>
+            <p>Eventos e preparação</p>
+          </div>
+        </div>
+
+        <div class="section" style="margin-top: 20px;">
+          <h3>Distribuição por Semana</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Semana</th>
+                <th>Total</th>
+                <th>Principais Dias</th>
+                <th>Causa</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Sem 1 (1-7)</strong></td>
+                <td>~2h15</td>
+                <td>03/06</td>
+                <td>Fecho operacional</td>
+              </tr>
+              <tr>
+                <td><strong>Sem 2 (8-14)</strong></td>
+                <td>~5h52</td>
+                <td>10/06 (feriado)</td>
+                <td>Alta pressão + ausência bar</td>
+              </tr>
+              <tr>
+                <td><strong>Sem 3 (15-21)</strong></td>
+                <td>~2h00</td>
+                <td>17/06</td>
+                <td>Situação RH + fecho</td>
+              </tr>
+              <tr>
+                <td><strong>Sem 4 (22-28)</strong></td>
+                <td>26h20</td>
+                <td>26-28/06</td>
+                <td>Eventos + lotação máxima</td>
+              </tr>
+              <tr>
+                <td><strong>Sem 5 (29-30)</strong></td>
+                <td>~4h45</td>
+                <td>30/06</td>
+                <td>Fecho mensal + inventário</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section" style="margin-top: 20px;">
+          <h3>Top Colaboradores (Semana 4)</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Colaborador</th>
+                <th>Horas Extra</th>
+                <th>Motivo Predominante</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Carolina</strong></td>
+                <td>7h50</td>
+                <td>Fechos e preparação (24-28)</td>
+              </tr>
+              <tr>
+                <td><strong>Matilde</strong></td>
+                <td>7h50</td>
+                <td>Fechos e sala interior (24-28)</td>
+              </tr>
+              <tr>
+                <td><strong>Filipe</strong></td>
+                <td>7h08</td>
+                <td>Coordenação + fecho exigente (26)</td>
+              </tr>
+              <tr>
+                <td><strong>Lil</strong></td>
+                <td>2h35</td>
+                <td>Fecho/apoio operacional</td>
+              </tr>
+              <tr>
+                <td><strong>Bruno</strong></td>
+                <td>1h00</td>
+                <td>Pausa reduzida (27)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="grid grid-2" style="margin-top: 16px;">
+          <div class="callout">
+            <strong>Padrão Identificado:</strong> O overtime concentra-se nos fechos de dias com eventos e em períodos 
+            de preparação pós-evento. O fecho de 26/06 (3h30 de um único colaborador) ilustra a exigência de preparar 
+            o restaurante para o dia seguinte após eventos.
+          </div>
+          <div class="callout callout-orange">
+            <strong>Recomendação:</strong> Implementar checklist de fecho para dias de eventos, permitindo distribuir 
+            tarefas e reduzir overtime evitável. Considerar reforço preventivo em fins de semana com eventos programados.
+          </div>
+        </div>
+
+        <div class="insight-box">
+          <h4>Executive Insight</h4>
+          <p>
+            O overtime de junho foi maioritariamente justificado (eventos, feriado, fecho mensal). A concentração na 
+            semana 4 reflete a pressão dos eventos comerciais. O padrão de fechos prolongados sugere oportunidade 
+            de otimização através de planeamento antecipado e checklists estruturadas.
+          </p>
+        </div>
+      </section>
+
+      <!-- ==================== INVENTÁRIO ==================== -->
+      <section class="page">
+        <div class="section">
+          <h2>12. Inventário</h2>
+          <p class="lead">
+            Análise consolidada do inventário de consumíveis ao longo de junho, com evolução do stock health 
+            e identificação de padrões de consumo.
+          </p>
+        </div>
+
+        <div class="grid grid-4" style="margin-top: 16px;">
+          <div class="card kpi">
+            <span>Valor Stock Final</span>
+            <strong>1.218€</strong>
+            <p>30/06/2026</p>
+          </div>
+          <div class="card kpi">
+            <span>Artigos Monitorizados</span>
+            <strong>53</strong>
+            <p>Consumíveis</p>
+          </div>
+          <div class="card kpi">
+            <span>Stock Saudável</span>
+            <strong>98%</strong>
+            <p>52 de 53 artigos</p>
+          </div>
+          <div class="card kpi">
+            <span>Ruturas no Fecho</span>
+            <strong>0</strong>
+            <p>Zero</p>
+          </div>
+        </div>
+
+        <div class="section" style="margin-top: 20px;">
+          <h3>Evolução do Stock Health</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Data</th>
+                <th>Saudável</th>
+                <th>Atenção</th>
+                <th>Crítico</th>
+                <th>Rutura</th>
+                <th>Observações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>16/06</strong></td>
+                <td>21 (62%)</td>
+                <td>9 (26%)</td>
+                <td>2 (6%)</td>
+                <td>2 (6%)</td>
+                <td>Rolos Cozinha e Álcool em rutura</td>
+              </tr>
+              <tr>
+                <td><strong>23/06</strong></td>
+                <td>~28 (78%)</td>
+                <td>6 (17%)</td>
+                <td>2 (5%)</td>
+                <td>0</td>
+                <td>Reposição de ruturas concluída</td>
+              </tr>
+              <tr>
+                <td><strong>24/06</strong></td>
+                <td>52 (98%)</td>
+                <td>0</td>
+                <td>1 (2%)</td>
+                <td>0</td>
+                <td>Após entrega consumíveis (680€)</td>
+              </tr>
+              <tr>
+                <td><strong>30/06</strong></td>
+                <td>52 (98%)</td>
+                <td>0</td>
+                <td>1 (2%)</td>
+                <td>0</td>
+                <td>Fecho mensal — stock consolidado</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="grid grid-2" style="margin-top: 16px;">
+          <div class="card">
+            <div class="chip"><span class="dot-orange"></span>Consumos Anormais Identificados</div>
+            <ul style="margin-top: 10px;">
+              <li><strong>Rolos de Cozinha:</strong> 6 pack consumidos em 1 semana (média histórica: 2 pack)</li>
+              <li><strong>Espuma Antibacteriana:</strong> 2 unidades/semana (média: 1 unidade)</li>
+            </ul>
+            <p class="muted small" style="margin-top: 8px;">
+              Medidas implementadas: sensibilização da equipa, utilização de toalhas reutilizáveis, 
+              monitorização mais rigorosa do consumo semanal.
+            </p>
+          </div>
+          <div class="card">
+            <div class="chip"><span class="dot-green"></span>Artigos com Stock Adequado</div>
+            <ul style="margin-top: 10px;">
+              <li><strong>Molhos:</strong> Ketchup (3,5 cx), Maionese (5 cx) — cobertura 4-6 semanas</li>
+              <li><strong>Consumíveis WC:</strong> Repostos e monitorizados</li>
+              <li><strong>Produtos de Limpeza:</strong> Thomil, Lava-Tudo em níveis adequados</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="callout" style="margin-top: 16px;">
+          <strong>Artigo Crítico no Fecho:</strong> Lixívia forte (CLEAN-LIXIVIA-FORTE) — 1 unidade (limiar crítico: 1). 
+          Ação recomendada: incluir na próxima encomenda.
+        </div>
+
+        <div class="insight-box">
+          <h4>Executive Insight</h4>
+          <p>
+            O inventário de junho evoluiu de forma muito positiva (62% → 98% saudável). As ruturas identificadas a meio 
+            do mês foram rapidamente corrigidas. O sistema de alertas automáticos e contagens semanais provou ser eficaz 
+            na prevenção de ruturas. O consumo anormal de rolos de cozinha requer monitorização contínua.
+          </p>
+        </div>
+      </section>
+
+      <!-- ==================== COMPRAS E FORNECEDORES ==================== -->
+      <section class="page">
+        <div class="section">
+          <h2>13. Compras e Fornecedores</h2>
+          <p class="lead">
+            Análise das compras de junho, com foco em volumes, custos e performance de fornecedores.
+          </p>
+        </div>
+
+        <div class="grid grid-4" style="margin-top: 16px;">
+          <div class="card kpi">
+            <span>Total Compras</span>
+            <strong>845€</strong>
+            <p>Junho 2026</p>
+          </div>
+          <div class="card kpi">
+            <span>Movimentos IN</span>
+            <strong>54</strong>
+            <p>Entradas registadas</p>
+          </div>
+          <div class="card kpi">
+            <span>Quantidade Total</span>
+            <strong>280,5</strong>
+            <p>Unidades compradas</p>
+          </div>
+          <div class="card kpi">
+            <span>Maior Entrega</span>
+            <strong>680€</strong>
+            <p>24/06 (consumíveis)</p>
+          </div>
+        </div>
+
+        <div class="section" style="margin-top: 20px;">
+          <h3>Principais Entregas do Mês</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Data</th>
+                <th>Tipo</th>
+                <th>Artigos</th>
+                <th>Quantidade</th>
+                <th>Valor</th>
+                <th>Observações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>22/06</strong></td>
+                <td>Reposição</td>
+                <td>2</td>
+                <td>13 un</td>
+                <td>N/D</td>
+                <td>Cheiro Urinol, Box POKE</td>
+              </tr>
+              <tr>
+                <td><strong>23/06</strong></td>
+                <td>Limpeza + Consumíveis</td>
+                <td>11</td>
+                <td>19 un</td>
+                <td>N/D</td>
+                <td>Novos itens adicionados ao catálogo</td>
+              </tr>
+              <tr>
+                <td><strong>24/06</strong></td>
+                <td>Consumíveis Geral</td>
+                <td>18</td>
+                <td>105 un</td>
+                <td><strong>680,62€</strong></td>
+                <td>Entrega principal do mês</td>
+              </tr>
+              <tr>
+                <td><strong>30/06</strong></td>
+                <td>Molhos (Fecho)</td>
+                <td>2</td>
+                <td>4 cx</td>
+                <td><strong>37,16€</strong></td>
+                <td>Ketchup + Maionese com CMP favorável</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="grid grid-2" style="margin-top: 16px;">
+          <div class="card">
+            <div class="chip"><span class="dot-green"></span>Economia em Compras</div>
+            <ul style="margin-top: 10px;">
+              <li><strong>Ketchup:</strong> compra a 9,75€/cx vs CMP anterior 18,61€ = <span class="text-green">-47% no preço</span></li>
+              <li><strong>Maionese:</strong> compra a 8,83€/cx vs CMP anterior 17,80€ = <span class="text-green">-50% no preço</span></li>
+              <li>Economia direta na compra de 30/06: ~17€ vs preços anteriores</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="chip"><span class="dot-blue"></span>Fornecedores Ativos</div>
+            <ul style="margin-top: 10px;">
+              <li><strong>Fornecedor de Molhos:</strong> Preços favoráveis em junho</li>
+              <li><strong>Fornecedor Geral:</strong> Entrega principal (680€)</li>
+              <li>Todos os fornecedores com entrega conforme</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="callout" style="margin-top: 16px;">
+          <strong>Limitação de Dados:</strong> As entregas de 22 e 23/06 surgem com valor 0,00€ nas fontes (fornecedor 
+          "a definir"), limitando análise financeira completa. Recomenda-se assegurar registo de valores em todas 
+          as entradas futuras.
+        </div>
+
+        <div class="insight-box">
+          <h4>Executive Insight</h4>
+          <p>
+            As compras de junho foram bem distribuídas ao longo do mês, com a entrega principal (680€) a cobrir 
+            necessidades até final de julho. A compra de molhos no fecho (30/06) aproveitou preços significativamente 
+            mais baixos, demonstrando valor do sistema CMP na identificação de oportunidades de poupança.
+          </p>
+        </div>
+      </section>
+
+      <!-- ==================== SISTEMA CMP ==================== -->
+      <section class="page">
+        <div class="section">
+          <h2>14. Sistema CMP — Custo Médio Ponderado</h2>
+          <p class="lead">
+            Análise do comportamento do motor CMP ao longo de junho, com foco nos itens monitorizados 
+            e impacto financeiro das variações de preço.
+          </p>
+        </div>
+
+        <div class="grid grid-2" style="margin-top: 16px;">
+          <div class="card">
+            <h3>Ketchup (SAUCE-KETCHUP)</h3>
+            <table>
+              <tr><td>Stock Inicial</td><td><strong>1,0 caixa</strong></td></tr>
+              <tr><td>Entradas</td><td><strong>+2,5 caixas</strong></td></tr>
+              <tr><td>Consumos</td><td><strong>-4,0 caixas</strong></td></tr>
+              <tr><td>Stock Final</td><td><strong>3,5 caixas</strong></td></tr>
+              <tr><td>CMP Inicial</td><td>18,61 €</td></tr>
+              <tr><td>CMP Final</td><td><strong>13,55 €</strong></td></tr>
+              <tr><td>Variação</td><td><span class="text-green"><strong>-27%</strong></span></td></tr>
+              <tr><td>Valor Final</td><td><strong>47,42 €</strong></td></tr>
+            </table>
+          </div>
+          <div class="card">
+            <h3>Maionese (SAUCE-MAYONNAISE)</h3>
+            <table>
+              <tr><td>Stock Inicial</td><td><strong>0,5 caixa</strong></td></tr>
+              <tr><td>Entradas</td><td><strong>+8,0 caixas</strong></td></tr>
+              <tr><td>Consumos</td><td><strong>-3,5 caixas</strong></td></tr>
+              <tr><td>Stock Final</td><td><strong>5,0 caixas</strong></td></tr>
+              <tr><td>CMP Inicial</td><td>17,80 €</td></tr>
+              <tr><td>CMP Final</td><td><strong>14,21 €</strong></td></tr>
+              <tr><td>Variação</td><td><span class="text-green"><strong>-20%</strong></span></td></tr>
+              <tr><td>Valor Final</td><td><strong>71,06 €</strong></td></tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="section" style="margin-top: 20px;">
+          <h3>Impacto Financeiro — Entrada de 30/06</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Artigo</th>
+                <th>Quantidade</th>
+                <th>Custo Unitário</th>
+                <th>Valor Total</th>
+                <th>Impacto CMP</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Ketchup</td>
+                <td>2 caixas</td>
+                <td>9,75 €</td>
+                <td>19,50 €</td>
+                <td><span class="text-green">-27% (economia 5,06€/cx)</span></td>
+              </tr>
+              <tr>
+                <td>Maionese</td>
+                <td>2 caixas</td>
+                <td>8,83 €</td>
+                <td>17,66 €</td>
+                <td><span class="text-green">-20% (economia 3,59€/cx)</span></td>
+              </tr>
+              <tr>
+                <td><strong>TOTAL</strong></td>
+                <td><strong>4 caixas</strong></td>
+                <td></td>
+                <td><strong>37,16 €</strong></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="grid grid-2" style="margin-top: 16px;">
+          <div class="card soft">
+            <div class="chip"><span class="dot-green"></span>Benefícios do Sistema CMP</div>
+            <ul style="margin-top: 10px;">
+              <li>Cálculo automático e em tempo real</li>
+              <li>Rastreabilidade completa de todas as transações</li>
+              <li>Identificação imediata de variações de preço >15%</li>
+              <li>Base sólida para negociação com fornecedores</li>
+              <li>Valorização precisa do inventário</li>
+            </ul>
+          </div>
+          <div class="card soft">
+            <div class="chip"><span class="dot-blue"></span>Economia Estimada Junho</div>
+            <ul style="margin-top: 10px;">
+              <li><strong>Ketchup:</strong> ~5,06€ economia por caixa comprada</li>
+              <li><strong>Maionese:</strong> ~3,59€ economia por caixa comprada</li>
+              <li><strong>Total estimado:</strong> ~8,65€/caixa em média</li>
+            </ul>
+            <p class="muted small" style="margin-top: 8px;">
+              Nota: economia calculada face ao CMP anterior, refletindo compra a preços mais favoráveis.
+            </p>
+          </div>
+        </div>
+
+        <div class="insight-box">
+          <h4>Executive Insight</h4>
+          <p>
+            O sistema CMP demonstrou valor real em junho, identificando automaticamente a redução de preços nos molhos 
+            (-20% a -27%). Esta visibilidade permite negociação informada com fornecedores e valorização precisa do 
+            inventário. A recomendação é expandir o sistema CMP para mais categorias de produtos.
+          </p>
+        </div>
+
+        <div class="callout callout-green" style="margin-top: 12px;">
+          <strong>Business Impact:</strong> A redução do CMP em molhos traduz-se em economia direta de ~8,65€ por caixa 
+          comprada. Com consumo médio de ~2 caixas/semana em molhos, o impacto anual estimado é de ~900€ apenas nesta categoria.
+        </div>
+      </section>
+
+      <!-- ==================== INCIDENTES ==================== -->
+      <section class="page">
+        <div class="section">
+          <h2>15. Incidentes</h2>
+          <p class="lead">
+            Registo e análise dos incidentes operacionais de junho, classificados por gravidade e impacto.
+          </p>
+        </div>
+
+        <div class="grid grid-3" style="margin-top: 16px;">
+          <div class="card kpi">
+            <span>Incidentes Críticos</span>
+            <strong>0</strong>
+            <p>Sem impacto no cliente</p>
+          </div>
+          <div class="card kpi">
+            <span>Incidentes Baixa Gravidade</span>
+            <strong>3</strong>
+            <p>Todos resolvidos</p>
+          </div>
+          <div class="card kpi">
+            <span>Impacto Financeiro Total</span>
+            <strong>~22€</strong>
+            <p>Discrepância de caixa (03/06)</p>
+          </div>
+        </div>
+
+        <div class="section" style="margin-top: 20px;">
+          <h3>Registo de Incidentes</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Data</th>
+                <th>Categoria</th>
+                <th>Descrição</th>
+                <th>Impacto</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>03/06</strong></td>
+                <td><span class="badge good">Comunicação</span></td>
+                <td>Falha de comunicação entre equipa sobre grupo distribuído por várias mesas. Duplicação de registo de Sangria RIBBAI.</td>
+                <td>22€ discrepância caixa</td>
+                <td><span class="badge excellent">Resolvido</span></td>
+              </tr>
+              <tr>
+                <td><strong>17/06</strong></td>
+                <td><span class="badge attention">RH</span></td>
+                <td>Dispensa de colaborador (Rodrigo) de outro departamento com efeito imediato.</td>
+                <td>Reorganização temporária</td>
+                <td><span class="badge excellent">Resolvido</span></td>
+              </tr>
+              <tr>
+                <td><strong>23/06</strong></td>
+                <td><span class="badge good">Operacional</span></td>
+                <td>Derrame de bebidas associado a bandejas empenadas/instáveis.</td>
+                <td>Nenhum (sem reclamação)</td>
+                <td><span class="badge excellent">Resolvido</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="grid grid-2" style="margin-top: 16px;">
+          <div class="card">
+            <div class="chip"><span class="dot-green"></span>Padrões Identificados</div>
+            <ul style="margin-top: 10px;">
+              <li>Incidentes de comunicação diminuíram após implementação do modelo de setores</li>
+              <li>Bandejas continuam a representar risco recorrente</li>
+              <li>Nenhum incidente resultou em reclamação formal de cliente</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="chip"><span class="dot-blue"></span>Ações Corretivas</div>
+            <ul style="margin-top: 10px;">
+              <li><strong>03/06:</strong> Reforço da responsabilidade por áreas no modelo de setores</li>
+              <li><strong>17/06:</strong> Apoio ao bar para compensar ausência</li>
+              <li><strong>23/06:</strong> Identificação urgente de substituição de bandejas</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="insight-box">
+          <h4>Executive Insight</h4>
+          <p>
+            O registo de incidentes de junho é positivo: zero incidentes críticos, todos resolvidos sem impacto 
+            no cliente. O incidente de comunicação (03/06) serviu como catalisador para reforçar o modelo de setores. 
+            O risco recorrente das bandejas requer ação corretiva estrutural.
+          </p>
+        </div>
+      </section>
+
+      <!-- ==================== PROBLEMAS RESOLVIDOS E PENDENTES ==================== -->
+      <section class="page">
+        <div class="section">
+          <h2>16. Problemas Resolvidos</h2>
+          <p class="lead">
+            Problemas identificados e resolvidos ao longo de junho.
+          </p>
+        </div>
+
+        <table style="margin-top: 16px;">
+          <thead>
+            <tr>
+              <th>Problema</th>
+              <th>Identificado</th>
+              <th>Resolvido</th>
+              <th>Solução</th>
+              <th>Impacto</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Rutura Rolos de Cozinha</td>
+              <td>16/06</td>
+              <td>18/06</td>
+              <td>Reposição + sensibilização equipa</td>
+              <td><span class="badge excellent">Stock normalizado</span></td>
+            </tr>
+            <tr>
+              <td>Rutura Álcool</td>
+              <td>16/06</td>
+              <td>20/06</td>
+              <td>Reposição via entrega programada</td>
+              <td><span class="badge excellent">Stock adequado</span></td>
+            </tr>
+            <tr>
+              <td>Comunicação de grupos em mesas</td>
+              <td>03/06</td>
+              <td>03/06</td>
+              <td>Modelo de setores com responsável definido</td>
+              <td><span class="badge excellent">Sem repetição</span></td>
+            </tr>
+            <tr>
+              <td>Lavagem de pufes atrasada</td>
+              <td>Semanas anteriores</td>
+              <td>23/06</td>
+              <td>Lavagem concluída</td>
+              <td><span class="badge excellent">Resolvido</span></td>
+            </tr>
+            <tr>
+              <td>Reorganização armazéns</td>
+              <td>Junho</td>
+              <td>30/06</td>
+              <td>Reorganização completa no fecho mensal</td>
+              <td><span class="badge excellent">Otimizado</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="section" style="margin-top: 24px;">
+          <h2>17. Problemas Pendentes</h2>
+          <p class="lead">
+            Problemas identificados que requerem ação em julho.
+          </p>
+        </div>
+
+        <table style="margin-top: 16px;">
+          <thead>
+            <tr>
+              <th>Problema</th>
+              <th>Identificado</th>
+              <th>Prioridade</th>
+              <th>Impacto</th>
+              <th>Ação Necessária</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Bandejas de serviço</strong></td>
+              <td>22/06</td>
+              <td><span class="level level-max">Crítica</span></td>
+              <td>Segurança / Acidentes</td>
+              <td>Substituição urgente</td>
+            </tr>
+            <tr>
+              <td><strong>Correções POS</strong></td>
+              <td>26/06</td>
+              <td><span class="level level-high">Alta</span></td>
+              <td>Qualidade / Eficiência</td>
+              <td>Intervenção técnica</td>
+            </tr>
+            <tr>
+              <td><strong>Impressões duplicadas</strong></td>
+              <td>27/06</td>
+              <td><span class="level level-high">Alta</span></td>
+              <td>Operacional</td>
+              <td>Configuração sistema</td>
+            </tr>
+            <tr>
+              <td><strong>Lixívia forte em stock crítico</strong></td>
+              <td>24/06</td>
+              <td><span class="level level-medium">Média</span></td>
+              <td>Operacional</td>
+              <td>Incluir próxima encomenda</td>
+            </tr>
+            <tr>
+              <td><strong>Consumo anormal rolos cozinha</strong></td>
+              <td>16/06</td>
+              <td><span class="level level-low">Baixa</span></td>
+              <td>Custos</td>
+              <td>Monitorização contínua</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="insight-box">
+          <h4>Executive Insight</h4>
+          <p>
+            Junho fechou com 5 problemas resolvidos e 5 pendentes. Os problemas resolvidos eram maioritariamente 
+            operacionais (ruturas, manutenção). Os pendentes incluem 2 de prioridade crítica/alta (bandejas e POS) 
+            que devem ser resolvidos no início de julho para evitar impacto no período de maior movimento.
+          </p>
+        </div>
+      </section>
+
+      <!-- ==================== MELHORIAS IMPLEMENTADAS ==================== -->
+      <section class="page">
+        <div class="section">
+          <h2>18. Melhorias Implementadas</h2>
+          <p class="lead">
+            Síntese das melhorias operacionais e tecnológicas introduzidas em junho, com avaliação de impacto.
+          </p>
+        </div>
+
+        <div class="timeline" style="margin-top: 16px;">
+          <div class="week-card">
+            <h4><span class="badge excellent">Processo</span> Modelo de Divisão por Áreas (03/06)</h4>
+            <div class="grid grid-2" style="margin-top: 8px;">
+              <div>
+                <strong style="font-size: 10px;">Descrição</strong>
+                <p>Divisão da equipa por setores específicos (50/60/70 + interior + runner + coordenação).</p>
+              </div>
+              <div>
+                <strong style="font-size: 10px;">Impacto</strong>
+                <p>Maior responsabilização, melhor comunicação, redução de sobreposição, serviço mais fluido.</p>
+              </div>
+            </div>
+            <p class="muted small" style="margin-top: 8px;"><strong>Estado:</strong> Consolidado (9,5/10 no final do mês)</p>
+          </div>
+
+          <div class="week-card">
+            <h4><span class="badge good">Tecnologia</span> Melhorias Sistema de Pedidos (17/06)</h4>
+            <div class="grid grid-2" style="margin-top: 8px;">
+              <div>
+                <strong style="font-size: 10px;">Descrição</strong>
+                <p>Visita técnica com otimização de processos, ecrã adicional e impressora na esplanada.</p>
+              </div>
+              <div>
+                <strong style="font-size: 10px;">Impacto</strong>
+                <p>Operação mais eficiente, melhor fluidez no serviço, redução de deslocações.</p>
+              </div>
+            </div>
+            <p class="muted small" style="margin-top: 8px;"><strong>Estado:</strong> Implementado e funcional</p>
+          </div>
+
+          <div class="week-card">
+            <h4><span class="badge excellent">Inventário</span> Sistema CMP Automatizado</h4>
+            <div class="grid grid-2" style="margin-top: 8px;">
+              <div>
+                <strong style="font-size: 10px;">Descrição</strong>
+                <p>Cálculo automático do Custo Médio Ponderado em todas as entradas de stock.</p>
+              </div>
+              <div>
+                <strong style="font-size: 10px;">Impacto</strong>
+                <p>Valorização precisa, identificação de variações >15%, economia de ~20-27% em molhos.</p>
+              </div>
+            </div>
+            <p class="muted small" style="margin-top: 8px;"><strong>Estado:</strong> Operacional e validado</p>
+          </div>
+
+          <div class="week-card">
+            <h4><span class="badge good">Logística</span> Reorganização de Armazéns (30/06)</h4>
+            <div class="grid grid-2" style="margin-top: 8px;">
+              <div>
+                <strong style="font-size: 10px;">Descrição</strong>
+                <p>Reorganização completa de armazéns, zonas de armazenamento e walk-ins.</p>
+              </div>
+              <div>
+                <strong style="font-size: 10px;">Impacto</strong>
+                <p>Uniformização, facilidade de contagens, otimização de receção de mercadorias.</p>
+              </div>
+            </div>
+            <p class="muted small" style="margin-top: 8px;"><strong>Estado:</strong> Concluído no fecho mensal</p>
+          </div>
+
+          <div class="week-card">
+            <h4><span class="badge excellent">Reporting</span> Relatórios Automatizados</h4>
+            <div class="grid grid-2" style="margin-top: 8px;">
+              <div>
+                <strong style="font-size: 10px;">Descrição</strong>
+                <p>Geração automática de relatórios diários CMP, alertas de stock e métricas de dashboard.</p>
+              </div>
+              <div>
+                <strong style="font-size: 10px;">Impacto</strong>
+                <p>Visibilidade em tempo real, detecção proativa de problemas, base para decisão informada.</p>
+              </div>
+            </div>
+            <p class="muted small" style="margin-top: 8px;"><strong>Estado:</strong> Operacional</p>
+          </div>
+        </div>
+
+        <div class="insight-box">
+          <h4>Executive Insight</h4>
+          <p>
+            Junho foi um mês de investimento em processos e sistemas. As melhorias implementadas (modelo de setores, 
+            sistema CMP, reporting automatizado) representam fundações sólidas para escalar a operação. O retorno 
+            já é visível: economia em compras, melhor organização da equipa, visibilidade de dados em tempo real.
+          </p>
+        </div>
+      </section>
+
+      <!-- ==================== TENDÊNCIAS IDENTIFICADAS ==================== -->
+      <section class="page">
+        <div class="section">
+          <h2>19. Tendências Identificadas</h2>
+          <p class="lead">
+            Padrões e tendências observados ao longo de junho, com classificação por impacto.
+          </p>
+        </div>
+
+        <div class="grid grid-3" style="margin-top: 16px;">
+          <div class="card soft">
+            <div class="chip"><span class="dot-green"></span>Tendências Positivas</div>
+            <ul style="margin-top: 10px;">
+              <li><strong>Modelo de setores:</strong> Consolidação progressiva (7→9,5/10)</li>
+              <li><strong>Stock health:</strong> Melhoria sustentada (62%→98%)</li>
+              <li><strong>Capacidade de adaptação:</strong> Consistentemente elevada (9,5/10)</li>
+              <li><strong>Integração de novos elementos:</strong> Evolução positiva de Diogo e Sofia</li>
+              <li><strong>CMP de molhos:</strong> Redução sustentada (-20% a -27%)</li>
+              <li><strong>Reporting automatizado:</strong> Visibilidade crescente</li>
+            </ul>
+          </div>
+
+          <div class="card soft">
+            <div class="chip"><span class="dot-orange"></span>Tendências Neutras</div>
+            <ul style="margin-top: 10px;">
+              <li><strong>Overtime:</strong> Concentração em eventos (padrão esperado)</li>
+              <li><strong>Pressão sazonal:</strong> Aumento progressivo (normal para junho)</li>
+              <li><strong>Ausências:</strong> Impacto gerido mas recorrente</li>
+              <li><strong>Polivalência cafetaria:</strong> Necessidade frequente de apoio sala→bar</li>
+            </ul>
+          </div>
+
+          <div class="card soft">
+            <div class="chip"><span class="dot-red"></span>Tendências Negativas</div>
+            <ul style="margin-top: 10px;">
+              <li><strong>Consumo rolos cozinha:</strong> 3x média histórica</li>
+              <li><strong>Bandejas:</strong> Risco recorrente (4+ menções)</li>
+              <li><strong>POS issues:</strong> Persistência de problemas técnicos</li>
+              <li><strong>Dependência de elementos-chave:</strong> Risco em dias críticos</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="insight-box">
+          <h4>Executive Insight</h4>
+          <p>
+            O balanço de tendências de junho é claramente positivo (6 positivas vs 4 negativas). As tendências 
+            negativas são maioritariamente evitáveis (equipamento, sistemas) ou geríveis (consumos). As tendências 
+            positivas são estruturais (modelo operacional, sistemas) e sustentam crescimento futuro.
+          </p>
+        </div>
+      </section>
+
+      <!-- ==================== BUSINESS INTELLIGENCE ==================== -->
+      <section class="page">
+        <div class="section">
+          <h2>20. Business Intelligence</h2>
+          <p class="lead">
+            Visão integrada dos sistemas de BI implementados e insights gerados durante junho.
+          </p>
+        </div>
+
+        <div class="grid grid-2" style="margin-top: 16px;">
+          <div class="card">
+            <h3>Sistemas Operacionais</h3>
+            <table>
+              <tr>
+                <td>Motor CMP</td>
+                <td><span class="badge excellent">Operacional</span></td>
+                <td>Cálculo automático em tempo real</td>
+              </tr>
+              <tr>
+                <td>Alertas de Stock</td>
+                <td><span class="badge excellent">Operacional</span></td>
+                <td>Deteção proativa de críticos/ruturas</td>
+              </tr>
+              <tr>
+                <td>Relatórios Diários</td>
+                <td><span class="badge excellent">Operacional</span></td>
+                <td>28 registos em junho</td>
+              </tr>
+              <tr>
+                <td>Contagens Semanais</td>
+                <td><span class="badge excellent">Operacional</span></td>
+                <td>4 contagens realizadas</td>
+              </tr>
+              <tr>
+                <td>Dashboard Metrics</td>
+                <td><span class="badge good">Em expansão</span></td>
+                <td>Refresh automático configurado</td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="card">
+            <h3>Insights Gerados</h3>
+            <ul>
+              <li><strong>CMP:</strong> Identificação de economia de 20-27% em molhos</li>
+              <li><strong>Alertas:</strong> Deteção de 2 ruturas antes de impacto operacional</li>
+              <li><strong>Consumos:</strong> Identificação de consumo anormal de rolos (3x)</li>
+              <li><strong>Tendências:</strong> Stock health melhorou 36 pontos percentuais</li>
+              <li><strong>Overtime:</strong> Concentração identificada em eventos/fechos</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section" style="margin-top: 20px;">
+          <h3>Valor Gerado pelo Sistema BI</h3>
+          <div class="grid grid-3">
+            <div class="card kpi" style="text-align: center;">
+              <span>Economia CMP</span>
+              <strong class="text-green">~8,65€/cx</strong>
+              <p>Molhos</p>
+            </div>
+            <div class="card kpi" style="text-align: center;">
+              <span>Ruturas Evitadas</span>
+              <strong class="text-green">2</strong>
+              <p>Deteção proativa</p>
+            </div>
+            <div class="card kpi" style="text-align: center;">
+              <span>Visibilidade</span>
+              <strong class="text-green">100%</strong>
+              <p>Dias com registo</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout callout-green" style="margin-top: 16px;">
+          <strong>Business Impact:</strong> O sistema BI do RIBBAI demonstrou valor real em junho: economia direta 
+          em compras, prevenção de ruturas, visibilidade completa da operação. A recomendação é expandir o CMP 
+          para mais categorias e desenvolver dashboards visuais para consumo em tempo real.
+        </div>
+
+        <div class="insight-box">
+          <h4>Executive Insight</h4>
+          <p>
+            O investimento em Business Intelligence começa a produzir resultados tangíveis. Os sistemas de alertas 
+            e CMP preveniram problemas e geraram economia. O próximo passo é materializar estes dados em dashboards 
+            visuais (Fase 2 do roadmap) para democratizar o acesso à informação para toda a equipa de gestão.
+          </p>
+        </div>
+      </section>
+
+      <!-- ==================== OPORTUNIDADES ==================== -->
+      <section class="page">
+        <div class="section">
+          <h2>21. Oportunidades</h2>
+          <p class="lead">
+            Oportunidades identificadas em junho para melhoria contínua e crescimento.
+          </p>
+        </div>
+
+        <div class="timeline" style="margin-top: 16px;">
+          <div class="week-card" style="border-left: 4px solid var(--green);">
+            <h4><span class="badge excellent">Financeira</span> Expansão do Sistema CMP</h4>
+            <p class="muted" style="margin-top: 8px;">
+              O CMP de molhos demonstrou economia de 20-27%. Expandir para mais categorias (bebidas, proteínas, 
+              vegetais) pode multiplicar este impacto.
+            </p>
+            <p style="margin-top: 8px;"><strong>Impacto estimado:</strong> 10-20% de economia em compras monitorizadas</p>
+          </div>
+
+          <div class="week-card" style="border-left: 4px solid var(--green);">
+            <h4><span class="badge excellent">Operacional</span> Dashboards em Tempo Real</h4>
+            <p class="muted" style="margin-top: 8px;">
+              Os dados existem nos sistemas; falta a visualização. Dashboards web permitiriam decisão informada 
+              em tempo real para gestão e equipa operacional.
+            </p>
+            <p style="margin-top: 8px;"><strong>Impacto estimado:</strong> Redução de tempo de análise em 80%</p>
+          </div>
+
+          <div class="week-card" style="border-left: 4px solid var(--blue);">
+            <h4><span class="badge good">Processo</span> Checklist de Eventos</h4>
+            <p class="muted" style="margin-top: 8px;">
+              O overtime em eventos concentra-se no fecho. Uma checklist estruturada pode distribuir tarefas 
+              e reduzir horas extra evitáveis.
+            </p>
+            <p style="margin-top: 8px;"><strong>Impacto estimado:</strong> 20-30% redução overtime em eventos</p>
+          </div>
+
+          <div class="week-card" style="border-left: 4px solid var(--blue);">
+            <h4><span class="badge good">RH</span> Formalização de Responsabilidades</h4>
+            <p class="muted" style="margin-top: 8px;">
+              Matilde demonstrou excelência na sala interior; Lee consolidou-se como runner. Formalizar estas 
+              responsabilidades aumenta clareza e accountability.
+            </p>
+            <p style="margin-top: 8px;"><strong>Impacto estimado:</strong> Maior estabilidade e previsibilidade</p>
+          </div>
+
+          <div class="week-card" style="border-left: 4px solid var(--yellow);">
+            <h4><span class="badge attention">Comercial</span> Negociação com Fornecedores</h4>
+            <p class="muted" style="margin-top: 8px;">
+              Os dados de CMP fornecem base objetiva para negociação. O fornecedor de molhos praticou preços 
+              50% mais baixos — existe margem para negociar contratos mais favoráveis.
+            </p>
+            <p style="margin-top: 8px;"><strong>Impacto estimado:</strong> 5-15% economia em contratos anuais</p>
+          </div>
+        </div>
+
+        <div class="insight-box">
+          <h4>Executive Insight</h4>
+          <p>
+            As oportunidades identificadas em junho são todas de implementação acessível e impacto mensurável. 
+            A prioridade deve ser a expansão do CMP (retorno financeiro direto) e os dashboards (suporte à decisão). 
+            As melhorias de processo (checklists, formalização) têm baixo custo e alto impacto operacional.
+          </p>
+        </div>
+      </section>
+
+      <!-- ==================== RISCOS OPERACIONAIS ==================== -->
+      <section class="page">
+        <div class="section">
+          <h2>22. Riscos Operacionais</h2>
+          <p class="lead">
+            Matriz de riscos identificados ao longo de junho, com avaliação de probabilidade, impacto e mitigação.
+          </p>
+        </div>
+
+        <table style="margin-top: 16px;">
+          <thead>
+            <tr>
+              <th>Risco</th>
+              <th>Probabilidade</th>
+              <th>Impacto</th>
+              <th>Nível</th>
+              <th>Mitigação</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Bandejas de serviço</strong><br><span class="muted small">Empenadas, instáveis, risco de acidentes</span></td>
+              <td><span class="badge attention">Alta</span></td>
+              <td><span class="badge risk">Alto</span></td>
+              <td><span class="level level-max">Crítico</span></td>
+              <td>Substituição urgente das bandejas danificadas</td>
+            </tr>
+            <tr>
+              <td><strong>POS / Impressões</strong><br><span class="muted small">Duplicações, tickets pouco legíveis</span></td>
+              <td><span class="badge good">Média</span></td>
+              <td><span class="badge attention">Médio</span></td>
+              <td><span class="level level-high">Alto</span></td>
+              <td>Correções técnicas pendentes; escalar com fornecedor</td>
+            </tr>
+            <tr>
+              <td><strong>Dependência de elementos-chave</strong><br><span class="muted small">Ausência inesperada em dias críticos</span></td>
+              <td><span class="badge good">Média</span></td>
+              <td><span class="badge attention">Médio</span></td>
+              <td><span class="level level-high">Alto</span></td>
+              <td>Plano de contingência; redundância operacional</td>
+            </tr>
+            <tr>
+              <td><strong>Overtime em eventos</strong><br><span class="muted small">Concentração de horas extra em fechos</span></td>
+              <td><span class="badge excellent">Baixa</span></td>
+              <td><span class="badge good">Baixo</span></td>
+              <td><span class="level level-medium">Médio</span></td>
+              <td>Planeamento antecipado; checklist de fecho</td>
+            </tr>
+            <tr>
+              <td><strong>Consumo anormal de consumíveis</strong><br><span class="muted small">Rolos de cozinha 3x média</span></td>
+              <td><span class="badge good">Média</span></td>
+              <td><span class="badge excellent">Baixo</span></td>
+              <td><span class="level level-low">Baixo</span></td>
+              <td>Sensibilização; monitorização semanal</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="grid grid-2" style="margin-top: 20px;">
+          <div class="callout callout-red">
+            <strong>Risco Crítico — Ação Imediata:</strong> As bandejas de serviço representam um risco de segurança 
+            recorrente, identificado em múltiplos dias (22, 23, 26, 27, 28/06). A substituição deve ser prioritária.
+          </div>
+          <div class="callout callout-orange">
+            <strong>Risco Alto — Ação a 30 dias:</strong> As correções de POS (impressões duplicadas, tickets) 
+            devem ser resolvidas antes do pico de movimento de verão esperado em julho.
+          </div>
+        </div>
+
+        <div class="insight-box">
+          <h4>Executive Insight</h4>
+          <p>
+            Os riscos identificados em junho são maioritariamente evitáveis através de investimento em equipamento 
+            (bandejas) e correções técnicas (POS). O risco de dependência de elementos-chave requer planeamento 
+            organizacional (contingências, redundância). Nenhum risco é estrutural ou compromete a viabilidade da operação.
+          </p>
+        </div>
+      </section>
+
+      <!-- ==================== RECOMENDAÇÕES ESTRATÉGICAS ==================== -->
+      <section class="page">
+        <div class="section">
+          <h2>24. Recomendações Estratégicas</h2>
+          <p class="lead">
+            Ações prioritárias para julho, derivadas da análise de junho e alinhadas com os objetivos operacionais.
+          </p>
+        </div>
+
+        <div class="timeline" style="margin-top: 16px;">
+          <div class="week-card" style="border-left: 4px solid var(--red);">
+            <h4><span class="level level-max">Crítica</span> Substituição de Bandejas</h4>
+            <div class="grid grid-2" style="margin-top: 8px;">
+              <div>
+                <p><strong>Impacto:</strong> Segurança e eficiência<br>
+                <strong>Urgência:</strong> Imediata<br>
+                <strong>Dificuldade:</strong> Baixa (compra)</p>
+              </div>
+              <div>
+                <p><strong>Benefício Operacional:</strong> Eliminação de risco de acidentes, maior confiança da equipa, 
+                serviço mais fluido em períodos de pressão.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="week-card" style="border-left: 4px solid var(--orange);">
+            <h4><span class="level level-high">Alta</span> Correções POS e Impressões</h4>
+            <div class="grid grid-2" style="margin-top: 8px;">
+              <div>
+                <p><strong>Impacto:</strong> Qualidade e velocidade<br>
+                <strong>Urgência:</strong> 15 dias<br>
+                <strong>Dificuldade:</strong> Média (técnico)</p>
+              </div>
+              <div>
+                <p><strong>Benefício Operacional:</strong> Menos erros, melhor execução de cafetaria, redução de 
+                confusão em pedidos.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="week-card" style="border-left: 4px solid var(--orange);">
+            <h4><span class="level level-high">Alta</span> Plano de Contingência para Ausências</h4>
+            <div class="grid grid-2" style="margin-top: 8px;">
+              <div>
+                <p><strong>Impacto:</strong> Resiliência<br>
+                <strong>Urgência:</strong> 30 dias<br>
+                <strong>Dificuldade:</strong> Média (processo)</p>
+              </div>
+              <div>
+                <p><strong>Benefício Operacional:</strong> Estabilidade garantida em dias de alta pressão, mesmo 
+                com ausências inesperadas.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="week-card" style="border-left: 4px solid var(--yellow);">
+            <h4><span class="level level-medium">Média</span> Expandir Sistema CMP</h4>
+            <div class="grid grid-2" style="margin-top: 8px;">
+              <div>
+                <p><strong>Impacto:</strong> Financeiro<br>
+                <strong>Urgência:</strong> Q3 2026<br>
+                <strong>Dificuldade:</strong> Baixa (configuração)</p>
+              </div>
+              <div>
+                <p><strong>Benefício Operacional:</strong> Visibilidade de custos em mais categorias, negociação 
+                informada com fornecedores, economia estimada de 10-20%.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="week-card" style="border-left: 4px solid var(--blue);">
+            <h4><span class="level level-low">Baixa</span> Checklist de Manutenção Preventiva</h4>
+            <div class="grid grid-2" style="margin-top: 8px;">
+              <div>
+                <p><strong>Impacto:</strong> Consistência<br>
+                <strong>Urgência:</strong> Q3 2026<br>
+                <strong>Dificuldade:</strong> Baixa (processo)</p>
+              </div>
+              <div>
+                <p><strong>Benefício Operacional:</strong> Aproveitamento sistemático de dias calmos, espaço 
+                sempre preparado para picos.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="decision-box" style="margin-top: 16px;">
+          <h4>Decisions Required</h4>
+          <ul style="margin: 8px 0 0; padding-left: 17px;">
+            <li>Aprovar orçamento para substituição de bandejas (estimativa: 100-200€)</li>
+            <li>Agendar intervenção técnica para correções POS</li>
+            <li>Validar modelo de contingência para fins de semana de julho</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ==================== ROADMAP JULHO ==================== -->
+      <section class="page">
+        <div class="section">
+          <h2>25. Roadmap Julho 2026</h2>
+          <p class="lead">
+            Plano tático para o próximo mês, dividido por área de foco e alinhado com as recomendações estratégicas.
+          </p>
+        </div>
+
+        <div class="grid grid-3" style="margin-top: 16px;">
+          <div class="card">
+            <div class="chip"><span class="dot-green"></span>Operação</div>
+            <ul style="margin-top: 10px;">
+              <li>Manter modelo de setores consolidado</li>
+              <li>Reforçar contingências para picos de verão</li>
+              <li>Monitorizar overtime e ajustar planeamento</li>
+              <li>Continuar integração Diogo e Sofia</li>
+              <li>Formalizar responsável sala interior (Matilde)</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="chip"><span class="dot-blue"></span>Processos & Pessoas</div>
+            <ul style="margin-top: 10px;">
+              <li>Implementar plano de contingência ausências</li>
+              <li>Criar checklist de fecho para dias de eventos</li>
+              <li>Documentar rotinas de briefing pós-evento</li>
+              <li>Treino progressivo de novos elementos</li>
+              <li>Reforçar comunicação inter-setores</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="chip"><span class="dot-orange"></span>Infraestrutura</div>
+            <ul style="margin-top: 10px;">
+              <li>Substituir bandejas danificadas</li>
+              <li>Corrigir issues POS/impressões</li>
+              <li>Manter reorganização logística</li>
+              <li>Expandir CMP a novas categorias</li>
+              <li>Preparar sistema para aumento movimento</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section" style="margin-top: 20px;">
+          <h3>Timeline de Implementação</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Semana</th>
+                <th>Prioridade</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Sem 1 (1-5 Jul)</strong></td>
+                <td><span class="level level-max">Crítica</span></td>
+                <td>Substituição bandejas; Escalar correções POS; Validar contingências</td>
+              </tr>
+              <tr>
+                <td><strong>Sem 2 (6-12 Jul)</strong></td>
+                <td><span class="level level-high">Alta</span></td>
+                <td>Implementar checklist eventos; Treino Diogo/Sofia; Monitorizar consumos</td>
+              </tr>
+              <tr>
+                <td><strong>Sem 3 (13-19 Jul)</strong></td>
+                <td><span class="level level-medium">Média</span></td>
+                <td>Revisão mid-month; Ajustar planeamento; Expandir CMP</td>
+              </tr>
+              <tr>
+                <td><strong>Sem 4-5 (20-31 Jul)</strong></td>
+                <td><span class="level level-medium">Média</span></td>
+                <td>Consolidar melhorias; Preparar fecho mensal; Documentar aprendizagens</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout" style="margin-top: 16px;">
+          <strong>Nota:</strong> O roadmap de julho está alinhado com a Fase 2 do roadmap executivo do RIBBAI 2.0 
+          (desenvolvimento de dashboards e interfaces). As prioridades operacionais devem coexistir com o 
+          desenvolvimento tecnológico planeado.
+        </div>
+      </section>
+
+      <!-- ==================== CONCLUSÃO EXECUTIVA ==================== -->
+      <section class="page">
+        <div class="section">
+          <h2>26. Conclusão Executiva</h2>
+          <p class="lead">
+            Síntese final do mês de junho de 2026 e mensagem para a Administração.
+          </p>
+        </div>
+
+        <div class="card soft" style="margin-top: 16px; padding: 20px;">
+          <h3 style="margin-bottom: 12px;">Como correu junho de 2026?</h3>
+          <p style="font-size: 12px; line-height: 1.6;">
+            Junho foi um mês de <strong>consolidação e evolução significativa</strong> para o RIBBAI. A operação demonstrou 
+            maturidade crescente, com a implementação bem-sucedida do modelo de setores, integração positiva de novos 
+            colaboradores, e consolidação do sistema de gestão de inventário com CMP automatizado.
+          </p>
+          <p style="font-size: 12px; line-height: 1.6; margin-top: 10px;">
+            A equipa respondeu com profissionalismo a todos os desafios: feriado nacional, eventos (Jam Session, Festa Aperol), 
+            ausências inesperadas, e picos de pressão prolongada. O fecho mensal foi estruturado e completo, com 
+            reorganização logística e inventário integral.
+          </p>
+        </div>
+
+        <div class="grid grid-2" style="margin-top: 16px;">
+          <div class="card">
+            <h3>Principais Conquistas</h3>
+            <ul>
+              <li>Modelo de setores consolidado (7/10 → 9,5/10)</li>
+              <li>Stock health melhorado (62% → 98%)</li>
+              <li>Zero incidentes críticos com impacto no cliente</li>
+              <li>Economia em CMP de ~20-27% em molhos</li>
+              <li>Integração positiva de 2 novos colaboradores</li>
+              <li>Sistema de reporting automatizado operacional</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Prioridades Imediatas</h3>
+            <ul>
+              <li><span class="badge risk">Crítica</span> Substituir bandejas de serviço</li>
+              <li><span class="badge attention">Alta</span> Corrigir issues POS/impressões</li>
+              <li><span class="badge attention">Alta</span> Implementar contingências para ausências</li>
+              <li><span class="badge good">Média</span> Expandir sistema CMP</li>
+              <li><span class="badge excellent">Baixa</span> Checklist manutenção preventiva</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="callout" style="margin-top: 20px;">
+          <strong>Mensagem à Administração:</strong><br><br>
+          A operação de junho demonstra que o RIBBAI está pronto para o próximo nível. O modelo de setores está 
+          consolidado, a equipa é resiliente, e os sistemas de gestão (CMP, alertas, reporting) estão operacionais.
+          <br><br>
+          As prioridades para julho são claras: (1) remover riscos evitáveis (bandejas, POS), (2) preparar 
+          contingências para o aumento de movimento de verão, e (3) continuar a expansão dos sistemas de BI.
+          <br><br>
+          O investimento em processos e tecnologia começa a produzir resultados mensuráveis. O RIBBAI está bem 
+          posicionado para enfrentar os meses de maior movimento com qualidade consistente e eficiência operacional.
+        </div>
+
+        <div class="grid grid-4" style="margin-top: 20px;">
+          <div class="card kpi" style="text-align: center;">
+            <span>Avaliação Global</span>
+            <strong style="font-size: 28px;">9/10</strong>
+            <p>Junho 2026</p>
+          </div>
+          <div class="card kpi" style="text-align: center;">
+            <span>Evolução</span>
+            <strong style="font-size: 28px; color: var(--green);">↑</strong>
+            <p>Positiva</p>
+          </div>
+          <div class="card kpi" style="text-align: center;">
+            <span>Riscos</span>
+            <strong style="font-size: 28px;">2</strong>
+            <p>Críticos (evitáveis)</p>
+          </div>
+          <div class="card kpi" style="text-align: center;">
+            <span>Outlook Julho</span>
+            <strong style="font-size: 28px; color: var(--green);">Positivo</strong>
+            <p>Preparado</p>
+          </div>
+        </div>
+
+        <p class="muted small" style="margin-top: 24px; text-align: center;">
+          Relatório preparado para Administração e Gestão | Período: Junho 2026 | RIBBAI OPS v2.0<br>
+          Fontes: 28 relatórios diários, inventory updates, CMP daily, weekly summaries, monthly overtime report<br>
+          Gerado em: 01 de Julho de 2026
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+node_modules
+.next
+out
+build
+dist
+coverage
+.turbo
+.vercel
+.env*
+*.log
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+*.tsbuildinfo
+prisma/migrations

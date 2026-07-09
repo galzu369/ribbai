@@ -1,0 +1,119 @@
+{
+  "id": "opening-checklist-ribbai",
+  "title": "Checklist de Abertura",
+  "brand": "RIBBAI OPS",
+  "restaurant": "RIBBAI",
+  "subtitle": "Abertura diaria de sala, esplanada, caixa e preparacao de servico",
+  "category": "OPENING",
+  "frequency": "DAILY",
+  "language": "pt-PT",
+  "sections": [
+    {
+      "id": "caixa",
+      "title": "Caixa",
+      "icon": "cash",
+      "tasks": [
+        {
+          "id": "caixa-fundo",
+          "label": "Contar fundo de caixa."
+        }
+      ]
+    },
+    {
+      "id": "sala-esplanada",
+      "title": "Sala e esplanada",
+      "icon": "terrace",
+      "tasks": [
+        {
+          "id": "esplanada-montar",
+          "label": "Montar a esplanada."
+        },
+        {
+          "id": "estores-abrir",
+          "label": "Abrir os estores."
+        },
+        {
+          "id": "luzes-tv",
+          "label": "Ligar as luzes da mesa debaixo da TV."
+        }
+      ]
+    },
+    {
+      "id": "wc",
+      "title": "Casas de banho",
+      "icon": "cleaning",
+      "tasks": [
+        {
+          "id": "wc-limpos",
+          "label": "Verificar se os WC estao limpos."
+        }
+      ]
+    },
+    {
+      "id": "consumiveis",
+      "title": "Consumiveis de servico",
+      "icon": "stock",
+      "tasks": [
+        {
+          "id": "molhos-verificar",
+          "label": "Verificar ketchup, maionese e mostarda."
+        },
+        {
+          "id": "guardanapos-suficientes",
+          "label": "Garantir que ha guardanapos suficientes para o dia todo."
+        }
+      ]
+    },
+    {
+      "id": "mise-en-place",
+      "title": "Mise en place",
+      "icon": "cutlery",
+      "tasks": [
+        {
+          "id": "baldes-talheres",
+          "label": "Verificar baldes de talheres."
+        }
+      ]
+    },
+    {
+      "id": "staff",
+      "title": "Staff lounge",
+      "icon": "staff",
+      "tasks": [
+        {
+          "id": "staff-lounge-porta",
+          "label": "Abrir a porta do staff lounge."
+        }
+      ]
+    }
+  ],
+  "accountability": {
+    "timeFields": [
+      {
+        "id": "opening-start-time",
+        "label": "Inicio da abertura"
+      },
+      {
+        "id": "opening-end-time",
+        "label": "Fim da abertura"
+      }
+    ],
+    "responsibleStaffLimit": 3,
+    "responsibleStaffLabel": "Responsaveis pela abertura",
+    "observationsLabel": "Observacoes",
+    "finalConfirmations": [
+      {
+        "id": "final-tasks-complete",
+        "label": "Todas as tarefas obrigatorias foram verificadas."
+      },
+      {
+        "id": "final-service-ready",
+        "label": "Sala, esplanada, WC e caixa ficam prontos para abrir servico."
+      },
+      {
+        "id": "final-stock-ready",
+        "label": "Consumiveis, guardanapos e talheres ficam prontos para o dia."
+      }
+    ]
+  }
+}

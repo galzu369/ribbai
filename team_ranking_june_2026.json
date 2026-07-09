@@ -1,0 +1,739 @@
+{
+  "report_date": "2026-07-03",
+  "period": "Junho 2026",
+  "rankings": {
+    "overtime": [
+      [
+        "Bruno",
+        105
+      ]
+    ],
+    "mentions": [
+      [
+        "Lee",
+        8
+      ],
+      [
+        "Lil",
+        6
+      ],
+      [
+        "Diogo",
+        5
+      ],
+      [
+        "Pablo",
+        5
+      ],
+      [
+        "Matilde",
+        4
+      ],
+      [
+        "Filipe Catalão",
+        4
+      ],
+      [
+        "Carolina e Matilde",
+        4
+      ],
+      [
+        "Carolina",
+        3
+      ],
+      [
+        "Bruno",
+        3
+      ],
+      [
+        "Sofia",
+        3
+      ],
+      [
+        "Bruno e Lil",
+        2
+      ],
+      [
+        "Lil, Carolina e Bruno",
+        1
+      ],
+      [
+        "Filipe",
+        1
+      ],
+      [
+        "Carolina, Pablo e Bruno",
+        1
+      ],
+      [
+        "Equipa",
+        1
+      ],
+      [
+        "Lil e Bruno",
+        1
+      ],
+      [
+        "Bruno e Filipe Catalão",
+        1
+      ],
+      [
+        "Equipa manteve operação diária com autonomia enquanto decorriam trabalhos de logística/inventário.\n- Filipe Catalão",
+        1
+      ],
+      [
+        "Pablo e Matilde",
+        1
+      ]
+    ],
+    "days_worked": [
+      [
+        "Lee",
+        8
+      ],
+      [
+        "Lil",
+        6
+      ],
+      [
+        "Diogo",
+        5
+      ],
+      [
+        "Pablo",
+        5
+      ],
+      [
+        "Matilde",
+        4
+      ],
+      [
+        "Filipe Catalão",
+        4
+      ],
+      [
+        "Bruno",
+        4
+      ],
+      [
+        "Carolina e Matilde",
+        4
+      ],
+      [
+        "Carolina",
+        3
+      ],
+      [
+        "Sofia",
+        3
+      ],
+      [
+        "Bruno e Lil",
+        2
+      ],
+      [
+        "Lil, Carolina e Bruno",
+        1
+      ],
+      [
+        "Filipe",
+        1
+      ],
+      [
+        "Carolina, Pablo e Bruno",
+        1
+      ],
+      [
+        "Equipa",
+        1
+      ],
+      [
+        "Lil e Bruno",
+        1
+      ],
+      [
+        "Bruno e Filipe Catalão",
+        1
+      ],
+      [
+        "Equipa manteve operação diária com autonomia enquanto decorriam trabalhos de logística/inventário.\n- Filipe Catalão",
+        1
+      ],
+      [
+        "Pablo e Matilde",
+        1
+      ]
+    ],
+    "composite": [
+      [
+        "Lee",
+        18.0
+      ],
+      [
+        "Lil",
+        13.5
+      ],
+      [
+        "Bruno",
+        12.75
+      ],
+      [
+        "Diogo",
+        11.25
+      ],
+      [
+        "Pablo",
+        11.25
+      ],
+      [
+        "Matilde",
+        9.0
+      ],
+      [
+        "Filipe Catalão",
+        9.0
+      ],
+      [
+        "Carolina e Matilde",
+        9.0
+      ],
+      [
+        "Carolina",
+        6.75
+      ],
+      [
+        "Sofia",
+        6.75
+      ],
+      [
+        "Bruno e Lil",
+        4.5
+      ],
+      [
+        "Lil, Carolina e Bruno",
+        2.25
+      ],
+      [
+        "Filipe",
+        2.25
+      ],
+      [
+        "Carolina, Pablo e Bruno",
+        2.25
+      ],
+      [
+        "Equipa",
+        2.25
+      ],
+      [
+        "Lil e Bruno",
+        2.25
+      ],
+      [
+        "Bruno e Filipe Catalão",
+        2.25
+      ],
+      [
+        "Equipa manteve operação diária com autonomia enquanto decorriam trabalhos de logística/inventário.\n- Filipe Catalão",
+        2.25
+      ],
+      [
+        "Pablo e Matilde",
+        2.25
+      ]
+    ]
+  },
+  "detailed_data": {
+    "Lee": {
+      "total_overtime_hours": 0,
+      "positive_mentions": 8,
+      "days_worked": 8,
+      "opening_shifts": 0,
+      "closing_shifts": 0,
+      "responsibilities": [],
+      "feedback_notes": [
+        {
+          "date": "2026-06-19",
+          "feedback": "primeiro dia positivo com boa adaptação técnica; timidez e comunicação limitada com colegas — acompanhar integração no espírito de equipa."
+        },
+        {
+          "date": "2026-06-20",
+          "feedback": "erro relevante ao almoço; postura positiva após orientação."
+        },
+        {
+          "date": "2026-06-21",
+          "feedback": "evolução positiva em funções de apoio operacional sem registo de pedidos."
+        },
+        {
+          "date": "2026-06-22",
+          "feedback": "disponibilidade para apoiar, com necessidade de consolidar ainda o processo de registo de pedidos."
+        },
+        {
+          "date": "2026-06-26",
+          "feedback": "excelente trabalho como runner, boa leitura de serviço."
+        },
+        {
+          "date": "2026-06-27",
+          "feedback": "excelente desempenho como runner, com boa leitura do serviço e ritmo elevado."
+        },
+        {
+          "date": "2026-06-28",
+          "feedback": "evolução muito positiva como runner e cobertura de pausas."
+        },
+        {
+          "date": "2026-06-29",
+          "feedback": "runner consistente, cobertura de pausas e apoio transversal decisivo."
+        }
+      ],
+      "overtime_details": [],
+      "special_achievements": [],
+      "improvement_areas": [],
+      "total_overtime_hours_formatted": "0h00min"
+    },
+    "Matilde": {
+      "total_overtime_hours": 0,
+      "positive_mentions": 4,
+      "days_worked": 4,
+      "opening_shifts": 0,
+      "closing_shifts": 0,
+      "responsibilities": [],
+      "feedback_notes": [
+        {
+          "date": "2026-06-19",
+          "feedback": "versatilidade entre sala interior e apoio à esplanada."
+        },
+        {
+          "date": "2026-06-20",
+          "feedback": "excelente resposta no arranque exigente da manhã."
+        },
+        {
+          "date": "2026-06-21",
+          "feedback": "destaque especial na sala interior com elevada autonomia."
+        },
+        {
+          "date": "2026-06-28",
+          "feedback": "gestão integral e consistente da sala interior."
+        }
+      ],
+      "overtime_details": [],
+      "special_achievements": [],
+      "improvement_areas": [],
+      "total_overtime_hours_formatted": "0h00min"
+    },
+    "Carolina": {
+      "total_overtime_hours": 0,
+      "positive_mentions": 3,
+      "days_worked": 3,
+      "opening_shifts": 0,
+      "closing_shifts": 0,
+      "responsibilities": [],
+      "feedback_notes": [
+        {
+          "date": "2026-06-19",
+          "feedback": "desempenho exemplar com apoio ao bar, preparação antecipada para o dia seguinte e fecho com prolongamento de turno."
+        },
+        {
+          "date": "2026-06-28",
+          "feedback": "estabilidade num setor de elevada rotação e participação no fecho."
+        },
+        {
+          "date": "2026-06-29",
+          "feedback": "estabilidade no setor 70 em contexto de elevada rotação."
+        }
+      ],
+      "overtime_details": [],
+      "special_achievements": [],
+      "improvement_areas": [],
+      "total_overtime_hours_formatted": "0h00min"
+    },
+    "Filipe Catalão": {
+      "total_overtime_hours": 0,
+      "positive_mentions": 4,
+      "days_worked": 4,
+      "opening_shifts": 0,
+      "closing_shifts": 0,
+      "responsibilities": [],
+      "feedback_notes": [
+        {
+          "date": "2026-06-19",
+          "feedback": "integração da Lee, runner e apoio directo durante almoço e final de tarde."
+        },
+        {
+          "date": "2026-06-26",
+          "feedback": "coordenação geral eficaz da operação."
+        },
+        {
+          "date": "2026-06-28",
+          "feedback": "coordenação geral eficaz em contexto de ausência de um elemento chave."
+        },
+        {
+          "date": "2026-06-29",
+          "feedback": "coordenação operacional e gestão da sala interior."
+        }
+      ],
+      "overtime_details": [],
+      "special_achievements": [],
+      "improvement_areas": [],
+      "total_overtime_hours_formatted": "0h00min"
+    },
+    "Bruno": {
+      "total_overtime_hours": 105,
+      "positive_mentions": 3,
+      "days_worked": 4,
+      "opening_shifts": 0,
+      "closing_shifts": 0,
+      "responsibilities": [],
+      "feedback_notes": [
+        {
+          "date": "2026-06-19",
+          "feedback": "consistência operacional, organização do setor das 50's, liderança informal e fecho com prolongamento de turno."
+        },
+        {
+          "date": "2026-06-20",
+          "feedback": "destaque na coordenação operacional como runner principal."
+        },
+        {
+          "date": "2026-06-24",
+          "feedback": "foco em limpeza de vidros e organização de stock."
+        }
+      ],
+      "overtime_details": [
+        {
+          "date": "2026-06-30",
+          "minutes": 105
+        }
+      ],
+      "special_achievements": [],
+      "improvement_areas": [],
+      "total_overtime_hours_formatted": "1h45min"
+    },
+    "Lil, Carolina e Bruno": {
+      "total_overtime_hours": 0,
+      "positive_mentions": 1,
+      "days_worked": 1,
+      "opening_shifts": 0,
+      "closing_shifts": 0,
+      "responsibilities": [],
+      "feedback_notes": [
+        {
+          "date": "2026-06-20",
+          "feedback": "fecho prolongado até às 00h00."
+        }
+      ],
+      "overtime_details": [],
+      "special_achievements": [],
+      "improvement_areas": [],
+      "total_overtime_hours_formatted": "0h00min"
+    },
+    "Filipe": {
+      "total_overtime_hours": 0,
+      "positive_mentions": 1,
+      "days_worked": 1,
+      "opening_shifts": 0,
+      "closing_shifts": 0,
+      "responsibilities": [],
+      "feedback_notes": [
+        {
+          "date": "2026-06-21",
+          "feedback": "gestão da porta determinante na rotação de mesas."
+        }
+      ],
+      "overtime_details": [],
+      "special_achievements": [],
+      "improvement_areas": [],
+      "total_overtime_hours_formatted": "0h00min"
+    },
+    "Carolina, Pablo e Bruno": {
+      "total_overtime_hours": 0,
+      "positive_mentions": 1,
+      "days_worked": 1,
+      "opening_shifts": 0,
+      "closing_shifts": 0,
+      "responsibilities": [],
+      "feedback_notes": [
+        {
+          "date": "2026-06-21",
+          "feedback": "consistência nos setores atribuídos."
+        }
+      ],
+      "overtime_details": [],
+      "special_achievements": [],
+      "improvement_areas": [],
+      "total_overtime_hours_formatted": "0h00min"
+    },
+    "Lil": {
+      "total_overtime_hours": 0,
+      "positive_mentions": 6,
+      "days_worked": 6,
+      "opening_shifts": 0,
+      "closing_shifts": 0,
+      "responsibilities": [],
+      "feedback_notes": [
+        {
+          "date": "2026-06-21",
+          "feedback": "fundamental como runner e ligação entre setores."
+        },
+        {
+          "date": "2026-06-22",
+          "feedback": "apoio consistente na esplanada, participação no fecho e remoção das capas dos pufes para lavagem."
+        },
+        {
+          "date": "2026-06-23",
+          "feedback": "apoio consistente em pico de almoço e fecho."
+        },
+        {
+          "date": "2026-06-27",
+          "feedback": "gestão consistente da porta num contexto de lotação máxima."
+        },
+        {
+          "date": "2026-06-28",
+          "feedback": "abertura sozinho e assunção de responsabilidades adicionais num contexto exigente."
+        },
+        {
+          "date": "2026-06-29",
+          "feedback": "gestão consistente do setor 50 e participação no fecho."
+        }
+      ],
+      "overtime_details": [],
+      "special_achievements": [],
+      "improvement_areas": [],
+      "total_overtime_hours_formatted": "0h00min"
+    },
+    "Diogo": {
+      "total_overtime_hours": 0,
+      "positive_mentions": 5,
+      "days_worked": 5,
+      "opening_shifts": 0,
+      "closing_shifts": 0,
+      "responsibilities": [],
+      "feedback_notes": [
+        {
+          "date": "2026-06-22",
+          "feedback": "excelente atitude, boa comunicação e espírito colaborativo no primeiro dia."
+        },
+        {
+          "date": "2026-06-23",
+          "feedback": "evolução clara no segundo dia, com menos erros e melhor leitura do serviço."
+        },
+        {
+          "date": "2026-06-24",
+          "feedback": "evolução contínua na integração, com atitude positiva e disponibilidade."
+        },
+        {
+          "date": "2026-06-25",
+          "feedback": "evolução contínua na integração."
+        },
+        {
+          "date": "2026-06-26",
+          "feedback": "evolução significativa, maior confiança e redução de erros."
+        }
+      ],
+      "overtime_details": [],
+      "special_achievements": [],
+      "improvement_areas": [],
+      "total_overtime_hours_formatted": "0h00min"
+    },
+    "Pablo": {
+      "total_overtime_hours": 0,
+      "positive_mentions": 5,
+      "days_worked": 5,
+      "opening_shifts": 0,
+      "closing_shifts": 0,
+      "responsibilities": [],
+      "feedback_notes": [
+        {
+          "date": "2026-06-22",
+          "feedback": "controlo e organização da operação durante a manhã, incluindo reposição de consumíveis e limpeza da sala interior."
+        },
+        {
+          "date": "2026-06-23",
+          "feedback": "excelente abertura e forte preocupação com preparação e manutenção para dias seguintes."
+        },
+        {
+          "date": "2026-06-24",
+          "feedback": "abertura autónoma e forte preocupação com a preparação para dias seguintes."
+        },
+        {
+          "date": "2026-06-27",
+          "feedback": "desempenho estável na zona 60 durante o pico de movimento."
+        },
+        {
+          "date": "2026-06-29",
+          "feedback": "estabilidade no setor 60 e suporte na abertura."
+        }
+      ],
+      "overtime_details": [],
+      "special_achievements": [],
+      "improvement_areas": [],
+      "total_overtime_hours_formatted": "0h00min"
+    },
+    "Equipa": {
+      "total_overtime_hours": 0,
+      "positive_mentions": 1,
+      "days_worked": 1,
+      "opening_shifts": 0,
+      "closing_shifts": 0,
+      "responsibilities": [],
+      "feedback_notes": [
+        {
+          "date": "2026-06-23",
+          "feedback": "boa capacidade de resposta a pico prolongado e gestão adequada de incidente com bebidas."
+        }
+      ],
+      "overtime_details": [],
+      "special_achievements": [],
+      "improvement_areas": [],
+      "total_overtime_hours_formatted": "0h00min"
+    },
+    "Carolina e Matilde": {
+      "total_overtime_hours": 0,
+      "positive_mentions": 4,
+      "days_worked": 4,
+      "opening_shifts": 0,
+      "closing_shifts": 0,
+      "responsibilities": [],
+      "feedback_notes": [
+        {
+          "date": "2026-06-24",
+          "feedback": "apoio ao serviço e disponibilidade para prolongar o turno no fecho."
+        },
+        {
+          "date": "2026-06-25",
+          "feedback": "apoio consistente e disponibilidade no fecho."
+        },
+        {
+          "date": "2026-06-26",
+          "feedback": "participação ativa no fecho exigente."
+        },
+        {
+          "date": "2026-06-27",
+          "feedback": "fecho rigoroso e manutenção da qualidade até ao final do serviço."
+        }
+      ],
+      "overtime_details": [],
+      "special_achievements": [],
+      "improvement_areas": [],
+      "total_overtime_hours_formatted": "0h00min"
+    },
+    "Sofia": {
+      "total_overtime_hours": 0,
+      "positive_mentions": 3,
+      "days_worked": 3,
+      "opening_shifts": 0,
+      "closing_shifts": 0,
+      "responsibilities": [],
+      "feedback_notes": [
+        {
+          "date": "2026-06-25",
+          "feedback": "primeira impressão muito positiva, com boa capacidade de aprendizagem e integração."
+        },
+        {
+          "date": "2026-06-27",
+          "feedback": "boa integração no quiosque dos gelados num dia de forte exigência."
+        },
+        {
+          "date": "2026-06-28",
+          "feedback": "desempenho sólido no quiosque dos gelados num dia de elevada rotação."
+        }
+      ],
+      "overtime_details": [],
+      "special_achievements": [],
+      "improvement_areas": [],
+      "total_overtime_hours_formatted": "0h00min"
+    },
+    "Lil e Bruno": {
+      "total_overtime_hours": 0,
+      "positive_mentions": 1,
+      "days_worked": 1,
+      "opening_shifts": 0,
+      "closing_shifts": 0,
+      "responsibilities": [],
+      "feedback_notes": [
+        {
+          "date": "2026-06-25",
+          "feedback": "abertura tranquila e preparação sem incidentes."
+        }
+      ],
+      "overtime_details": [],
+      "special_achievements": [],
+      "improvement_areas": [],
+      "total_overtime_hours_formatted": "0h00min"
+    },
+    "Bruno e Lil": {
+      "total_overtime_hours": 0,
+      "positive_mentions": 2,
+      "days_worked": 2,
+      "opening_shifts": 0,
+      "closing_shifts": 0,
+      "responsibilities": [],
+      "feedback_notes": [
+        {
+          "date": "2026-06-26",
+          "feedback": "abertura organizada e gestão de pausas eficiente."
+        },
+        {
+          "date": "2026-06-30",
+          "feedback": "reforço em almoço e fecho operacional."
+        }
+      ],
+      "overtime_details": [],
+      "special_achievements": [],
+      "improvement_areas": [],
+      "total_overtime_hours_formatted": "0h00min"
+    },
+    "Bruno e Filipe Catalão": {
+      "total_overtime_hours": 0,
+      "positive_mentions": 1,
+      "days_worked": 1,
+      "opening_shifts": 0,
+      "closing_shifts": 0,
+      "responsibilities": [],
+      "feedback_notes": [
+        {
+          "date": "2026-06-27",
+          "feedback": "abertura sólida e coordenação eficaz da operação."
+        }
+      ],
+      "overtime_details": [],
+      "special_achievements": [],
+      "improvement_areas": [],
+      "total_overtime_hours_formatted": "0h00min"
+    },
+    "Equipa manteve operação diária com autonomia enquanto decorriam trabalhos de logística/inventário.\n- Filipe Catalão": {
+      "total_overtime_hours": 0,
+      "positive_mentions": 1,
+      "days_worked": 1,
+      "opening_shifts": 0,
+      "closing_shifts": 0,
+      "responsibilities": [],
+      "feedback_notes": [
+        {
+          "date": "2026-06-30",
+          "feedback": "foco em logística e inventário com apoio operacional e fecho de caixa."
+        }
+      ],
+      "overtime_details": [],
+      "special_achievements": [],
+      "improvement_areas": [],
+      "total_overtime_hours_formatted": "0h00min"
+    },
+    "Pablo e Matilde": {
+      "total_overtime_hours": 0,
+      "positive_mentions": 1,
+      "days_worked": 1,
+      "opening_shifts": 0,
+      "closing_shifts": 0,
+      "responsibilities": [],
+      "feedback_notes": [
+        {
+          "date": "2026-06-30",
+          "feedback": "abertura tranquila e operação flexível sem setores."
+        }
+      ],
+      "overtime_details": [],
+      "special_achievements": [],
+      "improvement_areas": [],
+      "total_overtime_hours_formatted": "0h00min"
+    }
+  }
+}

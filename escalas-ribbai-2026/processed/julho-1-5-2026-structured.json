@@ -1,0 +1,262 @@
+{
+  "workforceSchedule": {
+    "year": 2026,
+    "month": 7,
+    "monthName": "Julho",
+    "weekNumber": 27,
+    "weekStartDate": "2026-07-01",
+    "weekEndDate": "2026-07-05",
+    "period": "1-5 Julho 2026",
+    "sourceDocument": "schedule.pdf",
+    "importedAt": "2026-07-01T21:16:00Z",
+    "status": "IMPORTED",
+    "metadata": {
+      "totalCollaborators": 8,
+      "totalMonthDays": 31,
+      "totalTurns": 171,
+      "lunchCoverage": 5.5,
+      "balanceScore": "85%",
+      "compliance": "100%",
+      "generatedDate": "30/06/2026"
+    }
+  },
+  "employees": [
+    {
+      "code": "BR",
+      "name": "Bruno",
+      "position": "CHEFIA_OPERACIONAL",
+      "monthStats": {
+        "workDays": 25,
+        "restDays": 6,
+        "openings": 25,
+        "closings": 25,
+        "workPercentage": "80.6%"
+      }
+    },
+    {
+      "code": "FI",
+      "name": "Filipe", 
+      "position": "CHEFIA_OPERACIONAL",
+      "monthStats": {
+        "workDays": 21,
+        "restDays": 10,
+        "openings": 21,
+        "closings": 21,
+        "workPercentage": "67.7%"
+      }
+    },
+    {
+      "code": "CA",
+      "name": "Carolina",
+      "position": "ELEMENTO_EXPERIENTE",
+      "monthStats": {
+        "workDays": 21,
+        "restDays": 10,
+        "openings": 10,
+        "closings": 21,
+        "workPercentage": "67.7%"
+      }
+    },
+    {
+      "code": "PA",
+      "name": "Pablo",
+      "position": "ESPECIALISTA_60S",
+      "monthStats": {
+        "workDays": 21,
+        "restDays": 10,
+        "openings": 5,
+        "closings": 15,
+        "workPercentage": "67.7%"
+      }
+    },
+    {
+      "code": "LI",
+      "name": "Lil",
+      "position": "POLIVALENTE",
+      "monthStats": {
+        "workDays": 20,
+        "restDays": 11,
+        "openings": 0,
+        "closings": 10,
+        "workPercentage": "64.5%"
+      }
+    },
+    {
+      "code": "MA",
+      "name": "Matilde",
+      "position": "SALA_INTERIOR",
+      "monthStats": {
+        "workDays": 21,
+        "restDays": 10,
+        "openings": 1,
+        "closings": 1,
+        "workPercentage": "67.7%"
+      }
+    },
+    {
+      "code": "LE",
+      "name": "Lee",
+      "position": "DESENVOLVIMENTO",
+      "monthStats": {
+        "workDays": 21,
+        "restDays": 10,
+        "openings": 0,
+        "closings": 0,
+        "workPercentage": "67.7%"
+      }
+    },
+    {
+      "code": "DI", 
+      "name": "Diogo",
+      "position": "DESENVOLVIMENTO",
+      "monthStats": {
+        "workDays": 21,
+        "restDays": 10,
+        "openings": 0,
+        "closings": 0,
+        "workPercentage": "67.7%"
+      }
+    }
+  ],
+  "scheduleEntries": [
+    {
+      "date": "2026-07-01",
+      "weekday": "Terça-feira",
+      "dayNumber": 1,
+      "schedulePattern": "A-L-F",
+      "shifts": {
+        "opening": {
+          "time": "09:00",
+          "requiredPeople": 2,
+          "color": "🟢"
+        },
+        "lunch": {
+          "time": "12:00-16:30",
+          "requiredPeople": 5,
+          "color": "🟠"
+        },
+        "closing": {
+          "time": "23:00",
+          "requiredPeople": 3,
+          "color": "🟣"
+        }
+      },
+      "notes": "Primeiro dia da semana analisada"
+    },
+    {
+      "date": "2026-07-02",
+      "weekday": "Quarta-feira", 
+      "dayNumber": 2,
+      "schedulePattern": "A-L-F",
+      "shifts": {
+        "opening": {
+          "time": "09:00",
+          "requiredPeople": 2,
+          "color": "🟢"
+        },
+        "lunch": {
+          "time": "12:00-16:30",
+          "requiredPeople": 5,
+          "color": "🟠"
+        },
+        "closing": {
+          "time": "23:00",
+          "requiredPeople": 3,
+          "color": "🟣"
+        }
+      }
+    },
+    {
+      "date": "2026-07-03",
+      "weekday": "Quinta-feira",
+      "dayNumber": 3,
+      "schedulePattern": "A-L-F",
+      "shifts": {
+        "opening": {
+          "time": "09:00",
+          "requiredPeople": 2,
+          "color": "🟢"
+        },
+        "lunch": {
+          "time": "12:00-16:30",
+          "requiredPeople": 5,
+          "color": "🟠"
+        },
+        "closing": {
+          "time": "23:00",
+          "requiredPeople": 3,
+          "color": "🟣"
+        }
+      }
+    },
+    {
+      "date": "2026-07-04",
+      "weekday": "Sexta-feira",
+      "dayNumber": 4,
+      "schedulePattern": "A-L-F",
+      "shifts": {
+        "opening": {
+          "time": "09:00",
+          "requiredPeople": 2,
+          "color": "🟢"
+        },
+        "lunch": {
+          "time": "12:00-16:30",
+          "requiredPeople": 5,
+          "color": "🟠"
+        },
+        "closing": {
+          "time": "23:00",
+          "requiredPeople": 3,
+          "color": "🟣"
+        }
+      }
+    },
+    {
+      "date": "2026-07-05", 
+      "weekday": "Sábado",
+      "dayNumber": 5,
+      "schedulePattern": "A-L-F",
+      "shifts": {
+        "opening": {
+          "time": "09:00",
+          "requiredPeople": 2,
+          "color": "🟢"
+        },
+        "lunch": {
+          "time": "12:00-16:30",
+          "requiredPeople": 5,
+          "color": "🟠"
+        },
+        "closing": {
+          "time": "23:00",
+          "requiredPeople": 3,
+          "color": "🟣"
+        }
+      },
+      "notes": "Último dia da semana analisada"
+    }
+  ],
+  "operationalRules": {
+    "philosophy": "Ciclo 4+2 rigorosamente respeitado",
+    "coverage": "100% dos dias com staffing adequado",
+    "openingStaff": 2,
+    "lunchMinimum": 5,
+    "closingStaff": 3,
+    "principles": [
+      "Mentoria garantida - elementos júniores sempre com supervisão experiente", 
+      "Robustez da equipa - distribuição balanceada de experiência nos turnos",
+      "Flexibilidade operacional - rotação equilibrada evita sobrecarga individual",
+      "Qualidade de serviço - experiência adequada em horários de pico"
+    ]
+  },
+  "extractionInfo": {
+    "method": "OCR + Manual Processing",
+    "confidence": "HIGH",
+    "processedBy": "RIBBAI Agent", 
+    "extractedAt": "2026-07-01T21:16:00Z",
+    "sourceFile": "escalas-ribbai-2026/output/schedule.pdf",
+    "focusPeriod": "1-5 Julho 2026",
+    "status": "READY_FOR_DATABASE_IMPORT"
+  }
+}

@@ -1,0 +1,635 @@
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="utf-8" />
+    <title>Ranking Mensal RIBBAI - Junho 2026 (Final)</title>
+    <style>
+      @page {
+        size: A4;
+        margin: 16mm 14mm 18mm;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: #ffffff;
+        color: #172033;
+        font-family: Arial, sans-serif;
+        font-size: 10px;
+        line-height: 1.5;
+      }
+
+      .cover {
+        min-height: 260mm;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        page-break-after: always;
+      }
+
+      .brand {
+        color: #f97316;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+      }
+
+      h1 {
+        margin: 18mm 0 8mm;
+        max-width: 150mm;
+        font-size: 38px;
+        line-height: 1.05;
+      }
+
+      h2 {
+        margin: 0 0 12px;
+        font-size: 18px;
+        page-break-after: avoid;
+      }
+
+      h3 {
+        margin: 0 0 4px;
+        font-size: 12px;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      .subtitle {
+        max-width: 132mm;
+        color: #5d667a;
+        font-size: 13px;
+      }
+
+      .meta-card,
+      .section,
+      .daily-card {
+        border: 1px solid #d9dde7;
+        border-radius: 16px;
+        background: #ffffff;
+      }
+
+      .meta-card {
+        width: 96mm;
+        padding: 18px;
+      }
+
+      .meta-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 8px 0;
+        border-bottom: 1px solid #edf0f5;
+      }
+
+      .meta-row:last-child {
+        border-bottom: 0;
+      }
+
+      .muted,
+      .meta-row span,
+      .kpi-card span,
+      .category-card span,
+      .rank-label {
+        color: #5d667a;
+      }
+
+      .section {
+        margin-bottom: 24px;
+        padding: 16px 20px 20px;
+        page-break-inside: avoid;
+      }
+
+      .section.page {
+        page-break-before: always;
+      }
+
+      .kpi-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 16px;
+        margin-top: 16px;
+      }
+
+      .kpi-card {
+        border: 1px solid #edf0f5;
+        border-radius: 12px;
+        padding: 12px;
+        text-align: center;
+      }
+
+      .kpi-card strong {
+        display: block;
+        margin-top: 6px;
+        font-size: 16px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 14px;
+        font-size: 10px;
+      }
+
+      th {
+        border-bottom: 1px solid #d9dde7;
+        padding: 8px 4px;
+        text-align: left;
+        color: #5d667a;
+        font-size: 8.5px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      th:first-child {
+        width: 42px;
+      }
+
+      th:nth-child(3),
+      th:nth-child(4),
+      th:nth-child(5),
+      th:nth-child(6) {
+        text-align: center;
+        width: 44px;
+      }
+
+      th:last-child {
+        width: 62px;
+      }
+
+      td {
+        border-bottom: 1px solid #edf0f5;
+        padding: 6px 4px;
+        vertical-align: middle;
+      }
+
+      td:nth-child(3),
+      td:nth-child(4),
+      td:nth-child(5),
+      td:nth-child(6) {
+        text-align: center;
+        font-weight: 700;
+      }
+
+      .rank {
+        color: #5d667a;
+        font-size: 9px;
+        text-align: center;
+      }
+
+      .score-bar {
+        height: 12px;
+        border-radius: 6px;
+        background: #e7eaf1;
+      }
+
+      .score-bar span {
+        display: block;
+        height: 100%;
+        border-radius: inherit;
+        background: #f97316;
+      }
+
+      .category-grid,
+      .highlight-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .category-card {
+        border: 1px solid #edf0f5;
+        border-radius: 12px;
+        padding: 14px;
+      }
+
+      .category-card strong {
+        display: block;
+        margin: 5px 0;
+        font-size: 15px;
+      }
+
+      .highlight-card {
+        border: 1px solid #edf0f5;
+        border-radius: 12px;
+        padding: 14px;
+        page-break-inside: avoid;
+      }
+
+      .points {
+        margin-bottom: 8px;
+        color: #9a3412;
+        font-weight: 700;
+      }
+
+      ul {
+        margin: 8px 0 0;
+        padding-left: 16px;
+      }
+
+      li {
+        margin-bottom: 5px;
+      }
+
+      .notes-list {
+        columns: 2;
+        column-gap: 22px;
+      }
+
+      .daily-card {
+        margin-bottom: 14px;
+        padding: 14px;
+        page-break-inside: avoid;
+      }
+
+      .footer-note {
+        color: #5d667a;
+        font-size: 8.5px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="cover">
+        <div>
+          <div class="brand">RIBBAI OPS</div>
+          <h1>Ranking mensal da equipa</h1>
+          <p class="subtitle">
+            Relatório de performance, adaptação ao modelo de setores e resumo operacional do mês completo.
+          </p>
+        </div>
+        <div class="meta-card">
+          <div class="meta-row"><span>Restaurante</span><strong>RIBBAI</strong></div>
+          <div class="meta-row"><span>Período</span><strong>2026-06-03 a 2026-06-30</strong></div>
+          <div class="meta-row"><span>Relatórios</span><strong>27</strong></div>
+          <div class="meta-row"><span>Primeiro lugar</span><strong>Pablo</strong></div>
+          <div class="meta-row"><span>Gerado em</span><strong>03/07/2026, 15:45</strong></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Resumo executivo</h2>
+        
+    <div class="kpi-grid">
+      <article class="kpi-card">
+        <span>Relatórios analisados</span>
+        <strong>27</strong>
+      </article>
+      <article class="kpi-card">
+        <span>Dias de alta pressão</span>
+        <strong>17</strong>
+      </article>
+      <article class="kpi-card">
+        <span>Dias sem ocorrências relevantes</span>
+        <strong>5</strong>
+      </article>
+      <article class="kpi-card">
+        <span>Pontos distribuídos</span>
+        <strong>3076</strong>
+      </article>
+      <article class="kpi-card">
+        <span>Horas extra registadas</span>
+        <strong>146h58</strong>
+      </article>
+    </div>
+  
+      </section>
+
+      <section class="section">
+        <h2>Ranking geral</h2>
+        
+    <table>
+      <thead>
+        <tr>
+          <th>Lugar</th>
+          <th>Colaborador</th>
+          <th>Pontos</th>
+          <th>Média/dia</th>
+          <th>Dias</th>
+          <th>Horas extra</th>
+          <th>Progresso</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+              <tr>
+                <td class="rank">1.º</td>
+                <td><strong>Pablo</strong></td>
+                <td>568</td>
+                <td>28.4</td>
+                <td>20</td>
+                <td>3h18</td>
+                <td>
+    <div class="score-bar" aria-label="568 pontos">
+      <span style="width: 100%"></span>
+    </div>
+  </td>
+              </tr>
+            
+              <tr>
+                <td class="rank">2.º</td>
+                <td><strong>Matilde</strong></td>
+                <td>551</td>
+                <td>26.2</td>
+                <td>21</td>
+                <td>15h34</td>
+                <td>
+    <div class="score-bar" aria-label="551 pontos">
+      <span style="width: 97%"></span>
+    </div>
+  </td>
+              </tr>
+            
+              <tr>
+                <td class="rank">3.º</td>
+                <td><strong>Carolina</strong></td>
+                <td>535</td>
+                <td>26.8</td>
+                <td>20</td>
+                <td>28h</td>
+                <td>
+    <div class="score-bar" aria-label="535 pontos">
+      <span style="width: 94%"></span>
+    </div>
+  </td>
+              </tr>
+            
+              <tr>
+                <td class="rank">4.º</td>
+                <td><strong>Bruno</strong></td>
+                <td>514</td>
+                <td>25.7</td>
+                <td>20</td>
+                <td>18h39</td>
+                <td>
+    <div class="score-bar" aria-label="514 pontos">
+      <span style="width: 90%"></span>
+    </div>
+  </td>
+              </tr>
+            
+              <tr>
+                <td class="rank">5.º</td>
+                <td><strong>Lil</strong></td>
+                <td>454</td>
+                <td>21.6</td>
+                <td>21</td>
+                <td>17h01</td>
+                <td>
+    <div class="score-bar" aria-label="454 pontos">
+      <span style="width: 80%"></span>
+    </div>
+  </td>
+              </tr>
+            
+              <tr>
+                <td class="rank">6.º</td>
+                <td><strong>Marta</strong></td>
+                <td>286</td>
+                <td>23.8</td>
+                <td>12</td>
+                <td>7h10</td>
+                <td>
+    <div class="score-bar" aria-label="286 pontos">
+      <span style="width: 50%"></span>
+    </div>
+  </td>
+              </tr>
+            
+              <tr>
+                <td class="rank">7.º</td>
+                <td><strong>Lee</strong></td>
+                <td>133</td>
+                <td>19</td>
+                <td>7</td>
+                <td>0min</td>
+                <td>
+    <div class="score-bar" aria-label="133 pontos">
+      <span style="width: 23%"></span>
+    </div>
+  </td>
+              </tr>
+            
+              <tr>
+                <td class="rank">8.º</td>
+                <td><strong>Diogo</strong></td>
+                <td>50</td>
+                <td>10</td>
+                <td>5</td>
+                <td>0min</td>
+                <td>
+    <div class="score-bar" aria-label="50 pontos">
+      <span style="width: 9%"></span>
+    </div>
+  </td>
+              </tr>
+            
+              <tr>
+                <td class="rank">9.º</td>
+                <td><strong>Sofia</strong></td>
+                <td>20</td>
+                <td>6.7</td>
+                <td>3</td>
+                <td>0min</td>
+                <td>
+    <div class="score-bar" aria-label="20 pontos">
+      <span style="width: 4%"></span>
+    </div>
+  </td>
+              </tr>
+            
+      </tbody>
+    </table>
+  
+      </section>
+
+      <section class="section page">
+        <h2>Forma de avaliação</h2>
+        <p class="muted">
+          A pontuação combina desempenho operacional, qualidade, adaptação ao novo modelo e compromisso.
+          Folgas ou dias não escalados não retiram pontos; por isso o relatório mostra também média por dia avaliado.
+        </p>
+        <br />
+        
+    <div class="category-grid">
+      
+            <article class="category-card">
+              <span>Execução operacional</span>
+              <strong>Até 20 pts/dia</strong>
+              <p>Responsabilidade assumida, desempenho no setor, abertura, coordenação local e capacidade de resposta.</p>
+            </article>
+          
+            <article class="category-card">
+              <span>Qualidade e consistência</span>
+              <strong>Até 12 pts/dia</strong>
+              <p>Serviço sem falhas relevantes, boa comunicação, recuperação de inconsistências e experiência do cliente.</p>
+            </article>
+          
+            <article class="category-card">
+              <span>Adaptação ao modelo de setores</span>
+              <strong>Até 16 pts/dia</strong>
+              <p>Foco no setor atribuído, disciplina operacional e comunicação antes de intervir noutra zona.</p>
+            </article>
+          
+            <article class="category-card">
+              <span>Compromisso e colaboração</span>
+              <strong>Até 12 pts/dia</strong>
+              <p>Horas extra, apoio a colegas, fecho, stock, manutenção e disponibilidade em dias críticos.</p>
+            </article>
+          
+    </div>
+  
+      </section>
+
+      <section class="section">
+        <h2>Resumo mensal operacional</h2>
+        
+    <ul class="notes-list">
+      <li>Forte afluência no almoço e tarde.</li><li>Serviço globalmente positivo e profissional.</li><li>Nova organização por áreas introduzida.</li><li>Boa adesão da equipa ao novo modelo.</li><li>Necessidade de acompanhar indicadores de comunicação, velocidade e responsabilização.</li><li>Feriado nacional com fluxo de clientes superior ao habitual.</li><li>Pressão elevada na cafetaria e operação de sala.</li><li>Período crítico entre cerca das 11h30 e 18h30.</li><li>Encerramento mensal com trabalhos estruturantes de logística e inventário.</li><li>Consolidação do modelo por setores durante todo o mês.</li>
+    </ul>
+  
+      </section>
+
+      <section class="section page">
+        <h2>Destaques individuais</h2>
+        
+    <div class="highlight-grid">
+      
+            <article class="highlight-card">
+              <h3>Pablo</h3>
+              <p class="points">568 pontos · 1.º lugar</p>
+              <p>Liderança consistente durante todo o mês. Excelente desempenho operacional e capacidade de coordenação local. Destaque para a capacidade de manter a calma em períodos de pressão elevada e para a qualidade do serviço prestado.</p>
+              <ul>
+                <li>Abertura responsável e organizada</li>
+                <li>Gestão eficaz de setores</li>
+                <li>Boa comunicação e apoio à equipa</li>
+                <li>Consistência operacional</li>
+              </ul>
+            </article>
+          
+            <article class="highlight-card">
+              <h3>Matilde</h3>
+              <p class="points">551 pontos · 2.º lugar</p>
+              <p>Subida notável para o segundo lugar. Excelente adaptação ao modelo de setores e forte compromisso demonstrado. Destaque para a versatilidade operacional e capacidade de trabalho em equipa.</p>
+              <ul>
+                <li>Gestão eficaz da sala interior</li>
+                <li>Boa adaptação aos setores</li>
+                <li>Compromisso com horas extra</li>
+                <li>Qualidade consistente do serviço</li>
+              </ul>
+            </article>
+          
+            <article class="highlight-card">
+              <h3>Carolina</h3>
+              <p class="points">535 pontos · 3.º lugar</p>
+              <p>Forte compromisso demonstrado através das horas extra. Boa capacidade operacional e adaptação ao modelo. Necessidade de continuar a trabalhar na comunicação e qualidade de serviço.</p>
+              <ul>
+                <li>Elevado compromisso (28h extra)</li>
+                <li>Participação ativa nos fechos</li>
+                <li>Boa capacidade de execução</li>
+                <li>Disponibilidade para apoiar</li>
+              </ul>
+            </article>
+          
+            <article class="highlight-card">
+              <h3>Bruno</h3>
+              <p class="points">514 pontos · 4.º lugar</p>
+              <p>Subida consistente no ranking. Boa evolução na adaptação ao modelo e forte demonstração de compromisso. Destaque para a capacidade de coordenação e apoio operacional.</p>
+              <ul>
+                <li>Coordenação operacional eficaz</li>
+                <li>Runner de qualidade</li>
+                <li>Compromisso com fechos</li>
+                <li>Evolução na comunicação</li>
+              </ul>
+            </article>
+          
+            <article class="highlight-card">
+              <h3>Lil</h3>
+              <p class="points">454 pontos · 5.º lugar</p>
+              <p>Consistência operacional e boa adaptação ao modelo. Forte participação em abertura e fechos. Necessidade de continuar a desenvolver a qualidade de serviço e comunicação.</p>
+              <ul>
+                <li>Versatilidade operacional</li>
+                <li>Gestão de porta eficaz</li>
+                <li>Compromisso com horários</li>
+                <li>Boa capacidade de adaptação</li>
+              </ul>
+            </article>
+          
+    </div>
+  
+      </section>
+
+      <section class="section page">
+        <h2>Registo diário detalhado</h2>
+        
+        <section class="daily-card">
+          <div>
+            <h3>30/06/2026 · terça-feira</h3>
+            <p>Dia de baixa pressão · encerramento mensal</p>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Colaborador</th>
+                <th>Total</th>
+                <th>Execução</th>
+                <th>Qualidade</th>
+                <th>Modelo</th>
+                <th>Compromisso</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                    <tr>
+                      <td><strong>Bruno</strong></td>
+                      <td>32</td>
+                      <td>15</td>
+                      <td>5</td>
+                      <td>0</td>
+                      <td>12</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Lil</strong></td>
+                      <td>27</td>
+                      <td>12</td>
+                      <td>5</td>
+                      <td>0</td>
+                      <td>10</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Pablo</strong></td>
+                      <td>25</td>
+                      <td>15</td>
+                      <td>8</td>
+                      <td>0</td>
+                      <td>2</td>
+                    </tr>
+                  
+                    <tr>
+                      <td><strong>Matilde</strong></td>
+                      <td>25</td>
+                      <td>15</td>
+                      <td>8</td>
+                      <td>0</td>
+                      <td>2</td>
+                    </tr>
+                  
+            </tbody>
+          </table>
+        </section>
+      
+      </section>
+
+      <p class="footer-note">
+        Documento gerado automaticamente a partir dos relatórios operacionais diários. Inclui o encerramento completo do mês de Junho 2026.
+      </p>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Relatório Diário Operacional - 23-06-2026</title>
+    <style>
+      @page { size: A4; margin: 16mm 14mm 18mm; }
+      :root { --ink:#172033; --muted:#657085; --line:#d9dee8; --soft:#f6f7fa; --warm:#fff7ed; --brand:#f97316; --brand-dark:#9a3412; --green:#15803d; --blue:#1d4ed8; --violet:#6d28d9; }
+      * { box-sizing:border-box; }
+      body { margin:0; background:#fff; color:var(--ink); font-family:Inter,ui-sans-serif,system-ui,sans-serif; font-size:10pt; line-height:1.5; }
+      h1,h2,h3,p { margin-top:0; }
+      h1 { font-size:34pt; line-height:1.02; letter-spacing:-0.04em; margin-bottom:10pt; }
+      h2 { border-bottom:1px solid var(--line); font-size:15pt; margin:22pt 0 10pt; padding-bottom:5pt; }
+      h3 { color:var(--brand-dark); font-size:11pt; margin:13pt 0 5pt; }
+      ul { margin:4pt 0 10pt 15pt; padding:0; }
+      table { border-collapse:collapse; margin:8pt 0 14pt; width:100%; }
+      th,td { border:1px solid var(--line); padding:6pt 7pt; text-align:left; vertical-align:top; }
+      th { background:var(--soft); font-size:8pt; letter-spacing:0.06em; text-transform:uppercase; }
+      .cover { background:radial-gradient(circle at top right,rgba(249,115,22,0.18),transparent 35%),linear-gradient(135deg,#fff7ed 0%,#fff 42%,#f8fafc 100%); border:1px solid #fed7aa; border-radius:22px; margin-bottom:16pt; min-height:248mm; padding:24mm 18mm; }
+      .eyebrow { color:var(--brand); font-size:8.5pt; font-weight:800; letter-spacing:0.18em; margin-bottom:14pt; text-transform:uppercase; }
+      .subtitle { color:var(--muted); font-size:14pt; line-height:1.45; max-width:150mm; }
+      .meta-panel { background:rgba(255,255,255,0.82); border:1px solid #fed7aa; border-radius:16px; margin-top:28pt; padding:14pt; }
+      .meta-grid { display:grid; gap:10pt; grid-template-columns:repeat(3,1fr); }
+      .meta-item { border-left:3px solid var(--brand); padding-left:8pt; }
+      .meta-label { color:var(--muted); display:block; font-size:7.5pt; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; }
+      .meta-value { display:block; font-size:10.5pt; font-weight:700; margin-top:2pt; }
+      .page-break { break-before:page; }
+      .kpi-grid { display:grid; gap:8pt; grid-template-columns:repeat(3,1fr); margin:12pt 0 16pt; }
+      .kpi { background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:10pt; }
+      .kpi-label { color:var(--muted); display:block; font-size:7.5pt; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; }
+      .kpi-value { display:block; font-size:22pt; font-weight:800; margin-top:3pt; }
+      .kpi-note { color:var(--muted); display:block; font-size:8pt; margin-top:2pt; }
+      .good { color:var(--green); }
+      .callout { background:var(--warm); border-left:4px solid var(--brand); border-radius:12px; margin:10pt 0 14pt; padding:11pt 13pt; }
+      .callout-success { background:#f0fdf4; border-left-color:var(--green); }
+      .panel-grid { display:grid; gap:9pt; grid-template-columns:repeat(2,1fr); }
+      .panel { border:1px solid var(--line); border-radius:12px; break-inside:avoid; padding:10pt; }
+      .badge { border-radius:999px; display:inline-block; font-size:7.5pt; font-weight:800; margin-bottom:5pt; padding:3pt 7pt; text-transform:uppercase; }
+      .badge-green { background:#dcfce7; color:var(--green); }
+      .badge-blue { background:#dbeafe; color:var(--blue); }
+      .badge-violet { background:#ede9fe; color:var(--violet); }
+      .footer-note { border-top:1px solid var(--line); color:var(--muted); font-size:8.5pt; margin-top:18pt; padding-top:7pt; }
+    </style>
+  </head>
+  <body>
+    <section class="cover">
+      <div class="eyebrow">RIBBAI OPS · Relatório Diário Operacional</div>
+      <h1>Registo Diário Operacional</h1>
+      <p class="subtitle">Apresentação diária à gestão sobre a operação Front of House do restaurante RIBBAI.</p>
+      <div class="meta-panel">
+        <div class="meta-grid">
+          <div class="meta-item"><span class="meta-label">Data</span><span class="meta-value">23-06-2026</span></div>
+          <div class="meta-item"><span class="meta-label">Dia</span><span class="meta-value">Terça-feira</span></div>
+          <div class="meta-item"><span class="meta-label">Autor</span><span class="meta-value">Filipe Catalão</span></div>
+          <div class="meta-item"><span class="meta-label">Restaurante</span><span class="meta-value">RIBBAI</span></div>
+          <div class="meta-item"><span class="meta-label">Tipo</span><span class="meta-value">Relatório Diário Operacional</span></div>
+          <div class="meta-item"><span class="meta-label">Estado</span><span class="meta-value">Registado</span></div>
+        </div>
+      </div>
+      <div class="kpi-grid">
+        <div class="kpi"><span class="kpi-label">Volume Trabalho</span><span class="kpi-value good">7/10</span><span class="kpi-note">Pico de almoço prolongado</span></div>
+        <div class="kpi"><span class="kpi-label">Integração Novos</span><span class="kpi-value good">9/10</span><span class="kpi-note">Evolução do Diogo</span></div>
+        <div class="kpi"><span class="kpi-label">Manutenção</span><span class="kpi-value good">10/10</span><span class="kpi-note">Pufes lavados</span></div>
+      </div>
+      <div class="kpi-grid">
+        <div class="kpi"><span class="kpi-label">Qualidade Serviço</span><span class="kpi-value good">9/10</span><span class="kpi-note">Incidente bem gerido</span></div>
+        <div class="kpi"><span class="kpi-label">Coordenação</span><span class="kpi-value good">9/10</span><span class="kpi-note">Operação fluida</span></div>
+        <div class="kpi"><span class="kpi-label">Horas Extra</span><span class="kpi-value good">2h00</span><span class="kpi-note">2 colaboradores</span></div>
+      </div>
+      <div class="callout callout-success"><strong>Conclusão do dia:</strong> operação estável com pico de almoço prolongado, evolução clara do Diogo, pufes lavados e feedback positivo ao novo menu; incidente com bebidas resolvido sem impacto negativo na experiência do cliente.</div>
+    </section>
+
+    <section class="page-break">
+      <h2>Síntese Executiva</h2>
+      <p>Terça-feira com abertura exemplar de Pablo, segundo dia de integração do Diogo com evolução visível, inventário semanal realizado e pico de almoço consistente mas controlado. Lavagem dos pufes concluída e feedback positivo ao novo menu.</p>
+      <h2>Equipa Em Serviço</h2>
+      <div class="panel-grid">
+        <div class="panel"><span class="badge badge-green">Pablo</span><ul><li>Abertura sozinho.</li><li>Controlo da manhã.</li><li>Talheres polidos e baldes preparados.</li><li>Reposição de consumíveis das casas de banho.</li></ul></div>
+        <div class="panel"><span class="badge badge-green">Diogo</span><ul><li>Entrada às 10h00 (compensação do dia anterior).</li><li>Apoio ao almoço.</li><li>Menos erros e melhor leitura do serviço.</li><li>Apoio até às 20h00.</li></ul></div>
+        <div class="panel"><span class="badge badge-blue">Filipe Catalão</span><ul><li>Entrada às 11h30.</li><li>Inventário semanal.</li><li>Coordenação do serviço.</li><li>Fecho.</li><li>1h15m de horas extra.</li></ul></div>
+        <div class="panel"><span class="badge badge-green">Lil</span><ul><li>Entrada às 12h00.</li><li>Apoio no pico de almoço.</li><li>Fecho.</li><li>45 min de horas extra.</li></ul></div>
+      </div>
+    </section>
+
+    <section class="page-break">
+      <h2>Inventário Semanal</h2>
+      <p>Entre as 11h30 e as 12h00, Filipe realizou a contagem semanal dos consumíveis monitorizados pela gestão da sala, com verificação física de stock. Tarefa possível graças à cobertura operacional assegurada por Pablo e Diogo.</p>
+      <h2>Serviço de Almoço</h2>
+      <ul>
+        <li>Equipa completa a partir das 12h00 com entrada do Lil.</li>
+        <li>Pausa de almoço do Pablo sem impacto na operação.</li>
+        <li>Esplanada praticamente lotada durante várias horas, com 1–2 mesas livres em permanência.</li>
+        <li>Movimento contínuo e consistente, sem descontrolo.</li>
+      </ul>
+      <h2>Incidente Operacional</h2>
+      <div class="callout"><strong>Bebidas derramadas:</strong> algumas bebidas em copos altos derramadas pelo Diogo sobre clientes, em contexto de bandejas empenadas. Situação gerida com pedido de desculpa, substituição de bebidas e postura profissional. Clientes compreenderam e deixaram gorjeta de 12€.</div>
+    </section>
+
+    <section class="page-break">
+      <h2>Serviço de Final de Tarde</h2>
+      <p>A partir das 16h15 o movimento começou a diminuir, com esplanada quase vazia às 18h00. A dinâmica passou para a sala interior devido à transmissão de um jogo, com uma mesa de 10, duas de 3 pessoas e uma mesa de casal, todas geridas sem incidentes.</p>
+      <h2>Manutenção e Melhorias</h2>
+      <p><strong>Pufes da esplanada:</strong> lavagem concluída com sucesso, encerrando necessidade identificada em dias anteriores.</p>
+      <h2>Feedback dos Clientes</h2>
+      <ul>
+        <li>Avaliações positivas ao novo menu, com destaque para Nachos com Guacamole, Camarão Tigre e Salada César.</li>
+      </ul>
+    </section>
+
+    <section class="page-break">
+      <h2>Fecho Operacional</h2>
+      <p>Pablo terminou turno às 18h00. Fecho assegurado por Filipe e Lil, com apoio do Diogo até às 20h00. Restaurante preparado para o dia seguinte sem incidentes.</p>
+      <h2>Horas Extra</h2>
+      <table>
+        <thead><tr><th>Colaborador</th><th>Registo</th></tr></thead>
+        <tbody>
+          <tr><td>Filipe Catalão</td><td>1h15min de horas extra</td></tr>
+          <tr><td>Lil</td><td>45 minutos de horas extra</td></tr>
+          <tr><td>Diogo</td><td>Compensação de 1h00 em relação ao saldo negativo do dia anterior (0h de horas extra neste dia)</td></tr>
+        </tbody>
+      </table>
+      <div class="callout"><strong>Total da equipa:</strong> 2h00 de horas extra.</div>
+      <h2>Notas Para Gestão</h2>
+      <p>Prioridade média para substituição das bandejas de serviço (incluindo modelos de grande dimensão) e acompanhamento da integração do Diogo. Lavagem dos pufes concluída.</p>
+      <h2>Avaliação Global</h2>
+      <table>
+        <thead><tr><th>Indicador</th><th>Avaliação</th></tr></thead>
+        <tbody>
+          <tr><td>Volume de Trabalho</td><td>7/10</td></tr>
+          <tr><td>Qualidade de Serviço</td><td>9/10</td></tr>
+          <tr><td>Organização</td><td>9/10</td></tr>
+          <tr><td>Integração de Novos Colaboradores</td><td>9/10</td></tr>
+          <tr><td>Eficiência Operacional</td><td>9/10</td></tr>
+          <tr><td>Manutenção e Preparação</td><td>10/10</td></tr>
+          <tr><td>Coordenação da Equipa</td><td>9/10</td></tr>
+          <tr><td>Experiência do Cliente</td><td>9/10</td></tr>
+        </tbody>
+      </table>
+      <h2>Classificação Para O Sistema RIBBAI OPS</h2>
+      <table>
+        <thead><tr><th>Categoria</th><th>Registo</th></tr></thead>
+        <tbody>
+          <tr><td>Operational Notes</td><td>Operação estável com pico de almoço prolongado, integração em curso do Diogo e conclusão da lavagem dos pufes.</td></tr>
+          <tr><td>Service Improvement Candidate</td><td>Substituição de bandejas de serviço empenadas.</td></tr>
+          <tr><td>Team Feedback Input</td><td>Pablo e Diogo em destaque; Lil e Filipe com papel-chave no pico e fecho.</td></tr>
+          <tr><td>Overtime Input</td><td>2h00: Filipe 1h15min, Lil 45m; Diogo com compensação de 1h.</td></tr>
+        </tbody>
+      </table>
+      <p class="footer-note">Documento gerado para apresentação diária à gestão. Fonte operacional: Registo Diário Operacional de 23-06-2026. Autor: Filipe Catalão.</p>
+    </section>
+  </body>
+</html>
+

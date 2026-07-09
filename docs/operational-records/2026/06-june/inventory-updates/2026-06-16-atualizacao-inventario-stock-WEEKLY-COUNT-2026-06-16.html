@@ -1,0 +1,837 @@
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="utf-8" />
+    <title>Atualizacao de Inventario - 2026-06-16 (WEEKLY-COUNT-2026-06-16)</title>
+    <style>
+      :root {
+        color: #172033;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        margin: 0;
+        background: #f4f6fb;
+      }
+
+      main {
+        padding: 32px;
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+      }
+
+      h1 {
+        font-size: 30px;
+      }
+
+      h2 {
+        margin-top: 28px;
+        font-size: 18px;
+      }
+
+      h3 {
+        font-size: 13px;
+        margin-bottom: 10px;
+      }
+
+      .cover,
+      .panel {
+        background: #ffffff;
+        border: 1px solid #d8deea;
+        border-radius: 16px;
+        padding: 24px;
+      }
+
+      .panel {
+        margin-top: 18px;
+      }
+
+      .subtitle,
+      .muted,
+      td span {
+        color: #657085;
+      }
+
+      .subtitle {
+        margin-top: 8px;
+      }
+
+      .summary {
+        display: grid;
+        gap: 14px;
+        grid-template-columns: repeat(4, 1fr);
+        margin-top: 24px;
+      }
+
+      .metric {
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 14px;
+      }
+
+      .metric span {
+        color: #657085;
+        display: block;
+        font-size: 11px;
+        text-transform: uppercase;
+      }
+
+      .metric strong {
+        display: block;
+        font-size: 22px;
+        margin-top: 6px;
+      }
+
+      .grid-two {
+        display: grid;
+        gap: 18px;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      table {
+        border-collapse: collapse;
+        font-size: 12px;
+        margin-top: 14px;
+        width: 100%;
+      }
+
+      th,
+      td {
+        border-bottom: 1px solid #e2e8f0;
+        padding: 10px 8px;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        color: #475569;
+        font-size: 10px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      td span {
+        display: block;
+        font-size: 10px;
+        margin-top: 3px;
+      }
+
+      .badge {
+        border-radius: 999px;
+        display: inline-block;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 4px 8px;
+      }
+
+      .badge-green {
+        background: #dcfce7;
+        color: #166534;
+      }
+
+      .badge-yellow {
+        background: #fef3c7;
+        color: #92400e;
+      }
+
+      .badge-red {
+        background: #fee2e2;
+        color: #991b1b;
+      }
+
+      .badge-blue {
+        background: #dbeafe;
+        color: #1d4ed8;
+      }
+
+      .callout {
+        background: #fff7ed;
+        border: 1px solid #fed7aa;
+        border-radius: 12px;
+        color: #9a3412;
+        margin-top: 18px;
+        padding: 14px 16px;
+      }
+
+      .bar-row,
+      .status-row {
+        align-items: center;
+        display: grid;
+        gap: 10px;
+        grid-template-columns: 150px 1fr 28px;
+        margin: 10px 0;
+      }
+
+      .bar-label,
+      .status-row span {
+        color: #475569;
+        font-size: 12px;
+      }
+
+      .bar-track,
+      .status-track {
+        background: #eef2f7;
+        border-radius: 999px;
+        height: 12px;
+        overflow: hidden;
+      }
+
+      .bar-fill,
+      .status-fill {
+        background: #172033;
+        height: 100%;
+      }
+
+      .status-green {
+        background: #16a34a;
+      }
+
+      .status-yellow {
+        background: #f59e0b;
+      }
+
+      .status-red {
+        background: #dc2626;
+      }
+
+      ul {
+        margin: 12px 0 0;
+        padding-left: 18px;
+      }
+
+      li {
+        margin: 6px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="cover">
+        <h1>Relatorio de Atualizacao de Inventario</h1>
+        <p class="subtitle">RIBBAI OPS · 16/06/2026 · Ref: WEEKLY-COUNT-2026-06-16 · Documento de controlo interno para gestao</p>
+
+        <div class="summary">
+          <div class="metric">
+            <span>Produtos alterados</span>
+            <strong>32</strong>
+          </div>
+          <div class="metric">
+            <span>Entradas registadas</span>
+            <strong>0</strong>
+          </div>
+          <div class="metric">
+            <span>Saidas/devolucoes</span>
+            <strong>0</strong>
+          </div>
+          <div class="metric">
+            <span>Valor estimado entradas</span>
+            <strong>N/D</strong>
+          </div>
+          <div class="metric">
+            <span>Produtos novos</span>
+            <strong>2</strong>
+          </div>
+          <div class="metric">
+            <span>Stock critico</span>
+            <strong>2</strong>
+          </div>
+          <div class="metric">
+            <span>Stock zero</span>
+            <strong>2</strong>
+          </div>
+          <div class="metric">
+            <span>Precos pendentes</span>
+            <strong>26</strong>
+          </div>
+        </div>
+
+        <div class="callout">
+                26 artigos alterados ainda nao tem preco unitario preenchido. Os valores monetarios ficam incompletos ate os custos serem configurados.
+              </div>
+      </section>
+
+      <section class="panel grid-two">
+        <div>
+          <h3>Movimentos por categoria</h3>
+          
+        <div class="bar-row">
+          <div class="bar-label">Consumiveis de Servico</div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width: 66.66666666666666%"></div>
+          </div>
+          <strong>4</strong>
+        </div>
+      
+        <div class="bar-row">
+          <div class="bar-label">Consumiveis Operacionais</div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width: 83.33333333333334%"></div>
+          </div>
+          <strong>5</strong>
+        </div>
+      
+        <div class="bar-row">
+          <div class="bar-label">Consumiveis WC</div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width: 33.33333333333333%"></div>
+          </div>
+          <strong>2</strong>
+        </div>
+      
+        <div class="bar-row">
+          <div class="bar-label">Copos Take Away</div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width: 83.33333333333334%"></div>
+          </div>
+          <strong>5</strong>
+        </div>
+      
+        <div class="bar-row">
+          <div class="bar-label">Embalagens Take Away</div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width: 83.33333333333334%"></div>
+          </div>
+          <strong>5</strong>
+        </div>
+      
+        <div class="bar-row">
+          <div class="bar-label">Molhos</div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width: 50%"></div>
+          </div>
+          <strong>3</strong>
+        </div>
+      
+        <div class="bar-row">
+          <div class="bar-label">Produtos de Limpeza</div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width: 100%"></div>
+          </div>
+          <strong>6</strong>
+        </div>
+      
+        <div class="bar-row">
+          <div class="bar-label">Talheres Take Away</div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width: 33.33333333333333%"></div>
+          </div>
+          <strong>2</strong>
+        </div>
+      
+        </div>
+        <div>
+          <h3>Estado dos artigos alterados</h3>
+          
+        <div class="status-row">
+          <span>Saudavel</span>
+          <div class="status-track">
+            <div class="status-fill status-green" style="width: 62.5%"></div>
+          </div>
+          <strong>20</strong>
+        </div>
+      
+        <div class="status-row">
+          <span>Atencao</span>
+          <div class="status-track">
+            <div class="status-fill status-yellow" style="width: 25%"></div>
+          </div>
+          <strong>8</strong>
+        </div>
+      
+        <div class="status-row">
+          <span>Critico</span>
+          <div class="status-track">
+            <div class="status-fill status-red" style="width: 12.5%"></div>
+          </div>
+          <strong>4</strong>
+        </div>
+      
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Movimentos registados</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Categoria</th>
+              <th>Artigo</th>
+              <th>Tipo</th>
+              <th>Anterior</th>
+              <th>Movimento</th>
+              <th>Final</th>
+              <th>Valor</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+        <tr>
+          <td>Consumiveis de Servico</td>
+          <td>
+            <strong>Guardanapos</strong>
+            <span>CONS-SERVICE-NAPKINS</span>
+          </td>
+          <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+          <td>4 caixa</td>
+          <td>-3 caixa</td>
+          <td>1 caixa</td>
+          <td>Preco pendente</td>
+          <td><span class="badge badge-red">Critico</span></td>
+        </tr>
+      
+        <tr>
+          <td>Consumiveis de Servico</td>
+          <td>
+            <strong>Guardanapos Pequenos</strong>
+            <span>CONS-SERVICE-SMALL-NAPKINS</span>
+          </td>
+          <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+          <td>2 caixa</td>
+          <td>-1 caixa</td>
+          <td>1 caixa</td>
+          <td>Preco pendente</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Consumiveis de Servico</td>
+          <td>
+            <strong>Palhinhas</strong>
+            <span>CONS-SERVICE-STRAWS</span>
+          </td>
+          <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+          <td>0,6 caixa</td>
+          <td>-0,1 caixa</td>
+          <td>0,5 caixa</td>
+          <td>Preco pendente</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Consumiveis de Servico</td>
+          <td>
+            <strong>Palitos</strong>
+            <span>CONS-SERVICE-TOOTHPICKS</span>
+          </td>
+          <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+          <td>0,5 caixa</td>
+          <td>+0,5 caixa</td>
+          <td>1 caixa</td>
+          <td>Preco pendente</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Consumiveis Operacionais</td>
+          <td>
+            <strong>Rolos TPA</strong>
+            <span>CONS-OPS-TPA-ROLLS</span>
+          </td>
+          <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+          <td>2 caixa</td>
+          <td>-0,5 caixa</td>
+          <td>1,5 caixa</td>
+          <td>Preco pendente</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Consumiveis Operacionais</td>
+          <td>
+            <strong>Rolos Impressora</strong>
+            <span>CONS-OPS-PRINTER-ROLLS</span>
+          </td>
+          <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+          <td>3 caixa</td>
+          <td>-1 caixa</td>
+          <td>2 caixa</td>
+          <td>Preco pendente</td>
+          <td><span class="badge badge-yellow">Atencao</span></td>
+        </tr>
+      
+        <tr>
+          <td>Consumiveis Operacionais</td>
+          <td>
+            <strong>Rolos de Cozinha</strong>
+            <span>CONS-OPS-KITCHEN-ROLLS</span>
+          </td>
+          <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+          <td>6 pack</td>
+          <td>-6 pack</td>
+          <td>0 pack</td>
+          <td>Preco pendente</td>
+          <td><span class="badge badge-red">Critico</span></td>
+        </tr>
+      
+        <tr>
+          <td>Consumiveis Operacionais</td>
+          <td>
+            <strong>Sacos do Lixo 120L</strong>
+            <span>CONS-OPS-TRASH-BAGS-120L</span>
+          </td>
+          <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+          <td>3 caixa</td>
+          <td>-1 caixa</td>
+          <td>2 caixa</td>
+          <td>Preco pendente</td>
+          <td><span class="badge badge-yellow">Atencao</span></td>
+        </tr>
+      
+        <tr>
+          <td>Consumiveis Operacionais</td>
+          <td>
+            <strong>Sacos do Lixo Vidro</strong>
+            <span>CONS-OPS-GLASS-TRASH-BAGS</span>
+          </td>
+          <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+          <td>4 pack</td>
+          <td>-1 pack</td>
+          <td>3 pack</td>
+          <td>Preco pendente</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Consumiveis WC</td>
+          <td>
+            <strong>Papel Higienico</strong>
+            <span>CONS-WC-TOILET-PAPER</span>
+          </td>
+          <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+          <td>16 pack</td>
+          <td>-2 pack</td>
+          <td>14 pack</td>
+          <td>58,38 €</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Consumiveis WC</td>
+          <td>
+            <strong>Papel de Maos WC</strong>
+            <span>CONS-WC-HAND-PAPER</span>
+          </td>
+          <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+          <td>2 caixa</td>
+          <td>-1 caixa</td>
+          <td>1 caixa</td>
+          <td>14,00 €</td>
+          <td><span class="badge badge-red">Critico</span></td>
+        </tr>
+      
+        <tr>
+          <td>Copos Take Away</td>
+          <td>
+            <strong>Copos Medios Cafe Take Away</strong>
+            <span>CONS-TAKEAWAY-MEDIUM-COFFEE-CUPS</span>
+          </td>
+          <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+          <td>17 saco</td>
+          <td>-2 saco</td>
+          <td>15 saco</td>
+          <td>3,70 €</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Copos Take Away</td>
+          <td>
+            <strong>Copos Medios Take Away + Tampas</strong>
+            <span>CONS-TAKEAWAY-MEDIUM-CUPS-LIDS</span>
+          </td>
+          <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+          <td>0,5 caixa</td>
+          <td>+0,3 caixa</td>
+          <td>0,8 caixa</td>
+          <td>Preco pendente</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Copos Take Away</td>
+          <td>
+            <strong>Copos para Molhos Take Away</strong>
+            <span>CONS-TAKEAWAY-SAUCE-CUPS</span>
+          </td>
+          <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+          <td>1 caixa</td>
+          <td>-0,2 caixa</td>
+          <td>0,8 caixa</td>
+          <td>Preco pendente</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Copos Take Away</td>
+          <td>
+            <strong>Copos para Mousse</strong>
+            <span>CONS-DESSERT-MOUSSE-CUPS</span>
+          </td>
+          <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+          <td>200 unidade</td>
+          <td>-100 unidade</td>
+          <td>100 unidade</td>
+          <td>Preco pendente</td>
+          <td><span class="badge badge-yellow">Atencao</span></td>
+        </tr>
+      
+        <tr>
+          <td>Embalagens Take Away</td>
+          <td>
+            <strong>Box POKE + tampas</strong>
+            <span>CONS-TAKEAWAY-ROUND-BOX-LID</span>
+          </td>
+          <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+          <td>6 caixa</td>
+          <td>-3 caixa</td>
+          <td>3 caixa</td>
+          <td>Preco pendente</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Embalagens Take Away</td>
+          <td>
+            <strong>Box Pequena 750ml</strong>
+            <span>CONS-TAKEAWAY-BOX-750ML</span>
+          </td>
+          <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+          <td>0 caixa</td>
+          <td>+1,5 caixa</td>
+          <td>1,5 caixa</td>
+          <td>Preco pendente</td>
+          <td><span class="badge badge-yellow">Atencao</span></td>
+        </tr>
+      
+        <tr>
+          <td>Embalagens Take Away</td>
+          <td>
+            <strong>Box Media 1350</strong>
+            <span>CONS-TAKEAWAY-TOAST-BOX</span>
+          </td>
+          <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+          <td>4 caixa</td>
+          <td>-2 caixa</td>
+          <td>2 caixa</td>
+          <td>Preco pendente</td>
+          <td><span class="badge badge-yellow">Atencao</span></td>
+        </tr>
+      
+        <tr>
+          <td>Embalagens Take Away</td>
+          <td>
+            <strong>Box grande 1980ml</strong>
+            <span>CONS-TAKEAWAY-BURGER-BOX</span>
+          </td>
+          <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+          <td>4 caixa</td>
+          <td>-1 caixa</td>
+          <td>3 caixa</td>
+          <td>Preco pendente</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Molhos</td>
+          <td>
+            <strong>Ketchup</strong>
+            <span>SAUCE-KETCHUP</span>
+          </td>
+          <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+          <td>5,5 caixa</td>
+          <td>-2,5 caixa</td>
+          <td>3 caixa</td>
+          <td>46,53 €</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Molhos</td>
+          <td>
+            <strong>Maionese</strong>
+            <span>SAUCE-MAYONNAISE</span>
+          </td>
+          <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+          <td>6,5 caixa</td>
+          <td>-1,5 caixa</td>
+          <td>5 caixa</td>
+          <td>26,70 €</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Molhos</td>
+          <td>
+            <strong>Mostarda</strong>
+            <span>SAUCE-MUSTARD</span>
+          </td>
+          <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+          <td>2 caixa</td>
+          <td>-1 caixa</td>
+          <td>1 caixa</td>
+          <td>Preco pendente</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Produtos de Limpeza</td>
+          <td>
+            <strong>Espuma Antibacteriana</strong>
+            <span>CLEAN-ANTIBACTERIAL-FOAM</span>
+          </td>
+          <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+          <td>5 unidade</td>
+          <td>-2 unidade</td>
+          <td>3 unidade</td>
+          <td>13,94 €</td>
+          <td><span class="badge badge-yellow">Atencao</span></td>
+        </tr>
+      
+        <tr>
+          <td>Produtos de Limpeza</td>
+          <td>
+            <strong>Spray Laranja WC IBT</strong>
+            <span>CLEAN-WC-ORANGE-SPRAY-IBT</span>
+          </td>
+          <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+          <td>5 litros</td>
+          <td>-2,5 litros</td>
+          <td>2,5 litros</td>
+          <td>Preco pendente</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Produtos de Limpeza</td>
+          <td>
+            <strong>Alcool</strong>
+            <span>CLEAN-ALCOHOL</span>
+          </td>
+          <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+          <td>4 unidade</td>
+          <td>-4 unidade</td>
+          <td>0 unidade</td>
+          <td>Preco pendente</td>
+          <td><span class="badge badge-red">Critico</span></td>
+        </tr>
+      
+        <tr>
+          <td>Produtos de Limpeza</td>
+          <td>
+            <strong>Lava-Tudo</strong>
+            <span>CLEAN-LAVA-TUDO</span>
+          </td>
+          <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+          <td>9 unidade</td>
+          <td>-3 unidade</td>
+          <td>6 unidade</td>
+          <td>Preco pendente</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Produtos de Limpeza</td>
+          <td>
+            <strong>Thomil</strong>
+            <span>CLEAN-THOMIL</span>
+          </td>
+          <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+          <td>4 unidade</td>
+          <td>-2 unidade</td>
+          <td>2 unidade</td>
+          <td>Preco pendente</td>
+          <td><span class="badge badge-yellow">Atencao</span></td>
+        </tr>
+      
+        <tr>
+          <td>Produtos de Limpeza</td>
+          <td>
+            <strong>Dish Lemon</strong>
+            <span>CLEAN-DISH-LEMON</span>
+          </td>
+          <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+          <td>0 unidade</td>
+          <td>+4 unidade</td>
+          <td>4 unidade</td>
+          <td>Preco pendente</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Talheres Take Away</td>
+          <td>
+            <strong>Garfos e Facas Take Away</strong>
+            <span>CONS-TAKEAWAY-FORKS-KNIVES</span>
+          </td>
+          <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+          <td>8 saco</td>
+          <td>-2 saco</td>
+          <td>6 saco</td>
+          <td>Preco pendente</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Talheres Take Away</td>
+          <td>
+            <strong>Colheres Take Away</strong>
+            <span>CONS-TAKEAWAY-SPOONS</span>
+          </td>
+          <td><span class="badge badge-blue">ADJUSTMENT</span></td>
+          <td>4 saco</td>
+          <td>-2 saco</td>
+          <td>2 saco</td>
+          <td>Preco pendente</td>
+          <td><span class="badge badge-yellow">Atencao</span></td>
+        </tr>
+      
+        <tr>
+          <td>Copos Take Away</td>
+          <td>
+            <strong>Copos Pequenos Cafe Take Away</strong>
+            <span>CONS-TAKEAWAY-SMALL-COFFEE-CUPS</span>
+          </td>
+          <td><span class="badge badge-blue">CONFIG</span></td>
+          <td>1,5 caixa</td>
+          <td>Parametros</td>
+          <td>1,5 caixa</td>
+          <td>Configuracao</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Embalagens Take Away</td>
+          <td>
+            <strong>Box de Sopas + Tampas</strong>
+            <span>CONS-TAKEAWAY-SOUP-BOX-LID</span>
+          </td>
+          <td><span class="badge badge-blue">CONFIG</span></td>
+          <td>1,5 caixa</td>
+          <td>Parametros</td>
+          <td>1,5 caixa</td>
+          <td>Configuracao</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+          </tbody>
+        </table>
+      </section>
+
+      <section class="panel">
+        <h2>Notas para a gestao</h2>
+        <ul>
+          <li>Contagem semanal oficial registada para reconciliar o stock atual com a contagem fisica.</li>
+          <li>Todos os consumiveis encontram-se operacionais e nao existem ruturas de stock registadas nesta contagem.</li>
+          <li>Os artigos em estado de atencao ou critico devem ser acompanhados nas proximas semanas com base na tendencia de consumo.</li>
+          <li>Manter contagens semanais consistentes para melhorar consumo estimado e previsao de reposicao.</li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,683 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Relatório Diário Operacional - 04-06-2026</title>
+    <style>
+      @page {
+        size: A4;
+        margin: 16mm 14mm 18mm;
+      }
+
+      :root {
+        --ink: #172033;
+        --muted: #657085;
+        --line: #d9dee8;
+        --soft: #f6f7fa;
+        --warm: #fff7ed;
+        --brand: #f97316;
+        --brand-dark: #9a3412;
+        --green: #15803d;
+        --amber: #a16207;
+        --red: #b91c1c;
+        --blue: #1d4ed8;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: #ffffff;
+        color: var(--ink);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 10pt;
+        line-height: 1.5;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        font-size: 34pt;
+        line-height: 1.02;
+        letter-spacing: -0.04em;
+        margin-bottom: 10pt;
+      }
+
+      h2 {
+        border-bottom: 1px solid var(--line);
+        font-size: 15pt;
+        letter-spacing: -0.02em;
+        margin: 22pt 0 10pt;
+        padding-bottom: 5pt;
+      }
+
+      h3 {
+        color: var(--brand-dark);
+        font-size: 11pt;
+        margin: 13pt 0 5pt;
+      }
+
+      ul {
+        margin: 4pt 0 10pt 15pt;
+        padding: 0;
+      }
+
+      li {
+        margin: 2pt 0;
+      }
+
+      table {
+        border-collapse: collapse;
+        margin: 8pt 0 14pt;
+        width: 100%;
+      }
+
+      th,
+      td {
+        border: 1px solid var(--line);
+        padding: 6pt 7pt;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        background: var(--soft);
+        color: var(--ink);
+        font-size: 8pt;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .cover {
+        background:
+          radial-gradient(circle at top right, rgba(249, 115, 22, 0.18), transparent 35%),
+          linear-gradient(135deg, #fff7ed 0%, #ffffff 42%, #f8fafc 100%);
+        border: 1px solid #fed7aa;
+        border-radius: 22px;
+        margin-bottom: 16pt;
+        min-height: 248mm;
+        padding: 24mm 18mm;
+      }
+
+      .eyebrow {
+        color: var(--brand);
+        font-size: 8.5pt;
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        margin-bottom: 14pt;
+        text-transform: uppercase;
+      }
+
+      .subtitle {
+        color: var(--muted);
+        font-size: 14pt;
+        line-height: 1.45;
+        max-width: 150mm;
+      }
+
+      .meta-panel {
+        background: rgba(255, 255, 255, 0.82);
+        border: 1px solid #fed7aa;
+        border-radius: 16px;
+        margin-top: 28pt;
+        padding: 14pt;
+      }
+
+      .meta-grid {
+        display: grid;
+        gap: 10pt;
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .meta-item {
+        border-left: 3px solid var(--brand);
+        padding-left: 8pt;
+      }
+
+      .meta-label {
+        color: var(--muted);
+        display: block;
+        font-size: 7.5pt;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .meta-value {
+        display: block;
+        font-size: 10.5pt;
+        font-weight: 700;
+        margin-top: 2pt;
+      }
+
+      .page-break {
+        break-before: page;
+      }
+
+      .kpi-grid {
+        display: grid;
+        gap: 8pt;
+        grid-template-columns: repeat(4, 1fr);
+        margin: 12pt 0 16pt;
+      }
+
+      .kpi {
+        background: var(--soft);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 10pt;
+      }
+
+      .kpi-label {
+        color: var(--muted);
+        display: block;
+        font-size: 7.5pt;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .kpi-value {
+        display: block;
+        font-size: 22pt;
+        font-weight: 800;
+        letter-spacing: -0.04em;
+        margin-top: 3pt;
+      }
+
+      .kpi-note {
+        color: var(--muted);
+        display: block;
+        font-size: 8pt;
+        margin-top: 2pt;
+      }
+
+      .good {
+        color: var(--green);
+      }
+
+      .watch {
+        color: var(--amber);
+      }
+
+      .callout {
+        background: var(--warm);
+        border-left: 4px solid var(--brand);
+        border-radius: 12px;
+        margin: 10pt 0 14pt;
+        padding: 11pt 13pt;
+      }
+
+      .panel-grid {
+        display: grid;
+        gap: 9pt;
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .panel {
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        break-inside: avoid;
+        padding: 10pt;
+      }
+
+      .badge {
+        border-radius: 999px;
+        display: inline-block;
+        font-size: 7.5pt;
+        font-weight: 800;
+        letter-spacing: 0.05em;
+        margin-bottom: 5pt;
+        padding: 3pt 7pt;
+        text-transform: uppercase;
+      }
+
+      .badge-green {
+        background: #dcfce7;
+        color: var(--green);
+      }
+
+      .badge-amber {
+        background: #fef3c7;
+        color: var(--amber);
+      }
+
+      .badge-blue {
+        background: #dbeafe;
+        color: var(--blue);
+      }
+
+      .section-intro {
+        color: var(--muted);
+        font-size: 9.5pt;
+        margin-bottom: 10pt;
+      }
+
+      .footer-note {
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 8.5pt;
+        margin-top: 18pt;
+        padding-top: 7pt;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="cover">
+      <div class="eyebrow">RIBBAI OPS · Relatório Diário Operacional</div>
+      <h1>Registo Diário Operacional</h1>
+      <p class="subtitle">
+        Apresentação diária à gestão sobre a operação Front of House do restaurante RIBBAI.
+      </p>
+
+      <div class="meta-panel">
+        <div class="meta-grid">
+          <div class="meta-item">
+            <span class="meta-label">Data</span>
+            <span class="meta-value">04-06-2026</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Dia</span>
+            <span class="meta-value">Quinta-feira</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Contexto</span>
+            <span class="meta-value">Feriado nacional</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Autor</span>
+            <span class="meta-value">Filipe Catalão</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Âmbito</span>
+            <span class="meta-value">Front of House</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Estado</span>
+            <span class="meta-value">Registado</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="kpi-grid">
+        <div class="kpi">
+          <span class="kpi-label">Sucesso Operacional</span>
+          <span class="kpi-value good">9/10</span>
+          <span class="kpi-note">Operação estável</span>
+        </div>
+        <div class="kpi">
+          <span class="kpi-label">Colaboração</span>
+          <span class="kpi-value good">9/10</span>
+          <span class="kpi-note">Forte compromisso</span>
+        </div>
+        <div class="kpi">
+          <span class="kpi-label">Qualidade Serviço</span>
+          <span class="kpi-value good">8/10</span>
+          <span class="kpi-note">Pressão elevada</span>
+        </div>
+        <div class="kpi">
+          <span class="kpi-label">Comunicação</span>
+          <span class="kpi-value watch">7/10</span>
+          <span class="kpi-note">Foco por setor</span>
+        </div>
+      </div>
+
+      <div class="callout">
+        <strong>Conclusão do dia:</strong> feriado nacional com fluxo superior ao habitual, pressão
+        contínua entre cerca das 11h30 e 18h30 e excelente resposta da equipa. O principal ponto de
+        melhoria é reforçar a disciplina operacional por setores.
+      </div>
+    </section>
+
+    <section class="page-break">
+      <h2>Síntese Executiva</h2>
+      <p>
+        Sendo feriado nacional, o restaurante registou um fluxo de clientes superior ao habitual
+        durante a manhã e ao longo da tarde, com especial pressão na cafetaria e na operação de sala.
+      </p>
+      <p>
+        O período de maior intensidade iniciou-se por volta das 11h30 e manteve-se praticamente sem
+        interrupções até cerca das 18h30. Apesar da pressão, a operação manteve-se estável graças ao
+        compromisso, espírito de entreajuda e capacidade de adaptação da equipa.
+      </p>
+
+      <h2>Equipa Em Serviço</h2>
+      <div class="panel-grid">
+        <div class="panel">
+          <span class="badge badge-green">Pablo</span>
+          <ul>
+            <li>Realizou a abertura do restaurante.</li>
+            <li>Desempenho irrepreensível durante a abertura.</li>
+            <li>Responsável principal pela zona das mesas 60.</li>
+            <li>Exemplo de foco, organização e controlo operacional.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <span class="badge badge-green">Marta</span>
+          <ul>
+            <li>Entrada às 10h00.</li>
+            <li>Apoio importante na fase inicial do serviço.</li>
+            <li>Apoio à zona 60 e mesas 11 a 13 da sala.</li>
+            <li>Aproximadamente 50 minutos adicionais de trabalho.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <span class="badge badge-green">Carolina</span>
+          <ul>
+            <li>Entrada às 11h00.</li>
+            <li>Assegurou a substituição do Pablo na pausa de almoço.</li>
+            <li>Responsável pela zona 70 e mesas 6 a 10 da sala.</li>
+            <li>Totalizou 1h55m extra, considerando pausa de almoço reduzida para 30 minutos.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <span class="badge badge-green">Matilde</span>
+          <ul>
+            <li>Entrou uma hora mais cedo.</li>
+            <li>Reforçou bar e cafetaria.</li>
+            <li>Mesas 1 a 5 da sala e runner geral.</li>
+            <li>Total de 2h45m extra, incluindo 30 minutos por pausa reduzida.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <span class="badge badge-green">Bruno</span>
+          <ul>
+            <li>Entrada às 12h00.</li>
+            <li>Assumiu zona 50 e gestão da porta.</li>
+            <li>Entrou no início do período de maior fluxo.</li>
+            <li>Totalizou 1h45m extra, incluindo 30 minutos por pausa reduzida.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <span class="badge badge-blue">Equipa</span>
+          <ul>
+            <li>Forte espírito de entreajuda.</li>
+            <li>Boa resposta perante serviço mais exigente que o habitual.</li>
+            <li>Dedicação e compromisso em contexto de feriado.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>Distribuição De Setores</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Colaborador</th>
+            <th>Setor / Responsabilidade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Bruno</td>
+            <td>Mesas da zona 50 e gestão da porta</td>
+          </tr>
+          <tr>
+            <td>Pablo</td>
+            <td>Responsável principal pela zona das mesas 60</td>
+          </tr>
+          <tr>
+            <td>Carolina</td>
+            <td>Zona 70 da esplanada e mesas 6 a 10 da sala</td>
+          </tr>
+          <tr>
+            <td>Marta</td>
+            <td>Apoio à zona 60 e responsabilidade pelas mesas 11 a 13 da sala</td>
+          </tr>
+          <tr>
+            <td>Matilde</td>
+            <td>Mesas 1 a 5 da sala e função de runner geral</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="page-break">
+      <h2>Desempenho Operacional</h2>
+      <p>
+        O serviço decorreu num contexto de elevada exigência operacional, condicionado pelo feriado
+        nacional e pelo aumento significativo de clientes durante a manhã, almoço e tarde.
+      </p>
+      <p>
+        A cafetaria registou pressão superior ao habitual, exigindo reforço antecipado e maior
+        coordenação entre sala, bar e runner. A entrada antecipada da Matilde permitiu reforçar esta
+        área e contribuiu para manter a estabilidade da operação.
+      </p>
+
+      <h2>Observações Operacionais</h2>
+      <p>
+        Continua a verificar-se alguma dificuldade por parte da equipa em manter o foco exclusivo no
+        seu setor. Esta situação resulta sobretudo do hábito de responder imediatamente a solicitações
+        de clientes fora da zona atribuída enquanto os colaboradores circulam pelo restaurante.
+      </p>
+      <div class="panel-grid">
+        <div class="panel">
+          <span class="badge badge-amber">Riscos Identificados</span>
+          <ul>
+            <li>Duplicação de pedidos.</li>
+            <li>Falhas de comunicação.</li>
+            <li>Deslocações desnecessárias.</li>
+            <li>Perda de controlo sobre cada setor.</li>
+            <li>Menor responsabilização individual.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <span class="badge badge-blue">Recomendação</span>
+          <p>
+            Quando abordado fora da sua zona, o colaborador deve informar o cliente de que o
+            responsável será avisado e comunicar prontamente ao colega responsável qual a mesa que
+            necessita de atenção.
+          </p>
+          <p>
+            Se resolver o pedido no momento, deve transmitir a informação ao responsável da zona para
+            manter controlo operacional e evitar duplicações.
+          </p>
+        </div>
+      </div>
+
+      <h2>Horas Extra E Compromisso</h2>
+      <p class="section-intro">
+        O volume de clientes em dia feriado exigiu esforço adicional para garantir a qualidade do
+        serviço.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Colaborador</th>
+            <th>Registo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Matilde</td>
+            <td>Entrou 1 hora mais cedo, saiu 1h15m mais tarde e teve pausa reduzida em 30 minutos, totalizando 2h45m extra</td>
+          </tr>
+          <tr>
+            <td>Bruno</td>
+            <td>Saiu 1h15m após o término previsto do turno e teve pausa reduzida em 30 minutos, totalizando 1h45m extra</td>
+          </tr>
+          <tr>
+            <td>Carolina</td>
+            <td>Realizou 30 minutos de pausa para almoço e totalizou 1h55m extra</td>
+          </tr>
+          <tr>
+            <td>Marta</td>
+            <td>Realizou 30 minutos de pausa para almoço e saiu 20 minutos mais tarde</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="callout">
+        <strong>Enquadramento:</strong> tratando-se de feriado nacional, todas as horas
+        extraordinárias realizadas deverão ser consideradas de acordo com o regime aplicável para
+        trabalho em dia feriado.
+      </div>
+    </section>
+
+    <section class="page-break">
+      <h2>Melhoria Contínua E Ajustes Operacionais</h2>
+      <p>
+        Em conversa com a Carolina, foi analisado o modelo atual de distribuição de setores e
+        identificada uma oportunidade de melhoria na organização da equipa durante períodos de maior
+        fluxo.
+      </p>
+      <p>
+        Concluiu-se que será mais eficiente atribuir a cada elemento um único setor fixo durante o
+        serviço, evitando acumular porta e mesas na mesma pessoa e evitando dividir a sala interior
+        por vários colaboradores.
+      </p>
+
+      <div class="panel-grid">
+        <div class="panel">
+          <span class="badge badge-blue">Proposta A Testar</span>
+          <ul>
+            <li>1 host fixo na porta a partir das 12h30.</li>
+            <li>1 colaborador responsável pela zona 50.</li>
+            <li>1 colaborador responsável pela zona 60.</li>
+            <li>1 colaborador responsável pela zona 70.</li>
+            <li>1 colaborador responsável pela totalidade da sala interior.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <span class="badge badge-green">Objetivos</span>
+          <ul>
+            <li>Aumentar a responsabilização individual.</li>
+            <li>Melhorar o controlo operacional.</li>
+            <li>Aumentar clareza na comunicação.</li>
+            <li>Reduzir duplicações de serviço.</li>
+            <li>Melhorar a consistência no acompanhamento das mesas.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Modelo De Apoio Entre Setores</h3>
+      <p>
+        O colaborador responsável pela sala interior deverá solicitar apoio aos restantes colegas
+        sempre que o volume de trabalho o justifique. Da mesma forma, os colaboradores que tenham o
+        seu setor controlado deverão prestar apoio temporário às restantes áreas quando necessário,
+        sem perder de vista a responsabilidade principal pelo seu setor.
+      </p>
+      <div class="callout">
+        <strong>Estado:</strong> modelo em fase de teste e acompanhamento nos próximos serviços.
+      </div>
+
+      <h2>Notas Para A Gestão</h2>
+      <p>
+        O feriado nacional deve ser considerado na análise semanal de carga operacional, horas extra
+        e necessidades de reforço em períodos de maior procura. A acumulação de porta e mesas no
+        mesmo colaborador deve ser acompanhada pelo impacto potencial na clareza de responsabilidades.
+      </p>
+      <h3>Indicadores a acompanhar</h3>
+      <ul>
+        <li>Eficácia do host fixo a partir das 12h30.</li>
+        <li>Capacidade de cada colaborador manter controlo do setor atribuído.</li>
+        <li>Redução de duplicações de pedidos.</li>
+        <li>Qualidade da comunicação entre setores.</li>
+        <li>Necessidade de reforço em cafetaria e bar durante feriados.</li>
+      </ul>
+    </section>
+
+    <section class="page-break">
+      <h2>Destaques Da Equipa</h2>
+      <div class="panel-grid">
+        <div class="panel">
+          <span class="badge badge-green">Pablo</span>
+          <p>
+            Excelente desempenho durante a abertura, elevado foco e bom controlo da zona 60. Voltou a
+            servir de exemplo na aplicação do modelo de trabalho por setores.
+          </p>
+        </div>
+        <div class="panel">
+          <span class="badge badge-green">Marta</span>
+          <p>
+            Apoio importante desde a fase inicial do serviço, disponibilidade para reduzir a pausa e
+            prolongar o turno.
+          </p>
+        </div>
+        <div class="panel">
+          <span class="badge badge-green">Carolina</span>
+          <p>
+            Boa adaptação ao aumento de ocupação da esplanada, contributo relevante na reflexão
+            sobre melhorias no modelo de setores e compromisso adicional ao totalizar 1h55m extra
+            com pausa de almoço reduzida para 30 minutos.
+          </p>
+        </div>
+        <div class="panel">
+          <span class="badge badge-green">Matilde</span>
+          <p>
+            Grande disponibilidade ao entrar uma hora mais cedo e apoio relevante ao bar, cafetaria e
+            função de runner geral, assumindo também pausa reduzida durante o serviço.
+          </p>
+        </div>
+        <div class="panel">
+          <span class="badge badge-green">Bruno</span>
+          <p>
+            Assumiu a zona 50 e gestão da porta num momento de grande fluxo operacional, prolongando
+            o turno e assumindo pausa reduzida para apoiar a equipa.
+          </p>
+        </div>
+        <div class="panel">
+          <span class="badge badge-blue">Equipa</span>
+          <p>
+            Toda a equipa demonstrou compromisso, espírito de entreajuda e capacidade de resposta
+            perante um serviço mais exigente do que o habitual.
+          </p>
+        </div>
+      </div>
+
+      <h2>Classificação Para O Sistema RIBBAI OPS</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Categoria</th>
+            <th>Registo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Operational Notes</td>
+            <td>Feriado nacional com fluxo superior ao habitual e pressão elevada na cafetaria.</td>
+          </tr>
+          <tr>
+            <td>Service Improvement Candidate</td>
+            <td>Testar modelo com host fixo e setores 50, 60, 70 e sala interior dedicados.</td>
+          </tr>
+          <tr>
+            <td>Team Feedback Input</td>
+            <td>Equipa demonstrou compromisso, disponibilidade adicional e abertura a melhorias.</td>
+          </tr>
+          <tr>
+            <td>Overtime Input</td>
+            <td>Horas extra de Matilde, Bruno, Carolina e Marta em contexto de feriado nacional.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Candidatos Para O Relatório Semanal</h2>
+      <p class="section-intro">
+        Estes pontos não constituem um plano de ação diário. Devem ser utilizados como matéria-prima
+        para o relatório semanal.
+      </p>
+      <ul>
+        <li>Avaliar impacto do feriado nacional na carga operacional e nas horas extra.</li>
+        <li>Acompanhar o teste do modelo com host fixo e setores dedicados.</li>
+        <li>Verificar se a equipa melhora o foco exclusivo no setor atribuído.</li>
+        <li>Medir redução de duplicações e falhas de comunicação entre zonas.</li>
+        <li>Rever necessidade de reforço antecipado em bar e cafetaria nos dias de maior procura.</li>
+        <li>Destacar desempenho positivo de Pablo e compromisso adicional da equipa.</li>
+      </ul>
+
+      <p class="footer-note">
+        Documento gerado para apresentação diária à gestão. Fonte operacional: Registo Diário
+        Operacional de 04-06-2026.
+      </p>
+    </section>
+  </body>
+</html>

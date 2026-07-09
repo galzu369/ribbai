@@ -1,0 +1,1226 @@
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="utf-8" />
+    <title>Relatorio Mensal de Inventario - junho 2026</title>
+    <style>
+      :root {
+        color: #172033;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        margin: 0;
+        background: #f4f6fb;
+      }
+
+      main {
+        padding: 32px;
+      }
+
+      h1,
+      h2 {
+        margin: 0;
+      }
+
+      h1 {
+        font-size: 30px;
+      }
+
+      h2 {
+        margin-top: 28px;
+        font-size: 18px;
+      }
+
+      h3 {
+        font-size: 13px;
+        margin: 0 0 10px;
+      }
+
+      .cover,
+      .panel {
+        background: #ffffff;
+        border: 1px solid #d8deea;
+        border-radius: 16px;
+        padding: 24px;
+      }
+
+      .panel {
+        margin-top: 18px;
+      }
+
+      .report-summary-section {
+        break-before: page;
+        page-break-before: always;
+      }
+
+      .management-notes-section {
+        break-before: page;
+        page-break-before: always;
+      }
+
+      .subtitle {
+        color: #657085;
+        margin-top: 8px;
+      }
+
+      .summary {
+        display: grid;
+        gap: 14px;
+        grid-template-columns: repeat(4, 1fr);
+        margin-top: 24px;
+      }
+
+      .metric {
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 14px;
+      }
+
+      .metric span {
+        color: #657085;
+        display: block;
+        font-size: 11px;
+        text-transform: uppercase;
+      }
+
+      .metric strong {
+        display: block;
+        font-size: 22px;
+        margin-top: 6px;
+      }
+
+      .grid-two {
+        display: grid;
+        gap: 18px;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      table {
+        border-collapse: collapse;
+        font-size: 12px;
+        margin-top: 14px;
+        width: 100%;
+      }
+
+      th,
+      td {
+        border-bottom: 1px solid #e2e8f0;
+        padding: 10px 8px;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        color: #475569;
+        font-size: 10px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      td span {
+        color: #657085;
+        display: block;
+        font-size: 10px;
+        margin-top: 3px;
+      }
+
+      .badge {
+        border-radius: 999px;
+        display: inline-block;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 4px 8px;
+      }
+
+      .badge-green {
+        background: #dcfce7;
+        color: #166534;
+      }
+
+      .badge-red {
+        background: #fee2e2;
+        color: #991b1b;
+      }
+
+      .callout {
+        background: #fff7ed;
+        border: 1px solid #fed7aa;
+        border-radius: 12px;
+        color: #9a3412;
+        margin-top: 18px;
+        padding: 14px 16px;
+      }
+
+      .bar-row,
+      .status-row {
+        align-items: center;
+        display: grid;
+        gap: 10px;
+        grid-template-columns: 155px 1fr 28px;
+        margin: 10px 0;
+      }
+
+      .bar-label,
+      .status-row span {
+        color: #475569;
+        font-size: 12px;
+      }
+
+      .bar-track,
+      .status-track {
+        background: #eef2f7;
+        border-radius: 999px;
+        height: 12px;
+        overflow: hidden;
+      }
+
+      .bar-fill,
+      .status-fill {
+        background: #172033;
+        height: 100%;
+      }
+
+      .status-green {
+        background: #16a34a;
+      }
+
+      .status-red {
+        background: #dc2626;
+      }
+
+      ul {
+        margin: 12px 0 0;
+        padding-left: 18px;
+      }
+
+      li {
+        margin: 6px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="cover">
+        <h1>Relatorio Mensal de Inventario</h1>
+        <p class="subtitle">RIBBAI OPS · junho 2026</p>
+
+        
+
+        <div class="summary">
+          <div class="metric">
+            <span>Artigos monitorizados</span>
+            <strong>52</strong>
+          </div>
+          <div class="metric">
+            <span>Artigos criticos</span>
+            <strong>6</strong>
+          </div>
+          <div class="metric">
+            <span>Contagens no periodo</span>
+            <strong>4</strong>
+          </div>
+          <div class="metric">
+            <span>Gasto estimado</span>
+            <strong>834,34 €</strong>
+          </div>
+          <div class="metric">
+            <span>Artigos com entrada</span>
+            <strong>40</strong>
+          </div>
+          <div class="metric">
+            <span>Artigos com saida</span>
+            <strong>2</strong>
+          </div>
+          <div class="metric">
+            <span>Categorias</span>
+            <strong>10</strong>
+          </div>
+          <div class="metric">
+            <span>Precos pendentes</span>
+            <strong>31</strong>
+          </div>
+        </div>
+
+        
+
+        <div class="callout">
+                31 artigos ainda nao tem preco unitario configurado. Os valores
+                monetarios ficam incompletos ate os custos serem preenchidos em InventoryItem.costPrice.
+              </div>
+      </section>
+
+      <section class="panel grid-two">
+        <div>
+          <h3>Artigos por categoria</h3>
+          
+        <div class="bar-row">
+          <div class="bar-label">Consumiveis</div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width: 5.88235294117647%"></div>
+          </div>
+          <strong>1</strong>
+        </div>
+      
+        <div class="bar-row">
+          <div class="bar-label">Consumiveis de Servico</div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width: 17.647058823529413%"></div>
+          </div>
+          <strong>3</strong>
+        </div>
+      
+        <div class="bar-row">
+          <div class="bar-label">Consumiveis Operacionais</div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width: 64.70588235294117%"></div>
+          </div>
+          <strong>11</strong>
+        </div>
+      
+        <div class="bar-row">
+          <div class="bar-label">Consumiveis WC</div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width: 11.76470588235294%"></div>
+          </div>
+          <strong>2</strong>
+        </div>
+      
+        <div class="bar-row">
+          <div class="bar-label">Copos Take Away</div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width: 29.411764705882355%"></div>
+          </div>
+          <strong>5</strong>
+        </div>
+      
+        <div class="bar-row">
+          <div class="bar-label">Embalagens Take Away</div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width: 29.411764705882355%"></div>
+          </div>
+          <strong>5</strong>
+        </div>
+      
+        <div class="bar-row">
+          <div class="bar-label">Galheteiros</div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width: 11.76470588235294%"></div>
+          </div>
+          <strong>2</strong>
+        </div>
+      
+        <div class="bar-row">
+          <div class="bar-label">Molhos</div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width: 17.647058823529413%"></div>
+          </div>
+          <strong>3</strong>
+        </div>
+      
+        <div class="bar-row">
+          <div class="bar-label">Produtos de Limpeza</div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width: 100%"></div>
+          </div>
+          <strong>17</strong>
+        </div>
+      
+        <div class="bar-row">
+          <div class="bar-label">Talheres Take Away</div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width: 17.647058823529413%"></div>
+          </div>
+          <strong>3</strong>
+        </div>
+      
+        </div>
+        <div>
+          <h3>Saude do stock monitorizado</h3>
+          
+        <div class="status-row">
+          <span>Saudavel</span>
+          <div class="status-track">
+            <div class="status-fill status-green" style="width: 88.46153846153845%"></div>
+          </div>
+          <strong>46</strong>
+        </div>
+      
+        <div class="status-row">
+          <span>Critico</span>
+          <div class="status-track">
+            <div class="status-fill status-red" style="width: 11.538461538461538%"></div>
+          </div>
+          <strong>6</strong>
+        </div>
+      
+        </div>
+      </section>
+
+      <section class="panel report-summary-section">
+        <h2>Resumo por artigo</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Categoria</th>
+              <th>Artigo</th>
+              <th>Stock inicial</th>
+              <th>Stock final</th>
+              <th>Entradas</th>
+              <th>Saidas</th>
+              <th>Consumo estimado</th>
+              <th>Custo unitario</th>
+              <th>Gasto estimado</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+        <tr>
+          <td>Consumiveis</td>
+          <td>
+            <strong>Guardanapos</strong>
+            <span>CONS-SERVICE-NAPKINS</span>
+          </td>
+          <td>4 caixa</td>
+          <td>2 caixa</td>
+          <td>3 caixa</td>
+          <td>0 caixa</td>
+          <td>5 caixa</td>
+          <td>Preco pendente</td>
+          <td>0,00 €</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Consumiveis de Servico</td>
+          <td>
+            <strong>Guardanapos Pequenos</strong>
+            <span>CONS-SERVICE-SMALL-NAPKINS</span>
+          </td>
+          <td>2 caixa</td>
+          <td>0 caixa</td>
+          <td>0 caixa</td>
+          <td>0 caixa</td>
+          <td>2 caixa</td>
+          <td>Preco pendente</td>
+          <td>0,00 €</td>
+          <td><span class="badge badge-red">Critico</span></td>
+        </tr>
+      
+        <tr>
+          <td>Consumiveis de Servico</td>
+          <td>
+            <strong>Palhinhas</strong>
+            <span>CONS-SERVICE-STRAWS</span>
+          </td>
+          <td>1 saco</td>
+          <td>35 saco</td>
+          <td>35 saco</td>
+          <td>0 saco</td>
+          <td>1 saco</td>
+          <td>1,75 €</td>
+          <td>1,75 €</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Consumiveis de Servico</td>
+          <td>
+            <strong>Palitos</strong>
+            <span>CONS-SERVICE-TOOTHPICKS</span>
+          </td>
+          <td>0,5 caixa</td>
+          <td>1 caixa</td>
+          <td>0 caixa</td>
+          <td>0 caixa</td>
+          <td>-0,5 caixa</td>
+          <td>Preco pendente</td>
+          <td>-0,00 €</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Consumiveis Operacionais</td>
+          <td>
+            <strong>Rolos TPA</strong>
+            <span>CONS-OPS-TPA-ROLLS</span>
+          </td>
+          <td>2 caixa</td>
+          <td>1,5 caixa</td>
+          <td>0 caixa</td>
+          <td>0 caixa</td>
+          <td>0,5 caixa</td>
+          <td>Preco pendente</td>
+          <td>0,00 €</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Consumiveis Operacionais</td>
+          <td>
+            <strong>Rolos Impressora</strong>
+            <span>CONS-OPS-PRINTER-ROLLS</span>
+          </td>
+          <td>3 caixa</td>
+          <td>4 caixa</td>
+          <td>4 caixa</td>
+          <td>0 caixa</td>
+          <td>3 caixa</td>
+          <td>39,65 €</td>
+          <td>118,95 €</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Consumiveis Operacionais</td>
+          <td>
+            <strong>Rolos de Cozinha</strong>
+            <span>CONS-OPS-KITCHEN-ROLLS</span>
+          </td>
+          <td>8 pack</td>
+          <td>4 pack</td>
+          <td>10 pack</td>
+          <td>0 pack</td>
+          <td>14 pack</td>
+          <td>Preco pendente</td>
+          <td>0,00 €</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Consumiveis Operacionais</td>
+          <td>
+            <strong>Sacos do Lixo 120L</strong>
+            <span>CONS-OPS-TRASH-BAGS-120L</span>
+          </td>
+          <td>3 caixa</td>
+          <td>2 caixa</td>
+          <td>0 caixa</td>
+          <td>0 caixa</td>
+          <td>1 caixa</td>
+          <td>Preco pendente</td>
+          <td>0,00 €</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Consumiveis Operacionais</td>
+          <td>
+            <strong>Sacos do Lixo Vidro</strong>
+            <span>CONS-OPS-GLASS-TRASH-BAGS</span>
+          </td>
+          <td>4 pack</td>
+          <td>2 pack</td>
+          <td>2 pack</td>
+          <td>0 pack</td>
+          <td>4 pack</td>
+          <td>14,10 €</td>
+          <td>56,40 €</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Consumiveis Operacionais</td>
+          <td>
+            <strong>Rolo Azul</strong>
+            <span>CONS-OPS-BLUE-ROLL</span>
+          </td>
+          <td>1,5 unidade</td>
+          <td>1,5 unidade</td>
+          <td>2 unidade</td>
+          <td>0 unidade</td>
+          <td>Dados insuficientes</td>
+          <td>Preco pendente</td>
+          <td>-</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Consumiveis Operacionais</td>
+          <td>
+            <strong>Panos Microfibra Amarelos</strong>
+            <span>CLEAN-MICROFIBER-YELLOW</span>
+          </td>
+          <td>3 saco</td>
+          <td>3 saco</td>
+          <td>3 saco</td>
+          <td>0 saco</td>
+          <td>Dados insuficientes</td>
+          <td>3,70 €</td>
+          <td>-</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Consumiveis Operacionais</td>
+          <td>
+            <strong>Panos Microfibra Azuis</strong>
+            <span>CLEAN-MICROFIBER-BLUE</span>
+          </td>
+          <td>3 saco</td>
+          <td>3 saco</td>
+          <td>3 saco</td>
+          <td>0 saco</td>
+          <td>Dados insuficientes</td>
+          <td>3,70 €</td>
+          <td>-</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Consumiveis Operacionais</td>
+          <td>
+            <strong>Panos Microfibra Cinzentos</strong>
+            <span>CLEAN-MICROFIBER-GREY</span>
+          </td>
+          <td>3 saco</td>
+          <td>3 saco</td>
+          <td>3 saco</td>
+          <td>0 saco</td>
+          <td>Dados insuficientes</td>
+          <td>3,70 €</td>
+          <td>-</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Consumiveis Operacionais</td>
+          <td>
+            <strong>Pelicula Alimentar</strong>
+            <span>CONS-OPS-FOOD-FILM</span>
+          </td>
+          <td>4 caixa</td>
+          <td>4 caixa</td>
+          <td>4 caixa</td>
+          <td>0 caixa</td>
+          <td>Dados insuficientes</td>
+          <td>10,40 €</td>
+          <td>-</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Consumiveis Operacionais</td>
+          <td>
+            <strong>Rolos TNT</strong>
+            <span>CONS-OPS-TNT-ROLLS</span>
+          </td>
+          <td>2 pack</td>
+          <td>2 pack</td>
+          <td>2 pack</td>
+          <td>0 pack</td>
+          <td>Dados insuficientes</td>
+          <td>27,42 €</td>
+          <td>-</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Consumiveis WC</td>
+          <td>
+            <strong>Papel Higienico</strong>
+            <span>CONS-WC-TOILET-PAPER</span>
+          </td>
+          <td>0 pack</td>
+          <td>19 pack</td>
+          <td>31 pack</td>
+          <td>3 pack</td>
+          <td>9 pack</td>
+          <td>15,00 €</td>
+          <td>135,00 €</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Consumiveis WC</td>
+          <td>
+            <strong>Papel de Maos WC</strong>
+            <span>CONS-WC-HAND-PAPER</span>
+          </td>
+          <td>3,5 caixa</td>
+          <td>5 caixa</td>
+          <td>10,5 caixa</td>
+          <td>0 caixa</td>
+          <td>9 caixa</td>
+          <td>14,00 €</td>
+          <td>126,00 €</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Copos Take Away</td>
+          <td>
+            <strong>Copos Pequenos Cafe Take Away</strong>
+            <span>CONS-TAKEAWAY-SMALL-COFFEE-CUPS</span>
+          </td>
+          <td>1,5 caixa</td>
+          <td>0,8 caixa</td>
+          <td>0 caixa</td>
+          <td>0 caixa</td>
+          <td>0,7 caixa</td>
+          <td>Preco pendente</td>
+          <td>0,00 €</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Copos Take Away</td>
+          <td>
+            <strong>Copos Medios Take Away + Tampas</strong>
+            <span>CONS-TAKEAWAY-MEDIUM-CUPS-LIDS</span>
+          </td>
+          <td>1 caixa</td>
+          <td>0,2 caixa</td>
+          <td>0 caixa</td>
+          <td>0 caixa</td>
+          <td>0,8 caixa</td>
+          <td>Preco pendente</td>
+          <td>0,00 €</td>
+          <td><span class="badge badge-red">Critico</span></td>
+        </tr>
+      
+        <tr>
+          <td>Copos Take Away</td>
+          <td>
+            <strong>Copos para Molhos Take Away</strong>
+            <span>CONS-TAKEAWAY-SAUCE-CUPS</span>
+          </td>
+          <td>1 caixa</td>
+          <td>0,5 caixa</td>
+          <td>0 caixa</td>
+          <td>0 caixa</td>
+          <td>0,5 caixa</td>
+          <td>Preco pendente</td>
+          <td>0,00 €</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Copos Take Away</td>
+          <td>
+            <strong>Copos para Mousse</strong>
+            <span>CONS-DESSERT-MOUSSE-CUPS</span>
+          </td>
+          <td>200 unidade</td>
+          <td>100 unidade</td>
+          <td>0 unidade</td>
+          <td>0 unidade</td>
+          <td>100 unidade</td>
+          <td>Preco pendente</td>
+          <td>0,00 €</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Copos Take Away</td>
+          <td>
+            <strong>Copos Medios Cafe Take Away</strong>
+            <span>CONS-TAKEAWAY-MEDIUM-COFFEE-CUPS</span>
+          </td>
+          <td>1 caixa</td>
+          <td>0,2 caixa</td>
+          <td>1 caixa</td>
+          <td>1 caixa</td>
+          <td>0,8 caixa</td>
+          <td>37,00 €</td>
+          <td>29,60 €</td>
+          <td><span class="badge badge-red">Critico</span></td>
+        </tr>
+      
+        <tr>
+          <td>Embalagens Take Away</td>
+          <td>
+            <strong>Box de Sopas + Tampas</strong>
+            <span>CONS-TAKEAWAY-SOUP-BOX-LID</span>
+          </td>
+          <td>1,5 caixa</td>
+          <td>1,5 caixa</td>
+          <td>0 caixa</td>
+          <td>0 caixa</td>
+          <td>0 caixa</td>
+          <td>Preco pendente</td>
+          <td>0,00 €</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Embalagens Take Away</td>
+          <td>
+            <strong>Box POKE + Tampas</strong>
+            <span>CONS-TAKEAWAY-ROUND-BOX-LID</span>
+          </td>
+          <td>4 caixa</td>
+          <td>4 caixa</td>
+          <td>5 caixa</td>
+          <td>0 caixa</td>
+          <td>5 caixa</td>
+          <td>Preco pendente</td>
+          <td>0,00 €</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Embalagens Take Away</td>
+          <td>
+            <strong>Box grande 1980ml</strong>
+            <span>CONS-TAKEAWAY-BURGER-BOX</span>
+          </td>
+          <td>2 caixa</td>
+          <td>2 caixa</td>
+          <td>2 caixa</td>
+          <td>0 caixa</td>
+          <td>2 caixa</td>
+          <td>Preco pendente</td>
+          <td>0,00 €</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Embalagens Take Away</td>
+          <td>
+            <strong>Box Media 1350</strong>
+            <span>CONS-TAKEAWAY-TOAST-BOX</span>
+          </td>
+          <td>2 caixa</td>
+          <td>2 caixa</td>
+          <td>2 caixa</td>
+          <td>0 caixa</td>
+          <td>2 caixa</td>
+          <td>Preco pendente</td>
+          <td>0,00 €</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Embalagens Take Away</td>
+          <td>
+            <strong>Box Pequena 750ml</strong>
+            <span>CONS-TAKEAWAY-BOX-750ML</span>
+          </td>
+          <td>1,5 caixa</td>
+          <td>1 caixa</td>
+          <td>0 caixa</td>
+          <td>0 caixa</td>
+          <td>0,5 caixa</td>
+          <td>Preco pendente</td>
+          <td>0,00 €</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Galheteiros</td>
+          <td>
+            <strong>Garrafa de Azeite</strong>
+            <span>CONS-GALHETEIRO-OLIVE-OIL</span>
+          </td>
+          <td>1 unidade</td>
+          <td>9 unidade</td>
+          <td>0 unidade</td>
+          <td>0 unidade</td>
+          <td>-8 unidade</td>
+          <td>Preco pendente</td>
+          <td>-0,00 €</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Galheteiros</td>
+          <td>
+            <strong>Garrafa de Vinagre</strong>
+            <span>CONS-GALHETEIRO-VINEGAR</span>
+          </td>
+          <td>4 unidade</td>
+          <td>9 unidade</td>
+          <td>0 unidade</td>
+          <td>0 unidade</td>
+          <td>-5 unidade</td>
+          <td>Preco pendente</td>
+          <td>-0,00 €</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Molhos</td>
+          <td>
+            <strong>Ketchup</strong>
+            <span>SAUCE-KETCHUP</span>
+          </td>
+          <td>1,5 caixa</td>
+          <td>3 caixa</td>
+          <td>7 caixa</td>
+          <td>0 caixa</td>
+          <td>5,5 caixa</td>
+          <td>18,61 €</td>
+          <td>102,35 €</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Molhos</td>
+          <td>
+            <strong>Mostarda</strong>
+            <span>SAUCE-MUSTARD</span>
+          </td>
+          <td>1 caixa</td>
+          <td>1,5 caixa</td>
+          <td>3 caixa</td>
+          <td>0 caixa</td>
+          <td>2,5 caixa</td>
+          <td>Preco pendente</td>
+          <td>0,00 €</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Molhos</td>
+          <td>
+            <strong>Maionese</strong>
+            <span>SAUCE-MAYONNAISE</span>
+          </td>
+          <td>0,5 caixa</td>
+          <td>3 caixa</td>
+          <td>8 caixa</td>
+          <td>0 caixa</td>
+          <td>5,5 caixa</td>
+          <td>17,80 €</td>
+          <td>97,90 €</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Produtos de Limpeza</td>
+          <td>
+            <strong>Espuma Antibacteriana</strong>
+            <span>CLEAN-ANTIBACTERIAL-FOAM</span>
+          </td>
+          <td>0 unidade</td>
+          <td>0 unidade</td>
+          <td>6 unidade</td>
+          <td>0 unidade</td>
+          <td>6 unidade</td>
+          <td>6,97 €</td>
+          <td>41,82 €</td>
+          <td><span class="badge badge-red">Critico</span></td>
+        </tr>
+      
+        <tr>
+          <td>Produtos de Limpeza</td>
+          <td>
+            <strong>Spray Laranja WC IBT</strong>
+            <span>CLEAN-WC-ORANGE-SPRAY-IBT</span>
+          </td>
+          <td>0,4 unidade</td>
+          <td>2 unidade</td>
+          <td>2 unidade</td>
+          <td>0 unidade</td>
+          <td>0,4 unidade</td>
+          <td>Preco pendente</td>
+          <td>0,00 €</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Produtos de Limpeza</td>
+          <td>
+            <strong>Alcool</strong>
+            <span>CLEAN-ALCOHOL</span>
+          </td>
+          <td>4 unidade</td>
+          <td>21 unidade</td>
+          <td>24 unidade</td>
+          <td>0 unidade</td>
+          <td>7 unidade</td>
+          <td>Preco pendente</td>
+          <td>0,00 €</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Produtos de Limpeza</td>
+          <td>
+            <strong>Thomil</strong>
+            <span>CLEAN-THOMIL</span>
+          </td>
+          <td>2 unidade</td>
+          <td>4 unidade</td>
+          <td>8 unidade</td>
+          <td>0 unidade</td>
+          <td>6 unidade</td>
+          <td>6,31 €</td>
+          <td>37,86 €</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Produtos de Limpeza</td>
+          <td>
+            <strong>Dish Lemon</strong>
+            <span>CLEAN-DISH-LEMON</span>
+          </td>
+          <td>4 unidade</td>
+          <td>2 unidade</td>
+          <td>4 unidade</td>
+          <td>0 unidade</td>
+          <td>6 unidade</td>
+          <td>Preco pendente</td>
+          <td>0,00 €</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Produtos de Limpeza</td>
+          <td>
+            <strong>Abrilhantador/Secante SPLIT LV</strong>
+            <span>CLEAN-SPLIT-LV-RINSE</span>
+          </td>
+          <td>3 unidade</td>
+          <td>3 unidade</td>
+          <td>3 unidade</td>
+          <td>0 unidade</td>
+          <td>Dados insuficientes</td>
+          <td>Preco pendente</td>
+          <td>-</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Produtos de Limpeza</td>
+          <td>
+            <strong>Cheiro Urinol</strong>
+            <span>CLEAN-URINAL-SCENT</span>
+          </td>
+          <td>12 unidade</td>
+          <td>12 unidade</td>
+          <td>24 unidade</td>
+          <td>0 unidade</td>
+          <td>Dados insuficientes</td>
+          <td>Preco pendente</td>
+          <td>-</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Produtos de Limpeza</td>
+          <td>
+            <strong>D-50</strong>
+            <span>CLEAN-D-50</span>
+          </td>
+          <td>2 unidade</td>
+          <td>2 unidade</td>
+          <td>3 unidade</td>
+          <td>0 unidade</td>
+          <td>Dados insuficientes</td>
+          <td>Preco pendente</td>
+          <td>-</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Produtos de Limpeza</td>
+          <td>
+            <strong>Lava-Louça Universal</strong>
+            <span>CLEAN-LAVA-LOUCAS</span>
+          </td>
+          <td>1 unidade</td>
+          <td>1 unidade</td>
+          <td>3 unidade</td>
+          <td>0 unidade</td>
+          <td>Dados insuficientes</td>
+          <td>Preco pendente</td>
+          <td>-</td>
+          <td><span class="badge badge-red">Critico</span></td>
+        </tr>
+      
+        <tr>
+          <td>Produtos de Limpeza</td>
+          <td>
+            <strong>Luvas L</strong>
+            <span>CLEAN-GLOVES-L</span>
+          </td>
+          <td>1 caixa</td>
+          <td>1 caixa</td>
+          <td>1 caixa</td>
+          <td>0 caixa</td>
+          <td>Dados insuficientes</td>
+          <td>Preco pendente</td>
+          <td>-</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Produtos de Limpeza</td>
+          <td>
+            <strong>Luvas M</strong>
+            <span>CLEAN-GLOVES-M</span>
+          </td>
+          <td>1 caixa</td>
+          <td>1 caixa</td>
+          <td>2 caixa</td>
+          <td>0 caixa</td>
+          <td>Dados insuficientes</td>
+          <td>Preco pendente</td>
+          <td>-</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Produtos de Limpeza</td>
+          <td>
+            <strong>Luvas S</strong>
+            <span>CLEAN-GLOVES-S</span>
+          </td>
+          <td>1 caixa</td>
+          <td>1 caixa</td>
+          <td>1 caixa</td>
+          <td>0 caixa</td>
+          <td>Dados insuficientes</td>
+          <td>Preco pendente</td>
+          <td>-</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Produtos de Limpeza</td>
+          <td>
+            <strong>Mascaras</strong>
+            <span>CLEAN-MASKS</span>
+          </td>
+          <td>4 caixa</td>
+          <td>4 caixa</td>
+          <td>3 caixa</td>
+          <td>0 caixa</td>
+          <td>Dados insuficientes</td>
+          <td>2,50 €</td>
+          <td>-</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Produtos de Limpeza</td>
+          <td>
+            <strong>Tocas</strong>
+            <span>CLEAN-HAIRNETS</span>
+          </td>
+          <td>3 saco</td>
+          <td>3 saco</td>
+          <td>4 saco</td>
+          <td>0 saco</td>
+          <td>Dados insuficientes</td>
+          <td>4,80 €</td>
+          <td>-</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Produtos de Limpeza</td>
+          <td>
+            <strong>Glow Limpa Vidros</strong>
+            <span>CLEAN-GLASS-GLOW</span>
+          </td>
+          <td>2 unidade</td>
+          <td>2 unidade</td>
+          <td>2 unidade</td>
+          <td>0 unidade</td>
+          <td>Dados insuficientes</td>
+          <td>3,99 €</td>
+          <td>-</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Produtos de Limpeza</td>
+          <td>
+            <strong>Higienizante Acao Rapida</strong>
+            <span>CLEAN-HYGIENIZER-FAST</span>
+          </td>
+          <td>2 unidade</td>
+          <td>2 unidade</td>
+          <td>2 unidade</td>
+          <td>0 unidade</td>
+          <td>Dados insuficientes</td>
+          <td>15,00 €</td>
+          <td>-</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Produtos de Limpeza</td>
+          <td>
+            <strong>Lixivia forte</strong>
+            <span>CLEAN-LIXIVIA-FORTE</span>
+          </td>
+          <td>1 unidade</td>
+          <td>1 unidade</td>
+          <td>1 unidade</td>
+          <td>0 unidade</td>
+          <td>Dados insuficientes</td>
+          <td>Preco pendente</td>
+          <td>-</td>
+          <td><span class="badge badge-red">Critico</span></td>
+        </tr>
+      
+        <tr>
+          <td>Talheres Take Away</td>
+          <td>
+            <strong>Garfos e Facas Take Away</strong>
+            <span>CONS-TAKEAWAY-FORKS-KNIVES</span>
+          </td>
+          <td>8 saco</td>
+          <td>5 saco</td>
+          <td>3 saco</td>
+          <td>0 saco</td>
+          <td>6 saco</td>
+          <td>7,70 €</td>
+          <td>46,20 €</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Talheres Take Away</td>
+          <td>
+            <strong>Colheres Take Away</strong>
+            <span>CONS-TAKEAWAY-SPOONS</span>
+          </td>
+          <td>4 saco</td>
+          <td>3 saco</td>
+          <td>5 saco</td>
+          <td>0 saco</td>
+          <td>6 saco</td>
+          <td>6,75 €</td>
+          <td>40,50 €</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Talheres Take Away</td>
+          <td>
+            <strong>Pauzinhos</strong>
+            <span>CONS-TAKEAWAY-CHOPSTICKS</span>
+          </td>
+          <td>6 saco</td>
+          <td>6 saco</td>
+          <td>10 saco</td>
+          <td>0 saco</td>
+          <td>Dados insuficientes</td>
+          <td>Preco pendente</td>
+          <td>-</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+          </tbody>
+        </table>
+      </section>
+
+      <section class="panel management-notes-section">
+        <h2>Notas para a gestao</h2>
+        <ul>
+          <li>Guardanapos Pequenos encontra-se em estado critico e deve ser incluido na proxima encomenda.</li><li>Copos Medios Take Away + Tampas encontra-se em estado critico e deve ser incluido na proxima encomenda.</li><li>Copos Medios Cafe Take Away encontra-se em estado critico e deve ser incluido na proxima encomenda.</li><li>Espuma Antibacteriana encontra-se em estado critico e deve ser incluido na proxima encomenda.</li><li>Lava-Louça Universal encontra-se em estado critico e deve ser incluido na proxima encomenda.</li><li>Lixivia forte encontra-se em estado critico e deve ser incluido na proxima encomenda.</li>
+          <li>Para calcular gasto medio e previsao de rutura, manter contagens semanais consistentes.</li>
+          <li>Registar entradas de fornecedores como transacoes IN para separar reposicao de consumo real.</li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>

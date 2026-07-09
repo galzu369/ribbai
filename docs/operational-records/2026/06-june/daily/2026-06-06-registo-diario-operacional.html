@@ -1,0 +1,649 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Relatório Diário Operacional - 06-06-2026</title>
+    <style>
+      @page {
+        size: A4;
+        margin: 16mm 14mm 18mm;
+      }
+
+      :root {
+        --ink: #172033;
+        --muted: #657085;
+        --line: #d9dee8;
+        --soft: #f6f7fa;
+        --warm: #fff7ed;
+        --brand: #f97316;
+        --brand-dark: #9a3412;
+        --green: #15803d;
+        --amber: #a16207;
+        --blue: #1d4ed8;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: #ffffff;
+        color: var(--ink);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 10pt;
+        line-height: 1.5;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        font-size: 34pt;
+        line-height: 1.02;
+        letter-spacing: -0.04em;
+        margin-bottom: 10pt;
+      }
+
+      h2 {
+        border-bottom: 1px solid var(--line);
+        font-size: 15pt;
+        letter-spacing: -0.02em;
+        margin: 22pt 0 10pt;
+        padding-bottom: 5pt;
+      }
+
+      h3 {
+        color: var(--brand-dark);
+        font-size: 11pt;
+        margin: 13pt 0 5pt;
+      }
+
+      ul {
+        margin: 4pt 0 10pt 15pt;
+        padding: 0;
+      }
+
+      li {
+        margin: 2pt 0;
+      }
+
+      table {
+        border-collapse: collapse;
+        margin: 8pt 0 14pt;
+        width: 100%;
+      }
+
+      th,
+      td {
+        border: 1px solid var(--line);
+        padding: 6pt 7pt;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        background: var(--soft);
+        color: var(--ink);
+        font-size: 8pt;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .cover {
+        background:
+          radial-gradient(circle at top right, rgba(249, 115, 22, 0.18), transparent 35%),
+          linear-gradient(135deg, #fff7ed 0%, #ffffff 42%, #f8fafc 100%);
+        border: 1px solid #fed7aa;
+        border-radius: 22px;
+        margin-bottom: 16pt;
+        min-height: 248mm;
+        padding: 24mm 18mm;
+      }
+
+      .eyebrow {
+        color: var(--brand);
+        font-size: 8.5pt;
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        margin-bottom: 14pt;
+        text-transform: uppercase;
+      }
+
+      .subtitle {
+        color: var(--muted);
+        font-size: 14pt;
+        line-height: 1.45;
+        max-width: 150mm;
+      }
+
+      .meta-panel {
+        background: rgba(255, 255, 255, 0.82);
+        border: 1px solid #fed7aa;
+        border-radius: 16px;
+        margin-top: 28pt;
+        padding: 14pt;
+      }
+
+      .meta-grid {
+        display: grid;
+        gap: 10pt;
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .meta-item {
+        border-left: 3px solid var(--brand);
+        padding-left: 8pt;
+      }
+
+      .meta-label {
+        color: var(--muted);
+        display: block;
+        font-size: 7.5pt;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .meta-value {
+        display: block;
+        font-size: 10.5pt;
+        font-weight: 700;
+        margin-top: 2pt;
+      }
+
+      .page-break {
+        break-before: page;
+      }
+
+      .kpi-grid {
+        display: grid;
+        gap: 8pt;
+        grid-template-columns: repeat(4, 1fr);
+        margin: 12pt 0 16pt;
+      }
+
+      .kpi {
+        background: var(--soft);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 10pt;
+      }
+
+      .kpi-label {
+        color: var(--muted);
+        display: block;
+        font-size: 7.5pt;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .kpi-value {
+        display: block;
+        font-size: 22pt;
+        font-weight: 800;
+        letter-spacing: -0.04em;
+        margin-top: 3pt;
+      }
+
+      .kpi-note {
+        color: var(--muted);
+        display: block;
+        font-size: 8pt;
+        margin-top: 2pt;
+      }
+
+      .good {
+        color: var(--green);
+      }
+
+      .watch {
+        color: var(--amber);
+      }
+
+      .callout {
+        background: var(--warm);
+        border-left: 4px solid var(--brand);
+        border-radius: 12px;
+        margin: 10pt 0 14pt;
+        padding: 11pt 13pt;
+      }
+
+      .panel-grid {
+        display: grid;
+        gap: 9pt;
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .panel {
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        break-inside: avoid;
+        padding: 10pt;
+      }
+
+      .badge {
+        border-radius: 999px;
+        display: inline-block;
+        font-size: 7.5pt;
+        font-weight: 800;
+        letter-spacing: 0.05em;
+        margin-bottom: 5pt;
+        padding: 3pt 7pt;
+        text-transform: uppercase;
+      }
+
+      .badge-green {
+        background: #dcfce7;
+        color: var(--green);
+      }
+
+      .badge-amber {
+        background: #fef3c7;
+        color: var(--amber);
+      }
+
+      .badge-blue {
+        background: #dbeafe;
+        color: var(--blue);
+      }
+
+      .section-intro {
+        color: var(--muted);
+        font-size: 9.5pt;
+        margin-bottom: 10pt;
+      }
+
+      .footer-note {
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 8.5pt;
+        margin-top: 18pt;
+        padding-top: 7pt;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="cover">
+      <div class="eyebrow">RIBBAI OPS · Relatório Diário Operacional</div>
+      <h1>Registo Diário Operacional</h1>
+      <p class="subtitle">
+        Sábado de elevada pressão operacional, influenciado pelo fim de semana e campeonato de surf,
+        com continuidade do modelo de setores fixos.
+      </p>
+
+      <div class="meta-panel">
+        <div class="meta-grid">
+          <div class="meta-item">
+            <span class="meta-label">Data</span>
+            <span class="meta-value">06-06-2026</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Dia</span>
+            <span class="meta-value">Sábado</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Contexto</span>
+            <span class="meta-value">Fim de semana · Surf</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Autor</span>
+            <span class="meta-value">Filipe Catalão</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Âmbito</span>
+            <span class="meta-value">Front of House</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Estado</span>
+            <span class="meta-value">Registado</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="kpi-grid">
+        <div class="kpi">
+          <span class="kpi-label">Sucesso Operacional</span>
+          <span class="kpi-value good">9/10</span>
+          <span class="kpi-note">Resposta forte</span>
+        </div>
+        <div class="kpi">
+          <span class="kpi-label">Qualidade Serviço</span>
+          <span class="kpi-value good">9/10</span>
+          <span class="kpi-note">Sem falhas relevantes</span>
+        </div>
+        <div class="kpi">
+          <span class="kpi-label">Organização</span>
+          <span class="kpi-value good">8/10</span>
+          <span class="kpi-note">Operação estável</span>
+        </div>
+        <div class="kpi">
+          <span class="kpi-label">Modelo Setores</span>
+          <span class="kpi-value watch">7/10</span>
+          <span class="kpi-note">Requer disciplina</span>
+        </div>
+      </div>
+
+      <div class="callout">
+        <strong>Conclusão do dia:</strong> serviço muito exigente, com forte afluência e excelente
+        capacidade de resposta da equipa. O modelo de setores continua positivo, mas requer maior
+        consistência em períodos de pressão.
+      </div>
+    </section>
+
+    <section class="page-break">
+      <h2>Síntese Executiva</h2>
+      <p>
+        O restaurante registou uma forte afluência durante praticamente toda a tarde, influenciada
+        pelo fim de semana e pela realização de um campeonato de surf na região.
+      </p>
+      <p>
+        O fluxo de clientes já se encontrava em aceleração pelas 11h00 e manteve elevada intensidade
+        durante várias horas consecutivas, começando apenas a aliviar por volta das 17h00.
+      </p>
+      <p>
+        Foi um dia marcado por elevado número de clientes, mesas de grande dimensão, ticket médio
+        elevado e forte exigência operacional. Apesar da pressão, o serviço decorreu de forma muito
+        positiva, com rotação de mesas rápida e sem falhas relevantes.
+      </p>
+
+      <h2>Equipa Em Serviço</h2>
+      <div class="panel-grid">
+        <div class="panel">
+          <span class="badge badge-green">Pablo</span>
+          <ul>
+            <li>Abertura em conjunto com o Lil.</li>
+            <li>Preparação da operação para o início do serviço.</li>
+            <li>Responsável pela zona 60.</li>
+            <li>Bom desempenho ao longo do dia.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <span class="badge badge-green">Lil</span>
+          <ul>
+            <li>Entrou uma hora antes do horário previsto.</li>
+            <li>Responsável pela zona 70.</li>
+            <li>Demonstrou disponibilidade num dia de elevada intensidade.</li>
+            <li>Continua a precisar de reforço na adaptação ao modelo.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <span class="badge badge-blue">Filipe Catalão</span>
+          <ul>
+            <li>Entrada pelas 11h00.</li>
+            <li>Supervisão geral da operação.</li>
+            <li>Apoio direto à sala interior.</li>
+            <li>Coordenação de comunicação, talheres e guardanapos.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <span class="badge badge-green">Bruno</span>
+          <ul>
+            <li>Entrada pelas 12h00.</li>
+            <li>Responsável pela zona 50.</li>
+            <li>Contributo positivo durante serviço exigente.</li>
+            <li>Responsabilidade acrescida enquanto chefe de sala.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <span class="badge badge-green">Matilde</span>
+          <ul>
+            <li>Entrada pelas 12h00.</li>
+            <li>Responsável pela sala interior.</li>
+            <li>Consistência, foco e capacidade de apoio.</li>
+            <li>Boa adaptação ao modelo de setores.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <span class="badge badge-green">Carolina</span>
+          <ul>
+            <li>Entrada pouco depois das 13h30.</li>
+            <li>Responsável pela porta e fluxo de clientes.</li>
+            <li>Confirmou a receção de maionese.</li>
+            <li>Garantiu armazém organizado e participou no fecho.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <span class="badge badge-blue">Luís</span>
+          <ul>
+            <li>Gestão temporária da porta.</li>
+            <li>Apoio à receção de clientes até à chegada da Carolina.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <span class="badge badge-blue">Equipa</span>
+          <ul>
+            <li>Excelente capacidade de resposta.</li>
+            <li>Boa colaboração e organização geral.</li>
+            <li>Fecho exemplar.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-break">
+      <h2>Desempenho Operacional</h2>
+      <p>
+        O restaurante manteve-se lotado durante várias horas consecutivas, com pressão operacional
+        significativa durante praticamente toda a tarde. O campeonato de surf contribuiu para um
+        aumento expressivo do fluxo de clientes.
+      </p>
+      <div class="panel-grid">
+        <div class="panel">
+          <span class="badge badge-amber">Características Do Serviço</span>
+          <ul>
+            <li>Elevado número de clientes.</li>
+            <li>Mesas de grande dimensão.</li>
+            <li>Ticket médio elevado.</li>
+            <li>Forte intensidade operacional.</li>
+            <li>Necessidade de rotação rápida.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <span class="badge badge-green">Resultado</span>
+          <p>
+            A equipa respondeu de forma muito positiva. A rotação de mesas foi rápida, a organização
+            geral manteve-se estável e não foram registadas falhas operacionais relevantes.
+          </p>
+        </div>
+      </div>
+
+      <h2>Modelo De Setores Fixos</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Colaborador</th>
+            <th>Setor / Responsabilidade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Bruno</td>
+            <td>Zona 50</td>
+          </tr>
+          <tr>
+            <td>Pablo</td>
+            <td>Zona 60</td>
+          </tr>
+          <tr>
+            <td>Lil</td>
+            <td>Zona 70</td>
+          </tr>
+          <tr>
+            <td>Matilde</td>
+            <td>Sala interior</td>
+          </tr>
+          <tr>
+            <td>Carolina</td>
+            <td>Porta e gestão de fluxo de clientes</td>
+          </tr>
+          <tr>
+            <td>Filipe Catalão</td>
+            <td>Supervisão geral, apoio à sala interior e comunicação entre setores</td>
+          </tr>
+          <tr>
+            <td>Luís</td>
+            <td>Apoio temporário à porta até à chegada da Carolina</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        O modelo continua a demonstrar potencial para melhorar a organização da sala e a
+        responsabilização individual. Carolina, Pablo e Matilde revelaram maior adaptação ao método,
+        enquanto Bruno e Lil continuam a apresentar oportunidades de melhoria na disciplina dos
+        setores definidos.
+      </p>
+      <div class="callout">
+        <strong>Estado:</strong> modelo em teste, com resultados positivos e necessidade de reforço na
+        consistência de aplicação durante períodos de elevada pressão.
+      </div>
+    </section>
+
+    <section class="page-break">
+      <h2>Coordenação Operacional</h2>
+      <p>
+        Durante os períodos de maior pressão, Filipe Catalão assumiu uma função de supervisão
+        transversal da operação, permitindo que os responsáveis de cada área mantivessem maior foco no
+        seu setor.
+      </p>
+      <div class="panel-grid">
+        <div class="panel">
+          <span class="badge badge-blue">Responsabilidades</span>
+          <ul>
+            <li>Apoio à sala interior.</li>
+            <li>Reposição de consumíveis de serviço.</li>
+            <li>Rotação de talheres e guardanapos.</li>
+            <li>Supervisão do modelo de setores na esplanada.</li>
+            <li>Apoio à comunicação entre setores.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <span class="badge badge-green">Impacto</span>
+          <p>
+            Esta função contribuiu para uma operação mais organizada e eficiente, reduzindo
+            interferências e sobreposição de funções durante os períodos de maior pressão.
+          </p>
+        </div>
+      </div>
+
+      <h2>Pontos Positivos</h2>
+      <ul>
+        <li>Excelente capacidade de resposta perante elevado volume de clientes.</li>
+        <li>Boa rotação de mesas.</li>
+        <li>Forte colaboração entre os elementos da equipa.</li>
+        <li>Boa organização geral da operação.</li>
+        <li>Fecho realizado com elevado nível de qualidade.</li>
+        <li>Armazém organizado e receção de mercadoria confirmada.</li>
+      </ul>
+
+      <h2>Áreas De Melhoria</h2>
+      <ul>
+        <li>Reforçar disciplina operacional relativamente aos setores atribuídos.</li>
+        <li>Reduzir intervenções desnecessárias fora da área de responsabilidade.</li>
+        <li>Melhorar a comunicação sempre que exista necessidade de apoiar outro setor.</li>
+        <li>Garantir maior consistência por parte do Bruno enquanto elemento de liderança.</li>
+        <li>Continuar o trabalho de adaptação do Lil ao novo modelo operacional.</li>
+      </ul>
+    </section>
+
+    <section class="page-break">
+      <h2>Fecho, Stock E Overtime</h2>
+      <p>
+        O fecho foi assegurado por Bruno, Matilde e Carolina. O restaurante ficou devidamente preparado
+        para o serviço do dia seguinte, com todas as áreas organizadas, limpas e prontas para nova
+        operação.
+      </p>
+      <p>
+        Carolina confirmou a receção de uma caixa de maionese e garantiu que o armazém se encontrava
+        devidamente organizado.
+      </p>
+
+      <h3>Registo De Horas Extra</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Colaborador</th>
+            <th>Registo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Lil</td>
+            <td>Entrou uma hora antes do horário previsto, totalizando 1 hora extra</td>
+          </tr>
+          <tr>
+            <td>Filipe Catalão</td>
+            <td>Pausa reduzida e saída mais tardia, totalizando aproximadamente 1 hora extra</td>
+          </tr>
+          <tr>
+            <td>Bruno</td>
+            <td>Prolongou o turno no final do serviço, totalizando 1h15m extra</td>
+          </tr>
+          <tr>
+            <td>Matilde</td>
+            <td>Prolongou o turno no final do serviço, totalizando 1h05m extra</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Notas Para A Gestão</h2>
+      <p>
+        O modelo de setores continua a demonstrar potencial para melhorar significativamente a
+        organização da operação. O desafio atual não está na aceitação do método, mas sim na
+        consistência da sua aplicação durante períodos de elevada pressão.
+      </p>
+      <h3>Indicadores a acompanhar</h3>
+      <ul>
+        <li>Disciplina operacional dentro dos setores definidos.</li>
+        <li>Comunicação antes de apoiar outro setor.</li>
+        <li>Evolução do Bruno enquanto referência de liderança.</li>
+        <li>Evolução do Lil na adaptação ao método.</li>
+        <li>Impacto de eventos locais na preparação de equipa e stock.</li>
+      </ul>
+
+      <h2>Classificação Para O Sistema RIBBAI OPS</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Categoria</th>
+            <th>Registo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Operational Notes</td>
+            <td>Sábado de forte afluência, com pressão elevada e rotação eficiente de mesas.</td>
+          </tr>
+          <tr>
+            <td>Service Improvement Candidate</td>
+            <td>Reforçar disciplina do modelo de setores fixos em períodos de elevada pressão.</td>
+          </tr>
+          <tr>
+            <td>Team Feedback Input</td>
+            <td>Boa adaptação de Carolina, Pablo e Matilde; Bruno e Lil requerem reforço de consistência.</td>
+          </tr>
+          <tr>
+            <td>Inventory Context</td>
+            <td>Caixa de maionese recebida e armazém organizado.</td>
+          </tr>
+          <tr>
+            <td>Overtime Input</td>
+            <td>Lil 1h; Filipe Catalão cerca de 1h; Bruno 1h15m; Matilde 1h05m.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="footer-note">
+        Documento gerado para apresentação diária à gestão. Fonte operacional: Registo Diário
+        Operacional de 06-06-2026.
+      </p>
+    </section>
+  </body>
+</html>

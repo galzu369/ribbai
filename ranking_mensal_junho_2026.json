@@ -1,0 +1,1592 @@
+{
+  "report_date": "03-07-2026",
+  "period": "Junho 2026",
+  "summary": {
+    "total_collaborators": 10,
+    "total_reports_processed": 30,
+    "period_days": 30
+  },
+  "rankings": {
+    "composite": [
+      [
+        "Filipe Catalão",
+        98.8
+      ],
+      [
+        "Matilde",
+        65.9
+      ],
+      [
+        "Lil",
+        63.5
+      ],
+      [
+        "Carolina",
+        59.7
+      ],
+      [
+        "Bruno",
+        58.9
+      ],
+      [
+        "Pablo",
+        54.5
+      ],
+      [
+        "Lee",
+        43.2
+      ],
+      [
+        "Diogo",
+        26.4
+      ],
+      [
+        "Marta",
+        21.7
+      ],
+      [
+        "Sofia",
+        13.5
+      ]
+    ],
+    "overtime": [
+      [
+        "Filipe Catalão",
+        16975
+      ],
+      [
+        "Carolina",
+        11651
+      ],
+      [
+        "Matilde",
+        9865
+      ],
+      [
+        "Bruno",
+        8926
+      ],
+      [
+        "Lil",
+        6914
+      ],
+      [
+        "Pablo",
+        6618
+      ],
+      [
+        "Diogo",
+        3245
+      ],
+      [
+        "Lee",
+        3210
+      ],
+      [
+        "Marta",
+        2540
+      ],
+      [
+        "Sofia",
+        190
+      ]
+    ],
+    "mentions": [
+      [
+        "Filipe Catalão",
+        22
+      ],
+      [
+        "Lee",
+        16
+      ],
+      [
+        "Lil",
+        14
+      ],
+      [
+        "Matilde",
+        13
+      ],
+      [
+        "Pablo",
+        10
+      ],
+      [
+        "Diogo",
+        10
+      ],
+      [
+        "Bruno",
+        9
+      ],
+      [
+        "Carolina",
+        6
+      ],
+      [
+        "Sofia",
+        6
+      ],
+      [
+        "Marta",
+        0
+      ]
+    ],
+    "consistency": [
+      [
+        "Filipe Catalão",
+        26
+      ],
+      [
+        "Lil",
+        22
+      ],
+      [
+        "Carolina",
+        21
+      ],
+      [
+        "Pablo",
+        21
+      ],
+      [
+        "Matilde",
+        21
+      ],
+      [
+        "Bruno",
+        21
+      ],
+      [
+        "Marta",
+        10
+      ],
+      [
+        "Lee",
+        8
+      ],
+      [
+        "Diogo",
+        5
+      ],
+      [
+        "Sofia",
+        3
+      ]
+    ],
+    "responsibility": [
+      [
+        "Carolina",
+        8
+      ],
+      [
+        "Bruno",
+        8
+      ],
+      [
+        "Lil",
+        8
+      ],
+      [
+        "Marta",
+        7
+      ],
+      [
+        "Filipe Catalão",
+        7
+      ],
+      [
+        "Pablo",
+        7
+      ],
+      [
+        "Matilde",
+        7
+      ],
+      [
+        "Lee",
+        4
+      ],
+      [
+        "Sofia",
+        1
+      ],
+      [
+        "Diogo",
+        0
+      ]
+    ]
+  },
+  "detailed_data": {
+    "Marta": {
+      "total_overtime_minutes": 2540,
+      "total_overtime_instances": 9,
+      "positive_mentions": 0,
+      "days_worked": 10,
+      "opening_shifts": 1,
+      "closing_shifts": 3,
+      "responsibilities": [
+        "Fecho",
+        "Gestão de Porta",
+        "Coordenação",
+        "Sala Interior",
+        "Setor 60",
+        "Abertura",
+        "Runner"
+      ],
+      "feedback_notes": [],
+      "overtime_details": [
+        {
+          "date": "2026-06-04",
+          "minutes": 825,
+          "formatted": "13h45min"
+        },
+        {
+          "date": "2026-06-07",
+          "minutes": 670,
+          "formatted": "11h10min"
+        },
+        {
+          "date": "2026-06-10",
+          "minutes": 120,
+          "formatted": "2h00min"
+        },
+        {
+          "date": "2026-06-11",
+          "minutes": 160,
+          "formatted": "2h40min"
+        },
+        {
+          "date": "2026-06-12",
+          "minutes": 320,
+          "formatted": "5h20min"
+        },
+        {
+          "date": "2026-06-15",
+          "minutes": 55,
+          "formatted": "0h55min"
+        },
+        {
+          "date": "2026-06-16",
+          "minutes": 90,
+          "formatted": "1h30min"
+        },
+        {
+          "date": "2026-06-17",
+          "minutes": 180,
+          "formatted": "3h00min"
+        },
+        {
+          "date": "2026-06-18",
+          "minutes": 120,
+          "formatted": "2h00min"
+        }
+      ],
+      "special_mentions": [],
+      "total_overtime_formatted": "42h20min",
+      "avg_overtime_per_shift": 282.2
+    },
+    "Carolina": {
+      "total_overtime_minutes": 11651,
+      "total_overtime_instances": 19,
+      "positive_mentions": 6,
+      "days_worked": 21,
+      "opening_shifts": 3,
+      "closing_shifts": 15,
+      "responsibilities": [
+        "Fecho",
+        "Setor 70",
+        "Gestão de Porta",
+        "Quiosque",
+        "Coordenação",
+        "Sala Interior",
+        "Setor 60",
+        "Abertura"
+      ],
+      "feedback_notes": [
+        {
+          "date": "2026-06-19",
+          "feedback": "desempenho exemplar com apoio ao bar, preparação antecipada para o dia seguinte e fecho com prolongamento de turno"
+        },
+        {
+          "date": "2026-06-19",
+          "feedback": "desempenho exemplar com apoio ao bar, preparação antecipada para o dia seguinte e fecho com prolongamento de turno"
+        },
+        {
+          "date": "2026-06-28",
+          "feedback": "estabilidade num setor de elevada rotação e participação no fecho"
+        },
+        {
+          "date": "2026-06-28",
+          "feedback": "estabilidade num setor de elevada rotação e participação no fecho"
+        },
+        {
+          "date": "2026-06-29",
+          "feedback": "estabilidade no setor 70 em contexto de elevada rotação"
+        },
+        {
+          "date": "2026-06-29",
+          "feedback": "estabilidade no setor 70 em contexto de elevada rotação"
+        }
+      ],
+      "overtime_details": [
+        {
+          "date": "2026-06-04",
+          "minutes": 230,
+          "formatted": "3h50min"
+        },
+        {
+          "date": "2026-06-05",
+          "minutes": 220,
+          "formatted": "3h40min"
+        },
+        {
+          "date": "2026-06-07",
+          "minutes": 1392,
+          "formatted": "23h12min"
+        },
+        {
+          "date": "2026-06-10",
+          "minutes": 1041,
+          "formatted": "17h21min"
+        },
+        {
+          "date": "2026-06-11",
+          "minutes": 1430,
+          "formatted": "23h50min"
+        },
+        {
+          "date": "2026-06-12",
+          "minutes": 360,
+          "formatted": "6h00min"
+        },
+        {
+          "date": "2026-06-13",
+          "minutes": 120,
+          "formatted": "2h00min"
+        },
+        {
+          "date": "2026-06-14",
+          "minutes": 898,
+          "formatted": "14h58min"
+        },
+        {
+          "date": "2026-06-17",
+          "minutes": 60,
+          "formatted": "1h00min"
+        },
+        {
+          "date": "2026-06-18",
+          "minutes": 1020,
+          "formatted": "17h00min"
+        },
+        {
+          "date": "2026-06-19",
+          "minutes": 600,
+          "formatted": "10h00min"
+        },
+        {
+          "date": "2026-06-20",
+          "minutes": 630,
+          "formatted": "10h30min"
+        },
+        {
+          "date": "2026-06-21",
+          "minutes": 810,
+          "formatted": "13h30min"
+        },
+        {
+          "date": "2026-06-24",
+          "minutes": 1150,
+          "formatted": "19h10min"
+        },
+        {
+          "date": "2026-06-25",
+          "minutes": 150,
+          "formatted": "2h30min"
+        },
+        {
+          "date": "2026-06-26",
+          "minutes": 840,
+          "formatted": "14h00min"
+        },
+        {
+          "date": "2026-06-27",
+          "minutes": 160,
+          "formatted": "2h40min"
+        },
+        {
+          "date": "2026-06-28",
+          "minutes": 240,
+          "formatted": "4h00min"
+        },
+        {
+          "date": "2026-06-29",
+          "minutes": 300,
+          "formatted": "5h00min"
+        }
+      ],
+      "special_mentions": [],
+      "total_overtime_formatted": "194h11min",
+      "avg_overtime_per_shift": 613.2
+    },
+    "Filipe Catalão": {
+      "total_overtime_minutes": 16975,
+      "total_overtime_instances": 23,
+      "positive_mentions": 22,
+      "days_worked": 26,
+      "opening_shifts": 5,
+      "closing_shifts": 10,
+      "responsibilities": [
+        "Fecho",
+        "Gestão de Porta",
+        "Coordenação",
+        "Sala Interior",
+        "Abertura",
+        "Setor 60",
+        "Runner"
+      ],
+      "feedback_notes": [
+        {
+          "date": "2026-06-19",
+          "feedback": "integração da Lee, runner e apoio directo durante almoço e final de tarde"
+        },
+        {
+          "date": "2026-06-19",
+          "feedback": "integração da Lee, runner e apoio directo durante almoço e final de tarde"
+        },
+        {
+          "date": "2026-06-19",
+          "feedback": "integração da Lee, runner e apoio directo durante almoço e final de tarde"
+        },
+        {
+          "date": "2026-06-19",
+          "feedback": "integração da Lee, runner e apoio directo durante almoço e final de tarde"
+        },
+        {
+          "date": "2026-06-26",
+          "feedback": "coordenação geral eficaz da operação"
+        },
+        {
+          "date": "2026-06-26",
+          "feedback": "coordenação geral eficaz da operação"
+        },
+        {
+          "date": "2026-06-26",
+          "feedback": "coordenação geral eficaz da operação"
+        },
+        {
+          "date": "2026-06-26",
+          "feedback": "coordenação geral eficaz da operação"
+        },
+        {
+          "date": "2026-06-27",
+          "feedback": "abertura sólida e coordenação eficaz da operação"
+        },
+        {
+          "date": "2026-06-27",
+          "feedback": "abertura sólida e coordenação eficaz da operação"
+        },
+        {
+          "date": "2026-06-28",
+          "feedback": "coordenação geral eficaz em contexto de ausência de um elemento chave"
+        },
+        {
+          "date": "2026-06-28",
+          "feedback": "coordenação geral eficaz em contexto de ausência de um elemento chave"
+        },
+        {
+          "date": "2026-06-28",
+          "feedback": "coordenação geral eficaz em contexto de ausência de um elemento chave"
+        },
+        {
+          "date": "2026-06-28",
+          "feedback": "coordenação geral eficaz em contexto de ausência de um elemento chave"
+        },
+        {
+          "date": "2026-06-29",
+          "feedback": "coordenação operacional e gestão da sala interior"
+        },
+        {
+          "date": "2026-06-29",
+          "feedback": "coordenação operacional e gestão da sala interior"
+        },
+        {
+          "date": "2026-06-29",
+          "feedback": "coordenação operacional e gestão da sala interior"
+        },
+        {
+          "date": "2026-06-29",
+          "feedback": "coordenação operacional e gestão da sala interior"
+        },
+        {
+          "date": "2026-06-30",
+          "feedback": "foco em logística e inventário com apoio operacional e fecho de caixa"
+        },
+        {
+          "date": "2026-06-30",
+          "feedback": "foco em logística e inventário com apoio operacional e fecho de caixa"
+        },
+        {
+          "date": "2026-06-30",
+          "feedback": "foco em logística e inventário com apoio operacional e fecho de caixa"
+        },
+        {
+          "date": "2026-06-30",
+          "feedback": "foco em logística e inventário com apoio operacional e fecho de caixa"
+        }
+      ],
+      "overtime_details": [
+        {
+          "date": "2026-06-04",
+          "minutes": 1320,
+          "formatted": "22h00min"
+        },
+        {
+          "date": "2026-06-05",
+          "minutes": 220,
+          "formatted": "3h40min"
+        },
+        {
+          "date": "2026-06-07",
+          "minutes": 420,
+          "formatted": "7h00min"
+        },
+        {
+          "date": "2026-06-09",
+          "minutes": 70,
+          "formatted": "1h10min"
+        },
+        {
+          "date": "2026-06-10",
+          "minutes": 240,
+          "formatted": "4h00min"
+        },
+        {
+          "date": "2026-06-11",
+          "minutes": 2740,
+          "formatted": "45h40min"
+        },
+        {
+          "date": "2026-06-12",
+          "minutes": 900,
+          "formatted": "15h00min"
+        },
+        {
+          "date": "2026-06-13",
+          "minutes": 150,
+          "formatted": "2h30min"
+        },
+        {
+          "date": "2026-06-14",
+          "minutes": 1320,
+          "formatted": "22h00min"
+        },
+        {
+          "date": "2026-06-15",
+          "minutes": 220,
+          "formatted": "3h40min"
+        },
+        {
+          "date": "2026-06-16",
+          "minutes": 270,
+          "formatted": "4h30min"
+        },
+        {
+          "date": "2026-06-17",
+          "minutes": 120,
+          "formatted": "2h00min"
+        },
+        {
+          "date": "2026-06-18",
+          "minutes": 1320,
+          "formatted": "22h00min"
+        },
+        {
+          "date": "2026-06-19",
+          "minutes": 300,
+          "formatted": "5h00min"
+        },
+        {
+          "date": "2026-06-20",
+          "minutes": 360,
+          "formatted": "6h00min"
+        },
+        {
+          "date": "2026-06-21",
+          "minutes": 1420,
+          "formatted": "23h40min"
+        },
+        {
+          "date": "2026-06-22",
+          "minutes": 1500,
+          "formatted": "25h00min"
+        },
+        {
+          "date": "2026-06-23",
+          "minutes": 300,
+          "formatted": "5h00min"
+        },
+        {
+          "date": "2026-06-26",
+          "minutes": 840,
+          "formatted": "14h00min"
+        },
+        {
+          "date": "2026-06-27",
+          "minutes": 1620,
+          "formatted": "27h00min"
+        },
+        {
+          "date": "2026-06-28",
+          "minutes": 400,
+          "formatted": "6h40min"
+        },
+        {
+          "date": "2026-06-29",
+          "minutes": 400,
+          "formatted": "6h40min"
+        },
+        {
+          "date": "2026-06-30",
+          "minutes": 525,
+          "formatted": "8h45min"
+        }
+      ],
+      "special_mentions": [],
+      "total_overtime_formatted": "282h55min",
+      "avg_overtime_per_shift": 738.0
+    },
+    "Pablo": {
+      "total_overtime_minutes": 6618,
+      "total_overtime_instances": 18,
+      "positive_mentions": 10,
+      "days_worked": 21,
+      "opening_shifts": 14,
+      "closing_shifts": 3,
+      "responsibilities": [
+        "Fecho",
+        "Setor 70",
+        "Gestão de Porta",
+        "Sala Interior",
+        "Abertura",
+        "Setor 60",
+        "Runner"
+      ],
+      "feedback_notes": [
+        {
+          "date": "2026-06-22",
+          "feedback": "controlo e organização da operação durante a manhã, incluindo reposição de consumíveis e limpeza da sala interior"
+        },
+        {
+          "date": "2026-06-22",
+          "feedback": "controlo e organização da operação durante a manhã, incluindo reposição de consumíveis e limpeza da sala interior"
+        },
+        {
+          "date": "2026-06-23",
+          "feedback": "excelente abertura e forte preocupação com preparação e manutenção para dias seguintes"
+        },
+        {
+          "date": "2026-06-23",
+          "feedback": "excelente abertura e forte preocupação com preparação e manutenção para dias seguintes"
+        },
+        {
+          "date": "2026-06-24",
+          "feedback": "abertura autónoma e forte preocupação com a preparação para dias seguintes"
+        },
+        {
+          "date": "2026-06-24",
+          "feedback": "abertura autónoma e forte preocupação com a preparação para dias seguintes"
+        },
+        {
+          "date": "2026-06-27",
+          "feedback": "desempenho estável na zona 60 durante o pico de movimento"
+        },
+        {
+          "date": "2026-06-27",
+          "feedback": "desempenho estável na zona 60 durante o pico de movimento"
+        },
+        {
+          "date": "2026-06-29",
+          "feedback": "estabilidade no setor 60 e suporte na abertura"
+        },
+        {
+          "date": "2026-06-29",
+          "feedback": "estabilidade no setor 60 e suporte na abertura"
+        }
+      ],
+      "overtime_details": [
+        {
+          "date": "2026-06-04",
+          "minutes": 775,
+          "formatted": "12h55min"
+        },
+        {
+          "date": "2026-06-05",
+          "minutes": 125,
+          "formatted": "2h05min"
+        },
+        {
+          "date": "2026-06-10",
+          "minutes": 827,
+          "formatted": "13h47min"
+        },
+        {
+          "date": "2026-06-11",
+          "minutes": 80,
+          "formatted": "1h20min"
+        },
+        {
+          "date": "2026-06-13",
+          "minutes": 140,
+          "formatted": "2h20min"
+        },
+        {
+          "date": "2026-06-14",
+          "minutes": 776,
+          "formatted": "12h56min"
+        },
+        {
+          "date": "2026-06-15",
+          "minutes": 55,
+          "formatted": "0h55min"
+        },
+        {
+          "date": "2026-06-16",
+          "minutes": 90,
+          "formatted": "1h30min"
+        },
+        {
+          "date": "2026-06-17",
+          "minutes": 60,
+          "formatted": "1h00min"
+        },
+        {
+          "date": "2026-06-18",
+          "minutes": 690,
+          "formatted": "11h30min"
+        },
+        {
+          "date": "2026-06-21",
+          "minutes": 810,
+          "formatted": "13h30min"
+        },
+        {
+          "date": "2026-06-22",
+          "minutes": 720,
+          "formatted": "12h00min"
+        },
+        {
+          "date": "2026-06-23",
+          "minutes": 75,
+          "formatted": "1h15min"
+        },
+        {
+          "date": "2026-06-24",
+          "minutes": 1050,
+          "formatted": "17h30min"
+        },
+        {
+          "date": "2026-06-27",
+          "minutes": 60,
+          "formatted": "1h00min"
+        },
+        {
+          "date": "2026-06-28",
+          "minutes": 80,
+          "formatted": "1h20min"
+        },
+        {
+          "date": "2026-06-29",
+          "minutes": 100,
+          "formatted": "1h40min"
+        },
+        {
+          "date": "2026-06-30",
+          "minutes": 105,
+          "formatted": "1h45min"
+        }
+      ],
+      "special_mentions": [],
+      "total_overtime_formatted": "110h18min",
+      "avg_overtime_per_shift": 367.7
+    },
+    "Matilde": {
+      "total_overtime_minutes": 9865,
+      "total_overtime_instances": 20,
+      "positive_mentions": 13,
+      "days_worked": 21,
+      "opening_shifts": 8,
+      "closing_shifts": 5,
+      "responsibilities": [
+        "Fecho",
+        "Setor 70",
+        "Gestão de Porta",
+        "Sala Interior",
+        "Abertura",
+        "Setor 60",
+        "Runner"
+      ],
+      "feedback_notes": [
+        {
+          "date": "2026-06-19",
+          "feedback": "versatilidade entre sala interior e apoio à esplanada"
+        },
+        {
+          "date": "2026-06-19",
+          "feedback": "versatilidade entre sala interior e apoio à esplanada"
+        },
+        {
+          "date": "2026-06-20",
+          "feedback": "excelente resposta no arranque exigente da manhã"
+        },
+        {
+          "date": "2026-06-20",
+          "feedback": "excelente resposta no arranque exigente da manhã"
+        },
+        {
+          "date": "2026-06-21",
+          "feedback": "destaque especial na sala interior com elevada autonomia"
+        },
+        {
+          "date": "2026-06-21",
+          "feedback": "destaque especial na sala interior com elevada autonomia"
+        },
+        {
+          "date": "2026-06-24",
+          "feedback": "apoio ao serviço e disponibilidade para prolongar o turno no fecho"
+        },
+        {
+          "date": "2026-06-25",
+          "feedback": "apoio consistente e disponibilidade no fecho"
+        },
+        {
+          "date": "2026-06-26",
+          "feedback": "participação ativa no fecho exigente"
+        },
+        {
+          "date": "2026-06-27",
+          "feedback": "fecho rigoroso e manutenção da qualidade até ao final do serviço"
+        },
+        {
+          "date": "2026-06-28",
+          "feedback": "gestão integral e consistente da sala interior"
+        },
+        {
+          "date": "2026-06-28",
+          "feedback": "gestão integral e consistente da sala interior"
+        },
+        {
+          "date": "2026-06-30",
+          "feedback": "abertura tranquila e operação flexível sem setores"
+        }
+      ],
+      "overtime_details": [
+        {
+          "date": "2026-06-04",
+          "minutes": 330,
+          "formatted": "5h30min"
+        },
+        {
+          "date": "2026-06-05",
+          "minutes": 220,
+          "formatted": "3h40min"
+        },
+        {
+          "date": "2026-06-06",
+          "minutes": 65,
+          "formatted": "1h05min"
+        },
+        {
+          "date": "2026-06-07",
+          "minutes": 1418,
+          "formatted": "23h38min"
+        },
+        {
+          "date": "2026-06-10",
+          "minutes": 937,
+          "formatted": "15h37min"
+        },
+        {
+          "date": "2026-06-11",
+          "minutes": 1450,
+          "formatted": "24h10min"
+        },
+        {
+          "date": "2026-06-12",
+          "minutes": 180,
+          "formatted": "3h00min"
+        },
+        {
+          "date": "2026-06-13",
+          "minutes": 60,
+          "formatted": "1h00min"
+        },
+        {
+          "date": "2026-06-14",
+          "minutes": 660,
+          "formatted": "11h00min"
+        },
+        {
+          "date": "2026-06-17",
+          "minutes": 60,
+          "formatted": "1h00min"
+        },
+        {
+          "date": "2026-06-18",
+          "minutes": 690,
+          "formatted": "11h30min"
+        },
+        {
+          "date": "2026-06-19",
+          "minutes": 150,
+          "formatted": "2h30min"
+        },
+        {
+          "date": "2026-06-20",
+          "minutes": 330,
+          "formatted": "5h30min"
+        },
+        {
+          "date": "2026-06-21",
+          "minutes": 750,
+          "formatted": "12h30min"
+        },
+        {
+          "date": "2026-06-24",
+          "minutes": 1150,
+          "formatted": "19h10min"
+        },
+        {
+          "date": "2026-06-25",
+          "minutes": 150,
+          "formatted": "2h30min"
+        },
+        {
+          "date": "2026-06-26",
+          "minutes": 840,
+          "formatted": "14h00min"
+        },
+        {
+          "date": "2026-06-27",
+          "minutes": 160,
+          "formatted": "2h40min"
+        },
+        {
+          "date": "2026-06-28",
+          "minutes": 160,
+          "formatted": "2h40min"
+        },
+        {
+          "date": "2026-06-30",
+          "minutes": 105,
+          "formatted": "1h45min"
+        }
+      ],
+      "special_mentions": [],
+      "total_overtime_formatted": "164h25min",
+      "avg_overtime_per_shift": 493.2
+    },
+    "Bruno": {
+      "total_overtime_minutes": 8926,
+      "total_overtime_instances": 20,
+      "positive_mentions": 9,
+      "days_worked": 21,
+      "opening_shifts": 8,
+      "closing_shifts": 7,
+      "responsibilities": [
+        "Fecho",
+        "Setor 70",
+        "Gestão de Porta",
+        "Coordenação",
+        "Sala Interior",
+        "Abertura",
+        "Setor 50",
+        "Runner"
+      ],
+      "feedback_notes": [
+        {
+          "date": "2026-06-19",
+          "feedback": "consistência operacional, organização do setor das 50's, liderança informal e fecho com prolongamento de turno"
+        },
+        {
+          "date": "2026-06-19",
+          "feedback": "consistência operacional, organização do setor das 50's, liderança informal e fecho com prolongamento de turno"
+        },
+        {
+          "date": "2026-06-20",
+          "feedback": "destaque na coordenação operacional como runner principal"
+        },
+        {
+          "date": "2026-06-20",
+          "feedback": "fecho prolongado até às 00h00"
+        },
+        {
+          "date": "2026-06-20",
+          "feedback": "destaque na coordenação operacional como runner principal"
+        },
+        {
+          "date": "2026-06-21",
+          "feedback": "consistência nos setores atribuídos"
+        },
+        {
+          "date": "2026-06-24",
+          "feedback": "foco em limpeza de vidros e organização de stock"
+        },
+        {
+          "date": "2026-06-24",
+          "feedback": "foco em limpeza de vidros e organização de stock"
+        },
+        {
+          "date": "2026-06-25",
+          "feedback": "abertura tranquila e preparação sem incidentes"
+        }
+      ],
+      "overtime_details": [
+        {
+          "date": "2026-06-04",
+          "minutes": 210,
+          "formatted": "3h30min"
+        },
+        {
+          "date": "2026-06-05",
+          "minutes": 330,
+          "formatted": "5h30min"
+        },
+        {
+          "date": "2026-06-06",
+          "minutes": 75,
+          "formatted": "1h15min"
+        },
+        {
+          "date": "2026-06-07",
+          "minutes": 192,
+          "formatted": "3h12min"
+        },
+        {
+          "date": "2026-06-10",
+          "minutes": 374,
+          "formatted": "6h14min"
+        },
+        {
+          "date": "2026-06-11",
+          "minutes": 1380,
+          "formatted": "23h00min"
+        },
+        {
+          "date": "2026-06-12",
+          "minutes": 180,
+          "formatted": "3h00min"
+        },
+        {
+          "date": "2026-06-13",
+          "minutes": 60,
+          "formatted": "1h00min"
+        },
+        {
+          "date": "2026-06-14",
+          "minutes": 1420,
+          "formatted": "23h40min"
+        },
+        {
+          "date": "2026-06-16",
+          "minutes": 210,
+          "formatted": "3h30min"
+        },
+        {
+          "date": "2026-06-17",
+          "minutes": 240,
+          "formatted": "4h00min"
+        },
+        {
+          "date": "2026-06-19",
+          "minutes": 450,
+          "formatted": "7h30min"
+        },
+        {
+          "date": "2026-06-20",
+          "minutes": 450,
+          "formatted": "7h30min"
+        },
+        {
+          "date": "2026-06-21",
+          "minutes": 810,
+          "formatted": "13h30min"
+        },
+        {
+          "date": "2026-06-24",
+          "minutes": 1050,
+          "formatted": "17h30min"
+        },
+        {
+          "date": "2026-06-25",
+          "minutes": 50,
+          "formatted": "0h50min"
+        },
+        {
+          "date": "2026-06-26",
+          "minutes": 210,
+          "formatted": "3h30min"
+        },
+        {
+          "date": "2026-06-27",
+          "minutes": 840,
+          "formatted": "14h00min"
+        },
+        {
+          "date": "2026-06-28",
+          "minutes": 80,
+          "formatted": "1h20min"
+        },
+        {
+          "date": "2026-06-30",
+          "minutes": 315,
+          "formatted": "5h15min"
+        }
+      ],
+      "special_mentions": [],
+      "total_overtime_formatted": "148h46min",
+      "avg_overtime_per_shift": 446.3
+    },
+    "Lil": {
+      "total_overtime_minutes": 6914,
+      "total_overtime_instances": 19,
+      "positive_mentions": 14,
+      "days_worked": 22,
+      "opening_shifts": 5,
+      "closing_shifts": 15,
+      "responsibilities": [
+        "Fecho",
+        "Setor 70",
+        "Gestão de Porta",
+        "Sala Interior",
+        "Setor 60",
+        "Abertura",
+        "Setor 50",
+        "Runner"
+      ],
+      "feedback_notes": [
+        {
+          "date": "2026-06-21",
+          "feedback": "fundamental como runner e ligação entre setores"
+        },
+        {
+          "date": "2026-06-21",
+          "feedback": "fundamental como runner e ligação entre setores"
+        },
+        {
+          "date": "2026-06-22",
+          "feedback": "apoio consistente na esplanada, participação no fecho e remoção das capas dos pufes para lavagem"
+        },
+        {
+          "date": "2026-06-22",
+          "feedback": "apoio consistente na esplanada, participação no fecho e remoção das capas dos pufes para lavagem"
+        },
+        {
+          "date": "2026-06-23",
+          "feedback": "apoio consistente em pico de almoço e fecho"
+        },
+        {
+          "date": "2026-06-23",
+          "feedback": "apoio consistente em pico de almoço e fecho"
+        },
+        {
+          "date": "2026-06-26",
+          "feedback": "abertura organizada e gestão de pausas eficiente"
+        },
+        {
+          "date": "2026-06-27",
+          "feedback": "gestão consistente da porta num contexto de lotação máxima"
+        },
+        {
+          "date": "2026-06-27",
+          "feedback": "gestão consistente da porta num contexto de lotação máxima"
+        },
+        {
+          "date": "2026-06-28",
+          "feedback": "abertura sozinho e assunção de responsabilidades adicionais num contexto exigente"
+        },
+        {
+          "date": "2026-06-28",
+          "feedback": "abertura sozinho e assunção de responsabilidades adicionais num contexto exigente"
+        },
+        {
+          "date": "2026-06-29",
+          "feedback": "gestão consistente do setor 50 e participação no fecho"
+        },
+        {
+          "date": "2026-06-29",
+          "feedback": "gestão consistente do setor 50 e participação no fecho"
+        },
+        {
+          "date": "2026-06-30",
+          "feedback": "reforço em almoço e fecho operacional"
+        }
+      ],
+      "overtime_details": [
+        {
+          "date": "2026-06-05",
+          "minutes": 110,
+          "formatted": "1h50min"
+        },
+        {
+          "date": "2026-06-07",
+          "minutes": 180,
+          "formatted": "3h00min"
+        },
+        {
+          "date": "2026-06-09",
+          "minutes": 70,
+          "formatted": "1h10min"
+        },
+        {
+          "date": "2026-06-10",
+          "minutes": 197,
+          "formatted": "3h17min"
+        },
+        {
+          "date": "2026-06-13",
+          "minutes": 126,
+          "formatted": "2h06min"
+        },
+        {
+          "date": "2026-06-14",
+          "minutes": 866,
+          "formatted": "14h26min"
+        },
+        {
+          "date": "2026-06-15",
+          "minutes": 165,
+          "formatted": "2h45min"
+        },
+        {
+          "date": "2026-06-16",
+          "minutes": 120,
+          "formatted": "2h00min"
+        },
+        {
+          "date": "2026-06-18",
+          "minutes": 1020,
+          "formatted": "17h00min"
+        },
+        {
+          "date": "2026-06-20",
+          "minutes": 540,
+          "formatted": "9h00min"
+        },
+        {
+          "date": "2026-06-21",
+          "minutes": 810,
+          "formatted": "13h30min"
+        },
+        {
+          "date": "2026-06-22",
+          "minutes": 1020,
+          "formatted": "17h00min"
+        },
+        {
+          "date": "2026-06-23",
+          "minutes": 690,
+          "formatted": "11h30min"
+        },
+        {
+          "date": "2026-06-25",
+          "minutes": 50,
+          "formatted": "0h50min"
+        },
+        {
+          "date": "2026-06-26",
+          "minutes": 210,
+          "formatted": "3h30min"
+        },
+        {
+          "date": "2026-06-27",
+          "minutes": 240,
+          "formatted": "4h00min"
+        },
+        {
+          "date": "2026-06-28",
+          "minutes": 80,
+          "formatted": "1h20min"
+        },
+        {
+          "date": "2026-06-29",
+          "minutes": 270,
+          "formatted": "4h30min"
+        },
+        {
+          "date": "2026-06-30",
+          "minutes": 150,
+          "formatted": "2h30min"
+        }
+      ],
+      "special_mentions": [],
+      "total_overtime_formatted": "115h14min",
+      "avg_overtime_per_shift": 363.9
+    },
+    "Lee": {
+      "total_overtime_minutes": 3210,
+      "total_overtime_instances": 8,
+      "positive_mentions": 16,
+      "days_worked": 8,
+      "opening_shifts": 2,
+      "closing_shifts": 1,
+      "responsibilities": [
+        "Fecho",
+        "Gestão de Porta",
+        "Runner",
+        "Abertura"
+      ],
+      "feedback_notes": [
+        {
+          "date": "2026-06-19",
+          "feedback": "primeiro dia positivo com boa adaptação técnica; timidez e comunicação limitada com colegas — acompanhar integração no espírito de equipa"
+        },
+        {
+          "date": "2026-06-19",
+          "feedback": "primeiro dia positivo com boa adaptação técnica; timidez e comunicação limitada com colegas — acompanhar integração no espírito de equipa"
+        },
+        {
+          "date": "2026-06-20",
+          "feedback": "erro relevante ao almoço; postura positiva após orientação"
+        },
+        {
+          "date": "2026-06-20",
+          "feedback": "erro relevante ao almoço; postura positiva após orientação"
+        },
+        {
+          "date": "2026-06-21",
+          "feedback": "evolução positiva em funções de apoio operacional sem registo de pedidos"
+        },
+        {
+          "date": "2026-06-21",
+          "feedback": "evolução positiva em funções de apoio operacional sem registo de pedidos"
+        },
+        {
+          "date": "2026-06-22",
+          "feedback": "disponibilidade para apoiar, com necessidade de consolidar ainda o processo de registo de pedidos"
+        },
+        {
+          "date": "2026-06-22",
+          "feedback": "disponibilidade para apoiar, com necessidade de consolidar ainda o processo de registo de pedidos"
+        },
+        {
+          "date": "2026-06-26",
+          "feedback": "excelente trabalho como runner, boa leitura de serviço"
+        },
+        {
+          "date": "2026-06-26",
+          "feedback": "excelente trabalho como runner, boa leitura de serviço"
+        },
+        {
+          "date": "2026-06-27",
+          "feedback": "excelente desempenho como runner, com boa leitura do serviço e ritmo elevado"
+        },
+        {
+          "date": "2026-06-27",
+          "feedback": "excelente desempenho como runner, com boa leitura do serviço e ritmo elevado"
+        },
+        {
+          "date": "2026-06-28",
+          "feedback": "evolução muito positiva como runner e cobertura de pausas"
+        },
+        {
+          "date": "2026-06-28",
+          "feedback": "evolução muito positiva como runner e cobertura de pausas"
+        },
+        {
+          "date": "2026-06-29",
+          "feedback": "runner consistente, cobertura de pausas e apoio transversal decisivo"
+        },
+        {
+          "date": "2026-06-29",
+          "feedback": "runner consistente, cobertura de pausas e apoio transversal decisivo"
+        }
+      ],
+      "overtime_details": [
+        {
+          "date": "2026-06-19",
+          "minutes": 150,
+          "formatted": "2h30min"
+        },
+        {
+          "date": "2026-06-20",
+          "minutes": 180,
+          "formatted": "3h00min"
+        },
+        {
+          "date": "2026-06-21",
+          "minutes": 750,
+          "formatted": "12h30min"
+        },
+        {
+          "date": "2026-06-22",
+          "minutes": 1680,
+          "formatted": "28h00min"
+        },
+        {
+          "date": "2026-06-26",
+          "minutes": 210,
+          "formatted": "3h30min"
+        },
+        {
+          "date": "2026-06-27",
+          "minutes": 60,
+          "formatted": "1h00min"
+        },
+        {
+          "date": "2026-06-28",
+          "minutes": 80,
+          "formatted": "1h20min"
+        },
+        {
+          "date": "2026-06-29",
+          "minutes": 100,
+          "formatted": "1h40min"
+        }
+      ],
+      "special_mentions": [],
+      "total_overtime_formatted": "53h30min",
+      "avg_overtime_per_shift": 401.2
+    },
+    "Diogo": {
+      "total_overtime_minutes": 3245,
+      "total_overtime_instances": 5,
+      "positive_mentions": 10,
+      "days_worked": 5,
+      "opening_shifts": 0,
+      "closing_shifts": 0,
+      "responsibilities": [],
+      "feedback_notes": [
+        {
+          "date": "2026-06-22",
+          "feedback": "excelente atitude, boa comunicação e espírito colaborativo no primeiro dia"
+        },
+        {
+          "date": "2026-06-22",
+          "feedback": "excelente atitude, boa comunicação e espírito colaborativo no primeiro dia"
+        },
+        {
+          "date": "2026-06-23",
+          "feedback": "evolução clara no segundo dia, com menos erros e melhor leitura do serviço"
+        },
+        {
+          "date": "2026-06-23",
+          "feedback": "evolução clara no segundo dia, com menos erros e melhor leitura do serviço"
+        },
+        {
+          "date": "2026-06-24",
+          "feedback": "evolução contínua na integração, com atitude positiva e disponibilidade"
+        },
+        {
+          "date": "2026-06-24",
+          "feedback": "evolução contínua na integração, com atitude positiva e disponibilidade"
+        },
+        {
+          "date": "2026-06-25",
+          "feedback": "evolução contínua na integração"
+        },
+        {
+          "date": "2026-06-25",
+          "feedback": "evolução contínua na integração"
+        },
+        {
+          "date": "2026-06-26",
+          "feedback": "evolução significativa, maior confiança e redução de erros"
+        },
+        {
+          "date": "2026-06-26",
+          "feedback": "evolução significativa, maior confiança e redução de erros"
+        }
+      ],
+      "overtime_details": [
+        {
+          "date": "2026-06-22",
+          "minutes": 1800,
+          "formatted": "30h00min"
+        },
+        {
+          "date": "2026-06-23",
+          "minutes": 135,
+          "formatted": "2h15min"
+        },
+        {
+          "date": "2026-06-24",
+          "minutes": 1050,
+          "formatted": "17h30min"
+        },
+        {
+          "date": "2026-06-25",
+          "minutes": 50,
+          "formatted": "0h50min"
+        },
+        {
+          "date": "2026-06-26",
+          "minutes": 210,
+          "formatted": "3h30min"
+        }
+      ],
+      "special_mentions": [],
+      "total_overtime_formatted": "54h05min",
+      "avg_overtime_per_shift": 649.0
+    },
+    "Sofia": {
+      "total_overtime_minutes": 190,
+      "total_overtime_instances": 3,
+      "positive_mentions": 6,
+      "days_worked": 3,
+      "opening_shifts": 0,
+      "closing_shifts": 0,
+      "responsibilities": [
+        "Quiosque"
+      ],
+      "feedback_notes": [
+        {
+          "date": "2026-06-25",
+          "feedback": "primeira impressão muito positiva, com boa capacidade de aprendizagem e integração"
+        },
+        {
+          "date": "2026-06-25",
+          "feedback": "primeira impressão muito positiva, com boa capacidade de aprendizagem e integração"
+        },
+        {
+          "date": "2026-06-27",
+          "feedback": "boa integração no quiosque dos gelados num dia de forte exigência"
+        },
+        {
+          "date": "2026-06-27",
+          "feedback": "boa integração no quiosque dos gelados num dia de forte exigência"
+        },
+        {
+          "date": "2026-06-28",
+          "feedback": "desempenho sólido no quiosque dos gelados num dia de elevada rotação"
+        },
+        {
+          "date": "2026-06-28",
+          "feedback": "desempenho sólido no quiosque dos gelados num dia de elevada rotação"
+        }
+      ],
+      "overtime_details": [
+        {
+          "date": "2026-06-25",
+          "minutes": 50,
+          "formatted": "0h50min"
+        },
+        {
+          "date": "2026-06-27",
+          "minutes": 60,
+          "formatted": "1h00min"
+        },
+        {
+          "date": "2026-06-28",
+          "minutes": 80,
+          "formatted": "1h20min"
+        }
+      ],
+      "special_mentions": [],
+      "total_overtime_formatted": "3h10min",
+      "avg_overtime_per_shift": 63.3
+    }
+  }
+}

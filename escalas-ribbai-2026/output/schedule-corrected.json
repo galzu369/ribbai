@@ -1,0 +1,837 @@
+{
+  "schedule": {
+    "1": {
+      "day": 1,
+      "employees": [
+        "bruno",
+        "filipe",
+        "carolina",
+        "pablo",
+        "lee",
+        "diogo"
+      ],
+      "opening": [
+        "bruno",
+        "filipe"
+      ],
+      "lunch": [
+        "bruno",
+        "filipe",
+        "carolina",
+        "pablo",
+        "lee",
+        "diogo"
+      ],
+      "closing": [
+        "bruno",
+        "filipe",
+        "carolina"
+      ]
+    },
+    "2": {
+      "day": 2,
+      "employees": [
+        "bruno",
+        "filipe",
+        "carolina",
+        "matilde",
+        "lee",
+        "diogo"
+      ],
+      "opening": [
+        "bruno",
+        "filipe"
+      ],
+      "lunch": [
+        "bruno",
+        "filipe",
+        "carolina",
+        "matilde",
+        "lee",
+        "diogo"
+      ],
+      "closing": [
+        "filipe",
+        "carolina",
+        "matilde"
+      ]
+    },
+    "3": {
+      "day": 3,
+      "employees": [
+        "bruno",
+        "filipe",
+        "lil",
+        "matilde",
+        "lee",
+        "diogo"
+      ],
+      "opening": [
+        "bruno",
+        "filipe"
+      ],
+      "lunch": [
+        "bruno",
+        "filipe",
+        "lil",
+        "matilde",
+        "lee",
+        "diogo"
+      ],
+      "closing": [
+        "lil",
+        "matilde",
+        "lee"
+      ]
+    },
+    "4": {
+      "day": 4,
+      "employees": [
+        "bruno",
+        "pablo",
+        "lil",
+        "matilde",
+        "lee"
+      ],
+      "opening": [
+        "bruno",
+        "pablo"
+      ],
+      "lunch": [
+        "bruno",
+        "pablo",
+        "lil",
+        "matilde",
+        "lee"
+      ],
+      "closing": [
+        "matilde",
+        "lee",
+        "bruno"
+      ]
+    },
+    "5": {
+      "day": 5,
+      "employees": [
+        "carolina",
+        "pablo",
+        "lil",
+        "matilde"
+      ],
+      "opening": [
+        "carolina",
+        "pablo"
+      ],
+      "lunch": [
+        "carolina",
+        "pablo",
+        "lil",
+        "matilde"
+      ],
+      "closing": [
+        "carolina",
+        "pablo",
+        "lil"
+      ]
+    },
+    "6": {
+      "day": 6,
+      "employees": [
+        "filipe",
+        "carolina",
+        "pablo",
+        "lil",
+        "diogo"
+      ],
+      "opening": [
+        "filipe",
+        "carolina"
+      ],
+      "lunch": [
+        "filipe",
+        "carolina",
+        "pablo",
+        "lil",
+        "diogo"
+      ],
+      "closing": [
+        "filipe",
+        "carolina",
+        "pablo"
+      ]
+    },
+    "7": {
+      "day": 7,
+      "employees": [
+        "bruno",
+        "filipe",
+        "carolina",
+        "pablo",
+        "lee",
+        "diogo"
+      ],
+      "opening": [
+        "bruno",
+        "filipe"
+      ],
+      "lunch": [
+        "bruno",
+        "filipe",
+        "carolina",
+        "pablo",
+        "lee",
+        "diogo"
+      ],
+      "closing": [
+        "bruno",
+        "filipe",
+        "carolina"
+      ]
+    },
+    "8": {
+      "day": 8,
+      "employees": [
+        "bruno",
+        "filipe",
+        "carolina",
+        "matilde",
+        "lee",
+        "diogo"
+      ],
+      "opening": [
+        "bruno",
+        "filipe"
+      ],
+      "lunch": [
+        "bruno",
+        "filipe",
+        "carolina",
+        "matilde",
+        "lee",
+        "diogo"
+      ],
+      "closing": [
+        "filipe",
+        "carolina",
+        "matilde"
+      ]
+    },
+    "9": {
+      "day": 9,
+      "employees": [
+        "bruno",
+        "filipe",
+        "lil",
+        "matilde",
+        "lee",
+        "diogo"
+      ],
+      "opening": [
+        "bruno",
+        "filipe"
+      ],
+      "lunch": [
+        "bruno",
+        "filipe",
+        "lil",
+        "matilde",
+        "lee",
+        "diogo"
+      ],
+      "closing": [
+        "lil",
+        "matilde",
+        "lee"
+      ]
+    },
+    "10": {
+      "day": 10,
+      "employees": [
+        "bruno",
+        "pablo",
+        "lil",
+        "matilde",
+        "lee"
+      ],
+      "opening": [
+        "bruno",
+        "pablo"
+      ],
+      "lunch": [
+        "bruno",
+        "pablo",
+        "lil",
+        "matilde",
+        "lee"
+      ],
+      "closing": [
+        "lee",
+        "bruno",
+        "pablo"
+      ]
+    },
+    "11": {
+      "day": 11,
+      "employees": [
+        "carolina",
+        "pablo",
+        "lil",
+        "matilde"
+      ],
+      "opening": [
+        "carolina",
+        "pablo"
+      ],
+      "lunch": [
+        "carolina",
+        "pablo",
+        "lil",
+        "matilde"
+      ],
+      "closing": [
+        "lil",
+        "matilde",
+        "carolina"
+      ]
+    },
+    "12": {
+      "day": 12,
+      "employees": [
+        "filipe",
+        "carolina",
+        "pablo",
+        "lil",
+        "diogo"
+      ],
+      "opening": [
+        "filipe",
+        "carolina"
+      ],
+      "lunch": [
+        "filipe",
+        "carolina",
+        "pablo",
+        "lil",
+        "diogo"
+      ],
+      "closing": [
+        "carolina",
+        "pablo",
+        "lil"
+      ]
+    },
+    "13": {
+      "day": 13,
+      "employees": [
+        "bruno",
+        "filipe",
+        "carolina",
+        "pablo",
+        "lee",
+        "diogo"
+      ],
+      "opening": [
+        "bruno",
+        "filipe"
+      ],
+      "lunch": [
+        "bruno",
+        "filipe",
+        "carolina",
+        "pablo",
+        "lee",
+        "diogo"
+      ],
+      "closing": [
+        "bruno",
+        "filipe",
+        "carolina"
+      ]
+    },
+    "14": {
+      "day": 14,
+      "employees": [
+        "bruno",
+        "filipe",
+        "carolina",
+        "matilde",
+        "lee",
+        "diogo"
+      ],
+      "opening": [
+        "bruno",
+        "filipe"
+      ],
+      "lunch": [
+        "bruno",
+        "filipe",
+        "carolina",
+        "matilde",
+        "lee",
+        "diogo"
+      ],
+      "closing": [
+        "filipe",
+        "carolina",
+        "matilde"
+      ]
+    },
+    "15": {
+      "day": 15,
+      "employees": [
+        "bruno",
+        "filipe",
+        "lil",
+        "matilde",
+        "lee",
+        "diogo"
+      ],
+      "opening": [
+        "bruno",
+        "filipe"
+      ],
+      "lunch": [
+        "bruno",
+        "filipe",
+        "lil",
+        "matilde",
+        "lee",
+        "diogo"
+      ],
+      "closing": [
+        "lil",
+        "matilde",
+        "lee"
+      ]
+    },
+    "16": {
+      "day": 16,
+      "employees": [
+        "bruno",
+        "pablo",
+        "lil",
+        "matilde",
+        "lee"
+      ],
+      "opening": [
+        "bruno",
+        "pablo"
+      ],
+      "lunch": [
+        "bruno",
+        "pablo",
+        "lil",
+        "matilde",
+        "lee"
+      ],
+      "closing": [
+        "bruno",
+        "pablo",
+        "lil"
+      ]
+    },
+    "17": {
+      "day": 17,
+      "employees": [
+        "carolina",
+        "pablo",
+        "lil",
+        "matilde"
+      ],
+      "opening": [
+        "carolina",
+        "pablo"
+      ],
+      "lunch": [
+        "carolina",
+        "pablo",
+        "lil",
+        "matilde"
+      ],
+      "closing": [
+        "carolina",
+        "pablo",
+        "lil"
+      ]
+    },
+    "18": {
+      "day": 18,
+      "employees": [
+        "filipe",
+        "carolina",
+        "pablo",
+        "lil",
+        "diogo"
+      ],
+      "opening": [
+        "filipe",
+        "carolina"
+      ],
+      "lunch": [
+        "filipe",
+        "carolina",
+        "pablo",
+        "lil",
+        "diogo"
+      ],
+      "closing": [
+        "pablo",
+        "lil",
+        "diogo"
+      ]
+    },
+    "19": {
+      "day": 19,
+      "employees": [
+        "bruno",
+        "filipe",
+        "carolina",
+        "pablo",
+        "lee",
+        "diogo"
+      ],
+      "opening": [
+        "bruno",
+        "filipe"
+      ],
+      "lunch": [
+        "bruno",
+        "filipe",
+        "carolina",
+        "pablo",
+        "lee",
+        "diogo"
+      ],
+      "closing": [
+        "bruno",
+        "filipe",
+        "carolina"
+      ]
+    },
+    "20": {
+      "day": 20,
+      "employees": [
+        "bruno",
+        "filipe",
+        "carolina",
+        "matilde",
+        "lee",
+        "diogo"
+      ],
+      "opening": [
+        "bruno",
+        "filipe"
+      ],
+      "lunch": [
+        "bruno",
+        "filipe",
+        "carolina",
+        "matilde",
+        "lee",
+        "diogo"
+      ],
+      "closing": [
+        "filipe",
+        "carolina",
+        "matilde"
+      ]
+    },
+    "21": {
+      "day": 21,
+      "employees": [
+        "bruno",
+        "filipe",
+        "lil",
+        "matilde",
+        "lee",
+        "diogo"
+      ],
+      "opening": [
+        "bruno",
+        "filipe"
+      ],
+      "lunch": [
+        "bruno",
+        "filipe",
+        "lil",
+        "matilde",
+        "lee",
+        "diogo"
+      ],
+      "closing": [
+        "lil",
+        "matilde",
+        "lee"
+      ]
+    },
+    "22": {
+      "day": 22,
+      "employees": [
+        "bruno",
+        "pablo",
+        "lil",
+        "matilde",
+        "lee"
+      ],
+      "opening": [
+        "bruno",
+        "pablo"
+      ],
+      "lunch": [
+        "bruno",
+        "pablo",
+        "lil",
+        "matilde",
+        "lee"
+      ],
+      "closing": [
+        "pablo",
+        "lil",
+        "matilde"
+      ]
+    },
+    "23": {
+      "day": 23,
+      "employees": [
+        "carolina",
+        "pablo",
+        "lil",
+        "matilde"
+      ],
+      "opening": [
+        "carolina",
+        "pablo"
+      ],
+      "lunch": [
+        "carolina",
+        "pablo",
+        "lil",
+        "matilde"
+      ],
+      "closing": [
+        "lil",
+        "matilde",
+        "carolina"
+      ]
+    },
+    "24": {
+      "day": 24,
+      "employees": [
+        "filipe",
+        "carolina",
+        "pablo",
+        "lil",
+        "diogo"
+      ],
+      "opening": [
+        "filipe",
+        "carolina"
+      ],
+      "lunch": [
+        "filipe",
+        "carolina",
+        "pablo",
+        "lil",
+        "diogo"
+      ],
+      "closing": [
+        "lil",
+        "diogo",
+        "filipe"
+      ]
+    },
+    "25": {
+      "day": 25,
+      "employees": [
+        "bruno",
+        "filipe",
+        "carolina",
+        "pablo",
+        "lee",
+        "diogo"
+      ],
+      "opening": [
+        "bruno",
+        "filipe"
+      ],
+      "lunch": [
+        "bruno",
+        "filipe",
+        "carolina",
+        "pablo",
+        "lee",
+        "diogo"
+      ],
+      "closing": [
+        "bruno",
+        "filipe",
+        "carolina"
+      ]
+    },
+    "26": {
+      "day": 26,
+      "employees": [
+        "bruno",
+        "filipe",
+        "carolina",
+        "matilde",
+        "lee",
+        "diogo"
+      ],
+      "opening": [
+        "bruno",
+        "filipe"
+      ],
+      "lunch": [
+        "bruno",
+        "filipe",
+        "carolina",
+        "matilde",
+        "lee",
+        "diogo"
+      ],
+      "closing": [
+        "filipe",
+        "carolina",
+        "matilde"
+      ]
+    },
+    "27": {
+      "day": 27,
+      "employees": [
+        "bruno",
+        "filipe",
+        "lil",
+        "matilde",
+        "lee",
+        "diogo"
+      ],
+      "opening": [
+        "bruno",
+        "filipe"
+      ],
+      "lunch": [
+        "bruno",
+        "filipe",
+        "lil",
+        "matilde",
+        "lee",
+        "diogo"
+      ],
+      "closing": [
+        "lil",
+        "matilde",
+        "lee"
+      ]
+    },
+    "28": {
+      "day": 28,
+      "employees": [
+        "bruno",
+        "pablo",
+        "lil",
+        "matilde",
+        "lee"
+      ],
+      "opening": [
+        "bruno",
+        "pablo"
+      ],
+      "lunch": [
+        "bruno",
+        "pablo",
+        "lil",
+        "matilde",
+        "lee"
+      ],
+      "closing": [
+        "lil",
+        "matilde",
+        "lee"
+      ]
+    },
+    "29": {
+      "day": 29,
+      "employees": [
+        "carolina",
+        "pablo",
+        "lil",
+        "matilde"
+      ],
+      "opening": [
+        "carolina",
+        "pablo"
+      ],
+      "lunch": [
+        "carolina",
+        "pablo",
+        "lil",
+        "matilde"
+      ],
+      "closing": [
+        "carolina",
+        "pablo",
+        "lil"
+      ]
+    },
+    "30": {
+      "day": 30,
+      "employees": [
+        "filipe",
+        "carolina",
+        "pablo",
+        "lil",
+        "diogo"
+      ],
+      "opening": [
+        "filipe",
+        "carolina"
+      ],
+      "lunch": [
+        "filipe",
+        "carolina",
+        "pablo",
+        "lil",
+        "diogo"
+      ],
+      "closing": [
+        "diogo",
+        "filipe",
+        "carolina"
+      ]
+    },
+    "31": {
+      "day": 31,
+      "employees": [
+        "bruno",
+        "filipe",
+        "carolina",
+        "pablo",
+        "lee",
+        "diogo"
+      ],
+      "opening": [
+        "bruno",
+        "filipe"
+      ],
+      "lunch": [
+        "bruno",
+        "filipe",
+        "carolina",
+        "pablo",
+        "lee",
+        "diogo"
+      ],
+      "closing": [
+        "bruno",
+        "filipe",
+        "carolina"
+      ]
+    }
+  },
+  "metadata": {
+    "generatedAt": "2026-06-30T01:11:07.218Z",
+    "pattern": "4 dias trabalho + 2 dias folga",
+    "corrected": true
+  }
+}

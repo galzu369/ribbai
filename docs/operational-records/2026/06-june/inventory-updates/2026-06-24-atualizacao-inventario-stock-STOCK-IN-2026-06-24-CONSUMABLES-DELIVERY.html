@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="utf-8" />
+    <title>Atualizacao de Inventario - 2026-06-24 (STOCK-IN-2026-06-24-CONSUMABLES-DELIVERY)</title>
+    <style>
+      :root {
+        color: #172033;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        margin: 0;
+        background: #f4f6fb;
+      }
+
+      main {
+        padding: 32px;
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+      }
+
+      h1 {
+        font-size: 30px;
+      }
+
+      h2 {
+        margin-top: 28px;
+        font-size: 18px;
+      }
+
+      h3 {
+        font-size: 13px;
+        margin-bottom: 10px;
+      }
+
+      .cover,
+      .panel {
+        background: #ffffff;
+        border: 1px solid #d8deea;
+        border-radius: 16px;
+        padding: 24px;
+      }
+
+      .panel {
+        margin-top: 18px;
+      }
+
+      .subtitle,
+      .muted,
+      td span {
+        color: #657085;
+      }
+
+      .subtitle {
+        margin-top: 8px;
+      }
+
+      .summary {
+        display: grid;
+        gap: 14px;
+        grid-template-columns: repeat(4, 1fr);
+        margin-top: 24px;
+      }
+
+      .metric {
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 14px;
+      }
+
+      .metric span {
+        color: #657085;
+        display: block;
+        font-size: 11px;
+        text-transform: uppercase;
+      }
+
+      .metric strong {
+        display: block;
+        font-size: 22px;
+        margin-top: 6px;
+      }
+
+      .grid-two {
+        display: grid;
+        gap: 18px;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      table {
+        border-collapse: collapse;
+        font-size: 12px;
+        margin-top: 14px;
+        width: 100%;
+      }
+
+      th,
+      td {
+        border-bottom: 1px solid #e2e8f0;
+        padding: 10px 8px;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        color: #475569;
+        font-size: 10px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      td span {
+        display: block;
+        font-size: 10px;
+        margin-top: 3px;
+      }
+
+      .badge {
+        border-radius: 999px;
+        display: inline-block;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 4px 8px;
+      }
+
+      .badge-green {
+        background: #dcfce7;
+        color: #166534;
+      }
+
+      .badge-red {
+        background: #fee2e2;
+        color: #991b1b;
+      }
+
+      .badge-blue {
+        background: #dbeafe;
+        color: #1d4ed8;
+      }
+
+      .callout {
+        background: #fff7ed;
+        border: 1px solid #fed7aa;
+        border-radius: 12px;
+        color: #9a3412;
+        margin-top: 18px;
+        padding: 14px 16px;
+      }
+
+      .bar-row,
+      .status-row {
+        align-items: center;
+        display: grid;
+        gap: 10px;
+        grid-template-columns: 150px 1fr 28px;
+        margin: 10px 0;
+      }
+
+      .bar-label,
+      .status-row span {
+        color: #475569;
+        font-size: 12px;
+      }
+
+      .bar-track,
+      .status-track {
+        background: #eef2f7;
+        border-radius: 999px;
+        height: 12px;
+        overflow: hidden;
+      }
+
+      .bar-fill,
+      .status-fill {
+        background: #172033;
+        height: 100%;
+      }
+
+      .status-green {
+        background: #16a34a;
+      }
+
+      .status-red {
+        background: #dc2626;
+      }
+
+      ul {
+        margin: 12px 0 0;
+        padding-left: 18px;
+      }
+
+      li {
+        margin: 6px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="cover">
+        <h1>Relatorio de Atualizacao de Inventario</h1>
+        <p class="subtitle">RIBBAI OPS · 24/06/2026 · Ref: STOCK-IN-2026-06-24-CONSUMABLES-DELIVERY · Documento de controlo interno para gestao</p>
+
+        <div class="summary">
+          <div class="metric">
+            <span>Produtos alterados</span>
+            <strong>18</strong>
+          </div>
+          <div class="metric">
+            <span>Entradas registadas</span>
+            <strong>18</strong>
+          </div>
+          <div class="metric">
+            <span>Saidas/devolucoes</span>
+            <strong>0</strong>
+          </div>
+          <div class="metric">
+            <span>Valor estimado entradas</span>
+            <strong>680,62 €</strong>
+          </div>
+          <div class="metric">
+            <span>Produtos novos</span>
+            <strong>6</strong>
+          </div>
+          <div class="metric">
+            <span>Stock critico</span>
+            <strong>0</strong>
+          </div>
+          <div class="metric">
+            <span>Stock zero</span>
+            <strong>0</strong>
+          </div>
+          <div class="metric">
+            <span>Precos pendentes</span>
+            <strong>0</strong>
+          </div>
+        </div>
+
+        
+      </section>
+
+      <section class="panel grid-two">
+        <div>
+          <h3>Movimentos por categoria</h3>
+          
+        <div class="bar-row">
+          <div class="bar-label">Consumiveis de Servico</div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width: 14.285714285714285%"></div>
+          </div>
+          <strong>1</strong>
+        </div>
+      
+        <div class="bar-row">
+          <div class="bar-label">Consumiveis Operacionais</div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width: 100%"></div>
+          </div>
+          <strong>7</strong>
+        </div>
+      
+        <div class="bar-row">
+          <div class="bar-label">Consumiveis WC</div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width: 28.57142857142857%"></div>
+          </div>
+          <strong>2</strong>
+        </div>
+      
+        <div class="bar-row">
+          <div class="bar-label">Produtos de Limpeza</div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width: 85.71428571428571%"></div>
+          </div>
+          <strong>6</strong>
+        </div>
+      
+        <div class="bar-row">
+          <div class="bar-label">Talheres Take Away</div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width: 28.57142857142857%"></div>
+          </div>
+          <strong>2</strong>
+        </div>
+      
+        </div>
+        <div>
+          <h3>Estado dos artigos alterados</h3>
+          
+        <div class="status-row">
+          <span>Saudavel</span>
+          <div class="status-track">
+            <div class="status-fill status-green" style="width: 100%"></div>
+          </div>
+          <strong>18</strong>
+        </div>
+      
+        <div class="status-row">
+          <span>Critico</span>
+          <div class="status-track">
+            <div class="status-fill status-red" style="width: 0%"></div>
+          </div>
+          <strong>0</strong>
+        </div>
+      
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Movimentos registados</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Categoria</th>
+              <th>Artigo</th>
+              <th>Tipo</th>
+              <th>Anterior</th>
+              <th>Movimento</th>
+              <th>Final</th>
+              <th>Valor</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+        <tr>
+          <td>Consumiveis WC</td>
+          <td>
+            <strong>Papel Higienico</strong>
+            <span>CONS-WC-TOILET-PAPER</span>
+          </td>
+          <td><span class="badge badge-green">IN</span></td>
+          <td>11 pack</td>
+          <td>+10 pack</td>
+          <td>21 pack</td>
+          <td>146,00 €</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Produtos de Limpeza</td>
+          <td>
+            <strong>Glow Limpa Vidros</strong>
+            <span>CLEAN-GLASS-GLOW</span>
+          </td>
+          <td><span class="badge badge-green">IN</span></td>
+          <td>0 unidade</td>
+          <td>+2 unidade</td>
+          <td>2 unidade</td>
+          <td>7,98 €</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Produtos de Limpeza</td>
+          <td>
+            <strong>Higienizante Acao Rapida</strong>
+            <span>CLEAN-HYGIENIZER-FAST</span>
+          </td>
+          <td><span class="badge badge-green">IN</span></td>
+          <td>0 unidade</td>
+          <td>+2 unidade</td>
+          <td>2 unidade</td>
+          <td>30,00 €</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Consumiveis Operacionais</td>
+          <td>
+            <strong>Pelicula Alimentar</strong>
+            <span>CONS-OPS-FOOD-FILM</span>
+          </td>
+          <td><span class="badge badge-green">IN</span></td>
+          <td>0 caixa</td>
+          <td>+4 caixa</td>
+          <td>4 caixa</td>
+          <td>41,60 €</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Produtos de Limpeza</td>
+          <td>
+            <strong>Lava-Tudo</strong>
+            <span>CLEAN-LAVA-TUDO</span>
+          </td>
+          <td><span class="badge badge-green">IN</span></td>
+          <td>5 unidade</td>
+          <td>+2 unidade</td>
+          <td>7 unidade</td>
+          <td>16,28 €</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Consumiveis de Servico</td>
+          <td>
+            <strong>Palhinhas</strong>
+            <span>CONS-SERVICE-STRAWS</span>
+          </td>
+          <td><span class="badge badge-green">IN</span></td>
+          <td>7 saco</td>
+          <td>+35 saco</td>
+          <td>42 saco</td>
+          <td>61,25 €</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Talheres Take Away</td>
+          <td>
+            <strong>Colheres Take Away</strong>
+            <span>CONS-TAKEAWAY-SPOONS</span>
+          </td>
+          <td><span class="badge badge-green">IN</span></td>
+          <td>1 saco</td>
+          <td>+3 saco</td>
+          <td>4 saco</td>
+          <td>20,25 €</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Talheres Take Away</td>
+          <td>
+            <strong>Garfos e Facas Take Away</strong>
+            <span>CONS-TAKEAWAY-FORKS-KNIVES</span>
+          </td>
+          <td><span class="badge badge-green">IN</span></td>
+          <td>2 saco</td>
+          <td>+3 saco</td>
+          <td>5 saco</td>
+          <td>23,10 €</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Consumiveis Operacionais</td>
+          <td>
+            <strong>Rolos Impressora</strong>
+            <span>CONS-OPS-PRINTER-ROLLS</span>
+          </td>
+          <td><span class="badge badge-green">IN</span></td>
+          <td>5 saco</td>
+          <td>+20 saco</td>
+          <td>25 saco</td>
+          <td>158,60 €</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Consumiveis Operacionais</td>
+          <td>
+            <strong>Rolos TNT</strong>
+            <span>CONS-OPS-TNT-ROLLS</span>
+          </td>
+          <td><span class="badge badge-green">IN</span></td>
+          <td>1 pack</td>
+          <td>+1 pack</td>
+          <td>2 pack</td>
+          <td>27,42 €</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Produtos de Limpeza</td>
+          <td>
+            <strong>Thomil</strong>
+            <span>CLEAN-THOMIL</span>
+          </td>
+          <td><span class="badge badge-green">IN</span></td>
+          <td>1 unidade</td>
+          <td>+4 unidade</td>
+          <td>5 unidade</td>
+          <td>25,24 €</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Consumiveis Operacionais</td>
+          <td>
+            <strong>Panos Microfibra Amarelos</strong>
+            <span>CLEAN-MICROFIBER-YELLOW</span>
+          </td>
+          <td><span class="badge badge-green">IN</span></td>
+          <td>0 saco</td>
+          <td>+3 saco</td>
+          <td>3 saco</td>
+          <td>11,10 €</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Consumiveis Operacionais</td>
+          <td>
+            <strong>Panos Microfibra Cinzentos</strong>
+            <span>CLEAN-MICROFIBER-GREY</span>
+          </td>
+          <td><span class="badge badge-green">IN</span></td>
+          <td>0 saco</td>
+          <td>+3 saco</td>
+          <td>3 saco</td>
+          <td>11,10 €</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Consumiveis Operacionais</td>
+          <td>
+            <strong>Panos Microfibra Azuis</strong>
+            <span>CLEAN-MICROFIBER-BLUE</span>
+          </td>
+          <td><span class="badge badge-green">IN</span></td>
+          <td>0 saco</td>
+          <td>+3 saco</td>
+          <td>3 saco</td>
+          <td>11,10 €</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Produtos de Limpeza</td>
+          <td>
+            <strong>Tocas</strong>
+            <span>CLEAN-HAIRNETS</span>
+          </td>
+          <td><span class="badge badge-green">IN</span></td>
+          <td>1 saco</td>
+          <td>+3 saco</td>
+          <td>4 saco</td>
+          <td>14,40 €</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Produtos de Limpeza</td>
+          <td>
+            <strong>Mascaras</strong>
+            <span>CLEAN-MASKS</span>
+          </td>
+          <td><span class="badge badge-green">IN</span></td>
+          <td>1 caixa</td>
+          <td>+2 caixa</td>
+          <td>3 caixa</td>
+          <td>5,00 €</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Consumiveis WC</td>
+          <td>
+            <strong>Papel de Maos WC</strong>
+            <span>CONS-WC-HAND-PAPER</span>
+          </td>
+          <td><span class="badge badge-green">IN</span></td>
+          <td>3,5 caixa</td>
+          <td>+3 caixa</td>
+          <td>6,5 caixa</td>
+          <td>42,00 €</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+        <tr>
+          <td>Consumiveis Operacionais</td>
+          <td>
+            <strong>Sacos do Lixo Vidro</strong>
+            <span>CONS-OPS-GLASS-TRASH-BAGS</span>
+          </td>
+          <td><span class="badge badge-green">IN</span></td>
+          <td>1 pack</td>
+          <td>+2 pack</td>
+          <td>3 pack</td>
+          <td>28,20 €</td>
+          <td><span class="badge badge-green">Saudavel</span></td>
+        </tr>
+      
+          </tbody>
+        </table>
+      </section>
+
+      <section class="panel">
+        <h2>Notas para a gestao</h2>
+        <ul>
+          <li>Contagem semanal oficial registada para reconciliar o stock atual com a contagem fisica.</li>
+          <li>Todos os consumiveis encontram-se operacionais e nao existem ruturas de stock registadas nesta contagem.</li>
+          <li>Os artigos em estado critico devem ser acompanhados nas proximas semanas com base na tendencia de consumo.</li>
+          <li>Manter contagens semanais consistentes para melhorar consumo estimado e previsao de reposicao.</li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>

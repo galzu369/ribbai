@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Relatório Diário Operacional - 04-07-2026</title>
+    <style>
+      @page { size: A4; margin: 16mm 14mm 18mm; }
+      :root { --ink:#172033; --muted:#657085; --line:#d9dee8; --soft:#f6f7fa; --warm:#fff7ed; --brand:#f97316; --brand-dark:#9a3412; --green:#15803d; --blue:#1d4ed8; --violet:#6d28d9; --red:#dc2626; --orange:#ea580c; --gold:#d97706; --emerald:#059669; }
+      * { box-sizing:border-box; }
+      body { margin:0; background:#fff; color:var(--ink); font-family:Inter,ui-sans-serif,system-ui,sans-serif; font-size:10pt; line-height:1.5; }
+      h1,h2,h3,p { margin-top:0; }
+      h1 { font-size:34pt; line-height:1.02; letter-spacing:-0.04em; margin-bottom:10pt; }
+      h2 { border-bottom:1px solid var(--line); font-size:15pt; margin:22pt 0 10pt; padding-bottom:5pt; }
+      h3 { color:var(--brand-dark); font-size:11pt; margin:13pt 0 5pt; }
+      ul { margin:4pt 0 10pt 15pt; padding:0; }
+      table { border-collapse:collapse; margin:8pt 0 14pt; width:100%; }
+      th,td { border:1px solid var(--line); padding:6pt 7pt; text-align:left; vertical-align:top; }
+      th { background:var(--soft); font-size:8pt; letter-spacing:0.06em; text-transform:uppercase; }
+      .cover { background:radial-gradient(circle at top right,rgba(5,150,105,0.15),transparent 35%),linear-gradient(135deg,#f0fdf4 0%,#fff 42%,#f8fafc 100%); border:1px solid #86efac; border-radius:22px; margin-bottom:16pt; min-height:248mm; padding:24mm 18mm; }
+      .eyebrow { color:var(--emerald); font-size:8.5pt; font-weight:800; letter-spacing:0.18em; margin-bottom:14pt; text-transform:uppercase; }
+      .subtitle { color:var(--muted); font-size:14pt; line-height:1.45; max-width:150mm; }
+      .meta-panel { background:rgba(255,255,255,0.85); border:1px solid #86efac; border-radius:16px; margin-top:28pt; padding:14pt; }
+      .meta-grid { display:grid; gap:10pt; grid-template-columns:repeat(3,1fr); }
+      .meta-item { border-left:3px solid var(--emerald); padding-left:8pt; }
+      .meta-label { color:var(--muted); display:block; font-size:7.5pt; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; }
+      .meta-value { display:block; font-size:10.5pt; font-weight:700; margin-top:2pt; }
+      .page-break { break-before:page; }
+      .kpi-grid { display:grid; gap:8pt; grid-template-columns:repeat(3,1fr); margin:12pt 0 16pt; }
+      .kpi { background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:10pt; }
+      .kpi-label { color:var(--muted); display:block; font-size:7.5pt; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; }
+      .kpi-value { display:block; font-size:22pt; font-weight:800; margin-top:3pt; }
+      .kpi-note { color:var(--muted); display:block; font-size:8pt; margin-top:2pt; }
+      .perfect { color:var(--emerald); }
+      .record { color:var(--gold); }
+      .excellent { color:var(--green); }
+      .good { color:var(--blue); }
+      .callout { background:var(--warm); border-left:4px solid var(--brand); border-radius:12px; margin:10pt 0 14pt; padding:11pt 13pt; }
+      .callout-success { background:#f0fdf4; border-left-color:var(--emerald); }
+      .callout-record { background:#fffbeb; border-left-color:var(--gold); }
+      .callout-info { background:#eff6ff; border-left-color:var(--blue); }
+      .panel-grid { display:grid; gap:9pt; grid-template-columns:repeat(2,1fr); }
+      .panel-large { display:grid; gap:9pt; grid-template-columns:repeat(3,1fr); }
+      .panel { border:1px solid var(--line); border-radius:12px; break-inside:avoid; padding:10pt; }
+      .badge { border-radius:999px; display:inline-block; font-size:7.5pt; font-weight:800; margin-bottom:5pt; padding:3pt 7pt; text-transform:uppercase; }
+      .badge-emerald { background:#d1fae5; color:var(--emerald); }
+      .badge-green { background:#dcfce7; color:var(--green); }
+      .badge-blue { background:#dbeafe; color:var(--blue); }
+      .badge-violet { background:#ede9fe; color:var(--violet); }
+      .badge-orange { background:#fed7aa; color:var(--brand-dark); }
+      .badge-gold { background:#fef3c7; color:var(--gold); }
+      .footer-note { border-top:1px solid var(--line); color:var(--muted); font-size:8.5pt; margin-top:18pt; padding-top:7pt; }
+      .sector-table { font-size:9pt; }
+      .sector-table td { padding:4pt 6pt; }
+      .evolution-box { background:#f0f9ff; border:1px solid #0ea5e9; border-radius:8px; padding:8pt; margin:6pt 0; }
+    </style>
+  </head>
+  <body>
+    <section class="cover">
+      <div class="eyebrow">RIBBAI OPS · Relatório Diário Operacional</div>
+      <h1>Registo Diário Operacional</h1>
+      <p class="subtitle">Apresentação diária à gestão sobre a operação Front of House do restaurante RIBBAI.</p>
+      <div class="meta-panel">
+        <div class="meta-grid">
+          <div class="meta-item"><span class="meta-label">Data</span><span class="meta-value">04-07-2026</span></div>
+          <div class="meta-item"><span class="meta-label">Dia</span><span class="meta-value">Sábado</span></div>
+          <div class="meta-item"><span class="meta-label">Autor</span><span class="meta-value">Filipe Catalão</span></div>
+          <div class="meta-item"><span class="meta-label">Restaurante</span><span class="meta-value">RIBBAI</span></div>
+          <div class="meta-item"><span class="meta-label">Tipo</span><span class="meta-value">Relatório Diário Operacional</span></div>
+          <div class="meta-item"><span class="meta-label">Estado</span><span class="meta-value">Registado</span></div>
+        </div>
+      </div>
+      <div class="kpi-grid">
+        <div class="kpi"><span class="kpi-label">Excelência Operacional</span><span class="kpi-value perfect">10/10</span><span class="kpi-note">Todas as áreas</span></div>
+        <div class="kpi"><span class="kpi-label">Performance Comercial</span><span class="kpi-value record">960</span><span class="kpi-note">Tickets - Recorde</span></div>
+        <div class="kpi"><span class="kpi-label">Evolução da Equipa</span><span class="kpi-value perfect">10/10</span><span class="kpi-note">Lee & Diogo ⭐</span></div>
+      </div>
+      <div class="kpi-grid">
+        <div class="kpi"><span class="kpi-label">Lotação Contínua</span><span class="kpi-value record">5h</span><span class="kpi-note">12h00-17h00</span></div>
+        <div class="kpi"><span class="kpi-label">Horas Extra</span><span class="kpi-value record">9h15</span><span class="kpi-note">Fecho prolongado</span></div>
+        <div class="kpi"><span class="kpi-label">Erros Operacionais</span><span class="kpi-value perfect">0</span><span class="kpi-note">Zero falhas</span></div>
+      </div>
+      <div class="callout callout-record"><strong>Recorde histórico:</strong> sábado 4 de julho registou ~960 tickets, confirmando um dos melhores desempenhos comerciais do restaurante com excelência operacional em todas as áreas.</div>
+    </section>
+
+    <section class="page-break">
+      <h2>Síntese Executiva</h2>
+      <p>Sábado histórico confirmando entrada definitiva na época alta. Lotação esgotada contínua 5 horas (12h00-17h00) + pico jantar. Aplicação rigorosa do modelo de setores com disciplina exemplar. Zero erros operacionais. ~960 tickets - recorde de faturação.</p>
+      
+      <h2>Distribuição por Setores</h2>
+      <table class="sector-table">
+        <thead><tr><th>Função</th><th>Colaborador</th><th>Responsabilidade</th></tr></thead>
+        <tbody>
+          <tr><td>🚪 Porta</td><td><strong>Matilde</strong></td><td>Gestão entrada e coordenação</td></tr>
+          <tr><td>🍽️ Mesas 50's</td><td><strong>Bruno</strong></td><td>Zona esplanada 50-59</td></tr>
+          <tr><td>🍽️ Mesas 60's</td><td><strong>Pablo</strong></td><td>Zona esplanada 60-69</td></tr>
+          <tr><td>🍽️ Mesas 70's</td><td><strong>Carolina</strong></td><td>Zona esplanada 70-79</td></tr>
+          <tr><td>🏛️ Sala Interior</td><td><strong>Lil</strong></td><td>Totalidade do espaço interior</td></tr>
+          <tr><td>🏃 Runner Esplanada</td><td><strong>Lee</strong></td><td>Apoio esplanada + cobertura Sofia</td></tr>
+          <tr><td>🏃 Runner Sala Interior</td><td><strong>Diogo</strong></td><td>Apoio sala + coberturas pausas</td></tr>
+          <tr><td>🔄 Coordenação Geral</td><td><strong>Filipe</strong></td><td>Supervisão e apoio geral</td></tr>
+        </tbody>
+      </table>
+      
+      <div class="callout callout-success"><strong>Regra fundamental:</strong> Cada colaborador deve manter-se focado no seu setor, confiando nos runners e colegas. Quanto maior a disciplina individual, maior a fluidez de toda a operação.</div>
+    </section>
+
+    <section class="page-break">
+      <h2>Equipa Em Serviço</h2>
+      <div class="panel-large">
+        <div class="panel"><span class="badge badge-emerald">Carolina</span><ul><li>Abertura com Lil.</li><li>Mesas 70's - autonomia total.</li><li>Iniciativa reposições finais.</li><li>+45min extra.</li></ul></div>
+        <div class="panel"><span class="badge badge-emerald">Lil</span><ul><li>Abertura com Carolina.</li><li>Sala Interior - controlo exemplar.</li><li>Pressão extrema sem falhas.</li></ul></div>
+        <div class="panel"><span class="badge badge-green">Pablo</span><ul><li>Regresso de folga 11h00.</li><li>Mesas 60's - domínio total.</li><li>Reforço período crítico.</li></ul></div>
+        <div class="panel"><span class="badge badge-blue">Bruno</span><ul><li>Entrada 12h30.</li><li>Mesas 50's + fecho.</li><li>Encerramento caixa.</li></ul></div>
+        <div class="panel"><span class="badge badge-blue">Matilde</span><ul><li>Entrada 12h30.</li><li>Porta - coordenação perfeita.</li><li>Fecho exemplar.</li></ul></div>
+        <div class="panel"><span class="badge badge-violet">Filipe</span><ul><li>Coordenação geral.</li><li>Supervisão modelo setores.</li><li>Confirmação recorde 960 tickets.</li></ul></div>
+      </div>
+      
+      <div class="panel-grid">
+        <div class="panel"><span class="badge badge-gold">Lee ⭐</span><ul><li>Runner Esplanada.</li><li>Cobertura Sofia sem compromissos.</li><li><strong>Evolução muito positiva</strong>.</li></ul></div>
+        <div class="panel"><span class="badge badge-gold">Diogo ⭐</span><ul><li>Runner Sala Interior.</li><li><strong>Evolução consistente</strong>.</li><li>Confiança crescente da equipa.</li></ul></div>
+      </div>
+    </section>
+
+    <section class="page-break">
+      <h2>Movimento do Dia</h2>
+      <p><strong>Timeline da operação:</strong></p>
+      <ul>
+        <li><strong>11h00</strong> - Esplanada começou a compor-se</li>
+        <li><strong>12h00</strong> - Lotação completa atingida</li>
+        <li><strong>12h00-17h00</strong> - <span style="color:var(--record); font-weight:bold;">5 HORAS CONTÍNUAS</span> de lotação esgotada (esplanada + sala)</li>
+        <li><strong>18h00+</strong> - Redução para ocupação média 60%</li>
+        <li><strong>19h00</strong> - Novo pico jantar, lotação máxima</li>
+        <li><strong>21h30</strong> - Pressão diminuiu após encerramento cozinha</li>
+      </ul>
+      
+      <div class="callout callout-record"><strong>Intensidade histórica:</strong> fluxo contínuo de clientes durante 5 horas com esplanada e sala simultaneamente lotadas - um dos períodos mais intensos registados.</div>
+      
+      <h2>Evolução da Equipa</h2>
+      <div class="evolution-box">
+        <h3 style="color:var(--blue); margin-top:0;">🌟 Destaque: Desenvolvimento Interno</h3>
+        <p><strong>Lee</strong> e <strong>Diogo</strong> demonstraram evolução significativa nas funções de apoio:</p>
+        <ul style="margin-bottom:0;">
+          <li><strong>Lee:</strong> Cobertura exemplar Sofia + apoio esplanada sem comprometer qualidade</li>
+          <li><strong>Diogo:</strong> Confiança crescente dos responsáveis de setor para coberturas de pausas</li>
+          <li><strong>Indicador de sucesso:</strong> Colaboradores saem para pausas com tranquilidade</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="page-break">
+      <h2>Performance Comercial</h2>
+      <div class="callout callout-record"><strong>Recorde Histórico:</strong> ~960 tickets registados - um dos sábados de maior faturação do restaurante.</div>
+      
+      <p><strong>Indicadores do desempenho excepcional:</strong></p>
+      <ul>
+        <li>Lotação contínua durante 5 horas (12h00-17h00)</li>
+        <li>Ocupação média 60% nos períodos "mais tranquilos"</li>
+        <li>Segundo pico jantar com lotação máxima</li>
+        <li>Serviço fluído sem compromissos na qualidade</li>
+      </ul>
+      
+      <h2>Fecho Operacional</h2>
+      <div class="callout callout-success"><strong>Avaliação: EXCELENTE</strong> - Todas as tarefas concluídas integralmente após dia de intensidade histórica.</div>
+      
+      <p><strong>Responsáveis:</strong> Filipe, Bruno e Matilde</p>
+      <p><strong>Resultado:</strong> Restaurante totalmente preparado para domingo, zero tarefas pendentes.</p>
+      <p><strong>Atividades adicionais:</strong> Encerramento de caixa confirmando recorde de faturação.</p>
+      
+      <h2>Horas Extra</h2>
+      <table>
+        <thead><tr><th>Colaborador</th><th>Registo</th><th>Motivo</th></tr></thead>
+        <tbody>
+          <tr><td>Carolina</td><td>45 minutos</td><td>Prolongamento turno e reposições finais</td></tr>
+          <tr><td>Bruno</td><td>3h00 de horas extra</td><td>Fecho operacional prolongado</td></tr>
+          <tr><td>Filipe</td><td>3h00 de horas extra</td><td>Fecho operacional e encerramento caixa</td></tr>
+          <tr><td>Matilde</td><td>2h30 de horas extra</td><td>Fecho operacional</td></tr>
+        </tbody>
+      </table>
+      <div class="callout"><strong>Total da equipa:</strong> 9h15 de horas extra após dia de recorde histórico.</div>
+    </section>
+
+    <section class="page-break">
+      <h2>Pontos Positivos</h2>
+      <ul>
+        <li>🏆 <strong>Aplicação exemplar</strong> do modelo de organização por setores</li>
+        <li>📏 <strong>Excelente disciplina operacional</strong> por parte de toda a equipa</li>
+        <li>⬆️ <strong>Evolução muito evidente</strong> da Lee e do Diogo nas funções de apoio</li>
+        <li>🎯 <strong>Grande autonomia</strong> dos responsáveis de cada setor</li>
+        <li>🤝 <strong>Excelente coordenação</strong> durante um dos dias de maior pressão do ano</li>
+        <li>✅ <strong>Serviço sem erros relevantes</strong></li>
+        <li>✨ <strong>Fecho completo e exemplar</strong></li>
+        <li>💰 <strong>Recorde de faturação</strong> registado até à data</li>
+      </ul>
+      
+      <h2>Conclusão</h2>
+      <p>Dia 4 de julho representa um dos melhores exemplos da evolução operacional alcançada pela equipa desde implementação do novo modelo de organização.</p>
+      
+      <p>Num dos sábados de maior movimento do ano, a equipa demonstrou elevados níveis de disciplina, coordenação e confiança mútua, conseguindo responder com grande eficácia a um serviço extremamente exigente.</p>
+      
+      <p>A organização por setores voltou a provar ser o modelo mais eficiente para a realidade operacional, permitindo distribuir responsabilidades de forma clara, reduzir interferências e manter elevado padrão de qualidade mesmo perante níveis muito elevados de pressão.</p>
+      
+      <p>O excelente fecho do serviço e o forte desempenho comercial encerram mais um dia que confirma a crescente maturidade da equipa e reforçam a confiança na estratégia operacional implementada para enfrentar a época alta.</p>
+    </section>
+
+    <section class="page-break">
+      <h2>Classificação Para O Sistema RIBBAI OPS</h2>
+      <table>
+        <thead><tr><th>Categoria</th><th>Registo</th></tr></thead>
+        <tbody>
+          <tr><td>Operational Notes</td><td>Sábado histórico confirmando época alta; lotação contínua 12h00-17h00 (5h); pico jantar 19h00-21h30; ~960 tickets recorde; disciplina exemplar modelo setores; zero erros operacionais pressão extrema.</td></tr>
+          <tr><td>Service Improvement</td><td>Evolução Lee e Diogo demonstra sucesso modelo desenvolvimento interno através funções apoio - consolidar estrutura formação colaboradores.</td></tr>
+          <tr><td>Team Feedback Input</td><td>Carolina: Mesas 70's autonomia + iniciativa reposições +45min; Lil: Sala Interior controlo exemplar; Pablo: regresso folga domínio Mesas 60's; Bruno/Matilde/Filipe: fecho exemplar; Lee/Diogo: evolução significativa funções apoio.</td></tr>
+          <tr><td>Overtime Input</td><td>9h15: Carolina 0h45, Bruno 3h00, Filipe 3h00, Matilde 2h30 - fecho operacional prolongado.</td></tr>
+          <tr><td>Management Notes</td><td>Reconhecer evolução Lee/Diogo modelo desenvolvimento interno; destacar disciplina operacional; valorizar recorde comercial ~960 tickets; confirmar setores como estrutura definitiva época alta.</td></tr>
+          <tr><td>Financial Context</td><td>~960 tickets sábado recorde faturação; lotação contínua 5h + pico jantar; ocupação 60% períodos menores; performance comercial excecional + excelência operacional.</td></tr>
+        </tbody>
+      </table>
+      <p class="footer-note">Documento gerado para apresentação diária à gestão. Fonte operacional: Registo Diário Operacional de 04-07-2026. Autor: Filipe Catalão.</p>
+    </section>
+  </body>
+</html>

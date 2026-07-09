@@ -1,0 +1,349 @@
+{
+  "workforceSchedule": {
+    "year": 2026,
+    "month": 7,
+    "weekNumber": 27,
+    "weekStart": "2026-07-01",
+    "weekEnd": "2026-07-05",
+    "period": "1-5 Julho 2026",
+    "extractionMethod": "manual_correction_from_images",
+    "processedAt": "2026-07-02T16:58:18.731Z",
+    "status": "validated"
+  },
+  "dailySchedules": {
+    "2026-07-01": {
+      "date": "2026-07-01",
+      "weekday": "Quarta-feira",
+      "employees": {
+        "Bruno": {
+          "status": "trabalho",
+          "startTime": "12:30",
+          "endTime": "21:30",
+          "totalHours": 8
+        },
+        "Pablo": {
+          "status": "trabalho",
+          "startTime": "09:00",
+          "endTime": "18:00",
+          "totalHours": 8
+        },
+        "Filipe": {
+          "status": "folga"
+        },
+        "Lil": {
+          "status": "folga"
+        },
+        "Carolina": {
+          "status": "folga"
+        },
+        "Matilde": {
+          "status": "trabalho",
+          "startTime": "12:30",
+          "endTime": "21:30",
+          "totalHours": 8
+        },
+        "Sofia": {
+          "status": "trabalho",
+          "startTime": "11:00",
+          "endTime": "20:00",
+          "totalHours": 8
+        },
+        "Lee": {
+          "status": "trabalho",
+          "startTime": "09:00",
+          "endTime": "18:00",
+          "totalHours": 8
+        },
+        "Diogo": {
+          "status": "folga"
+        }
+      }
+    },
+    "2026-07-02": {
+      "date": "2026-07-02",
+      "weekday": "Quinta-feira",
+      "employees": {
+        "Bruno": {
+          "status": "trabalho",
+          "startTime": "12:30",
+          "endTime": "21:30",
+          "totalHours": 8
+        },
+        "Pablo": {
+          "status": "trabalho",
+          "startTime": "09:00",
+          "endTime": "18:00",
+          "totalHours": 8
+        },
+        "Filipe": {
+          "status": "folga"
+        },
+        "Lil": {
+          "status": "folga"
+        },
+        "Carolina": {
+          "status": "trabalho",
+          "startTime": "09:00",
+          "endTime": "18:00",
+          "totalHours": 8
+        },
+        "Matilde": {
+          "status": "trabalho",
+          "startTime": "12:30",
+          "endTime": "21:30",
+          "totalHours": 8
+        },
+        "Sofia": {
+          "status": "trabalho",
+          "startTime": "11:00",
+          "endTime": "20:00",
+          "totalHours": 8
+        },
+        "Lee": {
+          "status": "folga"
+        },
+        "Diogo": {
+          "status": "folga"
+        }
+      }
+    },
+    "2026-07-03": {
+      "date": "2026-07-03",
+      "weekday": "Sexta-feira",
+      "employees": {
+        "Bruno": {
+          "status": "trabalho",
+          "startTime": "12:30",
+          "endTime": "21:30",
+          "totalHours": 8
+        },
+        "Pablo": {
+          "status": "folga"
+        },
+        "Filipe": {
+          "status": "trabalho",
+          "startTime": "12:30",
+          "endTime": "21:30",
+          "totalHours": 8
+        },
+        "Lil": {
+          "status": "trabalho",
+          "startTime": "09:00",
+          "endTime": "18:00",
+          "totalHours": 8
+        },
+        "Carolina": {
+          "status": "trabalho",
+          "startTime": "09:00",
+          "endTime": "18:00",
+          "totalHours": 8
+        },
+        "Matilde": {
+          "status": "trabalho",
+          "startTime": "11:00",
+          "endTime": "20:00",
+          "totalHours": 8
+        },
+        "Sofia": {
+          "status": "trabalho",
+          "startTime": "11:00",
+          "endTime": "20:00",
+          "totalHours": 8
+        },
+        "Lee": {
+          "status": "trabalho",
+          "startTime": "11:00",
+          "endTime": "20:00",
+          "totalHours": 8
+        },
+        "Diogo": {
+          "status": "trabalho",
+          "startTime": "11:00",
+          "endTime": "20:00",
+          "totalHours": 8
+        }
+      }
+    },
+    "2026-07-04": {
+      "date": "2026-07-04",
+      "weekday": "Sábado",
+      "employees": {
+        "Bruno": {
+          "status": "trabalho",
+          "startTime": "12:30",
+          "endTime": "21:30",
+          "totalHours": 8
+        },
+        "Pablo": {
+          "status": "trabalho",
+          "startTime": "11:00",
+          "endTime": "20:00",
+          "totalHours": 8
+        },
+        "Filipe": {
+          "status": "trabalho",
+          "startTime": "12:30",
+          "endTime": "21:30",
+          "totalHours": 8
+        },
+        "Lil": {
+          "status": "trabalho",
+          "startTime": "09:00",
+          "endTime": "18:00",
+          "totalHours": 8
+        },
+        "Carolina": {
+          "status": "trabalho",
+          "startTime": "09:00",
+          "endTime": "18:00",
+          "totalHours": 8
+        },
+        "Matilde": {
+          "status": "trabalho",
+          "startTime": "12:30",
+          "endTime": "21:30",
+          "totalHours": 8
+        },
+        "Sofia": {
+          "status": "trabalho",
+          "startTime": "11:00",
+          "endTime": "20:00",
+          "totalHours": 8
+        },
+        "Lee": {
+          "status": "trabalho",
+          "startTime": "11:00",
+          "endTime": "20:00",
+          "totalHours": 8
+        },
+        "Diogo": {
+          "status": "trabalho",
+          "startTime": "11:00",
+          "endTime": "20:00",
+          "totalHours": 8
+        }
+      }
+    },
+    "2026-07-05": {
+      "date": "2026-07-05",
+      "weekday": "Domingo",
+      "employees": {
+        "Bruno": {
+          "status": "trabalho",
+          "startTime": "12:30",
+          "endTime": "21:30",
+          "totalHours": 8
+        },
+        "Pablo": {
+          "status": "trabalho",
+          "startTime": "11:00",
+          "endTime": "20:00",
+          "totalHours": 8
+        },
+        "Filipe": {
+          "status": "trabalho",
+          "startTime": "12:30",
+          "endTime": "21:30",
+          "totalHours": 8
+        },
+        "Lil": {
+          "status": "trabalho",
+          "startTime": "09:00",
+          "endTime": "18:00",
+          "totalHours": 8
+        },
+        "Carolina": {
+          "status": "trabalho",
+          "startTime": "09:00",
+          "endTime": "18:00",
+          "totalHours": 8
+        },
+        "Matilde": {
+          "status": "trabalho",
+          "startTime": "12:30",
+          "endTime": "21:30",
+          "totalHours": 8
+        },
+        "Sofia": {
+          "status": "trabalho",
+          "startTime": "11:00",
+          "endTime": "20:00",
+          "totalHours": 8
+        },
+        "Lee": {
+          "status": "trabalho",
+          "startTime": "11:00",
+          "endTime": "20:00",
+          "totalHours": 8
+        },
+        "Diogo": {
+          "status": "trabalho",
+          "startTime": "11:00",
+          "endTime": "20:00",
+          "totalHours": 8
+        }
+      }
+    }
+  },
+  "summary": {
+    "Bruno": {
+      "totalHours": 40,
+      "workDays": 5,
+      "restDays": 0
+    },
+    "Pablo": {
+      "totalHours": 32,
+      "workDays": 4,
+      "restDays": 1
+    },
+    "Filipe": {
+      "totalHours": 24,
+      "workDays": 3,
+      "restDays": 2
+    },
+    "Lil": {
+      "totalHours": 24,
+      "workDays": 3,
+      "restDays": 2
+    },
+    "Carolina": {
+      "totalHours": 32,
+      "workDays": 4,
+      "restDays": 1
+    },
+    "Matilde": {
+      "totalHours": 40,
+      "workDays": 5,
+      "restDays": 0
+    },
+    "Sofia": {
+      "totalHours": 40,
+      "workDays": 5,
+      "restDays": 0
+    },
+    "Lee": {
+      "totalHours": 32,
+      "workDays": 4,
+      "restDays": 1
+    },
+    "Diogo": {
+      "totalHours": 24,
+      "workDays": 3,
+      "restDays": 2
+    }
+  },
+  "extractionInfo": {
+    "method": "Image Analysis + Manual Validation",
+    "confidence": "HIGH",
+    "imagesProcessed": 3,
+    "employeesTotal": 9,
+    "daysProcessed": 5,
+    "corrections": [
+      "Dia 1: Bruno trabalha 12:30-21:30, Pablo 09:00-18:00, Filipe/Lil/Carolina/Diogo folga",
+      "Dia 2: Pablo/Carolina 09:00-18:00, Bruno/Matilde 12:30-21:30, Sofia 11:00-20:00, Filipe/Lee/Lil/Diogo folga",
+      "Dia 3: Lil/Carolina 09:00-18:00, Matilde/Sofia/Lee/Diogo 11:00-20:00, Bruno/Filipe 12:30-21:30, Pablo folga",
+      "Dia 4: Lil/Carolina 09:00-18:00, Pablo/Sofia/Lee/Diogo 11:00-20:00, Filipe/Bruno/Matilde 12:30-21:30",
+      "Dia 5: Igual ao Dia 4, ninguém de folga"
+    ]
+  }
+}

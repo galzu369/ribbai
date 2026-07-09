@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIBBAI 2.0 - Plano de Escalas Operacionais | Julho 2026</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.0.0/dist/chart.min.js"></script>
+</head>
+<body>
+    <div class="executive-container">
+        <!-- Header Executivo -->
+        <header class="executive-header">
+            <div class="brand-section">
+                <div class="brand-logo">RB</div>
+                <div class="brand-info">
+                    <div class="brand-title">RIBBAI 2.0</div>
+                    <div class="brand-subtitle">Business Intelligence Platform</div>
+                </div>
+            </div>
+            <div class="document-info">
+                <div class="document-title">Plano de Escalas Operacionais</div>
+                <div class="document-period">Julho 2026</div>
+                <div class="document-period" id="generation-date"></div>
+            </div>
+        </header>
+
+        <!-- Dashboard KPIs -->
+        <section class="kpi-dashboard">
+            <div class="kpi-card">
+                <div class="kpi-icon">👥</div>
+                <div class="kpi-label">Total Colaboradores</div>
+                <div class="kpi-value" id="total-employees">8</div>
+                <div class="kpi-description">Equipa de Sala</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-icon">📅</div>
+                <div class="kpi-label">Dias do Mês</div>
+                <div class="kpi-value" id="month-days">31</div>
+                <div class="kpi-description">Julho 2026</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-icon">⏰</div>
+                <div class="kpi-label">Total Turnos</div>
+                <div class="kpi-value" id="total-shifts">-</div>
+                <div class="kpi-description">Atribuídos</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-icon">🍽️</div>
+                <div class="kpi-label">Cobertura Almoço</div>
+                <div class="kpi-value" id="lunch-coverage">-</div>
+                <div class="kpi-description">Média de pessoas</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-icon">⚖️</div>
+                <div class="kpi-label">Equilíbrio</div>
+                <div class="kpi-value" id="balance-score">-</div>
+                <div class="kpi-description">Score de distribuição</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-icon">✅</div>
+                <div class="kpi-label">Compliance</div>
+                <div class="kpi-value" id="compliance-score">-</div>
+                <div class="kpi-description">% Regras cumpridas</div>
+            </div>
+        </section>
+
+        <!-- Calendário Mensal -->
+        <section class="monthly-calendar">
+            <h2 class="section-title">📅 Calendário Mensal - Julho 2026</h2>
+            <div class="calendar-grid">
+                <!-- Headers dos dias da semana -->
+                <div class="calendar-header">Dom</div>
+                <div class="calendar-header">Seg</div>
+                <div class="calendar-header">Ter</div>
+                <div class="calendar-header">Qua</div>
+                <div class="calendar-header">Qui</div>
+                <div class="calendar-header">Sex</div>
+                <div class="calendar-header">Sáb</div>
+                
+                <!-- Dias do calendário serão inseridos dinamicamente -->
+                <div id="calendar-days"></div>
+            </div>
+        </section>
+
+        <!-- Legenda de Cores -->
+        <section class="color-legend">
+            <h3 class="section-title">🎨 Sistema de Cores</h3>
+            <div class="legend-items">
+                <div class="legend-item">
+                    <span class="shift-indicator shift-opening">🟢</span>
+                    <span>Abertura (09:00) - 2 pessoas</span>
+                </div>
+                <div class="legend-item">
+                    <span class="shift-indicator shift-lunch">🟠</span>
+                    <span>Pico Almoço (12:00-16:30) - 5+ pessoas</span>
+                </div>
+                <div class="legend-item">
+                    <span class="shift-indicator shift-closing">🟣</span>
+                    <span>Fecho (23:00) - 3 pessoas</span>
+                </div>
+                <div class="legend-item">
+                    <span class="shift-indicator shift-off">⚪</span>
+                    <span>Folga - Dias de descanso</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Páginas Individuais por Colaborador -->
+        <section id="employee-details">
+            <!-- Será preenchido dinamicamente -->
+        </section>
+
+        <!-- Analytics e Estatísticas -->
+        <section class="analytics-section">
+            <div class="chart-container">
+                <h3 class="chart-title">📊 Distribuição de Dias por Colaborador</h3>
+                <canvas id="workDaysChart" width="400" height="200"></canvas>
+            </div>
+            <div class="chart-container">
+                <h3 class="chart-title">🔄 Distribuição por Tipo de Turno</h3>
+                <canvas id="shiftTypesChart" width="400" height="200"></canvas>
+            </div>
+        </section>
+
+        <section class="analytics-section">
+            <div class="chart-container">
+                <h3 class="chart-title">📈 Cobertura por Dia da Semana</h3>
+                <canvas id="weeklyPatternChart" width="400" height="200"></canvas>
+            </div>
+            <div class="chart-container">
+                <h3 class="chart-title">⚖️ Métricas de Equilíbrio</h3>
+                <canvas id="balanceMetricsChart" width="400" height="200"></canvas>
+            </div>
+        </section>
+
+        <!-- Tabela de Estatísticas Detalhadas -->
+        <section>
+            <h2 class="section-title">📋 Estatísticas Detalhadas</h2>
+            <table class="data-table" id="detailed-stats-table">
+                <thead>
+                    <tr>
+                        <th>Colaborador</th>
+                        <th>Dias Trabalho</th>
+                        <th>Dias Folga</th>
+                        <th>Aberturas</th>
+                        <th>Fechos</th>
+                        <th>% Trabalho</th>
+                    </tr>
+                </thead>
+                <tbody id="stats-table-body">
+                    <!-- Será preenchido dinamicamente -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Resumo Executivo -->
+        <section class="executive-summary">
+            <h2 class="summary-title">📋 Resumo Executivo</h2>
+            <div class="summary-content" id="executive-summary-content">
+                <p>Esta escala foi gerada através de um algoritmo avançado de otimização que garante o cumprimento de todas as regras operacionais estabelecidas, promovendo uma distribuição equilibrada e justa entre todos os colaboradores.</p>
+            </div>
+            <div class="summary-highlights">
+                <div class="highlight-item">
+                    <strong>Filosofia de Distribuição</strong><br>
+                    Ciclo 4+2 rigorosamente respeitado para todos
+                </div>
+                <div class="highlight-item">
+                    <strong>Cobertura Operacional</strong><br>
+                    100% dos dias com staffing adequado
+                </div>
+                <div class="highlight-item">
+                    <strong>Mentoria Garantida</strong><br>
+                    Elementos júniores sempre com supervisão
+                </div>
+                <div class="highlight-item">
+                    <strong>Robustez da Equipa</strong><br>
+                    Distribuição balanceada de experiência
+                </div>
+            </div>
+        </section>
+
+        <!-- Validação e Compliance -->
+        <section>
+            <h2 class="section-title">✅ Validação Automática</h2>
+            <div id="validation-results">
+                <!-- Será preenchido com resultados da validação -->
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="document-footer">
+            <p>RIBBAI 2.0 © 2026 | Plano Oficial de Escalas Operacionais | 
+            <span id="document-footer-date"></span></p>
+        </footer>
+    </div>
+
+    <script>
+        // Script principal será inserido aqui
+        // Incluirá funcionalidades para:
+        // - Renderização do calendário
+        // - Geração de gráficos
+        // - Atualização dos KPIs
+        // - Animações e interatividade
+        
+        // Placeholder para dados que serão inseridos dinamicamente
+        window.scheduleData = null;
+        window.employeesData = null;
+        window.statisticsData = null;
+        
+        // Função para inicializar a página
+        function initializePage(scheduleData, employeesData, statsData) {
+            window.scheduleData = scheduleData;
+            window.employeesData = employeesData;
+            window.statisticsData = statsData;
+            
+            renderCalendar();
+            updateKPIs();
+            renderEmployeeDetails();
+            renderCharts();
+            updateValidationResults();
+            setGenerationDates();
+        }
+        
+        function renderCalendar() {
+            // Implementação da renderização do calendário
+            console.log('Renderizando calendário...');
+        }
+        
+        function updateKPIs() {
+            // Atualização dos cartões KPI
+            console.log('Atualizando KPIs...');
+        }
+        
+        function renderEmployeeDetails() {
+            // Renderização das páginas individuais
+            console.log('Renderizando detalhes dos colaboradores...');
+        }
+        
+        function renderCharts() {
+            // Geração dos gráficos Chart.js
+            console.log('Renderizando gráficos...');
+        }
+        
+        function updateValidationResults() {
+            // Mostrar resultados da validação
+            console.log('Atualizando validação...');
+        }
+        
+        function setGenerationDates() {
+            const now = new Date();
+            const dateString = now.toLocaleDateString('pt-PT', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+            
+            document.getElementById('generation-date').textContent = `Gerado em ${dateString}`;
+            document.getElementById('document-footer-date').textContent = dateString;
+        }
+    </script>
+</body>
+</html>

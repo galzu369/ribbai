@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Relatório Diário Operacional - 12-06-2026</title>
+    <style>
+      @page { size: A4; margin: 16mm 14mm 18mm; }
+      :root {
+        --ink: #172033; --muted: #657085; --line: #d9dee8; --soft: #f6f7fa;
+        --warm: #fff7ed; --brand: #f97316; --brand-dark: #9a3412; --green: #15803d;
+        --amber: #a16207; --blue: #1d4ed8; --red: #b91c1c;
+      }
+      * { box-sizing: border-box; }
+      body { margin: 0; background: #fff; color: var(--ink); font-family: Inter, ui-sans-serif, system-ui, sans-serif; font-size: 10pt; line-height: 1.5; }
+      h1, h2, h3, p { margin-top: 0; }
+      h1 { font-size: 34pt; line-height: 1.02; letter-spacing: -0.04em; margin-bottom: 10pt; }
+      h2 { border-bottom: 1px solid var(--line); font-size: 15pt; margin: 22pt 0 10pt; padding-bottom: 5pt; }
+      ul { margin: 4pt 0 10pt 15pt; padding: 0; }
+      table { border-collapse: collapse; margin: 8pt 0 14pt; width: 100%; }
+      th, td { border: 1px solid var(--line); padding: 6pt 7pt; text-align: left; vertical-align: top; }
+      th { background: var(--soft); font-size: 8pt; letter-spacing: 0.06em; text-transform: uppercase; }
+      .cover { background: radial-gradient(circle at top right, rgba(249,115,22,0.18), transparent 35%), linear-gradient(135deg, #fff7ed 0%, #fff 42%, #f8fafc 100%); border: 1px solid #fed7aa; border-radius: 22px; margin-bottom: 16pt; min-height: 248mm; padding: 24mm 18mm; }
+      .eyebrow { color: var(--brand); font-size: 8.5pt; font-weight: 800; letter-spacing: 0.18em; margin-bottom: 14pt; text-transform: uppercase; }
+      .subtitle { color: var(--muted); font-size: 14pt; line-height: 1.45; max-width: 150mm; }
+      .meta-panel { background: rgba(255,255,255,0.82); border: 1px solid #fed7aa; border-radius: 16px; margin-top: 28pt; padding: 14pt; }
+      .meta-grid { display: grid; gap: 10pt; grid-template-columns: repeat(3, 1fr); }
+      .meta-item { border-left: 3px solid var(--brand); padding-left: 8pt; }
+      .meta-label { color: var(--muted); display: block; font-size: 7.5pt; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+      .meta-value { display: block; font-size: 10.5pt; font-weight: 700; margin-top: 2pt; }
+      .page-break { break-before: page; }
+      .kpi-grid { display: grid; gap: 8pt; grid-template-columns: repeat(3, 1fr); margin: 12pt 0 16pt; }
+      .kpi { background: var(--soft); border: 1px solid var(--line); border-radius: 12px; padding: 10pt; }
+      .kpi-label { color: var(--muted); display: block; font-size: 7.5pt; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+      .kpi-value { display: block; font-size: 22pt; font-weight: 800; margin-top: 3pt; }
+      .kpi-note { color: var(--muted); display: block; font-size: 8pt; margin-top: 2pt; }
+      .good { color: var(--green); } .watch { color: var(--amber); }
+      .callout { background: var(--warm); border-left: 4px solid var(--brand); border-radius: 12px; margin: 10pt 0 14pt; padding: 11pt 13pt; }
+      .panel-grid { display: grid; gap: 9pt; grid-template-columns: repeat(2, 1fr); }
+      .panel { border: 1px solid var(--line); border-radius: 12px; break-inside: avoid; padding: 10pt; }
+      .badge { border-radius: 999px; display: inline-block; font-size: 7.5pt; font-weight: 800; margin-bottom: 5pt; padding: 3pt 7pt; text-transform: uppercase; }
+      .badge-green { background: #dcfce7; color: var(--green); }
+      .badge-blue { background: #dbeafe; color: var(--blue); }
+      .badge-amber { background: #fef3c7; color: var(--amber); }
+      .badge-red { background: #fee2e2; color: var(--red); }
+      .footer-note { border-top: 1px solid var(--line); color: var(--muted); font-size: 8.5pt; margin-top: 18pt; padding-top: 7pt; }
+    </style>
+  </head>
+  <body>
+    <section class="cover">
+      <div class="eyebrow">RIBBAI OPS · Relatório Diário Operacional</div>
+      <h1>Registo Diário Operacional</h1>
+      <p class="subtitle">Apresentação diária à gestão sobre a operação Front of House do restaurante RIBBAI.</p>
+      <div class="meta-panel">
+        <div class="meta-grid">
+          <div class="meta-item"><span class="meta-label">Data</span><span class="meta-value">12-06-2026</span></div>
+          <div class="meta-item"><span class="meta-label">Dia</span><span class="meta-value">Sexta-feira</span></div>
+          <div class="meta-item"><span class="meta-label">Autor</span><span class="meta-value">Filipe Catalão</span></div>
+          <div class="meta-item"><span class="meta-label">Restaurante</span><span class="meta-value">RIBBAI</span></div>
+          <div class="meta-item"><span class="meta-label">Âmbito</span><span class="meta-value">Front of House</span></div>
+          <div class="meta-item"><span class="meta-label">Estado</span><span class="meta-value">Registado</span></div>
+        </div>
+      </div>
+      <div class="kpi-grid">
+        <div class="kpi"><span class="kpi-label">Sucesso Operacional</span><span class="kpi-value good">9/10</span><span class="kpi-note">Dia exigente</span></div>
+        <div class="kpi"><span class="kpi-label">Experiência Cliente</span><span class="kpi-value good">10/10</span><span class="kpi-note">Alta qualidade</span></div>
+        <div class="kpi"><span class="kpi-label">Jam Session</span><span class="kpi-value good">10/10</span><span class="kpi-note">Enorme sucesso</span></div>
+      </div>
+      <div class="kpi-grid">
+        <div class="kpi"><span class="kpi-label">Modelo Setores</span><span class="kpi-value watch">6/10</span><span class="kpi-note">Área de aprendizagem</span></div>
+        <div class="kpi"><span class="kpi-label">Adaptação</span><span class="kpi-value good">10/10</span><span class="kpi-note">Equipa resiliente</span></div>
+        <div class="kpi"><span class="kpi-label">Horas Extra</span><span class="kpi-value good">8h40m</span><span class="kpi-note">3 colaboradores</span></div>
+      </div>
+      <div class="callout"><strong>Conclusão do dia:</strong> sucesso comercial e experiencial com Jam Session excecional; fragilidades no modelo de setores identificadas e corrigidas no dia seguinte.</div>
+    </section>
+
+    <section class="page-break">
+      <h2>Síntese Executiva</h2>
+      <p>Dia de elevada exigência: feriado prolongado, calor extremo, forte afluência, Jam Session e ausência da Mar. Apesar da pressão constante, o serviço manteve elevados padrões de qualidade.</p>
+      <h2>Equipa Em Serviço</h2>
+      <div class="panel-grid">
+        <div class="panel"><span class="badge badge-green">Bruno</span><ul><li>Abertura exemplar.</li><li>Zona 50 e apoio como runner.</li></ul></div>
+        <div class="panel"><span class="badge badge-green">Matilde</span><ul><li>Cafetaria e sala interior.</li><li>Compensação da ausência da Mar.</li></ul></div>
+        <div class="panel"><span class="badge badge-green">Carolina</span><ul><li>Porta, cafetaria e apoio à sala.</li><li>Fecho e 3h00m extra.</li></ul></div>
+        <div class="panel"><span class="badge badge-blue">Filipe Catalão</span><ul><li>Zona 60 e coordenação de setores.</li><li>Fecho e 3h00m extra.</li></ul></div>
+        <div class="panel"><span class="badge badge-green">Marta</span><ul><li>Runner principal, apoio à zona 60.</li><li>Fecho e 2h40m extra.</li></ul></div>
+        <div class="panel"><span class="badge badge-green">Lil</span><ul><li>Zona 70 com boa resposta ao longo do dia.</li></ul></div>
+      </div>
+      <h2>Organização Operacional</h2>
+      <table>
+        <thead><tr><th>Setor / Função</th><th>Responsável</th></tr></thead>
+        <tbody>
+          <tr><td>Porta / Cafetaria / Apoio Sala</td><td>Carolina</td></tr>
+          <tr><td>Cafetaria / Sala Interior</td><td>Matilde</td></tr>
+          <tr><td>Mesas 50</td><td>Bruno</td></tr>
+          <tr><td>Mesas 60</td><td>Filipe Catalão</td></tr>
+          <tr><td>Mesas 70</td><td>Lil</td></tr>
+          <tr><td>Runner Principal</td><td>Marta</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="page-break">
+      <h2>Desempenho Operacional</h2>
+      <p>Pressão elevada e constante, com serviço fluído e sem incidentes graves que afetassem a satisfação dos clientes.</p>
+      <h2>Gestão Da Ausência No Bar</h2>
+      <p>Matilde e Carolina compensaram a ausência da Mar com apoio adicional à cafetaria.</p>
+      <h2>Modelo De Setores</h2>
+      <p>Principal área de aprendizagem: atropelamentos, intervenções fora do setor, falhas de comunicação e duplicação de esforços entre Filipe, Carolina, Marta, Matilde e Bruno. Sem impacto visível para clientes; medidas corretivas implementadas no dia seguinte.</p>
+      <div class="callout"><strong>Estado:</strong> fragilidades identificadas com correção imediata.</div>
+    </section>
+
+    <section class="page-break">
+      <h2>Incidente Operacional</h2>
+      <table>
+        <thead><tr><th>Categoria</th><th>Valor</th><th>Gravidade</th><th>Estado</th></tr></thead>
+        <tbody><tr><td>Mesa Sem Pagamento</td><td>33 euros</td><td>Média</td><td>Identificado e comunicado</td></tr></tbody>
+      </table>
+      <p>Recomendação: reforçar controlo e validação de pagamentos em períodos de elevada pressão.</p>
+      <h2>Jam Session RIBBAI</h2>
+      <p>A partir das 18h30, enorme sucesso com forte adesão, participação ativa, excelente ambiente social, elevado consumo de bebidas e permanência prolongada dos clientes.</p>
+      <div class="callout"><strong>Impacto:</strong> reforço da identidade do RIBBAI como espaço de convívio, cultura e comunidade.</div>
+      <h2>Horas Extra</h2>
+      <table>
+        <thead><tr><th>Colaborador</th><th>Registo</th></tr></thead>
+        <tbody>
+          <tr><td>Carolina</td><td>3h00m extra</td></tr>
+          <tr><td>Filipe Catalão</td><td>3h00m extra</td></tr>
+          <tr><td>Marta</td><td>2h40m extra</td></tr>
+        </tbody>
+      </table>
+      <div class="callout"><strong>Total da equipa:</strong> 8h40m de horas extra.</div>
+    </section>
+
+    <section class="page-break">
+      <h2>Fecho</h2>
+      <p>Fecho por Carolina, Filipe Catalão e Marta. Restaurante limpo, organizado e preparado para o dia seguinte após prolongamento significativo da operação.</p>
+      <h2>Notas Para A Gestão</h2>
+      <p>Sucesso comercial e experiencial confirmado; fragilidades no modelo de setores abordadas com maturidade operacional e medidas corretivas imediatas.</p>
+      <h2>Classificação Para O Sistema RIBBAI OPS</h2>
+      <table>
+        <thead><tr><th>Categoria</th><th>Registo</th></tr></thead>
+        <tbody>
+          <tr><td>Operational Notes</td><td>Dia exigente com Jam Session, alta afluência e setores a consolidar.</td></tr>
+          <tr><td>Incident Input</td><td>Mesa sem pagamento, valor estimado 33 euros.</td></tr>
+          <tr><td>Overtime Input</td><td>8h40m de horas extra: Carolina, Filipe Catalão e Marta.</td></tr>
+        </tbody>
+      </table>
+      <p class="footer-note">Documento gerado para apresentação diária à gestão. Fonte operacional: Registo Diário Operacional de 12-06-2026.</p>
+    </section>
+  </body>
+</html>

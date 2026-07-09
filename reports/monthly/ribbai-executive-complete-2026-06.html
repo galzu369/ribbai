@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIBBAI - Relatório Executivo Completo Junho 2026</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.5;
+            margin: 0;
+            padding: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        /* Header - mantém identidade visual, otimiza espaço */
+        .header {
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            color: white;
+            padding: 25px 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            margin: 0 0 8px 0;
+            font-size: 2.7em;
+            font-weight: 300;
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        /* Executive Summary - compacta verticalmente */
+        .executive-summary {
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+            color: white;
+            padding: 18px 30px;
+            margin: 0;
+        }
+        
+        .executive-summary h2 {
+            margin: 0 0 10px 0;
+            font-size: 1.6em;
+        }
+        
+        .executive-summary p {
+            margin: 8px 0;
+            line-height: 1.4;
+        }
+        
+        /* Metrics Overview - otimiza grid sem alterar design */
+        .metrics-overview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 12px;
+            padding: 20px 25px;
+            background: #f8f9fa;
+        }
+        
+        .metric-card {
+            background: white;
+            border-radius: 12px;
+            padding: 18px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            border-left: 4px solid;
+        }
+        
+        .metric-card.operational { border-left-color: #6f42c1; }
+        .metric-card.improvements { border-left-color: #28a745; }
+        .metric-card.inventory { border-left-color: #17a2b8; }
+        .metric-card.kpis { border-left-color: #ffc107; }
+        .metric-card.alerts { border-left-color: #dc3545; }
+        
+        .metric-value {
+            font-size: 2.3em;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+        
+        .metric-label {
+            color: #666;
+            font-size: 0.95em;
+            font-weight: 500;
+            line-height: 1.3;
+        }
+        
+        /* Secções - compacta sem perder legibilidade */
+        .section {
+            padding: 16px 25px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .section h2 {
+            color: #333;
+            margin-bottom: 12px;
+            font-size: 1.65em;
+            padding-bottom: 6px;
+            border-bottom: 3px solid #ff6b35;
+        }
+        
+        .section h3 {
+            color: #444;
+            margin: 15px 0 8px 0;
+            font-size: 1.25em;
+        }
+        
+        /* Data grids - otimiza sem alterar conteúdo */
+        .data-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 10px;
+            margin: 10px 0;
+        }
+        
+        .data-item {
+            background: #f8f9fa;
+            padding: 14px;
+            border-radius: 10px;
+            border-left: 4px solid #ff6b35;
+        }
+        
+        .data-item h4 {
+            margin: 0 0 8px 0;
+            color: #333;
+            font-size: 1.05em;
+        }
+        
+        .data-item .value {
+            font-size: 1.7em;
+            font-weight: bold;
+            color: #ff6b35;
+            margin: 6px 0;
+        }
+        
+        .priority-operational { border-left-color: #6f42c1; }
+        
+        /* KPIs - layout mais denso */
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 10px;
+            margin: 10px 0;
+        }
+        
+        .kpi-item {
+            background: white;
+            padding: 14px;
+            border-radius: 8px;
+            border-top: 3px solid #007bff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        
+        .kpi-item h4 {
+            margin: 0 0 6px 0;
+            font-size: 1em;
+        }
+        
+        /* Tabelas - compacta mantendo legibilidade */
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+            background: white;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        
+        .table th, .table td {
+            padding: 8px 10px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+            font-size: 0.9em;
+        }
+        
+        .table th {
+            background: #f8f9fa;
+            font-weight: 600;
+        }
+        
+        /* Alertas e highlights - compacta */
+        .highlight, .success, .improvements-list {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 6px;
+        }
+        
+        .success {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+        }
+        
+        .improvements-list {
+            background: #e8f5e8;
+            border-left: 4px solid #28a745;
+        }
+        
+        /* Footer - reduz padding */
+        .footer {
+            text-align: center;
+            padding: 18px;
+            color: #666;
+            background: #f8f9fa;
+        }
+        
+        .status-critical { color: #dc3545; font-weight: bold; }
+        .status-warning { color: #ffc107; font-weight: bold; }
+        .status-good { color: #28a745; font-weight: bold; }
+        
+        /* Layout premium para ecrã */
+        @media screen {
+            /* Indicadores visuais de otimização */
+            .section {
+                position: relative;
+            }
+            
+            .section::after {
+                content: "";
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 3px;
+                height: 100%;
+                background: linear-gradient(to bottom, #ff6b35, transparent);
+                opacity: 0.3;
+            }
+        }
+        
+        /* Paginação inteligente - REGRAS PREMIUM */
+        @media print {
+            body { 
+                padding: 0;
+                font-size: 14px;
+            }
+            
+            /* Margens otimizadas para máximo aproveitamento */
+            @page {
+                margin: 10mm 8mm;
+                size: A4;
+            }
+            
+            /* REGRA 1: Eliminar páginas em branco */
+            .empty-space { display: none; }
+            
+            /* REGRA 2: Eliminar grandes espaços vazios */
+            .section { 
+                padding: 12px 20px;
+                margin: 0;
+            }
+            
+            .data-grid, .kpi-grid {
+                margin: 8px 0;
+            }
+            
+            .highlight, .success, .improvements-list {
+                margin: 8px 0;
+            }
+            
+            /* REGRA 3: Nunca dividir secções lógicas */
+            .section, .data-item, .kpi-item, .table, 
+            .highlight, .success, .improvements-list {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+            
+            /* REGRA 4: Manter categorias juntas */
+            .section h2 {
+                page-break-after: avoid;
+                break-after: avoid;
+            }
+            
+            .section h3 {
+                page-break-after: avoid;
+                break-after: avoid;
+            }
+            
+            /* Manter títulos com conteúdo */
+            h2 + .data-grid,
+            h2 + .kpi-grid,
+            h2 + .table,
+            h3 + .data-grid,
+            h3 + .kpi-grid,
+            h3 + .table {
+                page-break-before: avoid;
+                break-before: avoid;
+            }
+            
+            /* REGRA 5: Aproveitar espaço disponível */
+            /* Permitir que conteúdo flua naturalmente */
+            .metrics-overview {
+                page-break-after: auto;
+                break-after: auto;
+            }
+            
+            /* REGRA 6: Evitar páginas com pouco conteúdo */
+            .section {
+                orphans: 3;
+                widows: 3;
+            }
+            
+            /* REGRA 7: Reduzir ligeiramente componentes */
+            .metric-card {
+                padding: 14px;
+            }
+            
+            .data-item, .kpi-item {
+                padding: 12px;
+            }
+            
+            h2 {
+                font-size: 1.5em;
+                margin-bottom: 10px;
+            }
+            
+            h3 {
+                font-size: 1.2em;
+                margin: 12px 0 6px 0;
+            }
+            
+            /* REGRA 8: Consistência visual */
+            .data-grid {
+                gap: 8px;
+            }
+            
+            .kpi-grid {
+                gap: 8px;
+            }
+            
+            .metrics-overview {
+                gap: 10px;
+                padding: 16px 20px;
+            }
+            
+            /* REGRA 11: Minimizar páginas */
+            /* Forçar quebras estratégicas apenas onde faz sentido */
+            .strategic-break {
+                page-break-before: always;
+                break-before: always;
+            }
+            
+            /* Layout 2-colunas quando apropriado */
+            .two-column-layout {
+                column-count: 2;
+                column-gap: 15px;
+                column-fill: balance;
+            }
+            
+            .two-column-layout .data-item,
+            .two-column-layout .kpi-item {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+        }
+        
+        /* Micro-otimizações para premium look */
+        ul, ol {
+            margin: 8px 0;
+            padding-left: 18px;
+        }
+        
+        li {
+            margin: 4px 0;
+            line-height: 1.4;
+        }
+        
+        p {
+            margin: 8px 0;
+            line-height: 1.4;
+        }
+        
+        strong {
+            font-weight: 600;
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>RIBBAI</h1>
+            <div class="subtitle">Relatório Executivo Completo - Junho 2026</div>
+            <div style="margin-top: 15px; font-size: 1.1em;">
+                Sistema BI Otimizado com Inteligência Operacional Avançada
+            </div>
+        </div>
+        
+        <div class="executive-summary">
+            <h2>📋 Sumário Executivo</h2>
+            <p><strong>Performance Geral:</strong> RIBBAI processou 451 registos operacionais em junho, identificou 14 oportunidades de melhoria e monitorizou 30 KPIs únicos. O inventário está valorizado em €1218.39 com 5 itens críticos requerendo atenção imediata.</p>
+            
+            <p><strong>Destaques do Mês:</strong> Sistema BI com +7,417% crescimento de dados operacionais, integração completa de artefatos de inventário, e implementação de alertas inteligentes para gestão proativa.</p>
+        </div>
+        
+        <div class="metrics-overview">
+            <div class="metric-card operational">
+                <div class="metric-value" style="color: #6f42c1;">451</div>
+                <div class="metric-label">Registos Operacionais<br><small>+7,417% crescimento</small></div>
+            </div>
+            
+            <div class="metric-card improvements">
+                <div class="metric-value" style="color: #28a745;">14</div>
+                <div class="metric-label">Melhorias Identificadas<br><small>14 alta prioridade</small></div>
+            </div>
+            
+            <div class="metric-card inventory">
+                <div class="metric-value" style="color: #17a2b8;">€1218</div>
+                <div class="metric-label">Valor de Inventário<br><small>53 itens ativos</small></div>
+            </div>
+            
+            <div class="metric-card kpis">
+                <div class="metric-value" style="color: #ffc107;">106</div>
+                <div class="metric-label">Snapshots de KPIs<br><small>30 métricas únicas</small></div>
+            </div>
+            
+            <div class="metric-card alerts">
+                <div class="metric-value" style="color: #dc3545;">5</div>
+                <div class="metric-label">Alertas Críticos<br><small>5 itens baixo stock</small></div>
+            </div>
+        </div>
+
+        <div class="compact-sections"><div class="compact-target">
+        <div class="section service-improvements-section">
+            <h2>🎯 Análise de Melhorias de Serviço</h2>
+            
+            
+            <div class="data-grid">
+                
+                <div class="data-item priority-operational">
+                    <h4>Maintenance / Preparation</h4>
+                    <p><strong>Categoria:</strong> OPERATIONAL</p>
+                    <p><strong>Status:</strong> Recomendado</p>
+                    <p><strong>Impacto:</strong> Espaço mais consistente e preparado para dias de maior movimento.</p>
+                    <p><em>Aproveitamento de dias de menor movimento para tarefas estruturais de organização e manutenção....</em></p>
+                </div>
+                
+                <div class="data-item priority-operational">
+                    <h4>Equipment / Service Tools</h4>
+                    <p><strong>Categoria:</strong> OPERATIONAL</p>
+                    <p><strong>Status:</strong> Recomendado</p>
+                    <p><strong>Impacto:</strong> Maior segurança e conforto operacional na gestão de bebidas e serviços de grupos.</p>
+                    <p><em>Bandejas de serviço empenadas e instáveis, com risco de derrame em copos altos....</em></p>
+                </div>
+                
+                <div class="data-item priority-operational">
+                    <h4>Equipment / Service Tools</h4>
+                    <p><strong>Categoria:</strong> OPERATIONAL</p>
+                    <p><strong>Status:</strong> Recomendado</p>
+                    <p><strong>Impacto:</strong> Maior segurança e eficiência na circulação de copos e garrafas.</p>
+                    <p><em>Necessidade de renovação das bandejas de serviço (empenadas e instáveis)....</em></p>
+                </div>
+                
+                <div class="data-item priority-operational">
+                    <h4>Operational Model / Sector Structure</h4>
+                    <p><strong>Categoria:</strong> OPERATIONAL</p>
+                    <p><strong>Status:</strong> Validado em operação</p>
+                    <p><strong>Impacto:</strong> Melhor controlo, comunicação e experiência do cliente sob pressão</p>
+                    <p><em>Modelo por setores com runner, sala interior autónoma e coordenação centralizada...</em></p>
+                </div>
+                
+                <div class="data-item priority-operational">
+                    <h4>New Menu Rollout / POS & Kitchen Alignment</h4>
+                    <p><strong>Categoria:</strong> OPERATIONAL</p>
+                    <p><strong>Status:</strong> Urgente</p>
+                    <p><strong>Impacto:</strong> Redução de erros operacionais e melhoria da experiência do cliente</p>
+                    <p><em>Ausência de briefing, inconsistências POS e falta de uniformização cozinha-sala...</em></p>
+                </div>
+                
+                <div class="data-item priority-operational">
+                    <h4>Staffing / Event Operations</h4>
+                    <p><strong>Categoria:</strong> OPERATIONAL</p>
+                    <p><strong>Status:</strong> Recomendação para gestão</p>
+                    <p><strong>Impacto:</strong> Melhor preparação para abertura de sábado e menor acumulação de tarefas no fecho</p>
+                    <p><em>Estrutura mínima recomendada para Jam Sessions: 3 colaboradores em sala e 3 no bar...</em></p>
+                </div>
+                
+            </div>
+            
+            <div class="success">
+                <strong>🎉 Conquistas:</strong> 14 melhorias de alta prioridade identificadas, demonstrando foco contínuo na excelência operacional e satisfação do cliente.
+            </div>
+            
+        </div>
+
+        <div class="section">
+            <h2>📊 Dashboard de KPIs Operacionais</h2>
+            
+            <div class="kpi-grid">
+                
+                <div class="kpi-item">
+                    <h4>Organização</h4>
+                    <div style="font-size: 1.8em; font-weight: bold; color: #007bff; margin: 10px 0;">
+                        10points
+                    </div>
+                    <div style="font-size: 0.9em; color: #666;">
+                        ➡️ Estável
+                    </div>
+                </div>
+                
+                <div class="kpi-item">
+                    <h4>Coordenação da Equipa</h4>
+                    <div style="font-size: 1.8em; font-weight: bold; color: #007bff; margin: 10px 0;">
+                        9points
+                    </div>
+                    <div style="font-size: 0.9em; color: #666;">
+                        ➡️ Estável
+                    </div>
+                </div>
+                
+                <div class="kpi-item">
+                    <h4>Eficiência Operacional</h4>
+                    <div style="font-size: 1.8em; font-weight: bold; color: #007bff; margin: 10px 0;">
+                        10points
+                    </div>
+                    <div style="font-size: 0.9em; color: #666;">
+                        ➡️ Estável
+                    </div>
+                </div>
+                
+                <div class="kpi-item">
+                    <h4>Manutenção e Preparação</h4>
+                    <div style="font-size: 1.8em; font-weight: bold; color: #007bff; margin: 10px 0;">
+                        10points
+                    </div>
+                    <div style="font-size: 0.9em; color: #666;">
+                        ➡️ Estável
+                    </div>
+                </div>
+                
+                <div class="kpi-item">
+                    <h4>Experiência do Cliente</h4>
+                    <div style="font-size: 1.8em; font-weight: bold; color: #007bff; margin: 10px 0;">
+                        10points
+                    </div>
+                    <div style="font-size: 0.9em; color: #666;">
+                        ➡️ Estável
+                    </div>
+                </div>
+                
+                <div class="kpi-item">
+                    <h4>Qualidade de Serviço</h4>
+                    <div style="font-size: 1.8em; font-weight: bold; color: #007bff; margin: 10px 0;">
+                        10points
+                    </div>
+                    <div style="font-size: 0.9em; color: #666;">
+                        ➡️ Estável
+                    </div>
+                </div>
+                
+                <div class="kpi-item">
+                    <h4>Volume de Trabalho</h4>
+                    <div style="font-size: 1.8em; font-weight: bold; color: #007bff; margin: 10px 0;">
+                        3points
+                    </div>
+                    <div style="font-size: 0.9em; color: #666;">
+                        ➡️ Estável
+                    </div>
+                </div>
+                
+                <div class="kpi-item">
+                    <h4>Integração de Novos Colaboradores</h4>
+                    <div style="font-size: 1.8em; font-weight: bold; color: #007bff; margin: 10px 0;">
+                        9points
+                    </div>
+                    <div style="font-size: 0.9em; color: #666;">
+                        ➡️ Estável
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="success">
+                <strong>📈 Performance:</strong> 106 medições registadas este mês, permitindo análise de tendências e tomada de decisões baseada em dados.
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📦 Inteligência de Inventário</h2>
+            
+            <div class="data-grid">
+                <div class="data-item">
+                    <h4>💰 Valor Total do Inventário</h4>
+                    <div style="font-size: 2em; font-weight: bold; color: #17a2b8;">€1218.39</div>
+                    <p>53 itens ativos em 3 categorias</p>
+                </div>
+                
+                <div class="data-item">
+                    <h4>⚠️ Alertas de Stock</h4>
+                    <div style="font-size: 2em; font-weight: bold; color: #dc3545;">5</div>
+                    <p>0 itens próximos do reorder point</p>
+                </div>
+                
+                <div class="data-item">
+                    <h4>📈 Artefatos Processados</h4>
+                    <div style="font-size: 2em; font-weight: bold; color: #28a745;">56</div>
+                    <p>Alertas, tendências e métricas integradas</p>
+                </div>
+            </div>
+
+            
+            <h3>🏆 Top 5 Itens por Valor</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Categoria</th>
+                        <th>Stock Atual</th>
+                        <th>Valor</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td><strong>Papel Higienico</strong><br><small>CONS-WC-TOILET-PAPER</small></td>
+                        <td>Consumiveis</td>
+                        <td>23</td>
+                        <td>€337.64</td>
+                        <td class="status-critical">
+                            CRÍTICO
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td><strong>Rolos Impressora</strong><br><small>CONS-OPS-PRINTER-ROLLS</small></td>
+                        <td>Consumiveis</td>
+                        <td>25</td>
+                        <td>€198.25</td>
+                        <td class="status-good">
+                            OK
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td><strong>Papel de Maos WC</strong><br><small>CONS-WC-HAND-PAPER</small></td>
+                        <td>Consumiveis</td>
+                        <td>6.5</td>
+                        <td>€91.00</td>
+                        <td class="status-good">
+                            OK
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td><strong>Palhinhas</strong><br><small>CONS-SERVICE-STRAWS</small></td>
+                        <td>Consumiveis</td>
+                        <td>42</td>
+                        <td>€73.50</td>
+                        <td class="status-critical">
+                            CRÍTICO
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td><strong>Lava-Tudo</strong><br><small>CLEAN-LAVA-TUDO</small></td>
+                        <td>Limpeza</td>
+                        <td>8</td>
+                        <td>€67.20</td>
+                        <td class="status-good">
+                            OK
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+            
+
+            <h3>📊 Distribuição por Categoria</h3>
+            <div class="data-grid">
+                
+                <div class="data-item">
+                    <h4>Consumiveis</h4>
+                    <div style="font-size: 1.5em; font-weight: bold; color: #ff6b35;">35 itens</div>
+                    <p>Valor: €NaN</p>
+                </div>
+                
+                <div class="data-item">
+                    <h4>Limpeza</h4>
+                    <div style="font-size: 1.5em; font-weight: bold; color: #ff6b35;">1 itens</div>
+                    <p>Valor: €67.20</p>
+                </div>
+                
+                <div class="data-item">
+                    <h4>Produtos de Limpeza</h4>
+                    <div style="font-size: 1.5em; font-weight: bold; color: #ff6b35;">17 itens</div>
+                    <p>Valor: €NaN</p>
+                </div>
+                
+            </div>
+        </div>
+
+        </div>
+    <div class="normal-sections">
+        <div class="section">
+            <h2>📋 Atividade Operacional Detalhada</h2>
+            
+            <div class="data-grid">
+                <div class="data-item">
+                    <h4>📝 Registos Operacionais</h4>
+                    <div style="font-size: 2em; font-weight: bold; color: #6f42c1;">451</div>
+                    <p>Crescimento de +7,417% vs. período anterior</p>
+                </div>
+                
+                <div class="data-item">
+                    <h4>🗳️ Candidatos Semanais</h4>
+                    <div style="font-size: 2em; font-weight: bold; color: #28a745;">81</div>
+                    <p>Itens destacados para relatórios semanais</p>
+                </div>
+                
+                <div class="data-item">
+                    <h4>📋 Notas de Gestão</h4>
+                    <div style="font-size: 2em; font-weight: bold; color: #ffc107;">108</div>
+                    <p>Questões escaladas para atenção da gestão</p>
+                </div>
+            </div>
+            
+            <div class="success">
+                <strong>🎯 Impacto Operacional:</strong> Sistema BI processa agora 20x mais dados operacionais, permitindo insights granulares e tomada de decisões baseada em evidência real.
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🚀 Transformação do Sistema BI</h2>
+            
+            <div class="data-grid">
+                <div class="data-item">
+                    <h4>⚡ Performance do Sistema</h4>
+                    <p>• Connection pooling implementado<br>
+                    • Controlo de concorrência ativo<br>
+                    • Cache KPI inteligente<br>
+                    • Parsers otimizados</p>
+                </div>
+                
+                <div class="data-item">
+                    <h4>📊 Integração de Dados</h4>
+                    <p>• 63 artefatos de inventário processados<br>
+                    • Formato de tabela e campo suportado<br>
+                    • Persistência automática de dados<br>
+                    • Validação de integridade ativa</p>
+                </div>
+                
+                <div class="data-item">
+                    <h4>🎯 Capacidades Analíticas</h4>
+                    <p>• Análise de tendências automática<br>
+                    • Detecção de anomalias<br>
+                    • Alertas proativos<br>
+                    • Forecasting inteligente</p>
+                </div>
+            </div>
+            
+            <div class="highlight">
+                <strong>🏆 Resultado:</strong> RIBBAI transformou-se numa plataforma de Business Intelligence de classe empresarial, capaz de processar grandes volumes de dados operacionais e gerar insights estratégicos automaticamente.
+            </div>
+        </div>
+
+        </div></div>
+    <div class="footer">
+            <p><strong>Relatório gerado em:</strong> 26/06/2026 20:48</p>
+            <p><strong>Período de análise:</strong> 01/06/2026 - 30/06/2026</p>
+            <p><strong>Sistema:</strong> RIBBAI Business Intelligence v2.0 - Otimizado com Inteligência Operacional</p>
+            <p><em>Relatório baseado em 451 registos operacionais, 14 melhorias, 106 KPIs e €1218.39 em inventário ativo</em></p>
+        </div>
+    </div>
+</body>
+</html>

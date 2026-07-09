@@ -1,0 +1,166 @@
+{
+  "id": "closing-checklist-ribbai",
+  "title": "Checklist de Fecho",
+  "brand": "RIBBAI OPS",
+  "restaurant": "RIBBAI",
+  "subtitle": "Fecho diario de sala, esplanada, WC e equipamentos",
+  "category": "CLOSING",
+  "frequency": "DAILY",
+  "language": "pt-PT",
+  "sections": [
+    {
+      "id": "sala",
+      "title": "Sala",
+      "icon": "room",
+      "tasks": [
+        {
+          "id": "sala-varrer",
+          "label": "Varrer a sala interior."
+        },
+        {
+          "id": "sala-mesas-limpas",
+          "label": "Garantir que todas as mesas ficam limpas."
+        },
+        {
+          "id": "sala-almofadas-sofas",
+          "label": "Garantir que almofadas e sofas ficam sacudidos e limpos."
+        },
+        {
+          "id": "sala-luzes-tv",
+          "label": "Apagar as luzes debaixo da TV e desligar a TV."
+        }
+      ]
+    },
+    {
+      "id": "wc",
+      "title": "Casas de banho",
+      "icon": "cleaning",
+      "tasks": [
+        {
+          "id": "wc-varrer",
+          "label": "Varrer as casas de banho."
+        },
+        {
+          "id": "wc-sanitarios-lavatorios",
+          "label": "Passar spray laranja para limpar sanitas e lavatorios."
+        },
+        {
+          "id": "wc-esfregona",
+          "label": "Passar esfregona com agua quente, cloro e lava-tudo no chao dos WC."
+        },
+        {
+          "id": "wc-consumiveis",
+          "label": "Verificar os consumiveis das casas de banho."
+        }
+      ]
+    },
+    {
+      "id": "esplanada",
+      "title": "Esplanada",
+      "icon": "terrace",
+      "tasks": [
+        {
+          "id": "esplanada-desmontar",
+          "label": "Desmontar a esplanada."
+        },
+        {
+          "id": "esplanada-varrer",
+          "label": "Varrer a esplanada."
+        }
+      ]
+    },
+    {
+      "id": "equipamentos",
+      "title": "Equipamentos",
+      "icon": "devices",
+      "tasks": [
+        {
+          "id": "equipamentos-carregar",
+          "label": "Colocar TPAs, PDA e Ericeira Eats a carregar."
+        }
+      ]
+    },
+    {
+      "id": "mise-en-place",
+      "title": "Mise en place para o dia seguinte",
+      "icon": "cutlery",
+      "tasks": [
+        {
+          "id": "mise-talheres-polidos",
+          "label": "Garantir que todos os talheres ficam polidos."
+        },
+        {
+          "id": "mise-baldes-talheres",
+          "label": "Preparar os baldes com 2 e 3 talheres nos pequenos, e 4 e 5 talheres nos medios."
+        },
+        {
+          "id": "mise-guardanapos",
+          "label": "Garantir que ha guardanapos prontos para o dia seguinte."
+        }
+      ]
+    },
+    {
+      "id": "lixos-panos",
+      "title": "Lixos e panos",
+      "icon": "waste",
+      "tasks": [
+        {
+          "id": "lixos-sacos",
+          "label": "Levar os lixos e colocar sacos novos."
+        },
+        {
+          "id": "panos-cloro",
+          "label": "Colocar panos em agua quente com cloro, espremer e colocar a secar."
+        }
+      ]
+    },
+    {
+      "id": "limpeza-final",
+      "title": "Limpeza final",
+      "icon": "final",
+      "tasks": [
+        {
+          "id": "suica-esfregona",
+          "label": "Passar esfregona na Suica."
+        },
+        {
+          "id": "material-limpeza-arrumado",
+          "label": "No final, limpar e arrumar no lugar correto todo o material de limpeza."
+        },
+        {
+          "id": "suica-kit-limpeza",
+          "label": "Garantir que fica na Suica um balde, uma esfregona, uma pa e uma vassoura."
+        }
+      ]
+    }
+  ],
+  "accountability": {
+    "timeFields": [
+      {
+        "id": "closing-start-time",
+        "label": "Inicio do fecho"
+      },
+      {
+        "id": "closing-end-time",
+        "label": "Fim do fecho"
+      }
+    ],
+    "responsibleStaffLimit": 3,
+    "responsibleStaffLabel": "Responsaveis pelo fecho",
+    "observationsLabel": "Observacoes",
+    "finalConfirmations": [
+      {
+        "id": "final-tasks-complete",
+        "label": "Todas as tarefas obrigatorias foram verificadas."
+      },
+      {
+        "id": "final-areas-secure",
+        "label": "Sala, esplanada, WC e Suica ficam prontos para o dia seguinte."
+      },
+      {
+        "id": "final-equipment-charging",
+        "label": "Equipamentos ficam desligados ou a carregar conforme indicado."
+      }
+    ]
+  }
+}

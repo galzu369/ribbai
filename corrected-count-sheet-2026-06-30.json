@@ -1,0 +1,271 @@
+{
+  "date": "2026-06-30",
+  "weekNumber": 26,
+  "year": 2026,
+  "lines": [
+    {
+      "sku": "CONS-SERVICE-NAPKINS",
+      "name": "Guardanapos",
+      "unit": "caixa",
+      "quantity": 2
+    },
+    {
+      "sku": "CONS-SERVICE-SMALL-NAPKINS",
+      "name": "Guardanapos Pequenos",
+      "unit": "caixa",
+      "quantity": 0
+    },
+    {
+      "sku": "CONS-SERVICE-STRAWS",
+      "name": "Palhinhas",
+      "unit": "saco",
+      "quantity": 35
+    },
+    {
+      "sku": "CONS-SERVICE-TOOTHPICKS",
+      "name": "Palitos",
+      "unit": "caixa",
+      "quantity": 1
+    },
+    {
+      "sku": "CONS-OPS-BLUE-ROLL",
+      "name": "Rolos Azul",
+      "unit": "unidade",
+      "quantity": 1.5
+    },
+    {
+      "sku": "CONS-OPS-KITCHEN-ROLLS",
+      "name": "Rolos de Cozinha",
+      "unit": "pack",
+      "quantity": 4
+    },
+    {
+      "sku": "CONS-OPS-PRINTER-ROLLS",
+      "name": "Rolos Impressora",
+      "unit": "caixa",
+      "quantity": 4
+    },
+    {
+      "sku": "CONS-OPS-TPA-ROLLS",
+      "name": "Rolos TPA",
+      "unit": "caixa",
+      "quantity": 1.5
+    },
+    {
+      "sku": "CONS-OPS-GLASS-TRASH-BAGS",
+      "name": "Sacos do Lixo Vidro",
+      "unit": "pack",
+      "quantity": 2
+    },
+    {
+      "sku": "CONS-WC-HAND-PAPER",
+      "name": "Papel de Maos WC",
+      "unit": "caixa",
+      "quantity": 5
+    },
+    {
+      "sku": "CONS-WC-TOILET-PAPER",
+      "name": "Papel Higienico",
+      "unit": "pack",
+      "quantity": 19
+    },
+    {
+      "sku": "CONS-TAKEAWAY-MEDIUM-COFFEE-CUPS",
+      "name": "Copos Medios Cafe Take Away",
+      "unit": "saco",
+      "quantity": 5
+    },
+    {
+      "sku": "CONS-TAKEAWAY-MEDIUM-CUPS-LIDS",
+      "name": "Copos Medios Take Away + Tampas",
+      "unit": "caixa",
+      "quantity": 0.2
+    },
+    {
+      "sku": "CONS-TAKEAWAY-SAUCE-CUPS",
+      "name": "Copos para Molhos Take Away",
+      "unit": "caixa",
+      "quantity": 0.5
+    },
+    {
+      "sku": "CONS-DESSERT-MOUSSE-CUPS",
+      "name": "Copos para Mousse",
+      "unit": "unidade",
+      "quantity": 100
+    },
+    {
+      "sku": "CONS-TAKEAWAY-SMALL-COFFEE-CUPS",
+      "name": "Copos Pequenos Cafe Take Away",
+      "unit": "caixa",
+      "quantity": 0.8
+    },
+    {
+      "sku": "CONS-TAKEAWAY-SOUP-BOX-LID",
+      "name": "Box de Sopas + Tampas",
+      "unit": "caixa",
+      "quantity": 1.5
+    },
+    {
+      "sku": "CONS-TAKEAWAY-BURGER-BOX",
+      "name": "Box grande 1980ml",
+      "unit": "caixa",
+      "quantity": 2
+    },
+    {
+      "sku": "CONS-TAKEAWAY-TOAST-BOX",
+      "name": "Box Media 1350",
+      "unit": "caixa",
+      "quantity": 2
+    },
+    {
+      "sku": "CONS-TAKEAWAY-BOX-750ML",
+      "name": "Box Pequena 750ml",
+      "unit": "caixa",
+      "quantity": 1
+    },
+    {
+      "sku": "CONS-TAKEAWAY-ROUND-BOX-LID",
+      "name": "Box POKE + Tampas",
+      "unit": "caixa",
+      "quantity": 4
+    },
+    {
+      "sku": "CONS-GALHETEIRO-OLIVE-OIL",
+      "name": "Garrafa de Azeite",
+      "unit": "unidade",
+      "quantity": 9
+    },
+    {
+      "sku": "CONS-GALHETEIRO-VINEGAR",
+      "name": "Garrafa de Vinagre",
+      "unit": "unidade",
+      "quantity": 9
+    },
+    {
+      "sku": "SAUCE-KETCHUP",
+      "name": "Ketchup",
+      "unit": "caixa",
+      "quantity": 3
+    },
+    {
+      "sku": "SAUCE-MAYONNAISE",
+      "name": "Maionese",
+      "unit": "caixa",
+      "quantity": 3
+    },
+    {
+      "sku": "SAUCE-MUSTARD",
+      "name": "Mostarda",
+      "unit": "caixa",
+      "quantity": 1.5
+    },
+    {
+      "sku": "CLEAN-SPLIT-LV-RINSE",
+      "name": "Abrilhantador/Secante SPLIT LV",
+      "unit": "unidade",
+      "quantity": 3
+    },
+    {
+      "sku": "CLEAN-ALCOHOL",
+      "name": "Alcool",
+      "unit": "unidade",
+      "quantity": 21
+    },
+    {
+      "sku": "CLEAN-URINAL-SCENT",
+      "name": "Cheiro Urinol",
+      "unit": "unidade",
+      "quantity": 12
+    },
+    {
+      "sku": "CLEAN-D-50",
+      "name": "D-50",
+      "unit": "unidade",
+      "quantity": 2
+    },
+    {
+      "sku": "CLEAN-DISH-LEMON",
+      "name": "Dish Lemon",
+      "unit": "unidade",
+      "quantity": 2
+    },
+    {
+      "sku": "CLEAN-ANTIBACTERIAL-FOAM",
+      "name": "Espuma Antibacteriana",
+      "unit": "unidade",
+      "quantity": 0
+    },
+    {
+      "sku": "CLEAN-LAVA-TUDO",
+      "name": "Lava-Tudo",
+      "unit": "unidade",
+      "quantity": 4
+    },
+    {
+      "sku": "CLEAN-LAVA-LOUCAS",
+      "name": "Lava-Louça Universal",
+      "unit": "unidade",
+      "quantity": 1
+    },
+    {
+      "sku": "CLEAN-GLOVES-L",
+      "name": "Luvas L",
+      "unit": "caixa",
+      "quantity": 1
+    },
+    {
+      "sku": "CLEAN-GLOVES-M",
+      "name": "Luvas M",
+      "unit": "caixa",
+      "quantity": 1
+    },
+    {
+      "sku": "CLEAN-GLOVES-S",
+      "name": "Luvas S",
+      "unit": "caixa",
+      "quantity": 1
+    },
+    {
+      "sku": "CLEAN-MASKS",
+      "name": "Mascaras",
+      "unit": "caixa",
+      "quantity": 4
+    },
+    {
+      "sku": "CLEAN-WC-ORANGE-SPRAY-IBT",
+      "name": "Spray Laranja WC IBT",
+      "unit": "unidade",
+      "quantity": 2
+    },
+    {
+      "sku": "CLEAN-THOMIL",
+      "name": "Thomil",
+      "unit": "unidade",
+      "quantity": 4
+    },
+    {
+      "sku": "CLEAN-HAIRNETS",
+      "name": "Tocas",
+      "unit": "saco",
+      "quantity": 3
+    },
+    {
+      "sku": "CONS-TAKEAWAY-SPOONS",
+      "name": "Colheres Take Away",
+      "unit": "saco",
+      "quantity": 3
+    },
+    {
+      "sku": "CONS-TAKEAWAY-FORKS-KNIVES",
+      "name": "Garfos e Facas Take Away",
+      "unit": "saco",
+      "quantity": 5
+    },
+    {
+      "sku": "CONS-TAKEAWAY-CHOPSTICKS",
+      "name": "Pauzinhos",
+      "unit": "saco",
+      "quantity": 6
+    }
+  ]
+}

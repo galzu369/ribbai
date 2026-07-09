@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Relatório Diário Operacional - 24-06-2026</title>
+    <style>
+      @page { size: A4; margin: 16mm 14mm 18mm; }
+      :root { --ink:#172033; --muted:#657085; --line:#d9dee8; --soft:#f6f7fa; --warm:#fff7ed; --brand:#f97316; --brand-dark:#9a3412; --green:#15803d; --blue:#1d4ed8; --violet:#6d28d9; }
+      * { box-sizing:border-box; }
+      body { margin:0; background:#fff; color:var(--ink); font-family:Inter,ui-sans-serif,system-ui,sans-serif; font-size:10pt; line-height:1.5; }
+      h1,h2,h3,p { margin-top:0; }
+      h1 { font-size:34pt; line-height:1.02; letter-spacing:-0.04em; margin-bottom:10pt; }
+      h2 { border-bottom:1px solid var(--line); font-size:15pt; margin:22pt 0 10pt; padding-bottom:5pt; }
+      h3 { color:var(--brand-dark); font-size:11pt; margin:13pt 0 5pt; }
+      ul { margin:4pt 0 10pt 15pt; padding:0; }
+      table { border-collapse:collapse; margin:8pt 0 14pt; width:100%; }
+      th,td { border:1px solid var(--line); padding:6pt 7pt; text-align:left; vertical-align:top; }
+      th { background:var(--soft); font-size:8pt; letter-spacing:0.06em; text-transform:uppercase; }
+      .cover { background:radial-gradient(circle at top right,rgba(249,115,22,0.18),transparent 35%),linear-gradient(135deg,#fff7ed 0%,#fff 42%,#f8fafc 100%); border:1px solid #fed7aa; border-radius:22px; margin-bottom:16pt; min-height:248mm; padding:24mm 18mm; }
+      .eyebrow { color:var(--brand); font-size:8.5pt; font-weight:800; letter-spacing:0.18em; margin-bottom:14pt; text-transform:uppercase; }
+      .subtitle { color:var(--muted); font-size:14pt; line-height:1.45; max-width:150mm; }
+      .meta-panel { background:rgba(255,255,255,0.82); border:1px solid #fed7aa; border-radius:16px; margin-top:28pt; padding:14pt; }
+      .meta-grid { display:grid; gap:10pt; grid-template-columns:repeat(3,1fr); }
+      .meta-item { border-left:3px solid var(--brand); padding-left:8pt; }
+      .meta-label { color:var(--muted); display:block; font-size:7.5pt; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; }
+      .meta-value { display:block; font-size:10.5pt; font-weight:700; margin-top:2pt; }
+      .page-break { break-before:page; }
+      .kpi-grid { display:grid; gap:8pt; grid-template-columns:repeat(3,1fr); margin:12pt 0 16pt; }
+      .kpi { background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:10pt; }
+      .kpi-label { color:var(--muted); display:block; font-size:7.5pt; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; }
+      .kpi-value { display:block; font-size:22pt; font-weight:800; margin-top:3pt; }
+      .kpi-note { color:var(--muted); display:block; font-size:8pt; margin-top:2pt; }
+      .good { color:var(--green); }
+      .callout { background:var(--warm); border-left:4px solid var(--brand); border-radius:12px; margin:10pt 0 14pt; padding:11pt 13pt; }
+      .callout-success { background:#f0fdf4; border-left-color:var(--green); }
+      .panel-grid { display:grid; gap:9pt; grid-template-columns:repeat(2,1fr); }
+      .panel { border:1px solid var(--line); border-radius:12px; break-inside:avoid; padding:10pt; }
+      .badge { border-radius:999px; display:inline-block; font-size:7.5pt; font-weight:800; margin-bottom:5pt; padding:3pt 7pt; text-transform:uppercase; }
+      .badge-green { background:#dcfce7; color:var(--green); }
+      .badge-blue { background:#dbeafe; color:var(--blue); }
+      .badge-violet { background:#ede9fe; color:var(--violet); }
+      .footer-note { border-top:1px solid var(--line); color:var(--muted); font-size:8.5pt; margin-top:18pt; padding-top:7pt; }
+    </style>
+  </head>
+  <body>
+    <section class="cover">
+      <div class="eyebrow">RIBBAI OPS · Relatório Diário Operacional</div>
+      <h1>Registo Diário Operacional</h1>
+      <p class="subtitle">Apresentação diária à gestão sobre a operação Front of House do restaurante RIBBAI.</p>
+      <div class="meta-panel">
+        <div class="meta-grid">
+          <div class="meta-item"><span class="meta-label">Data</span><span class="meta-value">24-06-2026</span></div>
+          <div class="meta-item"><span class="meta-label">Dia</span><span class="meta-value">Quarta-feira</span></div>
+          <div class="meta-item"><span class="meta-label">Autor</span><span class="meta-value">Bruno</span></div>
+          <div class="meta-item"><span class="meta-label">Restaurante</span><span class="meta-value">RIBBAI</span></div>
+          <div class="meta-item"><span class="meta-label">Tipo</span><span class="meta-value">Relatório Diário Operacional</span></div>
+          <div class="meta-item"><span class="meta-label">Estado</span><span class="meta-value">Registado</span></div>
+        </div>
+      </div>
+      <div class="kpi-grid">
+        <div class="kpi"><span class="kpi-label">Volume Trabalho</span><span class="kpi-value good">3/10</span><span class="kpi-note">Dia de baixa afluência</span></div>
+        <div class="kpi"><span class="kpi-label">Manutenção</span><span class="kpi-value good">10/10</span><span class="kpi-note">Vidros + stock organizados</span></div>
+        <div class="kpi"><span class="kpi-label">Experiência Cliente</span><span class="kpi-value good">10/10</span><span class="kpi-note">Sem incidentes</span></div>
+      </div>
+      <div class="kpi-grid">
+        <div class="kpi"><span class="kpi-label">Qualidade Serviço</span><span class="kpi-value good">10/10</span><span class="kpi-note">Serviço tranquilo</span></div>
+        <div class="kpi"><span class="kpi-label">Coordenação</span><span class="kpi-value good">9/10</span><span class="kpi-note">Pausas completas</span></div>
+        <div class="kpi"><span class="kpi-label">Horas Extra</span><span class="kpi-value good">1h40</span><span class="kpi-note">2 colaboradoras</span></div>
+      </div>
+      <div class="callout callout-success"><strong>Conclusão do dia:</strong> dia muito tranquilo, focado em limpeza, organização e preparação; evolução contínua do Diogo e ausência total de incidentes operacionais.</div>
+    </section>
+
+    <section class="page-break">
+      <h2>Síntese Executiva</h2>
+      <p>Quarta-feira com volume reduzido de clientes, permitindo concentrar esforços em limpeza de vidros, organização de stock e preparação da sala e walk-in. Diogo manteve evolução positiva na integração.</p>
+      <h2>Equipa Em Serviço</h2>
+      <div class="panel-grid">
+        <div class="panel"><span class="badge badge-green">Pablo</span><ul><li>Abertura sozinho.</li><li>Preparação da operação.</li><li>Talheres polidos e organizados.</li><li>Reposição de consumíveis das casas de banho.</li></ul></div>
+        <div class="panel"><span class="badge badge-green">Carolina</span><ul><li>Abertura com Pablo.</li><li>Apoio ao serviço.</li><li>Pausa completa.</li><li>Saída tardia no fecho.</li><li>50 min de horas extra.</li></ul></div>
+        <div class="panel"><span class="badge badge-blue">Bruno</span><ul><li>Limpeza completa dos vidros frontais.</li><li>Receção e arrumação de consumíveis.</li><li>Organização de stock e apoio ao bar.</li></ul></div>
+        <div class="panel"><span class="badge badge-green">Diogo</span><ul><li>Apoio ao serviço durante o dia.</li><li>Boa atitude e disponibilidade.</li><li>Evolução contínua na integração.</li></ul></div>
+        <div class="panel"><span class="badge badge-green">Matilde</span><ul><li>Apoio operacional.</li><li>Pausa completa.</li><li>Saída tardia no fecho.</li><li>50 min de horas extra.</li></ul></div>
+      </div>
+    </section>
+
+    <section class="page-break">
+      <h2>Abertura e Operação do Dia</h2>
+      <p>A abertura foi assegurada por Pablo e Carolina, com preparação normal e sem incidentes. O movimento manteve-se baixo durante todo o dia, permitindo trabalho tranquilo e foco em manutenção e organização.</p>
+      <h2>Desempenho da Equipa</h2>
+      <p><strong>Diogo:</strong> demonstra continuamente vontade de aprender, boa adaptação, atitude positiva e disponibilidade para apoiar em diferentes tarefas, consolidando a integração na equipa.</p>
+      <h2>Organização e Manutenção</h2>
+      <ul>
+        <li><strong>Bruno:</strong> recebeu, conferiu e arrumou a encomenda de consumíveis, organizando o stock.</li>
+        <li>Apoio ao bar para garantir walk-in totalmente abastecida e organizada.</li>
+        <li>Diversas tarefas de arrumação e preparação da sala, deixando o espaço pronto para os dias seguintes.</li>
+      </ul>
+    </section>
+
+    <section class="page-break">
+      <h2>Pausas</h2>
+      <p>Todos os colaboradores realizaram pausa completa de uma hora. Bruno e Pablo asseguraram a cobertura operacional na segunda metade das pausas, terminando o turno às 17h30.</p>
+      <h2>Incidentes</h2>
+      <p>Não foram registados incidentes operacionais, reclamações de clientes ou erros relevantes durante o serviço.</p>
+      <h2>Horas Extra</h2>
+      <table>
+        <thead><tr><th>Colaborador</th><th>Registo</th></tr></thead>
+        <tbody>
+          <tr><td>Carolina</td><td>50 minutos de horas extra</td></tr>
+          <tr><td>Matilde</td><td>50 minutos de horas extra</td></tr>
+        </tbody>
+      </table>
+      <div class="callout"><strong>Total da equipa:</strong> 1h40 de horas extra.</div>
+    </section>
+
+    <section class="page-break">
+      <h2>Notas Para Gestão</h2>
+      <p>Dia calmo bem aproveitado para manutenção, organização e reposição de stock, sem impacto na qualidade de serviço prestado aos clientes.</p>
+      <h2>Avaliação Global</h2>
+      <table>
+        <thead><tr><th>Indicador</th><th>Avaliação</th></tr></thead>
+        <tbody>
+          <tr><td>Volume de Trabalho</td><td>3/10</td></tr>
+          <tr><td>Qualidade de Serviço</td><td>10/10</td></tr>
+          <tr><td>Organização</td><td>10/10</td></tr>
+          <tr><td>Coordenação da Equipa</td><td>9/10</td></tr>
+          <tr><td>Eficiência Operacional</td><td>10/10</td></tr>
+          <tr><td>Manutenção e Preparação</td><td>10/10</td></tr>
+          <tr><td>Experiência do Cliente</td><td>10/10</td></tr>
+        </tbody>
+      </table>
+      <h2>Classificação Para O Sistema RIBBAI OPS</h2>
+      <table>
+        <thead><tr><th>Categoria</th><th>Registo</th></tr></thead>
+        <tbody>
+          <tr><td>Operational Notes</td><td>Dia calmo focado em organização, limpeza e preparação.</td></tr>
+          <tr><td>Service Improvement Candidate</td><td>Formalizar lista de tarefas de manutenção para dias de baixa afluência.</td></tr>
+          <tr><td>Team Feedback Input</td><td>Pablo, Bruno, Diogo, Carolina e Matilde com contributos positivos para preparação futura.</td></tr>
+          <tr><td>Overtime Input</td><td>1h40: Carolina 50m, Matilde 50m.</td></tr>
+        </tbody>
+      </table>
+      <p class="footer-note">Documento gerado para apresentação diária à gestão. Fonte operacional: Registo Diário Operacional de 24-06-2026. Autor: Bruno.</p>
+    </section>
+  </body>
+</html>
+

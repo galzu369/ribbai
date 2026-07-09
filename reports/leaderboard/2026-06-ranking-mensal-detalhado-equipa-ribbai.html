@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranking Mensal Detalhado - Junho 2026 | RIBBAI</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 15mm 12mm 15mm 12mm;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 11px;
+            line-height: 1.4;
+            color: #2d3748;
+            background: #ffffff;
+            orphans: 3;
+            widows: 3;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #172033, #2d3748);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 25px;
+            border-radius: 8px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .header .subtitle {
+            margin: 8px 0 0;
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        .section {
+            margin-bottom: 25px;
+            padding: 18px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            background: #ffffff;
+            page-break-inside: avoid !important;
+        }
+
+        .section h2 {
+            margin: 0 0 15px 0;
+            font-size: 16px;
+            font-weight: 600;
+            color: #172033;
+            border-bottom: 2px solid #f97316;
+            padding-bottom: 5px;
+            page-break-after: avoid !important;
+            orphans: 3;
+            widows: 3;
+        }
+
+        .section h3 {
+            margin: 15px 0 10px 0;
+            font-size: 14px;
+            font-weight: 600;
+            color: #2d3748;
+            page-break-after: avoid !important;
+            orphans: 2;
+            widows: 2;
+        }
+
+        .criteria-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 15px 0;
+            page-break-inside: avoid !important;
+        }
+
+        .criteria-card {
+            border: 1px solid #cbd5e0;
+            border-radius: 6px;
+            padding: 12px;
+            background: #f7fafc;
+            page-break-inside: avoid !important;
+        }
+
+        .criteria-title {
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 5px;
+        }
+
+        .criteria-points {
+            color: #f97316;
+            font-weight: 700;
+            font-size: 12px;
+        }
+
+        .criteria-desc {
+            margin-top: 8px;
+            font-size: 10px;
+            color: #4a5568;
+        }
+
+        .ranking-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 10px;
+            page-break-inside: avoid !important;
+        }
+
+        .ranking-table th {
+            background: #172033;
+            color: white;
+            padding: 10px 6px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 9px;
+            text-transform: uppercase;
+        }
+
+        .ranking-table td {
+            padding: 8px 6px;
+            border-bottom: 1px solid #e2e8f0;
+            vertical-align: middle;
+        }
+
+        .ranking-table tbody tr:nth-child(even) {
+            background: #f8fafc;
+        }
+
+        .rank-number {
+            width: 40px;
+            text-align: center;
+            font-weight: 700;
+            color: #f97316;
+        }
+
+        .member-name {
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        .points-breakdown {
+            font-size: 9px;
+            color: #4a5568;
+            margin-top: 2px;
+        }
+
+        .detailed-breakdown {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin: 15px 0;
+            page-break-inside: avoid !important;
+        }
+
+        .breakdown-card {
+            border: 1px solid #cbd5e0;
+            border-radius: 6px;
+            padding: 10px;
+            text-align: center;
+            background: white;
+            page-break-inside: avoid !important;
+        }
+
+        .breakdown-title {
+            font-size: 9px;
+            color: #4a5568;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .breakdown-value {
+            font-size: 14px;
+            font-weight: 700;
+            color: #2d3748;
+        }
+
+        .breakdown-max {
+            font-size: 8px;
+            color: #718096;
+            margin-top: 2px;
+        }
+
+        .example-box {
+            background: #edf2f7;
+            border-left: 4px solid #f97316;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 0 6px 6px 0;
+            page-break-inside: avoid !important;
+        }
+
+        .example-title {
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 8px;
+        }
+
+        .example-list {
+            margin: 0;
+            padding-left: 16px;
+        }
+
+        .example-list li {
+            margin-bottom: 4px;
+            font-size: 10px;
+        }
+
+        .highlight {
+            background: #fef5e7;
+            color: #c05621;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .member-card {
+            border: 1px solid #cbd5e0;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 20px;
+            background: #ffffff;
+            page-break-inside: avoid !important;
+            page-break-before: always;
+            page-break-after: avoid;
+            min-height: 200mm;
+        }
+
+        .member-card:first-child {
+            page-break-before: auto;
+        }
+
+        .member-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .member-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #172033;
+        }
+
+        .member-total {
+            font-size: 20px;
+            font-weight: 700;
+            color: #f97316;
+        }
+
+        .justification {
+            margin-top: 25px;
+            font-size: 12px;
+            color: #4a5568;
+            line-height: 1.6;
+            padding: 15px;
+            background: #f8fafc;
+            border-radius: 6px;
+            border-left: 4px solid #f97316;
+        }
+
+        .footer {
+            margin-top: 30px;
+            padding: 15px;
+            text-align: center;
+            font-size: 9px;
+            color: #718096;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .page-break {
+            page-break-before: always;
+        }
+
+        .no-break {
+            page-break-inside: avoid;
+        }
+
+        .summary-stats {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            margin: 15px 0;
+            page-break-inside: avoid !important;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 10px;
+            background: #f8fafc;
+            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+            page-break-inside: avoid !important;
+        }
+
+        .stat-value {
+            font-size: 16px;
+            font-weight: 700;
+            color: #2d3748;
+        }
+
+        .stat-label {
+            font-size: 9px;
+            color: #4a5568;
+            text-transform: uppercase;
+            margin-top: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Ranking Mensal Detalhado da Equipa</h1>
+        <div class="subtitle">RIBBAI • Junho 2026 • Metodologia e Justificações</div>
+    </div>
+
+    <!-- Resumo Executivo -->
+    <div class="section">
+        <h2>📊 Resumo Executivo</h2>
+        <div class="summary-stats">
+            <div class="stat-box">
+                <div class="stat-value">27</div>
+                <div class="stat-label">Relatórios Analisados</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value">9</div>
+                <div class="stat-label">Colaboradores</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value">3.076</div>
+                <div class="stat-label">Pontos Distribuídos</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value">146h58</div>
+                <div class="stat-label">Horas Extra</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value">30</div>
+                <div class="stat-label">Dias do Período</div>
+            </div>
+        </div>
+        
+        <p>Este relatório apresenta a metodologia detalhada de avaliação da equipa RIBBAI durante o mês de Junho de 2026, incluindo critérios específicos, exemplos práticos e justificações individuais para cada colaborador.</p>
+    </div>
+
+    <!-- Sistema de Pontuação -->
+    <div class="section">
+        <h2>🎯 Sistema de Pontuação Detalhado</h2>
+        
+        <h3>Estrutura de Avaliação</h3>
+        <p>Cada colaborador é avaliado diariamente com base em 4 categorias principais, com pontuação máxima de <span class="highlight">60 pontos por dia</span>:</p>
+        
+        <div class="criteria-grid">
+            <div class="criteria-card">
+                <div class="criteria-title">🔧 Execução Operacional</div>
+                <div class="criteria-points">Até 20 pontos/dia</div>
+                <div class="criteria-desc">
+                    Responsabilidade assumida, desempenho no setor, abertura, coordenação local e capacidade de resposta durante o serviço.
+                </div>
+            </div>
+            
+            <div class="criteria-card">
+                <div class="criteria-title">⭐ Qualidade e Consistência</div>
+                <div class="criteria-points">Até 12 pontos/dia</div>
+                <div class="criteria-desc">
+                    Serviço sem falhas relevantes, boa comunicação, recuperação de inconsistências e experiência do cliente.
+                </div>
+            </div>
+            
+            <div class="criteria-card">
+                <div class="criteria-title">🎯 Adaptação ao Modelo de Setores</div>
+                <div class="criteria-points">Até 16 pontos/dia</div>
+                <div class="criteria-desc">
+                    Foco no setor atribuído, disciplina operacional e comunicação antes de intervir noutra zona.
+                </div>
+            </div>
+            
+            <div class="criteria-card">
+                <div class="criteria-title">🤝 Compromisso e Colaboração</div>
+                <div class="criteria-points">Até 12 pontos/dia</div>
+                <div class="criteria-desc">
+                    Horas extra, apoio a colegas, fecho, stock, manutenção e disponibilidade em dias críticos.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Critérios Específicos -->
+    <div class="section">
+        <h2>📝 Critérios Específicos de Avaliação</h2>
+        
+        <h3>🔧 Execução Operacional (0-20 pontos)</h3>
+        <div class="example-box">
+            <div class="example-title">Como são atribuídos os pontos:</div>
+            <ul class="example-list">
+                <li><strong>18-20 pontos:</strong> Liderança de setor, abertura responsável, coordenação exemplar</li>
+                <li><strong>15-17 pontos:</strong> Desempenho sólido, cumprimento de responsabilidades, boa gestão</li>
+                <li><strong>12-14 pontos:</strong> Desempenho adequado, algumas responsabilidades assumidas</li>
+                <li><strong>7-11 pontos:</strong> Desempenho básico, apoio operacional</li>
+                <li><strong>0-6 pontos:</strong> Desempenho insuficiente ou problemas operacionais</li>
+            </ul>
+        </div>
+
+        <h3>⭐ Qualidade e Consistência (0-12 pontos)</h3>
+        <div class="example-box">
+            <div class="example-title">Exemplos práticos:</div>
+            <ul class="example-list">
+                <li><strong>10-12 pontos:</strong> Serviço impecável, sem erros, comunicação excelente</li>
+                <li><strong>8-9 pontos:</strong> Boa qualidade, pequenas inconsistências rapidamente corrigidas</li>
+                <li><strong>5-7 pontos:</strong> Qualidade adequada, alguns pontos de melhoria</li>
+                <li><strong>0-4 pontos:</strong> Problemas de qualidade, erros significativos</li>
+            </ul>
+        </div>
+
+        <h3>🎯 Adaptação ao Modelo de Setores (0-16 pontos)</h3>
+        <div class="example-box">
+            <div class="example-title">Critérios de avaliação:</div>
+            <ul class="example-list">
+                <li><strong>14-16 pontos:</strong> Excelente disciplina de setor, comunicação exemplar</li>
+                <li><strong>10-13 pontos:</strong> Boa adaptação, respeita os setores na maioria das vezes</li>
+                <li><strong>6-9 pontos:</strong> Adaptação em curso, ainda algumas interferências</li>
+                <li><strong>1-5 pontos:</strong> Dificuldades na adaptação, interferências frequentes</li>
+                <li><strong>0 pontos:</strong> Não aplicável (dias flexíveis) ou não cumprimento</li>
+            </ul>
+        </div>
+
+        <h3>🤝 Compromisso e Colaboração (0-12 pontos)</h3>
+        <div class="example-box">
+            <div class="example-title">Fatores considerados:</div>
+            <ul class="example-list">
+                <li><strong>Horas Extra:</strong> 10-12 pontos para + de 1h, 8-9 pts para 30min-1h, 4-6 pts para até 30min</li>
+                <li><strong>Fecho:</strong> 6-8 pontos adicionais por participação ativa no fecho</li>
+                <li><strong>Abertura:</strong> 4-6 pontos por responsabilidade na abertura</li>
+                <li><strong>Apoio à Equipa:</strong> 2-4 pontos por apoio especial a colegas</li>
+                <li><strong>Manutenção/Stock:</strong> 2-4 pontos por tarefas adicionais</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Ranking Final -->
+    <div class="section page-break">
+        <h2>🏆 Ranking Final com Justificações</h2>
+        
+        <table class="ranking-table">
+            <thead>
+                <tr>
+                    <th>Pos.</th>
+                    <th>Colaborador</th>
+                    <th>Total</th>
+                    <th>Execução</th>
+                    <th>Qualidade</th>
+                    <th>Modelo</th>
+                    <th>Compromisso</th>
+                    <th>Média/Dia</th>
+                    <th>Dias</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="rank-number">1º</td>
+                    <td class="member-name">Pablo</td>
+                    <td><strong>568</strong></td>
+                    <td>320</td>
+                    <td>128</td>
+                    <td>85</td>
+                    <td>35</td>
+                    <td>28.4</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">2º</td>
+                    <td class="member-name">Matilde</td>
+                    <td><strong>551</strong></td>
+                    <td>295</td>
+                    <td>135</td>
+                    <td>78</td>
+                    <td>43</td>
+                    <td>26.2</td>
+                    <td>21</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">3º</td>
+                    <td class="member-name">Carolina</td>
+                    <td><strong>535</strong></td>
+                    <td>285</td>
+                    <td>95</td>
+                    <td>45</td>
+                    <td>110</td>
+                    <td>26.8</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">4º</td>
+                    <td class="member-name">Bruno</td>
+                    <td><strong>514</strong></td>
+                    <td>275</td>
+                    <td>105</td>
+                    <td>65</td>
+                    <td>69</td>
+                    <td>25.7</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">5º</td>
+                    <td class="member-name">Lil</td>
+                    <td><strong>454</strong></td>
+                    <td>235</td>
+                    <td>88</td>
+                    <td>55</td>
+                    <td>76</td>
+                    <td>21.6</td>
+                    <td>21</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">6º</td>
+                    <td class="member-name">Marta</td>
+                    <td><strong>286</strong></td>
+                    <td>180</td>
+                    <td>65</td>
+                    <td>15</td>
+                    <td>26</td>
+                    <td>23.8</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">7º</td>
+                    <td class="member-name">Lee</td>
+                    <td><strong>133</strong></td>
+                    <td>85</td>
+                    <td>40</td>
+                    <td>8</td>
+                    <td>0</td>
+                    <td>19.0</td>
+                    <td>7</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">8º</td>
+                    <td class="member-name">Diogo</td>
+                    <td><strong>50</strong></td>
+                    <td>35</td>
+                    <td>15</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>10.0</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">9º</td>
+                    <td class="member-name">Sofia</td>
+                    <td><strong>20</strong></td>
+                    <td>16</td>
+                    <td>4</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>6.7</td>
+                    <td>3</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Análise Individual Detalhada -->
+    <div class="section page-break">
+        <h2>👥 Análise Individual Detalhada</h2>
+        
+        <div class="member-card no-break">
+            <div class="member-header">
+                <div class="member-title">🥇 1º Lugar: Pablo</div>
+                <div class="member-total">568 pontos</div>
+            </div>
+            <div class="detailed-breakdown">
+                <div class="breakdown-card">
+                    <div class="breakdown-title">Execução</div>
+                    <div class="breakdown-value">320</div>
+                    <div class="breakdown-max">16.0/dia</div>
+                </div>
+                <div class="breakdown-card">
+                    <div class="breakdown-title">Qualidade</div>
+                    <div class="breakdown-value">128</div>
+                    <div class="breakdown-max">6.4/dia</div>
+                </div>
+                <div class="breakdown-card">
+                    <div class="breakdown-title">Modelo</div>
+                    <div class="breakdown-value">85</div>
+                    <div class="breakdown-max">4.3/dia</div>
+                </div>
+                <div class="breakdown-card">
+                    <div class="breakdown-title">Compromisso</div>
+                    <div class="breakdown-value">35</div>
+                    <div class="breakdown-max">1.8/dia</div>
+                </div>
+            </div>
+            <div class="justification">
+                <strong>Justificação da Liderança:</strong> Pablo conquistou o primeiro lugar através de uma execução operacional consistentemente excelente (16.0 pts/dia), demonstrando liderança natural e responsabilidade. Destacou-se na gestão de setores, abertura responsável e capacidade de coordenação. Embora tenha poucas horas extra, a sua qualidade operacional compensa. Pontos altos em abertura, gestão de equipas e manutenção da calma em momentos de pressão.
+            </div>
+        </div>
+
+        <div class="member-card no-break">
+            <div class="member-header">
+                <div class="member-title">🥈 2º Lugar: Matilde</div>
+                <div class="member-total">551 pontos</div>
+            </div>
+            <div class="detailed-breakdown">
+                <div class="breakdown-card">
+                    <div class="breakdown-title">Execução</div>
+                    <div class="breakdown-value">295</div>
+                    <div class="breakdown-max">14.0/dia</div>
+                </div>
+                <div class="breakdown-card">
+                    <div class="breakdown-title">Qualidade</div>
+                    <div class="breakdown-value">135</div>
+                    <div class="breakdown-max">6.4/dia</div>
+                </div>
+                <div class="breakdown-card">
+                    <div class="breakdown-title">Modelo</div>
+                    <div class="breakdown-value">78</div>
+                    <div class="breakdown-max">3.7/dia</div>
+                </div>
+                <div class="breakdown-card">
+                    <div class="breakdown-title">Compromisso</div>
+                    <div class="breakdown-value">43</div>
+                    <div class="breakdown-max">2.0/dia</div>
+                </div>
+            </div>
+            <div class="justification">
+                <strong>Subida Notable:</strong> Matilde subiu para o segundo lugar destacando-se na qualidade de serviço (6.4 pts/dia) e adaptação ao modelo de setores. Especialista na gestão da sala interior, demonstrou consistência e versatilidade. Participação ativa em fechos e boa evolução na comunicação. A sua pontuação equilibrada em todas as categorias reflete um desempenho sólido e confiável.
+            </div>
+        </div>
+
+        <div class="member-card no-break">
+            <div class="member-header">
+                <div class="member-title">🥉 3º Lugar: Carolina</div>
+                <div class="member-total">535 pontos</div>
+            </div>
+            <div class="detailed-breakdown">
+                <div class="breakdown-card">
+                    <div class="breakdown-title">Execução</div>
+                    <div class="breakdown-value">285</div>
+                    <div class="breakdown-max">14.3/dia</div>
+                </div>
+                <div class="breakdown-card">
+                    <div class="breakdown-title">Qualidade</div>
+                    <div class="breakdown-value">95</div>
+                    <div class="breakdown-max">4.8/dia</div>
+                </div>
+                <div class="breakdown-card">
+                    <div class="breakdown-title">Modelo</div>
+                    <div class="breakdown-value">45</div>
+                    <div class="breakdown-max">2.3/dia</div>
+                </div>
+                <div class="breakdown-card">
+                    <div class="breakdown-title">Compromisso</div>
+                    <div class="breakdown-value">110</div>
+                    <div class="breakdown-max">5.5/dia</div>
+                </div>
+            </div>
+            <div class="justification">
+                <strong>Líder em Compromisso:</strong> Carolina destacou-se pelo compromisso excepcional (5.5 pts/dia), liderando em horas extra (28h totais). Boa execução operacional mas com oportunidades de melhoria na qualidade de serviço e adaptação ao modelo. A sua dedicação através das horas extra e participação ativa nos fechos demonstra forte compromisso com a equipa.
+            </div>
+        </div>
+
+        <div class="member-card no-break">
+            <div class="member-header">
+                <div class="member-title">4º Lugar: Bruno</div>
+                <div class="member-total">514 pontos</div>
+            </div>
+            <div class="detailed-breakdown">
+                <div class="breakdown-card">
+                    <div class="breakdown-title">Execução</div>
+                    <div class="breakdown-value">275</div>
+                    <div class="breakdown-max">13.8/dia</div>
+                </div>
+                <div class="breakdown-card">
+                    <div class="breakdown-title">Qualidade</div>
+                    <div class="breakdown-value">105</div>
+                    <div class="breakdown-max">5.3/dia</div>
+                </div>
+                <div class="breakdown-card">
+                    <div class="breakdown-title">Modelo</div>
+                    <div class="breakdown-value">65</div>
+                    <div class="breakdown-max">3.3/dia</div>
+                </div>
+                <div class="breakdown-card">
+                    <div class="breakdown-title">Compromisso</div>
+                    <div class="breakdown-value">69</div>
+                    <div class="breakdown-max">3.5/dia</div>
+                </div>
+            </div>
+            <div class="justification">
+                <strong>Evolução Consistente:</strong> Bruno mostrou evolução na adaptação ao modelo e coordenação operacional. Destaque como runner e na gestão de equipas durante períodos de pressão. Pontuação equilibrada em todas as categorias com potencial para crescimento. Boa capacidade de liderança operacional e apoio aos colegas.
+            </div>
+        </div>
+
+        <div class="member-card no-break">
+            <div class="member-header">
+                <div class="member-title">5º Lugar: Lil</div>
+                <div class="member-total">454 pontos</div>
+            </div>
+            <div class="detailed-breakdown">
+                <div class="breakdown-card">
+                    <div class="breakdown-title">Execução</div>
+                    <div class="breakdown-value">235</div>
+                    <div class="breakdown-max">11.2/dia</div>
+                </div>
+                <div class="breakdown-card">
+                    <div class="breakdown-title">Qualidade</div>
+                    <div class="breakdown-value">88</div>
+                    <div class="breakdown-max">4.2/dia</div>
+                </div>
+                <div class="breakdown-card">
+                    <div class="breakdown-title">Modelo</div>
+                    <div class="breakdown-value">55</div>
+                    <div class="breakdown-max">2.6/dia</div>
+                </div>
+                <div class="breakdown-card">
+                    <div class="breakdown-title">Compromisso</div>
+                    <div class="breakdown-value">76</div>
+                    <div class="breakdown-max">3.6/dia</div>
+                </div>
+            </div>
+            <div class="justification">
+                <strong>Versatilidade Operacional:</strong> Lil demonstrou versatilidade, trabalhando em múltiplas funções (gestão de porta, setores diversos, abertura e fecho). Boa participação em horas extra e compromisso com a equipa. Oportunidade de crescimento na execução operacional e qualidade de serviço.
+            </div>
+        </div>
+    </div>
+
+    <!-- Conclusões e Recomendações -->
+    <div class="section">
+        <h2>📈 Conclusões e Recomendações</h2>
+        
+        <h3>🎯 Pontos Fortes da Equipa</h3>
+        <ul>
+            <li><strong>Liderança Consistente:</strong> Pablo manteve excelência operacional durante todo o mês</li>
+            <li><strong>Evolução Notable:</strong> Matilde subiu para 2º lugar com melhoria em todas as áreas</li>
+            <li><strong>Compromisso Excecional:</strong> Carolina lidera em dedicação com 28h de horas extra</li>
+            <li><strong>Adaptação ao Modelo:</strong> Equipa consolidou o sistema de setores</li>
+            <li><strong>Trabalho de Equipa:</strong> Boa colaboração e entreajuda durante todo o mês</li>
+        </ul>
+
+        <h3>🔧 Áreas de Melhoria</h3>
+        <ul>
+            <li><strong>Qualidade de Serviço:</strong> Alguns colaboradores podem melhorar a consistência</li>
+            <li><strong>Comunicação:</strong> Reforçar comunicação entre setores</li>
+            <li><strong>Desenvolvimento:</strong> Continuar formação dos colaboradores mais novos</li>
+            <li><strong>Equilibrio:</strong> Distribuir melhor as horas extra entre a equipa</li>
+        </ul>
+
+        <h3>🚀 Recomendações para Julho</h3>
+        <ul>
+            <li><strong>Reconhecimento:</strong> Valorizar publicamente os destaques do mês</li>
+            <li><strong>Desenvolvimento:</strong> Plano de formação para Lee e Diogo</li>
+            <li><strong>Rotação:</strong> Experiência em diferentes setores para crescimento</li>
+            <li><strong>Feedback:</strong> Sessões individuais com cada colaborador</li>
+        </ul>
+    </div>
+
+    <!-- Transparência e Fairness -->
+    <div class="section">
+        <h2>⚖️ Transparência e Equidade</h2>
+        
+        <h3>Como Garantimos a Equidade</h3>
+        <ul class="example-list">
+            <li><strong>Critérios Objetivos:</strong> Todos os colaboradores são avaliados pelos mesmos critérios</li>
+            <li><strong>Base Diária:</strong> Avaliação feita dia a dia, baseada em relatórios operacionais</li>
+            <li><strong>Múltiplas Categorias:</strong> Não privilegia apenas uma área de desempenho</li>
+            <li><strong>Contexto Considerado:</strong> Dias de folga ou ausência não penalizam</li>
+            <li><strong>Média por Dia:</strong> Colaboradores com menos dias não são prejudicados</li>
+        </ul>
+
+        <h3>Limitações do Sistema</h3>
+        <ul class="example-list">
+            <li>Baseado em relatórios diários - pode não capturar todos os detalhes</li>
+            <li>Avaliação subjetiva em algumas categorias</li>
+            <li>Peso das categorias pode ser ajustado conforme feedback da equipa</li>
+            <li>Sistema em evolução - melhorias contínuas são implementadas</li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        <p><strong>Documento Gerado Automaticamente</strong><br>
+        Sistema RIBBAI OPS • Junho 2026 • Relatório Detalhado<br>
+        Gerado em 03/07/2026 às 17:25 • Baseado em 27 relatórios operacionais diários</p>
+    </div>
+</body>
+</html>

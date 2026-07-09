@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Relatório Diário Operacional - 02-07-2026</title>
+    <style>
+      @page { size: A4; margin: 16mm 14mm 18mm; }
+      :root { --ink:#172033; --muted:#657085; --line:#d9dee8; --soft:#f6f7fa; --warm:#fff7ed; --brand:#f97316; --brand-dark:#9a3412; --green:#15803d; --blue:#1d4ed8; --violet:#6d28d9; --red:#dc2626; --orange:#ea580c; }
+      * { box-sizing:border-box; }
+      body { margin:0; background:#fff; color:var(--ink); font-family:Inter,ui-sans-serif,system-ui,sans-serif; font-size:10pt; line-height:1.5; }
+      h1,h2,h3,p { margin-top:0; }
+      h1 { font-size:34pt; line-height:1.02; letter-spacing:-0.04em; margin-bottom:10pt; }
+      h2 { border-bottom:1px solid var(--line); font-size:15pt; margin:22pt 0 10pt; padding-bottom:5pt; }
+      h3 { color:var(--brand-dark); font-size:11pt; margin:13pt 0 5pt; }
+      ul { margin:4pt 0 10pt 15pt; padding:0; }
+      table { border-collapse:collapse; margin:8pt 0 14pt; width:100%; }
+      th,td { border:1px solid var(--line); padding:6pt 7pt; text-align:left; vertical-align:top; }
+      th { background:var(--soft); font-size:8pt; letter-spacing:0.06em; text-transform:uppercase; }
+      .cover { background:radial-gradient(circle at top right,rgba(249,115,22,0.18),transparent 35%),linear-gradient(135deg,#fff7ed 0%,#fff 42%,#f8fafc 100%); border:1px solid #fed7aa; border-radius:22px; margin-bottom:16pt; min-height:248mm; padding:24mm 18mm; }
+      .eyebrow { color:var(--brand); font-size:8.5pt; font-weight:800; letter-spacing:0.18em; margin-bottom:14pt; text-transform:uppercase; }
+      .subtitle { color:var(--muted); font-size:14pt; line-height:1.45; max-width:150mm; }
+      .meta-panel { background:rgba(255,255,255,0.82); border:1px solid #fed7aa; border-radius:16px; margin-top:28pt; padding:14pt; }
+      .meta-grid { display:grid; gap:10pt; grid-template-columns:repeat(3,1fr); }
+      .meta-item { border-left:3px solid var(--brand); padding-left:8pt; }
+      .meta-label { color:var(--muted); display:block; font-size:7.5pt; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; }
+      .meta-value { display:block; font-size:10.5pt; font-weight:700; margin-top:2pt; }
+      .page-break { break-before:page; }
+      .kpi-grid { display:grid; gap:8pt; grid-template-columns:repeat(3,1fr); margin:12pt 0 16pt; }
+      .kpi { background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:10pt; }
+      .kpi-label { color:var(--muted); display:block; font-size:7.5pt; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; }
+      .kpi-value { display:block; font-size:22pt; font-weight:800; margin-top:3pt; }
+      .kpi-note { color:var(--muted); display:block; font-size:8pt; margin-top:2pt; }
+      .good { color:var(--green); }
+      .average { color:var(--brand); }
+      .poor { color:var(--red); }
+      .high { color:var(--orange); }
+      .callout { background:var(--warm); border-left:4px solid var(--brand); border-radius:12px; margin:10pt 0 14pt; padding:11pt 13pt; }
+      .callout-success { background:#f0fdf4; border-left-color:var(--green); }
+      .callout-warning { background:#fef3c7; border-left-color:var(--brand); }
+      .callout-danger { background:#fef2f2; border-left-color:var(--red); }
+      .panel-grid { display:grid; gap:9pt; grid-template-columns:repeat(2,1fr); }
+      .panel { border:1px solid var(--line); border-radius:12px; break-inside:avoid; padding:10pt; }
+      .badge { border-radius:999px; display:inline-block; font-size:7.5pt; font-weight:800; margin-bottom:5pt; padding:3pt 7pt; text-transform:uppercase; }
+      .badge-green { background:#dcfce7; color:var(--green); }
+      .badge-blue { background:#dbeafe; color:var(--blue); }
+      .badge-violet { background:#ede9fe; color:var(--violet); }
+      .badge-orange { background:#fed7aa; color:var(--brand-dark); }
+      .badge-red { background:#fee2e2; color:var(--red); }
+      .footer-note { border-top:1px solid var(--line); color:var(--muted); font-size:8.5pt; margin-top:18pt; padding-top:7pt; }
+    </style>
+  </head>
+  <body>
+    <section class="cover">
+      <div class="eyebrow">RIBBAI OPS · Relatório Diário Operacional</div>
+      <h1>Registo Diário Operacional</h1>
+      <p class="subtitle">Apresentação diária à gestão sobre a operação Front of House do restaurante RIBBAI.</p>
+      <div class="meta-panel">
+        <div class="meta-grid">
+          <div class="meta-item"><span class="meta-label">Data</span><span class="meta-value">02-07-2026</span></div>
+          <div class="meta-item"><span class="meta-label">Dia</span><span class="meta-value">Quinta-feira</span></div>
+          <div class="meta-item"><span class="meta-label">Autor</span><span class="meta-value">Filipe Catalão</span></div>
+          <div class="meta-item"><span class="meta-label">Restaurante</span><span class="meta-value">RIBBAI</span></div>
+          <div class="meta-item"><span class="meta-label">Tipo</span><span class="meta-value">Relatório Diário Operacional</span></div>
+          <div class="meta-item"><span class="meta-label">Estado</span><span class="meta-value">Registado</span></div>
+        </div>
+      </div>
+      <div class="kpi-grid">
+        <div class="kpi"><span class="kpi-label">Pressão Operacional</span><span class="kpi-value high">9/10</span><span class="kpi-note">Muito elevada</span></div>
+        <div class="kpi"><span class="kpi-label">Temperaturas</span><span class="kpi-value high">Extremas</span><span class="kpi-note">Impacto na afluência</span></div>
+        <div class="kpi"><span class="kpi-label">Lotação Máxima</span><span class="kpi-value high">4h00</span><span class="kpi-note">12h30-16h30</span></div>
+      </div>
+      <div class="kpi-grid">
+        <div class="kpi"><span class="kpi-label">Serviço ao Cliente</span><span class="kpi-value good">9/10</span><span class="kpi-note">Muito bom</span></div>
+        <div class="kpi"><span class="kpi-label">Gestão Incidentes</span><span class="kpi-value good">10/10</span><span class="kpi-note">Excelente</span></div>
+        <div class="kpi"><span class="kpi-label">Horas Extra</span><span class="kpi-value high">8h00</span><span class="kpi-note">Toda a equipa</span></div>
+      </div>
+      <div class="callout callout-danger"><strong>Incidente grave:</strong> comportamento inadequado de cliente com duas colaboradoras. Situação gerida com expulsão imediata e chamada às autoridades.</div>
+    </section>
+
+    <section class="page-break">
+      <h2>Síntese Executiva</h2>
+      <p>Quinta-feira com pressão operacional muito elevada devido a temperaturas extremas. Manhã condicionada por tarefas acumuladas do fecho anterior. Lotação máxima durante 4 horas consecutivas (esplanada e sala). Incidente grave com cliente gerido de forma exemplar.</p>
+      <h2>Equipa Em Serviço</h2>
+      <div class="panel-grid">
+        <div class="panel"><span class="badge badge-orange">Carolina</span><ul><li>Abertura com Pablo.</li><li>Tarefas acumuladas da manhã.</li><li>Pausa reduzida + 1h10m extra.</li></ul></div>
+        <div class="panel"><span class="badge badge-orange">Pablo</span><ul><li>Abertura com Carolina.</li><li>Trabalhos pendentes do dia anterior.</li><li>Pausa reduzida + 1h10m extra.</li></ul></div>
+        <div class="panel"><span class="badge badge-blue">Sofia</span><ul><li>Entrada 12h00.</li><li>Apoio pré-lotação máxima.</li><li>Gestão de fluxo intenso.</li></ul></div>
+        <div class="panel"><span class="badge badge-red">Bruno</span><ul><li>Entrada 12h30.</li><li>Período almoço extremo.</li><li>Pausa reduzida + 2h00m extra.</li></ul></div>
+        <div class="panel"><span class="badge badge-red">Matilde</span><ul><li>Entrada 12h30.</li><li>Resistência sob pressão.</li><li>Pausa reduzida + 2h00m extra.</li></ul></div>
+        <div class="panel"><span class="badge badge-violet">Diogo</span><ul><li>Entrada 12h30.</li><li>Reforço para lotação máxima.</li><li>Fecho + 1h40m extra.</li></ul></div>
+      </div>
+    </section>
+
+    <section class="page-break">
+      <h2>Organização Operacional</h2>
+      <p>Carolina e Pablo asseguraram abertura, mas manhã consumida por tarefas acumuladas do fecho anterior: reposição de consumíveis, limpezas pendentes, organização do espaço. Sofia entrou às 12h00, seguida às 12h30 por Bruno, Matilde e Diogo. <strong>Ausência de setores aumentou significativamente o desgaste</strong> durante pressão extrema.</p>
+      <h2>Movimento do Dia</h2>
+      <ul>
+        <li><strong>Temperaturas extremamente elevadas</strong> atraíram elevado número de pessoas à praia.</li>
+        <li>Um dos <strong>períodos de almoço mais intensos</strong> das últimas semanas.</li>
+        <li>Às 12h30 esplanada já completamente lotada.</li>
+        <li>Lotação máxima mantida até 16h30 (4 horas consecutivas).</li>
+        <li>Sala interior também com lotação completa simultaneamente.</li>
+        <li>Capacidade totalmente esgotada durante várias horas.</li>
+      </ul>
+    </section>
+
+    <section class="page-break">
+      <h2>Incidente Grave</h2>
+      <div class="callout callout-danger"><strong>Classificação:</strong> Grave - Assédio sexual no local de trabalho</div>
+      <p><strong>Descrição:</strong> Cliente adotou comportamento completamente inaceitável com duas colaboradoras da Sala, agarrando-lhes a roupa e apalpando-as sem consentimento.</p>
+      <p><strong>Ação tomada:</strong></p>
+      <ul>
+        <li>Cliente imediatamente convidado a abandonar o estabelecimento</li>
+        <li>Solicitada presença das autoridades policiais</li>
+        <li>Situação resolvida sem medidas adicionais necessárias</li>
+      </ul>
+      <div class="callout callout-success"><strong>Política confirmada:</strong> Tolerância zero para comportamentos que comprometam segurança, dignidade ou bem-estar dos colaboradores.</div>
+      <h2>Desempenho da Equipa</h2>
+      <p>Apesar da pressão extrema, resposta muito competente:</p>
+      <ul>
+        <li>✅ Sem erros operacionais relevantes</li>
+        <li>✅ Serviço fluído mantido</li>
+        <li>✅ Todos os clientes devidamente acompanhados</li>
+        <li>✅ Capacidade de resistência e adaptação demonstrada</li>
+      </ul>
+      <div class="callout callout-warning"><strong>Impacto da ausência de setores:</strong> maior desgaste físico, confusão operacional e aumento de deslocações desnecessárias.</div>
+    </section>
+
+    <section class="page-break">
+      <h2>Horas Extra</h2>
+      <table>
+        <thead><tr><th>Colaborador</th><th>Registo</th><th>Motivo</th></tr></thead>
+        <tbody>
+          <tr><td>Bruno</td><td>2h00 de horas extra</td><td>Pausa reduzida e fecho tardio</td></tr>
+          <tr><td>Matilde</td><td>2h00 de horas extra</td><td>Pausa reduzida e fecho tardio</td></tr>
+          <tr><td>Diogo</td><td>1h40 de horas extra</td><td>Fecho operacional</td></tr>
+          <tr><td>Carolina</td><td>1h10 de horas extra</td><td>Pausa reduzida e prolongamento do turno</td></tr>
+          <tr><td>Pablo</td><td>1h10 de horas extra</td><td>Pausa reduzida e prolongamento do turno</td></tr>
+        </tbody>
+      </table>
+      <div class="callout"><strong>Total da equipa:</strong> 8h00 de horas extra devido à pressão operacional elevada e fecho tardio.</div>
+      <h2>Problemas Identificados</h2>
+      <div class="callout callout-warning"><strong>Organização:</strong> ausência de setores reduziu significativamente eficiência em dia de pressão extrema. Maior desgaste físico, deslocações desnecessárias, dificuldade de coordenação.</div>
+      <div class="callout"><strong>Efeito cascata:</strong> tarefas acumuladas do fecho anterior condicionaram preparação normal da operação matinal.</div>
+    </section>
+
+    <section class="page-break">
+      <h2>Conclusão</h2>
+      <p>Segundo dia de julho confirmou elevada intensidade da época alta, agravada por temperaturas extremas. Apesar do início condicionado e almoço extremamente exigente, equipa respondeu com elevado profissionalismo durante período prolongado de lotação máxima.</p>
+      <p>Incidente grave foi gerido de forma rápida, firme e adequada, garantindo proteção da equipa e reforçando compromisso com ambiente de trabalho seguro.</p>
+      <p>Evidência da crescente maturidade operacional da equipa, capaz de responder a pressão extrema sem comprometer qualidade do serviço.</p>
+    </section>
+
+    <section class="page-break">
+      <h2>Classificação Para O Sistema RIBBAI OPS</h2>
+      <table>
+        <thead><tr><th>Categoria</th><th>Registo</th></tr></thead>
+        <tbody>
+          <tr><td>Operational Notes</td><td>Pressão muito elevada por temperaturas extremas; manhã condicionada por tarefas acumuladas; lotação máxima 4h consecutivas (12h30-16h30); um dos almoços mais intensos; ausência de setores aumentou desgaste; 8h00 horas extra.</td></tr>
+          <tr><td>Service Improvement</td><td>Implementação sistemática de setores em dias de alta ocupação prevista - redução desgaste, melhoria coordenação.</td></tr>
+          <tr><td>Incident Input</td><td>GRAVE: Assédio sexual - cliente agarrou e apalpou duas colaboradoras. Ação: expulsão imediata + autoridades. Política tolerância zero confirmada.</td></tr>
+          <tr><td>Team Feedback Input</td><td>Carolina/Pablo: abertura condicionada, prolongamento com pausa reduzida; Sofia: apoio pré-lotação; Bruno/Matilde/Diogo: almoço extremo com lotação total; equipa demonstrou competência e resistência.</td></tr>
+          <tr><td>Overtime Input</td><td>8h00: Bruno 2h00, Matilde 2h00, Diogo 1h40, Carolina 1h10, Pablo 1h10.</td></tr>
+          <tr><td>Management Notes</td><td>Implementar setores sistematicamente; monitorizar impacto fechos incompletos; reforçar política tolerância zero; estratégias para temperaturas extremas; avaliar reforço em dias de calor.</td></tr>
+          <tr><td>Weather Context</td><td>Temperaturas extremas com impacto directo na procura; lotação máxima 4h consecutivas.</td></tr>
+        </tbody>
+      </table>
+      <p class="footer-note">Documento gerado para apresentação diária à gestão. Fonte operacional: Registo Diário Operacional de 02-07-2026. Autor: Filipe Catalão.</p>
+    </section>
+  </body>
+</html>

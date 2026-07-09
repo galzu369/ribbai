@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Relatório Diário Operacional - 25-06-2026</title>
+    <style>
+      @page { size: A4; margin: 16mm 14mm 18mm; }
+      :root { --ink:#172033; --muted:#657085; --line:#d9dee8; --soft:#f6f7fa; --warm:#fff7ed; --brand:#f97316; --brand-dark:#9a3412; --green:#15803d; --blue:#1d4ed8; --violet:#6d28d9; }
+      * { box-sizing:border-box; }
+      body { margin:0; background:#fff; color:var(--ink); font-family:Inter,ui-sans-serif,system-ui,sans-serif; font-size:10pt; line-height:1.5; }
+      h1,h2,h3,p { margin-top:0; }
+      h1 { font-size:34pt; line-height:1.02; letter-spacing:-0.04em; margin-bottom:10pt; }
+      h2 { border-bottom:1px solid var(--line); font-size:15pt; margin:22pt 0 10pt; padding-bottom:5pt; }
+      h3 { color:var(--brand-dark); font-size:11pt; margin:13pt 0 5pt; }
+      ul { margin:4pt 0 10pt 15pt; padding:0; }
+      table { border-collapse:collapse; margin:8pt 0 14pt; width:100%; }
+      th,td { border:1px solid var(--line); padding:6pt 7pt; text-align:left; vertical-align:top; }
+      th { background:var(--soft); font-size:8pt; letter-spacing:0.06em; text-transform:uppercase; }
+      .cover { background:radial-gradient(circle at top right,rgba(249,115,22,0.18),transparent 35%),linear-gradient(135deg,#fff7ed 0%,#fff 42%,#f8fafc 100%); border:1px solid #fed7aa; border-radius:22px; margin-bottom:16pt; min-height:248mm; padding:24mm 18mm; }
+      .eyebrow { color:var(--brand); font-size:8.5pt; font-weight:800; letter-spacing:0.18em; margin-bottom:14pt; text-transform:uppercase; }
+      .subtitle { color:var(--muted); font-size:14pt; line-height:1.45; max-width:150mm; }
+      .meta-panel { background:rgba(255,255,255,0.82); border:1px solid #fed7aa; border-radius:16px; margin-top:28pt; padding:14pt; }
+      .meta-grid { display:grid; gap:10pt; grid-template-columns:repeat(3,1fr); }
+      .meta-item { border-left:3px solid var(--brand); padding-left:8pt; }
+      .meta-label { color:var(--muted); display:block; font-size:7.5pt; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; }
+      .meta-value { display:block; font-size:10.5pt; font-weight:700; margin-top:2pt; }
+      .page-break { break-before:page; }
+      .kpi-grid { display:grid; gap:8pt; grid-template-columns:repeat(3,1fr); margin:12pt 0 16pt; }
+      .kpi { background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:10pt; }
+      .kpi-label { color:var(--muted); display:block; font-size:7.5pt; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; }
+      .kpi-value { display:block; font-size:22pt; font-weight:800; margin-top:3pt; }
+      .kpi-note { color:var(--muted); display:block; font-size:8pt; margin-top:2pt; }
+      .good { color:var(--green); }
+      .callout { background:var(--warm); border-left:4px solid var(--brand); border-radius:12px; margin:10pt 0 14pt; padding:11pt 13pt; }
+      .callout-success { background:#f0fdf4; border-left-color:var(--green); }
+      .panel-grid { display:grid; gap:9pt; grid-template-columns:repeat(2,1fr); }
+      .panel { border:1px solid var(--line); border-radius:12px; break-inside:avoid; padding:10pt; }
+      .badge { border-radius:999px; display:inline-block; font-size:7.5pt; font-weight:800; margin-bottom:5pt; padding:3pt 7pt; text-transform:uppercase; }
+      .badge-green { background:#dcfce7; color:var(--green); }
+      .badge-blue { background:#dbeafe; color:var(--blue); }
+      .badge-violet { background:#ede9fe; color:var(--violet); }
+      .footer-note { border-top:1px solid var(--line); color:var(--muted); font-size:8.5pt; margin-top:18pt; padding-top:7pt; }
+    </style>
+  </head>
+  <body>
+    <section class="cover">
+      <div class="eyebrow">RIBBAI OPS · Relatório Diário Operacional</div>
+      <h1>Registo Diário Operacional</h1>
+      <p class="subtitle">Apresentação diária à gestão sobre a operação Front of House do restaurante RIBBAI.</p>
+      <div class="meta-panel">
+        <div class="meta-grid">
+          <div class="meta-item"><span class="meta-label">Data</span><span class="meta-value">25-06-2026</span></div>
+          <div class="meta-item"><span class="meta-label">Dia</span><span class="meta-value">Quinta-feira</span></div>
+          <div class="meta-item"><span class="meta-label">Autor</span><span class="meta-value">Bruno</span></div>
+          <div class="meta-item"><span class="meta-label">Restaurante</span><span class="meta-value">RIBBAI</span></div>
+          <div class="meta-item"><span class="meta-label">Tipo</span><span class="meta-value">Relatório Diário Operacional</span></div>
+          <div class="meta-item"><span class="meta-label">Estado</span><span class="meta-value">Registado</span></div>
+        </div>
+      </div>
+      <div class="kpi-grid">
+        <div class="kpi"><span class="kpi-label">Volume Trabalho</span><span class="kpi-value good">3/10</span><span class="kpi-note">Chuva e baixa afluência</span></div>
+        <div class="kpi"><span class="kpi-label">Integração Sofia</span><span class="kpi-value good">9/10</span><span class="kpi-note">1.º dia na sala</span></div>
+        <div class="kpi"><span class="kpi-label">Qualidade Serviço</span><span class="kpi-value good">10/10</span><span class="kpi-note">Atendimento personalizado</span></div>
+      </div>
+      <div class="kpi-grid">
+        <div class="kpi"><span class="kpi-label">Experiência Cliente</span><span class="kpi-value good">9/10</span><span class="kpi-note">Gorjetas expressivas</span></div>
+        <div class="kpi"><span class="kpi-label">Coordenação</span><span class="kpi-value good">9/10</span><span class="kpi-note">Dia estável</span></div>
+        <div class="kpi"><span class="kpi-label">Horas Extra</span><span class="kpi-value good">1h40</span><span class="kpi-note">2 colaboradoras</span></div>
+      </div>
+      <div class="callout callout-success"><strong>Conclusão do dia:</strong> quinta-feira calma por condições meteorológicas adversas, com foco no atendimento, estreia positiva da Sofia e gorjetas expressivas apesar do baixo movimento.</div>
+    </section>
+
+    <section class="page-break">
+      <h2>Síntese Executiva</h2>
+      <p>Quinta-feira com céu nublado e chuva, resultando numa das jornadas mais fracas do mês. A equipa concentrou-se no atendimento personalizado, com destaque para a estreia muito positiva da Sofia e gorjetas expressivas para o volume registado.</p>
+      <h2>Equipa Em Serviço</h2>
+      <div class="panel-grid">
+        <div class="panel"><span class="badge badge-green">Lil</span><ul><li>Abertura com Bruno.</li><li>Preparação sem incidentes.</li><li>Apoio ao serviço.</li></ul></div>
+        <div class="panel"><span class="badge badge-blue">Bruno</span><ul><li>Abertura com Lil.</li><li>Preparação tranquila.</li><li>Coordenação e apoio ao serviço.</li></ul></div>
+        <div class="panel"><span class="badge badge-green">Diogo</span><ul><li>Apoio ao serviço.</li><li>Atitude positiva.</li><li>Evolução na integração.</li></ul></div>
+        <div class="panel"><span class="badge badge-green">Matilde</span><ul><li>Apoio operacional.</li><li>Foco no atendimento.</li><li>Fecho com saída tardia.</li><li>50 min de horas extra.</li></ul></div>
+        <div class="panel"><span class="badge badge-green">Carolina</span><ul><li>Apoio ao serviço.</li><li>Atendimento de qualidade.</li><li>Fecho com saída tardia.</li><li>50 min de horas extra.</li></ul></div>
+        <div class="panel"><span class="badge badge-violet">Sofia</span><ul><li>1.º dia na equipa da sala.</li><li>Boa aprendizagem e proatividade.</li><li>Excelente potencial de integração.</li></ul></div>
+      </div>
+    </section>
+
+    <section class="page-break">
+      <h2>Enquadramento Operacional</h2>
+      <p>Abertura por Lil e Bruno sem ocorrências. Condições meteorológicas adversas reduziram a afluência. Tarefas internas de manutenção já concluídas nos dias anteriores permitiram foco quase exclusivo no atendimento.</p>
+      <h2>Integração de Novo Elemento</h2>
+      <p>Sofia iniciou na equipa da sala num dia calmo, com boa capacidade de aprendizagem, proatividade, assertividade e facilidade em seguir instruções. Primeira impressão muito positiva.</p>
+      <h2>Operação do Dia</h2>
+      <ul>
+        <li>Uma das quintas-feiras mais fracas do mês em volume.</li>
+        <li>Atendimento de excelência com disponibilidade para acompanhar cada cliente.</li>
+        <li>Gorjetas expressivas para um dia com pouco movimento.</li>
+      </ul>
+      <h2>Incidentes</h2>
+      <p>Não foram registados incidentes operacionais, reclamações ou falhas relevantes.</p>
+    </section>
+
+    <section class="page-break">
+      <h2>Horas Extra</h2>
+      <table>
+        <thead><tr><th>Colaborador</th><th>Registo</th></tr></thead>
+        <tbody>
+          <tr><td>Carolina</td><td>50 minutos de horas extra</td></tr>
+          <tr><td>Matilde</td><td>50 minutos de horas extra</td></tr>
+        </tbody>
+      </table>
+      <div class="callout"><strong>Total da equipa:</strong> 1h40 de horas extra.</div>
+      <h2>Notas Para Gestão</h2>
+      <p>Condições meteorológicas explicam a baixa afluência. A equipa manteve qualidade elevada e gorjetas expressivas, transformando um dia de baixo volume numa experiência positiva.</p>
+      <h2>Avaliação Global</h2>
+      <table>
+        <thead><tr><th>Indicador</th><th>Avaliação</th></tr></thead>
+        <tbody>
+          <tr><td>Volume de Trabalho</td><td>3/10</td></tr>
+          <tr><td>Qualidade de Serviço</td><td>10/10</td></tr>
+          <tr><td>Organização</td><td>9/10</td></tr>
+          <tr><td>Integração de Novos Colaboradores</td><td>9/10</td></tr>
+          <tr><td>Experiência do Cliente</td><td>9/10</td></tr>
+          <tr><td>Coordenação da Equipa</td><td>9/10</td></tr>
+          <tr><td>Eficiência Operacional</td><td>9/10</td></tr>
+        </tbody>
+      </table>
+      <h2>Classificação Para O Sistema RIBBAI OPS</h2>
+      <table>
+        <thead><tr><th>Categoria</th><th>Registo</th></tr></thead>
+        <tbody>
+          <tr><td>Operational Notes</td><td>Quinta-feira fraca por chuva; foco no atendimento; estreia da Sofia.</td></tr>
+          <tr><td>Team Feedback Input</td><td>Sofia com integração promissora; equipa manteve qualidade apesar do baixo volume.</td></tr>
+          <tr><td>Overtime Input</td><td>1h40: Carolina 50m, Matilde 50m.</td></tr>
+        </tbody>
+      </table>
+      <p class="footer-note">Documento gerado para apresentação diária à gestão. Fonte operacional: Registo Diário Operacional de 25-06-2026. Autor: Bruno.</p>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RIBBAI OPS has born</title>
+    <style>
+      @page {
+        size: A4;
+        margin: 18mm 16mm;
+      }
+
+      :root {
+        --ink: #172033;
+        --muted: #5d667a;
+        --line: #d9dde7;
+        --soft: #f6f7fa;
+        --brand: #f97316;
+        --brand-dark: #9a3412;
+        --good: #15803d;
+        --warning: #a16207;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: #ffffff;
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 10.5pt;
+        line-height: 1.55;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        font-size: 38pt;
+        line-height: 1.04;
+        letter-spacing: -0.045em;
+        margin-bottom: 14pt;
+      }
+
+      h2 {
+        break-after: avoid;
+        border-bottom: 1px solid var(--line);
+        color: var(--ink);
+        font-size: 18pt;
+        letter-spacing: -0.025em;
+        margin: 24pt 0 10pt;
+        padding-bottom: 6pt;
+      }
+
+      h3 {
+        color: var(--brand-dark);
+        font-size: 12pt;
+        margin: 16pt 0 6pt;
+      }
+
+      ul {
+        margin: 6pt 0 12pt 16pt;
+        padding: 0;
+      }
+
+      li {
+        margin: 3pt 0;
+      }
+
+      table {
+        border-collapse: collapse;
+        margin: 10pt 0 16pt;
+        width: 100%;
+      }
+
+      th,
+      td {
+        border: 1px solid var(--line);
+        padding: 7pt 8pt;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        background: var(--soft);
+        color: var(--ink);
+        font-size: 9pt;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+
+      code {
+        background: #f1f5f9;
+        border: 1px solid #e2e8f0;
+        border-radius: 4px;
+        font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+        font-size: 9pt;
+        padding: 1pt 3pt;
+      }
+
+      .cover {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        min-height: 250mm;
+        padding-top: 25mm;
+      }
+
+      .eyebrow {
+        color: var(--brand);
+        font-size: 9pt;
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        margin-bottom: 16pt;
+        text-transform: uppercase;
+      }
+
+      .subtitle {
+        color: var(--muted);
+        font-size: 15pt;
+        line-height: 1.45;
+        max-width: 155mm;
+      }
+
+      .cover-card {
+        background: linear-gradient(135deg, #fff7ed, #ffffff);
+        border: 1px solid #fed7aa;
+        border-radius: 18px;
+        margin-top: 28pt;
+        padding: 18pt;
+        width: 100%;
+      }
+
+      .meta-grid {
+        display: grid;
+        gap: 10pt;
+        grid-template-columns: repeat(3, 1fr);
+        margin-top: 16pt;
+      }
+
+      .meta-item {
+        border-left: 3px solid var(--brand);
+        padding-left: 9pt;
+      }
+
+      .meta-label {
+        color: var(--muted);
+        display: block;
+        font-size: 8pt;
+        font-weight: 700;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+      }
+
+      .meta-value {
+        display: block;
+        font-size: 11pt;
+        font-weight: 700;
+        margin-top: 2pt;
+      }
+
+      .page-break {
+        break-before: page;
+      }
+
+      .callout {
+        background: var(--soft);
+        border-left: 4px solid var(--brand);
+        border-radius: 10px;
+        margin: 12pt 0 16pt;
+        padding: 12pt 14pt;
+      }
+
+      .status-grid {
+        display: grid;
+        gap: 8pt;
+        grid-template-columns: repeat(2, 1fr);
+        margin: 10pt 0 16pt;
+      }
+
+      .status {
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 10pt;
+      }
+
+      .status strong {
+        display: block;
+        font-size: 11pt;
+      }
+
+      .pass {
+        color: var(--good);
+      }
+
+      .pending {
+        color: var(--warning);
+      }
+
+      .small {
+        color: var(--muted);
+        font-size: 9pt;
+      }
+
+      .footer-note {
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 9pt;
+        margin-top: 24pt;
+        padding-top: 8pt;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="cover">
+      <div class="eyebrow">RIBBAI OPS foundation record</div>
+      <h1>RIBBAI OPS has born</h1>
+      <p class="subtitle">
+        A professional summary of the architecture, infrastructure foundation, validation work, and
+        current readiness of the RIBBAI restaurant operations platform.
+      </p>
+
+      <div class="cover-card">
+        <h3>Document purpose</h3>
+        <p>
+          This document explains what has been completed so far in the RIBBAI OPS project. It is a
+          handoff-quality overview for stakeholders, future engineers, and decision makers before
+          business modules are introduced.
+        </p>
+        <div class="meta-grid">
+          <div class="meta-item">
+            <span class="meta-label">Project</span>
+            <span class="meta-value">RIBBAI OPS</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Current phase</span>
+            <span class="meta-value">Foundation Validation</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Status</span>
+            <span class="meta-value">Build-ready foundation</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="footer-note">
+        Generated from the current workspace documentation and Phase 1 completion report.
+      </p>
+    </section>
+
+    <section class="page-break">
+      <h2>Executive Summary</h2>
+      <p>
+        RIBBAI OPS has been established as a serious, production-oriented foundation for a restaurant
+        operations management platform. The project is not yet a feature application. Instead, it now
+        contains the architectural structure, core technical decisions, environment validation,
+        database schema, authentication foundation, storage integration foundation, logging, error
+        handling, audit logging, repository and service layer patterns, testing setup, and deployment
+        readiness documentation needed before building business workflows.
+      </p>
+      <div class="callout">
+        <strong>Important boundary:</strong> no inventory features, shift management, attendance
+        flows, reporting workflows, dashboards, CRUD screens, or business modules have been
+        implemented yet. The work completed so far is infrastructure and architecture only.
+      </div>
+
+      <h2>What Exists Today</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Area</th>
+            <th>Current status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Application shell</td>
+            <td>Minimal Next.js App Router shell with root layout, landing page, loading, error, and not-found boundaries.</td>
+          </tr>
+          <tr>
+            <td>Architecture</td>
+            <td>Enterprise folder structure and architecture documentation are in place.</td>
+          </tr>
+          <tr>
+            <td>Database</td>
+            <td>Prisma schema, generated client support, baseline migration SQL, and no-op seed entrypoint exist.</td>
+          </tr>
+          <tr>
+            <td>Authentication</td>
+            <td>Auth.js foundation exists with Prisma adapter and route handler, ready for Phase 2 providers and access control.</td>
+          </tr>
+          <tr>
+            <td>Storage</td>
+            <td>Supabase client and storage upload helper are configured as infrastructure.</td>
+          </tr>
+          <tr>
+            <td>Quality gates</td>
+            <td>ESLint, Prettier, TypeScript strict mode, Vitest, Playwright discovery, Husky hook, and CI workflow are configured.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="page-break">
+      <h2>Architectural Foundation</h2>
+      <p>
+        The project has been shaped around long-term maintainability. The folder structure separates
+        routing, shared UI, domain features, server concerns, infrastructure utilities, tests,
+        documentation, scripts, Prisma, reports, PDF templates, analytics, and future AI work.
+      </p>
+
+      <h3>Core architectural principles</h3>
+      <ul>
+        <li>Domain-driven structure with clear feature boundaries.</li>
+        <li>Server-first Next.js architecture using App Router conventions.</li>
+        <li>Strict TypeScript with path aliases for maintainable imports.</li>
+        <li>Repository and service layer foundations for future domain implementation.</li>
+        <li>Runtime environment validation through Zod.</li>
+        <li>Auditability and error handling designed before business workflows are added.</li>
+      </ul>
+
+      <h3>Primary technical stack</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Layer</th>
+            <th>Technology</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Frontend</td>
+            <td>Next.js 15 App Router, React 19, TypeScript</td>
+          </tr>
+          <tr>
+            <td>UI foundation</td>
+            <td>TailwindCSS, shadcn-compatible Radix primitives, Lucide-ready dependency stack</td>
+          </tr>
+          <tr>
+            <td>Database</td>
+            <td>PostgreSQL with Prisma ORM</td>
+          </tr>
+          <tr>
+            <td>Authentication</td>
+            <td>Auth.js with Prisma adapter foundation</td>
+          </tr>
+          <tr>
+            <td>Storage</td>
+            <td>Supabase Storage client foundation</td>
+          </tr>
+          <tr>
+            <td>Testing</td>
+            <td>Vitest for unit tests and Playwright for E2E smoke coverage</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="page-break">
+      <h2>Infrastructure Work Completed</h2>
+
+      <h3>Build-ready Next.js shell</h3>
+      <ul>
+        <li>Created <code>app/layout.tsx</code>, <code>app/page.tsx</code>, and <code>app/globals.css</code>.</li>
+        <li>Added global loading, not-found, and error boundaries.</li>
+        <li>Added a health endpoint at <code>app/api/health/route.ts</code>.</li>
+        <li>Kept the application shell intentionally neutral and non-business-specific.</li>
+      </ul>
+
+      <h3>Environment and configuration</h3>
+      <ul>
+        <li>Created <code>.env.example</code> with application, database, Auth.js, Supabase, logging, audit, and testing variables.</li>
+        <li>Added <code>lib/env</code> with Zod validation and safe local defaults for build tooling.</li>
+        <li>Updated TypeScript configuration with <code>baseUrl</code> and strict path alias compatibility.</li>
+        <li>Replaced the legacy ESLint setup with an ESLint 9 flat config.</li>
+      </ul>
+
+      <h3>Database foundation</h3>
+      <ul>
+        <li>Configured a Prisma singleton at <code>lib/db/client.ts</code>.</li>
+        <li>Generated a baseline migration SQL file.</li>
+        <li>Added a safe no-op seed entrypoint.</li>
+        <li>Verified Prisma Client generation and schema validation with a documented database URL.</li>
+      </ul>
+
+      <h3>Auth, storage, logging, and errors</h3>
+      <ul>
+        <li>Added Auth.js root export and API route handler.</li>
+        <li>Configured the Prisma Auth.js adapter and session type augmentation.</li>
+        <li>Added Supabase browser and service client factories plus a storage upload helper.</li>
+        <li>Added structured logging with environment-controlled log levels.</li>
+        <li>Added typed application errors and normalization helpers.</li>
+      </ul>
+
+      <h3>Audit and backend patterns</h3>
+      <ul>
+        <li>Added a reusable audit logging utility against the existing <code>AuditLog</code> Prisma model.</li>
+        <li>Added <code>BaseRepository</code> for database and actor context.</li>
+        <li>Added <code>BaseService</code> for service context and normalized error handling.</li>
+        <li>Added centralized permission primitives for future role-based access control.</li>
+      </ul>
+    </section>
+
+    <section class="page-break">
+      <h2>Validation Results</h2>
+      <p>
+        The Phase 1 success criteria were executed and passed. The project can now be treated as a
+        build-ready foundation.
+      </p>
+
+      <div class="status-grid">
+        <div class="status">
+          <strong class="pass">npm install: Passed</strong>
+          <span class="small">Dependencies installed and lockfile generated.</span>
+        </div>
+        <div class="status">
+          <strong class="pass">Prisma generate: Passed</strong>
+          <span class="small">Prisma Client generated successfully.</span>
+        </div>
+        <div class="status">
+          <strong class="pass">Lint: Passed</strong>
+          <span class="small">ESLint completed with no remaining errors.</span>
+        </div>
+        <div class="status">
+          <strong class="pass">TypeScript: Passed</strong>
+          <span class="small">Strict type checking completed successfully.</span>
+        </div>
+        <div class="status">
+          <strong class="pass">Build: Passed</strong>
+          <span class="small">Next.js production build completed successfully.</span>
+        </div>
+        <div class="status">
+          <strong class="pass">Unit tests: Passed</strong>
+          <span class="small">Vitest foundation test passed.</span>
+        </div>
+      </div>
+
+      <h3>Additional verification</h3>
+      <ul>
+        <li>Prisma schema validates when <code>DATABASE_URL</code> is provided.</li>
+        <li>Playwright discovery finds the foundation smoke spec across configured browser projects.</li>
+        <li>No IDE linter diagnostics were reported for the edited foundation areas.</li>
+      </ul>
+    </section>
+
+    <section class="page-break">
+      <h2>What Was Intentionally Not Built</h2>
+      <p>
+        The current state is deliberately infrastructure-only. The following areas remain future
+        phases and were not implemented as product features:
+      </p>
+      <ul>
+        <li>Authentication screens and provider-specific login flows.</li>
+        <li>Dashboard screens or operational widgets.</li>
+        <li>Employee management workflows.</li>
+        <li>Shift planning and attendance workflows.</li>
+        <li>Inventory and supplier management workflows.</li>
+        <li>Weekly inventory, reports, PDF report generation, and analytics features.</li>
+        <li>Checklist, incident, document center, and AI business workflows.</li>
+      </ul>
+
+      <h2>Known Remaining Items</h2>
+      <ul>
+        <li><strong>NPM audit findings:</strong> dependency vulnerabilities were reported by npm and should be reviewed before production deployment.</li>
+        <li><strong>Husky Git warning:</strong> Husky reported that <code>.git</code> could not be found because the workspace was not detected as a Git repository.</li>
+        <li><strong>Vitest warning:</strong> Vite prints a CJS Node API deprecation warning, but tests pass.</li>
+        <li><strong>Auth Phase 2:</strong> providers, credentials, route protection, and role loading are intentionally pending.</li>
+        <li><strong>Database application:</strong> migration SQL exists, but applying it requires a live PostgreSQL connection.</li>
+      </ul>
+
+      <h2>Recommended Next Milestone</h2>
+      <div class="callout">
+        <strong>Phase 2: Authentication</strong>
+        <p>
+          The next milestone should implement secure authentication and authorization on top of the
+          validated foundation: providers, login/logout flows, route protection, role and permission
+          loading, and authentication audit events.
+        </p>
+      </div>
+
+      <p class="footer-note">
+        RIBBAI OPS is now ready to move from foundation into controlled feature development.
+      </p>
+    </section>
+  </body>
+</html>

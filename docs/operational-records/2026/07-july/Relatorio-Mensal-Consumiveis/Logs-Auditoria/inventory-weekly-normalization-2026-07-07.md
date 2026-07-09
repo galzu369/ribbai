@@ -1,0 +1,67 @@
+# Normalização de InventoryItem para Inventário Semanal
+
+- ✅ Atualizado canónico **CLEAN-SPONGE-REGULAR** → nome="Esfregão", unidade="pack", família="Consumiveis Operacionais".
+- ✅ Atualizado canónico **CLEAN-SPONGE-INOX** → nome="Esfregão INOX", unidade="pack", família="Consumiveis Operacionais".
+- ✅ Atualizado canónico **CONS-SERVICE-NAPKINS** → nome="Guardanapos", unidade="caixa", família="Consumiveis Operacionais".
+  - ⚠️ Alias ativo **CONS-SERVICE-NAPKINS-LARGE** (Guardanapos) tem 1 transações e stock atual 2; manter ACTIVE (apenas mapeado como alias).
+- ✅ Atualizado canónico **CONS-SERVICE-NAPKINS-SMALL** → nome="Guardanapos Pequenos", unidade="caixa", família="Consumiveis Operacionais".
+  - ⚠️ Alias ativo **CONS-SERVICE-SMALL-NAPKINS** (Guardanapos Pequenos) tem 4 transações e stock atual 0; manter ACTIVE (apenas mapeado como alias).
+- ✅ Atualizado canónico **CONS-SERVICE-STRAWS** → nome="Palhinhas", unidade="saco", família="Consumiveis Operacionais".
+- ✅ Atualizado canónico **CONS-SERVICE-TOOTHPICKS** → nome="Palitos", unidade="caixa", família="Consumiveis Operacionais".
+- ✅ Atualizado canónico **CLEAN-MICROFIBER-YELLOW** → nome="Panos Microfibra Amarelos", unidade="saco", família="Consumiveis Operacionais".
+- ✅ Atualizado canónico **CLEAN-MICROFIBER-BLUE** → nome="Panos Microfibra Azuis", unidade="saco", família="Consumiveis Operacionais".
+- ✅ Atualizado canónico **CLEAN-MICROFIBER-GREY** → nome="Panos Microfibra Cinzentos", unidade="saco", família="Consumiveis Operacionais".
+- ✅ Atualizado canónico **CONS-OPS-FOOD-FILM** → nome="Pelicula Alimentar", unidade="caixa", família="Consumiveis Operacionais".
+- ✅ Atualizado canónico **CONS-OPS-BLUE-ROLL** → nome="Rolo Azul", unidade="unidade", família="Consumiveis Operacionais".
+- ✅ Atualizado canónico **CONS-OPS-KITCHEN-ROLLS** → nome="Rolo de Cozinha", unidade="pack", família="Consumiveis Operacionais".
+- ✅ Atualizado canónico **CONS-OPS-LABEL-ROLLS** → nome="Rolos de Etiquetas", unidade="pack", família="Consumiveis Operacionais".
+- ✅ Atualizado canónico **CONS-OPS-PRINTER-ROLLS** → nome="Rolos Impressora", unidade="caixa", família="Consumiveis Operacionais".
+- ✅ Atualizado canónico **CONS-OPS-TNT-ROLLS** → nome="Rolos TNT", unidade="pack", família="Consumiveis Operacionais".
+- ✅ Atualizado canónico **CONS-OPS-TPA-ROLLS** → nome="Rolos TPA", unidade="caixa", família="Consumiveis Operacionais".
+- ✅ Atualizado canónico **CONS-OPS-TRASH-BAGS-120L** → nome="Sacos do Lixo 120L", unidade="caixa", família="Consumiveis Operacionais".
+- ✅ Atualizado canónico **CONS-OPS-GLASS-TRASH-BAGS** → nome="Sacos do Lixo Vidro", unidade="pack", família="Consumiveis Operacionais".
+- ✅ Atualizado canónico **CONS-WC-HAND-PAPER** → nome="Papel de Maos WC", unidade="caixa", família="Consumiveis WC".
+- ✅ Atualizado canónico **CONS-WC-TOILET-PAPER** → nome="Papel Higienico", unidade="pack", família="Consumiveis WC".
+- ✅ Atualizado canónico **CONS-TAKEAWAY-MEDIUM-COFFEE-CUPS** → nome="Copos Medios Cafe Take Away", unidade="saco" (1 caixa = 20 sacos), família="Take Away".
+- ✅ Atualizado canónico **CONS-TAKEAWAY-MEDIUM-CUPS-LIDS** → nome="Copos Medios Take Away + Tampas", unidade="saco" (1 caixa = 20 sacos), família="Take Away".
+  - ⚠️ Alias ativo **CONS-TAKEAWAY-CUPS-MEDIUM** (Copos Médios Take Away + Tampas) tem 1 transações e stock atual 20; manter ACTIVE (apenas mapeado como alias); unidade de trabalho em sacos, com conversão 1 caixa = 20 sacos para reporting.
+- ✅ Atualizado canónico **CONS-TAKEAWAY-SAUCE-CUPS** → nome="Copos para Molhos Take Away", unidade="caixa", família="Take Away".
+- ✅ Atualizado canónico **CONS-DESSERT-MOUSSE-CUPS** → nome="Copos para Mousse", unidade="unidade", família="Take Away".
+- ✅ Atualizado canónico **CONS-TAKEAWAY-SMALL-COFFEE-CUPS** → nome="Copos Pequenos Cafe Take Away", unidade="caixa", família="Take Away".
+- ✅ Atualizado canónico **CONS-TAKEAWAY-SOUP-BOX-LID** → nome="Box de Sopas + Tampas", unidade="saco" (1 caixa = 15 sacos), família="Take Away".
+- ✅ Atualizado canónico **CONS-TAKEAWAY-BURGER-BOX** → nome="Box grande 1980ml", unidade="saco" (1 caixa = 4 sacos), família="Take Away".
+- ✅ Atualizado canónico **CONS-TAKEAWAY-TOAST-BOX** → nome="Box Media 1350", unidade="saco" (1 caixa = 4 sacos), família="Take Away".
+- ✅ Atualizado canónico **CONS-TAKEAWAY-BOX-750ML** → nome="Box Pequena 750ml", unidade="saco" (1 caixa = 12 sacos), família="Take Away".
+- ✅ Atualizado canónico **CONS-TAKEAWAY-ROUND-BOX-LID** → nome="Box POKE + Tampas", unidade="saco" (1 caixa = 6 sacos), família="Take Away".
+- ⚠️ SKU **CONS-TAKEAWAY-CUPS-SMALL** (Copos Pequenos Take Away + Tampas) remapeado logicamente para o canónico **CONS-TAKEAWAY-MEDIUM-COFFEE-CUPS**; manter apenas como alias depreciado para histórico (entrada de 03-07-2026 a 1,85 €/saco; 1 caixa = 20 sacos).
+- ✅ Atualizado canónico **CONS-GALHETEIRO-OLIVE-OIL** → nome="Garrafa de Azeite", unidade="unidade", família="Galheteiros".
+- ✅ Atualizado canónico **CONS-GALHETEIRO-VINEGAR** → nome="Garrafa de Vinagre", unidade="unidade", família="Galheteiros".
+- ✅ Atualizado canónico **SAUCE-KETCHUP** → nome="Ketchup", unidade="caixa", família="Molhos".
+- ✅ Atualizado canónico **SAUCE-MAYONNAISE** → nome="Maionese", unidade="caixa", família="Molhos".
+- ✅ Atualizado canónico **SAUCE-MUSTARD** → nome="Mostarda", unidade="caixa", família="Molhos".
+- ✅ Atualizado canónico **CLEAN-SPLIT-LV-RINSE** → nome="Abrilhantador/Secante SPLIT LV", unidade="unidade", família="Produtos de Limpeza" (inclui alias lógico CLEAN-SPLIT-LV para harmonizar histórico).
+- ✅ Atualizado canónico **CLEAN-ALCOHOL** → nome="Alcool", unidade="unidade", família="Produtos de Limpeza".
+- ✅ Atualizado canónico **CLEAN-URINAL-SCENT** → nome="Cheiro Urinol", unidade="unidade", família="Produtos de Limpeza".
+- ✅ Atualizado canónico **CLEAN-D-50** → nome="D-50", unidade="unidade", família="Produtos de Limpeza".
+  - ⚠️ Alias ativo **CLEAN-D50** (D-50) tem 1 transações e stock atual 4; manter ACTIVE (apenas mapeado como alias).
+- ✅ Atualizado canónico **CLEAN-DISH-LEMON** → nome="Dish Lemon", unidade="unidade", família="Produtos de Limpeza".
+- ✅ Atualizado canónico **CLEAN-ANTIBACTERIAL-FOAM** → nome="Espuma Antibacteriana", unidade="unidade", família="Produtos de Limpeza".
+- ✅ Atualizado canónico **CLEAN-GLASS-GLOW** → nome="Glow Limpa Vidros", unidade="unidade", família="Produtos de Limpeza".
+- ✅ Atualizado canónico **CLEAN-HYGIENIZER-FAST** → nome="Higienizante Acao Rapida", unidade="unidade", família="Produtos de Limpeza".
+- ✅ Atualizado canónico **CLEAN-DISH-UNIVERSAL** → nome="Lava-Louça Universal", unidade="unidade", família="Produtos de Limpeza".
+  - ⚠️ Alias ativo **CLEAN-LAVA-LOUCAS** (Lava-Louça Universal) tem 2 transações e stock atual 1; manter ACTIVE (apenas mapeado como alias).
+- ✅ Atualizado canónico **CLEAN-LAVA-TUDO** → nome="Lava-Tudo", unidade="unidade", família="Produtos de Limpeza".
+- ✅ Atualizado canónico **CLEAN-LIXIVIA-FORTE** → nome="Lixivia forte", unidade="unidade", família="Produtos de Limpeza".
+- ✅ Atualizado canónico **CLEAN-GLOVES-L** → nome="Luvas L", unidade="caixa", família="Produtos de Limpeza".
+- ✅ Atualizado canónico **CLEAN-GLOVES-M** → nome="Luvas M", unidade="caixa", família="Produtos de Limpeza".
+- ✅ Atualizado canónico **CLEAN-GLOVES-S** → nome="Luvas S", unidade="caixa", família="Produtos de Limpeza".
+- ✅ Atualizado canónico **CLEAN-MASKS** → nome="Mascaras", unidade="caixa", família="Produtos de Limpeza".
+- ⚠️ SKU **CLEAN-SPLIT-LV** (Split LV) remapeado logicamente para o canónico **CLEAN-SPLIT-LV-RINSE** (Abrilhantador/Secante SPLIT LV); manter apenas como alias depreciado para histórico (mesmo produto de limpeza, diferentes descrições comerciais).
+- ✅ Atualizado canónico **CLEAN-WC-ORANGE-SPRAY-IBT** → nome="Spray Laranja WC IBT", unidade="unidade", família="Produtos de Limpeza".
+- ✅ Atualizado canónico **CLEAN-THOMIL** → nome="Thomil", unidade="unidade", família="Produtos de Limpeza".
+- ✅ Atualizado canónico **CLEAN-HAIRNETS** → nome="Tocas", unidade="saco", família="Produtos de Limpeza".
+- ✅ Atualizado canónico **CONS-TAKEAWAY-SPOONS** → nome="Colheres Take Away", unidade="saco", família="Take Away".
+- ✅ Atualizado canónico **CONS-TAKEAWAY-FORKS-KNIVES** → nome="Garfos e Facas Take Away", unidade="saco", família="Take Away".
+- ✅ Atualizado canónico **CONS-TAKEAWAY-CHOPSTICKS** → nome="Pauzinhos", unidade="saco", família="Take Away".
+
+_Nota: transações históricas continuaram a apontar para os SKUs originais; a consolidação lógica para a folha semanal é feita via lista canónica._

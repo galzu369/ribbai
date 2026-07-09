@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Checklist de Abertura Preenchivel - RIBBAI OPS</title>
+    <link rel="stylesheet" href="../styles/closing-checklist.css" />
+  </head>
+  <body class="fillable">
+    <div class="screen-actions" aria-label="Acoes da checklist">
+      <button type="button" onclick="window.print()">Imprimir / Guardar PDF</button>
+      <button type="button" class="secondary" onclick="document.querySelector('form').reset()">
+        Limpar campos
+      </button>
+    </div>
+
+    <form class="sheet">
+      <header class="document-header">
+        <div>
+          <div class="brand-mark">
+            <span class="brand-monogram">RB</span>
+            <span>RIBBAI OPS</span>
+          </div>
+          <h1>Checklist de Abertura</h1>
+          <p class="subtitle">Abertura diaria de sala, esplanada, caixa e preparacao de servico.</p>
+          <p class="print-note">Preencher digitalmente ou imprimir para preenchimento manual.</p>
+        </div>
+        <aside class="header-meta" aria-label="Campos de controlo diario">
+          <label class="field-line">Data <input class="line-input" name="date" type="date" /></label>
+          <label class="field-line">Dia <input class="line-input" name="weekday" type="text" /></label>
+          <label class="field-line">Turno <input class="line-input" name="shift" type="text" /></label>
+        </aside>
+      </header>
+
+      <section class="intro-band" aria-label="Resumo operacional">
+        <div class="intro-card">
+          <span class="intro-label">Restaurante</span>
+          <span class="intro-value">RIBBAI</span>
+        </div>
+        <div class="intro-card">
+          <span class="intro-label">Frequencia</span>
+          <span class="intro-value">Diaria</span>
+        </div>
+        <div class="intro-card">
+          <span class="intro-label">Foco</span>
+          <span class="intro-value">Pronto para servico</span>
+        </div>
+      </section>
+
+      <section class="section">
+        <header class="section-header">
+          <span class="section-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 7h16v12H4V7ZM7 7V5h10v2M8 12h8M8 16h4" /></svg>
+          </span>
+          <h2 class="section-title">Caixa</h2>
+        </header>
+        <ul class="task-list">
+          <li class="task"><input id="caixa-fundo" name="caixa-fundo" type="checkbox" /><label class="task-label" for="caixa-fundo">Contar fundo de caixa.</label></li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <header class="section-header">
+          <span class="section-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 11h16M6 11l2 9M18 11l-2 9M8 7h8l2 4H6l2-4ZM12 4v3" /></svg>
+          </span>
+          <h2 class="section-title">Sala e esplanada</h2>
+        </header>
+        <ul class="task-list">
+          <li class="task"><input id="esplanada-montar" name="esplanada-montar" type="checkbox" /><label class="task-label" for="esplanada-montar">Montar a esplanada.</label></li>
+          <li class="task"><input id="estores-abrir" name="estores-abrir" type="checkbox" /><label class="task-label" for="estores-abrir">Abrir os estores.</label></li>
+          <li class="task"><input id="luzes-tv" name="luzes-tv" type="checkbox" /><label class="task-label" for="luzes-tv">Ligar as luzes da mesa debaixo da TV.</label></li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <header class="section-header">
+          <span class="section-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M7 4h10v5a5 5 0 0 1-10 0V4ZM6 20h12M9 14l-2 6M15 14l2 6" /></svg>
+          </span>
+          <h2 class="section-title">Casas de banho</h2>
+        </header>
+        <ul class="task-list">
+          <li class="task"><input id="wc-limpos" name="wc-limpos" type="checkbox" /><label class="task-label" for="wc-limpos">Verificar se os WC estao limpos.</label></li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <header class="section-header">
+          <span class="section-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M6 5h12v15H6V5ZM9 5V3h6v2M9 10h6M9 14h6M9 18h4" /></svg>
+          </span>
+          <h2 class="section-title">Consumiveis de servico</h2>
+        </header>
+        <ul class="task-list">
+          <li class="task"><input id="molhos-verificar" name="molhos-verificar" type="checkbox" /><label class="task-label" for="molhos-verificar">Verificar ketchup, maionese e mostarda.</label></li>
+          <li class="task"><input id="guardanapos-suficientes" name="guardanapos-suficientes" type="checkbox" /><label class="task-label" for="guardanapos-suficientes">Garantir que ha guardanapos suficientes para o dia todo.</label></li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <header class="section-header">
+          <span class="section-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M7 3v18M11 3v18M16 4v17M16 4c3 2 3 7 0 9" /></svg>
+          </span>
+          <h2 class="section-title">Mise en place</h2>
+        </header>
+        <ul class="task-list">
+          <li class="task"><input id="baldes-talheres" name="baldes-talheres" type="checkbox" /><label class="task-label" for="baldes-talheres">Verificar baldes de talheres.</label></li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <header class="section-header">
+          <span class="section-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M6 20V4h9l3 3v13M9 12h6M9 16h6" /></svg>
+          </span>
+          <h2 class="section-title">Staff lounge</h2>
+        </header>
+        <ul class="task-list">
+          <li class="task"><input id="staff-lounge-porta" name="staff-lounge-porta" type="checkbox" /><label class="task-label" for="staff-lounge-porta">Abrir a porta do staff lounge.</label></li>
+        </ul>
+      </section>
+
+      <section class="accountability">
+        <h2>Abertura e responsabilidade</h2>
+        <div class="accountability-grid">
+          <div class="form-box">
+            <span class="box-label">Horarios</span>
+            <div class="time-grid">
+              <label class="field-line">Inicio da abertura <input class="line-input" name="opening-start-time" type="time" /></label>
+              <label class="field-line">Fim da abertura <input class="line-input" name="opening-end-time" type="time" /></label>
+            </div>
+          </div>
+
+          <div class="form-box">
+            <span class="box-label">Responsaveis pela abertura</span>
+            <div class="staff-grid">
+              <label class="name-line"><span class="name-index">1</span><input class="line-input" name="responsible-1" type="text" /></label>
+              <label class="name-line"><span class="name-index">2</span><input class="line-input" name="responsible-2" type="text" /></label>
+              <label class="name-line"><span class="name-index">3</span><input class="line-input" name="responsible-3" type="text" /></label>
+            </div>
+          </div>
+
+          <div class="form-box wide">
+            <label class="box-label" for="observations">Observacoes</label>
+            <textarea id="observations" name="observations"></textarea>
+          </div>
+
+          <div class="form-box wide">
+            <span class="box-label">Confirmacao final</span>
+            <label class="confirmation"><input name="final-tasks-complete" type="checkbox" /><span>Todas as tarefas obrigatorias foram verificadas.</span></label>
+            <label class="confirmation"><input name="final-service-ready" type="checkbox" /><span>Sala, esplanada, WC e caixa ficam prontos para abrir servico.</span></label>
+            <label class="confirmation"><input name="final-stock-ready" type="checkbox" /><span>Consumiveis, guardanapos e talheres ficam prontos para o dia.</span></label>
+          </div>
+        </div>
+      </section>
+    </form>
+  </body>
+</html>

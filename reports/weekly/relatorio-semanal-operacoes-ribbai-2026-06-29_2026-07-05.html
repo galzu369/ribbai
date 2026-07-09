@@ -1,0 +1,1062 @@
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Relatório Semanal de Operações RIBBAI | 29-06-2026 a 05-07-2026</title>
+    <style>
+      @page {
+        size: A4;
+        margin: 14mm 13mm 16mm;
+      }
+
+      :root {
+        --navy: #0e1f35;
+        --navy-2: #173452;
+        --beige: #efe6d6;
+        --beige-2: #faf6ef;
+        --white: #ffffff;
+        --gray: #eef1f4;
+        --gray-2: #d7dde5;
+        --text: #172033;
+        --muted: #657085;
+        --green: #16803c;
+        --yellow: #b7791f;
+        --orange: #c05621;
+        --red: #b91c1c;
+        --blue: #1d4ed8;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--gray);
+        color: var(--text);
+        font-family: Inter, "Segoe UI", Arial, sans-serif;
+        font-size: 11px;
+        line-height: 1.48;
+      }
+
+      main {
+        max-width: 210mm;
+        margin: 0 auto;
+        background: var(--white);
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      h1 {
+        max-width: 145mm;
+        color: var(--white);
+        font-size: 38px;
+        letter-spacing: -0.03em;
+        line-height: 1.02;
+      }
+
+      h2 {
+        margin-bottom: 12px;
+        color: var(--navy);
+        font-size: 20px;
+        letter-spacing: -0.02em;
+      }
+
+      h3 {
+        margin-bottom: 7px;
+        color: var(--navy);
+        font-size: 13px;
+      }
+
+      ul {
+        margin: 8px 0 0;
+        padding-left: 17px;
+      }
+
+      li {
+        margin: 4px 0;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+        font-size: 9.8px;
+      }
+
+      th,
+      td {
+        border-bottom: 1px solid var(--gray-2);
+        padding: 8px 7px;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        background: var(--beige-2);
+        color: var(--navy);
+        font-size: 8px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .cover {
+        height: 226mm;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 14mm 18mm 12mm;
+        background:
+          radial-gradient(circle at 84% 18%, rgba(239, 230, 214, 0.22), transparent 30%),
+          linear-gradient(135deg, var(--navy), #071421 72%);
+        page-break-after: always;
+        page-break-inside: avoid;
+      }
+
+      .logo {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--white);
+        font-weight: 800;
+        letter-spacing: 0.18em;
+      }
+
+      .logo-mark {
+        width: 38px;
+        height: 38px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(255, 255, 255, 0.45);
+        border-radius: 999px;
+        background: rgba(239, 230, 214, 0.12);
+        color: var(--beige);
+        font-size: 14px;
+        letter-spacing: 0;
+      }
+
+      .cover-subtitle {
+        max-width: 120mm;
+        margin-top: 16px;
+        color: rgba(255, 255, 255, 0.78);
+        font-size: 14px;
+      }
+
+      .cover-meta {
+        width: 152mm;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 18px;
+        padding: 12px;
+        background: rgba(255, 255, 255, 0.08);
+        color: var(--white);
+        page-break-inside: avoid;
+      }
+
+      .meta-row {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 12px;
+        padding: 8px 10px;
+      }
+
+      .meta-row span {
+        color: rgba(255, 255, 255, 0.64);
+      }
+
+      .kpi-row {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        margin-top: 12px;
+      }
+
+      .kpi-card {
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 14px;
+        padding: 10px 10px 9px;
+        background: rgba(255, 255, 255, 0.08);
+        color: var(--white);
+      }
+
+      .kpi-label {
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 8px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .kpi-value {
+        margin-top: 6px;
+        font-size: 18px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+      }
+
+      .kpi-note {
+        margin-top: 3px;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 9px;
+      }
+
+      .pill {
+        margin-top: 10px;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 999px;
+        padding: 8px 12px;
+        background: rgba(239, 230, 214, 0.12);
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 10px;
+      }
+
+      .pill-dot {
+        width: 9px;
+        height: 9px;
+        border-radius: 999px;
+        background: rgba(239, 230, 214, 0.9);
+      }
+
+      .page {
+        padding: 12mm 13mm;
+        page-break-after: always;
+      }
+
+      .page:last-child {
+        page-break-after: auto;
+      }
+
+      .section {
+        margin-bottom: 16px;
+        page-break-inside: avoid;
+      }
+
+      .lead {
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .grid {
+        display: grid;
+        gap: 12px;
+      }
+
+      .grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .card {
+        border: 1px solid var(--gray-2);
+        border-radius: 16px;
+        padding: 14px;
+        background: var(--white);
+      }
+
+      .soft {
+        background: var(--beige-2);
+      }
+
+      .kpi span {
+        display: block;
+        color: var(--muted);
+        font-size: 8px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .kpi strong {
+        display: block;
+        margin-top: 6px;
+        color: var(--navy);
+        font-size: 21px;
+      }
+
+      .badge {
+        display: inline-block;
+        border-radius: 999px;
+        padding: 4px 8px;
+        font-size: 9px;
+        font-weight: 800;
+      }
+
+      .excellent {
+        background: #dcfce7;
+        color: var(--green);
+      }
+
+      .good {
+        background: #fef3c7;
+        color: var(--yellow);
+      }
+
+      .attention {
+        background: #ffedd5;
+        color: var(--orange);
+      }
+
+      .risk {
+        background: #fee2e2;
+        color: var(--red);
+      }
+
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        border-radius: 999px;
+        padding: 3px 8px;
+        font-size: 9px;
+        font-weight: 900;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        margin-left: 8px;
+        white-space: nowrap;
+      }
+
+      .tag-excellent {
+        background: #dcfce7;
+        color: var(--green);
+        border: 1px solid rgba(22, 128, 60, 0.22);
+      }
+
+      .tag-good {
+        background: #fef3c7;
+        color: var(--yellow);
+        border: 1px solid rgba(183, 121, 31, 0.22);
+      }
+
+      .tag-attention {
+        background: #ffedd5;
+        color: var(--orange);
+        border: 1px solid rgba(192, 86, 33, 0.22);
+      }
+
+      .level {
+        display: inline-flex;
+        align-items: center;
+        border-radius: 999px;
+        padding: 3px 8px;
+        font-size: 9px;
+        font-weight: 900;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      .level-low {
+        background: #e0f2fe;
+        color: #075985;
+        border: 1px solid rgba(7, 89, 133, 0.18);
+      }
+
+      .level-medium {
+        background: #fef3c7;
+        color: var(--yellow);
+        border: 1px solid rgba(183, 121, 31, 0.22);
+      }
+
+      .level-high {
+        background: #ffedd5;
+        color: var(--orange);
+        border: 1px solid rgba(192, 86, 33, 0.22);
+      }
+
+      .level-max {
+        background: #fee2e2;
+        color: var(--red);
+        border: 1px solid rgba(185, 28, 28, 0.22);
+      }
+
+      .timeline {
+        display: grid;
+        gap: 10px;
+      }
+
+      .day {
+        border: 1px solid var(--gray-2);
+        border-radius: 14px;
+        padding: 10px 12px;
+        background: var(--white);
+      }
+
+      .day strong {
+        display: inline-block;
+        min-width: 58px;
+        color: var(--navy);
+      }
+
+      .day p {
+        margin-top: 6px;
+        color: var(--muted);
+      }
+
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border-radius: 999px;
+        padding: 5px 10px;
+        background: var(--beige-2);
+        border: 1px solid var(--gray-2);
+        font-weight: 800;
+        font-size: 9px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--navy);
+      }
+
+      .dot-blue,
+      .dot-green,
+      .dot-orange,
+      .dot-red {
+        width: 10px;
+        height: 10px;
+        border-radius: 999px;
+      }
+
+      .dot-blue {
+        background: var(--blue);
+      }
+
+      .dot-green {
+        background: var(--green);
+      }
+
+      .dot-orange {
+        background: var(--orange);
+      }
+
+      .dot-red {
+        background: var(--red);
+      }
+
+      .callout {
+        border: 1px solid rgba(14, 31, 53, 0.15);
+        border-left: 4px solid var(--navy);
+        background: var(--beige-2);
+        border-radius: 16px;
+        padding: 12px 14px;
+        color: var(--navy);
+      }
+
+      .callout strong {
+        font-weight: 900;
+      }
+
+      .muted {
+        color: var(--muted);
+      }
+
+      .small {
+        font-size: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="cover">
+        <header>
+          <div class="logo">
+            <span class="logo-mark">RB</span>
+            <span>RIBBAI OPS</span>
+          </div>
+        </header>
+        <div>
+          <h1>Relatório Semanal de Operações</h1>
+          <p class="cover-subtitle">
+            Síntese operacional da semana de 29 de Junho a 5 de Julho de 2026, que consolida a entrada em época alta: segunda-feira recorde de faturação, fecho mensal de inventário, dois dias consecutivos sem setores com forte pressão e um fim de semana de lotação máxima e recordes históricos de movimento.
+          </p>
+        </div>
+        <div class="cover-meta">
+          <div class="meta-row">
+            <strong>Período</strong>
+            <span>29-06-2026 a 05-07-2026</span>
+          </div>
+          <div class="meta-row">
+            <strong>Restaurante</strong>
+            <span>RIBBAI</span>
+          </div>
+          <div class="meta-row">
+            <strong>Chefia de Sala</strong>
+            <span>Filipe Catalão</span>
+          </div>
+          <div class="meta-row">
+            <strong>Relatórios Diários</strong>
+            <span>7 registos (29-06 a 05-07) analisados e cruzados</span>
+          </div>
+          <div class="meta-row">
+            <strong>Fontes cruzadas</strong>
+            <span>
+              Diários (29-06 a 05-07), Inventory Updates (30-06 e 03-07), inventário semanal (30-06 corrigido), métricas CMP e alertas de stock, escalas julho (1–5), registos de horas extra e notas executivas.
+            </span>
+          </div>
+          <div class="meta-row">
+            <strong>Destaques</strong>
+            <span>
+              Segunda-feira com melhor faturação do ano; fecho mensal de inventário e reorganização logística; dias 1 e 2 de julho com elevada pressão sem setores e incidente grave com cliente; consolidação do modelo por setores com Jam Session (03-07), sábado histórico (~960 tickets) e domingo forte (~860 tickets).
+            </span>
+          </div>
+        </div>
+        <div class="kpi-row">
+          <div class="kpi-card">
+            <div class="kpi-label">Nível Geral da Operação</div>
+            <div class="kpi-value">9,5/10</div>
+            <div class="kpi-note">Semana de época alta com operação consistente e capacidade comprovada em dias de pressão extrema.</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Modelo por Setores</div>
+            <div class="kpi-value">9/10</div>
+            <div class="kpi-note">Modelo consolidado em 29, 3, 4 e 5 de julho; impacto negativo claramente evidenciado nos dias sem setores (1 e 2).</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Resiliência Operacional</div>
+            <div class="kpi-value">9,5/10</div>
+            <div class="kpi-note">Equipa respondeu a fechos incompletos, incidente grave e vários dias de lotação máxima mantendo qualidade de serviço.</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Horas Extra Semanais</div>
+            <div class="kpi-value">43h40</div>
+            <div class="kpi-note">2 620 minutos concentrados em 7 colaboradores, com picos em 2, 3 e 4 de julho.</div>
+          </div>
+        </div>
+        <div class="pill">
+          <span class="pill-dot"></span>
+          Semana de consolidação da época alta: segunda-feira recorde, meio da semana com pressão sem setores e fim de semana de recordes (Jam Session, sábado histórico, domingo forte).
+        </div>
+      </section>
+
+      <section class="page">
+        <div class="section">
+          <h2>1. Resumo Executivo</h2>
+          <p class="lead">
+            A semana 29-06 a 05-07 consolidou a entrada do RIBBAI na época alta: iniciou-se com a segunda-feira de maior
+            faturação do ano, passou por dois dias consecutivos de elevada pressão operacional sem aplicação de setores
+            (1 e 2 de julho) e terminou com um fim de semana de lotação máxima, Jam Session, sábado histórico (~960
+            tickets) e domingo forte (~860 tickets), com aplicação exemplar do modelo por setores.
+          </p>
+          <ul>
+            <li><strong>Nível geral da operação:</strong> muito elevado, com equipa a responder de forma consistente a vários dias consecutivos de lotação máxima e pressão prolongada.</li>
+            <li><strong>Evolução da equipa:</strong> consolidação clara do papel de runners (Lee e Diogo), autonomia crescente de Carolina, Lil e Pablo nos seus setores e liderança forte de Filipe, Bruno e Matilde em fechos críticos.</li>
+            <li><strong>Movimento:</strong> semana forte de ponta a ponta, com segunda-feira recorde, fecho de mês sólido e um bloco de sexta a domingo com movimento histórico (Jam Session, sábado recorde e domingo de elevada afluência).</li>
+            <li><strong>Modelo por setores:</strong> eficácia comprovada em 29-06, 03, 04 e 05-07; impacto negativo evidente nos dias em que não foi aplicado (01 e 02-07), com maior desgaste e fechos comprometidos.</li>
+            <li><strong>Principais acontecimentos:</strong> fecho mensal de inventário (30-06), dois dias de forte pressão sem setores (01 e 02-07, com incidente grave no dia 2), Jam Session (03-07), sábado histórico (04-07, ~960 tickets) e domingo forte (05-07, ~860 tickets).</li>
+            <li><strong>Conclusão geral:</strong> semana operacionalmente muito madura, com forte consolidação do modelo por setores e de runners; riscos concentram-se em sobrecarga de fechos, gestão de incidentes graves e sustentabilidade do volume de horas extra.</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2>2. Resumo Diário</h2>
+          <p class="lead">Tabela síntese com movimento, ocorrências e avaliação operacional por dia (29-06 a 05-07/2026).</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Data</th>
+                <th>Nível de Movimento</th>
+                <th>Ocorrências relevantes (evidência)</th>
+                <th>Avaliação operacional</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>29-06 (Seg)</strong></td>
+                <td><span class="level level-high">Alto</span></td>
+                <td>
+                  Segunda-feira com dois picos fortes (almoço e final de tarde), esplanada e sala interior em lotação elevada; operação resiliente apesar de ausência por motivos de saúde; melhor segunda-feira de faturação do ano.
+                </td>
+                <td>Serviço muito fluído com modelo por setores aplicado e forte coordenação entre porta, setores e runner.</td>
+              </tr>
+              <tr>
+                <td><strong>30-06 (Ter)</strong></td>
+                <td><span class="level level-medium">Médio</span></td>
+                <td>
+                  Dia de baixa pressão relativa aproveitado para reorganização logística de armazéns e walk-ins, contagem integral de inventário Sala/Bar e fecho operacional do mês de junho.
+                </td>
+                <td>Operação flexível sem setores, serviço estável e foco em trabalho estruturante (logística e inventário).</td>
+              </tr>
+              <tr>
+                <td><strong>01-07 (Qua)</strong></td>
+                <td><span class="level level-high">Alto</span></td>
+                <td>Primeiro dia de julho com forte pressão ao almoço e jantar, esplanada continuamente cheia 12h30–16h00; operação sem setores; fecho negativo com tarefas importantes por concluir.</td>
+                <td>Serviço ao cliente positivo, mas organização operacional e fecho claramente abaixo do padrão desejado.</td>
+              </tr>
+              <tr>
+                <td><strong>02-07 (Qui)</strong></td>
+                <td><span class="level level-max">Muito alto</span></td>
+                <td>Um dos almoços mais intensos das últimas semanas (lotação máxima esplanada + sala interior 12h30–16h30) sem setores; incidente grave com cliente envolvendo duas colaboradoras e intervenção da polícia.</td>
+                <td>Gestão de incidente exemplar e serviço robusto sob pressão extrema, mas com elevado desgaste e forte concentração de horas extra (8h00).</td>
+              </tr>
+              <tr>
+                <td><strong>03-07 (Sex)</strong></td>
+                <td><span class="level level-max">Muito alto</span></td>
+                <td>Reimplementação rigorosa do modelo por setores; tarde com lotação máxima 14h30–16h30; Jam Session 19h–23h com vários grupos numerosos; ~730 tickets registados.</td>
+                <td>Operação de referência: setores disciplinados, runners eficazes, serviço fluído e fecho exemplar sem tarefas pendentes.</td>
+              </tr>
+              <tr>
+                <td><strong>04-07 (Sáb)</strong></td>
+                <td><span class="level level-max">Muito alto</span></td>
+                <td>Um dos sábados mais fortes do ano: lotação esgotada contínua 12h00–17h00 (esplanada e sala), novo pico ao jantar e ~960 tickets processados; evolução muito evidente dos runners.</td>
+                <td>Dia de excelência operacional: zero erros relevantes, disciplina máxima no modelo de setores e fecho completo após recorde de faturação.</td>
+              </tr>
+              <tr>
+                <td><strong>05-07 (Dom)</strong></td>
+                <td><span class="level level-max">Muito alto</span></td>
+                <td>Domingo de verão típico com lotação máxima prolongada 12h30–17h00 e novo pico ao jantar; aplicação rigorosa de setores; ~860 tickets de pedidos registados.</td>
+                <td>Operação muito madura, serviço estável durante várias horas de pressão e fecho exemplar, deixando o restaurante preparado para a semana seguinte.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="page">
+        <div class="section">
+          <h2>3. Desempenho Operacional</h2>
+          <div class="grid grid-2">
+            <div class="card">
+              <div class="chip"><span class="dot-green"></span>Modelo por setores</div>
+              <p class="muted" style="margin-top: 8px;">
+                O modelo 50/60/70 + sala interior + runners + coordenação esteve no centro da performance da semana. Nos
+                dias em que foi aplicado (29-06, 03, 04 e 05-07) a operação revelou-se exemplar, mesmo em cenários de
+                pressão extrema, enquanto nos dias sem setores (01 e 02-07) se verificou maior desgaste, menor eficiência
+                e fechos comprometidos.
+              </p>
+              <ul>
+                <li><strong>29-06:</strong> aplicação de setores em contexto de segunda-feira recorde, com dois picos fortes absorvidos com elevada fluidez.</li>
+                <li><strong>01 e 02-07:</strong> operação sem setores em dias de forte pressão expôs limitações claras: mais deslocações, maior cansaço e maior dependência de fechos longos.</li>
+                <li><strong>03, 04 e 05-07:</strong> modelo por setores aplicado com disciplina máxima, permitindo gerir Jam Session, sábado histórico (~960 tickets) e domingo forte (~860 tickets) sem incidentes relevantes.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <div class="chip"><span class="dot-blue"></span>Coordenação e capacidade de resposta</div>
+              <p class="muted" style="margin-top: 8px;">
+                A coordenação mostrou elevada maturidade ao longo da semana, gerindo simultaneamente fechos incompletos
+                herdados, um incidente grave com cliente (02-07) e vários dias consecutivos de lotação máxima. A equipa
+                de coordenação (porta + chefia de sala) foi determinante na gestão de entradas, pausas e fechos.
+              </p>
+              <ul>
+                <li><strong>Gestão de pausas:</strong> runners Lee e Diogo asseguraram coberturas críticas em 29-06, 03, 04 e 05-07, incluindo apoio ao quiosque dos gelados.</li>
+                <li><strong>Qualidade sob pressão:</strong> apesar de dois dias seguidos sem setores (01 e 02-07), o serviço ao cliente manteve-se positivo; a partir de 03-07 a coordenação retomou o modelo estruturado com resultados exemplares.</li>
+                <li><strong>Resiliência:</strong> incidente grave no dia 02-07 foi gerido com tolerância zero e intervenção policial, sem impacto operacional prolongado nem degradação do serviço.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>4. Avaliação da Equipa (apenas acontecimentos relevantes)</h2>
+          <div class="grid grid-2">
+            <div class="card soft">
+              <h3>Diogo <span class="tag tag-good">Evolução</span></h3>
+              <ul>
+                <li><strong>Runner Sala Interior:</strong> evolução muito consistente nas funções de apoio, com crescente confiança dos responsáveis de setor (especialmente 04 e 05-07).</li>
+                <li><strong>Coberturas:</strong> contribuiu de forma decisiva para coberturas de pausas em dias de lotação máxima, sem comprometer a fluidez do serviço.</li>
+                <li><strong>Overtime:</strong> 1h40 de horas extra concentradas no fecho de 02-07, em contexto de forte pressão operacional.</li>
+              </ul>
+            </div>
+            <div class="card soft">
+              <h3>Lee <span class="tag tag-good">Runner</span></h3>
+              <ul>
+                <li><strong>Papel:</strong> runner consistente na esplanada ao longo da semana, com destaque em 29-06, 03, 04 e 05-07.</li>
+                <li><strong>Cobertura Quiosque:</strong> assegurou pausa da Sofia no quiosque dos gelados (04-07) sem perda de apoio à Sala.</li>
+                <li><strong>Impacto:</strong> elemento estabilizador em dias de pressão extrema, reduzindo deslocações dos responsáveis de setor.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Sofia <span class="tag tag-good">Integração</span></h3>
+              <ul>
+                <li><strong>Quiosque dos Gelados:</strong> responsável por um dos pontos de venda críticos em dias de verão (04 e 05-07), bem integrado com a operação da Sala.</li>
+                <li><strong>Coordenação:</strong> boa articulação com runners e coordenação para garantir serviço fluído em picos de calor.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Matilde <span class="tag tag-excellent">Destaque</span></h3>
+              <ul>
+                <li><strong>Porta e Coordenação:</strong> liderou a gestão da porta em dias de altíssima pressão (01, 03, 04 e 05-07), garantindo controlo de entradas e rotação.</li>
+                <li><strong>Fechos:</strong> presença central em fechos críticos (01, 03, 04 e 05-07), com 1h40, 3h10, 2h30 e 1h20 de horas extra respetivamente.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Lil <span class="tag tag-excellent">Destaque</span></h3>
+              <ul>
+                <li><strong>Sala Interior:</strong> responsável pela totalidade da sala interior em 04 e 05-07, em dias de pressão extrema e lotação contínua.</li>
+                <li><strong>Consistência:</strong> atuação muito estável em todos os dias em que integrou o modelo por setores, sem erros operacionais relevantes.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Pablo <span class="tag tag-good">Proatividade</span></h3>
+              <ul>
+                <li><strong>Mesas 60's:</strong> responsabilidade consistente nas mesas 60's em dias de elevada rotação (29-06, 04 e 05-07).</li>
+                <li><strong>Overtime:</strong> 1h10 de horas extra em 02-07, em contexto de forte pressão e fecho tardio.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Bruno <span class="tag tag-excellent">Destaque</span></h3>
+              <ul>
+                <li><strong>Setor 50's:</strong> responsabilidade pelas mesas 50's em vários dias de lotação máxima (04 e 05-07) e papel central na gestão de grupos em 03-07.</li>
+                <li><strong>Fechos:</strong> um dos pilares dos fechos da semana, com 1h45 (30-06), 1h40 (01-07), 2h00 (02-07), 3h10 (03-07), 3h00 (04-07) e 1h20 (05-07) de horas extra.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Carolina <span class="tag tag-excellent">Destaque</span></h3>
+              <ul>
+                <li><strong>Setor 70's:</strong> referência nas mesas 70's em vários dias de pressão elevada (29-06, 03, 04 e 05-07), com grande autonomia.</li>
+                <li><strong>Iniciativa:</strong> destaque em reposições e preparação da sala (04-07) e em gestão de dias de elevada pressão sem setores (02-07).</li>
+                <li><strong>Overtime:</strong> 3h35 de horas extra distribuídas por 29-06, 02-07 e 04-07.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="page">
+        <div class="section">
+          <h2>5. Formação e Integração (Lee, Diogo)</h2>
+          <div class="grid grid-2">
+            <div class="card">
+              <div class="chip"><span class="dot-blue"></span>Lee</div>
+              <p class="muted" style="margin-top: 8px;">
+                Na semana em análise, a Lee consolidou o papel de runner como peça estrutural do modelo operacional: foi
+                referência na cobertura de pausas, apoio à esplanada e ligação com o quiosque dos gelados em vários dias
+                de lotação máxima (29-06, 03, 04 e 05-07).
+              </p>
+              <ul>
+                <li><strong>Evolução:</strong> manutenção do ritmo elevado em dias consecutivos de pressão sem perda de qualidade no apoio.</li>
+                <li><strong>Integração:</strong> forte alinhamento com responsáveis de setor e coordenação, com boa leitura de prioridades em serviço.</li>
+                <li><strong>Próximos passos:</strong> aprofundar capacidade de antecipação de necessidades (mise en place, reposições críticas) em coordenação com Sala e quiosque.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <div class="chip"><span class="dot-green"></span>Diogo</div>
+              <p class="muted" style="margin-top: 8px;">
+                Diogo reforçou a integração nas funções de apoio, com destaque para o dia 02-07 (pressão extrema sem
+                setores) e para o fim de semana (04 e 05-07), onde assegurou coberturas e apoio transversal com elevado
+                grau de confiança da equipa.
+              </p>
+              <ul>
+                <li><strong>Autonomia:</strong> crescente na gestão de tarefas de runner e coberturas, especialmente em contextos de elevada pressão.</li>
+                <li><strong>Comunicação:</strong> positiva com colegas e coordenação, facilitando a gestão de pausas e fluxo de serviço.</li>
+                <li><strong>Próximos passos:</strong> preparar evolução gradual para responsabilidades adicionais em Sala quando a pressão operacional o permitir.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>6. Movimento Comercial</h2>
+          <div class="grid grid-2">
+            <div class="card">
+              <h3>Dias mais fortes / mais fracos</h3>
+              <ul>
+                <li><strong>Mais fortes:</strong> 04-07 (sábado) e 05-07 (domingo), com ~960 e ~860 tickets respetivamente; 03-07 (sexta-feira) também se destaca com ~730 tickets.</li>
+                <li><strong>Outros destaques:</strong> 29-06 (segunda-feira) registado como a melhor segunda-feira de faturação do ano.</li>
+                <li><strong>Mais calmo (relativo):</strong> 30-06, dia de menor pressão relativa, aproveitado para reorganização logística e fecho de inventário.</li>
+              </ul>
+              <h3 style="margin-top: 12px;">Horários críticos</h3>
+              <ul>
+                <li><strong>29-06:</strong> picos fortes 12h30–15h00 e 17h30–20h00, com esplanada e sala em elevada ocupação.</li>
+                <li><strong>01 e 02-07:</strong> 12h30–16h00/16h30 com lotação máxima contínua em esplanada e sala interior, sem setores estruturados.</li>
+                <li><strong>03-07:</strong> pressão elevada 14h30–16h30 e forte movimento noturno associado à Jam Session.</li>
+                <li><strong>04-07:</strong> lotação esgotada contínua 12h00–17h00, seguida de novo pico de jantar até 21h30.</li>
+                <li><strong>05-07:</strong> pressão muito elevada 12h30–17h00 e novo pico de jantar 19h00–20h30.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Eventos</h3>
+              <ul>
+                <li><strong>Jam Session (03-07):</strong> 19h–23h, com grupos numerosos (8, 10 e 10 pessoas), dois aniversários e ambiente muito positivo, traduzindo-se num serviço de jantar de elevada rentabilidade.</li>
+              </ul>
+              <div class="callout" style="margin-top: 12px;">
+                <strong>Contexto verão:</strong> temperaturas muito elevadas e excelentes condições meteorológicas ao longo da semana reforçaram a afluência à zona da praia, com impacto direto na procura e na pressão operacional, em especial de quinta a domingo.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="page">
+        <div class="section">
+          <h2>7. Horas Extra</h2>
+          <p class="lead">
+            Análise baseada nos registos diários de 29-06 a 05-07 e cruzamento com causas descritas em cada dia (pressão
+            operacional, eventos, fechos e trabalho logístico).
+          </p>
+          <div class="grid grid-2" style="margin-top: 10px;">
+            <div class="card kpi">
+              <span>Total semanal</span><strong>43h40</strong>
+              <p>2 620 minutos registados. Picos concentrados em 02, 03 e 04-07, em contexto de pressão extrema e fechos prolongados.</p>
+            </div>
+            <div class="card kpi">
+              <span>Concentração</span><strong>26–28</strong>
+              <p>Overtime concentra-se de quinta a sábado (02–04-07), com impacto direto da ausência de setores em 01–02 e de eventos/lotação máxima no fim de semana.</p>
+            </div>
+          </div>
+
+          <h3 style="margin-top: 12px;">Tabela por colaborador (semana 29-06 a 05-07)</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Colaborador</th>
+                <th>Horas Extra</th>
+                <th>Motivo predominante (fontes)</th>
+                <th>Observações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Carolina</strong></td>
+                <td>3h35</td>
+                <td>Pressão elevada em 29-06 e 02-07 (sem setores) e reposições/fecho em 04-07.</td>
+                <td>Responsável pelas mesas 70's em vários dias de lotação máxima; mantém desempenho consistente sob pressão.</td>
+              </tr>
+              <tr>
+                <td><strong>Matilde</strong></td>
+                <td>10h40</td>
+                <td>Fechos críticos em 01, 02, 03, 04 e 05-07; liderança na porta em dias de maior pressão.</td>
+                <td>Figura central em coordenação e encerramento, garantindo fechos completos mesmo após serviços muito exigentes.</td>
+              </tr>
+              <tr>
+                <td><strong>Filipe Catalão</strong></td>
+                <td>10h55</td>
+                <td>Coordenação geral, fechos e encerramento de caixa (29-06, 30-06, 03, 04 e 05-07).</td>
+                <td>Chefia de Sala assegura supervisão contínua em vários dias seguidos de alta pressão, com especial destaque nos fechos de 03 e 04-07.</td>
+              </tr>
+              <tr>
+                <td><strong>Lil</strong></td>
+                <td>2h45</td>
+                <td>Fechos em 29-06 e 30-06; responsabilidade plena da sala interior em 04 e 05-07.</td>
+                <td>Consolida papel na sala interior em dias de pressão extrema, com overtime moderado face à responsabilidade assumida.</td>
+              </tr>
+              <tr>
+                <td><strong>Bruno</strong></td>
+                <td>12h55</td>
+                <td>Fechos prolongados em quase todos os dias da semana (30-06 a 05-07), incluindo Jam Session e sábado recorde.</td>
+                <td>Um dos principais “pilares de fecho” da semana, com horas extra diretamente ligadas a manutenção do padrão de qualidade até ao fim do serviço.</td>
+              </tr>
+              <tr>
+                <td><strong>Diogo</strong></td>
+                <td>1h40</td>
+                <td>Fecho de 02-07 em contexto de forte pressão sem setores.</td>
+                <td>Participação relevante em dia de pressão extrema, com impacto no fecho e suporte à equipa.</td>
+              </tr>
+              <tr>
+                <td><strong>Pablo</strong></td>
+                <td>1h10</td>
+                <td>Prolongamento de turno e pausa reduzida em 02-07.</td>
+                <td>Contribui para estabilidade da operação em dias de forte pressão, com overtime pontual mas significativo.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="callout">
+            <strong>Recomendações:</strong> monitorizar horas extra por causa (pressão, eventos, fechos, logística) e reduzir overtime
+            evitável através de (i) reforço de equipa no turno de fecho em dias de alta pressão, (ii) aplicação sistemática do modelo
+            de setores quando previsível elevada afluência e (iii) planeamento específico para eventos prolongados (Jam Sessions e fins
+            de semana de verão).
+          </div>
+        </div>
+      </section>
+
+      <section class="page">
+        <div class="section">
+          <h2>8. Gestão de Inventário</h2>
+          <p class="lead">
+            Síntese baseada nas Inventory Updates de 30-06 e 03-07, no inventário semanal corrigido de 30-06, em métricas
+            CMP e em alertas de stock de 03-07.
+          </p>
+
+          <div class="grid grid-2">
+            <div class="card">
+              <div class="chip"><span class="dot-green"></span>Entradas e reforço de stock</div>
+              <ul>
+                <li><strong>30-06 (fecho mensal):</strong> entrada de molhos (Ketchup e Maionese) num total de <strong>4 caixas</strong> e <strong>37,16 €</strong>, com atualização de CMP e valorização de stock (Ketchup 13,55 €; Maionese 14,21 €).</li>
+                <li><strong>03-07 (entrada completa de consumíveis):</strong> 15 artigos processados, 95 unidades e custo total de <strong>729,53 €</strong>, com atualização automática de CMP e dashboards.</li>
+                <li><strong>Histórico atualizado:</strong> transações registadas no sistema com rastreabilidade completa (InventoryTransaction) e ligação ao módulo de compras.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <div class="chip"><span class="dot-blue"></span>Estado do inventário e riscos</div>
+              <ul>
+                <li><strong>Inventário semanal (30-06):</strong> count sheet corrigido (`corrected-count-sheet-2026-06-30.json`) adotado como referência para início do período 29-06 a 05-07.</li>
+                <li><strong>Alertas (03-07):</strong> 6 artigos em estado crítico, incluindo Guardanapos Pequenos, copos takeaway médios e produtos de limpeza (Lixívia, Lava-Louça Universal), segundo o alert summary.</li>
+                <li><strong>Integridade de dados:</strong> documentação indica 2 caixas de Guardanapos Pequenos após entrada de 03-07, enquanto o alerta mantém stock 0; o relatório semanal assume o count sheet corrigido + entrada de stock como base e regista a inconsistência como risco de sistema.</li>
+              </ul>
+              <div class="callout" style="margin-top: 10px;">
+                <strong>Ruturas:</strong> apesar de a base de dados assinalar alguns artigos em nível crítico, a combinação entre inventário corrigido (30-06) e entrada de 03-07 sugere melhoria significativa dos níveis de stock em consumíveis chave; a divergência de dados em Guardanapos Pequenos deve ser validada fisicamente.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>9. Custos Operacionais (CMP / compras)</h2>
+          <div class="grid grid-2">
+            <div class="card">
+              <h3>Dados disponíveis</h3>
+              <ul>
+                <li><strong>Entrada 30-06 (fecho mensal):</strong> 4 caixas de molhos (Ketchup e Maionese) num total de <strong>37,16 €</strong>, com redução de CMP em ambos os artigos.</li>
+                <li><strong>Entrada 03-07 (consumíveis):</strong> 15 artigos, 95 unidades e custo total de <strong>729,53 €</strong>, correspondendo ao acumulado de compras de julho à data.</li>
+                <li><strong>Integração BI:</strong> métricas de procurement, dashboards e relatório mensal de julho atualizados automaticamente após a operação de 03-07.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Limitações / transparência</h3>
+              <p class="muted">
+                A análise de custos desta semana foca-se nas operações com valores explícitos (30-06 e 03-07). Entradas de
+                stock anteriores com valor 0,00 € permanecem documentadas mas não permitem análise financeira completa. O
+                relatório semanal assume como base o inventário corrigido de 30-06 e as métricas de compras de 03-07 para
+                efeitos de leitura de tendência.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="page">
+        <div class="section">
+          <h2>10. Problemas Identificados</h2>
+          <div class="grid grid-2">
+            <div class="card">
+              <div class="chip"><span class="dot-orange"></span>Infraestruturas</div>
+              <ul>
+                <li><strong>Bandejas de serviço:</strong> continuam empenadas e instáveis, com risco aumentado de derrames e acidentes em dias de pressão extrema (várias referências nos diários de julho).</li>
+              </ul>
+            </div>
+            <div class="card">
+              <div class="chip"><span class="dot-red"></span>Sistemas</div>
+              <ul>
+                <li><strong>POS / Menu:</strong> mantém-se a necessidade de otimizar a apresentação do menu (identificação visual de pratos sem glúten, vegetarianos/veganos e alergénios) para reduzir dúvidas e aumentar eficiência em dias de grande rotação.</li>
+                <li><strong>Dados de inventário:</strong> incoerência entre alert summary (Guardanapos Pequenos a 0 caixa) e documentação de entrada/contagem (2 caixas após 03-07), exigindo validação física e revisão de mapeamento de SKUs.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="card" style="margin-top: 12px;">
+            <div class="chip"><span class="dot-blue"></span>Operação</div>
+            <ul>
+              <li><strong>Fechos com equipa reduzida:</strong> fecho de 01-07 com apenas dois colaboradores (Bruno e Matilde) resultou em tarefas por concluir e avaliação negativa do encerramento; impacto cascata sentido em 02 e 03-07.</li>
+              <li><strong>Ausência de setores em dias críticos:</strong> 01 e 02-07 decorreram sem organização por setores, aumentando desgaste, deslocações desnecessárias e concentração de horas extra.</li>
+              <li><strong>Pressão continuada:</strong> sequência 02–05-07 combinou calor extremo, lotação máxima e eventos, elevando a carga física da equipa e a dependência de horários prolongados.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>11. Ações Corretivas Implementadas</h2>
+          <ul>
+            <li><strong>Reorganização logística e inventário:</strong> execução de reorganização completa de armazéns/walk-ins e contagem integral de consumíveis e bebidas em 30-06, preparando o sistema para o mês de julho.</li>
+            <li><strong>Correção de inventário semanal:</strong> adoção do count sheet corrigido de 30-06 como base oficial para o período, com rollback e reaplicação documentados.</li>
+            <li><strong>Reimplementação do modelo por setores:</strong> após dois dias críticos sem setores (01 e 02-07), o modelo foi reintroduzido de forma rigorosa em 03, 04 e 05-07, com resultados muito positivos.</li>
+            <li><strong>Gestão de incidente grave:</strong> cliente com comportamento inaceitável em 02-07 foi removido de imediato, com chamada às autoridades e registo formal do incidente, reforçando política de tolerância zero.</li>
+            <li><strong>Fechos estruturados:</strong> fechos de 03, 04 e 05-07 foram concluídos integralmente, sem tarefas pendentes para a abertura seguinte, quebrando o ciclo de fechos incompletos.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="page">
+        <div class="section">
+          <h2>12. Prioridades para a Semana Seguinte</h2>
+          <div class="grid grid-2">
+            <div class="card">
+              <h3>Prioridade Alta</h3>
+              <ul>
+                <li><strong>Substituição de bandejas</strong> — impacto: segurança e eficiência; urgência: alta; benefício: redução de risco de derrames em dias de pressão extrema.</li>
+                <li><strong>Aplicação sistemática de setores</strong> — impacto: eficiência e bem-estar da equipa; urgência: alta; benefício: evitar repetição de cenários como 01 e 02-07.</li>
+                <li><strong>Reforço do turno de fecho</strong> — impacto: qualidade do encerramento; urgência: alta; benefício: garantir que fechos não ficam dependentes de apenas dois elementos em dias de grande pressão.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Prioridade Média</h3>
+              <ul>
+                <li><strong>Menu (informação visual)</strong> — impacto: experiência do cliente e velocidade de atendimento; urgência: média; benefício: reduzir dúvidas e clarificar opções (sem glúten, vegetarianos/veganos, alergénios) com mini logótipos.</li>
+                <li><strong>Inventário: críticos e reorder points</strong> — impacto: risco de rutura; urgência: média; benefício: reduzir artigos recorrentes em nível crítico após 03-07 (copos takeaway, lava-louças, guardanapos).</li>
+                <li><strong>Treino progressivo (Lee e Diogo)</strong> — impacto: autonomia; urgência: média; benefício: consolidar percurso de desenvolvimento interno a partir da função de runner.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="card" style="margin-top: 12px;">
+            <h3>Prioridade Baixa</h3>
+            <ul>
+              <li><strong>Checklist de manutenção preventiva</strong> para dias de menor pressão (ex.: terças-feiras) — impacto: consistência; urgência: baixa; benefício: espaço sempre preparado para fins de semana fortes.</li>
+              <li><strong>Rotinas de debriefing pós-evento</strong> — impacto: melhoria contínua; urgência: baixa; benefício: institucionalizar aprendizagens das Jam Sessions e fins de semana de lotação máxima.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>13. Indicadores da Semana (dashboard executivo)</h2>
+          <div class="grid grid-3">
+            <div class="card kpi">
+              <span>Dias de elevada pressão</span><strong>3</strong>
+              <p>01, 02 e 03-07 com níveis de pressão particularmente elevados, incluindo dia de incidente grave e Jam Session.</p>
+            </div>
+            <div class="card kpi">
+              <span>Dias tranquilos</span><strong>3</strong>
+              <p>Relativamente mais calmo: 30-06 (foco em logística/inventário) e momentos pontuais de menor pressão noutros dias.</p>
+            </div>
+            <div class="card kpi">
+              <span>Eventos realizados</span><strong>2</strong>
+              <p>Jam Session (03-07) e forte dinâmica de domingos de verão (05-07) com comportamento próximo de evento.</p>
+            </div>
+            <div class="card kpi">
+              <span>Entradas de stock</span><strong>3</strong>
+              <p>Entrada molhos (30-06), correções/logística de inventário e grande entrada de consumíveis (03-07).</p>
+            </div>
+            <div class="card kpi">
+              <span>Horas extra totais</span><strong>43h40</strong>
+              <p>2 620 minutos distribuídos por 7 colaboradores, com maior concentração em 02–04-07.</p>
+            </div>
+            <div class="card kpi">
+              <span>Incidentes registados</span><strong>2</strong>
+              <p>1 incidente grave (assédio por cliente em 02-07, resolvido com intervenção policial) e 0 incidentes operacionais relevantes no resto da semana.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>14. Conclusão Executiva</h2>
+          <p class="lead">
+            A semana correu de forma globalmente muito positiva e confirma a entrada plena na época alta. A equipa revelou
+            maturidade operacional elevada, absorvendo vários dias seguidos de lotação máxima, um incidente grave e um
+            aumento significativo do volume de tickets, com especial destaque para o bloco de sexta a domingo.
+          </p>
+          <ul>
+            <li><strong>Como correu a semana?</strong> Muito bem — operação forte desde segunda-feira, com fecho mensal de inventário bem executado e fim de semana histórico em movimento e faturação.</li>
+            <li><strong>A equipa evoluiu?</strong> Sim — evolução muito visível dos runners (Lee e Diogo), consolidação dos setores (Carolina, Lil, Pablo, Bruno) e liderança robusta de Matilde e Filipe nos fechos.</li>
+            <li><strong>O modelo operacional continua a melhorar?</strong> Sim — a semana mostrou de forma inequívoca a superioridade do modelo com setores face a dias sem estrutura (01 e 02-07), reforçando a necessidade de o tornar padrão.</li>
+            <li><strong>Existem riscos relevantes?</strong> Sim — bandejas de serviço (segurança), dependência de poucos elementos nos fechos, concentração de horas extra em blocos de dias de pressão extrema e inconsistências pontuais entre alertas de inventário e documentação.</li>
+            <li><strong>Objetivos para a próxima semana:</strong> substituir bandejas, estabilizar fechos com equipa adequada, aplicar setores sempre que previsível alta afluência, consolidar desenvolvimento de runners e avançar com melhoria visual do menu.</li>
+          </ul>
+          <div class="callout" style="margin-top: 12px;">
+            <strong>Mensagem à Administração:</strong> a operação demonstra maturidade e capacidade de absorver pressão prolongada sem degradação
+            relevante da experiência do cliente, com provas claras em dias de recorde de movimento (03, 04 e 05-07). A prioridade
+            imediata é consolidar o modelo por setores como padrão, reforçar o turno de fecho, resolver riscos evitáveis de
+            equipamento (bandejas) e assegurar que os sistemas de inventário e menu acompanham o nível de maturidade já
+            demonstrado pela equipa de Sala.
+          </div>
+          <p class="muted small" style="margin-top: 10px;">
+            Documento preparado para Gestão e Administração. Período: 29-06-2026 a 05-07-2026. Fontes: relatórios diários,
+            inventory updates (30-06 e 03-07), inventário semanal corrigido (30-06), métricas CMP, registos de horas extra,
+            escalas de julho e documentação de entradas de stock.
+          </p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
+

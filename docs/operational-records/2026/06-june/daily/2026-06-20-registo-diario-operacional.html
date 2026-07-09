@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Relatório Diário Operacional - 20-06-2026</title>
+    <style>
+      @page { size: A4; margin: 16mm 14mm 18mm; }
+      :root { --ink:#172033; --muted:#657085; --line:#d9dee8; --soft:#f6f7fa; --warm:#fff7ed; --brand:#f97316; --brand-dark:#9a3412; --green:#15803d; --blue:#1d4ed8; --violet:#6d28d9; --amber:#b45309; }
+      * { box-sizing:border-box; }
+      body { margin:0; background:#fff; color:var(--ink); font-family:Inter,ui-sans-serif,system-ui,sans-serif; font-size:10pt; line-height:1.5; }
+      h1,h2,h3,p { margin-top:0; }
+      h1 { font-size:34pt; line-height:1.02; letter-spacing:-0.04em; margin-bottom:10pt; }
+      h2 { border-bottom:1px solid var(--line); font-size:15pt; margin:22pt 0 10pt; padding-bottom:5pt; }
+      h3 { color:var(--brand-dark); font-size:11pt; margin:13pt 0 5pt; }
+      ul,ol { margin:4pt 0 10pt 15pt; padding:0; }
+      table { border-collapse:collapse; margin:8pt 0 14pt; width:100%; }
+      th,td { border:1px solid var(--line); padding:6pt 7pt; text-align:left; vertical-align:top; }
+      th { background:var(--soft); font-size:8pt; letter-spacing:0.06em; text-transform:uppercase; }
+      .cover { background:radial-gradient(circle at top right,rgba(249,115,22,0.18),transparent 35%),linear-gradient(135deg,#fff7ed 0%,#fff 42%,#f8fafc 100%); border:1px solid #fed7aa; border-radius:22px; margin-bottom:16pt; min-height:248mm; padding:24mm 18mm; }
+      .eyebrow { color:var(--brand); font-size:8.5pt; font-weight:800; letter-spacing:0.18em; margin-bottom:14pt; text-transform:uppercase; }
+      .subtitle { color:var(--muted); font-size:14pt; line-height:1.45; max-width:150mm; }
+      .meta-panel { background:rgba(255,255,255,0.82); border:1px solid #fed7aa; border-radius:16px; margin-top:28pt; padding:14pt; }
+      .meta-grid { display:grid; gap:10pt; grid-template-columns:repeat(3,1fr); }
+      .meta-item { border-left:3px solid var(--brand); padding-left:8pt; }
+      .meta-label { color:var(--muted); display:block; font-size:7.5pt; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; }
+      .meta-value { display:block; font-size:10.5pt; font-weight:700; margin-top:2pt; }
+      .page-break { break-before:page; }
+      .kpi-grid { display:grid; gap:8pt; grid-template-columns:repeat(3,1fr); margin:12pt 0 16pt; }
+      .kpi { background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:10pt; }
+      .kpi-label { color:var(--muted); display:block; font-size:7.5pt; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; }
+      .kpi-value { display:block; font-size:22pt; font-weight:800; margin-top:3pt; }
+      .kpi-note { color:var(--muted); display:block; font-size:8pt; margin-top:2pt; }
+      .good { color:var(--green); }
+      .warn { color:var(--amber); }
+      .callout { background:var(--warm); border-left:4px solid var(--brand); border-radius:12px; margin:10pt 0 14pt; padding:11pt 13pt; }
+      .callout-alert { background:#fef2f2; border-left-color:#dc2626; }
+      .panel-grid { display:grid; gap:9pt; grid-template-columns:repeat(2,1fr); }
+      .panel { border:1px solid var(--line); border-radius:12px; break-inside:avoid; padding:10pt; }
+      .badge { border-radius:999px; display:inline-block; font-size:7.5pt; font-weight:800; margin-bottom:5pt; padding:3pt 7pt; text-transform:uppercase; }
+      .badge-green { background:#dcfce7; color:var(--green); }
+      .badge-blue { background:#dbeafe; color:var(--blue); }
+      .badge-violet { background:#ede9fe; color:var(--violet); }
+      .footer-note { border-top:1px solid var(--line); color:var(--muted); font-size:8.5pt; margin-top:18pt; padding-top:7pt; }
+    </style>
+  </head>
+  <body>
+    <section class="cover">
+      <div class="eyebrow">RIBBAI OPS · Relatório Diário Operacional</div>
+      <h1>Registo Diário Operacional</h1>
+      <p class="subtitle">Apresentação diária à gestão sobre a operação Front of House do restaurante RIBBAI.</p>
+      <div class="meta-panel">
+        <div class="meta-grid">
+          <div class="meta-item"><span class="meta-label">Data</span><span class="meta-value">20-06-2026</span></div>
+          <div class="meta-item"><span class="meta-label">Dia</span><span class="meta-value">Sábado</span></div>
+          <div class="meta-item"><span class="meta-label">Autor</span><span class="meta-value">Filipe Catalão</span></div>
+          <div class="meta-item"><span class="meta-label">Restaurante</span><span class="meta-value">RIBBAI</span></div>
+          <div class="meta-item"><span class="meta-label">Tipo</span><span class="meta-value">Relatório Diário Operacional</span></div>
+          <div class="meta-item"><span class="meta-label">Estado</span><span class="meta-value">Registado</span></div>
+        </div>
+      </div>
+      <div class="kpi-grid">
+        <div class="kpi"><span class="kpi-label">Volume Trabalho</span><span class="kpi-value good">10/10</span><span class="kpi-note">Dia excecional</span></div>
+        <div class="kpi"><span class="kpi-label">Resiliência</span><span class="kpi-value good">10/10</span><span class="kpi-note">Novo menu + eventos</span></div>
+        <div class="kpi"><span class="kpi-label">Qualidade Serviço</span><span class="kpi-value good">8,5/10</span><span class="kpi-note">Sólido apesar pressão</span></div>
+      </div>
+      <div class="kpi-grid">
+        <div class="kpi"><span class="kpi-label">Coordenação</span><span class="kpi-value good">9/10</span><span class="kpi-note">Bruno runner</span></div>
+        <div class="kpi"><span class="kpi-label">Organização</span><span class="kpi-value warn">8/10</span><span class="kpi-note">Novo menu em adaptação</span></div>
+        <div class="kpi"><span class="kpi-label">Horas Extra</span><span class="kpi-value good">8h00</span><span class="kpi-note">3 colaboradores</span></div>
+      </div>
+      <div class="callout"><strong>Conclusão do dia:</strong> um dos dias mais exigentes das últimas semanas — novo menu, Sumol Local Legends e Harley-Davidson. Equipa resiliente; foco urgente na uniformização do menu e POS.</div>
+    </section>
+
+    <section class="page-break">
+      <h2>Síntese Executiva</h2>
+      <p>Sábado de elevada intensidade desde as 09h30, com primeiro dia completo do novo menu, campeonato Sumol Local Legends e presença do Encontro Europeu Harley-Davidson. Filipe e Matilde garantiram arranque exigente; distribuição por setores manteve controlo operacional.</p>
+      <h2>Equipa Em Serviço</h2>
+      <div class="panel-grid">
+        <div class="panel"><span class="badge badge-blue">Filipe Catalão</span><ul><li>Abertura e supervisão.</li><li>Apoio transversal e novo menu.</li></ul></div>
+        <div class="panel"><span class="badge badge-green">Matilde</span><ul><li>Abertura e resposta inicial.</li><li>Setor 60's com Carolina.</li></ul></div>
+        <div class="panel"><span class="badge badge-violet">Lee</span><ul><li>Setor 70's.</li><li>Erro ao almoço; adaptação positiva.</li></ul></div>
+        <div class="panel"><span class="badge badge-green">Lil</span><ul><li>Setor 50's.</li><li>Fecho até 00h00.</li><li>3h00 de horas extra.</li></ul></div>
+        <div class="panel"><span class="badge badge-green">Bruno</span><ul><li>Runner principal.</li><li>Fecho até 00h00.</li><li>2h30 de horas extra.</li></ul></div>
+        <div class="panel"><span class="badge badge-green">Carolina</span><ul><li>Setor 60's.</li><li>Fecho até 00h00.</li><li>2h30 de horas extra.</li></ul></div>
+      </div>
+      <h2>Enquadramento Operacional</h2>
+      <p>Fluxo muito superior ao habitual desde 09h30 (Sumol Local Legends). Forte presença de participantes Harley-Davidson. Filipe e Matilde mantiveram operação estável até equipa completa.</p>
+    </section>
+
+    <section class="page-break">
+      <h2>Organização Operacional</h2>
+      <table>
+        <thead><tr><th>Colaborador</th><th>Responsabilidade</th></tr></thead>
+        <tbody>
+          <tr><td>Lil</td><td>Setor 50's</td></tr>
+          <tr><td>Lee</td><td>Setor 70's (com apoio)</td></tr>
+          <tr><td>Matilde e Carolina</td><td>Setor 60's</td></tr>
+          <tr><td>Bruno</td><td>Runner principal</td></tr>
+          <tr><td>Filipe Catalão</td><td>Supervisão e apoio transversal</td></tr>
+        </tbody>
+      </table>
+      <h2>Implementação do Novo Menu</h2>
+      <div class="callout callout-alert"><strong>Primeiro dia completo:</strong> ausência de briefing, inconsistências POS, incerteza em acompanhamentos, tickets inconsistentes. Urgente: uniformizar pratos, revisar teclas, eliminar artigos antigos, ponto carne/peixe obrigatório.</div>
+      <p><strong>Brunch:</strong> deixou de existir menu próprio devido a produtos iguais com preços distintos — requer decisão comercial urgente.</p>
+      <h2>Manutenção e Imagem</h2>
+      <p>Pufes e almofadas da esplanada com sujidade elevada — recomendada lavagem profunda.</p>
+    </section>
+
+    <section class="page-break">
+      <h2>Incidentes Operacionais</h2>
+      <div class="callout callout-alert"><strong>Erro Lee — almoço:</strong> 4 Tostas de Salmão registadas incorrectamente. Pratos refeitos, espera prolongada, pressão na cozinha. Medida: Lee deixou de registar pedidos após pausa. Sem novos incidentes.</div>
+      <p><strong>Novos Bifes:</strong> reclamação de clientes pela ausência de molho (feedback para gestão/cozinha, não erro de sala).</p>
+      <h2>Desempenho Operacional</h2>
+      <ul>
+        <li>Esplanada cheia grande parte da tarde.</li>
+        <li>Movimento constante e crescente.</li>
+        <li>Boa adaptação e colaboração entre setores.</li>
+        <li>Serviço sólido apesar de novo menu e eventos externos.</li>
+      </ul>
+      <h2>Pontos Positivos</h2>
+      <ul>
+        <li>Adaptação da equipa, coordenação de Bruno, atitude de Matilde.</li>
+        <li>Forte afluência e serviço globalmente bem executado.</li>
+      </ul>
+      <h2>Áreas de Melhoria</h2>
+      <ul>
+        <li>Briefing antes de alterações ao menu; uniformização POS/cozinha/sala.</li>
+        <li>Formação Lee; lavagem esplanada; estratégia brunch.</li>
+      </ul>
+    </section>
+
+    <section class="page-break">
+      <h2>Notas Para Gestão</h2>
+      <ol>
+        <li>Uniformização total do novo menu.</li>
+        <li>Correção teclas e POS.</li>
+        <li>Ponto carne/peixe obrigatório.</li>
+        <li>Eliminação artigos antigos.</li>
+        <li>Estratégia menu brunch.</li>
+        <li>Lavagem pufes e almofadas.</li>
+      </ol>
+      <h2>Fecho Operacional</h2>
+      <p>Fecho por Lil, Carolina e Bruno. Restaurante preparado para o dia seguinte. Saída às 00h00.</p>
+      <h2>Horas Extra</h2>
+      <table>
+        <thead><tr><th>Colaborador</th><th>Registo</th></tr></thead>
+        <tbody>
+          <tr><td>Lil</td><td>3h00 de horas extra</td></tr>
+          <tr><td>Carolina</td><td>2h30 de horas extra</td></tr>
+          <tr><td>Bruno</td><td>2h30 de horas extra</td></tr>
+        </tbody>
+      </table>
+      <div class="callout"><strong>Total da equipa:</strong> 8h00 de horas extra.</div>
+      <h2>Avaliação Global</h2>
+      <table>
+        <thead><tr><th>Indicador</th><th>Avaliação</th></tr></thead>
+        <tbody>
+          <tr><td>Volume de Trabalho</td><td>10/10</td></tr>
+          <tr><td>Capacidade de Adaptação</td><td>9/10</td></tr>
+          <tr><td>Qualidade de Serviço</td><td>8,5/10</td></tr>
+          <tr><td>Organização</td><td>8/10</td></tr>
+          <tr><td>Coordenação da Equipa</td><td>9/10</td></tr>
+          <tr><td>Experiência do Cliente</td><td>8,5/10</td></tr>
+          <tr><td>Resiliência Operacional</td><td>10/10</td></tr>
+        </tbody>
+      </table>
+      <h2>Classificação RIBBAI OPS</h2>
+      <table>
+        <thead><tr><th>Categoria</th><th>Registo</th></tr></thead>
+        <tbody>
+          <tr><td>Operational Notes</td><td>Novo menu; eventos externos; erro Lee; fecho prolongado.</td></tr>
+          <tr><td>Service Improvement</td><td>Uniformização menu, POS, briefing e ponto carne/peixe.</td></tr>
+          <tr><td>Technical Incident</td><td>Erro 4 Tostas Salmão; feedback Bifes sem molho.</td></tr>
+          <tr><td>Overtime Input</td><td>8h00: Lil 3h00, Carolina 2h30, Bruno 2h30.</td></tr>
+        </tbody>
+      </table>
+      <p class="footer-note">Documento gerado para apresentação diária à gestão. Fonte operacional: Registo Diário Operacional de 20-06-2026. Autor: Filipe Catalão.</p>
+    </section>
+  </body>
+</html>

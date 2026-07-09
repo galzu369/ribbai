@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIBBAI - Master Template | Ranking Mensal</title>
+    <style>
+        /* ==========================================
+           RIBBAI MASTER TEMPLATE - SISTEMA DE DESIGN
+           Versão: 1.0 | Data: Julho 2026
+           ========================================== */
+
+        /* === CONFIGURAÇÕES DE PÁGINA === */
+        @page {
+            size: A4;
+            margin: 20mm 15mm 20mm 15mm;
+        }
+
+        /* === RESET E BASE === */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 11px;
+            line-height: 1.5;
+            color: #2d3748;
+            background: #ffffff;
+            orphans: 3;
+            widows: 3;
+        }
+
+        /* === GRELHA MASTER === */
+        .master-container {
+            width: 100%;
+            max-width: 170mm;
+            margin: 0 auto;
+        }
+
+        .master-page {
+            min-height: 257mm;
+            page-break-before: always;
+            page-break-inside: avoid;
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+        }
+
+        .master-page:first-child {
+            page-break-before: auto;
+        }
+
+        /* === SISTEMA DE CAPÍTULOS === */
+        .chapter {
+            page-break-before: always;
+            page-break-inside: avoid;
+            min-height: 240mm;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chapter:first-child {
+            page-break-before: auto;
+        }
+
+        .chapter-header {
+            margin-bottom: 25mm;
+            page-break-after: avoid;
+        }
+
+        .chapter-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #172033;
+            border-bottom: 3px solid #f97316;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            page-break-after: avoid;
+            orphans: 3;
+            widows: 3;
+        }
+
+        .chapter-subtitle {
+            font-size: 12px;
+            color: #4a5568;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* === SISTEMA DE COMPONENTES === */
+        .component {
+            page-break-inside: avoid !important;
+            margin-bottom: 20px;
+        }
+
+        .component:last-child {
+            margin-bottom: 0;
+        }
+
+        /* === KPI CARDS SISTEMA === */
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 12mm;
+            margin: 15mm 0;
+            page-break-inside: avoid !important;
+        }
+
+        .kpi-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            page-break-inside: avoid !important;
+            min-height: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .kpi-value {
+            font-size: 18px;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 5px;
+        }
+
+        .kpi-label {
+            font-size: 9px;
+            color: #4a5568;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            line-height: 1.3;
+        }
+
+        /* === SISTEMA DE TABELAS === */
+        .master-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15mm 0;
+            font-size: 10px;
+            page-break-inside: avoid !important;
+        }
+
+        .master-table th {
+            background: #172033;
+            color: white;
+            padding: 12px 8px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .master-table td {
+            padding: 10px 8px;
+            border-bottom: 1px solid #e2e8f0;
+            vertical-align: middle;
+        }
+
+        .master-table tbody tr:nth-child(even) {
+            background: #f8fafc;
+        }
+
+        .table-rank {
+            width: 45px;
+            text-align: center;
+            font-weight: 700;
+            color: #f97316;
+        }
+
+        .table-name {
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        /* === SISTEMA DE CARDS === */
+        .master-card {
+            border: 1px solid #cbd5e0;
+            border-radius: 10px;
+            background: #ffffff;
+            page-break-inside: avoid !important;
+            margin-bottom: 15mm;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15mm;
+            margin: 15mm 0;
+            page-break-inside: avoid !important;
+        }
+
+        .info-card {
+            border: 1px solid #cbd5e0;
+            border-radius: 8px;
+            padding: 15mm;
+            background: #f7fafc;
+            page-break-inside: avoid !important;
+        }
+
+        .info-card h4 {
+            font-size: 12px;
+            font-weight: 600;
+            color: #172033;
+            margin-bottom: 8px;
+        }
+
+        .info-card .highlight {
+            color: #f97316;
+            font-weight: 700;
+            font-size: 13px;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .info-card p {
+            font-size: 10px;
+            color: #4a5568;
+            line-height: 1.5;
+        }
+
+        /* === SISTEMA DE EXEMPLO/INSIGHT === */
+        .insight-box {
+            background: #edf2f7;
+            border-left: 4px solid #f97316;
+            padding: 15mm;
+            margin: 10mm 0;
+            border-radius: 0 8px 8px 0;
+            page-break-inside: avoid !important;
+        }
+
+        .insight-title {
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 10px;
+            font-size: 12px;
+        }
+
+        .insight-list {
+            margin: 0;
+            padding-left: 18px;
+        }
+
+        .insight-list li {
+            margin-bottom: 6px;
+            font-size: 10px;
+            line-height: 1.4;
+        }
+
+        /* ==========================================
+           SISTEMA DE COLABORADORES INDIVIDUAIS
+           ========================================== */
+
+        .collaborator-page {
+            page-break-before: always;
+            page-break-inside: avoid !important;
+            min-height: 240mm;
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+        }
+
+        .collaborator-header {
+            background: linear-gradient(135deg, #f8fafc, #edf2f7);
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20mm;
+            margin-bottom: 15mm;
+            page-break-after: avoid;
+            page-break-inside: avoid !important;
+        }
+
+        .collaborator-title-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15mm;
+        }
+
+        .collaborator-name {
+            font-size: 22px;
+            font-weight: 600;
+            color: #172033;
+        }
+
+        .collaborator-position {
+            font-size: 14px;
+            color: #4a5568;
+            margin-top: 3px;
+        }
+
+        .collaborator-score {
+            text-align: right;
+        }
+
+        .score-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: #f97316;
+            line-height: 1;
+        }
+
+        .score-label {
+            font-size: 10px;
+            color: #4a5568;
+            text-transform: uppercase;
+            margin-top: 3px;
+        }
+
+        /* === KPI BREAKDOWN INDIVIDUAL === */
+        .kpi-breakdown {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10mm;
+            margin: 0;
+            page-break-inside: avoid !important;
+        }
+
+        .kpi-breakdown-card {
+            text-align: center;
+            padding: 12mm;
+            background: white;
+            border: 1px solid #cbd5e0;
+            border-radius: 8px;
+            page-break-inside: avoid !important;
+        }
+
+        .kpi-breakdown-title {
+            font-size: 9px;
+            color: #4a5568;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .kpi-breakdown-value {
+            font-size: 16px;
+            font-weight: 700;
+            color: #2d3748;
+        }
+
+        .kpi-breakdown-max {
+            font-size: 8px;
+            color: #718096;
+            margin-top: 3px;
+        }
+
+        /* === ANÁLISE INDIVIDUAL === */
+        .analysis-section {
+            margin-top: 15mm;
+            page-break-inside: avoid !important;
+        }
+
+        .analysis-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #172033;
+            margin-bottom: 10mm;
+            page-break-after: avoid;
+        }
+
+        .analysis-content {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 15mm;
+            border-left: 4px solid #f97316;
+            page-break-inside: avoid !important;
+        }
+
+        .analysis-text {
+            font-size: 11px;
+            color: #4a5568;
+            line-height: 1.6;
+            margin-bottom: 12mm;
+        }
+
+        .analysis-highlights {
+            margin: 0;
+            padding-left: 15px;
+        }
+
+        .analysis-highlights li {
+            margin-bottom: 5px;
+            font-size: 10px;
+            color: #2d3748;
+        }
+
+        /* === CABEÇALHO MASTER === */
+        .master-header {
+            background: linear-gradient(135deg, #172033, #2d3748);
+            color: white;
+            padding: 25mm;
+            text-align: center;
+            margin-bottom: 0;
+            border-radius: 12px;
+            page-break-after: avoid;
+        }
+
+        .master-header h1 {
+            margin: 0;
+            font-size: 26px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .master-header .subtitle {
+            margin: 10mm 0 0;
+            font-size: 13px;
+            opacity: 0.9;
+            line-height: 1.4;
+        }
+
+        /* === RODAPÉ MASTER === */
+        .master-footer {
+            margin-top: auto;
+            padding-top: 15mm;
+            text-align: center;
+            font-size: 9px;
+            color: #718096;
+            border-top: 1px solid #e2e8f0;
+            page-break-inside: avoid;
+        }
+
+        /* === UTILITÁRIOS DE ESPAÇAMENTO === */
+        .spacing-xs { margin-bottom: 5mm; }
+        .spacing-sm { margin-bottom: 8mm; }
+        .spacing-md { margin-bottom: 12mm; }
+        .spacing-lg { margin-bottom: 18mm; }
+        .spacing-xl { margin-bottom: 25mm; }
+
+        /* === SISTEMA DE ALERTAS/STATUS === */
+        .status-highlight {
+            background: #fef5e7;
+            color: #c05621;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 10px;
+        }
+
+        /* === REGRAS DE QUEBRA DE PÁGINA === */
+        .no-break { page-break-inside: avoid !important; }
+        .new-page { page-break-before: always; }
+        .avoid-break-after { page-break-after: avoid !important; }
+        
+        /* === SISTEMA RESPONSIVO DE IMPRESSÃO === */
+        @media print {
+            body { background: white; }
+            .master-page { margin: 0; }
+            .collaborator-page { margin: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="master-container">
+        
+        <!-- ==========================================
+             CAPA/HEADER PRINCIPAL
+             ========================================== -->
+        <div class="master-page">
+            <div class="master-header">
+                <h1>Ranking Mensal Detalhado da Equipa</h1>
+                <div class="subtitle">RIBBAI • Junho 2026 • Metodologia e Justificações<br>Master Template v1.0</div>
+            </div>
+
+            <div class="component spacing-lg">
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <div class="kpi-value">27</div>
+                        <div class="kpi-label">Relatórios Analisados</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-value">9</div>
+                        <div class="kpi-label">Colaboradores</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-value">3.076</div>
+                        <div class="kpi-label">Pontos Distribuídos</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-value">146h58</div>
+                        <div class="kpi-label">Horas Extra</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-value">30</div>
+                        <div class="kpi-label">Dias do Período</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="component">
+                <p style="font-size: 12px; line-height: 1.6; color: #4a5568; text-align: center;">
+                    Este relatório apresenta a metodologia detalhada de avaliação da equipa RIBBAI durante o mês de Junho de 2026, incluindo critérios específicos, exemplos práticos e justificações individuais para cada colaborador.
+                </p>
+            </div>
+
+            <div class="master-footer">
+                <p><strong>RIBBAI OPS</strong> • Sistema de Avaliação de Performance<br>
+                Master Template • Gerado automaticamente</p>
+            </div>
+        </div>
+
+        <!-- ==========================================
+             CAPÍTULO 1: SISTEMA DE PONTUAÇÃO
+             ========================================== -->
+        <div class="chapter">
+            <div class="chapter-header">
+                <h2 class="chapter-title">🎯 Sistema de Pontuação Detalhado</h2>
+                <div class="chapter-subtitle">
+                    Metodologia de avaliação baseada em 4 categorias principais, com pontuação máxima de <span class="status-highlight">60 pontos por dia</span> por colaborador.
+                </div>
+            </div>
+
+            <div class="component">
+                <div class="card-grid">
+                    <div class="info-card">
+                        <h4>🔧 Execução Operacional</h4>
+                        <span class="highlight">Até 20 pontos/dia</span>
+                        <p>Responsabilidade assumida, desempenho no setor, abertura, coordenação local e capacidade de resposta durante o serviço.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h4>⭐ Qualidade e Consistência</h4>
+                        <span class="highlight">Até 12 pontos/dia</span>
+                        <p>Serviço sem falhas relevantes, boa comunicação, recuperação de inconsistências e experiência do cliente.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h4>🎯 Adaptação ao Modelo de Setores</h4>
+                        <span class="highlight">Até 16 pontos/dia</span>
+                        <p>Foco no setor atribuído, disciplina operacional e comunicação antes de intervir noutra zona.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h4>🤝 Compromisso e Colaboração</h4>
+                        <span class="highlight">Até 12 pontos/dia</span>
+                        <p>Horas extra, apoio a colegas, fecho, stock, manutenção e disponibilidade em dias críticos.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="component spacing-lg">
+                <h3 style="font-size: 14px; font-weight: 600; color: #172033; margin-bottom: 10mm;">🔧 Execução Operacional (0-20 pontos)</h3>
+                <div class="insight-box">
+                    <div class="insight-title">Como são atribuídos os pontos:</div>
+                    <ul class="insight-list">
+                        <li><strong>18-20 pontos:</strong> Liderança de setor, abertura responsável, coordenação exemplar</li>
+                        <li><strong>15-17 pontos:</strong> Desempenho sólido, cumprimento de responsabilidades, boa gestão</li>
+                        <li><strong>12-14 pontos:</strong> Desempenho adequado, algumas responsabilidades assumidas</li>
+                        <li><strong>7-11 pontos:</strong> Desempenho básico, apoio operacional</li>
+                        <li><strong>0-6 pontos:</strong> Desempenho insuficiente ou problemas operacionais</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="component spacing-lg">
+                <h3 style="font-size: 14px; font-weight: 600; color: #172033; margin-bottom: 10mm;">⭐ Qualidade e Consistência (0-12 pontos)</h3>
+                <div class="insight-box">
+                    <div class="insight-title">Exemplos práticos:</div>
+                    <ul class="insight-list">
+                        <li><strong>10-12 pontos:</strong> Serviço impecável, sem erros, comunicação excelente</li>
+                        <li><strong>8-9 pontos:</strong> Boa qualidade, pequenas inconsistências rapidamente corrigidas</li>
+                        <li><strong>5-7 pontos:</strong> Qualidade adequada, alguns pontos de melhoria</li>
+                        <li><strong>0-4 pontos:</strong> Problemas de qualidade, erros significativos</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="master-footer">
+                <p><strong>RIBBAI OPS</strong> • Capítulo 1: Sistema de Pontuação</p>
+            </div>
+        </div>
+
+        <!-- ==========================================
+             CAPÍTULO 2: RANKING FINAL
+             ========================================== -->
+        <div class="chapter">
+            <div class="chapter-header">
+                <h2 class="chapter-title">🏆 Ranking Final com Justificações</h2>
+                <div class="chapter-subtitle">
+                    Classificação final baseada na pontuação acumulada durante todo o mês, com breakdown detalhado por categoria de avaliação.
+                </div>
+            </div>
+
+            <div class="component">
+                <table class="master-table">
+                    <thead>
+                        <tr>
+                            <th>Pos.</th>
+                            <th>Colaborador</th>
+                            <th>Total</th>
+                            <th>Execução</th>
+                            <th>Qualidade</th>
+                            <th>Modelo</th>
+                            <th>Compromisso</th>
+                            <th>Média/Dia</th>
+                            <th>Dias</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="table-rank">1º</td>
+                            <td class="table-name">Pablo</td>
+                            <td><strong>568</strong></td>
+                            <td>320</td>
+                            <td>128</td>
+                            <td>85</td>
+                            <td>35</td>
+                            <td>28.4</td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td class="table-rank">2º</td>
+                            <td class="table-name">Matilde</td>
+                            <td><strong>551</strong></td>
+                            <td>295</td>
+                            <td>135</td>
+                            <td>78</td>
+                            <td>43</td>
+                            <td>26.2</td>
+                            <td>21</td>
+                        </tr>
+                        <tr>
+                            <td class="table-rank">3º</td>
+                            <td class="table-name">Carolina</td>
+                            <td><strong>535</strong></td>
+                            <td>285</td>
+                            <td>95</td>
+                            <td>45</td>
+                            <td>110</td>
+                            <td>26.8</td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td class="table-rank">4º</td>
+                            <td class="table-name">Bruno</td>
+                            <td><strong>514</strong></td>
+                            <td>275</td>
+                            <td>105</td>
+                            <td>65</td>
+                            <td>69</td>
+                            <td>25.7</td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td class="table-rank">5º</td>
+                            <td class="table-name">Lil</td>
+                            <td><strong>454</strong></td>
+                            <td>235</td>
+                            <td>88</td>
+                            <td>55</td>
+                            <td>76</td>
+                            <td>21.6</td>
+                            <td>21</td>
+                        </tr>
+                        <tr>
+                            <td class="table-rank">6º</td>
+                            <td class="table-name">Marta</td>
+                            <td><strong>286</strong></td>
+                            <td>180</td>
+                            <td>65</td>
+                            <td>15</td>
+                            <td>26</td>
+                            <td>23.8</td>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <td class="table-rank">7º</td>
+                            <td class="table-name">Lee</td>
+                            <td><strong>133</strong></td>
+                            <td>85</td>
+                            <td>40</td>
+                            <td>8</td>
+                            <td>0</td>
+                            <td>19.0</td>
+                            <td>7</td>
+                        </tr>
+                        <tr>
+                            <td class="table-rank">8º</td>
+                            <td class="table-name">Diogo</td>
+                            <td><strong>50</strong></td>
+                            <td>35</td>
+                            <td>15</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>10.0</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td class="table-rank">9º</td>
+                            <td class="table-name">Sofia</td>
+                            <td><strong>20</strong></td>
+                            <td>16</td>
+                            <td>4</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>6.7</td>
+                            <td>3</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="master-footer">
+                <p><strong>RIBBAI OPS</strong> • Capítulo 2: Ranking Final</p>
+            </div>
+        </div>
+
+        <!-- ==========================================
+             ANÁLISES INDIVIDUAIS (1 PÁGINA POR COLABORADOR)
+             ========================================== -->
+        
+        <!-- COLABORADOR 1: PABLO -->
+        <div class="collaborator-page">
+            <div class="collaborator-header">
+                <div class="collaborator-title-row">
+                    <div>
+                        <div class="collaborator-name">🥇 1º Lugar: Pablo</div>
+                        <div class="collaborator-position">Liderança Operacional Consistente</div>
+                    </div>
+                    <div class="collaborator-score">
+                        <div class="score-value">568</div>
+                        <div class="score-label">Pontos Totais</div>
+                    </div>
+                </div>
+                
+                <div class="kpi-breakdown">
+                    <div class="kpi-breakdown-card">
+                        <div class="kpi-breakdown-title">Execução</div>
+                        <div class="kpi-breakdown-value">320</div>
+                        <div class="kpi-breakdown-max">16.0/dia</div>
+                    </div>
+                    <div class="kpi-breakdown-card">
+                        <div class="kpi-breakdown-title">Qualidade</div>
+                        <div class="kpi-breakdown-value">128</div>
+                        <div class="kpi-breakdown-max">6.4/dia</div>
+                    </div>
+                    <div class="kpi-breakdown-card">
+                        <div class="kpi-breakdown-title">Modelo</div>
+                        <div class="kpi-breakdown-value">85</div>
+                        <div class="kpi-breakdown-max">4.3/dia</div>
+                    </div>
+                    <div class="kpi-breakdown-card">
+                        <div class="kpi-breakdown-title">Compromisso</div>
+                        <div class="kpi-breakdown-value">35</div>
+                        <div class="kpi-breakdown-max">1.8/dia</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="analysis-section">
+                <h3 class="analysis-title">Justificação da Liderança</h3>
+                <div class="analysis-content">
+                    <div class="analysis-text">
+                        <strong>Pablo conquistou o primeiro lugar através de uma execução operacional consistentemente excelente (16.0 pts/dia), demonstrando liderança natural e responsabilidade.</strong> Destacou-se na gestão de setores, abertura responsável e capacidade de coordenação. Embora tenha poucas horas extra, a sua qualidade operacional compensa.
+                    </div>
+                    <ul class="analysis-highlights">
+                        <li><strong>Pontos fortes:</strong> Abertura responsável, gestão de equipas e manutenção da calma em pressão</li>
+                        <li><strong>Liderança operacional:</strong> Coordenação natural e capacidade de decisão</li>
+                        <li><strong>Consistência:</strong> Desempenho estável ao longo de 20 dias</li>
+                        <li><strong>Qualidade de serviço:</strong> 6.4 pontos/dia em qualidade</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="master-footer">
+                <p><strong>RIBBAI OPS</strong> • Análise Individual: Pablo (1º Lugar)</p>
+            </div>
+        </div>
+
+        <!-- COLABORADOR 2: MATILDE -->
+        <div class="collaborator-page">
+            <div class="collaborator-header">
+                <div class="collaborator-title-row">
+                    <div>
+                        <div class="collaborator-name">🥈 2º Lugar: Matilde</div>
+                        <div class="collaborator-position">Consistência e Qualidade Excecional</div>
+                    </div>
+                    <div class="collaborator-score">
+                        <div class="score-value">551</div>
+                        <div class="score-label">Pontos Totais</div>
+                    </div>
+                </div>
+                
+                <div class="kpi-breakdown">
+                    <div class="kpi-breakdown-card">
+                        <div class="kpi-breakdown-title">Execução</div>
+                        <div class="kpi-breakdown-value">295</div>
+                        <div class="kpi-breakdown-max">14.0/dia</div>
+                    </div>
+                    <div class="kpi-breakdown-card">
+                        <div class="kpi-breakdown-title">Qualidade</div>
+                        <div class="kpi-breakdown-value">135</div>
+                        <div class="kpi-breakdown-max">6.4/dia</div>
+                    </div>
+                    <div class="kpi-breakdown-card">
+                        <div class="kpi-breakdown-title">Modelo</div>
+                        <div class="kpi-breakdown-value">78</div>
+                        <div class="kpi-breakdown-max">3.7/dia</div>
+                    </div>
+                    <div class="kpi-breakdown-card">
+                        <div class="kpi-breakdown-title">Compromisso</div>
+                        <div class="kpi-breakdown-value">43</div>
+                        <div class="kpi-breakdown-max">2.0/dia</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="analysis-section">
+                <h3 class="analysis-title">Subida Notável no Ranking</h3>
+                <div class="analysis-content">
+                    <div class="analysis-text">
+                        <strong>Matilde subiu para o segundo lugar destacando-se na qualidade de serviço (6.4 pts/dia) e adaptação ao modelo de setores.</strong> Especialista na gestão da sala interior, demonstrou consistência e versatilidade. Participação ativa em fechos e boa evolução na comunicação.
+                    </div>
+                    <ul class="analysis-highlights">
+                        <li><strong>Especialização:</strong> Gestão excecional da sala interior</li>
+                        <li><strong>Versatilidade:</strong> 164h25min em múltiplas funções</li>
+                        <li><strong>Evolução:</strong> Melhoria consistente em todas as categorias</li>
+                        <li><strong>Pontuação equilibrada:</strong> Performance sólida em todas as áreas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="master-footer">
+                <p><strong>RIBBAI OPS</strong> • Análise Individual: Matilde (2º Lugar)</p>
+            </div>
+        </div>
+
+        <!-- COLABORADOR 3: CAROLINA -->
+        <div class="collaborator-page">
+            <div class="collaborator-header">
+                <div class="collaborator-title-row">
+                    <div>
+                        <div class="collaborator-name">🥉 3º Lugar: Carolina</div>
+                        <div class="collaborator-position">Líder em Compromisso e Dedicação</div>
+                    </div>
+                    <div class="collaborator-score">
+                        <div class="score-value">535</div>
+                        <div class="score-label">Pontos Totais</div>
+                    </div>
+                </div>
+                
+                <div class="kpi-breakdown">
+                    <div class="kpi-breakdown-card">
+                        <div class="kpi-breakdown-title">Execução</div>
+                        <div class="kpi-breakdown-value">285</div>
+                        <div class="kpi-breakdown-max">14.3/dia</div>
+                    </div>
+                    <div class="kpi-breakdown-card">
+                        <div class="kpi-breakdown-title">Qualidade</div>
+                        <div class="kpi-breakdown-value">95</div>
+                        <div class="kpi-breakdown-max">4.8/dia</div>
+                    </div>
+                    <div class="kpi-breakdown-card">
+                        <div class="kpi-breakdown-title">Modelo</div>
+                        <div class="kpi-breakdown-value">45</div>
+                        <div class="kpi-breakdown-max">2.3/dia</div>
+                    </div>
+                    <div class="kpi-breakdown-card">
+                        <div class="kpi-breakdown-title">Compromisso</div>
+                        <div class="kpi-breakdown-value">110</div>
+                        <div class="kpi-breakdown-max">5.5/dia</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="analysis-section">
+                <h3 class="analysis-title">Compromisso Excecional</h3>
+                <div class="analysis-content">
+                    <div class="analysis-text">
+                        <strong>Carolina destacou-se pelo compromisso excepcional (5.5 pts/dia), liderando em horas extra (28h totais).</strong> Boa execução operacional mas com oportunidades de melhoria na qualidade de serviço e adaptação ao modelo. A sua dedicação através das horas extra demonstra forte compromisso com a equipa.
+                    </div>
+                    <ul class="analysis-highlights">
+                        <li><strong>Líder em compromisso:</strong> 28h de horas extra no mês</li>
+                        <li><strong>Dedicação:</strong> Participação ativa nos fechos</li>
+                        <li><strong>Oportunidades:</strong> Melhorar qualidade de serviço e adaptação</li>
+                        <li><strong>Execução sólida:</strong> 14.3 pontos/dia em execução operacional</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="master-footer">
+                <p><strong>RIBBAI OPS</strong> • Análise Individual: Carolina (3º Lugar)</p>
+            </div>
+        </div>
+
+        <!-- COLABORADOR 4: BRUNO -->
+        <div class="collaborator-page">
+            <div class="collaborator-header">
+                <div class="collaborator-title-row">
+                    <div>
+                        <div class="collaborator-name">4º Lugar: Bruno</div>
+                        <div class="collaborator-position">Evolução Consistente e Coordenação</div>
+                    </div>
+                    <div class="collaborator-score">
+                        <div class="score-value">514</div>
+                        <div class="score-label">Pontos Totais</div>
+                    </div>
+                </div>
+                
+                <div class="kpi-breakdown">
+                    <div class="kpi-breakdown-card">
+                        <div class="kpi-breakdown-title">Execução</div>
+                        <div class="kpi-breakdown-value">275</div>
+                        <div class="kpi-breakdown-max">13.8/dia</div>
+                    </div>
+                    <div class="kpi-breakdown-card">
+                        <div class="kpi-breakdown-title">Qualidade</div>
+                        <div class="kpi-breakdown-value">105</div>
+                        <div class="kpi-breakdown-max">5.3/dia</div>
+                    </div>
+                    <div class="kpi-breakdown-card">
+                        <div class="kpi-breakdown-title">Modelo</div>
+                        <div class="kpi-breakdown-value">65</div>
+                        <div class="kpi-breakdown-max">3.3/dia</div>
+                    </div>
+                    <div class="kpi-breakdown-card">
+                        <div class="kpi-breakdown-title">Compromisso</div>
+                        <div class="kpi-breakdown-value">69</div>
+                        <div class="kpi-breakdown-max">3.5/dia</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="analysis-section">
+                <h3 class="analysis-title">Runner de Excelência</h3>
+                <div class="analysis-content">
+                    <div class="analysis-text">
+                        <strong>Bruno mostrou evolução na adaptação ao modelo e coordenação operacional.</strong> Destaque como runner e na gestão de equipas durante períodos de pressão. Pontuação equilibrada em todas as categorias com potencial para crescimento. Boa capacidade de liderança operacional.
+                    </div>
+                    <ul class="analysis-highlights">
+                        <li><strong>Runner especializado:</strong> Coordenação eficaz entre setores</li>
+                        <li><strong>Evolução:</strong> Melhoria consistente no modelo de setores</li>
+                        <li><strong>Liderança:</strong> Gestão de equipas em períodos críticos</li>
+                        <li><strong>Equilibrio:</strong> Performance sólida em todas as categorias</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="master-footer">
+                <p><strong>RIBBAI OPS</strong> • Análise Individual: Bruno (4º Lugar)</p>
+            </div>
+        </div>
+
+        <!-- COLABORADOR 5: LIL -->
+        <div class="collaborator-page">
+            <div class="collaborator-header">
+                <div class="collaborator-title-row">
+                    <div>
+                        <div class="collaborator-name">5º Lugar: Lil</div>
+                        <div class="collaborator-position">Versatilidade Operacional</div>
+                    </div>
+                    <div class="collaborator-score">
+                        <div class="score-value">454</div>
+                        <div class="score-label">Pontos Totais</div>
+                    </div>
+                </div>
+                
+                <div class="kpi-breakdown">
+                    <div class="kpi-breakdown-card">
+                        <div class="kpi-breakdown-title">Execução</div>
+                        <div class="kpi-breakdown-value">235</div>
+                        <div class="kpi-breakdown-max">11.2/dia</div>
+                    </div>
+                    <div class="kpi-breakdown-card">
+                        <div class="kpi-breakdown-title">Qualidade</div>
+                        <div class="kpi-breakdown-value">88</div>
+                        <div class="kpi-breakdown-max">4.2/dia</div>
+                    </div>
+                    <div class="kpi-breakdown-card">
+                        <div class="kpi-breakdown-title">Modelo</div>
+                        <div class="kpi-breakdown-value">55</div>
+                        <div class="kpi-breakdown-max">2.6/dia</div>
+                    </div>
+                    <div class="kpi-breakdown-card">
+                        <div class="kpi-breakdown-title">Compromisso</div>
+                        <div class="kpi-breakdown-value">76</div>
+                        <div class="kpi-breakdown-max">3.6/dia</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="analysis-section">
+                <h3 class="analysis-title">Polivalência e Dedicação</h3>
+                <div class="analysis-content">
+                    <div class="analysis-text">
+                        <strong>Lil demonstrou versatilidade, trabalhando em múltiplas funções (gestão de porta, setores diversos, abertura e fecho).</strong> Boa participação em horas extra e compromisso com a equipa. Oportunidade de crescimento na execução operacional e qualidade de serviço.
+                    </div>
+                    <ul class="analysis-highlights">
+                        <li><strong>Versatilidade:</strong> Múltiplas funções dominadas</li>
+                        <li><strong>Gestão de porta:</strong> Especialidade bem desenvolvida</li>
+                        <li><strong>Compromisso:</strong> Participação ativa em fechos e aberturas</li>
+                        <li><strong>Crescimento:</strong> Potencial para melhoria na execução</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="master-footer">
+                <p><strong>RIBBAI OPS</strong> • Análise Individual: Lil (5º Lugar)</p>
+            </div>
+        </div>
+
+        <!-- ==========================================
+             CAPÍTULO FINAL: CONCLUSÕES
+             ========================================== -->
+        <div class="chapter">
+            <div class="chapter-header">
+                <h2 class="chapter-title">📈 Conclusões e Recomendações</h2>
+                <div class="chapter-subtitle">
+                    Análise consolidada dos resultados e recomendações estratégicas para o próximo período de avaliação.
+                </div>
+            </div>
+
+            <div class="component">
+                <h3 style="font-size: 14px; font-weight: 600; color: #172033; margin-bottom: 10mm;">🎯 Pontos Fortes da Equipa</h3>
+                <div class="insight-box">
+                    <ul class="insight-list">
+                        <li><strong>Liderança Consistente:</strong> Pablo manteve excelência operacional durante todo o mês</li>
+                        <li><strong>Evolução Notable:</strong> Matilde subiu para 2º lugar com melhoria em todas as áreas</li>
+                        <li><strong>Compromisso Excecional:</strong> Carolina lidera em dedicação com 28h de horas extra</li>
+                        <li><strong>Adaptação ao Modelo:</strong> Equipa consolidou o sistema de setores</li>
+                        <li><strong>Trabalho de Equipa:</strong> Boa colaboração e entreajuda durante todo o mês</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="component">
+                <h3 style="font-size: 14px; font-weight: 600; color: #172033; margin-bottom: 10mm;">🚀 Recomendações para Julho</h3>
+                <div class="insight-box">
+                    <ul class="insight-list">
+                        <li><strong>Reconhecimento:</strong> Valorizar publicamente os destaques do mês</li>
+                        <li><strong>Desenvolvimento:</strong> Plano de formação para Lee e Diogo</li>
+                        <li><strong>Rotação:</strong> Experiência em diferentes setores para crescimento</li>
+                        <li><strong>Feedback:</strong> Sessões individuais com cada colaborador</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="component">
+                <h3 style="font-size: 14px; font-weight: 600; color: #172033; margin-bottom: 10mm;">⚖️ Transparência e Equidade</h3>
+                <div class="card-grid">
+                    <div class="info-card">
+                        <h4>Como Garantimos a Equidade</h4>
+                        <p style="margin-bottom: 8px;">Todos os colaboradores são avaliados pelos mesmos critérios objetivos, baseados em relatórios operacionais diários.</p>
+                        <p>Colaboradores com menos dias não são prejudicados devido ao cálculo por média diária.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h4>Limitações do Sistema</h4>
+                        <p style="margin-bottom: 8px;">Sistema baseado em relatórios diários com avaliação subjetiva em algumas categorias.</p>
+                        <p>Melhorias contínuas são implementadas com base no feedback da equipa.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="master-footer">
+                <p><strong>RIBBAI OPS</strong> • Master Template v1.0 • Relatório Detalhado<br>
+                Gerado em 03/07/2026 • Baseado em 27 relatórios operacionais diários</p>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

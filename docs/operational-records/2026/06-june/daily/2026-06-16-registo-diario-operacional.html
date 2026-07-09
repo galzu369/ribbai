@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Relatório Diário Operacional - 16-06-2026</title>
+    <style>
+      @page { size: A4; margin: 16mm 14mm 18mm; }
+      :root { --ink:#172033; --muted:#657085; --line:#d9dee8; --soft:#f6f7fa; --warm:#fff7ed; --brand:#f97316; --brand-dark:#9a3412; --green:#15803d; --blue:#1d4ed8; --amber:#a16207; }
+      * { box-sizing:border-box; }
+      body { margin:0; background:#fff; color:var(--ink); font-family:Inter,ui-sans-serif,system-ui,sans-serif; font-size:10pt; line-height:1.5; }
+      h1,h2,h3,p { margin-top:0; }
+      h1 { font-size:34pt; line-height:1.02; letter-spacing:-0.04em; margin-bottom:10pt; }
+      h2 { border-bottom:1px solid var(--line); font-size:15pt; margin:22pt 0 10pt; padding-bottom:5pt; }
+      h3 { color:var(--brand-dark); font-size:11pt; margin:13pt 0 5pt; }
+      ul { margin:4pt 0 10pt 15pt; padding:0; }
+      table { border-collapse:collapse; margin:8pt 0 14pt; width:100%; }
+      th,td { border:1px solid var(--line); padding:6pt 7pt; text-align:left; vertical-align:top; }
+      th { background:var(--soft); font-size:8pt; letter-spacing:0.06em; text-transform:uppercase; }
+      .cover { background:radial-gradient(circle at top right,rgba(249,115,22,0.18),transparent 35%),linear-gradient(135deg,#fff7ed 0%,#fff 42%,#f8fafc 100%); border:1px solid #fed7aa; border-radius:22px; margin-bottom:16pt; min-height:248mm; padding:24mm 18mm; }
+      .eyebrow { color:var(--brand); font-size:8.5pt; font-weight:800; letter-spacing:0.18em; margin-bottom:14pt; text-transform:uppercase; }
+      .subtitle { color:var(--muted); font-size:14pt; line-height:1.45; max-width:150mm; }
+      .meta-panel { background:rgba(255,255,255,0.82); border:1px solid #fed7aa; border-radius:16px; margin-top:28pt; padding:14pt; }
+      .meta-grid { display:grid; gap:10pt; grid-template-columns:repeat(3,1fr); }
+      .meta-item { border-left:3px solid var(--brand); padding-left:8pt; }
+      .meta-label { color:var(--muted); display:block; font-size:7.5pt; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; }
+      .meta-value { display:block; font-size:10.5pt; font-weight:700; margin-top:2pt; }
+      .page-break { break-before:page; }
+      .kpi-grid { display:grid; gap:8pt; grid-template-columns:repeat(3,1fr); margin:12pt 0 16pt; }
+      .kpi { background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:10pt; }
+      .kpi-label { color:var(--muted); display:block; font-size:7.5pt; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; }
+      .kpi-value { display:block; font-size:22pt; font-weight:800; margin-top:3pt; }
+      .kpi-note { color:var(--muted); display:block; font-size:8pt; margin-top:2pt; }
+      .good { color:var(--green); }
+      .warn { color:var(--amber); }
+      .callout { background:var(--warm); border-left:4px solid var(--brand); border-radius:12px; margin:10pt 0 14pt; padding:11pt 13pt; }
+      .panel-grid { display:grid; gap:9pt; grid-template-columns:repeat(2,1fr); }
+      .panel { border:1px solid var(--line); border-radius:12px; break-inside:avoid; padding:10pt; }
+      .badge { border-radius:999px; display:inline-block; font-size:7.5pt; font-weight:800; margin-bottom:5pt; padding:3pt 7pt; text-transform:uppercase; }
+      .badge-green { background:#dcfce7; color:var(--green); }
+      .badge-blue { background:#dbeafe; color:var(--blue); }
+      .badge-amber { background:#fef3c7; color:var(--amber); }
+      .footer-note { border-top:1px solid var(--line); color:var(--muted); font-size:8.5pt; margin-top:18pt; padding-top:7pt; }
+    </style>
+  </head>
+  <body>
+    <section class="cover">
+      <div class="eyebrow">RIBBAI OPS · Relatório Diário Operacional</div>
+      <h1>Registo Diário Operacional</h1>
+      <p class="subtitle">Apresentação diária à gestão sobre a operação Front of House do restaurante RIBBAI.</p>
+      <div class="meta-panel">
+        <div class="meta-grid">
+          <div class="meta-item"><span class="meta-label">Data</span><span class="meta-value">16-06-2026</span></div>
+          <div class="meta-item"><span class="meta-label">Dia</span><span class="meta-value">Terça-feira</span></div>
+          <div class="meta-item"><span class="meta-label">Autor</span><span class="meta-value">Filipe Catalão</span></div>
+          <div class="meta-item"><span class="meta-label">Restaurante</span><span class="meta-value">RIBBAI</span></div>
+          <div class="meta-item"><span class="meta-label">Âmbito</span><span class="meta-value">Front of House</span></div>
+          <div class="meta-item"><span class="meta-label">Estado</span><span class="meta-value">Registado</span></div>
+        </div>
+      </div>
+      <div class="kpi-grid">
+        <div class="kpi"><span class="kpi-label">Sucesso Operacional</span><span class="kpi-value warn">8/10</span><span class="kpi-note">Pico excecional 13h30</span></div>
+        <div class="kpi"><span class="kpi-label">Gestão de Crise</span><span class="kpi-value good">10/10</span><span class="kpi-note">Resposta coordenada</span></div>
+        <div class="kpi"><span class="kpi-label">Liderança</span><span class="kpi-value good">10/10</span><span class="kpi-note">Sala + gestão</span></div>
+      </div>
+      <div class="kpi-grid">
+        <div class="kpi"><span class="kpi-label">Trabalho de Equipa</span><span class="kpi-value good">10/10</span><span class="kpi-note">Cobertura e adaptação</span></div>
+        <div class="kpi"><span class="kpi-label">Experiência Cliente</span><span class="kpi-value warn">7,5/10</span><span class="kpi-note">Atrasos em pico</span></div>
+        <div class="kpi"><span class="kpi-label">Horas Extra</span><span class="kpi-value good">3h30</span><span class="kpi-note">3 colaboradores</span></div>
+      </div>
+      <div class="callout"><strong>Conclusão do dia:</strong> pico fora de padrão com ~70 clientes adicionais em simultâneo; gestão eficaz através de reorganização rápida, comunicação preventiva e liderança de sala/gestão.</div>
+    </section>
+
+    <section class="page-break">
+      <h2>Síntese Executiva</h2>
+      <p>Terça-feira com arranque tranquilo e padrão normal até às 13h30. A chegada simultânea de um grupo de motards (~30 pessoas) e quatro grupos (~8 pessoas cada) criou um pico extremo. A equipa respondeu com reorganização imediata, comunicação preventiva com cozinha e clientes e coordenação direta da sala interior.</p>
+      <div class="callout"><strong>Nota:</strong> o grupo de motards deixou gorjeta de 50€ como reconhecimento do esforço da equipa.</div>
+
+      <h2>Equipa Em Serviço</h2>
+      <div class="panel-grid">
+        <div class="panel"><span class="badge badge-green">Pablo</span><ul><li>Abertura com Marta.</li><li>Limpeza e reorganização completa da copa.</li><li>Apoio na estabilização do pico.</li></ul></div>
+        <div class="panel"><span class="badge badge-green">Marta</span><ul><li>Abertura e preparação.</li><li>Adaptação no período mais intenso.</li><li>Apoio ao serviço ao longo do dia.</li></ul></div>
+        <div class="panel"><span class="badge badge-blue">Filipe Catalão</span><ul><li>Entrada às 11h30.</li><li>Coordenação da sala interior e grandes grupos.</li><li>Inventário de consumíveis.</li><li>1h30m de horas extra.</li></ul></div>
+        <div class="panel"><span class="badge badge-amber">Lil</span><ul><li>Entrada às 12h00.</li><li>Apoio operacional no pico.</li><li>Fecho.</li><li>1h00 de horas extra.</li></ul></div>
+        <div class="panel"><span class="badge badge-amber">Bruno</span><ul><li>Entrada às 12h30.</li><li>Estabilização da operação no pico.</li><li>Cobertura para inventário.</li><li>Reunião de melhoria.</li><li>Fecho.</li><li>1h00 de horas extra.</li></ul></div>
+      </div>
+    </section>
+
+    <section class="page-break">
+      <h2>Desempenho Operacional</h2>
+      <p>O dia iniciou-se tranquilo e dentro do padrão. Às 13h30 ocorreu uma entrada simultânea de vários grupos de grande dimensão, elevando a operação para lotação quase total e pressionando sala e cozinha.</p>
+
+      <h2>Gestão do Pico de Pressão</h2>
+      <ul>
+        <li>Reorganização imediata da sala para acomodação dos grupos.</li>
+        <li>Criação de mesa principal para o grupo de motards e preparação de espaço adicional.</li>
+        <li>Redistribuição dinâmica de recursos humanos.</li>
+        <li>Coordenação da sala interior assumida por Filipe.</li>
+      </ul>
+
+      <h2>Gestão da Pressão na Cozinha</h2>
+      <p>Filipe deslocou-se à grelha para alinhar ritmo de execução e reduzir stress. A equipa de sala comunicou preventivamente aos clientes tempos de espera potencialmente superiores e serviço escalonado.</p>
+
+      <h2>Papel da Gestão</h2>
+      <p>O gerente Luís foi determinante durante o pico, assumindo a roda e coordenando a saída de pratos com sangue frio e presença constante.</p>
+
+      <h2>Resultado</h2>
+      <p>O pico durou aproximadamente 1h30. Todos os clientes foram atendidos, sem incidentes graves ou falhas críticas. Após o pico, a operação regressou à normalidade.</p>
+    </section>
+
+    <section class="page-break">
+      <h2>Análise e Melhoria Operacional</h2>
+      <table>
+        <thead><tr><th>Decisão</th><th>Objetivo</th></tr></thead>
+        <tbody>
+          <tr><td>Avaliar grandes grupos com o gerente Luís no pico de almoço</td><td>Reduzir risco operacional e antecipar capacidade da cozinha</td></tr>
+          <tr><td>Dividir grupos muito grandes em várias mesas</td><td>Melhorar fluidez e reduzir pressão simultânea</td></tr>
+          <tr><td>Recomendar mesas de 7–8 pessoas</td><td>Optimizar serviço e coordenação sala/cozinha</td></tr>
+          <tr><td>Comunicar serviço escalonado e possíveis tempos de espera</td><td>Gerir expectativas e reduzir fricção</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Gestão de Inventário</h2>
+      <p>Com a operação estabilizada, foi realizada contagem integral dos consumíveis monitorizados, possível graças à cobertura operacional de Bruno, Pablo e Lil.</p>
+      <div class="callout"><strong>Registo detalhado:</strong> `docs/operational-records/2026/06-june/inventory-updates/2026-06-16-atualizacao-inventario-stock.html`</div>
+
+      <h2>Incidentes Operacionais</h2>
+      <table>
+        <thead><tr><th>Ocorrência</th><th>Estado</th></tr></thead>
+        <tbody>
+          <tr><td>Bife do Lombo devolvido (ponto incorreto)</td><td>Resolvido</td></tr>
+          <tr><td>Prego de Novilho produzido em excesso</td><td>Controlado</td></tr>
+          <tr><td>Ovos Rotos produzidos em excesso</td><td>Controlado</td></tr>
+          <tr><td>Hambúrguer BBQ com atraso (pedido posterior)</td><td>Recuperado</td></tr>
+        </tbody>
+      </table>
+      <div class="callout"><strong>Nota:</strong> incidentes residuais face à dimensão do pico; recuperação eficaz sem comprometer a perceção global do serviço.</div>
+    </section>
+
+    <section class="page-break">
+      <h2>Horas Extra</h2>
+      <table>
+        <thead><tr><th>Colaborador</th><th>Registo</th></tr></thead>
+        <tbody>
+          <tr><td>Filipe Catalão</td><td>1h30m de horas extra</td></tr>
+          <tr><td>Bruno</td><td>1h00 de horas extra</td></tr>
+          <tr><td>Lil</td><td>1h00 de horas extra</td></tr>
+        </tbody>
+      </table>
+      <div class="callout"><strong>Total da equipa:</strong> 3h30 de horas extra.</div>
+
+      <h2>Fecho</h2>
+      <p>Fecho por Filipe Catalão, Bruno e Lil. Encerramento concluído com sucesso e restaurante preparado para o dia seguinte.</p>
+
+      <h2>Notas Para A Gestão</h2>
+      <p>Dia de referência para estudo: a entrada simultânea de ~70 clientes foi gerida com comunicação, liderança e colaboração. O episódio gerou decisões concretas para protocolo de grandes grupos e reforçou a confiança na capacidade de resposta da equipa.</p>
+
+      <h2>Classificação Para O Sistema RIBBAI OPS</h2>
+      <table>
+        <thead><tr><th>Categoria</th><th>Registo</th></tr></thead>
+        <tbody>
+          <tr><td>Operational Notes</td><td>Pico excecional ao almoço; reorganização rápida e comunicação preventiva; gorjeta 50€ dos motards.</td></tr>
+          <tr><td>Service Improvement Candidate</td><td>Protocolo de gestão de grandes grupos (validação, divisão 7–8, comunicação escalonada).</td></tr>
+          <tr><td>Incident Input</td><td>Erro ponto bife, 2 pratos em excesso, atraso hamburger BBQ (recuperados).</td></tr>
+          <tr><td>Inventory Context</td><td>Contagem integral de consumíveis após estabilização do serviço.</td></tr>
+          <tr><td>Overtime Input</td><td>3h30: Filipe (1h30m), Bruno (1h00), Lil (1h00).</td></tr>
+        </tbody>
+      </table>
+
+      <p class="footer-note">Documento gerado para apresentação diária à gestão. Fonte operacional: Registo Diário Operacional de 16-06-2026.</p>
+    </section>
+  </body>
+</html>
+

@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Relatório Diário Operacional - 18-06-2026</title>
+    <style>
+      @page { size: A4; margin: 16mm 14mm 18mm; }
+      :root { --ink:#172033; --muted:#657085; --line:#d9dee8; --soft:#f6f7fa; --warm:#fff7ed; --brand:#f97316; --brand-dark:#9a3412; --green:#15803d; --blue:#1d4ed8; --amber:#b45309; }
+      * { box-sizing:border-box; }
+      body { margin:0; background:#fff; color:var(--ink); font-family:Inter,ui-sans-serif,system-ui,sans-serif; font-size:10pt; line-height:1.5; }
+      h1,h2,h3,p { margin-top:0; }
+      h1 { font-size:34pt; line-height:1.02; letter-spacing:-0.04em; margin-bottom:10pt; }
+      h2 { border-bottom:1px solid var(--line); font-size:15pt; margin:22pt 0 10pt; padding-bottom:5pt; }
+      h3 { color:var(--brand-dark); font-size:11pt; margin:13pt 0 5pt; }
+      ul { margin:4pt 0 10pt 15pt; padding:0; }
+      table { border-collapse:collapse; margin:8pt 0 14pt; width:100%; }
+      th,td { border:1px solid var(--line); padding:6pt 7pt; text-align:left; vertical-align:top; }
+      th { background:var(--soft); font-size:8pt; letter-spacing:0.06em; text-transform:uppercase; }
+      .cover { background:radial-gradient(circle at top right,rgba(249,115,22,0.18),transparent 35%),linear-gradient(135deg,#fff7ed 0%,#fff 42%,#f8fafc 100%); border:1px solid #fed7aa; border-radius:22px; margin-bottom:16pt; min-height:248mm; padding:24mm 18mm; }
+      .eyebrow { color:var(--brand); font-size:8.5pt; font-weight:800; letter-spacing:0.18em; margin-bottom:14pt; text-transform:uppercase; }
+      .subtitle { color:var(--muted); font-size:14pt; line-height:1.45; max-width:150mm; }
+      .meta-panel { background:rgba(255,255,255,0.82); border:1px solid #fed7aa; border-radius:16px; margin-top:28pt; padding:14pt; }
+      .meta-grid { display:grid; gap:10pt; grid-template-columns:repeat(3,1fr); }
+      .meta-item { border-left:3px solid var(--brand); padding-left:8pt; }
+      .meta-label { color:var(--muted); display:block; font-size:7.5pt; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; }
+      .meta-value { display:block; font-size:10.5pt; font-weight:700; margin-top:2pt; }
+      .page-break { break-before:page; }
+      .kpi-grid { display:grid; gap:8pt; grid-template-columns:repeat(3,1fr); margin:12pt 0 16pt; }
+      .kpi { background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:10pt; }
+      .kpi-label { color:var(--muted); display:block; font-size:7.5pt; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; }
+      .kpi-value { display:block; font-size:22pt; font-weight:800; margin-top:3pt; }
+      .kpi-note { color:var(--muted); display:block; font-size:8pt; margin-top:2pt; }
+      .good { color:var(--green); }
+      .warn { color:var(--amber); }
+      .callout { background:var(--warm); border-left:4px solid var(--brand); border-radius:12px; margin:10pt 0 14pt; padding:11pt 13pt; }
+      .panel-grid { display:grid; gap:9pt; grid-template-columns:repeat(2,1fr); }
+      .panel { border:1px solid var(--line); border-radius:12px; break-inside:avoid; padding:10pt; }
+      .badge { border-radius:999px; display:inline-block; font-size:7.5pt; font-weight:800; margin-bottom:5pt; padding:3pt 7pt; text-transform:uppercase; }
+      .badge-green { background:#dcfce7; color:var(--green); }
+      .badge-blue { background:#dbeafe; color:var(--blue); }
+      .badge-amber { background:#fef3c7; color:var(--amber); }
+      .footer-note { border-top:1px solid var(--line); color:var(--muted); font-size:8.5pt; margin-top:18pt; padding-top:7pt; }
+    </style>
+  </head>
+  <body>
+    <section class="cover">
+      <div class="eyebrow">RIBBAI OPS · Relatório Diário Operacional</div>
+      <h1>Registo Diário Operacional</h1>
+      <p class="subtitle">Apresentação diária à gestão sobre a operação Front of House do restaurante RIBBAI.</p>
+      <div class="meta-panel">
+        <div class="meta-grid">
+          <div class="meta-item"><span class="meta-label">Data</span><span class="meta-value">18-06-2026</span></div>
+          <div class="meta-item"><span class="meta-label">Dia</span><span class="meta-value">Quinta-feira</span></div>
+          <div class="meta-item"><span class="meta-label">Autor</span><span class="meta-value">Filipe Catalão</span></div>
+          <div class="meta-item"><span class="meta-label">Restaurante</span><span class="meta-value">RIBBAI</span></div>
+          <div class="meta-item"><span class="meta-label">Tipo</span><span class="meta-value">Relatório Diário Operacional</span></div>
+          <div class="meta-item"><span class="meta-label">Estado</span><span class="meta-value">Registado</span></div>
+        </div>
+      </div>
+      <div class="kpi-grid">
+        <div class="kpi"><span class="kpi-label">Sucesso Operacional</span><span class="kpi-value good">8,5/10</span><span class="kpi-note">Dia intenso</span></div>
+        <div class="kpi"><span class="kpi-label">Autonomia Equipa</span><span class="kpi-value good">10/10</span><span class="kpi-note">Sem chefia de sala</span></div>
+        <div class="kpi"><span class="kpi-label">Adaptação</span><span class="kpi-value good">10/10</span><span class="kpi-note">Pico + fecho</span></div>
+      </div>
+      <div class="kpi-grid">
+        <div class="kpi"><span class="kpi-label">Qualidade Serviço</span><span class="kpi-value good">9/10</span><span class="kpi-note">Clientes bem servidos</span></div>
+        <div class="kpi"><span class="kpi-label">Organização</span><span class="kpi-value warn">7,5/10</span><span class="kpi-note">Sem setores fixos</span></div>
+        <div class="kpi"><span class="kpi-label">Horas Extra</span><span class="kpi-value good">4h30</span><span class="kpi-note">4 colaboradores</span></div>
+      </div>
+      <div class="callout"><strong>Conclusão do dia:</strong> operação autónoma e eficaz sem chefia de sala, com pico relevante ao almoço e incidente técnico no fecho resolvido com responsabilidade de Carolina e Lil.</div>
+    </section>
+
+    <section class="page-break">
+      <h2>Síntese Executiva</h2>
+      <p>Quinta-feira sem presença de Filipe nem chefia de sala formal. A equipa assumiu a operação de forma autónoma, respondeu a um pico significativo ao almoço e manteve qualidade de serviço ao longo da tarde e jantar. Incidente técnico com vidros laterais no fecho prolongou o encerramento.</p>
+      <h2>Equipa Em Serviço</h2>
+      <div class="panel-grid">
+        <div class="panel"><span class="badge badge-green">Pablo</span><ul><li>Abertura com Matilde.</li><li>Desempenho consistente no almoço.</li><li>Pausa reduzida.</li><li>15 min de horas extra.</li></ul></div>
+        <div class="panel"><span class="badge badge-green">Matilde</span><ul><li>Abertura e preparação da sala.</li><li>Apoio operacional no almoço.</li><li>Pausa reduzida.</li><li>15 min de horas extra.</li></ul></div>
+        <div class="panel"><span class="badge badge-green">Marta</span><ul><li>Entrada às 11h00.</li><li>Reforço antes do pico.</li><li>Estabilidade sem chefia de sala.</li></ul></div>
+        <div class="panel"><span class="badge badge-blue">Carolina</span><ul><li>Entrada às 12h30.</li><li>Tarde e jantar consistentes.</li><li>Liderança no fecho e incidente.</li><li>2h00 de horas extra.</li></ul></div>
+        <div class="panel"><span class="badge badge-blue">Lil</span><ul><li>Entrada às 12h30.</li><li>Apoio tarde e jantar.</li><li>Fecho activo.</li><li>2h00 de horas extra.</li></ul></div>
+      </div>
+    </section>
+
+    <section class="page-break">
+      <h2>Enquadramento Operacional</h2>
+      <p>Funcionamento mais orgânico e menos estruturado, sem modelo de setores fixos. A equipa compensou a ausência de liderança operacional directa através da colaboração entre todos os elementos.</p>
+      <h2>Desempenho Operacional</h2>
+      <ul>
+        <li>Almoço com pico de pressão significativo.</li>
+        <li>Movimento consistente ao longo da tarde.</li>
+        <li>Jantar estável e boa afluência geral.</li>
+        <li>Serviço espontâneo mas funcional — a equipa "reinou no caos".</li>
+      </ul>
+      <h2>Gestão de Recursos Humanos</h2>
+      <p>Pablo e Matilde realizaram pausas reduzidas para manter cobertura operacional durante os períodos de maior movimento.</p>
+      <h2>Incidente Operacional no Fecho</h2>
+      <div class="callout"><strong>Vidros laterais:</strong> não fecharam corretamente durante o encerramento. Carolina e Lil permaneceram até garantir segurança e protecção do espaço. Atraso significativo no fecho com prolongamento de turno.</div>
+    </section>
+
+    <section class="page-break">
+      <h2>Pontos Positivos</h2>
+      <ul>
+        <li>Autonomia e adaptação sem chefia de sala.</li>
+        <li>Boa gestão do pico de almoço.</li>
+        <li>Forte colaboração e responsabilidade no fecho.</li>
+        <li>Resolução eficaz do problema técnico.</li>
+      </ul>
+      <h2>Áreas de Melhoria</h2>
+      <ul>
+        <li>Reforçar modelo de setores quando possível.</li>
+        <li>Equilibrar autonomia com organização estrutural.</li>
+        <li>Acompanhar situação técnica dos vidros laterais.</li>
+      </ul>
+      <h2>Fecho Operacional</h2>
+      <p>Fecho por Carolina e Lil. Apesar do incidente técnico, todas as tarefas de encerramento foram concluídas. Restaurante organizado, protegido e preparado para o dia seguinte.</p>
+      <h2>Horas Extra</h2>
+      <table>
+        <thead><tr><th>Colaborador</th><th>Registo</th></tr></thead>
+        <tbody>
+          <tr><td>Carolina</td><td>2h00 de horas extra</td></tr>
+          <tr><td>Lil</td><td>2h00 de horas extra</td></tr>
+          <tr><td>Pablo</td><td>15 minutos de horas extra</td></tr>
+          <tr><td>Matilde</td><td>15 minutos de horas extra</td></tr>
+        </tbody>
+      </table>
+      <div class="callout"><strong>Total da equipa:</strong> 4h30 de horas extra.</div>
+    </section>
+
+    <section class="page-break">
+      <h2>Notas Para A Gestão</h2>
+      <p>A equipa demonstrou capacidade para operar de forma autónoma sem estrutura formal de chefia de sala. Destaca-se o sentido de responsabilidade de Carolina e Lil no encerramento, particularmente perante o incidente técnico dos vidros laterais.</p>
+      <h2>Avaliação Global</h2>
+      <table>
+        <thead><tr><th>Indicador</th><th>Avaliação</th></tr></thead>
+        <tbody>
+          <tr><td>Sucesso Operacional</td><td>8,5/10</td></tr>
+          <tr><td>Capacidade de Adaptação</td><td>10/10</td></tr>
+          <tr><td>Autonomia da Equipa</td><td>10/10</td></tr>
+          <tr><td>Qualidade de Serviço</td><td>9/10</td></tr>
+          <tr><td>Organização</td><td>7,5/10</td></tr>
+          <tr><td>Trabalho de Equipa</td><td>10/10</td></tr>
+          <tr><td>Responsabilidade Operacional</td><td>10/10</td></tr>
+          <tr><td>Experiência do Cliente</td><td>9/10</td></tr>
+        </tbody>
+      </table>
+      <h2>Classificação Para O Sistema RIBBAI OPS</h2>
+      <table>
+        <thead><tr><th>Categoria</th><th>Registo</th></tr></thead>
+        <tbody>
+          <tr><td>Operational Notes</td><td>Operação autónoma; pico ao almoço; incidente vidros laterais no fecho.</td></tr>
+          <tr><td>Service Improvement Candidate</td><td>Reforçar modelo de setores mantendo autonomia da equipa.</td></tr>
+          <tr><td>Technical Incident Input</td><td>Vidros laterais não fecharam corretamente no encerramento.</td></tr>
+          <tr><td>Team Feedback Input</td><td>Equipa autónoma e colaborativa; Carolina e Lil destacadas no fecho.</td></tr>
+          <tr><td>Overtime Input</td><td>4h30: Carolina 2h00, Lil 2h00, Pablo 15m, Matilde 15m.</td></tr>
+        </tbody>
+      </table>
+      <p class="footer-note">Documento gerado para apresentação diária à gestão. Fonte operacional: Registo Diário Operacional de 18-06-2026. Autor: Filipe Catalão.</p>
+    </section>
+  </body>
+</html>

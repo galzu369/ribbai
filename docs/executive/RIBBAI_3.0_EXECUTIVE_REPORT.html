@@ -1,0 +1,1518 @@
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RIBB-A.I. 3.0 | Executive Project &amp; Strategic Value Report</title>
+    <link rel="stylesheet" href="html/css/styles.css" />
+    <link rel="stylesheet" href="html/css/ribbai-3.0-report.css" />
+  </head>
+  <body>
+    <main class="document ribbai-3-report">
+      <!--
+        RIBB-A.I. 3.0 – Executive Project & Strategic Value Report
+        Documento institucional de referência para Gerência e Administração.
+
+        Traçabilidade de fontes (nível macro):
+        - Visão, módulos, reporting, BI, dashboards:
+          docs/executive/RIBBAI_2.0_EXECUTIVE_MANUAL.md
+          docs/executive/07_GESTAO_DE_INVENTARIO.md
+          docs/executive/09_ANALYTICS.md
+          docs/executive/10_BUSINESS_INTELLIGENCE.md
+          docs/executive/12_DASHBOARDS.md
+          docs/executive/REPORTING_ANALYSIS.md
+          docs/FOUNDATION_COMPLETION_REPORT.md
+        - Arquitetura, princípios técnicos, operations intelligence:
+          docs/architecture/ARCHITECTURE.md
+          docs/modules/operations-intelligence-architecture.md
+          docs/technical/inventory-financial-engine.md
+          docs/modules/pdf-design-system.md
+        - Workflows e reporting operacional:
+          docs/modules/weekly-report-specification.md
+          docs/modules/monthly-report-specification.md
+          docs/workflows/monthly-inventory-report-workflow.md
+          docs/operational/DAILY_REPORT_AUTOMATION.md
+        - Registos e reports operacionais (daily/weekly/monthly):
+          docs/operational-records/2026/**/*
+          reports/weekly/*
+          reports/monthly/*
+          reports/leaderboard/*
+        - Inventário, purchasing, overtime e workforce:
+          docs/operational-records/2026/*/inventory-updates/*
+          docs/operational-records/2026/*/inventory-counts/*
+          docs/operational-records/2026/*/monthly/*
+          config/inventory-weekly-master-list.json
+          workforce-schedules/2026/*
+          docs/operational-records/2026/*/workforce-planning/*
+      -->
+
+      <!-- COVER PAGE -->
+      <section class="page" id="cover">
+        <div class="cover-layout">
+          <header class="cover-header">
+            <div class="cover-brand">RIBB-A.I.</div>
+            <div class="cover-version">3.0</div>
+          </header>
+
+          <div class="cover-main">
+            <h1 class="cover-title">Executive Project &amp; Strategic Value Report</h1>
+            <p class="cover-subtitle">
+              Documento institucional de referência que formaliza a visão, arquitetura, evolução e valor estratégico da
+              plataforma RIBB-A.I. 3.0 enquanto sistema integrado de gestão operacional baseada em dados.
+            </p>
+
+            <div class="cover-summary">
+              <p class="summary-text">
+                O projecto RIBB-A.I. 3.0 nasceu para transformar registos dispersos em uma plataforma única,
+                automatizada e documentada, capaz de gerar informação fiável para operação diária, Business Intelligence
+                e tomada de decisão pela Administração. Este relatório sintetiza o problema inicial, a transformação já
+                alcançada, a arquitetura construída, o investimento intelectual realizado e o potencial de evolução para
+                os próximos anos.
+              </p>
+            </div>
+
+            <div class="cover-metrics">
+              <div class="metric-item">
+                <div class="metric-value">1</div>
+                <div class="metric-label">Plataforma integrada de gestão operacional</div>
+              </div>
+              <div class="metric-item">
+                <div class="metric-value">12</div>
+                <div class="metric-label">Princípios fundamentais de desenho do sistema</div>
+              </div>
+              <div class="metric-item">
+                <div class="metric-value">3</div>
+                <div class="metric-label">Camadas principais: Operação, Inventário, BI</div>
+              </div>
+            </div>
+          </div>
+
+          <footer class="cover-footer">
+            <div class="footer-left">
+              <div><strong>Destinatários</strong></div>
+              <div>Gerência e Administração RIBBAI</div>
+            </div>
+            <div class="footer-right">
+              <div class="footer-tagline">Plataforma estratégica de gestão operacional baseada em dados</div>
+            </div>
+          </footer>
+        </div>
+      </section>
+
+      <!-- TABLE OF CONTENTS -->
+      <section class="page" id="toc-page">
+        <div class="page">
+          <div class="toc">
+            <h2>Índice</h2>
+            <ol>
+              <li><a href="#chapter-0">Capítulo 0 – Carta à Gerência e Administração</a></li>
+              <li><a href="#chapter-1">Capítulo 1 – Executive Summary</a></li>
+              <li><a href="#chapter-2">Capítulo 2 – Porque nasceu o RIBB-A.I. 3.0</a></li>
+              <li><a href="#chapter-3">Capítulo 3 – Princípios de Desenvolvimento do RIBB-A.I. 3.0</a></li>
+              <li><a href="#chapter-4">Capítulo 4 – Visão Estratégica</a></li>
+              <li><a href="#chapter-5">Capítulo 5 – Arquitetura Geral</a></li>
+              <li><a href="#chapter-6">Capítulo 6 – Módulos Desenvolvidos</a></li>
+              <li><a href="#chapter-7">Capítulo 7 – Workflows Automatizados</a></li>
+              <li><a href="#chapter-8">Capítulo 8 – Transformação Operacional</a></li>
+              <li><a href="#chapter-9">Capítulo 9 – Benefícios para a Operação</a></li>
+              <li><a href="#chapter-10">Capítulo 10 – Benefícios para a Gestão e Administração</a></li>
+              <li><a href="#chapter-11">Capítulo 11 – Estado Atual do Projeto</a></li>
+              <li><a href="#chapter-12">Capítulo 12 – Potencial Futuro</a></li>
+              <li><a href="#chapter-13">Capítulo 13 – Benchmark Internacional</a></li>
+              <li><a href="#chapter-14">Capítulo 14 – Investimento em Desenvolvimento</a></li>
+              <li><a href="#chapter-15">Capítulo 15 – Valor de Mercado</a></li>
+              <li><a href="#chapter-16">Capítulo 16 – Retorno Potencial</a></li>
+              <li><a href="#chapter-17">Capítulo 17 – Roadmap Estratégico 2026–2028</a></li>
+              <li><a href="#chapter-18">Capítulo 18 – Conclusão Executiva</a></li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHAPTER 0 – CARTA À GERÊNCIA E ADMINISTRAÇÃO -->
+      <section class="page chapter-0" id="chapter-0">
+        <!--
+          FONTES PRINCIPAIS:
+          - docs/executive/RIBBAI_2.0_EXECUTIVE_MANUAL.md (introdução, destinatários, enquadramento)
+          - docs/FOUNDATION_COMPLETION_REPORT.md (visão da fase foundation)
+          - docs/operational-records/2026/**/* (comprova execução paralela à função de Chefe de Sala)
+        -->
+        <div class="chapter-header">
+          <div>
+            <div class="chapter-kicker">Capítulo 0</div>
+            <h2>Carta à Gerência e Administração</h2>
+          </div>
+          <div class="chapter-meta">Documento institucional de enquadramento do projecto</div>
+        </div>
+
+        <div class="highlight-box info">
+          <p>
+            Este documento apresenta, de forma estruturada e institucional, o resultado de um projecto desenvolvido por
+            iniciativa própria, em paralelo com o exercício das funções de Chefe de Sala do RIBBAI. Ao longo dos últimos
+            meses, a operação diária, os relatórios e a documentação gerada demonstram que foi possível desenhar e
+            implementar uma plataforma de gestão operacional baseada em dados, sem qualquer custo directo para o RIBBAI
+            e sem qualquer remuneração específica associada.
+          </p>
+          <p>
+            A motivação sempre foi clara: melhorar a organização, a qualidade da informação disponível, a
+            rastreabilidade operacional e o apoio à decisão da Gestão e da Administração, preparando o restaurante para
+            uma fase de maior complexidade, maior volume e maior exigência de controlo.
+          </p>
+          <p>
+            O presente relatório não é um pedido de compensação, nem um exercício de auto‑promoção. É um registo formal
+            e objectivo do caminho percorrido, da arquitectura construída e do valor estratégico que hoje existe sob a
+            forma de plataforma RIBB-A.I. 3.0, com o único propósito de apoiar decisões futuras da Gerência e da Administração.
+          </p>
+        </div>
+      </section>
+
+      <!-- CHAPTER 1 – EXECUTIVE SUMMARY -->
+      <section class="page chapter-1" id="chapter-1">
+        <!--
+          FONTES:
+          - docs/executive/RIBBAI_2.0_EXECUTIVE_MANUAL.md (síntese de visão e módulos)
+          - docs/executive/REPORTING_ANALYSIS.md (papel do sistema de reporting)
+          - reports/weekly/*, reports/monthly/* (impacto já alcançado)
+        -->
+        <div class="chapter-header">
+          <div>
+            <div class="chapter-kicker">Capítulo 1</div>
+            <h2>Executive Summary</h2>
+          </div>
+          <div class="chapter-meta">Visão de alto nível do projecto RIBB-A.I. 3.0</div>
+        </div>
+
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-header">
+              <div>
+                <div class="kpi-title">O que é o RIBB-A.I. 3.0?</div>
+              </div>
+            </div>
+            <p>
+              Plataforma de gestão operacional baseada em dados que integra registos diários, relatórios semanais e
+              mensais, inventário, purchasing, workforce planning e Business Intelligence numa única fonte de verdade.
+            </p>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-header">
+              <div class="kpi-title">Porque foi criado?</div>
+            </div>
+            <p>
+              Para resolver problemas estruturais de informação dispersa, ausência de histórico consolidado, decisões
+              pouco suportadas por dados e elevada dependência do conhecimento tácito das pessoas.
+            </p>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-header">
+              <div class="kpi-title">Onde está actualmente?</div>
+            </div>
+            <p>
+              Em operação diária contínua, com geração automática de relatórios diários, semanais e mensais, motor
+              financeiro de inventário em funcionamento e documentação standardizada de processos críticos.
+            </p>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-header">
+              <div class="kpi-title">Impacto já alcançado</div>
+            </div>
+            <p>
+              Melhoria visível na organização da informação, redução de erros de inventário, aumento de rastreabilidade
+              operacional e capacidade de análise sistemática de overtime, equipas e movimento comercial.
+            </p>
+          </div>
+        </div>
+
+        <div class="key-takeaways">
+          <h4>Key Takeaways – Visão Executiva</h4>
+          <div class="takeaway-grid">
+            <div class="takeaway-item">
+              <div class="takeaway-number">01</div>
+              <div class="takeaway-content">
+                <strong>Plataforma, não ficheiros isolados.</strong>
+                O RIBB-A.I. 3.0 consolidou‑se como sistema integrado de reporting, inventário e BI, com fluxos automáticos
+                entre registos diários, relatórios mensais e dashboards executivos.
+              </div>
+            </div>
+            <div class="takeaway-item">
+              <div class="takeaway-number">02</div>
+              <div class="takeaway-content">
+                <strong>Automação e continuidade temporal.</strong>
+                As rotinas de geração de reports e snapshots garantem continuidade de dados mês após mês, permitindo
+                análises comparáveis e previsões mais sólidas.
+              </div>
+            </div>
+            <div class="takeaway-item">
+              <div class="takeaway-number">03</div>
+              <div class="takeaway-content">
+                <strong>Decisão suportada em evidência.</strong>
+                As decisões sobre operação, compras, inventário e workforce passam a ser suportadas por documentação
+                sistemática, reduzindo incerteza e dependência de memória individual.
+              </div>
+            </div>
+            <div class="takeaway-item">
+              <div class="takeaway-number">04</div>
+              <div class="takeaway-content">
+                <strong>Base para escalabilidade futura.</strong>
+                A arquitectura actual foi desenhada para acomodar previsões, integração POS/RH e eventual expansão a
+                múltiplas unidades e grupos de restauração.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHAPTER 2 – PORQUE NASCEU O RIBB-A.I. 3.0 -->
+      <section class="page chapter-2" id="chapter-2">
+        <!--
+          FONTES:
+          - docs/executive/RIBBAI_2.0_EXECUTIVE_MANUAL.md (contexto inicial)
+          - docs/FOUNDATION_COMPLETION_REPORT.md (problemas que justificaram a fase foundation)
+          - primeiros registos em docs/operational-records/2026/*
+        -->
+        <div class="chapter-header">
+          <div>
+            <div class="chapter-kicker">Capítulo 2</div>
+            <h2>Porque nasceu o RIBB-A.I. 3.0</h2>
+          </div>
+          <div class="chapter-meta">Problema inicial e contexto operacional</div>
+        </div>
+
+        <div class="before-after">
+          <div class="before-after-column">
+            <div class="before-after-title">Situação inicial</div>
+            <ul>
+              <li>Informação operacional dispersa por cadernos, mensagens informais e ficheiros não normalizados.</li>
+              <li>Documentação reduzida e ausência de histórico consolidado de decisões, incidentes e indicadores.</li>
+              <li>Inventário pouco estruturado, com listas heterogéneas e dificuldade em comparar períodos.</li>
+              <li>Decisões de purchasing e staffing frequentemente baseadas em percepções, não em séries temporais.</li>
+              <li>Elevada dependência de conhecimento tácito das equipas, difícil de transmitir e preservar.</li>
+              <li>Dificuldade em acompanhar a evolução da operação ao longo do tempo, além do resultado imediato.</li>
+            </ul>
+          </div>
+          <div class="before-after-column">
+            <div class="before-after-title">Visão desejada</div>
+            <ul>
+              <li>Uma única fonte de verdade para registos operacionais, inventário e métricas de negócio.</li>
+              <li>Documentação automática e sistemática, com formato standard e histórico consultável.</li>
+              <li>Inventário estruturado, com listas mestres, snapshots e ligações claras a compras.</li>
+              <li>Decisão suportada por dados consolidados (diário, semanal, mensal) e dashboards executivos.</li>
+              <li>Conhecimento operacional preservado em relatórios e workflows, não apenas em pessoas.</li>
+              <li>Capacidade de medir impacto de decisões ao longo do tempo, não apenas num serviço ou semana.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="highlight-box warning">
+          <div class="highlight-title">Executive Insight</div>
+          <p>
+            O projecto RIBB-A.I. 3.0 nasceu como resposta a um risco clássico de operações de restauração em crescimento: operar com
+            crescente complexidade, movimento e exigência sem uma infraestrutura de dados, documentação e reporting à
+            altura. O projecto procurou antecipar esse risco, construindo primeiro a infraestrutura de informação e só
+            depois camadas avançadas de Business Intelligence.
+          </p>
+        </div>
+      </section>
+
+      <!-- CHAPTER 3 – PRINCÍPIOS DE DESENVOLVIMENTO -->
+      <section class="page chapter-3" id="chapter-3">
+        <!--
+          FONTES:
+          - docs/architecture/ARCHITECTURE.md
+          - docs/modules/operations-intelligence-architecture.md
+          - docs/modules/pdf-design-system.md
+          - docs/executive/REPORTING_ANALYSIS.md
+        -->
+        <div class="chapter-header">
+          <div>
+            <div class="chapter-kicker">Capítulo 3</div>
+            <h2>Princípios de Desenvolvimento do RIBB-A.I. 3.0</h2>
+          </div>
+          <div class="chapter-meta">Filosofia de construção da plataforma</div>
+        </div>
+
+        <div class="executive-grid">
+          <div class="executive-highlight">
+            <div class="highlight-number">01</div>
+            <div class="highlight-label">Uma única fonte de verdade</div>
+            <div class="highlight-detail">
+              <strong>Descrição:</strong> todos os registos operacionais, inventário e métricas são consolidados num
+              repositório único.
+              <br />
+              <strong>Objectivo:</strong> eliminar versões paralelas e divergências de informação.
+              <br />
+              <strong>Impacto operacional:</strong> equipas trabalham sempre sobre o mesmo conjunto de dados.
+              <br />
+              <strong>Benefício para Gestão/Administração:</strong> confiança acrescida em relatórios e dashboards.
+            </div>
+          </div>
+
+          <div class="executive-highlight">
+            <div class="highlight-number">02</div>
+            <div class="highlight-label">Automação antes de trabalho manual</div>
+            <div class="highlight-detail">
+              <strong>Descrição:</strong> processos repetitivos (reports, snapshots, consolidações) são automatizados.
+              <br />
+              <strong>Objectivo:</strong> libertar tempo operacional e reduzir risco de erro humano.
+              <br />
+              <strong>Impacto operacional:</strong> menos horas dedicadas a tarefas administrativas.
+              <br />
+              <strong>Benefício:</strong> decisões mais rápidas, com custos de preparação de informação mais baixos.
+            </div>
+          </div>
+
+          <div class="executive-highlight">
+            <div class="highlight-number">03</div>
+            <div class="highlight-label">Documentação gerada automaticamente</div>
+            <div class="highlight-detail">
+              <strong>Descrição:</strong> relatórios diários, semanais e mensais são produzidos a partir de dados
+              estruturados.
+              <br />
+              <strong>Objectivo:</strong> garantir que a documentação acompanha a realidade da operação.
+              <br />
+              <strong>Impacto:</strong> menos risco de lapsos de registo e maior consistência na análise.
+              <br />
+              <strong>Benefício:</strong> histórico completo disponível para auditoria e decisão.
+            </div>
+          </div>
+
+          <div class="executive-highlight">
+            <div class="highlight-number">04</div>
+            <div class="highlight-label">Dados antes de opiniões</div>
+            <div class="highlight-detail">
+              <strong>Descrição:</strong> sempre que possível, as conclusões são ancoradas em séries temporais e
+              indicadores.
+              <br />
+              <strong>Objectivo:</strong> reduzir a subjectividade na interpretação da operação.
+              <br />
+              <strong>Impacto:</strong> reuniões focadas em decisões, não em recolha de informação.
+              <br />
+              <strong>Benefício:</strong> decisões mais transparentes e alinhadas com a evidência.
+            </div>
+          </div>
+
+          <div class="executive-highlight">
+            <div class="highlight-number">05</div>
+            <div class="highlight-label">Business Intelligence integrada</div>
+            <div class="highlight-detail">
+              <strong>Descrição:</strong> a camada de BI é alimentada directamente pelos mesmos dados que suportam os
+              reports.
+              <br />
+              <strong>Objectivo:</strong> garantir alinhamento entre operação, inventário e dashboards executivos.
+              <br />
+              <strong>Impacto:</strong> leitura consistente do negócio em diferentes níveis.
+              <br />
+              <strong>Benefício:</strong> visão consolidada para a Administração, sem reconciliações manuais.
+            </div>
+          </div>
+
+          <div class="executive-highlight">
+            <div class="highlight-number">06</div>
+            <div class="highlight-label">Continuidade temporal</div>
+            <div class="highlight-detail">
+              <strong>Descrição:</strong> snapshots de fim de mês, relatórios mensais e séries históricas são
+              encadeados.
+              <br />
+              <strong>Objectivo:</strong> permitir análises de tendência fiáveis.
+              <br />
+              <strong>Impacto:</strong> melhor leitura de sazonalidade, crescimento e riscos recorrentes.
+              <br />
+              <strong>Benefício:</strong> decisões de médio prazo melhor informadas.
+            </div>
+          </div>
+
+          <div class="executive-highlight">
+            <div class="highlight-number">07</div>
+            <div class="highlight-label">Escalabilidade</div>
+            <div class="highlight-detail">
+              <strong>Descrição:</strong> arquitectura preparada para mais dados, mais módulos e mais unidades.
+              <br />
+              <strong>Objectivo:</strong> evitar reescritas completas quando o negócio cresce.
+              <br />
+              <strong>Impacto:</strong> capacidade de adicionar novos relatórios e integrações incrementalmente.
+              <br />
+              <strong>Benefício:</strong> redução de custos futuros de evolução tecnológica.
+            </div>
+          </div>
+
+          <div class="executive-highlight">
+            <div class="highlight-number">08</div>
+            <div class="highlight-label">Modularidade</div>
+            <div class="highlight-detail">
+              <strong>Descrição:</strong> cada domínio (daily, weekly, inventory, overtime, workforce, BI) é um módulo.
+              <br />
+              <strong>Objectivo:</strong> permitir evolução e manutenção independente por área.
+              <br />
+              <strong>Impacto:</strong> alterações localizadas, com menor risco para o sistema global.
+              <br />
+              <strong>Benefício:</strong> flexibilidade para experimentar e optimizar sem interromper a operação.
+            </div>
+          </div>
+
+          <div class="executive-highlight">
+            <div class="highlight-number">09</div>
+            <div class="highlight-label">Rastreabilidade</div>
+            <div class="highlight-detail">
+              <strong>Descrição:</strong> cada alteração relevante ao inventário, overtime ou reports deixa registo.
+              <br />
+              <strong>Objectivo:</strong> saber quem fez o quê, quando e com que impacto.
+              <br />
+              <strong>Impacto:</strong> capacidade de auditoria interna e análise posterior de decisões.
+              <br />
+              <strong>Benefício:</strong> maior controlo de risco operacional e financeiro.
+            </div>
+          </div>
+
+          <div class="executive-highlight">
+            <div class="highlight-number">10</div>
+            <div class="highlight-label">Apoio à decisão</div>
+            <div class="highlight-detail">
+              <strong>Descrição:</strong> reports e dashboards são pensados como ferramentas para decidir, não apenas
+              para registar.
+              <br />
+              <strong>Objectivo:</strong> transformar dados em recomendações accionáveis.
+              <br />
+              <strong>Impacto:</strong> foco nos temas que exigem intervenção, em vez de apenas descrever a semana.
+              <br />
+              <strong>Benefício:</strong> Administração com visão sintética e orientada à acção.
+            </div>
+          </div>
+
+          <div class="executive-highlight">
+            <div class="highlight-number">11</div>
+            <div class="highlight-label">Melhoria contínua</div>
+            <div class="highlight-detail">
+              <strong>Descrição:</strong> o sistema é ajustado iterativamente com base nos reports produzidos.
+              <br />
+              <strong>Objectivo:</strong> incorporar aprendizagem operacional na própria plataforma.
+              <br />
+              <strong>Impacto:</strong> cada mês de utilização torna o sistema mais completo e robusto.
+              <br />
+              <strong>Benefício:</strong> alinhamento permanente entre ferramenta e realidade do negócio.
+            </div>
+          </div>
+
+          <div class="executive-highlight">
+            <div class="highlight-number">12</div>
+            <div class="highlight-label">Visão estratégica</div>
+            <div class="highlight-detail">
+              <strong>Descrição:</strong> todas as decisões técnicas foram tomadas com horizonte de vários anos.
+              <br />
+              <strong>Objectivo:</strong> garantir que o investimento intelectual actual suporta cenários futuros.
+              <br />
+              <strong>Impacto:</strong> menor necessidade de rupturas tecnológicas no médio prazo.
+              <br />
+              <strong>Benefício:</strong> plataforma posicionada como activo estratégico do RIBBAI.
+            </div>
+          </div>
+        </div>
+
+        <div class="separator">
+          <div class="separator-content">Os 12 Princípios Fundamentais do RIBB-A.I. 3.0</div>
+        </div>
+
+        <div class="infographic-grid">
+          <div class="infographic-card">
+            <div class="infographic-card-title">Fonte única &amp; Automação</div>
+            <div class="infographic-card-meta">Princípios 01–03</div>
+            <p>Consolidam dados, eliminam duplicações e asseguram que a documentação acompanha a operação real.</p>
+          </div>
+          <div class="infographic-card">
+            <div class="infographic-card-title">Dados &amp; BI integrada</div>
+            <div class="infographic-card-meta">Princípios 04–05</div>
+            <p>Transformam registos operacionais em indicadores consistentes para operação e Administração.</p>
+          </div>
+          <div class="infographic-card">
+            <div class="infographic-card-title">Tempo &amp; Escala</div>
+            <div class="infographic-card-meta">Princípios 06–08</div>
+            <p>Garantem continuidade histórica e capacidade de crescer em complexidade e volume.</p>
+          </div>
+          <div class="infographic-card">
+            <div class="infographic-card-title">Controlo &amp; Decisão</div>
+            <div class="infographic-card-meta">Princípios 09–12</div>
+            <p>Focam rastreabilidade, apoio à decisão, melhoria contínua e visão estratégica de longo prazo.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHAPTER 4 – VISÃO ESTRATÉGICA -->
+      <section class="page chapter-4" id="chapter-4">
+        <!--
+          FONTES:
+          - docs/architecture/ARCHITECTURE.md
+          - docs/executive/RIBBAI_2.0_EXECUTIVE_MANUAL.md (secções de visão)
+          - docs/executive/10_BUSINESS_INTELLIGENCE.md
+        -->
+        <div class="chapter-header">
+          <div>
+            <div class="chapter-kicker">Capítulo 4</div>
+            <h2>Visão Estratégica</h2>
+          </div>
+          <div class="chapter-meta">Da produção de PDFs à plataforma de gestão</div>
+        </div>
+
+        <div class="hero">
+          <div class="hero-title">O RIBB-A.I. 3.0 não é um conjunto de relatórios. É uma plataforma estratégica de gestão operacional.</div>
+          <p class="hero-subtitle">
+            A camada de relatórios é apenas a face visível de uma arquitectura que integra dados, processos, inventário e
+            Business Intelligence num sistema coerente e preparado para o futuro.
+          </p>
+        </div>
+
+        <div class="highlight-box info">
+          <div class="highlight-title">Executive Insights</div>
+          <ul>
+            <li>
+              Os relatórios diários, semanais e mensais existem para alimentar decisões de gestão, não como fim em si
+              mesmos.
+            </li>
+            <li>
+              A plataforma foi desenhada para suportar previsões, simulações e expansão para múltiplas unidades sem
+              perda de consistência de dados.
+            </li>
+            <li>
+              O investimento principal não está na formatação dos documentos, mas na arquitectura de dados, normalização
+              de processos e definição de métricas que os suportam.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- CHAPTER 5 – ARQUITETURA GERAL -->
+      <section class="page chapter-5" id="chapter-5">
+        <!--
+          FONTES:
+          - docs/architecture/ARCHITECTURE.md
+          - docs/modules/operations-intelligence-architecture.md
+          - docs/workflows/monthly-inventory-report-workflow.md
+          - docs/operational/DAILY_REPORT_AUTOMATION.md
+        -->
+        <div class="chapter-header">
+          <div>
+            <div class="chapter-kicker">Capítulo 5</div>
+            <h2>Arquitetura Geral</h2>
+          </div>
+          <div class="chapter-meta">Fluxo de informação operacional até à decisão</div>
+        </div>
+
+        <div class="flowchart">
+          <div class="infographic-grid">
+            <div class="infographic-card">
+              <div class="infographic-card-title">Daily Reports</div>
+              <p>
+                Registos estruturados da operação diária (equipa, incidentes, overtime, sínteses), gerados em Markdown e
+                convertidos para HTML/PDF.
+              </p>
+            </div>
+            <div class="infographic-card">
+              <div class="infographic-card-title">Inventory &amp; Purchasing</div>
+              <p>
+                Actualizações de inventário e métricas de purchasing ligadas a cada período, com listas mestres e
+                movimentos rastreados.
+              </p>
+            </div>
+            <div class="infographic-card">
+              <div class="infographic-card-title">Inventory Count Sheets &amp; Snapshots</div>
+              <p>
+                Contagens físicas semanais e snapshots de fim de mês que fixam o stock de referência para períodos
+                seguintes.
+              </p>
+            </div>
+            <div class="infographic-card">
+              <div class="infographic-card-title">Weekly &amp; Monthly Reports</div>
+              <p>
+                Consolidação automática da informação diária, inventário, overtime e incidentes em relatórios semanais e
+                mensais estruturados.
+              </p>
+            </div>
+            <div class="infographic-card">
+              <div class="infographic-card-title">Business Intelligence</div>
+              <p>
+                Serviços de BI que geram dashboards executivos, health scores, forecasts e análises comparativas entre
+                períodos.
+              </p>
+            </div>
+            <div class="infographic-card">
+              <div class="infographic-card-title">Executive Dashboards &amp; Management Decision</div>
+              <p>
+                Painéis de decisão e documentação de suporte que permitem à Administração tomar decisões com base em
+                evidência consolidada.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="highlight-box">
+          <div class="highlight-title">Fluxo de informação (resumo)</div>
+          <p>
+            Daily Reports → Inventory &amp; Purchasing → Inventory Count Sheets → Snapshots → Weekly Reports → Monthly
+            Reports → Business Intelligence → Executive Dashboards → Management Decision.
+          </p>
+          <p>
+            Cada etapa é alimentada por dados da anterior, com automatismos que minimizam intervenção manual e reduzem
+            risco de inconsistências entre documentos.
+          </p>
+        </div>
+      </section>
+
+      <!-- CHAPTER 6 – MÓDULOS DESENVOLVIDOS -->
+      <section class="page chapter-6" id="chapter-6">
+        <!--
+          FONTES:
+          - docs/executive/RIBBAI_2.0_EXECUTIVE_MANUAL.md (lista de módulos)
+          - docs/modules/*.md (especificações)
+          - features/business-intelligence/services/*
+        -->
+        <div class="chapter-header">
+          <div>
+            <div class="chapter-kicker">Capítulo 6</div>
+            <h2>Módulos Desenvolvidos</h2>
+          </div>
+          <div class="chapter-meta">Visão por módulo – objectivo, maturidade, impacto</div>
+        </div>
+
+        <div class="infographic-grid">
+          <div class="infographic-card">
+            <div class="infographic-card-title">Daily Reporting</div>
+            <div class="infographic-card-meta">
+              <span class="maturity-pill maturity-prod">Em produção</span>
+            </div>
+            <ul>
+              <li><strong>Objectivo:</strong> registar diariamente o estado da operação e da equipa.</li>
+              <li><strong>Funcionalidades:</strong> templates standard, campos estruturados, geração automática de PDF.</li>
+              <li><strong>Impacto:</strong> histórico diário completo e comparável.</li>
+              <li><strong>Potencial:</strong> alimentar modelos de previsão de carga e staffing.</li>
+            </ul>
+          </div>
+
+          <div class="infographic-card">
+            <div class="infographic-card-title">Weekly &amp; Monthly Executive Reporting</div>
+            <div class="infographic-card-meta">
+              <span class="maturity-pill maturity-prod">Em produção</span>
+            </div>
+            <ul>
+              <li><strong>Objectivo:</strong> fornecer sínteses executivas consolidadas.</li>
+              <li><strong>Funcionalidades:</strong> estrutura McKinsey‑like, KPI cards, recomendações.</li>
+              <li><strong>Impacto:</strong> visão coerente semana a semana e mês a mês.</li>
+              <li><strong>Potencial:</strong> integração directa com dashboards interactivos.</li>
+            </ul>
+          </div>
+
+          <div class="infographic-card">
+            <div class="infographic-card-title">Inventory Management &amp; Financial Engine</div>
+            <div class="infographic-card-meta">
+              <span class="maturity-pill maturity-prod">Em produção</span>
+            </div>
+            <ul>
+              <li><strong>Objectivo:</strong> controlar consumíveis com base em CMP e movimentos.</li>
+              <li><strong>Funcionalidades:</strong> lista mestre, count sheets, snapshots, relatórios mensais.</li>
+              <li><strong>Impacto:</strong> visibilidade de custos e risco de ruturas.</li>
+              <li><strong>Potencial:</strong> previsão de consumo e integrações com purchasing.</li>
+            </ul>
+          </div>
+
+          <div class="infographic-card">
+            <div class="infographic-card-title">Overtime Reporting</div>
+            <div class="infographic-card-meta">
+              <span class="maturity-pill maturity-prod">Em produção</span>
+            </div>
+            <ul>
+              <li><strong>Objectivo:</strong> consolidar horas extra por colaborador e causa.</li>
+              <li><strong>Funcionalidades:</strong> extracção automática a partir de diários, relatório mensal.</li>
+              <li><strong>Impacto:</strong> maior controlo de custos de trabalho.</li>
+              <li><strong>Potencial:</strong> ligação a planeamento de workforce e orçamentos.</li>
+            </ul>
+          </div>
+
+          <div class="infographic-card">
+            <div class="infographic-card-title">Workforce Planning</div>
+            <div class="infographic-card-meta">
+              <span class="maturity-pill maturity-dev">Em consolidação</span>
+            </div>
+            <ul>
+              <li><strong>Objectivo:</strong> estruturar escalas e cartas de serviço.</li>
+              <li><strong>Funcionalidades:</strong> importação de folhas, validação e relatórios por período.</li>
+              <li><strong>Impacto:</strong> melhor alinhamento entre equipas e movimento.</li>
+              <li><strong>Potencial:</strong> optimização automática de escalas com base em históricos.</li>
+            </ul>
+          </div>
+
+          <div class="infographic-card">
+            <div class="infographic-card-title">Dashboards &amp; Business Intelligence</div>
+            <div class="infographic-card-meta">
+              <span class="maturity-pill maturity-dev">Em consolidação</span>
+            </div>
+            <ul>
+              <li><strong>Objectivo:</strong> disponibilizar visão executiva e operacional em tempo quase real.</li>
+              <li><strong>Funcionalidades:</strong> health scores, métricas de movimento, inventário, overtime.</li>
+              <li><strong>Impacto:</strong> leituras rápidas de risco e performance.</li>
+              <li><strong>Potencial:</strong> dashboards em tempo real e multi-unidade.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHAPTER 7 – WORKFLOWS AUTOMATIZADOS -->
+      <section class="page chapter-7" id="chapter-7">
+        <!--
+          FONTES:
+          - docs/workflows/monthly-inventory-report-workflow.md
+          - docs/operational/DAILY_REPORT_AUTOMATION.md
+          - scripts/generate-*-report-*.mjs
+        -->
+        <div class="chapter-header">
+          <div>
+            <div class="chapter-kicker">Capítulo 7</div>
+            <h2>Workflows Automatizados</h2>
+          </div>
+          <div class="chapter-meta">Como os dados percorrem o sistema</div>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-marker completed"></div>
+            <div class="timeline-content">
+              <div class="timeline-title">Pipeline Diário → Semanal → Mensal</div>
+              <div class="timeline-status status-completed">Em produção</div>
+              <ul>
+                <li>Daily Reports são registados e consolidados automaticamente em resumos semanais.</li>
+                <li>Esses resumos alimentam relatórios mensais executivos, mantendo consistência entre períodos.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker completed"></div>
+            <div class="timeline-content">
+              <div class="timeline-title">Workflow de Relatório Mensal de Inventário</div>
+              <div class="timeline-status status-completed">Em produção</div>
+              <ul>
+                <li>Contagens físicas são transformadas em count sheets estruturados.</li>
+                <li>O motor financeiro calcula CMP, valoriza stock e gera o relatório mensal de consumíveis.</li>
+                <li>É criado snapshot de fim de mês para servir de base ao período seguinte.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker completed"></div>
+            <div class="timeline-content">
+              <div class="timeline-title">Overtime Reporting</div>
+              <div class="timeline-status status-completed">Em produção</div>
+              <ul>
+                <li>Horas extra são extraídas automaticamente dos registos diários.</li>
+                <li>Mensalmente é gerado um PDF com consolidação por colaborador e causa.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker current"></div>
+            <div class="timeline-content">
+              <div class="timeline-title">Workforce Planning &amp; Dashboards</div>
+              <div class="timeline-status status-current">Em consolidação</div>
+              <ul>
+                <li>Escalas são importadas e transformadas em dados estruturados para análise.</li>
+                <li>Workforce reports sintetizam capacidade, entradas e distribuição de equipas.</li>
+                <li>Integração progressiva com dashboards de BI para visão combinada movimento/escala.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHAPTER 8 – TRANSFORMAÇÃO OPERACIONAL -->
+      <section class="page chapter-8" id="chapter-8">
+        <!--
+          FONTES:
+          - Comparação entre primeiros reports e reports actuais em reports/weekly e reports/monthly
+          - docs/operational-records/2026/**/* (evolução de formato e conteúdo)
+        -->
+        <div class="chapter-header">
+          <div>
+            <div class="chapter-kicker">Capítulo 8</div>
+            <h2>Transformação Operacional</h2>
+          </div>
+          <div class="chapter-meta">Antes vs Depois da plataforma RIBB-A.I. 3.0</div>
+        </div>
+
+        <div class="before-after">
+          <div class="before-after-column">
+            <div class="before-after-title">Antes</div>
+            <ul>
+              <li>Informação operacional fragmentada por turnos, pessoas e canais informais.</li>
+              <li>Registo irregular de incidentes, overtime e decisões relevantes.</li>
+              <li>Inventário com listas heterogéneas e pouca ligação a relatórios mensais.</li>
+              <li>Comunicação entre Gestão e operação baseada sobretudo em relatos verbais.</li>
+              <li>Rastreabilidade limitada de decisões e alterações a procedimentos.</li>
+              <li>Ausência de Business Intelligence formal sobre a operação de Sala.</li>
+            </ul>
+          </div>
+          <div class="before-after-column">
+            <div class="before-after-title">Depois</div>
+            <ul>
+              <li>Registo diário estruturado da operação, equipas, incidentes e overtime.</li>
+              <li>Relatórios semanais e mensais executivos com estrutura fixa e comparável.</li>
+              <li>Inventário organizado por listas mestres, count sheets e snapshots encadeados.</li>
+              <li>Comunicação formalizada via reports, workflows e documentação operacional.</li>
+              <li>Rastreabilidade de movimentos de inventário, overtime e actualizações de dashboards.</li>
+              <li>Camada de BI com indicadores, health scores e análises de tendência.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHAPTER 9 – BENEFÍCIOS PARA A OPERAÇÃO -->
+      <section class="page chapter-9" id="chapter-9">
+        <!--
+          FONTES:
+          - Análises em reports/weekly/* e reports/monthly/*
+          - docs/executive/REPORTING_ANALYSIS.md
+        -->
+        <div class="chapter-header">
+          <div>
+            <div class="chapter-kicker">Capítulo 9</div>
+            <h2>Benefícios para a Operação</h2>
+          </div>
+          <div class="chapter-meta">Efeitos concretos no dia-a-dia</div>
+        </div>
+
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-header">
+              <div class="kpi-title">Redução de erros</div>
+            </div>
+            <p>Melhor controlo de inventário, horas extra e fechos, com diminuição de rectificações de última hora.</p>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-header">
+              <div class="kpi-title">Menos trabalho administrativo</div>
+            </div>
+            <p>
+              Automatização de relatórios diários, semanais e mensais reduz tempo gasto em compilar informação
+              dispersa.
+            </p>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-header">
+              <div class="kpi-title">Maior controlo operacional</div>
+            </div>
+            <p>
+              Visão sistemática de equipas, incidentes, overtime e inventário permite intervir mais cedo em riscos
+              emergentes.
+            </p>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-header">
+              <div class="kpi-title">Rapidez e consistência</div>
+            </div>
+            <p>
+              Informação disponível em formatos padrão acelera reuniões de equipa e decisões diárias, mantendo
+              consistência entre períodos.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHAPTER 10 – BENEFÍCIOS PARA GESTÃO E ADMINISTRAÇÃO -->
+      <section class="page chapter-10" id="chapter-10">
+        <!--
+          FONTES:
+          - docs/executive/10_BUSINESS_INTELLIGENCE.md
+          - docs/executive/12_DASHBOARDS.md
+          - docs/executive/REPORTING_ANALYSIS.md
+        -->
+        <div class="chapter-header">
+          <div>
+            <div class="chapter-kicker">Capítulo 10</div>
+            <h2>Benefícios para a Gestão e Administração</h2>
+          </div>
+          <div class="chapter-meta">O que ganha a Administração com este sistema?</div>
+        </div>
+
+        <div class="two-column">
+          <div class="highlight-box info">
+            <div class="highlight-title">Dashboards &amp; Indicadores</div>
+            <ul>
+              <li>Visão agregada de movimento, custos de consumíveis, overtime e performance da operação.</li>
+              <li>Health scores e indicadores de risco suportados em séries históricas.</li>
+              <li>Capacidade de comparar períodos e identificar padrões de sazonalidade.</li>
+            </ul>
+          </div>
+          <div class="highlight-box">
+            <div class="highlight-title">Documentação &amp; Histórico</div>
+            <ul>
+              <li>Arquivo sistemático de relatórios diários, semanais e mensais.</li>
+              <li>Histórico de decisões e acções correctivas documentadas.</li>
+              <li>Suporte objectivo para diálogos com parceiros, auditores ou investidores.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="highlight-box success">
+          <div class="highlight-title">Previsibilidade &amp; Apoio à decisão</div>
+          <ul>
+            <li>
+              Melhor capacidade de antecipar necessidades de stock, reforços de equipa e investimentos de curto/médio
+              prazo.
+            </li>
+            <li>Base sólida para avaliar impacto de iniciativas (eventos, mudanças de layout, novos serviços).</li>
+            <li>Redução de incerteza ao tomar decisões em contexto de maior volatilidade e volume.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- CHAPTER 11 – ESTADO ATUAL DO PROJETO -->
+      <section class="page chapter-11" id="chapter-11">
+        <!--
+          FONTES:
+          - docs/FOUNDATION_COMPLETION_REPORT.md
+          - evolução dos módulos em features/* e docs/modules/*
+        -->
+        <div class="chapter-header">
+          <div>
+            <div class="chapter-kicker">Capítulo 11</div>
+            <h2>Estado Atual do Projeto</h2>
+          </div>
+          <div class="chapter-meta">Matriz de maturidade por módulo</div>
+        </div>
+
+        <table class="maturity-table">
+          <thead>
+            <tr>
+              <th>Módulo</th>
+              <th>Estado</th>
+              <th>Maturidade (estimativa)</th>
+              <th>Notas executivas</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Daily Reporting</td>
+              <td><span class="maturity-pill maturity-prod">Em produção</span></td>
+              <td>Alto</td>
+              <td>Em utilização diária com estrutura estabilizada e integração com reports semanais.</td>
+            </tr>
+            <tr>
+              <td>Weekly &amp; Monthly Executive Reporting</td>
+              <td><span class="maturity-pill maturity-prod">Em produção</span></td>
+              <td>Alto</td>
+              <td>Relatórios com layout premium em operação regular; espaço para ajustes finos de BI.</td>
+            </tr>
+            <tr>
+              <td>Inventory Management &amp; Financial Engine</td>
+              <td><span class="maturity-pill maturity-prod">Em produção</span></td>
+              <td>Médio/Alto</td>
+              <td>Motor financeiro estabelecido; melhoria contínua de listas mestres e alertas.</td>
+            </tr>
+            <tr>
+              <td>Overtime Reporting</td>
+              <td><span class="maturity-pill maturity-prod">Em produção</span></td>
+              <td>Médio</td>
+              <td>Fluxos de dados estáveis; espaço para dashboards mais interactivos.</td>
+            </tr>
+            <tr>
+              <td>Workforce Planning</td>
+              <td><span class="maturity-pill maturity-dev">Em desenvolvimento</span></td>
+              <td>Médio</td>
+              <td>Primeiros relatórios de escalas produzidos; evolução prevista para integração com forecast.</td>
+            </tr>
+            <tr>
+              <td>Dashboards &amp; Business Intelligence</td>
+              <td><span class="maturity-pill maturity-dev">Em desenvolvimento</span></td>
+              <td>Médio</td>
+              <td>Base de BI em construção com indicadores chave; roadmap inclui real time e multi‑unidade.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- CHAPTER 12 – POTENCIAL FUTURO -->
+      <section class="page chapter-12" id="chapter-12">
+        <!--
+          FONTES:
+          - docs/executive/09_ANALYTICS.md
+          - docs/executive/10_BUSINESS_INTELLIGENCE.md
+          - docs/modules/operations-intelligence-architecture.md
+        -->
+        <div class="chapter-header">
+          <div>
+            <div class="chapter-kicker">Capítulo 12</div>
+            <h2>Potencial Futuro</h2>
+          </div>
+          <div class="chapter-meta">Eixos de evolução 2026–2028</div>
+        </div>
+
+        <div class="roadmap-grid">
+          <div class="roadmap-phase">
+            <div class="roadmap-year">Previsão &amp; IA</div>
+            <div class="roadmap-title">Consumo, compras e modelos preditivos</div>
+            <ul>
+              <li>Modelos de previsão de consumo baseados em históricos de vendas e inventário.</li>
+              <li>Recomendações automáticas de compras (quantidades alvo e timings).</li>
+              <li>Identificação de padrões de desperdício e oportunidades de optimização.</li>
+            </ul>
+          </div>
+          <div class="roadmap-phase">
+            <div class="roadmap-year">Integrações</div>
+            <div class="roadmap-title">POS, RH e Finanças</div>
+            <ul>
+              <li>Integração com POS para captura automática de tickets e mix de produtos.</li>
+              <li>Integração com sistemas de RH para cruzar escalas, overtime e produtividade.</li>
+              <li>Integração financeira para fechar ciclo entre vendas, custos e margens.</li>
+            </ul>
+          </div>
+          <div class="roadmap-phase">
+            <div class="roadmap-year">Escala</div>
+            <div class="roadmap-title">Múltiplas unidades &amp; grupos</div>
+            <ul>
+              <li>Capacidade de gerir mais do que uma unidade num só modelo de dados.</li>
+              <li>Dashboards comparativos entre unidades e benchmarks internos.</li>
+              <li>Possível adopção por grupos de restauração com governação central.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHAPTER 13 – BENCHMARK INTERNACIONAL -->
+      <section class="page chapter-13" id="chapter-13">
+        <!--
+          FONTES:
+          - docs/architecture/ARCHITECTURE.md
+          - docs/executive/10_BUSINESS_INTELLIGENCE.md
+          - boas práticas internacionais (conceitos arquitecturais, não equivalência funcional)
+        -->
+        <div class="chapter-header">
+          <div>
+            <div class="chapter-kicker">Capítulo 13</div>
+            <h2>Benchmark Internacional</h2>
+          </div>
+          <div class="chapter-meta">Comparação conceptual com boas práticas modernas</div>
+        </div>
+
+        <table class="benchmark-table">
+          <thead>
+            <tr>
+              <th>Conceito arquitectural</th>
+              <th>Boas práticas em sistemas modernos</th>
+              <th>Abordagem RIBB-A.I. 3.0</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Single Source of Truth</td>
+              <td>Dados operacionais consolidados num repositório central.</td>
+              <td>
+                Registos diários, inventário, overtime e métricas de BI centralizados numa mesma plataforma de dados e
+                documentação.
+              </td>
+            </tr>
+            <tr>
+              <td>Data Warehouse Operacional</td>
+              <td>Estruturas desenhadas para reporting e análise, não apenas para operação transaccional.</td>
+              <td>
+                Foco em série temporal (daily/weekly/monthly) e snapshots de inventário, com campos pensados desde o
+                início para reporting.
+              </td>
+            </tr>
+            <tr>
+              <td>Documentação automática</td>
+              <td>Relatórios gerados a partir de dados brutos, com templates standard.</td>
+              <td>
+                Geração automática de relatórios diários, semanais e mensais a partir de estruturas de dados canónicas
+                (Markdown/JSON).
+              </td>
+            </tr>
+            <tr>
+              <td>Camada de BI integrada</td>
+              <td>Serviços de BI acedem directamente às mesmas fontes que alimentam a operação.</td>
+              <td>
+                Serviços de Business Intelligence do RIBB-A.I. 3.0 constroem dashboards e indicadores sobre os mesmos dados que
+                produzem os reports operacionais.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="highlight-box">
+          <p>
+            Esta comparação é estritamente conceptual e arquitectural. Não se afirma qualquer equivalência funcional com
+            soluções de mercado, apenas alinhamento com princípios utilizados em sistemas modernos de gestão operacional
+            e BI.
+          </p>
+        </div>
+      </section>
+
+      <!-- CHAPTER 14 – INVESTIMENTO EM DESENVOLVIMENTO -->
+      <section class="page chapter-14" id="chapter-14">
+        <!--
+          FONTES:
+          - Volume de código, documentação e templates no repositório
+          - docs/FOUNDATION_COMPLETION_REPORT.md (período e esforço qualitativo)
+        -->
+        <div class="chapter-header">
+          <div>
+            <div class="chapter-kicker">Capítulo 14</div>
+            <h2>Investimento em Desenvolvimento</h2>
+          </div>
+          <div class="chapter-meta">Esforço intelectual e técnico até à data (estimado)</div>
+        </div>
+
+        <div class="highlight-box info">
+          <p>
+            Até à data, o projecto RIBB-A.I. 3.0 foi desenvolvido por iniciativa própria, em paralelo com as funções de Chefe
+            de Sala, sem custos directos para o RIBBAI e sem qualquer remuneração específica associada ao
+            desenvolvimento da plataforma. As estimativas abaixo são indicativas e baseiam‑se na complexidade observável
+            no repositório (código, documentação, templates e automações).
+          </p>
+        </div>
+
+        <table class="market-value-table">
+          <thead>
+            <tr>
+              <th>Componente de trabalho</th>
+              <th>Estimativa de horas (intervalo)</th>
+              <th>Descrição</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Arquitetura &amp; desenho de sistema</td>
+              <td>150–220 h</td>
+              <td>Definição de domínios, fluxos de dados, princípios de desenvolvimento e desenho de módulos.</td>
+            </tr>
+            <tr>
+              <td>Análise &amp; modelação de processos</td>
+              <td>120–180 h</td>
+              <td>
+                Levantamento de processos operacionais, inventário, overtime e workforce e sua tradução para modelos de
+                dados.
+              </td>
+            </tr>
+            <tr>
+              <td>Desenvolvimento de software</td>
+              <td>200–320 h</td>
+              <td>
+                Implementação de scripts, serviços de BI, motores de reporting e automatismos de geração de documentos.
+              </td>
+            </tr>
+            <tr>
+              <td>Documentação &amp; workflows</td>
+              <td>120–180 h</td>
+              <td>
+                Produção de documentação executiva, técnica, operacional e workflows detalhados (reports, inventário,
+                automações).
+              </td>
+            </tr>
+            <tr>
+              <td>Testes &amp; validação</td>
+              <td>80–140 h</td>
+              <td>
+                Testes de scripts, validação de relatórios, reconciliação de inventário e verificação de consistência
+                de dados.
+              </td>
+            </tr>
+            <tr>
+              <td>Business Intelligence</td>
+              <td>80–140 h</td>
+              <td>
+                Definição de KPIs, desenho de dashboards, implementação de templates de BI e análises de benchmark
+                interno.
+              </td>
+            </tr>
+            <tr>
+              <td>Design editorial &amp; templates</td>
+              <td>80–140 h</td>
+              <td>
+                Criação de layouts premium para relatórios semanais, mensais, inventário, workforce e documento
+                executivo.
+              </td>
+            </tr>
+            <tr>
+              <td>Automações &amp; optimização</td>
+              <td>80–140 h</td>
+              <td>
+                Criação e melhoria contínua de pipelines (daily, weekly, monthly, inventário, overtime) e optimização
+                de performance.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="text-muted mb-md">
+          Estas estimativas são indicativas e destinam‑se apenas a enquadrar a ordem de grandeza do investimento
+          intelectual realizado, não constituindo base para qualquer avaliação económica formal.
+        </p>
+      </section>
+
+      <!-- CHAPTER 15 – VALOR DE MERCADO -->
+      <section class="page chapter-15" id="chapter-15">
+        <!--
+          FONTES:
+          - Estimativas baseadas na complexidade da solução e práticas de mercado
+          - Não constitui avaliação absoluta, apenas enquadramento indicativo
+        -->
+        <div class="chapter-header">
+          <div>
+            <div class="chapter-kicker">Capítulo 15</div>
+            <h2>Valor de Mercado</h2>
+          </div>
+          <div class="chapter-meta">Estimativa indicativa para plataforma semelhante</div>
+        </div>
+
+        <div class="highlight-box info">
+          <p>
+            A tabela seguinte apresenta uma estimativa indicativa da ordem de grandeza do investimento necessário para
+            desenvolver, de raiz, uma plataforma com filosofia semelhante para uma unidade de restauração com
+            facturação anual superior a 1.000.000 €, considerando práticas de mercado em consultoria, desenvolvimento de
+            produto e BI. Não se trata de uma avaliação absoluta, mas de um enquadramento conceptual.
+          </p>
+        </div>
+
+        <table class="market-value-table">
+          <thead>
+            <tr>
+              <th>Componente</th>
+              <th>Intervalo indicativo de investimento</th>
+              <th>Comentários</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Desenho de arquitectura &amp; consultoria</td>
+              <td><span class="range-pill">15.000 € – 30.000 €</span></td>
+              <td>
+                Diagnóstico, definição de domínios, fluxos, governança de dados e roadmap de implementação por parte de
+                consultora especializada.
+              </td>
+            </tr>
+            <tr>
+              <td>Plataforma operacional &amp; reporting</td>
+              <td><span class="range-pill">25.000 € – 50.000 €</span></td>
+              <td>
+                Desenvolvimento de módulos de registo diário, semanal e mensal, workflows, templates e integrações
+                básicas.
+              </td>
+            </tr>
+            <tr>
+              <td>Motor de inventário &amp; financial engine</td>
+              <td><span class="range-pill">20.000 € – 40.000 €</span></td>
+              <td>
+                Modelação de consumíveis, CMP, snapshots, relatórios de inventário e integração com purchasing/finance.
+              </td>
+            </tr>
+            <tr>
+              <td>Camada de BI &amp; dashboards</td>
+              <td><span class="range-pill">20.000 € – 40.000 €</span></td>
+              <td>
+                Implementação de data warehouse operacional, painéis executivos e indicadores de performance e risco.
+              </td>
+            </tr>
+            <tr>
+              <td>Automações &amp; integrações</td>
+              <td><span class="range-pill">10.000 € – 25.000 €</span></td>
+              <td>
+                Pipelines de geração automática de relatórios, integrações POS/RH e processos de actualização de
+                métricas.
+              </td>
+            </tr>
+            <tr>
+              <td>Design editorial &amp; documentação</td>
+              <td><span class="range-pill">10.000 € – 20.000 €</span></td>
+              <td>
+                Conceito gráfico, templates premium, guidelines e produção de documentação institucional comparável a
+                consultoras internacionais.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="text-muted mb-md">
+          Os valores apresentados são intervalos indicativos baseados em práticas de mercado e na complexidade
+          observável da solução RIBB-A.I. 3.0. Não constituem uma avaliação formal nem uma proposta comercial.
+        </p>
+      </section>
+
+      <!-- CHAPTER 16 – RETORNO POTENCIAL -->
+      <section class="page chapter-16" id="chapter-16">
+        <!--
+          FONTES:
+          - Benefícios identificados em reports/weekly e reports/monthly
+          - docs/executive/REPORTING_ANALYSIS.md
+        -->
+        <div class="chapter-header">
+          <div>
+            <div class="chapter-kicker">Capítulo 16</div>
+            <h2>Retorno Potencial</h2>
+          </div>
+          <div class="chapter-meta">Impacto económico e operacional esperado</div>
+        </div>
+
+        <div class="risk-assessment">
+          <h4>Vectores de retorno e benefícios associados</h4>
+          <div class="risk-grid">
+            <div class="risk-item low">
+              <div class="risk-label">Redução de desperdício</div>
+              <div class="risk-level">Potencial elevado</div>
+              <div class="risk-mitigation">
+                Melhor visibilidade de consumos, alertas de stock e relatórios de inventário mensais permitem reduzir
+                desperdício e ruturas em consumíveis críticos.
+              </div>
+            </div>
+            <div class="risk-item low">
+              <div class="risk-label">Redução de ruturas</div>
+              <div class="risk-level">Potencial elevado</div>
+              <div class="risk-mitigation">
+                Integração entre count sheets, snapshots e purchasing reduz a probabilidade de falhas em artigos de
+                alto impacto na operação.
+              </div>
+            </div>
+            <div class="risk-item medium">
+              <div class="risk-label">Eficiência &amp; tempo administrativo</div>
+              <div class="risk-level">Potencial relevante</div>
+              <div class="risk-mitigation">
+                Automação de reports e workflows reduz horas dedicadas a compilar informação, libertando tempo de
+                coordenação para tarefas de maior valor.
+              </div>
+            </div>
+            <div class="risk-item low">
+              <div class="risk-label">Tomada de decisão</div>
+              <div class="risk-level">Qualidade melhorada</div>
+              <div class="risk-mitigation">
+                Dashboards e relatórios executivos estruturados permitem decisões mais rápidas e fundamentadas em
+                evidência.
+              </div>
+            </div>
+            <div class="risk-item low">
+              <div class="risk-label">Preservação de conhecimento</div>
+              <div class="risk-level">Risco reduzido</div>
+              <div class="risk-mitigation">
+                Conhecimento operacional passa a estar documentado em reports e workflows, reduzindo dependência de
+                indivíduos específicos.
+              </div>
+            </div>
+            <div class="risk-item low">
+              <div class="risk-label">Escalabilidade</div>
+              <div class="risk-level">Potencial elevado</div>
+              <div class="risk-mitigation">
+                Arquitectura modular e base de dados coerente permitem adicionar unidades e novos módulos com custos
+                marginais inferiores.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHAPTER 17 – ROADMAP ESTRATÉGICO 2026–2028 -->
+      <section class="page chapter-17" id="chapter-17">
+        <!--
+          FONTES:
+          - Roadmap conceptual definido na arquitectura e documentos de BI
+        -->
+        <div class="chapter-header">
+          <div>
+            <div class="chapter-kicker">Capítulo 17</div>
+            <h2>Roadmap Estratégico 2026–2028</h2>
+          </div>
+          <div class="chapter-meta">Timeline de evolução da plataforma</div>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-marker completed"></div>
+            <div class="timeline-content">
+              <div class="timeline-title">2026 – Consolidação Operacional</div>
+              <div class="timeline-status status-completed">Foundation &amp; Reporting</div>
+              <ul>
+                <li>Estabilização de relatórios diários, semanais e mensais.</li>
+                <li>Entrada em produção do motor de inventário e relatórios de consumíveis.</li>
+                <li>Documentação completa dos principais workflows operacionais.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker current"></div>
+            <div class="timeline-content">
+              <div class="timeline-title">2027 – Intelligence &amp; Forecast</div>
+              <div class="timeline-status status-current">Analytics &amp; previsão</div>
+              <ul>
+                <li>Desenvolvimento de modelos de forecast de consumo e compras.</li>
+                <li>Refinamento de dashboards de BI com foco em risco e oportunidades.</li>
+                <li>Primeiras integrações com POS e RH para dados em tempo quase real.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-title">2028 – Scale &amp; Multi‑Unit</div>
+              <div class="timeline-status status-pending">Expansão</div>
+              <ul>
+                <li>Extensão da arquitectura a múltiplas unidades.</li>
+                <li>Criação de benchmarks internos entre restaurantes.</li>
+                <li>Possibilidade de adopção em grupos de restauração com governação centralizada.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHAPTER 18 – CONCLUSÃO EXECUTIVA -->
+      <section class="page chapter-18" id="chapter-18">
+        <!--
+          FONTES:
+          - Síntese de todos os capítulos anteriores
+          - docs/executive/RIBBAI_2.0_EXECUTIVE_MANUAL.md
+          - docs/FOUNDATION_COMPLETION_REPORT.md
+        -->
+          <div class="chapter-header">
+          <div>
+            <div class="chapter-kicker">Capítulo 18</div>
+            <h2>Conclusão Executiva</h2>
+          </div>
+          <div class="chapter-meta">Mensagem final dirigida à Administração</div>
+        </div>
+
+        <div class="highlight-box info">
+          <div class="highlight-title">Valor criado</div>
+          <p>
+            O RIBB-A.I. 3.0 evoluiu de um conjunto de registos e relatórios dispersos para uma plataforma integrada de gestão
+            operacional baseada em dados, com cobertura sistemática de operação diária, inventário, overtime, workforce
+            e Business Intelligence. Esta plataforma constitui hoje um activo estratégico do restaurante, mesmo não
+            tendo exigido, até à data, investimento financeiro directo em desenvolvimento.
+          </p>
+        </div>
+
+        <div class="highlight-box">
+          <div class="highlight-title">Estado atual</div>
+          <p>
+            Os módulos nucleares de reporting e inventário estão em produção, suportados por automações estáveis e
+            documentação extensiva. Módulos de workforce planning e dashboards avançados encontram‑se em consolidação,
+            com base sólida para evolução. A arquitectura foi desenhada para acomodar as fases seguintes de previsão,
+            integração e escala.
+          </p>
+        </div>
+
+        <div class="highlight-box success">
+          <div class="highlight-title">Oportunidade estratégica &amp; próximos passos</div>
+          <ul>
+            <li>
+              Capitalizar o investimento intelectual já realizado para avançar para previsões, integrações POS/RH e
+              eventual expansão multi‑unidade.
+            </li>
+            <li>
+              Utilizar o RIBB-A.I. 3.0 como base de governação de dados e reporting em decisões operacionais e estratégicas.
+            </li>
+            <li>
+              Encarar este documento como registo fundador da plataforma para os próximos anos, alinhando a evolução
+              futura com a visão aqui descrita.
+            </li>
+          </ul>
+          <p>
+            Esta conclusão limita‑se a apresentar factos, resultados e visão estratégica, sem qualquer pedido de
+            remuneração ou linguagem reivindicativa, reforçando o foco no valor criado para o RIBBAI e nas
+            possibilidades de evolução que a arquitectura hoje permite.
+          </p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
+
