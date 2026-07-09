@@ -228,7 +228,17 @@ export function RealTimeMetrics({ data, className }: RealTimeMetricsProps) {
         {/* Metric Cards Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 mb-6">
           {realTimeMetrics.map((metric, index) => (
-            <MetricCard key={index} {...metric} />
+            <MetricCard
+              key={index}
+              title={metric.title}
+              value={metric.value}
+              unit={metric.unit}
+              icon={metric.icon}
+              trend={metric.trend}
+              trendValue={metric.trendValue}
+              status={metric.status as MetricCardProps['status']}
+              realTime={metric.realTime}
+            />
           ))}
         </div>
 

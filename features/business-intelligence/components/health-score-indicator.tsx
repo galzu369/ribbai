@@ -70,7 +70,7 @@ export function HealthScoreIndicator({
 
       {/* Progress Bar */}
       <div className="space-y-2">
-        <Progress value={score} className="h-3" />
+        <Progress value={score} className={`h-3 ${getProgressColor(score)}`} />
         <div className="flex justify-between text-xs text-muted-foreground">
           <span>0</span>
           <Badge variant={getStatusBadgeVariant(status)} className="text-xs">

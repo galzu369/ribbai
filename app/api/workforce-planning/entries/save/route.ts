@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import type { WorkforceDayType } from "@prisma/client";
 
 import { prisma } from "@/lib/db/client";
 import { logger } from "@/lib/logging";
@@ -69,7 +70,7 @@ export async function POST(request: NextRequest) {
           breakEnd: null,
           plannedHours,
           shiftLabel: null,
-          dayType: entry.dayType,
+          dayType: entry.dayType as WorkforceDayType,
           sourceRow: index,
           sourceColumn: 0,
           ocrConfidence: null,

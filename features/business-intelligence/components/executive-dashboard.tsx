@@ -6,18 +6,16 @@ import { Badge } from '@/components/ui/badge';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Button } from '@/components/ui/button';
-import { 
-  RefreshCw, 
-  TrendingUp, 
-  TrendingDown, 
-  AlertTriangle, 
-  CheckCircle, 
+import {
+  RefreshCw,
+  TrendingUp,
+  AlertTriangle,
   Clock,
   Users,
   DollarSign,
   BarChart3,
   Activity,
-  Zap
+  Zap,
 } from 'lucide-react';
 import { HealthScoreIndicator } from './health-score-indicator';
 import { KPIGrid } from './kpi-grid';
@@ -203,8 +201,12 @@ export function ExecutiveDashboard({ className }: ExecutiveDashboardProps) {
 
   if (!data) return null;
 
+  const containerClassName = ["space-y-6 p-6", className]
+    .filter(Boolean)
+    .join(" ");
+
   return (
-    <div className={`space-y-6 p-6 ${className}`}>
+    <div className={containerClassName}>
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
@@ -307,7 +309,7 @@ export function ExecutiveDashboard({ className }: ExecutiveDashboardProps) {
           <TabsTrigger value="team">Team</TabsTrigger>
           <TabsTrigger value="financial">Financial</TabsTrigger>
           <TabsTrigger value="insights">AI Insights</TabsTrigger>
-        </Tabs>
+        </TabsList>
 
         <TabsContent value="overview" className="space-y-6">
           <div className="grid gap-6 lg:grid-cols-3">

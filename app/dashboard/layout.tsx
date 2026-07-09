@@ -2,15 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { 
-  LayoutDashboard,
-  BarChart3,
-  Users,
-  DollarSign,
-  Settings,
-  Bell,
-  Menu
-} from 'lucide-react';
+import { LayoutDashboard, Settings, Bell, Menu } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: {

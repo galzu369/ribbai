@@ -353,7 +353,7 @@ export function KPIGrid({ title, kpis, type, className }: KPIGridProps) {
             trend={kpi.trend}
             trendValue={kpi.trendValue}
             target={kpi.target}
-            status={kpi.status}
+            status={kpi.status as KPICardProps['status']}
             icon={kpi.icon}
             description={kpi.description}
           />

@@ -198,7 +198,7 @@ export interface UnitConversionResult {
  * Total value remains: 198.25€
  */
 export function convertUnitWithCMP(input: UnitConversionInput): UnitConversionResult {
-  const { currentStock, currentAverageCost, conversionFactor, newUnitPrice } = input;
+  const { currentStock, currentAverageCost, conversionFactor } = input;
   
   // Calculate current stock value (to be preserved)
   const oldStockValue = currentStock.mul(currentAverageCost);

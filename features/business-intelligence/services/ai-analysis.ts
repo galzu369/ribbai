@@ -736,6 +736,12 @@ export class AIAnalysisService {
       summary += " with no waste recorded. ";
     }
 
+    // Key events overview
+    if (Array.isArray(keyEvents) && keyEvents.length > 0) {
+      const highlightedEvents = keyEvents.slice(0, 2).join("; ");
+      summary += ` Recent key events include: ${highlightedEvents}. `;
+    }
+
     // Risk and opportunity overview
     if (risksCount > 0) {
       summary += `${risksCount} risk(s) identified requiring attention. `;
@@ -756,7 +762,6 @@ export class AIAnalysisService {
     timeframe: Date
   ): Promise<string[]> {
     try {
-      const endDate = new Date(timeframe);
       const startDate = new Date(timeframe);
       startDate.setDate(startDate.getDate() - 7); // Look at past week
 

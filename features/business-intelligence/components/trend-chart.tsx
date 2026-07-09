@@ -97,7 +97,6 @@ export function TrendChart({ title, data, className, chartType = 'line' }: Trend
   // Generate mock data based on the trends provided
   const performanceData = generateMockTrendData('performance');
   const financialData = generateMockTrendData('financial');
-  const teamData = generateMockTrendData('team');
 
   const getTrendIcon = (trend: string) => {
     switch (trend) {

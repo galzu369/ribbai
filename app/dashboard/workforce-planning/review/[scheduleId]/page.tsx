@@ -4,14 +4,16 @@ import { prisma } from "@/lib/db/client";
 import { WorkforceScheduleReview } from "@/features/workforce-planning/components/schedule-review";
 
 interface ReviewPageProps {
-  params: {
+  params: Promise<{
     scheduleId: string;
-  };
+  }>;
 }
 
 export default async function WorkforceScheduleReviewPage({ params }: ReviewPageProps) {
+  const { scheduleId } = await params;
+
   const schedule = await prisma.workforceSchedule.findUnique({
-    where: { id: params.scheduleId },
+    where: { id: scheduleId },
     include: {
       entries: {
         orderBy: [
