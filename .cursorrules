@@ -1,0 +1,34 @@
+# RIBBAI OPS — regras para agentes de IA neste repositório
+
+## Gestão de stock (entradas, saídas, contagens semanais)
+
+**Nunca escrevas um script novo por data/operação para registar stock.** Esse padrão (dezenas de scripts `record-stock-in-YYYY-MM-DD.ts` em `scripts/database/_archive/`) já causou bugs reais e repetidos: SKUs duplicados, entradas que nunca chegaram a correr, stock inconsistente com as contagens físicas. Ver `docs/workflows/CURSOR-MASTER-PROMPT-stock-workflow.md` para o histórico completo.
+
+Usa sempre os scripts canónicos existentes:
+
+```bash
+npx tsx scripts/stock/apply-stock-entry.ts --file=<entrada.json>
+npx tsx scripts/stock/apply-stock-exit.ts --file=<saida.json>
+npx tsx scripts/stock/apply-weekly-count.ts --file=<contagem.json>
+```
+
+Formato de input em `scripts/stock/lib/schemas.ts`. Documentação completa do workflow em `docs/workflows/monthly-inventory-report-workflow.md`.
+
+Regras a não quebrar:
+- Nunca escrever em `InventoryItem.currentStock` fora de uma transação Prisma que também grava a `InventoryTransaction` correspondente.
+- Antes de criar um SKU novo, `apply-stock-entry.ts` já verifica se existe um artigo com o mesmo nome e bloqueia — se bloquear, usa o SKU existente, não contornes com `--force-new-sku` sem teres a certeza.
+- Entradas/saídas/contagens com data retroativa (anterior a uma contagem já registada) são detetadas automaticamente (`scripts/stock/lib/backdating.ts`) e não alteram o stock atual do artigo — só ficam no histórico para efeitos de relatório. É esperado ver um aviso `⚠` nesse caso, não é erro.
+- Depois de qualquer alteração manual à BD (correções, merges), corre `npx tsx scripts/database/reconcile-current-stock.ts --apply` e `npm run inventory:validate-coherence -- --year=YYYY --month=MM`.
+- SKU duplicado para o mesmo produto? Usa `npx tsx scripts/database/merge-duplicate-sku.ts --from=<SKU_A_RETIRAR> --into=<SKU_CANONICO>` — nunca apagues o duplicado diretamente. Lê o aviso no topo desse script antes de usar (soma sempre os stocks; nem sempre é isso que se quer).
+- Nunca corrigir um valor errado sobrescrevendo silenciosamente — usa sempre uma transação `ADJUSTMENT` nova a documentar a correção (ver exemplos em `reconcile-current-stock.ts` e `merge-duplicate-sku.ts`).
+
+## Antes de terminar qualquer alteração a este workflow
+
+```bash
+npm run typecheck
+npm run lint
+npm test
+npx tsx scripts/database/reconcile-current-stock.ts
+npx tsx scripts/database/find-duplicate-skus.ts
+node scripts/validate-monthly-report-coherence.mjs --year=2026 --month=7
+```

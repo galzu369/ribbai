@@ -14,6 +14,7 @@ import { revertReferenceIfNeeded } from "./lib/revert";
 import { assertPostWriteCoherence } from "./lib/coherence-guard";
 import { writeOperationDocs, type MovementRow } from "./lib/docs";
 import { findItemsWithSameName } from "./lib/duplicate-check";
+import { resolveBaseline } from "./lib/backdating";
 import { runUpdateMonthlyPreviewFor } from "../update-monthly-preview-for-date";
 
 const REFERENCE_TYPE = "SUPPLIER_DELIVERY";
@@ -117,27 +118,55 @@ async function main(): Promise<void> {
         },
       });
 
-      const cmpInput = {
-        currentStock: item.currentStock,
-        currentAverageCost: item.averageCost,
-        incomingQuantity: quantity,
-        incomingUnitCost: unitCost,
-      };
-      validateCMPInputs(cmpInput);
-      const cmpResult = calculateCMPForStockEntry(cmpInput);
-      const cmpUpdateData = generateCMPUpdateData(cmpResult, unitCost, transactionDate);
+      const baseline = await resolveBaseline(tx, item.id, transactionDate);
 
-      const additionalUpdateData: Record<string, unknown> = {
-        costPrice: unitCost,
-        updatedBy: input.createdBy,
-      };
-      if (line.minimumStock) additionalUpdateData.minimumStock = new Prisma.Decimal(line.minimumStock);
-      if (line.reorderPoint) additionalUpdateData.reorderPoint = new Prisma.Decimal(line.reorderPoint);
+      let finalStock: Prisma.Decimal;
+      let entryValue: Prisma.Decimal;
+      let statusReorderPoint: Prisma.Decimal;
 
-      await tx.inventoryItem.update({
-        where: { id: item.id },
-        data: { ...cmpUpdateData, ...additionalUpdateData },
-      });
+      if (baseline.isBackdated) {
+        // Uma transacao mais recente ja existe para este artigo (tipicamente
+        // uma contagem fisica) - essa e que estabelece o stock atual real.
+        // Registamos esta entrada com data retroativa apenas para fins de
+        // auditoria/relatorio (coluna "Entradas" do mes), sem tocar em
+        // currentStock/averageCost/stockValue do artigo, que ficam exatamente
+        // como estavam.
+        finalStock = baseline.priorBalance.add(quantity);
+        entryValue = quantity.mul(unitCost);
+        statusReorderPoint = item.reorderPoint;
+
+        logger.warn("Entrada com data anterior a uma transacao ja existente - stock atual do artigo nao foi alterado", {
+          sku: line.sku,
+          transactionDate: transactionDate.toISOString(),
+          supersededByDate: baseline.supersededByDate?.toISOString(),
+        });
+      } else {
+        const cmpInput = {
+          currentStock: item.currentStock,
+          currentAverageCost: item.averageCost,
+          incomingQuantity: quantity,
+          incomingUnitCost: unitCost,
+        };
+        validateCMPInputs(cmpInput);
+        const cmpResult = calculateCMPForStockEntry(cmpInput);
+        const cmpUpdateData = generateCMPUpdateData(cmpResult, unitCost, transactionDate);
+
+        const additionalUpdateData: Record<string, unknown> = {
+          costPrice: unitCost,
+          updatedBy: input.createdBy,
+        };
+        if (line.minimumStock) additionalUpdateData.minimumStock = new Prisma.Decimal(line.minimumStock);
+        if (line.reorderPoint) additionalUpdateData.reorderPoint = new Prisma.Decimal(line.reorderPoint);
+
+        await tx.inventoryItem.update({
+          where: { id: item.id },
+          data: { ...cmpUpdateData, ...additionalUpdateData },
+        });
+
+        finalStock = cmpResult.newTotalQuantity;
+        entryValue = cmpResult.entryValue;
+        statusReorderPoint = line.reorderPoint ? new Prisma.Decimal(line.reorderPoint) : item.reorderPoint;
+      }
 
       await tx.inventoryTransaction.create({
         data: {
@@ -146,11 +175,11 @@ async function main(): Promise<void> {
           quantity,
           unit: line.unit,
           unitCost,
-          totalCost: cmpResult.entryValue,
+          totalCost: entryValue,
           referenceType: REFERENCE_TYPE,
           referenceId: input.referenceId,
           supplierId: supplier.id,
-          balanceAfter: cmpResult.newTotalQuantity,
+          balanceAfter: finalStock,
           reason: `Entrada de stock - ${input.referenceId}.`,
           notes: line.notes ?? "",
           createdBy: input.createdBy,
@@ -158,17 +187,16 @@ async function main(): Promise<void> {
         },
       });
 
-      const reorderPoint = (line.reorderPoint ? new Prisma.Decimal(line.reorderPoint) : item.reorderPoint);
       rows.push({
         sku: line.sku,
         name: line.name,
         unit: line.unit,
         previousStock: item.currentStock.toString(),
         delta: `+${quantity.toString()}`,
-        finalStock: cmpResult.newTotalQuantity.toString(),
+        finalStock: finalStock.toString(),
         unitCost: `${unitCost.toFixed(2)} €`,
-        totalCost: `${cmpResult.entryValue.toFixed(2)} €`,
-        status: getStatus(cmpResult.newTotalQuantity, reorderPoint),
+        totalCost: `${entryValue.toFixed(2)} €`,
+        status: getStatus(finalStock, statusReorderPoint),
         notes: line.notes,
       });
     }

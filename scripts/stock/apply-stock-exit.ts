@@ -13,6 +13,7 @@ import { stockExitInputSchema } from "./lib/schemas";
 import { revertReferenceIfNeeded } from "./lib/revert";
 import { assertPostWriteCoherence } from "./lib/coherence-guard";
 import { writeOperationDocs, type MovementRow } from "./lib/docs";
+import { resolveBaseline } from "./lib/backdating";
 import { runUpdateMonthlyPreviewFor } from "../update-monthly-preview-for-date";
 
 function resolveDate(rawDate: string): Date {
@@ -57,19 +58,47 @@ async function main(): Promise<void> {
         where: { sku: line.sku },
       });
 
-      const exitInput = {
-        currentStock: item.currentStock,
-        currentAverageCost: item.averageCost,
-        exitQuantity,
-      };
-      validateStockExitInputs(exitInput);
-      const exitResult = calculateConsumptionValue(exitInput);
-      const updateData = generateStockExitUpdateData(exitResult);
+      const baseline = await resolveBaseline(tx, item.id, transactionDate);
 
-      await tx.inventoryItem.update({
-        where: { id: item.id },
-        data: { ...updateData, updatedBy: input.createdBy },
-      });
+      let finalStock: Prisma.Decimal;
+      let consumptionValue: Prisma.Decimal;
+
+      if (baseline.isBackdated) {
+        // Ver scripts/stock/lib/backdating.ts: uma transacao mais recente ja
+        // existe para este artigo, por isso nao tocamos em currentStock -
+        // so registamos esta saida com data retroativa para efeitos de
+        // auditoria/relatorio.
+        if (baseline.priorBalance.lt(exitQuantity)) {
+          throw new Error(
+            `Saida retroativa de ${exitQuantity.toString()} ${item.unit} para ${line.sku} excede o stock existente nessa data (${baseline.priorBalance.toString()}).`,
+          );
+        }
+        finalStock = baseline.priorBalance.sub(exitQuantity);
+        consumptionValue = exitQuantity.mul(item.averageCost);
+
+        logger.warn("Saida com data anterior a uma transacao ja existente - stock atual do artigo nao foi alterado", {
+          sku: line.sku,
+          transactionDate: transactionDate.toISOString(),
+          supersededByDate: baseline.supersededByDate?.toISOString(),
+        });
+      } else {
+        const exitInput = {
+          currentStock: item.currentStock,
+          currentAverageCost: item.averageCost,
+          exitQuantity,
+        };
+        validateStockExitInputs(exitInput);
+        const exitResult = calculateConsumptionValue(exitInput);
+        const updateData = generateStockExitUpdateData(exitResult);
+
+        await tx.inventoryItem.update({
+          where: { id: item.id },
+          data: { ...updateData, updatedBy: input.createdBy },
+        });
+
+        finalStock = exitResult.newTotalQuantity;
+        consumptionValue = exitResult.consumptionValue;
+      }
 
       await tx.inventoryTransaction.create({
         data: {
@@ -78,10 +107,10 @@ async function main(): Promise<void> {
           quantity: exitQuantity,
           unit: item.unit,
           unitCost: item.averageCost,
-          totalCost: exitResult.consumptionValue,
+          totalCost: consumptionValue,
           referenceType,
           referenceId: input.referenceId,
-          balanceAfter: exitResult.newTotalQuantity,
+          balanceAfter: finalStock,
           reason: input.reason,
           notes: line.notes ?? "",
           createdBy: input.createdBy,
@@ -95,10 +124,10 @@ async function main(): Promise<void> {
         unit: item.unit,
         previousStock: item.currentStock.toString(),
         delta: `-${exitQuantity.toString()}`,
-        finalStock: exitResult.newTotalQuantity.toString(),
+        finalStock: finalStock.toString(),
         unitCost: `${item.averageCost.toFixed(2)} €`,
-        totalCost: `${exitResult.consumptionValue.toFixed(2)} €`,
-        status: getStatus(exitResult.newTotalQuantity, item.reorderPoint),
+        totalCost: `${consumptionValue.toFixed(2)} €`,
+        status: getStatus(finalStock, item.reorderPoint),
         notes: line.notes,
       });
     }

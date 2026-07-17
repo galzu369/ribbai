@@ -8,6 +8,7 @@ import { weeklyCountInputSchema } from "./lib/schemas";
 import { revertReferenceIfNeeded } from "./lib/revert";
 import { assertPostWriteCoherence } from "./lib/coherence-guard";
 import { writeOperationDocs, type MovementRow } from "./lib/docs";
+import { resolveBaseline } from "./lib/backdating";
 import { runUpdateMonthlyPreviewFor } from "../update-monthly-preview-for-date";
 
 const REFERENCE_TYPE = "WEEKLY_COUNT";
@@ -51,19 +52,32 @@ async function main(): Promise<void> {
         where: { sku: line.sku },
       });
 
-      const variance = actualQuantity.sub(item.currentStock);
+      const baseline = await resolveBaseline(tx, item.id, transactionDate);
+      const systemQuantityAtDate = baseline.isBackdated ? baseline.priorBalance : item.currentStock;
+      const variance = actualQuantity.sub(systemQuantityAtDate);
       const varianceAbs = variance.abs();
 
-      await tx.inventoryItem.update({
-        where: { id: item.id },
-        data: {
-          currentStock: actualQuantity,
-          stockValue: actualQuantity.mul(item.averageCost),
-          status: "ACTIVE",
-          updatedBy: input.createdBy,
-          lastInventoryDate: transactionDate,
-        },
-      });
+      if (baseline.isBackdated) {
+        // Ver scripts/stock/lib/backdating.ts: uma transacao mais recente ja
+        // existe para este artigo - nao tocamos em currentStock, so
+        // registamos esta contagem retroativa para efeitos de auditoria.
+        logger.warn("Contagem com data anterior a uma transacao ja existente - stock atual do artigo nao foi alterado", {
+          sku: line.sku,
+          transactionDate: transactionDate.toISOString(),
+          supersededByDate: baseline.supersededByDate?.toISOString(),
+        });
+      } else {
+        await tx.inventoryItem.update({
+          where: { id: item.id },
+          data: {
+            currentStock: actualQuantity,
+            stockValue: actualQuantity.mul(item.averageCost),
+            status: "ACTIVE",
+            updatedBy: input.createdBy,
+            lastInventoryDate: transactionDate,
+          },
+        });
+      }
 
       if (varianceAbs.gt(0)) {
         await tx.inventoryTransaction.create({
@@ -90,7 +104,7 @@ async function main(): Promise<void> {
         sku: line.sku,
         name: line.name,
         unit: line.unit,
-        previousStock: item.currentStock.toString(),
+        previousStock: systemQuantityAtDate.toString(),
         delta: `${variance.gte(0) ? "+" : ""}${variance.toString()}`,
         finalStock: actualQuantity.toString(),
         status: getStatus(actualQuantity, item.reorderPoint),
