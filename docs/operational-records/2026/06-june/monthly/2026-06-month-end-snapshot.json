@@ -17,9 +17,10 @@
       "name": "Guardanapos Pequenos",
       "sku": "CONS-SERVICE-SMALL-NAPKINS",
       "unit": "caixa",
-      "closingQuantity": 0,
+      "closingQuantity": 2,
       "originalUnit": "caixa",
-      "originalClosingQuantity": 0
+      "originalClosingQuantity": 2,
+      "correctionNote": "Contagem de 30/06/2026 foi registada incorretamente como 0; valor real confirmado = 2 caixas. Corrigido em 2026-07-17 (ver transacao CORRECTION-2026-06-30-GUARDANAPOS-PEQUENOS)."
     },
     {
       "category": "Consumiveis de Servico",

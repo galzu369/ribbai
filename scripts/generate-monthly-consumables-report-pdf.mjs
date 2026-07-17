@@ -269,12 +269,6 @@ async function buildReportRows(
       firstWindowCount?.quantity ??
       null;
 
-    // Correções específicas já existentes
-    // Rolos Impressora: stock inicial de Junho = 3 caixas
-    if (entry.item.sku === "CONS-OPS-PRINTER-ROLLS") {
-      openingQuantity = 3;
-    }
-
     // Spray Laranja WC IBT: correção do stock inicial após conversão de unidade
     // Apenas aplicar quando NÃO existe snapshot de fim de mês anterior (ex.: relatório de Junho 2026).
     if (
@@ -330,6 +324,7 @@ async function buildReportRows(
 
 function renderRows(rows) {
   return rows
+    .filter((row) => row.sku !== "CLEAN-DISH-UNIVERSAL")
     .map(
       (row) => `
         <tr>
@@ -416,32 +411,6 @@ function renderStockHealth(rows) {
       `
     )
     .join("");
-}
-
-// Normalização específica: combinar Guardanapos Pequenos e remover alias duplicado
-function normalizeGuardanaposPequenos(rows) {
-  const aliasSku = "CONS-SERVICE-SMALL-NAPKINS";
-  const canonicalSku = "CONS-SERVICE-NAPKINS-SMALL";
-
-  // Remover linha duplicada do alias
-  const filtered = rows.filter((row) => row.sku !== aliasSku);
-
-  const guardIndex = filtered.findIndex(
-    (row) => row.sku === "CONS-SERVICE-NAPKINS"
-  );
-  const smallIndex = filtered.findIndex((row) => row.sku === canonicalSku);
-
-  if (guardIndex === -1 || smallIndex === -1) {
-    return filtered;
-  }
-
-  // Reposicionar Guardanapos Pequenos logo a seguir a Guardanapos
-  if (smallIndex !== guardIndex + 1) {
-    const [smallRow] = filtered.splice(smallIndex, 1);
-    filtered.splice(guardIndex + 1, 0, smallRow);
-  }
-
-  return filtered;
 }
 
 function renderHtml({ year, month, rows, countDates, preview }) {
@@ -884,14 +853,13 @@ async function main() {
   });
 
   const groupedCounts = groupByItem(counts, activeItems);
-  const rawRows = await buildReportRows(
+  const rows = await buildReportRows(
     groupedCounts,
     windowStart,
     monthStart,
     monthEnd,
     openingSnapshotMap
   );
-  const rows = normalizeGuardanaposPequenos(rawRows);
 
   // Contagens a partir de WeeklyInventory (modelo analítico antigo)
   const weeklyInventoryCountDates = [
