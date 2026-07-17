@@ -6,17 +6,65 @@ Todos os comandos assumem que esta na raiz do projeto (`RIBBAI`).
 
 ---
 
+### 0. Como registar Entradas, Saidas e Contagens (workflow canonico, desde 2026-07-17)
+
+Toda entrada de fornecedor, saida de stock e contagem fisica semanal deve ser registada atraves dos scripts canonicos em `scripts/stock/`, nunca escrevendo um script novo `.ts` por data (ver `docs/workflows/CURSOR-MASTER-PROMPT-stock-workflow.md` para o historico completo desta mudanca).
+
+- **Entrada de fornecedor**:
+  ```bash
+  npx tsx scripts/stock/apply-stock-entry.ts --file=<caminho-para-entrada.json>
+  ```
+- **Saida de stock** (consumo/quebra/transferencia):
+  ```bash
+  npx tsx scripts/stock/apply-stock-exit.ts --file=<caminho-para-saida.json>
+  ```
+- **Contagem fisica semanal** (substitui `apply-weekly-inventory-from-json.mjs` e `-pg.mjs` para contagens novas):
+  ```bash
+  npx tsx scripts/stock/apply-weekly-count.ts --file=<caminho-para-contagem.json>
+  ```
+
+Formatos de input em `scripts/stock/lib/schemas.ts`. Cada script:
+- Corre tudo dentro de uma unica transacao Prisma (nunca separa a escrita de `currentStock` da `InventoryTransaction` correspondente).
+- Rejeita reprocessar um `referenceId` ja existente a nao ser que se passe `--force` (que reverte de forma segura, recalculando a partir do ledger, nunca por subtracao direta).
+- Corre uma guarda de coerencia pos-escrita (`currentStock === balanceAfter`) antes de terminar.
+- Gera automaticamente os 3 documentos Markdown (`*-inventory-entry-record.md` / `*-inventory-exit-record.md` / `*-inventory-count-record.md`, `*-inventory-movement-log.md`, `*-inventory-change-summary.md`) em `docs/operational-records/YYYY/MM-month/inventory-updates/`.
+- Regenera o preview mensal (HTML+PDF) no fim.
+
+Contagens semanais aplicadas ficam arquivadas em `docs/operational-records/YYYY/MM-month/inventory-counts/YYYY-MM-DD-weekly-count.json` (nao na raiz do projeto).
+
+**Manutencao e verificacao de coerencia:**
+```bash
+# Reporta (dry-run) ou corrige (--apply) qualquer artigo cujo currentStock nao bata certo com a sua propria ultima transacao
+npx tsx scripts/database/reconcile-current-stock.ts [--apply]
+
+# Confirma que currentStock de cada artigo bate certo com "ultima contagem fisica + movimentos desde entao"
+npm run inventory:validate-coherence -- --year=YYYY --month=MM
+
+# Consolida um SKU duplicado (ex.: mesmo produto com dois SKUs, um deles INACTIVE)
+# no SKU canonico: move o historico de transacoes, soma o stock (CMP), regista
+# uma transacao de auditoria, e soft-deleta o duplicado.
+npx tsx scripts/database/merge-duplicate-sku.ts --from=<SKU_DUPLICADO> --into=<SKU_CANONICO>
+```
+
+Scripts antigos, um-por-data (`scripts/database/record-stock-in-*.ts`, `rollback-weekly-inventory-count-*`, `uniformizar-*`, etc.) foram arquivados em `scripts/database/_archive/` e nao devem voltar a ser usados como template.
+
+---
+
 ### 1. Gerar/atualizar o preview mensal (documento de trabalho)
 
 O preview e um documento **interno** para controlo operacional, que pode ser regenerado quantas vezes for necessario.
 
-- **Comando generico (preview)**:
+Sempre que este workflow e corrido, a atualizacao acontece em dois passos sequenciais:
+1. **Geracao/atualizacao do HTML** (`YYYY-MM-preview-relatorio-mensal-consumiveis.html`) com base nos dados atuais de inventario.
+2. **Export do PDF a partir do HTML atualizado** (`YYYY-MM-preview-relatorio-mensal-consumiveis.pdf`), garantindo que o PDF reflete sempre a ultima versao do documento de trabalho.
+
+- **Comando generico (preview)** (gera/atualiza **HTML + PDF** do preview):
 
 ```bash
 node scripts/generate-monthly-consumables-report-pdf.mjs --year=YYYY --month=MM --preview
 ```
 
-- **Helper recomendado** (usa o mes/ano atuais por omissao):
+- **Helper recomendado** (usa o mes/ano atuais por omissao e atualiza **HTML + PDF** do preview):
 
 ```bash
 node scripts/update-monthly-preview.mjs
@@ -68,8 +116,9 @@ npm run inventory:month-close -- --year=YYYY --month=MM
 ```
 
 Este comando executa, pela ordem:
-1. `scripts/generate-monthly-consumables-report-pdf.mjs` (sem `--preview`)
-2. `scripts/build-month-end-snapshot-from-monthly-report.mjs`
+1. `scripts/validate-monthly-report-coherence.mjs` — **bloqueia o fecho** se algum artigo estiver incoerente (`currentStock` != ultima contagem + movimentos desde entao). Se falhar, corre `npm run inventory:reconcile-stock -- --apply` primeiro.
+2. `scripts/generate-monthly-consumables-report-pdf.mjs` (sem `--preview`)
+3. `scripts/build-month-end-snapshot-from-monthly-report.mjs`
 
 Output esperado:
 - HTML/PDF final:\

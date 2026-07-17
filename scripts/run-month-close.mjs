@@ -63,13 +63,20 @@ async function main() {
     `=== RIBBAI · Fecho mensal de inventario · ${monthSlug}/${year} ===`
   );
 
-  // 1) Gerar relatório mensal oficial (sem --preview).
+  // 1) Validar coerencia currentStock vs (ultima contagem + movimentos desde entao).
+  //    Falha o fecho mensal se algum artigo estiver incoerente.
+  await runNodeScript("scripts/validate-monthly-report-coherence.mjs", [
+    `--year=${year}`,
+    `--month=${month}`,
+  ]);
+
+  // 2) Gerar relatório mensal oficial (sem --preview).
   await runNodeScript("scripts/generate-monthly-consumables-report-pdf.mjs", [
     `--year=${year}`,
     `--month=${month}`,
   ]);
 
-  // 2) Gerar snapshot de fim de mês a partir do relatório.
+  // 3) Gerar snapshot de fim de mês a partir do relatório.
   await runNodeScript(
     "scripts/build-month-end-snapshot-from-monthly-report.mjs",
     [`--year=${year}`, `--month=${month}`]

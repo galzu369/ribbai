@@ -32,26 +32,12 @@ function parseArgs() {
   return { year, month };
 }
 
-export function updateMonthlyPreview({ year, month }) {
-  const monthSlug = String(month).padStart(2, "0");
-  console.log(
-    `=== RIBBAI · Atualizar preview de relatorio mensal · ${monthSlug}/${year} ===`
-  );
-
-  const scriptPath = path.join(
-    rootDir,
-    "scripts",
-    "generate-monthly-consumables-report-pdf.mjs"
-  );
-
-  const child = spawn(
-    process.execPath,
-    [scriptPath, `--year=${year}`, `--month=${month}`, "--preview"],
-    {
-      cwd: rootDir,
-      stdio: "inherit",
-    }
-  );
+function runNodeScript(relativeScriptPath, extraArgs) {
+  const scriptPath = path.join(rootDir, relativeScriptPath);
+  const child = spawn(process.execPath, [scriptPath, ...extraArgs], {
+    cwd: rootDir,
+    stdio: "inherit",
+  });
 
   return new Promise((resolve, reject) => {
     child.on("exit", (code) => {
@@ -59,16 +45,38 @@ export function updateMonthlyPreview({ year, month }) {
         resolve();
       } else {
         reject(
-          new Error(
-            `generate-monthly-consumables-report-pdf.mjs (preview) exited with code ${
-              code ?? "null"
-            }.`
-          )
+          new Error(`${relativeScriptPath} exited with code ${code ?? "null"}.`)
         );
       }
     });
     child.on("error", reject);
   });
+}
+
+export async function updateMonthlyPreview({ year, month }) {
+  const monthSlug = String(month).padStart(2, "0");
+  console.log(
+    `=== RIBBAI · Atualizar preview de relatorio mensal · ${monthSlug}/${year} ===`
+  );
+
+  await runNodeScript("scripts/generate-monthly-consumables-report-pdf.mjs", [
+    `--year=${year}`,
+    `--month=${month}`,
+    "--preview",
+  ]);
+
+  // Aviso (nao bloqueante) de coerencia: currentStock vs ultima contagem + movimentos desde entao.
+  // O fecho oficial do mes (npm run inventory:month-close) trata isto como bloqueante.
+  try {
+    await runNodeScript("scripts/validate-monthly-report-coherence.mjs", [
+      `--year=${year}`,
+      `--month=${month}`,
+    ]);
+  } catch (error) {
+    console.warn(
+      `⚠ Aviso: encontradas incoerencias de stock (${error.message}). O preview foi gerado na mesma, mas corre \`npm run inventory:reconcile-stock -- --apply\` antes do fecho oficial do mes.`
+    );
+  }
 }
 
 async function main() {
