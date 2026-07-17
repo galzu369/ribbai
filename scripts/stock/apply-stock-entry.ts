@@ -91,6 +91,11 @@ async function main(): Promise<void> {
           subCategory: line.subCategory,
           supplierId: supplier.id,
           unit: line.unit,
+          // Receber stock implica que o artigo voltou a estar em uso -
+          // reativa-o se tinha sido soft-deleted/marcado inativo (ex.: SKU
+          // que ja existia mas nunca tinha sido usado, ou foi retirado por
+          // engano).
+          status: "ACTIVE",
           updatedBy: input.createdBy,
         },
         create: {
