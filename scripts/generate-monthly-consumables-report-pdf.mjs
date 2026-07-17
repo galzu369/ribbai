@@ -144,6 +144,14 @@ function groupByItem(counts, activeItems) {
 
   for (const count of counts) {
     for (const line of count.items) {
+      // Nunca ressuscitar um artigo inativo/consolidado (ex.: SKU duplicado
+      // fundido via merge-duplicate-sku.ts) so porque tem registos antigos
+      // no modelo WeeklyInventory - esta fonte e independente do
+      // InventoryTransaction e nao sabe que o artigo foi retirado.
+      if (line.item.status !== "ACTIVE" || line.item.deletedAt) {
+        continue;
+      }
+
       const key = line.item.id;
       const existing = grouped.get(key) ?? {
         item: line.item,
@@ -282,13 +290,26 @@ async function buildReportRows(
       }
     }
 
-    const estimatedConsumption =
+    const rawEstimatedConsumption =
       hasConsumptionBasis && openingQuantity !== null
         ? openingQuantity +
           movementInbound.quantity -
           movementOutbound.quantity -
           closingQuantity
         : null;
+
+    // Um "consumo estimado" negativo e impossivel na pratica: significa que o
+    // stock cresceu mais do que as entradas registadas explicam (tipicamente
+    // um ganho de contagem fisica - WEEKLY_COUNT - sem entrada de fornecedor
+    // correspondente). Em vez de mostrar um numero sem sentido, marca-se como
+    // "ganho nao documentado" para investigacao, e nao entra no calculo de
+    // gasto estimado.
+    const isUndocumentedGain =
+      rawEstimatedConsumption !== null && rawEstimatedConsumption < 0;
+    const estimatedConsumption = isUndocumentedGain ? null : rawEstimatedConsumption;
+    const undocumentedGain = isUndocumentedGain
+      ? Math.abs(rawEstimatedConsumption)
+      : null;
 
     const unitCost = Number(entry.item.costPrice);
     const estimatedCost =
@@ -306,6 +327,7 @@ async function buildReportRows(
       outboundQuantity: displayOutbound.quantity,
       outboundUnit: displayOutbound.unit,
       estimatedConsumption,
+      undocumentedGain,
       unitCost,
       estimatedCost,
       countCount: entry.counts.length,
@@ -324,7 +346,6 @@ async function buildReportRows(
 
 function renderRows(rows) {
   return rows
-    .filter((row) => row.sku !== "CLEAN-DISH-UNIVERSAL")
     .map(
       (row) => `
         <tr>
@@ -337,7 +358,13 @@ function renderRows(rows) {
           <td>${formatQuantity(row.closingQuantity ?? row.currentStock)} ${escapeHtml(row.unit)}</td>
           <td>${formatQuantity(row.inboundQuantity)} ${escapeHtml(row.inboundUnit)}</td>
           <td>${formatQuantity(row.outboundQuantity)} ${escapeHtml(row.outboundUnit)}</td>
-          <td>${row.estimatedConsumption === null ? "Dados insuficientes" : `${formatQuantity(row.estimatedConsumption)} ${escapeHtml(row.unit)}`}</td>
+          <td>${
+            row.undocumentedGain != null
+              ? `Ganho nao documentado: +${formatQuantity(row.undocumentedGain)} ${escapeHtml(row.unit)}`
+              : row.estimatedConsumption === null
+                ? "Dados insuficientes"
+                : `${formatQuantity(row.estimatedConsumption)} ${escapeHtml(row.unit)}`
+          }</td>
           <td>${row.unitCost > 0 ? formatCurrency(row.unitCost) : "Preco pendente"}</td>
           <td>${row.estimatedCost === null ? "-" : formatCurrency(row.estimatedCost)}</td>
           <td><span class="badge ${getBadgeClass(row.status)}">${escapeHtml(row.status)}</span></td>
@@ -415,6 +442,7 @@ function renderStockHealth(rows) {
 
 function renderHtml({ year, month, rows, countDates, preview }) {
   const criticalRows = rows.filter((row) => row.status === "Critico");
+  const undocumentedGainRows = rows.filter((row) => row.undocumentedGain != null);
   const missingPrices = rows.filter((row) => row.unitCost === 0);
   const rowsWithConsumption = rows.filter((row) => row.estimatedConsumption !== null);
   const categorySummary = buildCategorySummary(rows);
@@ -751,6 +779,12 @@ function renderHtml({ year, month, rows, countDates, preview }) {
                   .join("")
               : "<li>Nao existem ruturas criticas registadas no periodo.</li>"
           }
+          ${undocumentedGainRows
+            .map(
+              (row) =>
+                `<li>${escapeHtml(row.name)} teve um ganho de stock de ${formatQuantity(row.undocumentedGain)} ${escapeHtml(row.unit)} nao explicado por entradas registadas nem pela contagem inicial - verificar se uma entrega nao foi registada ou se uma contagem anterior estava errada.</li>`
+            )
+            .join("")}
           <li>Para calcular gasto medio e previsao de rutura, manter contagens semanais consistentes.</li>
           <li>Registar entradas de fornecedores como transacoes IN para separar reposicao de consumo real.</li>
         </ul>
