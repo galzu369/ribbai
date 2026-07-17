@@ -44,7 +44,15 @@ npm run inventory:validate-coherence -- --year=YYYY --month=MM
 # no SKU canonico: move o historico de transacoes, soma o stock (CMP), regista
 # uma transacao de auditoria, e soft-deleta o duplicado.
 npx tsx scripts/database/merge-duplicate-sku.ts --from=<SKU_DUPLICADO> --into=<SKU_CANONICO>
+
+# Deteta artigos com o mesmo nome em mais do que um SKU ativo (aviso, nao bloqueia).
+# Corre automaticamente (nao bloqueante) no inicio de `npm run inventory:month-close`.
+npx tsx scripts/database/find-duplicate-skus.ts
 ```
+
+**Atencao ao usar `merge-duplicate-sku.ts`**: o script soma sempre o stock dos dois SKUs (via CMP), assumindo que sao duas reservas fisicas separadas do mesmo produto. Isso e o comportamento certo quando o SKU antigo tinha stock genuino que nunca foi transferido. **Mas se o SKU novo simplesmente substituiu o antigo a meio do mes** (ex.: alguem comecou a usar um SKU diferente para o mesmo artigo fisico, e a ultima contagem no SKU novo ja reflete o stock real e completo), somar os dois da um valor errado, a dobrar. Nesse caso, confirma sempre com quem faz as contagens fisicas qual e o stock final real antes de assumir que a soma esta certa (ver `docs/workflows/CURSOR-MASTER-PROMPT-stock-workflow.md` para o caso real do Lava-Louça Universal onde isto aconteceu).
+
+**Antes de criar um artigo novo**, `apply-stock-entry.ts` verifica automaticamente se ja existe um artigo com o mesmo nome (em qualquer estado) e bloqueia a criacao de um SKU novo nesse caso — usa o SKU existente, ou corre com `--force-new-sku` se for mesmo um artigo diferente com nome coincidente.
 
 Scripts antigos, um-por-data (`scripts/database/record-stock-in-*.ts`, `rollback-weekly-inventory-count-*`, `uniformizar-*`, etc.) foram arquivados em `scripts/database/_archive/` e nao devem voltar a ser usados como template.
 

@@ -55,6 +55,30 @@ function runNodeScript(relativeScriptPath, extraArgs) {
   });
 }
 
+function runTsxScript(relativeScriptPath, extraArgs) {
+  const scriptPath = path.join(rootDir, relativeScriptPath);
+  const child = spawn("npx", ["tsx", scriptPath, ...extraArgs], {
+    cwd: rootDir,
+    stdio: "inherit",
+    shell: process.platform === "win32",
+  });
+
+  return new Promise((resolve, reject) => {
+    child.on("exit", (code) => {
+      if (code === 0) {
+        resolve();
+      } else {
+        reject(
+          new Error(
+            `Script ${relativeScriptPath} exited with code ${code ?? "null"}.`
+          )
+        );
+      }
+    });
+    child.on("error", reject);
+  });
+}
+
 async function main() {
   const { year, month } = parseArgs();
   const monthSlug = String(month).padStart(2, "0");
@@ -63,20 +87,29 @@ async function main() {
     `=== RIBBAI · Fecho mensal de inventario · ${monthSlug}/${year} ===`
   );
 
-  // 1) Validar coerencia currentStock vs (ultima contagem + movimentos desde entao).
+  // 1) Aviso (nao bloqueante): existem SKUs duplicados por resolver?
+  try {
+    await runTsxScript("scripts/database/find-duplicate-skus.ts", []);
+  } catch (error) {
+    console.warn(
+      `⚠ Aviso: falha ao correr find-duplicate-skus.ts (${error.message}). A continuar o fecho mensal.`
+    );
+  }
+
+  // 2) Validar coerencia currentStock vs (ultima contagem + movimentos desde entao).
   //    Falha o fecho mensal se algum artigo estiver incoerente.
   await runNodeScript("scripts/validate-monthly-report-coherence.mjs", [
     `--year=${year}`,
     `--month=${month}`,
   ]);
 
-  // 2) Gerar relatório mensal oficial (sem --preview).
+  // 3) Gerar relatório mensal oficial (sem --preview).
   await runNodeScript("scripts/generate-monthly-consumables-report-pdf.mjs", [
     `--year=${year}`,
     `--month=${month}`,
   ]);
 
-  // 3) Gerar snapshot de fim de mês a partir do relatório.
+  // 4) Gerar snapshot de fim de mês a partir do relatório.
   await runNodeScript(
     "scripts/build-month-end-snapshot-from-monthly-report.mjs",
     [`--year=${year}`, `--month=${month}`]

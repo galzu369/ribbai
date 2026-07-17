@@ -18,6 +18,15 @@ import { calculateCMPForStockEntry, validateCMPInputs } from "@/lib/inventory-cm
  * the duplicate is soft-deleted (stock zeroed, deletedAt set) so it can
  * never again be double-counted.
  *
+ * WARNING: this always ADDS the two items' stock together (weighted-average
+ * cost). That is correct when `--from` held genuinely separate stock that
+ * was never transferred. It is WRONG if `--into` simply replaced `--from`
+ * mid-month for tracking the same physical item — in that case the newer
+ * SKU's own latest count already reflects the true, complete stock, and
+ * summing double-counts it. Confirm with whoever does the physical counts
+ * before relying on the sum (this exact mistake happened with "Lava-Louça
+ * Universal" on 2026-07-17 and had to be corrected afterwards).
+ *
  * Usage:
  *   npx tsx scripts/database/merge-duplicate-sku.ts --from=<SKU> --into=<SKU> [--reason="..."]
  */

@@ -1,12 +1,17 @@
 import { readFile } from "node:fs/promises";
 
-export function parseCliArgs(): { file: string | null; force: boolean } {
+export function parseCliArgs(): {
+  file: string | null;
+  force: boolean;
+  forceNewSku: boolean;
+} {
   const args = process.argv.slice(2);
   const fileArg = args.find((arg) => arg.startsWith("--file="));
 
   return {
     file: fileArg ? fileArg.slice("--file=".length) : null,
     force: args.includes("--force"),
+    forceNewSku: args.includes("--force-new-sku"),
   };
 }
 

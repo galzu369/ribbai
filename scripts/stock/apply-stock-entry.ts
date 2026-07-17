@@ -13,6 +13,7 @@ import { stockEntryInputSchema } from "./lib/schemas";
 import { revertReferenceIfNeeded } from "./lib/revert";
 import { assertPostWriteCoherence } from "./lib/coherence-guard";
 import { writeOperationDocs, type MovementRow } from "./lib/docs";
+import { findItemsWithSameName } from "./lib/duplicate-check";
 import { runUpdateMonthlyPreviewFor } from "../update-monthly-preview-for-date";
 
 const REFERENCE_TYPE = "SUPPLIER_DELIVERY";
@@ -31,9 +32,11 @@ function getStatus(currentStock: Prisma.Decimal, reorderPoint: Prisma.Decimal): 
 }
 
 async function main(): Promise<void> {
-  const { file, force } = parseCliArgs();
+  const { file, force, forceNewSku } = parseCliArgs();
   if (!file) {
-    throw new Error("Uso: npx tsx scripts/stock/apply-stock-entry.ts --file=<caminho.json> [--force]");
+    throw new Error(
+      "Uso: npx tsx scripts/stock/apply-stock-entry.ts --file=<caminho.json> [--force] [--force-new-sku]",
+    );
   }
 
   const raw = await loadJsonFile(file);
@@ -63,6 +66,22 @@ async function main(): Promise<void> {
     for (const line of input.lines) {
       const quantity = new Prisma.Decimal(line.quantity);
       const unitCost = new Prisma.Decimal(line.unitCost);
+
+      const existingBySku = await tx.inventoryItem.findUnique({
+        where: { sku: line.sku },
+        select: { sku: true },
+      });
+
+      if (!existingBySku && !forceNewSku) {
+        const similar = await findItemsWithSameName(tx, line.name, line.sku);
+        if (similar.length > 0) {
+          throw new Error(
+            `SKU ${line.sku} nao existe, mas ja existe(m) artigo(s) com o mesmo nome "${line.name}": ${similar
+              .map((s) => `${s.sku} (status=${s.status}, stock=${s.currentStock})`)
+              .join(", ")}. Usa um desses SKUs, ou corre novamente com --force-new-sku se este for mesmo um artigo diferente.`,
+          );
+        }
+      }
 
       const item = await tx.inventoryItem.upsert({
         where: { sku: line.sku },

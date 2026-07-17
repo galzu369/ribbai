@@ -45,6 +45,7 @@
     "inventory:month-close": "node scripts/run-month-close.mjs",
     "inventory:validate-coherence": "node scripts/validate-monthly-report-coherence.mjs",
     "inventory:reconcile-stock": "tsx scripts/database/reconcile-current-stock.ts",
+    "inventory:find-duplicate-skus": "tsx scripts/database/find-duplicate-skus.ts",
     "validation:inventory:continuity": "node scripts/validate-inventory-continuity-june-july.mjs",
     "test": "vitest",
     "test:ui": "vitest --ui",
