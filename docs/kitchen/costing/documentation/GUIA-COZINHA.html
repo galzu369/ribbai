@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<title>RIBBAÍ — Guia de Atualização de Preços das Fichas Técnicas</title>
+<style>
+:root{
+  --paper:#fcfcfb; --ink:#141412; --ink2:#52514e; --muted:#898781;
+  --hairline:#e1e0d9; --accent:#1e3d31; --accent-soft:#eef1ee;
+  --warn:#8a6100; --warn-bg:#fdf3dc; --crit:#8c2f2f; --crit-bg:#fbf0f0;
+  --good:#006300; --good-bg:#f0f8f0;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:"Segoe UI",system-ui,-apple-system,sans-serif;
+  font-size:12pt; line-height:1.55; color:var(--ink); background:var(--paper);
+}
+h1,h2,h3,.serif{font-family:Georgia,"Times New Roman",serif;font-weight:400}
+code{font-family:Consolas,ui-monospace,monospace;font-size:.88em;
+  background:#f2f1ec;border:1px solid var(--hairline);border-radius:4px;padding:1px 5px}
+
+@page{size:A4 portrait;margin:16mm 15mm}
+
+/* ---------- Capa ---------- */
+.cover{height:247mm;display:flex;flex-direction:column;justify-content:center;
+  text-align:center;page-break-after:always}
+.cover .brand{font-size:13pt;letter-spacing:.42em;color:var(--accent);
+  font-weight:600;text-transform:uppercase}
+.cover h1{font-size:31pt;line-height:1.2;margin:22px 0 0}
+.cover .rule{width:70px;height:2px;background:var(--accent);margin:26px auto}
+.cover .sub{font-size:13.5pt;color:var(--ink2);max-width:118mm;margin:0 auto}
+.cover .foot{margin-top:52px;font-size:10.5pt;color:var(--muted)}
+.cover .audience{display:inline-block;margin-top:30px;border:1px solid var(--accent);
+  color:var(--accent);border-radius:999px;padding:7px 20px;font-size:11pt}
+
+/* ---------- Estrutura ---------- */
+h2{font-size:19pt;color:var(--accent);margin:0 0 4px;
+  padding-bottom:7px;border-bottom:2px solid var(--accent)}
+h2 .n{font-size:13pt;color:var(--muted);margin-right:10px;font-family:"Segoe UI",sans-serif}
+section{page-break-inside:avoid;margin-bottom:26px}
+section.long{page-break-inside:auto}
+.lead{font-size:12.5pt;color:var(--ink2);margin:14px 0}
+p{margin:9px 0}
+.page-break{page-break-before:always}
+
+/* ---------- Passos ---------- */
+.steps{list-style:none;counter-reset:s;margin:16px 0}
+.steps li{counter-increment:s;position:relative;padding:0 0 0 46px;margin:0 0 17px;
+  page-break-inside:avoid}
+.steps li::before{content:counter(s);position:absolute;left:0;top:-1px;
+  width:31px;height:31px;border-radius:50%;background:var(--accent);color:#fff;
+  font-size:14pt;font-weight:600;display:flex;align-items:center;justify-content:center}
+.steps .t{font-size:13pt;font-weight:600;display:block;margin-bottom:2px}
+.steps .d{color:var(--ink2);font-size:11.5pt}
+
+/* ---------- Blocos ---------- */
+.path{background:#f2f1ec;border:1px solid var(--hairline);border-radius:6px;
+  padding:9px 13px;font-family:Consolas,monospace;font-size:10.5pt;
+  margin:8px 0;word-break:break-all}
+.callout{border-left:4px solid var(--accent);background:var(--accent-soft);
+  padding:12px 16px;margin:14px 0;border-radius:0 6px 6px 0;font-size:11.5pt;
+  page-break-inside:avoid}
+.path,.flow,.cols,.col,.tech,table{page-break-inside:avoid}
+.callout.warn{border-left-color:var(--warn);background:var(--warn-bg);color:#5c430a}
+.callout.crit{border-left-color:var(--crit);background:var(--crit-bg);color:#6b2626}
+.callout.good{border-left-color:var(--good);background:var(--good-bg);color:#14481b}
+.callout .lbl{display:block;font-weight:700;font-size:10pt;text-transform:uppercase;
+  letter-spacing:.08em;margin-bottom:4px}
+
+/* ---------- Fluxo ---------- */
+.flow{display:flex;align-items:center;justify-content:center;gap:9px;
+  margin:20px 0;flex-wrap:wrap}
+.flow .box{border:1.5px solid var(--accent);border-radius:7px;padding:10px 14px;
+  font-size:11pt;text-align:center;background:#fff;min-width:31mm}
+.flow .box.src{background:var(--accent);color:#fff;font-weight:600}
+.flow .arr{color:var(--accent);font-size:16pt;line-height:1}
+
+/* ---------- Duas colunas ---------- */
+.cols{display:flex;gap:18px;margin:14px 0}
+.col{flex:1;border:1px solid var(--hairline);border-radius:8px;padding:13px 16px}
+.col h4{font-size:11.5pt;margin-bottom:8px;font-weight:600}
+.col.no h4{color:var(--crit)} .col.yes h4{color:var(--good)}
+.col ul{margin:0;padding-left:17px;font-size:11pt;color:var(--ink2)}
+.col li{margin:5px 0}
+
+/* ---------- Tabela ---------- */
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:10.5pt}
+th{background:var(--accent);color:#fff;text-align:left;padding:9px 11px;
+  font-weight:600;font-size:10.5pt}
+td{padding:9px 11px;border-bottom:1px solid var(--hairline);vertical-align:top;
+  color:var(--ink2)}
+tr{page-break-inside:avoid}
+td:first-child{color:var(--ink);font-weight:600}
+
+/* ---------- Launcher ---------- */
+.launcher{display:flex;align-items:center;gap:13px;border:1px solid var(--hairline);
+  border-left:4px solid var(--accent);border-radius:0 7px 7px 0;padding:12px 15px;
+  margin:10px 0;page-break-inside:avoid}
+.launcher .ico{font-size:19pt;line-height:1}
+.launcher .nm{font-family:Consolas,monospace;font-size:10.5pt;font-weight:700;
+  display:block;color:var(--accent)}
+.launcher .ds{font-size:11pt;color:var(--ink2)}
+
+.tech{border:1px dashed var(--muted);border-radius:8px;padding:16px 19px;
+  background:#faf9f6;margin-top:14px}
+.tech h3{font-size:13pt;margin-bottom:3px}
+.tech .who{font-size:10pt;color:var(--muted);text-transform:uppercase;
+  letter-spacing:.07em;margin-bottom:11px}
+.tech code{font-size:.85em}
+
+footer{margin-top:34px;padding-top:11px;border-top:1px solid var(--hairline);
+  font-size:9.5pt;color:var(--muted);text-align:center}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="brand">Ribbaí</div>
+  <h1>Atualização de Preços<br>das Fichas Técnicas</h1>
+  <div class="rule"></div>
+  <p class="sub">Altere os preços num único sítio. O sistema recalcula sozinho
+     o custo de todas as guarnições, pratos, food cost e margens.</p>
+  <div class="audience">Guia do Chefe de Cozinha</div>
+  <div class="foot">Cozinha RIBBAÍ · Versão 1.0 · Julho 2026</div>
+</div>
+
+<section>
+  <h2><span class="n">01</span>O que este sistema faz</h2>
+  <p class="lead">Antes, atualizar um preço obrigava a abrir e corrigir cada
+     ficha técnica, uma a uma. Agora atualiza <strong>apenas o Preçário</strong>.</p>
+  <div class="flow">
+    <div class="box src">Preçário</div>
+    <div class="arr">→</div>
+    <div class="box">Guarnições</div>
+    <div class="arr">→</div>
+    <div class="box">Pratos do menu</div>
+    <div class="arr">→</div>
+    <div class="box">Food cost<br>e margens</div>
+  </div>
+  <p>Se o preço do abacate subir, o sistema atualiza o guacamole, todos os
+     pratos que levam guacamole, e recalcula o food cost de cada um deles.</p>
+  <div class="callout good">
+    <span class="lbl">A regra de ouro</span>
+    Os preços escrevem-se <strong>só no Preçário</strong>. Nunca dentro das
+    fichas técnicas — o que lá escrever será substituído na atualização seguinte.
+  </div>
+</section>
+
+<section>
+  <h2><span class="n">02</span>Atualizar preços — o dia-a-dia</h2>
+  <ol class="steps">
+    <li><span class="t">Abra o Preçário</span>
+      <span class="d">Na pasta do sistema:</span>
+      <div class="path">docs\kitchen\costing\price-lists\Preçário.xlsx</div></li>
+    <li><span class="t">Altere os preços na coluna «Preço s/IVA»</span>
+      <span class="d">É esta a coluna que conta. A coluna «Preço c/IVA»
+        calcula-se sozinha — não a preencha à mão.</span></li>
+    <li><span class="t">Confirme a unidade e o IVA</span>
+      <span class="d">Kg, L ou Unidade — e a taxa de IVA do artigo.</span></li>
+    <li><span class="t">Guarde e feche o Excel</span>
+      <span class="d">Ctrl+S e feche mesmo o ficheiro. Com o Preçário aberto,
+        o Windows não deixa o sistema gravar.</span></li>
+    <li><span class="t">Duplo clique em ATUALIZAR-FICHAS-TECNICAS</span>
+      <div class="path">ATUALIZAR-FICHAS-TECNICAS.cmd</div></li>
+    <li><span class="t">Espere pela mensagem de sucesso</span>
+      <span class="d">«Sincronização concluída com sucesso.» As fichas estão
+        atualizadas e pode abri-las.</span></li>
+  </ol>
+  <div class="callout warn">
+    <span class="lbl">O passo mais importante</span>
+    Guardar <em>e fechar</em> o Preçário antes de atualizar. É a causa número um
+    de a atualização não avançar.
+  </div>
+</section>
+
+<section class="page-break">
+  <h2><span class="n">03</span>Os três botões do sistema</h2>
+  <p class="lead">Estão todos na pasta principal. Basta duplo clique.</p>
+  <div class="launcher">
+    <div class="ico">▶</div>
+    <div><span class="nm">ATUALIZAR-FICHAS-TECNICAS.cmd</span>
+      <span class="ds">Atualiza as fichas com os preços do Preçário. É o que
+        usa no dia-a-dia.</span></div>
+  </div>
+  <div class="launcher">
+    <div class="ico">👁</div>
+    <div><span class="nm">VERIFICAR-FICHAS-TECNICAS.cmd</span>
+      <span class="ds">Mostra o que <em>iria</em> mudar, sem alterar nada.
+        Pode usar à vontade, é seguro.</span></div>
+  </div>
+  <div class="launcher">
+    <div class="ico">✓</div>
+    <div><span class="nm">INSTALAR-SISTEMA-COZINHA.cmd</span>
+      <span class="ds">Verifica se está tudo em ordem. Use só na primeira vez,
+        ou se algo parecer estranho.</span></div>
+  </div>
+  <div class="callout">
+    Na dúvida antes de uma atualização grande, corra primeiro
+    <strong>VERIFICAR</strong>. Mostra-lhe todos os custos novos sem gravar nada.
+  </div>
+</section>
+
+<section>
+  <h2><span class="n">04</span>Se aparecer um erro</h2>
+  <div class="callout warn">
+    <span class="lbl">«Existem ficheiros Excel abertos»</span>
+    O sistema diz-lhe <strong>quais</strong>. Feche-os no Excel e repita.
+    Nada foi alterado — pode repetir sem receio.
+  </div>
+  <div class="callout crit">
+    <span class="lbl">«A atualização NÃO foi concluída»</span>
+    Nenhum ficheiro fica a meio: <strong>ou muda tudo, ou não muda nada</strong>.
+    Antes de cada atualização é guardada automaticamente uma cópia de segurança.
+    Leia a mensagem no ecrã e, se não perceber, contacte o responsável do sistema.
+  </div>
+  <p>As cópias de segurança ficam guardadas em:</p>
+  <div class="path">docs\kitchen\costing\backups\price-sync\</div>
+</section>
+
+<section>
+  <h2><span class="n">05</span>Ingredientes «por resolver»</h2>
+  <p>Por vezes aparece uma lista assim no fim da atualização:</p>
+  <div class="path">Por resolver (sem preço atribuído — nada foi inventado):<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Guarnições/Húmmus · "Tahine" [UNMATCHED]</div>
+  <p>Significa que <strong>o nome do ingrediente na ficha não existe no
+     Preçário</strong>. O sistema não inventa preços: prefere deixar em branco
+     a usar um valor errado que estragaria o custo do prato.</p>
+  <p><strong>Como resolver:</strong></p>
+  <div class="cols">
+    <div class="col yes">
+      <h4>O artigo existe, com outro nome</h4>
+      <ul><li>O mesmo produto está no Preçário com uma designação diferente
+          da que a ficha usa</li>
+        <li>É preciso registar essa correspondência — peça ao responsável do sistema</li></ul>
+    </div>
+    <div class="col yes">
+      <h4>O artigo não existe mesmo</h4>
+      <ul><li>Acrescente-o ao Preçário</li>
+        <li>Use o nome tal como aparece na ficha técnica</li></ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="n">06</span>Para lembrar</h2>
+  <div class="cols">
+    <div class="col yes">
+      <h4>Já não precisa de fazer</h4>
+      <ul>
+        <li>Abrir as fichas técnicas uma a uma</li>
+        <li>Atualizar ligações do Excel</li>
+        <li>Aceitar avisos sobre «ligações a outros ficheiros»</li>
+        <li>Escrever preços dentro das fichas</li>
+        <li>Mexer em fórmulas</li>
+      </ul>
+    </div>
+    <div class="col no">
+      <h4>Nunca fazer</h4>
+      <ul>
+        <li>Escrever preços diretamente nas fichas técnicas</li>
+        <li>Mudar o nome ou o sítio das pastas internas</li>
+        <li>Apagar o ficheiro <code>.ribbai-root</code></li>
+        <li>Trabalhar com os ficheiros dentro de um ZIP</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="page-break long">
+  <h2><span class="n">07</span>Instalar no seu computador</h2>
+  <p class="lead">Só é feito uma vez. Não instala nada no Windows nem pede
+     permissões de administrador.</p>
+  <ol class="steps">
+    <li><span class="t">Feche todos os ficheiros Excel</span>
+      <span class="d">Nos dois computadores, o de origem e o seu.</span></li>
+    <li><span class="t">Copie a pasta RIBBAÍ completa</span>
+      <span class="d">Toda a pasta, de uma vez. Não copie só o Preçário nem
+        só as fichas.</span></li>
+    <li><span class="t">Cole no seu computador</span>
+      <span class="d">Onde preferir — ver caixa abaixo.</span></li>
+    <li><span class="t">Duplo clique em INSTALAR-SISTEMA-COZINHA.cmd</span>
+      <span class="d">Faz a verificação e diz-lhe se está tudo bem.</span></li>
+    <li><span class="t">Confirme a mensagem final</span>
+      <span class="d">Deve ler «SISTEMA PRONTO A UTILIZAR».</span></li>
+    <li><span class="t">Teste com VERIFICAR-FICHAS-TECNICAS.cmd</span>
+      <span class="d">Não altera nada. Se correr bem, está pronto.</span></li>
+  </ol>
+
+  <div class="callout good">
+    <span class="lbl">A pasta pode ficar onde quiser</span>
+    <code>C:\RIBBAI</code> · <code>D:\RIBBAI</code> ·
+    <code>Documentos\RIBBAI</code> · <code>OneDrive\RIBBAI</code><br>
+    Funciona em qualquer disco e com qualquer nome de utilizador Windows,
+    desde que a pasta seja copiada por inteiro e as pastas de dentro fiquem
+    como estão.
+  </div>
+
+  <div class="callout warn">
+    <span class="lbl">Se usar OneDrive ou SharePoint</span>
+    Os ficheiros têm de estar <strong>descarregados no computador</strong>
+    (não «apenas online»), os workbooks têm de estar fechados, e
+    <strong>duas pessoas não podem atualizar ao mesmo tempo</strong>.
+    Na dúvida, prefira uma pasta local.
+  </div>
+</section>
+
+<section class="long">
+  <h2><span class="n">08</span>Resolução de problemas</h2>
+  <table>
+    <thead><tr><th style="width:33%">Mensagem</th><th style="width:29%">Porquê</th><th>O que fazer</th></tr></thead>
+    <tbody>
+      <tr><td>Existem ficheiros Excel abertos</td>
+        <td>Um workbook está aberto no Excel</td>
+        <td>Fechar os ficheiros indicados na lista e repetir</td></tr>
+      <tr><td>Os preços não mudaram</td>
+        <td>O Preçário não chegou a ser guardado</td>
+        <td>Abrir o Preçário, guardar com Ctrl+S, fechar e repetir</td></tr>
+      <tr><td>Motor de sincronizacao nao encontrado</td>
+        <td>A pasta foi copiada incompleta</td>
+        <td>Copiar a pasta RIBBAÍ outra vez, por inteiro</td></tr>
+      <tr><td>Nao foi encontrado o Node portatil</td>
+        <td>Falta a pasta <code>runtime</code></td>
+        <td>Pedir nova cópia ao responsável do sistema</td></tr>
+      <tr><td>Não foi possível localizar a raiz do projeto</td>
+        <td>O ficheiro <code>.ribbai-root</code> foi apagado</td>
+        <td>Repor o ficheiro na pasta principal</td></tr>
+    </tbody>
+  </table>
+
+  <div class="tech">
+    <h3>Notas para o responsável do sistema</h3>
+    <div class="who">Esta secção não é necessária ao Chefe de Cozinha</div>
+    <p>O <code>runtime/</code> não vai no controlo de versões: viaja na cópia da
+       pasta. Antes de transferir, garantir que existe — caso contrário gerar com
+       <code>npm run kitchen:runtime:build</code> (motor, ~215 KB) e
+       <code>npm run kitchen:runtime:node</code> (node.exe portátil, ~82 MB,
+       verificado por checksum oficial).</p>
+    <p><strong>Depois de qualquer alteração ao motor é obrigatório reconstruir o
+       bundle</strong>, senão os launchers continuam a correr a versão anterior.</p>
+    <p>Comandos de manutenção: <code>npm run kitchen:costing:check</code> (dry-run),
+       <code>kitchen:costing:update</code> (aplica e valida),
+       <code>kitchen:health</code> (health check).
+       Arquitetura completa em <code>docs/kitchen/costing/README.md</code> e
+       <code>documentation/INSTALLATION-GUIDE.md</code></p>
+  </div>
+
+  <footer>
+    RIBBAÍ · Sistema de Custeio de Cozinha 1.0 · Documento gerado a partir de
+    GUIA-CHEFE-COZINHA.md e INSTALLATION-GUIDE.md
+  </footer>
+</section>
+
+</body>
+</html>

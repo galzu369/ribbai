@@ -1,0 +1,10 @@
+RIBBAI project root marker.
+
+Este ficheiro identifica a raiz do projeto RIBBAI. Os scripts de cozinha sobem
+na árvore de pastas até o encontrarem, e resolvem todos os caminhos a partir
+daqui — nunca a partir do diretório de trabalho nem de um caminho absoluto.
+
+É por isto que a pasta pode ser copiada para qualquer computador, qualquer
+disco e qualquer utilizador Windows sem reconfiguração.
+
+NÃO APAGAR NEM MOVER ESTE FICHEIRO.

@@ -1,0 +1,18 @@
+{
+  "version": "1.0.0",
+  "engine": "RIBBAÍ Kitchen Costing Sync",
+  "description": "Caminhos do sistema de custeio de cozinha, sempre relativos à raiz do projeto (ficheiro marcador .ribbai-root). Nunca guardar caminhos absolutos aqui.",
+  "paths": {
+    "priceList": "docs/kitchen/costing/price-lists/Preçário.xlsx",
+    "garnishesWorkbook": "docs/kitchen/costing/technical-sheets/garnishes/Fichas Técnicas Guarnições.xlsx",
+    "menuItemsDir": "docs/kitchen/costing/technical-sheets/menu-items",
+    "mappingsDir": "docs/kitchen/costing/mappings",
+    "menuDir": "docs/kitchen/costing/menu",
+    "reportsDir": "docs/kitchen/costing/reports",
+    "backupsDir": "docs/kitchen/costing/backups/price-sync",
+    "logsDir": "docs/kitchen/costing/reports/sync-logs",
+    "archiveDir": "docs/kitchen/costing/archive",
+    "documentationDir": "docs/kitchen/costing/documentation",
+    "runtimeDir": "runtime"
+  }
+}

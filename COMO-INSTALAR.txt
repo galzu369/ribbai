@@ -1,0 +1,42 @@
+RIBBAI - SISTEMA DE ATUALIZACAO DAS FICHAS TECNICAS
+===================================================
+
+O QUE FAZER (5 minutos, uma unica vez)
+
+1. Copie a pasta "RIBBAI" desta pen para o computador.
+   Sugestao: para o disco C:, ficando C:\RIBBAI
+   (pode ser noutro sitio - Documentos, por exemplo)
+
+   Copie a PASTA INTEIRA. Nao copie ficheiros soltos.
+
+2. Abra a pasta que copiou para o computador.
+
+3. Duplo clique em:  INSTALAR-SISTEMA-COZINHA.cmd
+   Deve terminar com a mensagem "SISTEMA PRONTO A UTILIZAR".
+
+4. Leia o guia:  docs\kitchen\costing\documentation\GUIA-CHEFE-COZINHA.md
+
+
+NO DIA-A-DIA
+
+1. Abrir o Precario e alterar os precos (coluna "Preco s/IVA")
+   E/OU editar as fichas tecnicas (ingredientes e quantidades)
+2. Guardar (Ctrl+S) e FECHAR o Excel (todos os ficheiros)
+3. Duplo clique em ATUALIZAR-FICHAS-TECNICAS.cmd
+4. Esperar pela mensagem "Sincronizacao concluida com sucesso"
+5. Abrir o relatorio em docs\kitchen\costing\reports\
+   (HTML e PDF com os valores atualizados)
+
+Para ver o que mudaria SEM alterar nada:
+   VERIFICAR-FICHAS-TECNICAS.cmd
+
+
+IMPORTANTE
+
+- Trabalhe com a pasta COPIADA PARA O COMPUTADOR, nao a partir da pen.
+- Nao apague o ficheiro .ribbai-root
+- Nao mude o nome nem o sitio das pastas de dentro
+- Precos de COMPRA: so no Precario (o sistema preenche nas fichas)
+- Receitas (ingredientes/quantidades): pode editar nas fichas tecnicas
+
+Duvidas: contacte o responsavel do sistema.
